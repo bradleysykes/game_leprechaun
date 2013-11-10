@@ -23,4 +23,10 @@ public class EditTabbedView extends JTabbedPane {
 			this.addTab(tab, scroll);
 		}
 	}
+	
+	public void addTile(BoardListItem tile){
+		for(int i = 0; i<this.getTabCount();i++){
+			
+		}
+	}
 }

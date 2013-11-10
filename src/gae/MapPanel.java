@@ -11,9 +11,7 @@ public class MapPanel extends EditPanel {
 	
 	public MapPanel(){
 		super();
-		JTextArea textArea = new JTextArea("MAP");
-		this.add(textArea);
-		this.setBackground(Color.RED);
+		this.add(new MapView());
 		initialize();
 	}
 	

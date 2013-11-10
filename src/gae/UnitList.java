@@ -16,7 +16,6 @@ import javax.swing.event.ListSelectionListener;
 public class UnitList extends JList {
 		
 	private DefaultListModel myModel;
-	private String[] myUnits = {"Soldier", "Assassin", "Medic"};
 	
 	public UnitList(){
 		myModel = new DefaultListModel();
@@ -24,8 +23,9 @@ public class UnitList extends JList {
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.addListSelectionListener(new EditListSelectionListener());
 		this.setCellRenderer(new EditListRenderer());
-		BoardListItem tu = new ToyUnit();
-		this.addNewItem(tu);
+		//FOR DEBUG
+//		BoardListItem tu = new ToyUnit();
+//		this.addNewItem(tu);
 	}
 	
 	public void addNewItem(BoardListItem item){
