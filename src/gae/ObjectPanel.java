@@ -8,6 +8,7 @@ import javax.swing.JTextArea;
 public class ObjectPanel extends EditPanel {
 	
 	public ObjectPanel(){
+		super();
 		this.setBackground(Color.PINK);
 		JTextArea myTextArea = new JTextArea("Object Properties");
 		this.add(myTextArea);
