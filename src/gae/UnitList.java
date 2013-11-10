@@ -24,23 +24,26 @@ public class UnitList extends JList {
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.addListSelectionListener(new EditListSelectionListener());
 		this.setCellRenderer(new EditListRenderer());
-		this.addItem("barry");
+		BoardListItem tu = new ToyUnit();
+		this.addNewItem(tu);
 	}
 	
-	public void addItem(String item){
+	public void addNewItem(BoardListItem item){
 		myModel.addElement(item);
 	}
 	
-	public class EditListRenderer extends DefaultListCellRenderer {
-		ImageIcon[] myIcons = {new ImageIcon(Constants.ICON_PATH+"test_icon_image.png")};
+	public class EditListRenderer extends DefaultListCellRenderer{
+		//ImageIcon[] myIcons = {new ImageIcon(Constants.ICON_PATH+"test_icon_image.png")};
+		@SuppressWarnings("unchecked")
 		@Override
-		public Component getListCellRendererComponent(JList list, Object value, 
+		public Component getListCellRendererComponent(JList list, Object item, 
 				int index,boolean isSelected, boolean cellHasFocus) {
-			JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, 
-					isSelected, cellHasFocus);
-			Icon icon = myIcons[0];
-			label.setIcon(icon);
-			return label;
+			JLabel label = (JLabel) super.getListCellRendererComponent(list,item, 
+					index,isSelected,cellHasFocus);
+			BoardListItem display = (BoardListItem) item;
+			label.setIcon(display.getIcon());
+			label.setText(display.getName());
+			return this;
 		}
 	}
 	
