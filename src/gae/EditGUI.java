@@ -14,6 +14,7 @@ public class EditGUI extends JFrame implements Constants {
 		this.setLayout(new BorderLayout());
 		this.add(new Workspace(),BorderLayout.CENTER);
 		this.setPreferredSize(EDITGUI_INITIAL_SIZE);
+		this.setJMenuBar(new EditMenuBar());
 		this.pack();
 		this.setVisible(true);
 	}

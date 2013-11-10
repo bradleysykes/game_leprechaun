@@ -14,9 +14,9 @@ public abstract class EditPanel extends JPanel implements Constants {
 	}
 	
 	public void initialize(Component component){
-		component.setPreferredSize(preferred);
-		this.setMinimumSize(minimum);
-		this.setPreferredSize(preferred);
-		component.setPreferredSize(preferred);
+//		component.setPreferredSize(preferred);
+//		this.setMinimumSize(minimum);
+//		this.setPreferredSize(preferred);
+//		component.setPreferredSize(preferred);
 	}
 }
