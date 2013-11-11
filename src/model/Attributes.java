@@ -12,6 +12,9 @@ public class Attributes implements ModelConstants {
 	
 	public Attributes(){
 		myHealth = DEFAULT_ATTRIBUTE;
+		myBaseAttack = DEFAULT_ATTRIBUTE;
+		myBaseDefense = DEFAULT_ATTRIBUTE;
+		myBaseStamina = DEFAULT_ATTRIBUTE;
 		myAttack = DEFAULT_ATTRIBUTE;
 		myDefense = DEFAULT_ATTRIBUTE;
 		myStamina = DEFAULT_ATTRIBUTE;
