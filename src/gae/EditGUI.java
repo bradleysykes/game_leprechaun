@@ -17,5 +17,6 @@ public class EditGUI extends JFrame implements Constants {
 		this.setJMenuBar(new EditMenuBar());
 		this.pack();
 		this.setVisible(true);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 }

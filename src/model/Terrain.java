@@ -16,7 +16,7 @@ public class Terrain implements ModelConstants {
 		// return unit.buff(myName);
 		return 0;
 	}
-	
+
 	// Added these methods for data (Alex) 
 	public String getName() {
 	    return myName;
@@ -25,5 +25,4 @@ public class Terrain implements ModelConstants {
 	public void setName(String name) {
 	    myName = name;
 	}
-
 }

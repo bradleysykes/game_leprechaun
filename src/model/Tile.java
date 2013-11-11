@@ -4,10 +4,14 @@ import java.util.List;
 
 public class Tile {
 	
-	private Resources myResources;
+	private Resources myResources = new Resources();
 	private double myPassability;
 	private Terrain myTerrain;
 	private String myName;
+	
+	public Tile(){
+		
+	}
 
 	public Tile(Resources resources, double passability, Terrain terrain, String name){
 		myResources = resources;
@@ -16,31 +20,32 @@ public class Tile {
 		myName = name;
 	}  
 	
-	public void addResource(Resource newResource){
+	public Resource addResource(Resource newResource){
 		myResources.addResource(newResource);
+		return newResource;
 	}
 	
 	public List<Resource> getResourcesOnTile(){
 		return myResources.getResources();
 	}
 	
-	public void setImageName(String newImageName){
+	public String setImageName(String newImageName){
 		myName = newImageName;
+		return myName;
+	}
+	
+	public double getPassability(){
+		return myPassability;
+	}
+	
+	public Terrain getTerrain(){
+		return myTerrain;
 	}
 	
 	//Added the following methods for data (Alex)
 	public String getImageName() {
 	    return myName;
 	}
-	
-	public double getPassability() {
-	    return myPassability;
-	}
-	
-	public Terrain getTerrain() {
-	    return myTerrain;
-	}
-	
 	
 
 }
