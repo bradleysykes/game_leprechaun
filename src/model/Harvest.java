@@ -2,8 +2,10 @@ package model;
 
 public class Harvest extends Ability{
 
-	public Harvest() {
+	public Harvest(Unit abilityUser) {
+		super(abilityUser);
 		// TODO Auto-generated constructor stub
 	}
+
 
 }
