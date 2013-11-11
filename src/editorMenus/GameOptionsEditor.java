@@ -18,7 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JList;
 
 public class GameOptionsEditor extends JFrame {
-	private Dimension myPreferredSize = Toolkit.getDefaultToolkit().getScreenSize();
+	private Dimension myPreferredSize = new Dimension(400, 400);
 	private static String myRulesPackage = "\\model\\rules";
 	private List<String> myRuleNames;
 	
@@ -30,33 +30,28 @@ public class GameOptionsEditor extends JFrame {
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setPreferredSize(myPreferredSize);
 		this.setVisible(true);
-		generateContent();
-		addContentToFrame();
+		this.addSections();
+
+//		addContentToFrame();
 		this.pack();		
 	}
 
-	private void generateContent() {
-		try {
-			List<String> classes = PackageClassFinder.getClassesForPackage(myRulesPackage);
-			for (String classy:classes) {
-				myRuleNames.add(classy);
-			}
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	private void addSections() {
+		this.add(new PropertiesChooser("Turn Rules", myRulesPackage), BorderLayout.WEST);
 	}
-	
 
-	private void addContentToFrame() {
-		RulesPane myRulesPane = new RulesPane();
-		for (String name:myRuleNames) {
-			myRulesPane.addStringToPanel(name);
-		}
-		myRulesPane.addMouseListener(new MyMouser());
-		this.add(myRulesPane, BorderLayout.WEST);
-		
-	}
+//	
+//	
+//
+//	private void addContentToFrame() {
+//		ItemListPane myRulesPane = new ItemListPane();
+//		for (String name:myRuleNames) {
+//			myRulesPane.addStringToPanel(name);
+//		}
+//		myRulesPane.addMouseListener(new MyMouser());
+//		this.add(myRulesPane, BorderLayout.WEST);
+//		
+//	}
 	public static void main (String arg[]) {
 		GameOptionsEditor x = new GameOptionsEditor();
 		new PackageClassFinder();
