@@ -20,28 +20,21 @@ public class MapView extends JGEngine {
 		
 	}
 	
-	public void placeOnBoard(BoardListItem item){
-		if(this.getKey(256)){
-			defineImage("test","-",0,"../gae_resources/test_icon_image.png","-");
-			new JGObject("test", true, this.getMouseX(),this.getMouseY(), 0, "test");
-			System.out.println(this.countObjects("test", 0));
+	public void placeOnBoard(){
+		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
+			defineImage(BoardBuffer.retrieve().getName(),"-",0, "resources/"+BoardBuffer.retrieve().getRelativeImagePath(),"-");
+			new JGObject("test", true, this.getMouseX(),this.getMouseY(), 0, BoardBuffer.retrieve().getName()).snapToGrid();
 		}
 	}
 	
 	public void doFrame(){
-		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
-			defineImage("test","-",0,"../gae_resources/test_icon_image.png","-");
-			new JGObject("test", true, this.getMouseX(),this.getMouseY(), 0, "test");
-			System.out.println(this.countObjects("test", 0));
-		}
+		placeOnBoard();
 	}
 
 	@Override
 	public void initGame() {
 		setFrameRate(40, 1);
-		setPFSize(this.viewWidth(), this.viewHeight());
-		defineImage("test","-",0,"../gae_resources/test_icon_image.png","-");
-		new JGObject("test", true, viewWidth()/2,viewHeight()/2, 0, "test");
+		setPFSize(16,16);
 	}
 
 }

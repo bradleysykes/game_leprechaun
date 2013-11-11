@@ -11,7 +11,7 @@ public class MapMouseListener implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		System.out.println("mouse clicked");
-		myMap.placeOnBoard(BoardBuffer.retrieve());
+		//myMap.placeOnBoard(BoardBuffer.retrieve());
 	}
 
 	@Override

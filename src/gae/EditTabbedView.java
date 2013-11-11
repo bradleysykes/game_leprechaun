@@ -16,8 +16,8 @@ public class EditTabbedView extends JTabbedPane {
 	
 	public EditTabbedView(String[] tabs){
 		myTabContents.put("Units", new UnitList());
-		myTabContents.put("Tiles", new UnitList());
-		myTabContents.put("Conditions", new UnitList());
+		myTabContents.put("Tiles", new TileList());
+		myTabContents.put("Conditions", new ConditionList());
 		for(String tab : myTabContents.keySet()){
 			JScrollPane scroll = new JScrollPane(myTabContents.get(tab));
 			this.addTab(tab, scroll);
