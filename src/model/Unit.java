@@ -49,7 +49,12 @@ public class Unit extends JGObject implements ModelConstants {
 	}
 	
 	public Unit getTarget(int range){
-		return myMap.getTarget(myX,myY,range);
+		return myMap.getTarget(myMapX,myMapY,range);
+	}
+
+	public Object getAttributes() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
