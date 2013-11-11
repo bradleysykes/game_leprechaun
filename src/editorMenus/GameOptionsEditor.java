@@ -19,7 +19,7 @@ import javax.swing.JList;
 
 public class GameOptionsEditor extends JFrame {
 	private Dimension myPreferredSize = new Dimension(400, 400);
-	private static String myRulesPackage = "\\model\\rules";
+	private static String myRulesPackage = "model";
 	private List<String> myRuleNames;
 	
 	
