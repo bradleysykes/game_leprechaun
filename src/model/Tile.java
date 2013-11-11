@@ -12,6 +12,13 @@ public class Tile {
 	public Tile(){
 		
 	}
+
+	public Tile(Resources resources, double passability, Terrain terrain, String name){
+		myResources = resources;
+		myPassability = passability;
+		myTerrain = terrain;
+		myName = name;
+	}  
 	
 	public Resource addResource(Resource newResource){
 		myResources.addResource(newResource);
@@ -34,5 +41,11 @@ public class Tile {
 	public Terrain getTerrain(){
 		return myTerrain;
 	}
+	
+	//Added the following methods for data (Alex)
+	public String getImageName() {
+	    return myName;
+	}
+	
 
 }

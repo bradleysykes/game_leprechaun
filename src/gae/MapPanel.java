@@ -1,7 +1,10 @@
 package gae;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -9,16 +12,20 @@ import javax.swing.JTextArea;
 
 public class MapPanel extends EditPanel {
 	
+	private MapView myMapView;
+
 	public MapPanel(){
 		super();
-		JTextArea textArea = new JTextArea("MAP");
-		this.add(textArea);
-		this.setBackground(Color.RED);
+		this.setLayout(new BorderLayout());
+		myMapView = new MapView();
+		this.add(myMapView, BorderLayout.CENTER);
+		this.addMouseListener(new MapMouseListener(myMapView));
 		initialize();
 	}
 	
 	public void initialize(){
-		this.setPreferredSize(new Dimension(600,600));
+		//this.setPreferredSize(new Dimension(600,600));
 		
 	}
+
 }

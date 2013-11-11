@@ -46,7 +46,7 @@ public class PackageClassFinder {
                          // removes the .class extension
                        try
                        {
-                         classes.add(Class.forName(pckgname + '.' + file.substring(0, file.length() - 6)));                      
+                         classes.add(Class.forName(directory+file.substring(0, file.length() - 6)));                      
                        }
                        catch (NoClassDefFoundError e)
                        {
