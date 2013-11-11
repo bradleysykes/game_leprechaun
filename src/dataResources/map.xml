@@ -1,0 +1,20 @@
+<map>
+  <tile xid="1" yid="1">
+    <passability>1.0</passability>
+    <terrain name="grass"/>
+    <image_name>gae_resources/grass.jpg</image_name>
+    <resources>
+      <resource amount="10.0" harvest_rate="5.0" name="minerals"/>
+      <resource amount="20.0" harvest_rate="7.0" name="gas"/>
+    </resources>
+  </tile>
+  <tile xid="1" yid="1">
+    <passability>0.0</passability>
+    <terrain name="sand"/>
+    <image_name>gae_resources/sand.jpg</image_name>
+    <resources>
+      <resource amount="36.0" harvest_rate="7.0" name="minerals"/>
+      <resource amount="46.0" harvest_rate="25.0" name="gas"/>
+    </resources>
+  </tile>
+</map>
