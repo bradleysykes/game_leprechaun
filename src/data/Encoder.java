@@ -21,12 +21,14 @@ import org.w3c.dom.Element;
 
 
 /**
- * A SuperClass that is extended by different types of encoders, each of which
- * receives information and converts it into XML files of the specified type.
+ * Receives information about a certain type of object and creates an XML file
+ * that represents it. It is a superclass that is extended by different subclasses.
+ * It implements interfaces which hold constants representing the names of XML 
+ * elements and attributes.
  * @author Alex Song
  *
  */
-public class Encoder {
+public class Encoder implements Elements, Attributes {
     
     protected Document myXmlDocument;
     protected Element myRoot;

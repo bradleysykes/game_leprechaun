@@ -2,8 +2,6 @@ package data;
 
 import javax.xml.parsers.ParserConfigurationException;
 import model.Resource;
-import model.Resources;
-import model.Terrain;
 import model.Tile;
 import org.w3c.dom.Element;
 
@@ -15,16 +13,14 @@ import org.w3c.dom.Element;
  *
  */
 public class MapEncoder extends Encoder {
-    
-    public static final String ROOT_NAME = "map";
-    
+ 
     /**
      * Creates a new instance of a MapEncoder which converts map information into
      * an XML file. 
      * @throws ParserConfigurationException
      */
     public MapEncoder() throws ParserConfigurationException {
-        initEncoder(ROOT_NAME);
+        initEncoder(MAP_ROOT_NAME);
     }
  
     /**
@@ -32,30 +28,30 @@ public class MapEncoder extends Encoder {
      * @param tile tile to add
      */
     public void addTileElement(Tile tile) {
-        Element tileElement = myXmlDocument.createElement("tile");
+        Element tileElement = myXmlDocument.createElement(TILE);
         //getX() and getY() needed in tile for x and y positions; hard-coded for now
-        tileElement.setAttribute("xid", String.valueOf(1));
-        tileElement.setAttribute("yid", String.valueOf(1));
+        tileElement.setAttribute(X_ID, String.valueOf(1));
+        tileElement.setAttribute(Y_ID, String.valueOf(1));
         
-        Element passabilityElement = myXmlDocument.createElement("passability");
+        Element passabilityElement = myXmlDocument.createElement(PASSABILITY);
         passabilityElement.setTextContent(String.valueOf(tile.getPassability()));
         tileElement.appendChild(passabilityElement);
         
-        Element terrainElement = myXmlDocument.createElement("terrain");
-        terrainElement.setAttribute("name", tile.getTerrain().getName());
+        Element terrainElement = myXmlDocument.createElement(TERRAIN);
+        terrainElement.setAttribute(NAME, tile.getTerrain().getName());
         tileElement.appendChild(terrainElement);
         
-        Element imageNameElement = myXmlDocument.createElement("image_name");
+        Element imageNameElement = myXmlDocument.createElement(TILE_IMAGE);
         imageNameElement.setTextContent(tile.getImageName());
         tileElement.appendChild(imageNameElement);
         
         // tile can have multiple resources
-        Element resourcesElement = myXmlDocument.createElement("resources");        
+        Element resourcesElement = myXmlDocument.createElement(RESOURCES);        
         for(Resource resource : tile.getResourcesOnTile()) {
-            Element resourceElement = myXmlDocument.createElement("resource");
-            resourceElement.setAttribute("name", resource.getName());
-            resourceElement.setAttribute("amount", String.valueOf(resource.getAmount()));
-            resourceElement.setAttribute("harvest_rate", String.valueOf(resource.getHarvestRate()));
+            Element resourceElement = myXmlDocument.createElement(RESOURCE);
+            resourceElement.setAttribute(NAME, resource.getName());
+            resourceElement.setAttribute(AMOUNT, String.valueOf(resource.getAmount()));
+            resourceElement.setAttribute(HARVEST_RATE, String.valueOf(resource.getHarvestRate()));
             resourcesElement.appendChild(resourceElement);
         }
         tileElement.appendChild(resourcesElement);

@@ -11,14 +11,12 @@ import javax.xml.parsers.ParserConfigurationException;
  */
 public class UnitEncoder extends Encoder{
 
-    public static final String ROOT_NAME = "unit";
-    
     /**
      * Creates a new instance of a UnitEncoder which converts Unit information
      * into an XML file. 
      * @throws ParserConfigurationException
      */
     public UnitEncoder() throws ParserConfigurationException {
-        initEncoder(ROOT_NAME);
+        initEncoder(UNIT_ROOT_NAME);
     }
 }
