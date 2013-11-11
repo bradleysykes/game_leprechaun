@@ -9,9 +9,7 @@ public interface Elements {
     // for MapEncoder
     String MAP_ROOT_NAME = "map";
     String TILE = "tile";
-    String PASSABILITY = "passability";
     String TERRAIN = "terrain";
-    String TILE_IMAGE = "image";
     String RESOURCES = "resources";
     String RESOURCE = "resource";
     // for UnitEncoder

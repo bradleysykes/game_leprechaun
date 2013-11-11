@@ -8,7 +8,10 @@ package data;
 public interface Attributes {
     String X_ID = "x_id";
     String Y_ID = "y_id";
+    String PASSABILITY = "passability";
+    String IMAGE = "image";
     String NAME = "name";
     String AMOUNT = "amount";
     String HARVEST_RATE = "harvest_rate";
+    
 }

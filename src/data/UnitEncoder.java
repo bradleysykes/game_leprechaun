@@ -19,4 +19,17 @@ public class UnitEncoder extends Encoder{
     public UnitEncoder() throws ParserConfigurationException {
         initEncoder(UNIT_ROOT_NAME);
     }
+    
+    
+    public void addXmlElement(Object o) {
+       
+    }
+    
+    public void removeXmlElement(Object o) {
+       
+    }
+    
+    public void editXmlElement(Object o1, Object o2) {
+       
+    }
 }

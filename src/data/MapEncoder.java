@@ -22,28 +22,22 @@ public class MapEncoder extends Encoder {
     public MapEncoder() throws ParserConfigurationException {
         initEncoder(MAP_ROOT_NAME);
     }
- 
+
     /**
      * Adds a tile element and its children elements to the root element.
      * @param tile tile to add
      */
-    public void addTileElement(Tile tile) {
+    private void addTileElement(Tile tile) {
         Element tileElement = myXmlDocument.createElement(TILE);
         //getX() and getY() needed in tile for x and y positions; hard-coded for now
         tileElement.setAttribute(X_ID, String.valueOf(1));
         tileElement.setAttribute(Y_ID, String.valueOf(1));
-        
-        Element passabilityElement = myXmlDocument.createElement(PASSABILITY);
-        passabilityElement.setTextContent(String.valueOf(tile.getPassability()));
-        tileElement.appendChild(passabilityElement);
+        tileElement.setAttribute(PASSABILITY, String.valueOf(tile.getPassability()));
+        tileElement.setAttribute(IMAGE, tile.getImageName());
         
         Element terrainElement = myXmlDocument.createElement(TERRAIN);
         terrainElement.setAttribute(NAME, tile.getTerrain().getName());
         tileElement.appendChild(terrainElement);
-        
-        Element imageNameElement = myXmlDocument.createElement(TILE_IMAGE);
-        imageNameElement.setTextContent(tile.getImageName());
-        tileElement.appendChild(imageNameElement);
         
         // tile can have multiple resources
         Element resourcesElement = myXmlDocument.createElement(RESOURCES);        
@@ -58,13 +52,21 @@ public class MapEncoder extends Encoder {
         
         myRoot.appendChild(tileElement);
     }
+
+    public void addXmlElement(Object o) {
+        addTileElement((Tile) o);
+    }
     
     /**
      * Removes a tile element and its children from the XML structure
      * @param tile tile to remove
      */
-    public void removeTileElement(Tile tile) {
-        
+    private void removeTileElement(Tile tile) {
+        //TODO
+    }
+    
+    public void removeXmlElement(Object o) {
+        removeTileElement((Tile) o);
     }
     
     /**
@@ -73,9 +75,12 @@ public class MapEncoder extends Encoder {
      * @param oldTile the old tile before modifications
      * @param newTile the new tile after modifications
      */
-    public void editTileElement(Tile oldTile, Tile newTile) {
+    private void editTileElement(Tile oldTile, Tile newTile) {
         removeTileElement(oldTile);
         addTileElement(newTile);
     }
     
+    public void editXmlElement(Object o1, Object o2) {
+        editTileElement((Tile) o1, (Tile) o2);
+    }
 }

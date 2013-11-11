@@ -28,7 +28,7 @@ import org.w3c.dom.Element;
  * @author Alex Song
  *
  */
-public class Encoder implements Elements, Attributes {
+public abstract class Encoder implements Elements, Attributes {
     
     protected Document myXmlDocument;
     protected Element myRoot;
@@ -73,11 +73,29 @@ public class Encoder implements Elements, Attributes {
         // use fos for saving to file; use System.out for printing to console
         transformer.transform(new DOMSource(myXmlDocument), new StreamResult(fos));
     }
-    
 
+    /**
+     * Add the specified element to the XML file
+     * @param o
+     */
+    public abstract void addXmlElement(Object o);
+    
+    /**
+     * Remove the specified element from the XML file 
+     * @param o
+     */
+    public abstract void removeXmlElement(Object o);
+    
+    /**
+     * Edit the specified element in the XML file
+     * @param o
+     */
+    public abstract void editXmlElement(Object o1, Object o2);
+    
+    
     //for testing
     public static void main(String[] args) throws Exception {
-        MapEncoder e = new MapEncoder();
+        Encoder e = new MapEncoder();
         //add Tile
         Resources resources = new Resources();
         resources.addResource(new Resource("minerals", 10, 5));
@@ -85,8 +103,8 @@ public class Encoder implements Elements, Attributes {
         Terrain terrain = new Terrain();
         terrain.setName("grass");
         // tile should have x and y position
-        Tile tile = new Tile(resources, 1, terrain, "gae_resources/grass.jpg");
-        e.addTileElement(tile);
+        Tile tile = new Tile(resources, 1, terrain, "src/gae_resources/grass.jpg");
+        e.addXmlElement(tile);
         
         //add another tile
         resources = new Resources();
@@ -95,10 +113,11 @@ public class Encoder implements Elements, Attributes {
         terrain = new Terrain();
         terrain.setName("sand");
         // tile should have x and y position
-        tile = new Tile(resources, 0, terrain, "gae_resources/sand.jpg");
-        e.addTileElement(tile);
+        tile = new Tile(resources, 0, terrain, "src/gae_resources/sand.jpg");
+        e.addXmlElement(tile);
         
         e.saveXML("src/dataResources/map.xml");
     }
+    
 
 }
