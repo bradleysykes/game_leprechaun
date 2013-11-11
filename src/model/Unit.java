@@ -4,15 +4,15 @@ import jgame.JGObject;
 
 public class Unit extends JGObject implements ModelConstants {
 	
-	private Map myMap;
+	private GameMap myMap;
 	private Player myPlayer;
 	private Attributes myAttributes = new Attributes();
 	//private Movement myMovement;
 	//private Attack myAttack;
 	//private Spawner mySpawner;
 	//private Abilities myAbilities;
-	private double myMapX=0;
-	private double myMapY=0;
+	private int myMapX=0;
+	private int myMapY=0;
 	
 	public Unit(){
 		this(0,0);
@@ -31,7 +31,11 @@ public class Unit extends JGObject implements ModelConstants {
 		
 	}
 	
-	public void setMapPosition(double newX, double newY){
+	public GameMap getMap(){
+		return myMap;
+	}
+	
+	public void setMapPosition(int newX, int newY){
 		myMapX = newX;
 		myMapY = newY;
 	}

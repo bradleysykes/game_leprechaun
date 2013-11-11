@@ -1,7 +1,7 @@
 package model;
 import java.util.*;
 
-public class Ability {
+public abstract class Ability {
 	protected Unit myUnit;
 	protected ArrayList<Parameter> myParameters = new ArrayList<Parameter>();
 
@@ -9,10 +9,7 @@ public class Ability {
 		myUnit = abilityUser;
 	}
 	
-	public int useAbility(){
-		
-		return 0;
-	}
+	public abstract void useAbility();
 	
 	public Parameter addParameter(Parameter p){
 		myParameters.add(p);
