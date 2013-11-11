@@ -1,5 +1,6 @@
 package editorMenus;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
@@ -24,19 +25,21 @@ public class GameOptionsEditor extends JFrame {
 	
 	public GameOptionsEditor() {
 		super();
+		this.setLayout(new BorderLayout());
 		myRuleNames = new ArrayList<String>();
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setPreferredSize(myPreferredSize);
 		this.setVisible(true);
+		generateContent();
 		addContentToFrame();
 		this.pack();		
 	}
 
 	private void generateContent() {
 		try {
-			List<Class> classes = PackageClassFinder.getClassesForPackage(myRulesPackage);
-			for (Class classy:classes) {
-				myRuleNames.add(classy.getName());
+			List<String> classes = PackageClassFinder.getClassesForPackage(myRulesPackage);
+			for (String classy:classes) {
+				myRuleNames.add(classy);
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -51,11 +54,13 @@ public class GameOptionsEditor extends JFrame {
 			myRulesPane.addStringToPanel(name);
 		}
 		myRulesPane.addMouseListener(new MyMouser());
+		this.add(myRulesPane, BorderLayout.WEST);
 		
 	}
 	public static void main (String arg[]) {
-		new PackageClassFinder();
 		GameOptionsEditor x = new GameOptionsEditor();
+		new PackageClassFinder();
+		
 	}
 	private class MyMouser implements MouseListener {
 

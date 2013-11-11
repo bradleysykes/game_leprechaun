@@ -10,7 +10,7 @@ public class RulesPane extends JPanel {
 		super();
 		myModel = new DefaultListModel<String>();
 		myModel.addElement("Available Rules");
-		JList<String> objectList = new JList<String>(model);
+		JList<String> objectList = new JList<String>(myModel);
 		this.add(objectList);
 	}
 	public void addStringToPanel(String element) {
