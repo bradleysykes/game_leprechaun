@@ -1,7 +1,7 @@
 package model;
 import java.util.*;
 
-public class Ability {
+public abstract class Ability {
 	protected Unit myUnit;
 	protected ArrayList<Parameters> myParameters = new ArrayList<Parameters>();
 	protected int myRange;
@@ -12,7 +12,6 @@ public class Ability {
 		myRange = 0;
 		myRadius = 0;
 	}
-	
 	public int useAbility(){
 		return 0;
 	}

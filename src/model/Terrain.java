@@ -13,7 +13,7 @@ public class Terrain implements ModelConstants {
 	}
 	
 	public double modifyUnit(Unit unit){
-		// return unit.buff();
+		// return unit.buff(myName);
 		return 0;
 	}
 
