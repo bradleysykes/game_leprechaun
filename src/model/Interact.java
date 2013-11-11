@@ -6,4 +6,9 @@ public class Interact extends Ability{
 		super(abilityUser);
 	}
 
+	@Override
+	public double useAbility() {
+		return 0;		
+	}
+
 }

@@ -1,13 +1,18 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Resources {
 	
-	private ArrayList<Resource> myResources;
+	private List<Resource> myResources = new ArrayList<Resource>();
 	
 	public void addResource(Resource newResource){
 		myResources.add(newResource);
+	}
+	
+	public List<Resource> getResources(){
+		return myResources;
 	}
 
 }

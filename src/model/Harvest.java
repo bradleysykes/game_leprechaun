@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 public class Harvest extends Ability{
 
 	public Harvest(Unit abilityUser) {
@@ -7,8 +9,12 @@ public class Harvest extends Ability{
 	}
 	
 	@Override
-	public void useAbility(){
-		//List<Resource> resources = myUnit.getCurrentTile().getResources();
+	public double useAbility(){
+		List<Resource> resources = myUnit.getCurrentTile().getResourcesOnTile();
+		for(Resource r : resources){
+			myUnit.getPlayer().adjustResources(r.getName(),r.harvest());
+		}
+		return 0;
 	}
 
 }

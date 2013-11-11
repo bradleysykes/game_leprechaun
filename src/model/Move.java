@@ -7,4 +7,10 @@ public class Move extends Ability{
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public double useAbility() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

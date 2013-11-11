@@ -20,7 +20,7 @@ public class Attack extends Ability{
 				enemyHealth = enemyHealth + enemyDefense - myAttack;
 			if (myDefense < enemyAttack)
 				myHealth = myHealth + myDefense - enemyAttack;
-			myUnit.getAttibutes().setHealth(myHealth);
+			myUnit.getAttributes().setHealth(myHealth);
 			enemyUnit.getAttributes().setHealth(enemyHealth);
 			return myAttack - enemyDefense;
 		}

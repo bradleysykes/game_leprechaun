@@ -72,6 +72,6 @@ public class UnitEditor extends JFrame {
 
 	}
 	public static void main (String arg[]) {
-		gameOptionsEditor x = new gameOptionsEditor();
+		GameOptionsEditor x = new GameOptionsEditor();
 	}
 }
