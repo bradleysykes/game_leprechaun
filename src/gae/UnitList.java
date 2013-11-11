@@ -1,12 +1,14 @@
 package gae;
-
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
@@ -25,6 +27,7 @@ public class UnitList extends JList {
 		this.setCellRenderer(new EditListRenderer());
 		myModel.addElement(new ToyUnit());
 		myModel.addElement(new NewUnit());
+		this.addMouseListener(new PopupListener());
 		//FOR DEBUG
 //		BoardListItem tu = new ToyUnit();
 //		this.addNewItem(tu);
@@ -45,9 +48,18 @@ public class UnitList extends JList {
 			BoardListItem display = (BoardListItem) item;
 			label.setIcon(display.getIcon());
 			label.setText(display.getName());
+			JButton hello = new JButton("DELETE");
+			hello.addActionListener(new DeleteListener());
 			return this;
 		}
 		
+	}
+	
+	public class DeleteListener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+		}
 	}
 		
 }

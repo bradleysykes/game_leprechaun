@@ -14,8 +14,9 @@ public interface BoardListItem<T extends Serializable>{
 	
 	public abstract String getName();
 	
-	
 	public abstract Icon getIcon();
+	
+	public abstract String getImagePath();
 	
 	public abstract Class getObjectClass();
 	

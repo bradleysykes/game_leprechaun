@@ -18,6 +18,10 @@ public class NewUnit implements BoardListItem {
 		// TODO Auto-generated method stub
 		return new ImageIcon(Constants.ICON_PATH+"plus.gif");
 	}
+	
+	public String getImagePath(){
+		return "";
+	}
 
 	@Override
 	public Class getObjectClass() {

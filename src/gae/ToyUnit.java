@@ -27,6 +27,12 @@ public class ToyUnit implements BoardListItem{
 	public void onSelected(UnitList list) {
 		BoardBuffer.push(this);
 	}
+
+	@Override
+	public String getImagePath() {
+		// TODO Auto-generated method stub
+		return Constants.ICON_PATH+"test_icon_image.png";
+	}
 	
 	
 

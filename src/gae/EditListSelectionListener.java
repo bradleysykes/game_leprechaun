@@ -18,7 +18,7 @@ public class EditListSelectionListener implements ListSelectionListener {
 				BoardListItem selectedItem = (BoardListItem)listSource.getSelectedValue();
 				Class selectedClass = selectedItem.getObjectClass();
 				selectedItem.onSelected(listSource);
-				listSource.clearSelection();
+				//listSource.clearSelection();
 		}
 		/**
 		 * If designer selects NewItem, show view to set initial properties. 

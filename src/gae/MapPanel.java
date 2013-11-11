@@ -1,5 +1,6 @@
 package gae;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
@@ -15,14 +16,15 @@ public class MapPanel extends EditPanel {
 
 	public MapPanel(){
 		super();
+		this.setLayout(new BorderLayout());
 		myMapView = new MapView();
-		this.add(myMapView);
+		this.add(myMapView, BorderLayout.CENTER);
 		this.addMouseListener(new MapMouseListener(myMapView));
 		initialize();
 	}
 	
 	public void initialize(){
-		this.setPreferredSize(new Dimension(600,600));
+		//this.setPreferredSize(new Dimension(600,600));
 		
 	}
 

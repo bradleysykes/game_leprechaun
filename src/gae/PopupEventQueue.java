@@ -30,13 +30,13 @@ public class PopupEventQueue extends EventQueue {
 		    }
 		    Component comp = SwingUtilities.getDeepestComponentAt((Component)
 		me.getSource(),me.getX(), me.getY());
-		    if( !(comp instanceof JPanel)){
+		    if( !(comp instanceof JList)){
 		      return;
 		    }
 		    if(MenuSelectionManager.defaultManager().getSelectedPath().length > 0){
 		      return;
 		    }
-		    createTextActionMenu((JTextComponent)comp);
+		    createTextActionMenu();
 		    showPopup((Component)me.getSource(), me);
 		  }
 	
@@ -45,7 +45,7 @@ public class PopupEventQueue extends EventQueue {
 		    myPopup.show(source, me.getX(), me.getY());
 	}
 
-	private void createTextActionMenu(JTextComponent text){
+	private void createTextActionMenu(){
 		JPopupMenu jMenu = new JPopupMenu();
 		jMenu.add(new JMenuItem("Delete"));
 	}
