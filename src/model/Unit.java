@@ -14,12 +14,14 @@ public class Unit extends JGObject implements ModelConstants {
 	private int myMapX=0;
 	private int myMapY=0;
 	
-	public Unit(){
-		this(0,0);
+	public Unit(Player player, GameMap map){
+		this(0,0,player,map);
 	}
 	
-	public Unit(double initX, double initY){
+	public Unit(double initX, double initY, Player player, GameMap map){
 		this(DEFAULT_NAME, false, initX, initY, 0, DEFAULT_GRAPHIC_NAME);
+		myPlayer = player;
+		myMap = map;
 	}
 
 	public Unit(String name, boolean unique_id, double x, double y,
@@ -33,6 +35,14 @@ public class Unit extends JGObject implements ModelConstants {
 	
 	public GameMap getMap(){
 		return myMap;
+	}
+	
+	public int getMapX(){
+		return myMapX;
+	}
+	
+	public int getMapY(){
+		return myMapY;
 	}
 	
 	public Attributes getAttributes(){

@@ -16,5 +16,4 @@ public class Terrain implements ModelConstants {
 		// return unit.buff(myName);
 		return 0;
 	}
-
 }
