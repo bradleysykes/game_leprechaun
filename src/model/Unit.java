@@ -35,6 +35,14 @@ public class Unit extends JGObject implements ModelConstants {
 		return myMap;
 	}
 	
+	public Attributes getAttributes(){
+		return myAttributes;
+	}
+	
+	public Player getPlayer(){
+		return myPlayer;
+	}
+	
 	public void setMapPosition(int newX, int newY){
 		myMapX = newX;
 		myMapY = newY;
@@ -44,17 +52,16 @@ public class Unit extends JGObject implements ModelConstants {
 		// useAbility(moveIndex);
 	}
 	
+	public Tile getCurrentTile(){
+		return myMap.getTile(myMapX, myMapY);
+	}
+	
 	public void useAbility(int index){
 		//myAbilities.use(index);
 	}
 	
 	public Unit getTarget(int range){
 		return myMap.getTarget(myMapX,myMapY,range);
-	}
-
-	public Object getAttributes() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	
 }
