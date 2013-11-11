@@ -2,19 +2,21 @@ package gae;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JList;
 
-public class ToyUnit implements BoardListItem{
+public class NewUnit implements BoardListItem {
 
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return "Tim the Tank";
+		return "Add New Item";
 	}
 
 	@Override
 	public Icon getIcon() {
 		// TODO Auto-generated method stub
-		return new ImageIcon(Constants.ICON_PATH+"test_icon_image.png");
+		return new ImageIcon(Constants.ICON_PATH+"plus.gif");
 	}
 
 	@Override
@@ -25,9 +27,13 @@ public class ToyUnit implements BoardListItem{
 
 	@Override
 	public void onSelected(UnitList list) {
-		BoardBuffer.push(this);
+		/**
+		 * Prompt designer with view to set initial properties for this new Object
+		 * type.
+		 */
+		list.addNewItem(new ToyUnit());
+		
 	}
 	
 	
-
 }

@@ -23,6 +23,8 @@ public class UnitList extends JList {
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.addListSelectionListener(new EditListSelectionListener());
 		this.setCellRenderer(new EditListRenderer());
+		myModel.addElement(new ToyUnit());
+		myModel.addElement(new NewUnit());
 		//FOR DEBUG
 //		BoardListItem tu = new ToyUnit();
 //		this.addNewItem(tu);
@@ -44,18 +46,6 @@ public class UnitList extends JList {
 			label.setIcon(display.getIcon());
 			label.setText(display.getName());
 			return this;
-		}
-	}
-	
-	public class EditListSelectionListener implements ListSelectionListener {
-
-		@Override
-		public void valueChanged(ListSelectionEvent e) {
-			/**
-			 *  board object selected by designer. 
-			 *  Prepare object for board placement.
-			 */
-			
 		}
 		
 	}

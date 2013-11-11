@@ -3,6 +3,7 @@ package gae;
 import java.io.Serializable;
 
 import javax.swing.Icon;
+import javax.swing.JList;
 
 public interface BoardListItem<T extends Serializable>{
 	
@@ -15,5 +16,9 @@ public interface BoardListItem<T extends Serializable>{
 	
 	
 	public abstract Icon getIcon();
+	
+	public abstract Class getObjectClass();
+	
+	public abstract void onSelected(UnitList listSource);
 
 }
