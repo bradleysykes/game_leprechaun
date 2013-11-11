@@ -4,14 +4,14 @@ import jgame.JGObject;
 
 public class Unit extends JGObject {
 	
-	private Map myMap;
+	private GameMap myMap;
 	private Attributes myAttributes = new Attributes();
 	//private Movement myMovement;
 	//private Attack myAttack;
 	//private Abilities myAbilities;
 	//private Spawner mySpawner;
-	private double myX;
-	private double myY;
+	private int myX;
+	private int myY;
 	
 
 	public Unit(String name, boolean unique_id, double x, double y,
@@ -31,5 +31,8 @@ public class Unit extends JGObject {
 		//myAbilities.use(1);
 	}
 	
-
+	public Unit getTarget(int range){
+		return myMap.getTarget(myX,myY,range);
+	}
+	
 }
