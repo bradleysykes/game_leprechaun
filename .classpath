@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Copy of slogo_team09/lib/jgame-jre.jar"/>
+	<classpathentry kind="lib" path="/springies_team01/lib/jgame-jre.jar" sourcepath="/springies_team01/lib/jgame-src.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
