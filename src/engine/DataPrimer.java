@@ -18,7 +18,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class DataPrimer {
 	
 	private JFileChooser myFileChooser;
-	private Collection<Object> myGameObjectInfo;
+	private GameDataObject myGameData;
 	
 	public DataPrimer() {
 		myFileChooser = new JFileChooser();
@@ -26,6 +26,7 @@ public class DataPrimer {
 		myFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		myFileChooser.setFileFilter(filter);
 		selectAndParseXML();
+		loadGame();
 	}
 	
 	private void selectAndParseXML() {
@@ -37,9 +38,10 @@ public class DataPrimer {
 		}
 	}
 	
-	public Collection<Object> getGameObjectInfo() {
-		return myGameObjectInfo;
+	private void loadGame() {
+		new GameEngine(myGameData);
 	}
+	
 	
 	
 	

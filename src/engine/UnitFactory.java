@@ -1,5 +1,5 @@
 package engine;
 
-public class UnitFactory {
+public class UnitFactory  {
 
 }
