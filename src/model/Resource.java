@@ -28,5 +28,14 @@ public class Resource {
 	public void setName(String name) {
 		myName = name;
 	}
+	
+	//Added these two methods for data (Alex)
+	public double getAmount() {
+	    return myAmount;
+	}
+	
+	public double getHarvestRate() {
+	    return myHarvestRate;
+	}
 
 }
