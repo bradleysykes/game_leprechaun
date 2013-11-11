@@ -12,8 +12,8 @@ public abstract class Ability {
 		myRange = 0;
 		myRadius = 0;
 	}
-	public int useAbility(){
-		return 0;
+	public double useAbility(){
+		return 0.0;
 	}
 /*	
 	public Parameters addParameter(Parameters p){
