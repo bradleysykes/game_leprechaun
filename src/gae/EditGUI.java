@@ -8,14 +8,13 @@ import javax.swing.JPanel;
 import javax.swing.JToolBar;
 
 
-public class EditGUI extends JFrame {
+public class EditGUI extends JFrame implements Constants {
 	
 	public EditGUI(){
-		JPanel mainPanel = new JPanel(new BorderLayout());
-		mainPanel.add(new Workspace());
-		this.add(new JToolBar().add(new JButton("File")));
-		this.setContentPane(mainPanel);
-		this.setSize(new Dimension(1000,1000));
+		this.setLayout(new BorderLayout());
+		this.add(new Workspace(),BorderLayout.CENTER);
+		this.setPreferredSize(EDITGUI_INITIAL_SIZE);
+		this.setJMenuBar(new EditMenuBar());
 		this.pack();
 		this.setVisible(true);
 	}

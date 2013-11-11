@@ -9,6 +9,7 @@ import javax.swing.JTextArea;
 public class TaskPanel extends EditPanel {
 	
 	public TaskPanel(){
+		super();
 		JTextArea text = new JTextArea("To-do");
 		this.add(text);
 		this.setBackground(Color.ORANGE);
