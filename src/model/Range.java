@@ -1,6 +1,6 @@
 package model;
 
-public class Range extends Parameter {
+public class Range extends Parameters {
 
 	public Range(Ability ability) {
 		super(ability);

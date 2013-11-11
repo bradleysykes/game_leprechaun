@@ -7,9 +7,8 @@ public class Interact extends Ability{
 	}
 
 	@Override
-	public void useAbility() {
-		// TODO Auto-generated method stub
-		
+	public double useAbility() {
+		return 0;		
 	}
 
 }

@@ -60,5 +60,8 @@ public class Unit extends JGObject implements ModelConstants {
 		//myAbilities.use(index);
 	}
 	
-
+	public Unit getTarget(int range){
+		return myMap.getTarget(myMapX,myMapY,range);
+	}
+	
 }

@@ -8,9 +8,9 @@ public class Move extends Ability{
 	}
 
 	@Override
-	public void useAbility() {
+	public double useAbility() {
 		// TODO Auto-generated method stub
-		
+		return 0;
 	}
 
 }

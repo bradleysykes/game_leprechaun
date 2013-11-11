@@ -9,11 +9,12 @@ public class Harvest extends Ability{
 	}
 	
 	@Override
-	public void useAbility(){
+	public double useAbility(){
 		List<Resource> resources = myUnit.getCurrentTile().getResourcesOnTile();
 		for(Resource r : resources){
 			myUnit.getPlayer().adjustResources(r.getName(),r.harvest());
 		}
+		return 0;
 	}
 
 }

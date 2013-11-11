@@ -1,6 +1,6 @@
 package model;
 
-public class Radius extends Parameter{
+public class Radius extends Parameters{
 
 	public Radius(Ability ability) {
 		super(ability);
