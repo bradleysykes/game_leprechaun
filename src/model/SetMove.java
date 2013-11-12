@@ -16,14 +16,17 @@ public class SetMove extends Move {
 
 	@Override
 	public double canMoveToTile(Tile dest) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public List<Tile> getValidTiles() {
-		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public double prepAbility() {
+		return 0;
 	}
 
 }

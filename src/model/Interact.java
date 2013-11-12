@@ -10,8 +10,13 @@ public class Interact extends Ability{
 	}
 
 	@Override
-	public double useAbility() {
+	public double prepAbility() {
 		return 0;		
+	}
+
+	@Override
+	public double useAbility() {
+		return 0;
 	}
 
 }

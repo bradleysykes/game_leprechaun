@@ -29,7 +29,6 @@ public class Resource {
 		myName = name;
 	}
 	
-	//Added these two methods for data (Alex)
 	public double getAmount() {
 	    return myAmount;
 	}
