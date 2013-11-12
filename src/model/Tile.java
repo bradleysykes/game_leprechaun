@@ -1,13 +1,16 @@
 package model;
 
-import java.util.List;
+import java.util.*;
 
-public class Tile {
+
+public class Tile implements ModelConstants{
 	
 	private Resources myResources = new Resources();
 	private double myPassability;
 	private Terrain myTerrain;
 	private String myName;
+	private Collection<Unit> myUnits = new ArrayList<Unit>();
+	private int maxPopulation;
 	
 	public Tile(){
 		
@@ -18,6 +21,7 @@ public class Tile {
 		myPassability = passability;
 		myTerrain = terrain;
 		myName = name;
+		maxPopulation = DEFAULT_MAX_POPULATION;
 	}  
 	
 	public Resource addResource(Resource newResource){
@@ -47,5 +51,18 @@ public class Tile {
 	    return myName;
 	}
 	
+	public boolean addUnit(Unit unit){
+		if (myUnits.size() < maxPopulation)
+			return myUnits.add(unit);
+		return false;
+	}
+	
+	public boolean removeUnit(Unit unit){
+		return myUnits.remove(unit);
+	}
+	
+	public Collection<Unit> getUnits(){
+		return myUnits;
+	}
 
 }
