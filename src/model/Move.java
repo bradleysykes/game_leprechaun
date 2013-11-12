@@ -9,7 +9,7 @@ public class Move extends Ability{
 	}
 
 	@Override
-	public double useAbility() {
+	public double prepAbility() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
