@@ -24,7 +24,17 @@ public class Tile implements ModelConstants{
 		myTerrain = terrain;
 		myName = name;
 		maxPopulation = DEFAULT_MAX_POPULATION;
-	}  
+	}
+	
+	public Tile(Resources resources, double passability, Terrain terrain, String name,
+			Collection<Unit> units, int population){
+		myResources = resources;
+		myPassability = passability;
+		myTerrain = terrain;
+		myName = name;
+		myUnits = units;
+		maxPopulation = population;
+	}
 	
 	public Resource addResource(Resource newResource){
 		myResources.addResource(newResource);
