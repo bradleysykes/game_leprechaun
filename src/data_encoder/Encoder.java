@@ -25,9 +25,9 @@ import data_constants.Elements;
 
 /**
  * Receives information about a certain type of object and creates an XML file
- * that represents it. It is a superclass that is extended by different subclasses.
- * It implements interfaces which hold constants representing the names of XML 
- * elements and attributes.
+ * that represents it. It is a superclass that is extended by different encoder
+ * subclasses. It implements interfaces which hold constants representing the
+ * names of XML elements and attributes.
  * @author Alex Song
  *
  */
@@ -105,8 +105,8 @@ public abstract class Encoder implements Elements, Attributes {
         resources.addResource(new Resource("gas", 20, 7));
         Terrain terrain = new Terrain();
         terrain.setName("grass");
-        // tile should have x and y position
-        Tile tile = new Tile(resources, 1, terrain, "src/gae_resources/grass.jpg");
+        //Tile tile = new Tile(resources, 1, terrain, "src/gae_resources/grass.jpg");
+        Tile tile = new Tile();
         e.addXmlElement(tile);
         
         //add another tile
@@ -115,8 +115,8 @@ public abstract class Encoder implements Elements, Attributes {
         resources.addResource(new Resource("gas", 46, 25));
         terrain = new Terrain();
         terrain.setName("sand");
-        // tile should have x and y position
-        tile = new Tile(resources, 0, terrain, "src/gae_resources/sand.jpg");
+        tile = new Tile();
+        //tile = new Tile(resources, 0, terrain, "src/gae_resources/sand.jpg");
         e.addXmlElement(tile);
         //e.removeXmlElement(tile);
         
