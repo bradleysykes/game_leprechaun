@@ -2,18 +2,9 @@ package engine;
 
 import java.io.File;
 import java.util.Collection;
-
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
-
-
-/**
- * Uses the XMLParser to retrieve data about objects from XML file.
- * @author Dylan and Bernard
- *
- */
 
 public class DataPrimer {
 	
@@ -39,7 +30,7 @@ public class DataPrimer {
 	}
 	
 	private void loadGame(File xmlFile) {
-		new GameEngine(xmlFile);
+		// call parser(xmlFile)
 	}
 	
 	
