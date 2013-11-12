@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Player implements ModelConstants{
 	
 	private String myName;
-	private HashMap<String,Double> myResources;
+	private HashMap<String, Double> myResources;
 	private ArrayList<Unit> myUnits;
 	
 	public Player(){
