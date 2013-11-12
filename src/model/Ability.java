@@ -9,7 +9,12 @@ public abstract class Ability {
 	public Ability(Unit abilityUser) {
 		myUnit = abilityUser;
 	}
-	public double useAbility(){
+	public double prepAbility(){
 		return 0.0;
 	}
+	
+	public double useAbility(){
+		return 0.0;		
+	}
+	
 }
