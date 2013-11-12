@@ -54,6 +54,5 @@ public class Player implements ModelConstants{
 	public boolean checkWinningCondition() {
 		return myWinningCondition.check();
 	}
-	
 
 }
