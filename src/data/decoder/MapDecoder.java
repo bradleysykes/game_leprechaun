@@ -1,4 +1,4 @@
-package data_decoder;
+package data.decoder;
 
 public class MapDecoder {
 

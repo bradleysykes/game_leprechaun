@@ -35,7 +35,7 @@ public class Tile extends JGObject implements ModelConstants{
 	
 	public Tile(Resources resources, double passability, Terrain terrain, String name,
 			Collection<Unit> units, int population, int x, int y){
-		super("",false,x,y,0,null);
+		super("",false,0,0,0,null);
 		myResources = resources;
 		myPassability = passability;
 		myTerrain = terrain;

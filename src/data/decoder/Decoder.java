@@ -1,12 +1,12 @@
-package data_decoder;
+package data.decoder;
 
 import java.io.File;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import data_constants.Attributes;
-import data_constants.Elements;
+import data.Attributes;
+import data.Elements;
 import engine.GameEngine;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

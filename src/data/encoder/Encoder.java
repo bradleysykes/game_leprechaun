@@ -1,8 +1,9 @@
-package data_encoder;
+package data.encoder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.Collection;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -16,11 +17,12 @@ import model.Resource;
 import model.Resources;
 import model.Terrain;
 import model.tile.Tile;
+import model.unit.Unit;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import data_constants.Attributes;
-import data_constants.Elements;
+import data.Attributes;
+import data.Elements;
 
 
 /**
@@ -105,8 +107,9 @@ public abstract class Encoder implements Elements, Attributes {
         resources.addResource(new Resource("gas", 20, 7));
         Terrain terrain = new Terrain();
         terrain.setName("grass");
-        //Tile tile = new Tile(resources, 1, terrain, "src/gae_resources/grass.jpg");
-        Tile tile = new Tile();
+        //need engine to create tile..
+        Tile tile = new Tile(resources, 1, terrain, "src/gae_resources/grass.jpg",
+             null, 3, 1, 2);
         e.addXmlElement(tile);
         
         //add another tile
@@ -116,11 +119,11 @@ public abstract class Encoder implements Elements, Attributes {
         terrain = new Terrain();
         terrain.setName("sand");
         tile = new Tile();
-        //tile = new Tile(resources, 0, terrain, "src/gae_resources/sand.jpg");
+        tile = new Tile(resources, 2, terrain, "src/gae_resources/sand.jpg",
+                             null, 20, 3, 5);
         e.addXmlElement(tile);
         //e.removeXmlElement(tile);
-        
-        e.saveXML("src/dataResources/map.xml");
+        e.saveXML("src/data/resources/map.xml");
         
     }
     

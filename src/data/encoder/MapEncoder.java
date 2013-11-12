@@ -1,4 +1,4 @@
-package data_encoder;
+package data.encoder;
 
 import javax.xml.parsers.ParserConfigurationException;
 import model.GameMap;
@@ -28,7 +28,7 @@ public class MapEncoder extends Encoder {
      * @throws ParserConfigurationException
      */
     public MapEncoder(int xDim, int yDim) throws ParserConfigurationException {
-        gameMap = new GameMap(xDim, yDim);
+        //gameMap = new GameMap(xDim, yDim);
         initEncoder(MAP_ROOT_NAME);
         myRoot.setAttribute(X_DIM, String.valueOf(xDim));
         myRoot.setAttribute(Y_DIM, String.valueOf(yDim));
@@ -44,7 +44,7 @@ public class MapEncoder extends Encoder {
         tileElement.setAttribute(Y_COORD, String.valueOf(tile.getY()));
         tileElement.setAttribute(PASSABILITY, String.valueOf(tile.getPassability()));
         tileElement.setAttribute(IMAGE, tile.getImageName());
-        tileElement.setAttribute(MAX_POP, String.valueOf(tile.getMaxPopulation()));
+        tileElement.setAttribute(MAX_POP, String.valueOf(tile.getMaxPop()));
         
         Element terrainElement = myXmlDocument.createElement(TERRAIN);
         terrainElement.setAttribute(NAME, tile.getTerrain().getName());
