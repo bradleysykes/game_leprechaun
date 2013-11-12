@@ -20,7 +20,7 @@ import org.xml.sax.SAXException;
  * 
  * This class will be the superclass of specific decoders.
  * Decoder will parse the xml file, get the corresponding data,
- * and create the object. (Parser + Factory)
+ * and create the objects. (Parser + Factory)
  * 
  * @author Seunghyun Lee
  *
