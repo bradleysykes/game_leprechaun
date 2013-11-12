@@ -6,6 +6,7 @@ import model.ModelConstants;
 import model.Player;
 import model.tile.Tile;
 import jgame.JGObject;
+import java.util.*;
 
 public class Unit extends JGObject implements ModelConstants {
 	
@@ -66,7 +67,13 @@ public class Unit extends JGObject implements ModelConstants {
 	}
 	
 	public Unit getTarget(int range){
-		return myMap.getTargetUnit(myCurrentTile,range);
+		List<Tile> validTiles = new ArrayList<Tile>();
+		for (int i = myCurrentTile.getX() - range; i <= myCurrentTile.getX() + range; i++){
+			for (int j = myCurrentTile.getY() - range; i <= myCurrentTile.getY() + range; j++){
+				validTiles.add(myMap.getTile(i, j));
+			}
+		}
+		return myMap.getTargetUnit(validTiles);
 	}
 	
 }

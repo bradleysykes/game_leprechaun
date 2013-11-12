@@ -33,6 +33,19 @@ public class Tile extends JGObject implements ModelConstants{
 		myX = x;
 		myY = y;
 	}
+	
+	public Tile(Resources resources, double passability, Terrain terrain, String name,
+			Collection<Unit> units, int population, int x, int y){
+		super("",false,x,y,0,null);
+		myResources = resources;
+		myPassability = passability;
+		myTerrain = terrain;
+		myGraphicName = name;
+		myUnits = units;
+		myMaxPopulation = population;
+		myX = x;
+		myY = y;
+	}
 
 	public Tile(@MyAnnotation(name = "Passability", specs = "Number greater than zero") double passability, 
 			@MyAnnotation(name = "Max Population on Tile", specs = "Number greater than zero") int maxPop){
