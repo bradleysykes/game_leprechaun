@@ -1,4 +1,4 @@
-package data;
+package data_encoder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,7 +15,8 @@ import javax.xml.transform.stream.StreamResult;
 import model.Resource;
 import model.Resources;
 import model.Terrain;
-import model.Tile;
+import model.tile.Tile;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 

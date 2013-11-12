@@ -1,5 +1,8 @@
 package model;
 
+import model.tile.Tile;
+import model.unit.Unit;
+
 public class BudgetMove extends Move {
 	
 	public BudgetMove(Unit abilityUser){

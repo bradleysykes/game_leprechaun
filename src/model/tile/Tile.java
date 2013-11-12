@@ -1,6 +1,13 @@
-package model;
+package model.tile;
 
-import java.util.List;
+import java.util.*;
+
+import model.ModelConstants;
+import model.MyAnnotation;
+import model.Resource;
+import model.Resources;
+import model.Terrain;
+import model.unit.Unit;
 
 public class Tile implements ModelConstants{
 	
@@ -8,8 +15,10 @@ public class Tile implements ModelConstants{
 	private double myPassability;
 	private Terrain myTerrain;
 	private String myGraphicName;
+	private Collection<Unit> myUnits = new ArrayList<Unit>();
 	private int myX;
 	private int myY;
+	private int myMaxPopulation;
 	
 	public Tile(){
 		myPassability = DEFAULT_ATTRIBUTE;
@@ -18,11 +27,9 @@ public class Tile implements ModelConstants{
 	}
 
 	public Tile(@MyAnnotation(name = "Passability", specs = "Number greater than zero") double passability, 
-			@MyAnnotation(name = "Terrain Type", specs = "Name of terrain") String terrain, 
-			@MyAnnotation(name = "Graphic Name", specs = "Name of tile's graphic") String graphicName){
+			@MyAnnotation(name = "Max Population on Tile", specs = "Number greater than zero") int maxPop){
 		myPassability = passability;
-		myTerrain = new Terrain(terrain);
-		myGraphicName = graphicName;
+		myMaxPopulation = maxPop;
 	}
 	
 	public Resource addResource(Resource newResource){
@@ -63,5 +70,22 @@ public class Tile implements ModelConstants{
 		return myY;
 	}
 	
+	public boolean addUnit(Unit unit){
+		if (myUnits.size() < myMaxPopulation)
+			return myUnits.add(unit);
+		return false;
+	}
+	
+	public boolean removeUnit(Unit unit){
+		return myUnits.remove(unit);
+	}
+	
+	public Collection<Unit> getUnits(){
+		return myUnits;
+	}
+	
+	public boolean equals(Tile other){
+		return(this.getX()==other.getX() && this.getY()==other.getY());
+	}
 
 }

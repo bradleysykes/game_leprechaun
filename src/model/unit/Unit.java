@@ -1,5 +1,10 @@
-package model;
+package model.unit;
 
+import model.Attributes;
+import model.GameMap;
+import model.ModelConstants;
+import model.Player;
+import model.tile.Tile;
 import jgame.JGObject;
 
 public class Unit extends JGObject implements ModelConstants {
@@ -13,11 +18,11 @@ public class Unit extends JGObject implements ModelConstants {
 	//private Abilities myAbilities;
 	private Tile myCurrentTile;
 	
-	public Unit(Player player, GameMap map){
-		this(0,0,player,map);
+	public Unit(String name, Player player, GameMap map){
+		this(name,0,0,player,map);
 	}
 	
-	public Unit(double initX, double initY, Player player, GameMap map){
+	public Unit(String name, double initX, double initY, Player player, GameMap map){
 		this(DEFAULT_NAME, false, initX, initY, 0, DEFAULT_GRAPHIC_NAME);
 		myPlayer = player;
 		myMap = map;

@@ -3,6 +3,8 @@ package editorMenus;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -28,6 +30,7 @@ public class PropertiesChooser extends JPanel {
 		myTitle = title;
 		this.createAndAddGuts();
 		this.generateContent();
+		this.addActionListeners();
 	}
 	private void createAndAddGuts() {
 		myLeftPane = new ItemListPane("Available Options");
@@ -50,5 +53,20 @@ public class PropertiesChooser extends JPanel {
 			e.printStackTrace();
 		}
 	}
-	
+	private void addActionListeners() {
+		myLTRMover.addActionListener(new MoveItemsAction(myLeftPane, myRightPane));
+		myRTLMover.addActionListener(new MoveItemsAction(myRightPane, myLeftPane));
+	}
+	private class MoveItemsAction implements ActionListener {
+		private ItemListPane myOriginPane;
+		private ItemListPane myDestinationPane;
+		MoveItemsAction(ItemListPane originPane, ItemListPane destinationPane) {
+			myOriginPane = originPane;
+			myDestinationPane = destinationPane;
+		}
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			myOriginPane.myModel.removeElementAt(0);			
+		}
+	}
 }

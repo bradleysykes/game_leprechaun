@@ -1,5 +1,7 @@
 package model;
 
+import model.unit.Unit;
+
 public class Terrain implements ModelConstants {
 	
 	private String myName;
