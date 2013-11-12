@@ -9,8 +9,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class DataPrimer {
 	
 	private JFileChooser myFileChooser;
+	private GameEngine myGameEngine;
 	
-	public DataPrimer() {
+	public DataPrimer(GameEngine gameEngine) {
+		myGameEngine = gameEngine;
 		myFileChooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("XML Files Only", "xml");
 		myFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -20,7 +22,7 @@ public class DataPrimer {
 	}
 	
 	private File selectAndParseXML() {
-		int value = myFileChooser.showOpenDialog(new JFrame()); //needs a parent component.. probably the GAE
+		int value = myFileChooser.showOpenDialog(myGameEngine); //needs a parent component.. probably the GAE
 		File xmlFile = null;
 		if (value == myFileChooser.APPROVE_OPTION) {
 			xmlFile = myFileChooser.getSelectedFile();
@@ -30,7 +32,7 @@ public class DataPrimer {
 	}
 	
 	private void loadGame(File xmlFile) {
-		// call parser(xmlFile)
+		// Parser(xmlFile, myGameEngine)
 	}
 	
 	

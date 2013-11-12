@@ -7,6 +7,7 @@ import java.util.Collection;
 import jgame.JGColor;
 import jgame.platform.JGEngine;
 import model.*;
+import model.condition.Condition;
 import model.tile.Tile;
 import model.unit.Unit;
 
@@ -27,8 +28,8 @@ public class GameEngine extends JGEngine {
 	}
 	
 	public void initCanvas() {
-		setCanvasSettings(1,  // width of the canvas in tiles
-                1,  // height of the canvas in tiles
+		setCanvasSettings(myViewerWidth/myTileWidth,  // width of the canvas in tiles
+                myViewerHeight/myTileHeight,  // height of the canvas in tiles
                 myTileWidth,  // width of one tile
                 myTileHeight,  // height of one tile
                 null,// foreground colour -> use default colour white
@@ -43,8 +44,17 @@ public class GameEngine extends JGEngine {
 	}
 	
 	public void doFrame() {
-		myGameManager.manageTurns();
+		//checkWinningConditions();
 	}
+	
+//	public void checkWinningConditions() {     //pending implementation of checkVictory()
+//		for (Player p : myPlayers) {
+//			if(p.checkVictory()) {
+//				System.out.println(p.getName() + " wins!");  //just print for testing
+//			}
+//		}
+//				
+//	}
 	
 	public void nextPlayer() {
 		

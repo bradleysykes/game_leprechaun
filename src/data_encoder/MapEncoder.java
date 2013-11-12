@@ -40,11 +40,11 @@ public class MapEncoder extends Encoder {
      */
     private void addTileElement(Tile tile) {
         Element tileElement = myXmlDocument.createElement(TILE);
-        tileElement.setAttribute(X_COORD, String.valueOf(/*tile.getX()*/1));
-        tileElement.setAttribute(Y_COORD, String.valueOf(/*tile.getY()*/1));
+        tileElement.setAttribute(X_COORD, String.valueOf(tile.getX()));
+        tileElement.setAttribute(Y_COORD, String.valueOf(tile.getY()));
         tileElement.setAttribute(PASSABILITY, String.valueOf(tile.getPassability()));
         tileElement.setAttribute(IMAGE, tile.getImageName());
-        tileElement.setAttribute(MAX_POP, /*tile.getMaxPopulation()*/String.valueOf(3));
+        tileElement.setAttribute(MAX_POP, String.valueOf(tile.getMaxPopulation()));
         
         Element terrainElement = myXmlDocument.createElement(TERRAIN);
         terrainElement.setAttribute(NAME, tile.getTerrain().getName());
@@ -80,8 +80,8 @@ public class MapEncoder extends Encoder {
             NamedNodeMap attributes = child.getAttributes();
             String xCoord = attributes.getNamedItem(X_COORD).toString();
             String yCoord = attributes.getNamedItem(Y_COORD).toString();
-            if(xCoord.equals(X_COORD + "=\"" + /*tile.getX()*/1 + "\"") &&
-                    yCoord.equals(Y_COORD + "=\"" + /*tile.getY()*/1 + "\"")) {
+            if(xCoord.equals(X_COORD + "=\"" + tile.getX() + "\"") &&
+                    yCoord.equals(Y_COORD + "=\"" + tile.getY() + "\"")) {
                 current.removeChild(child);
                 i--;
             }
