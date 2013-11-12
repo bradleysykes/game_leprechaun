@@ -11,7 +11,7 @@ public class Waypoint extends Condition {
 	
 	@Override
 	public boolean check(){
-		return (myUnit.getCurrentTile() == myTile);
+		return (myUnit.getCurrentTile().equals(myTile));
 	}
 
 }
