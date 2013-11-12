@@ -1,4 +1,4 @@
-package data;
+package data_encoder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,9 +15,12 @@ import javax.xml.transform.stream.StreamResult;
 import model.Resource;
 import model.Resources;
 import model.Terrain;
-import model.Tile;
+import model.tile.Tile;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import data_constants.Attributes;
+import data_constants.Elements;
 
 
 /**
@@ -95,7 +98,7 @@ public abstract class Encoder implements Elements, Attributes {
     
     //for testing
     public static void main(String[] args) throws Exception {
-        Encoder e = new MapEncoder();
+        Encoder e = new MapEncoder(20, 20);
         //add Tile
         Resources resources = new Resources();
         resources.addResource(new Resource("minerals", 10, 5));
@@ -115,8 +118,10 @@ public abstract class Encoder implements Elements, Attributes {
         // tile should have x and y position
         tile = new Tile(resources, 0, terrain, "src/gae_resources/sand.jpg");
         e.addXmlElement(tile);
+        //e.removeXmlElement(tile);
         
         e.saveXML("src/dataResources/map.xml");
+        
     }
     
 

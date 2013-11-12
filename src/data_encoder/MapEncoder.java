@@ -1,9 +1,14 @@
-package data;
+package data_encoder;
 
 import javax.xml.parsers.ParserConfigurationException;
+import model.GameMap;
 import model.Resource;
-import model.Tile;
+import model.tile.Tile;
+
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 
 /**
@@ -14,13 +19,19 @@ import org.w3c.dom.Element;
  */
 public class MapEncoder extends Encoder {
  
+    private GameMap gameMap;
     /**
      * Creates a new instance of a MapEncoder which converts map information into
      * an XML file. 
+     * @param xDim x-dimension of the game map
+     * @param yDim y-dimension of the game map
      * @throws ParserConfigurationException
      */
-    public MapEncoder() throws ParserConfigurationException {
+    public MapEncoder(int xDim, int yDim) throws ParserConfigurationException {
+        gameMap = new GameMap(xDim, yDim);
         initEncoder(MAP_ROOT_NAME);
+        myRoot.setAttribute(X_DIM, String.valueOf(xDim));
+        myRoot.setAttribute(Y_DIM, String.valueOf(yDim));
     }
 
     /**
@@ -29,11 +40,11 @@ public class MapEncoder extends Encoder {
      */
     private void addTileElement(Tile tile) {
         Element tileElement = myXmlDocument.createElement(TILE);
-        //getX() and getY() needed in tile for x and y positions; hard-coded for now
-        tileElement.setAttribute(X_ID, String.valueOf(1));
-        tileElement.setAttribute(Y_ID, String.valueOf(1));
+        tileElement.setAttribute(X_COORD, String.valueOf(/*tile.getX()*/1));
+        tileElement.setAttribute(Y_COORD, String.valueOf(/*tile.getY()*/1));
         tileElement.setAttribute(PASSABILITY, String.valueOf(tile.getPassability()));
         tileElement.setAttribute(IMAGE, tile.getImageName());
+        tileElement.setAttribute(MAX_POP, /*tile.getMaxPopulation()*/String.valueOf(3));
         
         Element terrainElement = myXmlDocument.createElement(TERRAIN);
         terrainElement.setAttribute(NAME, tile.getTerrain().getName());
@@ -62,7 +73,19 @@ public class MapEncoder extends Encoder {
      * @param tile tile to remove
      */
     private void removeTileElement(Tile tile) {
-        //TODO
+        Element current = myRoot;
+        NodeList children = current.getChildNodes();
+        for(int i = 0; i < children.getLength(); i++) {
+            Node child = children.item(i);
+            NamedNodeMap attributes = child.getAttributes();
+            String xCoord = attributes.getNamedItem(X_COORD).toString();
+            String yCoord = attributes.getNamedItem(Y_COORD).toString();
+            if(xCoord.equals(X_COORD + "=\"" + /*tile.getX()*/1 + "\"") &&
+                    yCoord.equals(Y_COORD + "=\"" + /*tile.getY()*/1 + "\"")) {
+                current.removeChild(child);
+                i--;
+            }
+        }
     }
     
     public void removeXmlElement(Object o) {

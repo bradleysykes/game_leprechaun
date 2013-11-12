@@ -4,6 +4,8 @@ import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import model.Tile;
+
 public class EditListSelectionListener implements ListSelectionListener {
 
 	@Override
@@ -15,10 +17,14 @@ public class EditListSelectionListener implements ListSelectionListener {
 			try{
 			BoardList listSource =(BoardList) e.getSource();
 			if(listSource.getSelectedIndex()!=-1){
-				System.out.println("woohoo");
 				BoardListItem selectedItem = (BoardListItem)listSource.getSelectedValue();
 				//Class selectedClass = selectedItem.getObjectClass();
-				selectedItem.onSelected(listSource);
+				if(selectedItem instanceof Tile){
+					BoardBuffer.push(selectedItem);
+				}
+				if(selectedItem instanceof NewUnit){
+					//show dialog to create new tile
+				}
 				listSource.clearSelection();
 			}
 			}

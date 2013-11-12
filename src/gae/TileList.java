@@ -11,5 +11,10 @@ public class TileList extends BoardList {
 		// TODO Auto-generated method stub
 		return "Tiles";
 	}
+	@Override
+	public String getPackageName() {
+		// TODO Auto-generated method stub
+		return Constants.TILE_PACKAGE_NAME;
+	}
 
 }

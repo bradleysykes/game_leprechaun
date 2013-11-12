@@ -15,4 +15,8 @@ public class Resources {
 		return myResources;
 	}
 
+	public void removeResource(Resource resource) {
+		myResources.remove(resource);
+	}
+
 }

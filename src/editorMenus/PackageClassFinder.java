@@ -12,7 +12,7 @@ import java.util.List;
 public class PackageClassFinder {
 	public PackageClassFinder() {}
 	
-	public static List<Class> getClassesForPackage(String pckgname) throws ClassNotFoundException {
+	public List<Class> getClassesForPackage(String pckgname) throws ClassNotFoundException {
          // This will hold a list of directories matching the pckgname. There may be more than one if a package is split over multiple jars/paths
          ArrayList<File> directories = new ArrayList<File>();
          try {
