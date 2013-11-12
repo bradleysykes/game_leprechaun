@@ -2,8 +2,6 @@ package model.tile;
 
 import java.util.*;
 
-import jgame.JGObject;
-
 import model.ModelConstants;
 import model.MyAnnotation;
 import model.Resource;
@@ -11,7 +9,7 @@ import model.Resources;
 import model.Terrain;
 import model.unit.Unit;
 
-public class Tile extends JGObject implements ModelConstants{
+public class Tile implements ModelConstants{
 	
 	private Resources myResources = new Resources();
 	private double myPassability = DEFAULT_ATTRIBUTE;
@@ -22,20 +20,13 @@ public class Tile extends JGObject implements ModelConstants{
 	private int myY = 0;
 	private int myMaxPopulation = (int) DEFAULT_ATTRIBUTE;
 	
-	public Tile(){
-		super("",false,0,0,0,null);
-		this.setGraphic(myGraphicName);
-	}
-	
 	public Tile(int x, int y){
-		this();
 		myX = x;
 		myY = y;
 	}
 	
 	public Tile(Resources resources, double passability, Terrain terrain, String name,
 			Collection<Unit> units, int population, int x, int y){
-		super("",false,x,y,0,null);
 		myResources = resources;
 		myPassability = passability;
 		myTerrain = terrain;
@@ -48,7 +39,6 @@ public class Tile extends JGObject implements ModelConstants{
 
 	public Tile(@MyAnnotation(name = "Passability", specs = "Number greater than zero") double passability, 
 			@MyAnnotation(name = "Max Population on Tile", specs = "Number greater than zero") int maxPop){
-		this();
 		myPassability = passability;
 		myMaxPopulation = maxPop;
 	}
@@ -116,7 +106,6 @@ public class Tile extends JGObject implements ModelConstants{
 	
 	public String setImageName(String newImageName){
 		myGraphicName = newImageName;
-		this.setGraphic(myGraphicName);
 		return myGraphicName;
 	}
 	
