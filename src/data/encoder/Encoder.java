@@ -1,4 +1,4 @@
-package data_encoder;
+package data.encoder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,11 +16,10 @@ import model.Resource;
 import model.Resources;
 import model.Terrain;
 import model.tile.Tile;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import data_constants.Attributes;
-import data_constants.Elements;
+import data.constants.Attributes;
+import data.constants.Elements;
 
 
 /**

@@ -1,12 +1,12 @@
-package data_decoder;
+package data.decoder;
 
 import java.io.File;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import data_constants.Attributes;
-import data_constants.Elements;
+import data.constants.Attributes;
+import data.constants.Elements;
 import engine.GameEngine;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -26,18 +26,17 @@ import org.xml.sax.SAXException;
  *
  */
 public abstract class Decoder implements Attributes, Elements {
-    GameEngine myEngine;
+    Element myRoot;
     
-    
-    public Decoder(GameEngine engine) {
-        myEngine = engine;
+    public Decoder(Element root) {
+        myRoot = root;
+    }
+        
+    public String getAttribute(String tag, Element element) {
+        return element.getAttribute(tag).toString();
     }
     
-    public String getElement(String tag, Element element) {
-        return element.getElementsByTagName(tag).toString();
-    }
-    
-    public abstract void create(Element element);
+    public abstract void load(GameEngine engine);
     
     
 }

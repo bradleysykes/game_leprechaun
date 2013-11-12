@@ -1,4 +1,4 @@
-package data_encoder;
+package data.encoder;
 
 import javax.xml.parsers.ParserConfigurationException;
 
