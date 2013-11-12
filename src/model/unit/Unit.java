@@ -6,6 +6,7 @@ import model.ModelConstants;
 import model.Player;
 import model.tile.Tile;
 import jgame.JGObject;
+import java.util.*;
 
 public class Unit extends JGObject implements ModelConstants {
 	
@@ -37,28 +38,40 @@ public class Unit extends JGObject implements ModelConstants {
 		
 	}
 	
+	public void setMap(GameMap map){
+		myMap = map;
+	}
+	
 	public GameMap getMap(){
 		return myMap;
 	}
 	
-	public Attributes getAttributes(){
-		return myAttributes;
+	public void setPlayer(Player player){
+		myPlayer = player;
 	}
 	
 	public Player getPlayer(){
 		return myPlayer;
 	}
 	
+	public void setAttributes(Attributes a){
+		myAttributes = a;
+	}
+	
+	public Attributes getAttributes(){
+		return myAttributes;
+	}
+	
 	public void setMapPosition(int newX, int newY){
 		myCurrentTile = myMap.getTile(newX,newY);
 	}
 	
-	public Tile getCurrentTile(){
-		return myCurrentTile;
-	}
-	
 	public void setCurrentTile(Tile t){
 		myCurrentTile = t;
+	}
+	
+	public Tile getCurrentTile(){
+		return myCurrentTile;
 	}
 	
 	public void useAbility(int index){
@@ -66,7 +79,13 @@ public class Unit extends JGObject implements ModelConstants {
 	}
 	
 	public Unit getTarget(int range){
-		return myMap.getTargetUnit(myCurrentTile,range);
+		List<Tile> validTiles = new ArrayList<Tile>();
+		for (int i = myCurrentTile.getX() - range; i <= myCurrentTile.getX() + range; i++){
+			for (int j = myCurrentTile.getY() - range; i <= myCurrentTile.getY() + range; j++){
+				validTiles.add(myMap.getTile(i, j));
+			}
+		}
+		return myMap.getTargetUnit(validTiles);
 	}
 	
 }

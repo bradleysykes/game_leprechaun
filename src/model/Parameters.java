@@ -6,12 +6,10 @@ public class Parameters implements ModelConstants {
 	private int myRadius;
 	private int myPower;
 
-	
 	public Parameters(){
 		this.setRange(DEFAULT_PARAMETER);
 		this.setRadius(DEFAULT_PARAMETER);
 		this.setPower(DEFAULT_PARAMETER);
-
 	}
 	
 	public void setParameters(int range, int radius, int power){

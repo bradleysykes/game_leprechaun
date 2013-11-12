@@ -1,4 +1,4 @@
-package data.constants;
+package data;
 
 /**
  * Interface of constants used for element names in the XML file
