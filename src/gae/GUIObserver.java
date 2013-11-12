@@ -19,9 +19,10 @@ public class GUIObserver implements Observer{
 	}
 
 	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-		
+	public void update(Object o) {
+		for(Observable ob:myObservable){
+			ob.execute(o);
+		}
 	}
 
 }

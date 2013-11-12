@@ -1,5 +1,8 @@
 package gae;
 
+import javax.xml.parsers.ParserConfigurationException;
+
+import data.encoder.MapEncoder;
 import util.reflection.Reflection;
 import model.GameMap;
 import model.tile.Tile;
@@ -8,9 +11,17 @@ import jgame.JGObject;
 import jgame.platform.JGEngine;
 
 public class MapView extends JGEngine {
+	
+	private MapEncoder myEncoder;
 
 	public MapView(){
 		initEngineComponent(500,500);
+		try {
+			myEncoder = new MapEncoder(500,500);
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
@@ -20,10 +31,11 @@ public class MapView extends JGEngine {
 	}
 	
 	public void placeOnBoard(){
-//		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
-//			defineImage(Bo,"-",0, "resources/"+BoardBuffer.retrieve().getRelativeImagePath(),"-");
-//			new JGObject("test", true, this.getMouseX(),this.getMouseY(), 0, BoardBuffer.retrieve().getName());
-//		}
+		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
+			defineImage("test","-",0, "resources/"+BoardBuffer.retrieve().getRelativeImagePath(),"-");
+			new JGObject("test", true, this.getMouseX(),this.getMouseY(), 0, "test");
+			System.out.println("murica");
+		}
 	}
 	
 	public void doFrame(){
@@ -37,11 +49,14 @@ public class MapView extends JGEngine {
 	}
 
 
-	public void setDefaultTiles(String className) {
+	public void setDefaultTiles() {
 		GameMap map = new GameMap(this.getWidth(),this.getHeight());
 		for(int q=0;q<this.pfHeight();q+=20){
 			for(int m = 0;m<this.pfWidth();m+=20){
-				Reflection.createInstance(className);
+				System.out.println("Tile placed");
+//				Tile t = new Tile();
+//				myEncoder.addXmlElement(t);
+				
 			}
 		}
 	}

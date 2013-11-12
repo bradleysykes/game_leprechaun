@@ -39,6 +39,7 @@ public class EditTabbedView extends JTabbedPane {
 			BoardListItem item = (BoardListItem) Reflection.createInstance(c.getName());
 			list.addNewItem(item);
 		}
+		list.addNewItem(new NewUnit(list.getListType()));
 		return list;
 	}
 	

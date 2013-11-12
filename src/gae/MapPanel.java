@@ -22,8 +22,8 @@ public class MapPanel extends EditPanel {
 	private MapView myMapView;
 	private PackageClassFinder myFinder;
 
-	public MapPanel(){
-		super();
+	public MapPanel(Observer observer){
+		super(observer);
 		myFinder = new PackageClassFinder();
 		this.setLayout(new BorderLayout());
 		this.initialize();
@@ -32,8 +32,8 @@ public class MapPanel extends EditPanel {
 	public void setDefaultTiles(){
 		try {
 			List<Class> classes = myFinder.getClassesForPackage(Constants.TILE_PACKAGE_NAME);
-			String tileClass = classes.get(0).getName();
-			myMapView.setDefaultTiles(tileClass);
+			
+			myMapView.setDefaultTiles();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,6 +44,12 @@ public class MapPanel extends EditPanel {
 	public void initialize(){
 		myMapView = new MapView();
 		this.add(myMapView, BorderLayout.CENTER);
+		this.setDefaultTiles();
+	}
+
+	@Override
+	public void execute(Object o) {
+		
 	}
 
 }

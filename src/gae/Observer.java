@@ -2,7 +2,7 @@ package gae;
 
 public interface Observer {
 	
-	public void update();
+	public void update(Object o);
 	
 	public void setUpdate();
 
