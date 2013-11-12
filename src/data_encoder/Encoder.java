@@ -71,7 +71,7 @@ public abstract class Encoder implements Elements, Attributes {
         TransformerFactory tFactory = TransformerFactory.newInstance();
         Transformer transformer = formatXML(tFactory.newTransformer());
         // use fos for saving to file; use System.out for printing to console
-        transformer.transform(new DOMSource(myXmlDocument), new StreamResult(fos));
+        transformer.transform(new DOMSource(myXmlDocument), new StreamResult(System.out));
     }
 
     /**
@@ -115,8 +115,10 @@ public abstract class Encoder implements Elements, Attributes {
         // tile should have x and y position
         tile = new Tile(resources, 0, terrain, "src/gae_resources/sand.jpg");
         e.addXmlElement(tile);
+        e.removeXmlElement(tile);
         
         e.saveXML("src/dataResources/map.xml");
+        
     }
     
 
