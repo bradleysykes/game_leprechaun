@@ -2,6 +2,6 @@ package model.condition;
 
 public abstract class Condition {
 
-	abstract boolean check();
+	public abstract boolean check();
 
 }
