@@ -2,7 +2,8 @@ package data_encoder;
 
 import javax.xml.parsers.ParserConfigurationException;
 import model.Resource;
-import model.Tile;
+import model.tile.Tile;
+
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

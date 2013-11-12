@@ -6,6 +6,8 @@ import java.util.Collection;
 
 import jgame.platform.JGEngine;
 import model.*;
+import model.tile.Tile;
+import model.unit.Unit;
 
 public class GameEngine extends JGEngine {
 	
