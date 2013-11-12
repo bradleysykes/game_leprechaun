@@ -7,17 +7,6 @@ import javax.swing.ImageIcon;
 
 public class ToyTile implements BoardListItem {
 
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return "Rock";
-	}
-
-	@Override
-	public Icon getIcon() {
-		// TODO Auto-generated method stub
-		return new ImageIcon(Constants.ICON_PATH+"test_tile.jpg");
-	}
 
 	@Override
 	public String getImagePath() {
@@ -30,9 +19,9 @@ public class ToyTile implements BoardListItem {
 	}
 
 	@Override
-	public Class getObjectClass() {
+	public String getObjectClass() {
 		// TODO Auto-generated method stub
-		return this.getClass();
+		return this.getClass().toString();
 	}
 
 }

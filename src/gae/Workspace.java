@@ -19,8 +19,6 @@ public class Workspace extends JPanel {
 		EditView leftGroup = new EditView(left,new MapPanel(),JSplitPane.HORIZONTAL_SPLIT,0.3);
 		EditView everything = new EditView(leftGroup, right, JSplitPane.HORIZONTAL_SPLIT,0.5);
 		this.add(everything);
-//		this.setMinimumSize(new Dimension(100,100));
-//		this.setBorder(BorderFactory.createLineBorder(Color.black));
 		this.add(new EditToolbar(),BorderLayout.PAGE_START);
 	}
 }
