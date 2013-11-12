@@ -1,4 +1,4 @@
-package data;
+package data_encoder;
 
 /**
  * Interface of constants used for attribute names in the XML file
@@ -6,8 +6,8 @@ package data;
  *
  */
 public interface Attributes {
-    String X_ID = "x_id";
-    String Y_ID = "y_id";
+    String X_COORD = "x_coord";
+    String Y_COORD = "y_coord";
     String PASSABILITY = "passability";
     String IMAGE = "image";
     String NAME = "name";

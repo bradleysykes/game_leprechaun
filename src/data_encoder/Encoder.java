@@ -1,4 +1,4 @@
-package data;
+package data_encoder;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -2,6 +2,5 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/analysis_jrg35/lib/jgame-jre.jar" sourcepath="/analysis_jrg35/lib/jgame-src.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
