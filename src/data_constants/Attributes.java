@@ -13,5 +13,6 @@ public interface Attributes {
     String NAME = "name";
     String AMOUNT = "amount";
     String HARVEST_RATE = "harvest_rate";
+    String MAX_POP = "max_population";
     
 }
