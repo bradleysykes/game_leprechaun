@@ -26,7 +26,7 @@ public abstract class Move extends Ability{
 		double cost = canMoveToTile(myTarget);
 		if(cost>0){
 			myUnit.setCurrentTile(myTarget);
-			myUnit.getAttributes().setStamina(myUnit.getAttributes().getStamina()-cost);
+			myUnit.getAttributes().setThing("Stamina",(Double) myUnit.getAttributes().getThing("Stamina").getValue()-cost);
 		}
 		return cost;
 	}

@@ -1,9 +1,11 @@
 package model.unit;
 
+import model.Attack;
 import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
+import model.things.Thing;
 import model.tile.Tile;
 import java.util.*;
 
@@ -17,12 +19,25 @@ public class Unit implements ModelConstants {
 	//private Attack myAttack;
 	//private Spawner mySpawner;
 	//private Abilities myAbilities;
+	
+	List<Thing> myThings = new ArrayList<Thing>();
+	
+	private Stats myStats = new Stats(this);
+	
 	private Tile myCurrentTile;
 	
 	public Unit(String name, Player player, GameMap map){
 		setName(name);
 		myPlayer = player;
 		myMap = map;
+	}
+	
+	public Thing getThing(String name){
+		for(Thing t : myThings){
+			if(t.getName().equals(name))
+				return t;
+		}
+		return null;
 	}
 
 	public void setAttributes(double health, double attack, double defense, double stamina){
@@ -45,9 +60,9 @@ public class Unit implements ModelConstants {
 		return myPlayer;
 	}
 	
-	public void setAttributes(Attributes a){
-		myAttributes = a;
-	}
+//	public void setAttributes(){
+//		myAttributes.add(a.)
+//	}
 	
 	public Attributes getAttributes(){
 		return myAttributes;

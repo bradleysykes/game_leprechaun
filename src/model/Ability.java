@@ -1,8 +1,10 @@
 package model;
 
+import model.things.Thing;
 import model.unit.Unit;
 
-public abstract class Ability {
+public abstract class Ability{
+	
 	protected Unit myUnit;
 	protected Parameters myParameters = new Parameters();
 
