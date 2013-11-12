@@ -25,10 +25,6 @@ public class ToyUnit implements BoardListItem{
 		return this.getClass();
 	}
 
-	@Override
-	public void onSelected(BoardList list) {
-		BoardBuffer.push(this);
-	}
 
 	@Override
 	public String getImagePath() {
@@ -40,16 +36,6 @@ public class ToyUnit implements BoardListItem{
 		return "test_icon_image.png";
 	}
 
-	@Override
-	public void notifyListeners(Object object, String property,
-			String oldValue, String newValue) {
-		// cycle through all listeners and notify
-	}
-
-	@Override
-	public void addChangeListener(PropertyChangeListener newListener) {
-		myListeners.add(newListener);
-	}
 	
 	
 

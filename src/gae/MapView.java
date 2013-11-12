@@ -1,7 +1,5 @@
 package gae;
 
-import com.sun.prism.paint.Color;
-
 import jgame.JGColor;
 import jgame.JGObject;
 import jgame.platform.JGEngine;
