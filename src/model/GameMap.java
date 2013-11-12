@@ -1,13 +1,29 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GameMap {
 	
-	private ArrayList<ArrayList<Tile>> myTiles;
+	private List<List<Tile>> myTiles = new ArrayList<List<Tile>>();
 	
-	public GameMap(){
-		
+	public GameMap(int x, int y){
+		for(int i = 0; i < x; i++){
+			myTiles.add(new ArrayList<Tile>());
+			for(int q = 0; q < y; q++){
+				myTiles.get(i).add(new Tile());
+				// Create default tile to populate map on startup.
+			}
+		}
+	}
+	
+	public boolean contains(int x, int y){
+		if(myTiles.get(x)!=null){
+			if(myTiles.get(x).get(y)!=null){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public Tile getTile(int x, int y){
