@@ -29,7 +29,7 @@ public abstract class Decoder implements Attributes, Elements {
     GameEngine myEngine;
     
     
-    public Decoder(GameEngine engine, File xml) {
+    public Decoder(GameEngine engine) {
         myEngine = engine;
     }
     
