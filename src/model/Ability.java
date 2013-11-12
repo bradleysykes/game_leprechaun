@@ -1,5 +1,7 @@
 package model;
 
+import model.unit.Unit;
+
 public abstract class Ability {
 	protected Unit myUnit;
 	protected Parameters myParameters = new Parameters();

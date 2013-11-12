@@ -40,28 +40,6 @@ public class NewUnit implements BoardListItem {
 	}
 
 	@Override
-	public void onSelected(BoardList list) {
-		/**
-		 * Prompt designer with view to set initial properties for this new Object
-		 * type.
-		 */
-		
-		
-	}
-
-	@Override
-	public void notifyListeners(Object object, String property,
-			String oldValue, String newValue) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addChangeListener(PropertyChangeListener newListener) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
 	public String getRelativeImagePath() {
 		// TODO Auto-generated method stub
 		return Constants.NEW_ICON_RELATIVEPATH;

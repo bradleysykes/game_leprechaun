@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import model.unit.Unit;
+
 public class Player implements ModelConstants{
 	
 	private String myName;

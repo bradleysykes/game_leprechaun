@@ -2,6 +2,8 @@ package model;
 
 import java.util.*;
 
+import model.unit.Unit;
+
 
 public class Tile implements ModelConstants{
 	

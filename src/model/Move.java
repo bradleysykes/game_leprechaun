@@ -1,5 +1,7 @@
 package model;
 
+import model.unit.Unit;
+
 public class Move extends Ability{
 
 	public Move(Unit abilityUser) {

@@ -1,4 +1,7 @@
-package model;
+package model.condition;
+
+import model.tile.Tile;
+import model.unit.Unit;
 
 public class Waypoint extends Condition {
 	private Unit myUnit;

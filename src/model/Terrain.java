@@ -1,5 +1,7 @@
 package model;
 
+import model.unit.Unit;
+
 public class Terrain implements ModelConstants {
 	
 	private String myName;
@@ -17,7 +19,6 @@ public class Terrain implements ModelConstants {
 		return 0;
 	}
 
-	// Added these methods for data (Alex) 
 	public String getName() {
 	    return myName;
 	}

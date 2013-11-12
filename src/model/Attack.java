@@ -1,5 +1,7 @@
 package model;
 
+import model.unit.Unit;
+
 public class Attack extends Ability{
 
 	public Attack(Unit abilityUser) {
