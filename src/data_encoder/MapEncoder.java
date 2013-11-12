@@ -70,9 +70,11 @@ public class MapEncoder extends Encoder {
         for(int i = 0; i < children.getLength(); i++) {
             Node child = children.item(i);
             NamedNodeMap attributes = child.getAttributes();
-            if(attributes.getNamedItem(X_COORD).equals(tile.getX()) &&
-                    attributes.getNamedItem(Y_COORD).equals(tile.getY())) {
+            //use tile's getX() and getY() methods
+            if(attributes.getNamedItem(X_COORD).toString().equals(X_COORD + "=\"1\"") &&
+                    attributes.getNamedItem(Y_COORD).toString().equals(Y_COORD + "=\"1\"")) {
                 current.removeChild(child);
+                i--;
             }
         }
     }
