@@ -1,5 +1,5 @@
 <map>
-  <tile image="src/gae_resources/grass.jpg" passability="1.0" x_id="2" y_id="1">
+  <tile image="src/gae_resources/grass.jpg" passability="1.0" x_id="2" y_id="3">
     <terrain name="grass"/>
     <resources>
       <resource amount="10.0" harvest_rate="5.0" name="minerals"/>
