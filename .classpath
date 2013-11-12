@@ -2,5 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libraries/jbox2d-src.jar"/>
+	<classpathentry kind="lib" path="libraries/jgame-jbox2d.jar"/>
+	<classpathentry kind="lib" path="libraries/jgame-jre.jar"/>
+	<classpathentry kind="lib" path="libraries/jgame-src.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
