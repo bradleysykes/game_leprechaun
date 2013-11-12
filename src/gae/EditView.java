@@ -10,7 +10,8 @@ import javax.swing.JPopupMenu;
 import javax.swing.JSplitPane;
 
 public class EditView extends JSplitPane {
-	
+
+
 	public EditView(Component top, Component bottom, int orientation, double resizeWeight){
 		super(orientation, top, bottom);
 		this.setPreferredSize(new Dimension(600,600));
@@ -19,5 +20,6 @@ public class EditView extends JSplitPane {
 		this.setMinimumSize(new Dimension(200,200));
 		
 	}
+	
 	
 }

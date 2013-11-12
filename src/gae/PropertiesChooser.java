@@ -1,4 +1,4 @@
-package editorMenus;
+package gae;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

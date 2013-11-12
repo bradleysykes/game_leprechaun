@@ -17,32 +17,27 @@ public class NewUnit implements BoardListItem {
 	public NewUnit(String type){
 		myType = type;
 	}
-	@Override
+	
 	public String getName() {
 		// TODO Auto-generated method stub
 		return "Add New "+myType;
-	}
-
-	@Override
-	public Icon getIcon() {
-		// TODO Auto-generated method stub
-		return new ImageIcon(Constants.ICON_PATH+Constants.NEW_ICON_RELATIVEPATH);
 	}
 	
 	public String getImagePath(){
 		return "";
 	}
 
-	@Override
-	public Class getObjectClass() {
-		// TODO Auto-generated method stub
-		return this.getClass();
-	}
 
 	@Override
 	public String getRelativeImagePath() {
 		// TODO Auto-generated method stub
 		return Constants.NEW_ICON_RELATIVEPATH;
+	}
+
+	@Override
+	public String getObjectClass() {
+		// TODO Auto-generated method stub
+		return this.getClass().toString();
 	}
 	
 	

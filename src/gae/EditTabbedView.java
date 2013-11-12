@@ -15,8 +15,6 @@ import javax.swing.JTextArea;
 
 import util.Reflection;
 
-import editorMenus.PackageClassFinder;
-
 public class EditTabbedView extends JTabbedPane {
 	
 	private Map<String,JList> myTabContents = new HashMap<String,JList>();
@@ -39,6 +37,7 @@ public class EditTabbedView extends JTabbedPane {
 			BoardListItem item = (BoardListItem) Reflection.createInstance(c.getName());
 			list.addNewItem(item);
 		}
+		list.addNewItem(new NewUnit(list.getListType()));
 		return list;
 	}
 	

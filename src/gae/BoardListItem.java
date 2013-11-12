@@ -1,13 +1,5 @@
 package gae;
 
-import java.beans.PropertyChangeListener;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.Icon;
-import javax.swing.JList;
-
 public interface BoardListItem{
 	
 	
@@ -17,12 +9,8 @@ public interface BoardListItem{
 	 */
 	public abstract String getRelativeImagePath();
 	
-	public abstract String getName();
-	
-	public abstract Icon getIcon();
-	
 	public abstract String getImagePath();
 	
-	public abstract Class getObjectClass();
+	public abstract String getObjectClass();
 
 }
