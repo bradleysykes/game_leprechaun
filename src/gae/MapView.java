@@ -17,7 +17,6 @@ public class MapView extends JGEngine {
 	@Override
 	public void initCanvas() {
 		setCanvasSettings(1, 1, displayWidth(), displayHeight(), JGColor.blue, JGColor.blue, null);
-		
 	}
 	
 	public void placeOnBoard(){

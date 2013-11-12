@@ -2,27 +2,36 @@ package model;
 
 import java.util.List;
 
-public class Tile {
+public class Tile implements ModelConstants{
 	
 	private Resources myResources = new Resources();
 	private double myPassability;
 	private Terrain myTerrain;
-	private String myName;
+	private String myGraphicName;
+	private int myX;
+	private int myY;
 	
 	public Tile(){
-		
+		myPassability = DEFAULT_ATTRIBUTE;
+		myTerrain = new Terrain(DEFAULT_NAME);
+		myGraphicName = DEFAULT_NAME;
 	}
 
-	public Tile(Resources resources, double passability, Terrain terrain, String name){
-		myResources = resources;
+	public Tile(@MyAnnotation(name = "Passability", specs = "Number greater than zero") double passability, 
+			@MyAnnotation(name = "Terrain Type", specs = "Name of terrain") String terrain, 
+			@MyAnnotation(name = "Graphic Name", specs = "Name of tile's graphic") String graphicName){
 		myPassability = passability;
-		myTerrain = terrain;
-		myName = name;
-	}  
+		myTerrain = new Terrain(terrain);
+		myGraphicName = graphicName;
+	}
 	
 	public Resource addResource(Resource newResource){
 		myResources.addResource(newResource);
 		return newResource;
+	}
+	
+	public void removeResource(Resource resource){
+		myResources.removeResource(resource);
 	}
 	
 	public List<Resource> getResourcesOnTile(){
@@ -30,8 +39,8 @@ public class Tile {
 	}
 	
 	public String setImageName(String newImageName){
-		myName = newImageName;
-		return myName;
+		myGraphicName = newImageName;
+		return myGraphicName;
 	}
 	
 	public double getPassability(){
@@ -42,9 +51,16 @@ public class Tile {
 		return myTerrain;
 	}
 	
-	//Added the following methods for data (Alex)
 	public String getImageName() {
-	    return myName;
+	    return myGraphicName;
+	}
+	
+	public int getX(){
+		return myX;
+	}
+	
+	public int getY(){
+		return myY;
 	}
 	
 

@@ -38,7 +38,7 @@ public class GameMap {
 		this.getTile(x,y).setImageName(newImageName);
 	}
 
-	public Unit getTarget(int initialX, int initialY, int range){
+	public Unit getTarget(Tile currentTile, int range){
 		/* provide the player with a fixed number of tile choices
 		 * and returns a selected unit
 		 */

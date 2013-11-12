@@ -17,7 +17,6 @@ public class Terrain implements ModelConstants {
 		return 0;
 	}
 
-	// Added these methods for data (Alex) 
 	public String getName() {
 	    return myName;
 	}

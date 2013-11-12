@@ -11,8 +11,7 @@ public class Unit extends JGObject implements ModelConstants {
 	//private Attack myAttack;
 	//private Spawner mySpawner;
 	//private Abilities myAbilities;
-	private int myMapX=0;
-	private int myMapY=0;
+	private Tile myCurrentTile;
 	
 	public Unit(Player player, GameMap map){
 		this(0,0,player,map);
@@ -37,14 +36,6 @@ public class Unit extends JGObject implements ModelConstants {
 		return myMap;
 	}
 	
-	public int getMapX(){
-		return myMapX;
-	}
-	
-	public int getMapY(){
-		return myMapY;
-	}
-	
 	public Attributes getAttributes(){
 		return myAttributes;
 	}
@@ -54,8 +45,7 @@ public class Unit extends JGObject implements ModelConstants {
 	}
 	
 	public void setMapPosition(int newX, int newY){
-		myMapX = newX;
-		myMapY = newY;
+		myCurrentTile = myMap.getTile(newX,newY);
 	}
 	
 	public void moveUnit(){
@@ -63,7 +53,7 @@ public class Unit extends JGObject implements ModelConstants {
 	}
 	
 	public Tile getCurrentTile(){
-		return myMap.getTile(myMapX, myMapY);
+		return myCurrentTile;
 	}
 	
 	public void useAbility(int index){
@@ -71,7 +61,7 @@ public class Unit extends JGObject implements ModelConstants {
 	}
 	
 	public Unit getTarget(int range){
-		return myMap.getTarget(myMapX,myMapY,range);
+		return myMap.getTarget(myCurrentTile,range);
 	}
 	
 }
