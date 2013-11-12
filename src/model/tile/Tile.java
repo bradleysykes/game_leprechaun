@@ -93,6 +93,10 @@ public class Tile extends JGObject implements ModelConstants{
 		return myY;
 	}
 	
+	public int getMaxPopulation(){
+	    return myMaxPopulation;
+	}
+	
 	public boolean addUnit(Unit unit){
 		if (myUnits.size() < myMaxPopulation)
 			return myUnits.add(unit);
