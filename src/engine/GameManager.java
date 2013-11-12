@@ -2,6 +2,8 @@ package engine;
 
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+
 import model.Player;
 import jgame.platform.JGEngine;
 
