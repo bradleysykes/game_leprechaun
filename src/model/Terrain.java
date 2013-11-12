@@ -4,7 +4,7 @@ import model.unit.Unit;
 
 public class Terrain implements ModelConstants {
 	
-	private String myName = DEFAULT_NAME;;
+	private String myName = DEFAULT_NAME;
 	private int myAttributeImpacted = 0;
 	private double myMagnitude = 0;
 	
@@ -26,5 +26,21 @@ public class Terrain implements ModelConstants {
 	
 	public void setName(String name) {
 	    myName = name;
+	}
+
+	public int getAttributeImpacted() {
+		return myAttributeImpacted;
+	}
+
+	public void setAttributeImpacted(int attributeImpacted) {
+		myAttributeImpacted = attributeImpacted;
+	}
+	
+	public double getMagnitude(){
+		return myMagnitude;
+	}
+	
+	public void setMagnitude(double m){
+		myMagnitude = m;
 	}
 }

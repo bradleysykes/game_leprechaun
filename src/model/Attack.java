@@ -3,6 +3,7 @@ package model;
 import model.unit.Unit;
 
 public class Attack extends Ability{
+	
 	private Unit myTarget;
 
 	public Attack(Unit abilityUser) {
@@ -21,10 +22,6 @@ public class Attack extends Ability{
 
 	@Override
 	public double useAbility(){
-		return attack(myTarget);
-	}
-
-	private double attack(Unit target){
 		double enemyDefense = myTarget.getAttributes().getDefense();
 		double enemyAttack  = myTarget.getAttributes().getAttack();
 		double enemyHealth  = myTarget.getAttributes().getHealth();

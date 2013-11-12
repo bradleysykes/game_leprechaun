@@ -1,4 +1,4 @@
-package data_constants;
+package data;
 
 /**
  * Interface of constants used for attribute names in the XML file

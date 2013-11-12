@@ -1,18 +1,26 @@
 package gae;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 public class TaskPanel extends EditPanel {
 	
-	public TaskPanel(){
-		super();
-		JTextArea text = new JTextArea("To-do");
-		this.add(text);
-		this.setBackground(Color.ORANGE);
-		initialize(text);
+	public TaskPanel(Observer observer){
+		super(observer);
+		JLabel label = new JLabel();
+		label.add(new JButton("Set Map Size"));
+		this.add(label, BorderLayout.CENTER);
+	}
+
+	@Override
+	public void execute(Object o) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -21,6 +21,7 @@ public class Harvest extends Ability{
 	
 	@Override
 	public double prepAbility(){
+		// Doesn't require special preparation - works with current tile.
 		return useAbility();
 	}
 

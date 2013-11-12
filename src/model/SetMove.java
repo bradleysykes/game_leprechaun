@@ -1,14 +1,17 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import model.tile.Tile;
 import model.unit.Unit;
 
 // Will require designer to select points relative to the units current position
-// that are viable points to move to.
+// that are viable points to move to...
 
 public class SetMove extends Move {
+	
+	private List<Tile> myValidTiles = new ArrayList<Tile>();
 	
 	public SetMove(Unit abilityUser) {
 		super(abilityUser);
@@ -21,7 +24,7 @@ public class SetMove extends Move {
 
 	@Override
 	public List<Tile> getValidTiles() {
-		return null;
+		return myValidTiles;
 	}
 
 	@Override

@@ -54,8 +54,13 @@ public abstract class BoardList extends JList {
 			JLabel label = (JLabel) super.getListCellRendererComponent(list,item, 
 					index,isSelected,cellHasFocus);
 			BoardListItem display = (BoardListItem) item;
-			label.setIcon(display.getIcon());
-			label.setText(display.getName());
+			if(display instanceof NewUnit){
+				label.setIcon(new ImageIcon(Constants.ICON_PATH+"plus.gif"));
+			}
+			else{
+			label.setIcon(new ImageIcon(Constants.ICON_PATH+"test_tile.jpg"));
+			}
+			label.setText("test");
 			JButton hello = new JButton("DELETE");
 			hello.addActionListener(new DeleteListener());
 			return this;

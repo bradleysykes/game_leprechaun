@@ -7,11 +7,16 @@ import javax.swing.JTabbedPane;
 
 public class BoardPanel extends EditPanel {
 	private JTabbedPane myTabbedPane;
-	public BoardPanel(){
-		super();
+	public BoardPanel(Observer o){
+		super(o);
 		String[] tabs = {"Objects","Tiles","Conditions"};
 		myTabbedPane = new EditTabbedView(tabs);
 		this.add(myTabbedPane);
 		initialize(myTabbedPane);
+	}
+	@Override
+	public void execute(Object o) {
+		// TODO Auto-generated method stub
+		
 	}
 }
