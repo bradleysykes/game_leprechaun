@@ -1,7 +1,9 @@
 package engine;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
+
 import jgame.platform.JGEngine;
 import model.*;
 
@@ -13,37 +15,49 @@ public class GameEngine extends JGEngine {
 	private int myTileWidth;
 	private int myTileHeight;
 	private ArrayList<Unit> myUnits;
-	private ArrayList<Tile> myTiles;
+	private GameMap myGameMap;
 	private ArrayList<Player> myPlayers;
-	private Player currentPlayer;
+	private Player myCurrentPlayer;
 	
-	public GameEngine(GameDataObject gameData) {
+	public GameEngine(File xmlDataFile) {
 		initEngineComponent(myViewerWidth, myViewerHeight);
-		myGameManager = new GameManager(gameData);
+		myGameManager = new GameManager(this);
 	}
 	
 	public void initCanvas() {
-		
-		
 		
 	}
 	
 	public void initGame() {
 		setFrameRate(35, 1);
-		//myGameManager.dfhdhdxj
-		defineAllImages();
+		
+		//defineAllImages();
+		
+		
 	}
 	
 	public void doFrame() {
 		myGameManager.manageTurns();
 	}
 	
-	public void manageTurns() {
-		if (currentPlayer.getRemainingMoves() == 0) {
-			nextPlayer();
-		}
+	public void nextPlayer() {
+		
 	}
 	
+	public Player getCurrentPlayer() {
+		return myCurrentPlayer;
+	}
 	
+	public ArrayList<Player> getPlayers() {
+		return myPlayers;
+	}
+	
+	public void loadTile(Tile tile) {
+		myGameMap.setTile(tile, tile.x, tile.y);
+	}
+	
+	public void loadUnit(Unit unit) {
+		myUnits.add(unit);
+	}
 
 }

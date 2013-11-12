@@ -1,17 +1,28 @@
 package engine;
 
+import java.util.ArrayList;
+
+import model.Player;
+import jgame.platform.JGEngine;
+
 public class GameManager {
 
-	private GameDataObject myGameData;
 	private GameEngine myGameEngine;
 	
-	public GameManager(GameDataObject gameData) {
-		myGameData = gameData;
+	public GameManager(GameEngine gameEngine) {
+		myGameEngine = gameEngine;
+	}
+	
+	public void manageTurns() {
+//		if (myGameEngine.getCurrentPlayer()) {
+//			nextPlayer();
+//		}
+	}
+			
+	public void nextPlayer() {
+		ArrayList<Player> playerList = myGameEngine.getPlayers();
 		
 	}
 	
-	public void nextPlayer() {
-		
-	}
 	
 }

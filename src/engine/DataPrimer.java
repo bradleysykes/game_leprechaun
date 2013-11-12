@@ -18,28 +18,28 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class DataPrimer {
 	
 	private JFileChooser myFileChooser;
-	private GameDataObject myGameData;
 	
 	public DataPrimer() {
 		myFileChooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("XML Files Only", "xml");
 		myFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		myFileChooser.setFileFilter(filter);
-		selectAndParseXML();
-		loadGame();
+		File xmlFile = selectAndParseXML();
+		loadGame(xmlFile);
 	}
 	
-	private void selectAndParseXML() {
-		//call gamedata's xml parser here to populate myGameObjectInfo
+	private File selectAndParseXML() {
 		int value = myFileChooser.showOpenDialog(new JFrame()); //needs a parent component.. probably the GAE
+		File xmlFile = null;
 		if (value == myFileChooser.APPROVE_OPTION) {
-			File xmlFile = myFileChooser.getSelectedFile();
-			//myGameObjectInfo = GameDataParser.parseXMLFile(xmlFile);   //Parser class isnt available yet
+			xmlFile = myFileChooser.getSelectedFile();
+			return xmlFile;
 		}
+		return xmlFile;
 	}
 	
-	private void loadGame() {
-		new GameEngine(myGameData);
+	private void loadGame(File xmlFile) {
+		new GameEngine(xmlFile);
 	}
 	
 	
