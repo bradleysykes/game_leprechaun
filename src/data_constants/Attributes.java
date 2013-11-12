@@ -6,13 +6,15 @@ package data_constants;
  *
  */
 public interface Attributes {
-    String X_COORD = "x_coord";
-    String Y_COORD = "y_coord";
+    String X_DIM = "x_dimension";
+    String Y_DIM = "y_dimension";
+    String X_COORD = "x";
+    String Y_COORD = "y";
     String PASSABILITY = "passability";
     String IMAGE = "image";
     String NAME = "name";
     String AMOUNT = "amount";
     String HARVEST_RATE = "harvest_rate";
-    String MAX_POP = "max_population";
+    String MAX_POP = "max_pop";
     
 }

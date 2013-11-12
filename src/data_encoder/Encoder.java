@@ -97,7 +97,7 @@ public abstract class Encoder implements Elements, Attributes {
     
     //for testing
     public static void main(String[] args) throws Exception {
-        Encoder e = new MapEncoder();
+        Encoder e = new MapEncoder(20, 20);
         //add Tile
         Resources resources = new Resources();
         resources.addResource(new Resource("minerals", 10, 5));

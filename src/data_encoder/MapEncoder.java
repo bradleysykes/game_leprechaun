@@ -1,6 +1,7 @@
 package data_encoder;
 
 import javax.xml.parsers.ParserConfigurationException;
+import model.GameMap;
 import model.Resource;
 import model.Tile;
 import org.w3c.dom.Element;
@@ -17,13 +18,19 @@ import org.w3c.dom.NodeList;
  */
 public class MapEncoder extends Encoder {
  
+    private GameMap gameMap;
     /**
      * Creates a new instance of a MapEncoder which converts map information into
      * an XML file. 
+     * @param xDim x-dimension of the game map
+     * @param yDim y-dimension of the game map
      * @throws ParserConfigurationException
      */
-    public MapEncoder() throws ParserConfigurationException {
+    public MapEncoder(int xDim, int yDim) throws ParserConfigurationException {
+        gameMap = new GameMap(xDim, yDim);
         initEncoder(MAP_ROOT_NAME);
+        myRoot.setAttribute(X_DIM, String.valueOf(xDim));
+        myRoot.setAttribute(Y_DIM, String.valueOf(yDim));
     }
 
     /**
@@ -32,11 +39,11 @@ public class MapEncoder extends Encoder {
      */
     private void addTileElement(Tile tile) {
         Element tileElement = myXmlDocument.createElement(TILE);
-        tileElement.setAttribute(X_COORD, String.valueOf(tile.getX()));
-        tileElement.setAttribute(Y_COORD, String.valueOf(tile.getY()));
+        tileElement.setAttribute(X_COORD, String.valueOf(/*tile.getX()*/1));
+        tileElement.setAttribute(Y_COORD, String.valueOf(/*tile.getY()*/1));
         tileElement.setAttribute(PASSABILITY, String.valueOf(tile.getPassability()));
         tileElement.setAttribute(IMAGE, tile.getImageName());
-        tileElement.setAttribute(MAX_POP, tile.getMaxPopulation());
+        tileElement.setAttribute(MAX_POP, /*tile.getMaxPopulation()*/String.valueOf(3));
         
         Element terrainElement = myXmlDocument.createElement(TERRAIN);
         terrainElement.setAttribute(NAME, tile.getTerrain().getName());
@@ -72,8 +79,8 @@ public class MapEncoder extends Encoder {
             NamedNodeMap attributes = child.getAttributes();
             String xCoord = attributes.getNamedItem(X_COORD).toString();
             String yCoord = attributes.getNamedItem(Y_COORD).toString();
-            if(xCoord.equals(X_COORD + "=\"" + tile.getX() + "\"") &&
-                    yCoord.equals(Y_COORD + "=\"" + tile.getY() + "\"")) {
+            if(xCoord.equals(X_COORD + "=\"" + /*tile.getX()*/1 + "\"") &&
+                    yCoord.equals(Y_COORD + "=\"" + /*tile.getY()*/1 + "\"")) {
                 current.removeChild(child);
                 i--;
             }
