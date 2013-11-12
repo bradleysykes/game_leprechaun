@@ -1,9 +1,17 @@
 package model;
 
 public class Waypoint extends Condition {
+	private Unit myUnit;
+	private Tile myTile;
 
-	public Waypoint() {
-		// TODO Auto-generated constructor stub
+	public Waypoint(Unit wayfarer, Tile destination) {
+		myUnit = wayfarer;
+		myTile = destination;
+	}
+	
+	@Override
+	public boolean check(){
+		return (myUnit.getCurrentTile() == myTile);
 	}
 
 }

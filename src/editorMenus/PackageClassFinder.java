@@ -12,7 +12,7 @@ import java.util.List;
 public class PackageClassFinder {
 	public PackageClassFinder() {}
 	
-	public static List<String> getClassesForPackage(String pckgname) throws ClassNotFoundException {
+	public static List<Class> getClassesForPackage(String pckgname) throws ClassNotFoundException {
          // This will hold a list of directories matching the pckgname. There may be more than one if a package is split over multiple jars/paths
          ArrayList<File> directories = new ArrayList<File>();
          try {
@@ -20,7 +20,7 @@ public class PackageClassFinder {
              if (cld == null) {
                  throw new ClassNotFoundException("Can't get class loader.");
              }
-             String path = pckgname.replace('.', '/');
+             String path = "\\"+ pckgname.replace('.', '\\');
              // Ask for all resources for the path
              Enumeration<URL> resources = cld.getResources(path);
              while (resources.hasMoreElements()) {
@@ -34,7 +34,7 @@ public class PackageClassFinder {
              throw new ClassNotFoundException("IOException was thrown when trying to get all resources for " + pckgname);
          }
 
-         ArrayList<String> classes = new ArrayList<String>();
+         ArrayList<Class> classes = new ArrayList<Class>();
          // For every directory identified capture all the .class files
          for (File directory : directories) {
              if (directory.exists()) {
@@ -46,10 +46,11 @@ public class PackageClassFinder {
                          // removes the .class extension
                        try
                        {
-                         classes.add(file.substring(0, file.length() - 6));                      
+                         classes.add(Class.forName(pckgname+"."+file.substring(0, file.length()-6)));                      
                        }
                        catch (NoClassDefFoundError e)
                        {
+                    	 System.out.println("couldn't find class def");
                          // do nothing. this class hasn't been found by the loader, and we don't care.
                        }
                      }

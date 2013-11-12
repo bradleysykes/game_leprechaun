@@ -2,12 +2,13 @@ package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Player implements ModelConstants{
 	
 	private String myName;
-	private HashMap<String, Double> myResources;
-	private ArrayList<Unit> myUnits;
+	private HashMap<String,Double> myResources;
+	private List<Unit> myUnits;
 	
 	public Player(){
 		this(DEFAULT_NAME);
@@ -32,15 +33,18 @@ public class Player implements ModelConstants{
 		myResources.put(resourceType,0.0);
 	}
 	
+	// Use negative value for amount to 'charge' the player.
 	public boolean adjustResources(String resourceType, double amount){
 		double finalResources = myResources.get(resourceType)+amount;
 		if(finalResources>0){
 			myResources.put(resourceType, myResources.get(resourceType)+amount);
 			return true;
 		}
-		else {
-			return false;
-		}
+		return false;
+	}
+	
+	public List<Unit> getAllUnits(){
+		return myUnits;
 	}
 	
 
