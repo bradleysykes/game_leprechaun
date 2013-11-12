@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class PropertiesChooser extends JPanel {
-	private Dimension myPreferredSize = new Dimension(200, 200);
+	private Dimension myPreferredSize = new Dimension(400, 200);
 	private String myTitle;
 	private List<Class> myClasses;
 	private String myContentPackage;
@@ -34,12 +34,16 @@ public class PropertiesChooser extends JPanel {
 	}
 	private void createAndAddGuts() {
 		myLeftPane = new ItemListPane("Available Options");
+		JPanel buttonPanel = new JPanel();
 		myLTRMover = new JButton(">");
+		myLTRMover.setPreferredSize(new Dimension(60, 30));
 		myRTLMover = new JButton("<");
+		myRTLMover.setPreferredSize(new Dimension(60, 30));
 		myRightPane = new ItemListPane("Implemented Options");
 		this.add(myLeftPane, BorderLayout.WEST);
-		this.add(myLTRMover, BorderLayout.CENTER);
-		this.add(myRTLMover, BorderLayout.CENTER);
+		buttonPanel.add(myLTRMover);
+		buttonPanel.add(myRTLMover);
+		this.add(buttonPanel, BorderLayout.CENTER);
 		this.add(myRightPane, BorderLayout.EAST);
 	}
 	private void generateContent() {
@@ -66,7 +70,8 @@ public class PropertiesChooser extends JPanel {
 		}
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			myOriginPane.myModel.removeElementAt(0);			
+			String s = myOriginPane.getModel().remove(myOriginPane.getStringList().getSelectedIndex());
+			myDestinationPane.getModel().addElement(s);
 		}
 	}
 }
