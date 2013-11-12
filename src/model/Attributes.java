@@ -21,15 +21,17 @@ public class Attributes implements ModelConstants {
 		this.setStamina(DEFAULT_ATTRIBUTE);
 	}
 	
-	public void setAttributes(double hp, double baseAtt, double baseDef, double baseStamina,
-			double att, double def, double stamina){
+	public void setAttributes(@MyAnnotation(name = "Health", specs = "Number greater than zero") double hp, 
+			@MyAnnotation(name = "Base Attack", specs = "Number greater than zero") double baseAtt, 
+			@MyAnnotation(name = "Base Defense", specs = "Number greater than zero") double baseDef,
+			@MyAnnotation(name = "Base Stamina", specs = "Number greater than zero") double baseStamina){
 		this.setHealth(hp);
 		this.setBaseAttack(baseAtt);
 		this.setBaseDefense(baseDef);
 		this.setBaseStamina(baseStamina);
-		this.setAttack(att);
-		this.setDefense(def);
-		this.setStamina(stamina);
+		this.setAttack(baseAtt);
+		this.setDefense(baseDef);
+		this.setStamina(baseStamina);
 	}
 
 	public double getHealth() {

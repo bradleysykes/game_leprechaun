@@ -2,10 +2,13 @@ package model;
 
 import java.util.*;
 
+import model.tile.Tile;
+import model.unit.Unit;
+
 public class GameMap {
 
 	private List<List<Tile>> myTiles = new ArrayList<List<Tile>>();
-
+	
 	public GameMap(int x, int y){
 		for(int i = 0; i < x; i++){
 			myTiles.add(new ArrayList<Tile>());
@@ -14,6 +17,11 @@ public class GameMap {
 				// Create default tile to populate map on startup.
 			}
 		}
+	}
+	
+	public void setTile(int x, int y, Tile t){
+		List<Tile> tileRow = myTiles.get(x);
+		tileRow.set(y, t);
 	}
 
 	public boolean contains(int x, int y){
@@ -47,7 +55,7 @@ public class GameMap {
 		this.getTile(x,y).setImageName(newImageName);
 	}
 
-	public Unit getTarget(int initialX, int initialY, int range){
+	public Unit getTarget(Tile currentTile, int range){
 		/* provide the player with a fixed number of tile choices
 		 * and returns a selected unit
 		 */

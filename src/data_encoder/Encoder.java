@@ -15,7 +15,8 @@ import javax.xml.transform.stream.StreamResult;
 import model.Resource;
 import model.Resources;
 import model.Terrain;
-import model.Tile;
+import model.tile.Tile;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import data_constants.Attributes;
