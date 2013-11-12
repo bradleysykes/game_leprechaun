@@ -4,10 +4,11 @@ import model.unit.Unit;
 
 public class Terrain implements ModelConstants {
 	
-	private String myName;
+	private String myName = DEFAULT_NAME;;
+	private int myAttributeImpacted = 0;
+	private double myMagnitude = 0;
 	
 	public Terrain(){
-		myName = DEFAULT_NAME;
 	}
 	
 	public Terrain(String name){
@@ -15,8 +16,8 @@ public class Terrain implements ModelConstants {
 	}
 	
 	public double modifyUnit(Unit unit){
-		// return unit.buff(myName);
-		return 0;
+		//return unit.getAttributes.alter(myAttributeImpacted,myMagnitude);
+		return myMagnitude;
 	}
 
 	public String getName() {
