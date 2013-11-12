@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import model.condition.Condition;
 import model.unit.Unit;
 
 public class Player implements ModelConstants{
@@ -11,6 +12,7 @@ public class Player implements ModelConstants{
 	private String myName;
 	private HashMap<String,Double> myResources;
 	private List<Unit> myUnits;
+	private Condition myWinningCondition;
 	
 	public Player(){
 		this(DEFAULT_NAME);
@@ -49,6 +51,8 @@ public class Player implements ModelConstants{
 		return myUnits;
 	}
 	
-	//Add player winning conditions
-	
+	public boolean checkWinningCondition() {
+		return myWinningCondition.check();
+	}
+
 }

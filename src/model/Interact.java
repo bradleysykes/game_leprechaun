@@ -1,5 +1,6 @@
 package model;
 
+import model.tile.Tile;
 import model.unit.Unit;
 
 public class Interact extends Ability{
@@ -11,6 +12,11 @@ public class Interact extends Ability{
 	@Override
 	public double prepAbility() {
 		return 0;		
+	}
+
+	@Override
+	public double useAbility() {
+		return 0;
 	}
 
 }
