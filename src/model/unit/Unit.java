@@ -53,12 +53,12 @@ public class Unit extends JGObject implements ModelConstants {
 		myCurrentTile = myMap.getTile(newX,newY);
 	}
 	
-	public void moveUnit(){
-		// useAbility(moveIndex);
-	}
-	
 	public Tile getCurrentTile(){
 		return myCurrentTile;
+	}
+	
+	public void setCurrentTile(Tile t){
+		myCurrentTile = t;
 	}
 	
 	public void useAbility(int index){
@@ -66,7 +66,7 @@ public class Unit extends JGObject implements ModelConstants {
 	}
 	
 	public Unit getTarget(int range){
-		return myMap.getTarget(myCurrentTile,range);
+		return myMap.getTargetUnit(myCurrentTile,range);
 	}
 	
 }

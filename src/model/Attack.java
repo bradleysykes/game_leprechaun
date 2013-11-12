@@ -1,5 +1,6 @@
 package model;
 
+import model.tile.Tile;
 import model.unit.Unit;
 
 public class Attack extends Ability{

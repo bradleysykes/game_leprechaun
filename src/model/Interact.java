@@ -1,5 +1,6 @@
 package model;
 
+import model.tile.Tile;
 import model.unit.Unit;
 
 public class Interact extends Ability{

@@ -1,6 +1,7 @@
 package model;
 import java.util.*;
 
+import model.tile.Tile;
 import model.unit.Unit;
 
 public abstract class Ability {
@@ -14,12 +15,10 @@ public abstract class Ability {
 		myRange = 0;
 		myRadius = 0;
 	}
-	public double useAbility(){
-		return 0.0;
-	}
 	
-/*	
-	public Parameters addParameter(Parameters p){
+	abstract double useAbility();
+	
+/*	public Parameters addParameter(Parameters p){
 		myParameters.add(p);
 		return p;
 	}*/

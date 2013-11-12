@@ -2,6 +2,8 @@ package model.tile;
 
 import java.util.*;
 
+import jgame.JGObject;
+
 import model.ModelConstants;
 import model.MyAnnotation;
 import model.Resource;
@@ -9,25 +11,32 @@ import model.Resources;
 import model.Terrain;
 import model.unit.Unit;
 
-public class Tile implements ModelConstants{
+public class Tile extends JGObject implements ModelConstants{
 	
 	private Resources myResources = new Resources();
-	private double myPassability;
-	private Terrain myTerrain;
-	private String myGraphicName;
+	private double myPassability = DEFAULT_ATTRIBUTE;
+	private Terrain myTerrain = new Terrain(DEFAULT_NAME);
+	private String myGraphicName = DEFAULT_NAME;
 	private Collection<Unit> myUnits = new ArrayList<Unit>();
-	private int myX;
-	private int myY;
-	private int myMaxPopulation;
+	// Under the current setup, how are units on the tile being passed when tile is replaced in GAE?
+	private int myX = 0;
+	private int myY = 0;
+	private int myMaxPopulation = (int) DEFAULT_ATTRIBUTE;
 	
 	public Tile(){
-		myPassability = DEFAULT_ATTRIBUTE;
-		myTerrain = new Terrain(DEFAULT_NAME);
-		myGraphicName = DEFAULT_NAME;
+		super("",false,0,0,0,null);
+		this.setGraphic(myGraphicName);
+	}
+	
+	public Tile(int x, int y){
+		this();
+		myX = x;
+		myY = y;
 	}
 
 	public Tile(@MyAnnotation(name = "Passability", specs = "Number greater than zero") double passability, 
 			@MyAnnotation(name = "Max Population on Tile", specs = "Number greater than zero") int maxPop){
+		this();
 		myPassability = passability;
 		myMaxPopulation = maxPop;
 	}
@@ -47,6 +56,7 @@ public class Tile implements ModelConstants{
 	
 	public String setImageName(String newImageName){
 		myGraphicName = newImageName;
+		this.setGraphic(myGraphicName);
 		return myGraphicName;
 	}
 	
