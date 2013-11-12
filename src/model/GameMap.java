@@ -1,12 +1,11 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class GameMap {
-	
+
 	private List<List<Tile>> myTiles = new ArrayList<List<Tile>>();
-	
+
 	public GameMap(int x, int y){
 		for(int i = 0; i < x; i++){
 			myTiles.add(new ArrayList<Tile>());
@@ -16,7 +15,7 @@ public class GameMap {
 			}
 		}
 	}
-	
+
 	public boolean contains(int x, int y){
 		if(myTiles.get(x)!=null){
 			if(myTiles.get(x).get(y)!=null){
@@ -25,15 +24,25 @@ public class GameMap {
 		}
 		return false;
 	}
-	
+
 	public Tile getTile(int x, int y){
 		return myTiles.get(x).get(y);
 	}
-	
+
+	public Collection<Tile> getAllTiles(){
+		Collection<Tile> allTiles = new ArrayList<Tile>();
+		for (List<Tile> tiles : myTiles){
+			for (Tile tile : tiles){
+				allTiles.add(tile);
+			}
+		}
+		return allTiles;
+	}
+
 	public void addResourceToTile(int x, int y, String resourceName, double amount, double harvestRate){
 		this.getTile(x,y).addResource(new Resource(resourceName,amount,harvestRate));
 	}
-	
+
 	public void setTileImageName(int x, int y, String newImageName){
 		this.getTile(x,y).setImageName(newImageName);
 	}

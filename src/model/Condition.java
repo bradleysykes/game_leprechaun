@@ -1,9 +1,12 @@
 package model;
 
-public class Condition {
+public abstract class Condition {
 
 	public Condition() {
-		// TODO Auto-generated constructor stub
+	}
+	
+	public boolean check(){
+		return true;
 	}
 
 }

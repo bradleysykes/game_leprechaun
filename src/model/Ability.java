@@ -15,6 +15,7 @@ public abstract class Ability {
 	public double useAbility(){
 		return 0.0;
 	}
+	
 /*	
 	public Parameters addParameter(Parameters p){
 		myParameters.add(p);
