@@ -19,8 +19,10 @@ public class PropertiesChooser extends JPanel {
 	private JButton myLTRMover;
 	private JButton myRTLMover;
 	private ItemListPane myRightPane;
+	private PackageClassFinder myFinder;
 	public PropertiesChooser(String title, String sourcePackage) {
 		super();
+		myFinder = new PackageClassFinder();
 		this.setBackground(Color.GRAY);
 		this.setLayout(new BorderLayout());
 		this.setPreferredSize(myPreferredSize);
@@ -44,7 +46,7 @@ public class PropertiesChooser extends JPanel {
 	}
 	private void generateContent() {
 		try {
-			List<Class> myClasses = PackageClassFinder.getClassesForPackage(myContentPackage);
+			List<Class> myClasses = myFinder.getClassesForPackage(myContentPackage);
 			for (Class classy:myClasses) {
 				myLeftPane.addStringToPanel(classy.getName());
 			}

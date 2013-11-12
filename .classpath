@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="/springies_team01/lib/jgame-jre.jar" sourcepath="/springies_team01/lib/jgame-src.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre7/lib/alt-rt.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre7/lib/charsets.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre7/lib/deploy.jar"/>
@@ -14,5 +13,6 @@
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre7/lib/plugin.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre7/lib/resources.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jre7/lib/rt.jar"/>
+	<classpathentry kind="lib" path="/Copy of slogo_team09/lib/jgame-jre.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
