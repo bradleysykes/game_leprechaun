@@ -5,8 +5,8 @@ import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import data.Attributes;
-import data.Elements;
+import data_constants.Attributes;
+import data_constants.Elements;
 import engine.GameEngine;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -33,7 +33,10 @@ public abstract class Decoder implements Attributes, Elements {
         myEngine = engine;
     }
     
-       
+    public String getElement(String tag, Element element) {
+        return element.getElementsByTagName(tag).toString();
+    }
+    
     public abstract void create(Element element);
     
     

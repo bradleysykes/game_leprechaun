@@ -32,8 +32,6 @@ public class GameEngine extends JGEngine {
 		setFrameRate(35, 1);
 		
 		//defineAllImages();
-		
-		
 	}
 	
 	public void doFrame() {
@@ -52,12 +50,15 @@ public class GameEngine extends JGEngine {
 		return myPlayers;
 	}
 	
-	public void loadTile(Tile tile) {
-		myGameMap.setTile(tile, tile.x, tile.y);
+	public void loadMap(GameMap map) {
+	    myGameMap = map;
 	}
 	
-	public void loadUnit(Unit unit) {
-		myUnits.add(unit);
+	public void loadUnit(ArrayList<Unit> units) {
+		myUnits = units;
 	}
-
+	
+	public void loadPlayer(ArrayList<Player> players) {
+	    myPlayers = players;
+	}
 }

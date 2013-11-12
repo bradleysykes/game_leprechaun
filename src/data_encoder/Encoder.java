@@ -18,6 +18,8 @@ import model.Terrain;
 import model.Tile;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import data_constants.Attributes;
+import data_constants.Elements;
 
 
 /**

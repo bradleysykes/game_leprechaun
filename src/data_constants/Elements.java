@@ -1,4 +1,4 @@
-package data_encoder;
+package data_constants;
 
 /**
  * Interface of constants used for element names in the XML file
