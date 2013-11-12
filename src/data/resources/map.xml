@@ -1,12 +1,12 @@
-<map>
-  <tile image="src/gae_resources/grass.jpg" passability="1.0" x_id="2" y_id="3">
+<map x_dimension="20" y_dimension="20">
+  <tile image="src/gae_resources/grass.jpg" max_pop="3" passability="1.0" x="1" y="2">
     <terrain name="grass"/>
     <resources>
       <resource amount="10.0" harvest_rate="5.0" name="minerals"/>
       <resource amount="20.0" harvest_rate="7.0" name="gas"/>
     </resources>
   </tile>
-  <tile image="src/gae_resources/sand.jpg" passability="0.0" x_coord="1" y_coord="1">
+  <tile image="src/gae_resources/sand.jpg" max_pop="20" passability="2.0" x="3" y="5">
     <terrain name="sand"/>
     <resources>
       <resource amount="36.0" harvest_rate="7.0" name="minerals"/>

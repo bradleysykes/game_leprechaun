@@ -1,8 +1,9 @@
-package data_encoder;
+package data.encoder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.Collection;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -16,18 +17,19 @@ import model.Resource;
 import model.Resources;
 import model.Terrain;
 import model.tile.Tile;
+import model.unit.Unit;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import data_constants.Attributes;
-import data_constants.Elements;
+import data.Attributes;
+import data.Elements;
 
 
 /**
  * Receives information about a certain type of object and creates an XML file
- * that represents it. It is a superclass that is extended by different subclasses.
- * It implements interfaces which hold constants representing the names of XML 
- * elements and attributes.
+ * that represents it. It is a superclass that is extended by different encoder
+ * subclasses. It implements interfaces which hold constants representing the
+ * names of XML elements and attributes.
  * @author Alex Song
  *
  */
@@ -98,15 +100,16 @@ public abstract class Encoder implements Elements, Attributes {
     
     //for testing
     public static void main(String[] args) throws Exception {
-        Encoder e = new MapEncoder();
+        Encoder e = new MapEncoder(20, 20);
         //add Tile
         Resources resources = new Resources();
         resources.addResource(new Resource("minerals", 10, 5));
         resources.addResource(new Resource("gas", 20, 7));
         Terrain terrain = new Terrain();
         terrain.setName("grass");
-        // tile should have x and y position
-        Tile tile = new Tile(resources, 1, terrain, "src/gae_resources/grass.jpg");
+        //need engine to create tile..
+        Tile tile = new Tile(resources, 1, terrain, "src/gae_resources/grass.jpg",
+             null, 3, 1, 2);
         e.addXmlElement(tile);
         
         //add another tile
@@ -115,12 +118,12 @@ public abstract class Encoder implements Elements, Attributes {
         resources.addResource(new Resource("gas", 46, 25));
         terrain = new Terrain();
         terrain.setName("sand");
-        // tile should have x and y position
-        tile = new Tile(resources, 0, terrain, "src/gae_resources/sand.jpg");
+        tile = new Tile();
+        tile = new Tile(resources, 2, terrain, "src/gae_resources/sand.jpg",
+                             null, 20, 3, 5);
         e.addXmlElement(tile);
         //e.removeXmlElement(tile);
-        
-        e.saveXML("src/dataResources/map.xml");
+        e.saveXML("src/data/resources/map.xml");
         
     }
     

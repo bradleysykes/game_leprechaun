@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import model.tile.Tile;
 import model.unit.Unit;
 
@@ -9,9 +12,21 @@ public class BudgetMove extends Move {
 		super(abilityUser);
 	}
 	
+	@Override
 	public double canMoveToTile(Tile dest){
 		return pathFinder(myUnit.getCurrentTile().getX(),myUnit.getCurrentTile().getY(),
 				dest.getX(),dest.getY(),myUnit.getMap(),myUnit.getAttributes().getStamina());
+	}
+	
+	@Override
+	public List<Tile> getValidTiles(){
+		List<Tile> validTiles = new ArrayList<Tile>();
+		for(Tile t : myUnit.getMap().getAllTiles()){
+			if(canMoveToTile(t)>0){
+				validTiles.add(t);
+			}
+		}
+		return validTiles;
 	}
 	
 	// If there is a path to the destination, returns unit's new budget.

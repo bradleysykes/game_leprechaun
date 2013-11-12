@@ -4,8 +4,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import jgame.JGColor;
 import jgame.platform.JGEngine;
 import model.*;
+import model.condition.Condition;
 import model.tile.Tile;
 import model.unit.Unit;
 
@@ -14,20 +16,25 @@ public class GameEngine extends JGEngine {
 	private GameManager myGameManager;
 	private final int myViewerWidth = 800;
 	private final int myViewerHeight = 600;
-	private int myTileWidth;
-	private int myTileHeight;
+	private final int myTileWidth = 20;
+	private final int myTileHeight = 20;
 	private ArrayList<Unit> myUnits;
 	private GameMap myGameMap;
 	private ArrayList<Player> myPlayers;
 	private Player myCurrentPlayer;
 	
-	public GameEngine(File xmlDataFile) {
+	public GameEngine() {
 		initEngineComponent(myViewerWidth, myViewerHeight);
-		myGameManager = new GameManager(this);
 	}
 	
 	public void initCanvas() {
-		
+		setCanvasSettings(myViewerWidth/myTileWidth,  // width of the canvas in tiles
+                myViewerHeight/myTileHeight,  // height of the canvas in tiles
+                myTileWidth,  // width of one tile
+                myTileHeight,  // height of one tile
+                null,// foreground colour -> use default colour white
+                JGColor.blue,// background colour -> use default colour black
+                null); // standard font -> use default font);
 	}
 	
 	public void initGame() {
@@ -37,8 +44,17 @@ public class GameEngine extends JGEngine {
 	}
 	
 	public void doFrame() {
-		myGameManager.manageTurns();
+		//checkWinningConditions();
 	}
+	
+//	public void checkWinningConditions() {     //pending implementation of checkVictory()
+//		for (Player p : myPlayers) {
+//			if(p.checkVictory()) {
+//				System.out.println(p.getName() + " wins!");  //just print for testing
+//			}
+//		}
+//				
+//	}
 	
 	public void nextPlayer() {
 		

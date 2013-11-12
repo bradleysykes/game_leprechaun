@@ -2,24 +2,17 @@ package engine;
 
 import java.io.File;
 import java.util.Collection;
-
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-
-
-/**
- * Uses the XMLParser to retrieve data about objects from XML file.
- * @author Dylan and Bernard
- *
- */
-
 public class DataPrimer {
 	
 	private JFileChooser myFileChooser;
+	private GameEngine myGameEngine;
 	
-	public DataPrimer() {
+	public DataPrimer(GameEngine gameEngine) {
+		myGameEngine = gameEngine;
 		myFileChooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("XML Files Only", "xml");
 		myFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -29,7 +22,7 @@ public class DataPrimer {
 	}
 	
 	private File selectAndParseXML() {
-		int value = myFileChooser.showOpenDialog(new JFrame()); //needs a parent component.. probably the GAE
+		int value = myFileChooser.showOpenDialog(myGameEngine); //needs a parent component.. probably the GAE
 		File xmlFile = null;
 		if (value == myFileChooser.APPROVE_OPTION) {
 			xmlFile = myFileChooser.getSelectedFile();
@@ -39,7 +32,7 @@ public class DataPrimer {
 	}
 	
 	private void loadGame(File xmlFile) {
-		new GameEngine(xmlFile);
+		// Parser(xmlFile, myGameEngine)
 	}
 	
 	
