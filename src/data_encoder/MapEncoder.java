@@ -1,9 +1,12 @@
-package data;
+package data_encoder;
 
 import javax.xml.parsers.ParserConfigurationException;
 import model.Resource;
 import model.Tile;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 
 /**
@@ -30,8 +33,8 @@ public class MapEncoder extends Encoder {
     private void addTileElement(Tile tile) {
         Element tileElement = myXmlDocument.createElement(TILE);
         //getX() and getY() needed in tile for x and y positions; hard-coded for now
-        tileElement.setAttribute(X_ID, String.valueOf(1));
-        tileElement.setAttribute(Y_ID, String.valueOf(1));
+        tileElement.setAttribute(X_COORD, String.valueOf(1));
+        tileElement.setAttribute(Y_COORD, String.valueOf(1));
         tileElement.setAttribute(PASSABILITY, String.valueOf(tile.getPassability()));
         tileElement.setAttribute(IMAGE, tile.getImageName());
         
@@ -62,7 +65,16 @@ public class MapEncoder extends Encoder {
      * @param tile tile to remove
      */
     private void removeTileElement(Tile tile) {
-        //TODO
+        Element current = myRoot;
+        NodeList children = current.getChildNodes();
+        for(int i = 0; i < children.getLength(); i++) {
+            Node child = children.item(i);
+            NamedNodeMap attributes = child.getAttributes();
+            if(attributes.getNamedItem(X_COORD).equals(tile.getX()) &&
+                    attributes.getNamedItem(Y_COORD).equals(tile.getY())) {
+                current.removeChild(child);
+            }
+        }
     }
     
     public void removeXmlElement(Object o) {
