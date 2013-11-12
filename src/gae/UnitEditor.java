@@ -1,4 +1,4 @@
-package editorMenus;
+package gae;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -72,6 +72,6 @@ public class UnitEditor extends JFrame {
 
 	}
 	public static void main (String arg[]) {
-		GameOptionsEditor x = new GameOptionsEditor();
+		UnitCreationDialogue x = new UnitCreationDialogue("tile");
 	}
 }

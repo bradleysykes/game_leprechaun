@@ -4,7 +4,7 @@ import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import model.Tile;
+import model.tile.Tile;
 
 public class EditListSelectionListener implements ListSelectionListener {
 
@@ -23,7 +23,7 @@ public class EditListSelectionListener implements ListSelectionListener {
 					BoardBuffer.push(selectedItem);
 				}
 				if(selectedItem instanceof NewUnit){
-					//show dialog to create new tile
+					new UnitCreationDialogue(listSource.getListType());
 				}
 				listSource.clearSelection();
 			}

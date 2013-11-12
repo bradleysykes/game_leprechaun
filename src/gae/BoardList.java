@@ -15,8 +15,6 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import editorMenus.PackageClassFinder;
-
 public abstract class BoardList extends JList {
 		
 	private DefaultListModel myModel;
