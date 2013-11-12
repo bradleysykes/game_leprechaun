@@ -7,6 +7,8 @@ import java.util.Collection;
 import jgame.JGColor;
 import jgame.platform.JGEngine;
 import model.*;
+import model.tile.Tile;
+import model.unit.Unit;
 
 public class GameEngine extends JGEngine {
 	
@@ -56,12 +58,15 @@ public class GameEngine extends JGEngine {
 		return myPlayers;
 	}
 	
-//	public void loadTile(Tile tile) {
-//		myGameMap.setTile(tile, tile.x, tile.y);
-//	}
-	
-	public void loadUnit(Unit unit) {
-		myUnits.add(unit);
+	public void loadMap(GameMap map) {
+	    myGameMap = map;
 	}
-
+	
+	public void loadUnit(ArrayList<Unit> units) {
+		myUnits = units;
+	}
+	
+	public void loadPlayer(ArrayList<Player> players) {
+	    myPlayers = players;
+	}
 }

@@ -2,6 +2,8 @@ package model;
 
 import java.util.List;
 
+import model.unit.Unit;
+
 public class Harvest extends Ability{
 
 	public Harvest(Unit abilityUser) {

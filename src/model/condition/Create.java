@@ -1,4 +1,7 @@
-package model;
+package model.condition;
+
+import model.tile.Tile;
+import model.unit.Unit;
 
 public class Create extends Condition {
 	private Unit myUnit;
@@ -11,8 +14,10 @@ public class Create extends Condition {
 	public boolean check(){
 		for (Tile tile : myUnit.getMap().getAllTiles()){
 			for (Unit unit : tile.getUnits()){
-				if (unit == myUnit){
-					return true;
+				if (unit.equals(myUnit)){
+					if (unit.isAlive()){
+						return true;
+					}
 				}
 			}
 		}

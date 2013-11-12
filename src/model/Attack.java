@@ -1,5 +1,7 @@
 package model;
 
+import model.unit.Unit;
+
 public class Attack extends Ability{
 
 	public Attack(Unit abilityUser) {
@@ -8,8 +10,9 @@ public class Attack extends Ability{
 	
 	@Override
 	public double useAbility(){
-		if (myRange > 0){
-			Unit enemyUnit = myUnit.getTarget(myRange);
+		if (myParameters.getRange() > 0){
+			//assumes correct selection, will need to be more fault-proof
+			Unit enemyUnit = myUnit.getTarget(myParameters.getRange());
 			double enemyDefense = enemyUnit.getAttributes().getDefense();
 			double enemyAttack  = enemyUnit.getAttributes().getAttack();
 			double enemyHealth  = enemyUnit.getAttributes().getHealth();

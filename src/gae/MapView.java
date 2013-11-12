@@ -1,7 +1,5 @@
 package gae;
 
-import com.sun.prism.paint.Color;
-
 import jgame.JGColor;
 import jgame.JGObject;
 import jgame.platform.JGEngine;
@@ -15,8 +13,7 @@ public class MapView extends JGEngine {
 	
 	@Override
 	public void initCanvas() {
-		setCanvasSettings(16, 16, 500, 500, JGColor.blue, JGColor.blue, null);
-		
+		setCanvasSettings(1, 1, displayWidth(), displayHeight(), JGColor.blue, JGColor.blue, null);
 	}
 	
 	public void placeOnBoard(){
