@@ -71,7 +71,8 @@ public class GameEngine extends JGEngine {
 	}
 	
 	public void initializeState(GameElements gameElements) {
-		myGameLoader = new GameLoader(gameElements);
+		myGameLoader = new GameLoader(gameElements, this);
+		myGameLoader.loadGame();
 	}
 	
 }
