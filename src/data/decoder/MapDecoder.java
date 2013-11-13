@@ -23,26 +23,22 @@ import engine.GameEngine;
 public class MapDecoder extends Decoder {
     
     GameMap myGameMap;
-    Element myRoot;
-    
-    public MapDecoder (Element root) {
-        super(root);
+    DataManager myFactory;
+    public MapDecoder (DataManager factory) {
+        myFactory = factory;
     }
     
-    public void initMap() {
-        int x_dim = Integer.parseInt(getAttribute(X_DIM, myRoot));
-        int y_dim = Integer.parseInt(getAttribute(Y_DIM, myRoot));
+    public void processMap(Element root) {
+        int x_dim = Integer.parseInt(getAttribute(X_DIM, root));
+        int y_dim = Integer.parseInt(getAttribute(Y_DIM, root));
         myGameMap = new GameMap(x_dim, y_dim);
-    }
-    
-    public void processMap() {
-        NodeList tiles = myRoot.getElementsByTagName(TILE);
+
+        NodeList tiles = root.getElementsByTagName(TILE);
         
         for(int i = 0; i < tiles.getLength(); i++) {
             Element tempTile = (Element)tiles.item(i);
             setTile(tempTile);
         }
-        
     }
     
     public void setTile(Element tile) {
@@ -56,7 +52,7 @@ public class MapDecoder extends Decoder {
         Element resourceList = (Element) tile.getElementsByTagName(RESOURCES).item(0);
         Resources resources = getResources(resourceList);
 
-        //create tile with constructor.
+        //create tile 
         Tile resultTile = new Tile(resources, passability, terrain, image, new ArrayList<Unit>(), maxPop, x, y);
         myGameMap.setTile(x, y, resultTile);
     }
@@ -80,8 +76,10 @@ public class MapDecoder extends Decoder {
         return result;
     }
     
-    public void load(GameEngine engine) {
-        engine.loadMap(myGameMap);
+    @Override
+    public void load(Element root) {
+        processMap(root);
+        myFactory.setGameMap(myGameMap);
     }
 
 }

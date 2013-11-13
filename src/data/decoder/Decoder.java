@@ -26,17 +26,10 @@ import org.xml.sax.SAXException;
  *
  */
 public abstract class Decoder implements Attributes, Elements {
-    Element myRoot;
-    
-    public Decoder(Element root) {
-        myRoot = root;
-    }
-        
+           
     public String getAttribute(String tag, Element element) {
         return element.getAttribute(tag).toString();
     }
     
-    public abstract void load(GameEngine engine);
-    
-    
+    public abstract void load(Element root);
 }
