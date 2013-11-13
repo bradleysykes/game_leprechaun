@@ -1,5 +1,5 @@
 package gae.panel_lists;
-import gae.listeners.EditListSelectionListener;
+import gae.listeners.BoardListSelectionListener;
 import gae.listeners.PopupListener;
 import gae.viewitems.ViewItem;
 
@@ -27,7 +27,7 @@ public abstract class BoardList extends JList {
 		myModel = new DefaultListModel();
 		this.setModel(myModel);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		this.addListSelectionListener(new EditListSelectionListener());
+		this.addListSelectionListener(new BoardListSelectionListener());
 		this.setCellRenderer(new EditListRenderer());
 		//this.addNewItem(new NewUnit(getListType()));
 		this.addMouseListener(new PopupListener());

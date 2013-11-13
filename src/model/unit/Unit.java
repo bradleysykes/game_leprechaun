@@ -39,6 +39,10 @@ public class Unit implements ModelConstants {
 		}
 		return null;
 	}
+	
+	public List<Thing> getThings(){
+		return myThings;
+	}
 
 	public void setAttributes(double health, double attack, double defense, double stamina){
 		

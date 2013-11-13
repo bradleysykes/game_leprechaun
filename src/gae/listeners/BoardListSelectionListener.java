@@ -10,7 +10,7 @@ import javax.swing.event.ListSelectionListener;
 
 import model.tile.Tile;
 
-public class EditListSelectionListener implements ListSelectionListener {
+public class BoardListSelectionListener implements ListSelectionListener {
 
 	@Override
 	public void valueChanged(ListSelectionEvent e) {

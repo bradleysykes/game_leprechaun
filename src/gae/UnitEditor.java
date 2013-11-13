@@ -72,6 +72,6 @@ public class UnitEditor extends JFrame {
 
 	}
 	public static void main (String arg[]) {
-		UnitCreationDialogue x = new UnitCreationDialogue("tile");
+		UnitCreationDialogue x = new UnitCreationDialogue("UnitEditor", null);
 	}
 }

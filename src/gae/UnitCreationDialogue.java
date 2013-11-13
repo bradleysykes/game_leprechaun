@@ -22,7 +22,9 @@ import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JTextArea;
 
+import model.things.Thing;
 import model.tile.Tile;
+import model.unit.Unit;
 import util.Reflection;
 
 public class UnitCreationDialogue extends JFrame {
@@ -33,20 +35,20 @@ public class UnitCreationDialogue extends JFrame {
 	private TileEditor myTileEditor;
 	private String myPackage;
 		
-	public UnitCreationDialogue(String packageExtension) {
-		super();
-		myPackage = myModelPackage+packageExtension;
+	public UnitCreationDialogue(String frameTitle, List<Thing> modelProperties) {
+		super(frameTitle);
+		//myPackage = myModelPackage+packageExtension;
 		this.setLayout(new BorderLayout());
 		myRuleNames = new ArrayList<String>();
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setPreferredSize(myPreferredSize);
 		this.setVisible(true);
-		JTextArea titleArea = new JTextArea(packageExtension+" editor");
+		JTextArea titleArea = new JTextArea();
 		titleArea.setEditable(false);
 		this.add(titleArea, BorderLayout.NORTH);
-		myTileEditor = new TileEditor();
+		//myTileEditor = new TileEditor();
 		//this.add(new PropertiesChooser("Turn Rules", myModelPackage+packageExtension), BorderLayout.CENTER);
-		this.add(myTileEditor, BorderLayout.CENTER);
+		//this.add(myTileEditor, BorderLayout.CENTER);
 		myEnterButton = new JButton("Create");
 		myEnterButton.addActionListener(new CreateUnitAction());
 		this.add(myEnterButton, BorderLayout.SOUTH);
@@ -62,8 +64,8 @@ public class UnitCreationDialogue extends JFrame {
 			PackageClassFinder finder = new PackageClassFinder(); 
 			Tile t = null;
 			try {
-				Class clazz= finder.getClassesForPackage("model.tile").get(0);	
-				t = (Tile) Reflection.createInstance(clazz.getCanonicalName(), Double.parseDouble(args.get(0)), Integer.parseInt(args.get(1)));
+				Class className = finder.getClassesForPackage("model.tile").get(0);	
+				t = (Tile) Reflection.createInstance(className.getCanonicalName(), Double.parseDouble(args.get(0)), Integer.parseInt(args.get(1)));
 			}
 			catch (ClassNotFoundException CNFE){
 				System.out.println("This sucks");
@@ -71,8 +73,8 @@ public class UnitCreationDialogue extends JFrame {
 			System.out.println(t.getPassability()+ t.getImageName());
 		}	
 	}
-	public static void main(String[] args) {
-		new UnitCreationDialogue("tile");
-	}
+//	public static void main(String[] args) {
+//		new UnitCreationDialogue("tile");
+//	}
 }
 
