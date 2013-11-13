@@ -14,6 +14,7 @@ import model.unit.Unit;
 public class GameEngine extends JGEngine {
 	
 	private GameManager myGameManager;
+	private GameLoader myGameLoader;
 	private final int myViewerWidth = 800;
 	private final int myViewerHeight = 600;
 	private final int myTileWidth = 20;
@@ -68,15 +69,8 @@ public class GameEngine extends JGEngine {
 		return myPlayers;
 	}
 	
-	public void loadMap(GameMap map) {
-	    myGameMap = map;
+	public void initializeState(GameElements gameElements) {
+		myGameLoader = new GameLoader(gameElements);
 	}
 	
-	public void loadUnit(ArrayList<Unit> units) {
-		myUnits = units;
-	}
-	
-	public void loadPlayer(ArrayList<Player> players) {
-	    myPlayers = players;
-	}
 }

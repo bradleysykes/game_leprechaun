@@ -32,7 +32,9 @@ public class DataPrimer {
 	}
 	
 	private void loadGame(File xmlFile) {
-		// Parser(xmlFile, myGameEngine)
+		Factory factory = new Factory(xmlFile);
+		GameElements gameElements = factory.getGameElements();
+		myGameEngine.initializeState(gameElements);
 	}
 	
 	
