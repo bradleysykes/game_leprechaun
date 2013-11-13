@@ -1,7 +1,5 @@
 package model.tile;
 
-import gae.BoardListItem;
-
 import java.util.*;
 
 import model.ModelConstants;

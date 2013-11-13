@@ -1,5 +1,10 @@
 package gae;
 
+import gae.panel_lists.BoardList;
+import gae.panel_lists.ConditionList;
+import gae.panel_lists.TileList;
+import gae.panel_lists.UnitList;
+
 import java.awt.Dimension;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -32,18 +37,14 @@ public class EditTabbedView extends JTabbedPane {
 	}
 	
 	public BoardList populateList(BoardList list){
-		for(Class c:getClasses(list.getPackageName())){
-			BoardListItem item = (BoardListItem) Reflection.createInstance(c.getName());
-			list.addNewItem(item);
-		}
+//		for(Class c:getClasses(list.getPackageName())){
+//			BoardListItem item = (BoardListItem) Reflection.createInstance(c.getName());
+//			list.addNewItem(item);
+//		}
+//		return list;
 		return list;
 	}
 	
-	public void addTile(BoardListItem tile){
-		for(int i = 0; i<this.getTabCount();i++){
-			
-		}
-	}
 	
 	public List<Class> getClasses(String packageName){
 		try {

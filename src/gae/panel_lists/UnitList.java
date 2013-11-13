@@ -1,11 +1,14 @@
-package gae;
+package gae.panel_lists;
+
+import gae.Constants;
+import gae.viewitems.UnitViewItem;
 
 public class UnitList extends BoardList {
 	
 	
 	public UnitList(){
 		super();
-		this.addNewItem(new ToyUnit());
+		this.addNewItem(new UnitViewItem());
 	}
 	@Override
 	public String getListType() {

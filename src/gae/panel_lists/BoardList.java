@@ -1,4 +1,8 @@
-package gae;
+package gae.panel_lists;
+import gae.listeners.EditListSelectionListener;
+import gae.listeners.PopupListener;
+import gae.viewitems.ViewItem;
+
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,7 +37,7 @@ public abstract class BoardList extends JList {
 	}
 
 
-	public void addNewItem(BoardListItem item){
+	public void addNewItem(ViewItem item){
 		myModel.insertElementAt(item, 0);
 	}
 	
@@ -42,18 +46,15 @@ public abstract class BoardList extends JList {
 	public abstract String getListType();
 	
 	public class EditListRenderer extends DefaultListCellRenderer{
-		//ImageIcon[] myIcons = {new ImageIcon(Constants.ICON_PATH+"test_icon_image.png")};
-		@SuppressWarnings("unchecked")
+		
 		@Override
 		public Component getListCellRendererComponent(JList list, Object item, 
 				int index,boolean isSelected, boolean cellHasFocus) {
 			JLabel label = (JLabel) super.getListCellRendererComponent(list,item, 
 					index,isSelected,cellHasFocus);
-			BoardListItem display = (BoardListItem) item;
-			label.setIcon(new ImageIcon(display.getImagePath()));
-			label.setText(display.getName());
-			JButton hello = new JButton("DELETE");
-			hello.addActionListener(new DeleteListener());
+			ViewItem display = (ViewItem) item;
+			label.setIcon(display.getListIcon());
+			label.setText(display.getListMessage());
 			return this;
 		}
 		

@@ -1,4 +1,5 @@
-package gae;
+package gae.panels;
+
 
 import java.awt.Color;
 
@@ -9,8 +10,8 @@ import javax.swing.JTextArea;
 
 public class ObjectPanel extends EditPanel {
 	
-	public ObjectPanel(Observer observer){
-		super(observer);
+	public ObjectPanel(){
+		super();
 		DefaultListModel<String> model = new DefaultListModel<String>();
 		model.addElement("YOLO");
 		JList<String> objectList = new JList<String>(model);
@@ -18,9 +19,4 @@ public class ObjectPanel extends EditPanel {
 		initialize(objectList);
 	}
 
-	@Override
-	public void execute(Object o) {
-		// TODO Auto-generated method stub
-		
-	}
 }

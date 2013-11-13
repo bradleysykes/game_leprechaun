@@ -1,4 +1,8 @@
-package gae;
+package gae.panels;
+
+import gae.Constants;
+import gae.GUIMap;
+import gae.PackageClassFinder;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -18,11 +22,11 @@ import util.reflection.Reflection;
 
 public class MapPanel extends EditPanel {
 	
-	private MapView myMapView;
+	private GUIMap myMapView;
 	private PackageClassFinder myFinder;
 
-	public MapPanel(Observer observer){
-		super(observer);
+	public MapPanel(){
+		super();
 		myFinder = new PackageClassFinder();
 		this.setLayout(new BorderLayout());
 		this.initialize();
@@ -41,14 +45,10 @@ public class MapPanel extends EditPanel {
 	}
 	
 	public void initialize(){
-		myMapView = new MapView();
+		myMapView = new GUIMap();
 		this.add(myMapView, BorderLayout.CENTER);
 		this.setDefaultTiles();
 	}
 
-	@Override
-	public void execute(Object o) {
-		
-	}
 
 }

@@ -1,4 +1,8 @@
-package gae;
+package gae.listeners;
+
+import gae.BoardBuffer;
+import gae.panel_lists.BoardList;
+import gae.viewitems.ViewItem;
 
 import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
@@ -17,11 +21,9 @@ public class EditListSelectionListener implements ListSelectionListener {
 			try{
 			BoardList listSource =(BoardList) e.getSource();
 			if(listSource.getSelectedIndex()!=-1){
-				BoardListItem selectedItem = (BoardListItem)listSource.getSelectedValue();
+				ViewItem selectedItem = (ViewItem)listSource.getSelectedValue();
 				BoardBuffer.push(selectedItem);
-				if(selectedItem instanceof NewUnit){
-					new UnitCreationDialogue(listSource.getListType());
-				}
+				selectedItem.onClick();
 				listSource.clearSelection();
 			}
 			}

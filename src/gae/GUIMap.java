@@ -10,11 +10,11 @@ import jgame.JGColor;
 import jgame.JGObject;
 import jgame.platform.JGEngine;
 
-public class MapView extends JGEngine {
+public class GUIMap extends JGEngine {
 	
 	private MapEncoder myEncoder;
 
-	public MapView(){
+	public GUIMap(){
 		initEngineComponent(500,500);
 		try {
 			myEncoder = new MapEncoder(500,500);
@@ -32,8 +32,8 @@ public class MapView extends JGEngine {
 	
 	public void placeOnBoard(){
 		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
-			defineImage(BoardBuffer.retrieve().getName(),"-",0, "resources/"+BoardBuffer.retrieve().getRelativeImagePath(),"-");
-			new JGObject("test", true, this.getMouseX(),this.getMouseY(), 0, BoardBuffer.retrieve().getName());
+//			defineImage(BoardBuffer.retrieve().getName(),"-",0, "resources/"+BoardBuffer.retrieve().getRelativeImagePath(),"-");
+//			new JGObject("test", true, this.getMouseX(),this.getMouseY(), 0, BoardBuffer.retrieve().getName());
 		}
 	}
 	

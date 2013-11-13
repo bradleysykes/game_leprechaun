@@ -1,11 +1,13 @@
-package gae;
+package gae.listeners;
+
+import gae.GUIMap;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class MapMouseListener implements MouseListener {
-	private MapView myMap;
-	public MapMouseListener(MapView map){
+	private GUIMap myMap;
+	public MapMouseListener(GUIMap map){
 		myMap = map;
 	}
 	@Override
