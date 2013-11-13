@@ -1,5 +1,7 @@
 package model.tile;
 
+import gae.BoardListItem;
+
 import java.util.*;
 
 import jgame.JGObject;
@@ -11,7 +13,7 @@ import model.Resources;
 import model.Terrain;
 import model.unit.Unit;
 
-public class Tile extends JGObject implements ModelConstants{
+public class Tile extends JGObject implements ModelConstants, BoardListItem{
 	
 	private Resources myResources = new Resources();
 	private double myPassability = DEFAULT_ATTRIBUTE;
@@ -146,6 +148,24 @@ public class Tile extends JGObject implements ModelConstants{
 	
 	public int getMaxPop(){
 		return myMaxPopulation;
+	}
+
+	@Override
+	public String getRelativeImagePath() {
+		// TODO Auto-generated method stub
+		return System.getProperty("user.dir")+"\\gae\\resources\\test_tile.jpg";
+	}
+
+	@Override
+	public String getImagePath() {
+		// TODO Auto-generated method stub
+		return System.getProperty("user.dir")+"\\gae\\resources\\test_tile.jpg";
+	}
+
+	@Override
+	public String getObjectClass() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

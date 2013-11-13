@@ -24,6 +24,13 @@ public class ToyUnit implements BoardListItem{
 		return "test_icon_image.png";
 	}
 
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "Soldier";
+	}
+
 	
 	
 

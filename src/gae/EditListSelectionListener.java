@@ -18,13 +18,9 @@ public class EditListSelectionListener implements ListSelectionListener {
 			BoardList listSource =(BoardList) e.getSource();
 			if(listSource.getSelectedIndex()!=-1){
 				BoardListItem selectedItem = (BoardListItem)listSource.getSelectedValue();
-				if(selectedItem instanceof Tile){
-					BoardBuffer.push(selectedItem);
+				BoardBuffer.push(selectedItem);
 					
-				}
-				if(selectedItem instanceof NewUnit){
-					//show dialog to create new tile
-				}
+				
 				listSource.clearSelection();
 			}
 			}

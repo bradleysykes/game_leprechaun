@@ -27,17 +27,13 @@ public abstract class BoardList extends JList {
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.addListSelectionListener(new EditListSelectionListener());
 		this.setCellRenderer(new EditListRenderer());
-		myModel.addElement(new NewUnit(getListType()));
+		//this.addNewItem(new NewUnit(getListType()));
 		this.addMouseListener(new PopupListener());
-		this.populate();
 		//FOR DEBUG
 //		BoardListItem tu = new ToyUnit();
 //		this.addNewItem(tu);
 	}
-	
-	private void populate() {
-		
-	}
+
 
 	public void addNewItem(BoardListItem item){
 		myModel.insertElementAt(item, 0);
@@ -56,13 +52,8 @@ public abstract class BoardList extends JList {
 			JLabel label = (JLabel) super.getListCellRendererComponent(list,item, 
 					index,isSelected,cellHasFocus);
 			BoardListItem display = (BoardListItem) item;
-			if(display instanceof NewUnit){
-				label.setIcon(new ImageIcon(Constants.ICON_PATH+"plus.gif"));
-			}
-			else{
-			label.setIcon(new ImageIcon(Constants.ICON_PATH+"test_tile.jpg"));
-			}
-			label.setText("test");
+			label.setIcon(new ImageIcon(display.getImagePath()));
+			label.setText(display.getName());
 			JButton hello = new JButton("DELETE");
 			hello.addActionListener(new DeleteListener());
 			return this;

@@ -5,7 +5,7 @@ public class UnitList extends BoardList {
 	
 	public UnitList(){
 		super();
-		//this.addNewItem(new ToyUnit());
+		this.addNewItem(new ToyUnit());
 	}
 	@Override
 	public String getListType() {

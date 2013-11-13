@@ -20,4 +20,6 @@ public class EditGUI extends JFrame implements Constants {
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
+	
+
 }

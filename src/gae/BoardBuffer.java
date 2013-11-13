@@ -8,7 +8,6 @@ public class BoardBuffer {
 	
 	
 	public static BoardListItem retrieve(){
-		System.out.println("retrieve");
 		return myItem;
 	}
 	

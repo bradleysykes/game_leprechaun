@@ -32,9 +32,8 @@ public class MapView extends JGEngine {
 	
 	public void placeOnBoard(){
 		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
-			defineImage("test","-",0, "resources/"+BoardBuffer.retrieve().getRelativeImagePath(),"-");
-			new JGObject("test", true, this.getMouseX(),this.getMouseY(), 0, "test");
-			System.out.println("murica");
+			defineImage(BoardBuffer.retrieve().getName(),"-",0, "resources/"+BoardBuffer.retrieve().getRelativeImagePath(),"-");
+			new JGObject("test", true, this.getMouseX(),this.getMouseY(), 0, BoardBuffer.retrieve().getName());
 		}
 	}
 	
@@ -56,7 +55,6 @@ public class MapView extends JGEngine {
 				System.out.println("Tile placed");
 //				Tile t = new Tile();
 //				myEncoder.addXmlElement(t);
-				
 			}
 		}
 	}

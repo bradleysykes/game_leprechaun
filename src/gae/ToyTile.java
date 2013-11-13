@@ -17,11 +17,18 @@ public class ToyTile implements BoardListItem {
 	public String getRelativeImagePath(){
 		return "test_tile.jpg";
 	}
+	
 
 	@Override
 	public String getObjectClass() {
 		// TODO Auto-generated method stub
 		return this.getClass().toString();
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return "Rock";
 	}
 
 }

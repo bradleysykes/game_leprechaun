@@ -12,5 +12,7 @@ public interface BoardListItem{
 	public abstract String getImagePath();
 	
 	public abstract String getObjectClass();
+	
+	public abstract String getName();
 
 }

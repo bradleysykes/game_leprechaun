@@ -23,7 +23,6 @@ public class EditTabbedView extends JTabbedPane {
 	private PackageClassFinder myFinder;
 	
 	public EditTabbedView(String[] tabs){
-		JList list = new UnitList();
 		myFinder = new PackageClassFinder();
 		myTabContents.put("Units", populateList(new UnitList()));
 		myTabContents.put("Tiles", populateList(new TileList()));
@@ -39,7 +38,6 @@ public class EditTabbedView extends JTabbedPane {
 			BoardListItem item = (BoardListItem) Reflection.createInstance(c.getName());
 			list.addNewItem(item);
 		}
-		list.addNewItem(new NewUnit(list.getListType()));
 		return list;
 	}
 	

@@ -8,7 +8,7 @@ public interface Constants {
 	final Dimension EDITGUI_INITIAL_SIZE = new Dimension(1000,700);
 	final String ICON_PATH = "C:/Users/Bradley/desktop/workspace_java/oogasalad_missingno/src/gae/resources/";
 	final String NEW_ICON_RELATIVEPATH = "plus.gif";
-	final String UNIT_PACKAGE_NAME = "unit";
+	final String UNIT_PACKAGE_NAME = "tile";
 	final String TILE_PACKAGE_NAME = "tile";
-	final String CONDITION_PACKAGE_NAME = "condition";
+	final String CONDITION_PACKAGE_NAME = "tile";
 }
