@@ -118,7 +118,6 @@ public abstract class Encoder implements Elements, Attributes {
         resources.addResource(new Resource("gas", 46, 25));
         terrain = new Terrain();
         terrain.setName("sand");
-        tile = new Tile();
         tile = new Tile(resources, 2, terrain, "src/gae_resources/sand.jpg",
                              null, 20, 3, 5);
         e.addXmlElement(tile);

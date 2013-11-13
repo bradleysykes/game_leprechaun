@@ -13,7 +13,7 @@ public class Defeat extends Condition {
 	public boolean check(){
 		if (myUnit == null)
 			return true;
-		return !myUnit.isAlive();
+		return false;
 	}
 
 }

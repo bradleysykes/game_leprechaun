@@ -1,15 +1,17 @@
 package model.unit;
 
+import model.Attack;
 import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
+import model.things.Thing;
 import model.tile.Tile;
-import jgame.JGObject;
 import java.util.*;
 
-public class Unit extends JGObject implements ModelConstants {
+public class Unit implements ModelConstants {
 	
+	private String myName;
 	private GameMap myMap;
 	private Player myPlayer;
 	private Attributes myAttributes = new Attributes();
@@ -17,23 +19,27 @@ public class Unit extends JGObject implements ModelConstants {
 	//private Attack myAttack;
 	//private Spawner mySpawner;
 	//private Abilities myAbilities;
+	
+	List<Thing> myThings = new ArrayList<Thing>();
+	
+	private Stats myStats = new Stats(this);
+	
 	private Tile myCurrentTile;
 	
 	public Unit(String name, Player player, GameMap map){
-		this(name,0,0,player,map);
-	}
-	
-	public Unit(String name, double initX, double initY, Player player, GameMap map){
-		this(DEFAULT_NAME, false, initX, initY, 0, DEFAULT_GRAPHIC_NAME);
+		setName(name);
 		myPlayer = player;
 		myMap = map;
 	}
-
-	public Unit(String name, boolean unique_id, double x, double y,
-			int collisionid, String gfxname) {
-		super(name, unique_id, x, y, collisionid, gfxname);
-	}
 	
+	public Thing getThing(String name){
+		for(Thing t : myThings){
+			if(t.getName().equals(name))
+				return t;
+		}
+		return null;
+	}
+
 	public void setAttributes(double health, double attack, double defense, double stamina){
 		
 	}
@@ -54,9 +60,9 @@ public class Unit extends JGObject implements ModelConstants {
 		return myPlayer;
 	}
 	
-	public void setAttributes(Attributes a){
-		myAttributes = a;
-	}
+//	public void setAttributes(){
+//		myAttributes.add(a.)
+//	}
 	
 	public Attributes getAttributes(){
 		return myAttributes;
@@ -86,6 +92,18 @@ public class Unit extends JGObject implements ModelConstants {
 			}
 		}
 		return myMap.getTargetUnit(validTiles);
+	}
+
+	public String getName() {
+		return myName;
+	}
+
+	public void setName(String myName) {
+		this.myName = myName;
+	}
+	
+	public boolean equals(Unit other){
+		return (myName.equals(other.getName()) && myPlayer.equals(other.getName()));
 	}
 	
 }

@@ -1,4 +1,4 @@
-package editorMenus;
+package gae;
 
 import java.awt.Dimension;
 
@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class ItemListPane extends JPanel {
 	private DefaultListModel<String> myModel;
-	private Dimension myPreferredSize = new Dimension(150, 300);
+	private Dimension myPreferredSize = new Dimension(400, 300);
 	private JList<String> myStringList;
 	public ItemListPane(String title) {
 		super();

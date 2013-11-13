@@ -1,0 +1,33 @@
+<GameElements>
+	<map x_dimension="2" y_dimension="2">
+	  <tile image="src/resources/images/grass.jpg" max_pop="3" passability="1.0" x="0" y="0">
+	    <terrain name="grass"/>
+	    <resources>
+	      <resource amount="10.0" harvest_rate="5.0" name="minerals"/>
+	      <resource amount="20.0" harvest_rate="7.0" name="gas"/>
+	    </resources>
+	  </tile>
+	  <tile image="src/resources/images/sand.jpg" max_pop="10" passability="0.0" x="0" y="1">
+	    <terrain name="sand"/>
+	    <resources>
+	      <resource amount="36.0" harvest_rate="7.0" name="minerals"/>
+	      <resource amount="46.0" harvest_rate="25.0" name="gas"/>
+	    </resources>
+	  </tile>
+	  <tile image="src/resources/images/sand.jpg" max_pop="20" passability="0.0" x="1" y="0">
+	    <terrain name="sand"/>
+	    <resources>
+	      <resource amount="36.0" harvest_rate="7.0" name="minerals"/>
+	      <resource amount="46.0" harvest_rate="25.0" name="gas"/>
+	    </resources>
+	  </tile>
+	  <tile image="src/resources/images/sand.jpg" max_pop="20" passability="1.0" x="1" y="1">
+	    <terrain name="sand"/>
+	    <resources>
+	      <resource amount="36.0" harvest_rate="7.0" name="minerals"/>
+	      <resource amount="46.0" harvest_rate="25.0" name="gas"/>
+	    </resources>
+	  </tile>
+	</map>
+</GameElements>
+	

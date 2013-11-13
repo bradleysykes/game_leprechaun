@@ -19,8 +19,9 @@ public class EditListSelectionListener implements ListSelectionListener {
 			if(listSource.getSelectedIndex()!=-1){
 				BoardListItem selectedItem = (BoardListItem)listSource.getSelectedValue();
 				BoardBuffer.push(selectedItem);
-					
-				
+				if(selectedItem instanceof NewUnit){
+					new UnitCreationDialogue(listSource.getListType());
+				}
 				listSource.clearSelection();
 			}
 			}

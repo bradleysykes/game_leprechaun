@@ -14,7 +14,6 @@ import model.tile.Tile;
 
 import util.reflection.Reflection;
 
-import editorMenus.PackageClassFinder;
 
 
 public class MapPanel extends EditPanel {
