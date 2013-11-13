@@ -16,7 +16,7 @@ import model.unit.Unit;
 import engine.GameEngine;
 
 /**
- * Factory class. This class will receive the xml(json) file from
+ * DataManager class will receive the xml(json) file from
  * the player gui and process the file to recreate all the
  * objects specified in the file through specific decoders. 
  * All the game elements will be packed into "GameElement" object 
