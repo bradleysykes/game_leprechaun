@@ -24,6 +24,7 @@ public class BoardListSelectionListener implements ListSelectionListener {
 				ViewItem selectedItem = (ViewItem)listSource.getSelectedValue();
 				BoardBuffer.push(selectedItem);
 				selectedItem.onClick();
+				listSource.sendData(selectedItem.getModel());
 				listSource.clearSelection();
 			}
 			}

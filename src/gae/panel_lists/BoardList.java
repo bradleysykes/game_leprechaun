@@ -20,6 +20,10 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import model.things.Thing;
+
+import java.util.List;
+
 public abstract class BoardList extends JList {
 		
 	private DefaultListModel myModel;
@@ -43,7 +47,10 @@ public abstract class BoardList extends JList {
 	public void addNewItem(ViewItem item){
 		item.setController(myController);
 		myModel.insertElementAt(item, 0);
-		
+	}
+	
+	public void sendData(List<Thing> properties){
+		myController.postProperties(properties);
 	}
 	
 	public abstract String getPackageName();

@@ -30,6 +30,7 @@ public class ObjectPanel extends EditPanel {
 	public void postProperties(List<Thing> properties) {
 		// send to list
 		for(Thing t:properties){
+			System.out.println("burn the roof");
 			myModel.addElement(t);
 		}
 	}
