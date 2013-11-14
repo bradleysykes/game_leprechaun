@@ -4,7 +4,7 @@ import model.GameMap;
 
 
 public class GameElements {
-    GameMap myGameMap;
+    private GameMap myGameMap;
     
     public GameElements(GameMap map) {
         myGameMap = map;
