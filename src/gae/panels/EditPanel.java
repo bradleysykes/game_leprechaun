@@ -6,8 +6,11 @@ import gae.Controller;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.util.List;
 
 import javax.swing.JPanel;
+
+import model.things.Thing;
 
 
 public abstract class EditPanel extends JPanel implements Constants {
@@ -26,6 +29,8 @@ public abstract class EditPanel extends JPanel implements Constants {
 //		this.setPreferredSize(preferred);
 //		component.setPreferredSize(preferred);
 	}
+	
+	public abstract void postProperties(List<Thing> properties);
 }
 	
 

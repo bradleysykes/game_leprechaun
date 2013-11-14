@@ -15,6 +15,7 @@ import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import model.things.Thing;
 import model.tile.Tile;
 
 import util.reflection.Reflection;
@@ -49,6 +50,12 @@ public class MapPanel extends EditPanel {
 		myMapView = new GUIMap();
 		this.add(myMapView, BorderLayout.CENTER);
 		this.setDefaultTiles();
+	}
+
+	@Override
+	public void postProperties(List<Thing> properties) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

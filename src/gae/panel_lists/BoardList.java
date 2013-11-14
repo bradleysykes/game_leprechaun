@@ -1,4 +1,5 @@
 package gae.panel_lists;
+import gae.Controller;
 import gae.listeners.BoardListSelectionListener;
 import gae.listeners.PopupListener;
 import gae.viewitems.ViewItem;
@@ -22,8 +23,10 @@ import javax.swing.event.ListSelectionListener;
 public abstract class BoardList extends JList {
 		
 	private DefaultListModel myModel;
+	private Controller myController;
 	
-	public BoardList(){
+	public BoardList(Controller controller){
+		myController = controller;
 		myModel = new DefaultListModel();
 		this.setModel(myModel);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -38,7 +41,9 @@ public abstract class BoardList extends JList {
 
 
 	public void addNewItem(ViewItem item){
+		item.setController(myController);
 		myModel.insertElementAt(item, 0);
+		
 	}
 	
 	public abstract String getPackageName();
