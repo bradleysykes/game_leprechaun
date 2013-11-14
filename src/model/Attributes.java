@@ -10,6 +10,7 @@ public class Attributes extends ThingsThing {
 	
 	public Attributes(){
 		super("Attributes","DoubleThing");
+		Thing thing = new DoubleThing("Base Health");
 		this.addThing(new DoubleThing("Base Health"));
 		this.addThing(new DoubleThing("Health"));
 		this.addThing(new DoubleThing("Base Attack"));

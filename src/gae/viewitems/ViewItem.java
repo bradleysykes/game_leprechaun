@@ -18,6 +18,8 @@ public abstract class ViewItem implements Constants {
 	public abstract List<Thing> getModel();
 
 	public void onClick() {
+		String s = getListMessage();
+		List<Thing> things = getModel();
 		new UnitCreationDialogue(getListMessage(),getModel());
 	}
 }

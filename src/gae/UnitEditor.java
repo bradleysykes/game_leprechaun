@@ -71,7 +71,7 @@ public class UnitEditor extends JFrame {
 		// TODO Auto-generated method stub
 
 	}
-	public static void main (String arg[]) {
-		UnitCreationDialogue x = new UnitCreationDialogue("UnitEditor", null);
-	}
+//	public static void main (String arg[]) {
+//		UnitCreationDialogue x = new UnitCreationDialogue("UnitEditor", null);
+//	}
 }

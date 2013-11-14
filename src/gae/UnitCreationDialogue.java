@@ -2,6 +2,7 @@ package gae;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,8 +20,11 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import model.things.Thing;
 import model.tile.Tile;
@@ -34,25 +38,46 @@ public class UnitCreationDialogue extends JFrame {
 	private JButton myEnterButton;
 	private TileEditor myTileEditor;
 	private String myPackage;
+	private List<Thing> myProperties;
 		
 	public UnitCreationDialogue(String frameTitle, List<Thing> modelProperties) {
 		super(frameTitle);
 		//myPackage = myModelPackage+packageExtension;
-		this.setLayout(new BorderLayout());
+		myProperties = modelProperties;
 		myRuleNames = new ArrayList<String>();
+		this.setLayout(new FlowLayout());
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setPreferredSize(myPreferredSize);
 		this.setVisible(true);
-		JTextArea titleArea = new JTextArea();
-		titleArea.setEditable(false);
-		this.add(titleArea, BorderLayout.NORTH);
+		//JTextArea titleArea = new JTextArea();
+		//titleArea.setEditable(false);
+	
 		//myTileEditor = new TileEditor();
 		//this.add(new PropertiesChooser("Turn Rules", myModelPackage+packageExtension), BorderLayout.CENTER);
 		//this.add(myTileEditor, BorderLayout.CENTER);
 		myEnterButton = new JButton("Create");
 		myEnterButton.addActionListener(new CreateUnitAction());
 		this.add(myEnterButton, BorderLayout.SOUTH);
+		this.generateFields();
 		this.pack();		
+	}
+	
+	private void generateFields(){
+//		for(Thing t:myProperties){
+//			if(t.getValue()!=null){
+//				this.add(new ViewItemField(t.getName(),t.getField()));
+//			}
+//		}
+		for(int x=0;x<12;x++){
+			JPanel fieldPanel = new JPanel(new BorderLayout());
+			JLabel fieldTitle = new JLabel("Field Name");
+			JLabel fieldDescription = new JLabel("Field description");
+			JTextField field = new JTextField();
+			fieldPanel.add(fieldTitle,BorderLayout.PAGE_START);
+			fieldPanel.add(fieldDescription,BorderLayout.CENTER);
+			fieldPanel.add(field,BorderLayout.PAGE_END);
+			this.add(fieldPanel, BorderLayout.NORTH);
+		} 
 	}
 	
 	private class CreateUnitAction implements ActionListener {

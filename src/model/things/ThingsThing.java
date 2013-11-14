@@ -1,5 +1,6 @@
 package model.things;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ThingsThing extends Thing {
@@ -8,7 +9,7 @@ public class ThingsThing extends Thing {
 		super(name,fieldType);
 	}	
 	
-	protected List<Thing> myThings;
+	protected List<Thing> myThings = new ArrayList<Thing>();
 	
 	public void addThing(Thing t){
 		myThings.add(t);

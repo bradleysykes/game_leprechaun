@@ -6,6 +6,8 @@ import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import model.GameMap;
+import model.Player;
 import model.things.Thing;
 import model.unit.Unit;
 
@@ -25,7 +27,7 @@ public class UnitViewItem extends ViewItem {
 	}
 	@Override
 	public List<Thing> getModel() {
-		return new Unit(null,null,null).getThings();
+		return new Unit("TEST",new Player(),new GameMap(400, 400)).getThings();
 	}
 
 }
