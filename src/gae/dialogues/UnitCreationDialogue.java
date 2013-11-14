@@ -1,4 +1,7 @@
-package gae;
+package gae.dialogues;
+
+import gae.TileEditor;
+import gae.ViewItemField;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -31,7 +34,6 @@ import javax.swing.JTextField;
 import model.things.Thing;
 import model.tile.Tile;
 import model.unit.Unit;
-import util.Reflection;
 
 public class UnitCreationDialogue extends JFrame {
 	private Dimension myPreferredSize = new Dimension(600, 600);
@@ -70,7 +72,19 @@ public class UnitCreationDialogue extends JFrame {
 //			if(t.getValue()!=null){
 //				ViewItemField fieldView = new ViewItemField(t.getName(),t.getField());
 //				this.add(fieldView);
-//				myFieldViews.add(t,fieldView);
+//				myFieldViews.put(t,fieldView);
+//			}
+//			else{
+//				JButton button = new JButton("Edit"+t.getName());
+//				button.addActionListener(new ActionListener(){
+//
+//					@Override
+//					public void actionPerformed(ActionEvent arg0) {
+//						//UnitCreationDialogue d = new UnitCreationDialogue(t.getName(),t.getThings());
+//					}
+//					
+//				});
+//				this.add(button);
 //			}
 //		}
 		for(int x=0;x<12;x++){

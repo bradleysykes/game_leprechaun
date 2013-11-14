@@ -18,7 +18,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 
-import util.Reflection;
 
 public class EditTabbedView extends JTabbedPane {
 	

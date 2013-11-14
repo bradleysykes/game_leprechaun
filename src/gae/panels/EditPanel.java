@@ -2,6 +2,7 @@ package gae.panels;
 
 import gae.Constants;
 import gae.Controller;
+import gae.viewitems.ViewItem;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -10,6 +11,7 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import model.Player;
 import model.things.Thing;
 
 
@@ -31,6 +33,10 @@ public abstract class EditPanel extends JPanel implements Constants {
 	}
 	
 	public abstract void postProperties(List<Thing> properties);
+
+	public abstract void postPlayers(List<Player> myPlayers);
+	
+	public abstract void addViewItem(ViewItem item);
 }
 	
 

@@ -4,6 +4,7 @@ import gae.Constants;
 import gae.Controller;
 import gae.GUIMap;
 import gae.PackageClassFinder;
+import gae.viewitems.ViewItem;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,6 +16,7 @@ import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import model.Player;
 import model.things.Thing;
 import model.tile.Tile;
 
@@ -54,6 +56,18 @@ public class MapPanel extends EditPanel {
 
 	@Override
 	public void postProperties(List<Thing> properties) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void postPlayers(List<Player> myPlayers) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addViewItem(ViewItem item) {
 		// TODO Auto-generated method stub
 		
 	}

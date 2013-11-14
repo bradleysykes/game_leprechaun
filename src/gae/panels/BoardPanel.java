@@ -2,12 +2,14 @@ package gae.panels;
 
 import gae.Controller;
 import gae.EditTabbedView;
+import gae.viewitems.ViewItem;
 
 import java.awt.BorderLayout;
 import java.util.List;
 
 import javax.swing.JTabbedPane;
 
+import model.Player;
 import model.things.Thing;
 
 
@@ -23,6 +25,18 @@ public class BoardPanel extends EditPanel {
 	
 	@Override
 	public void postProperties(List<Thing> properties) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void postPlayers(List<Player> myPlayers) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addViewItem(ViewItem item) {
 		// TODO Auto-generated method stub
 		
 	}

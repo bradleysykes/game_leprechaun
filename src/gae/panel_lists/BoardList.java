@@ -42,7 +42,7 @@ public abstract class BoardList extends JList {
 //		BoardListItem tu = new ToyUnit();
 //		this.addNewItem(tu);
 	}
-
+	
 
 	public void addNewItem(ViewItem item){
 		item.setController(myController);

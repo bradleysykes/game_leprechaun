@@ -31,5 +31,10 @@ public class TileViewItem extends ViewItem {
 	public List<Thing> getModel() {
 		return new ArrayList<Thing>();
 	}
+	@Override
+	public void onClick() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

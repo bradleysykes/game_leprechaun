@@ -12,8 +12,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
-import util.xmlserializer.ObjectWriteException;
-import util.xmlserializer.XMLSerializerUtil;
 import model.Attributes;
 import model.GameMap;
 import model.Player;

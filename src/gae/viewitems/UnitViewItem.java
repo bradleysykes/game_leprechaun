@@ -35,4 +35,10 @@ public class UnitViewItem extends ViewItem {
 		return myProperties;
 	}
 
+	@Override
+	public void onClick() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

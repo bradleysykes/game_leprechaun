@@ -4,7 +4,7 @@ import java.util.List;
 
 import gae.Constants;
 import gae.Controller;
-import gae.UnitCreationDialogue;
+import gae.dialogues.UnitCreationDialogue;
 
 import javax.swing.Icon;
 
@@ -23,10 +23,7 @@ public abstract class ViewItem implements Constants {
 	
 	public abstract List<Thing> getModel();
 
-	public void onClick() {
-		// send myProperties to ObjectPanel
-		new UnitCreationDialogue(getListMessage(),getModel());
-	}
+	public abstract void onClick();
 	
 	public JGObject placeOnBoard(JGEngine engine){
 		//engine.defineImage("unit", "-", 0, imgmap, mapidx, img_op, top, left, width, height)
