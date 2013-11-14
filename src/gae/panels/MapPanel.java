@@ -1,6 +1,7 @@
 package gae.panels;
 
 import gae.Constants;
+import gae.Controller;
 import gae.GUIMap;
 import gae.PackageClassFinder;
 
@@ -25,8 +26,8 @@ public class MapPanel extends EditPanel {
 	private GUIMap myMapView;
 	private PackageClassFinder myFinder;
 
-	public MapPanel(){
-		super();
+	public MapPanel(Controller controller){
+		super(controller);
 		myFinder = new PackageClassFinder();
 		this.setLayout(new BorderLayout());
 		this.initialize();

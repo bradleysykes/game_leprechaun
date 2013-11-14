@@ -1,6 +1,8 @@
 package gae.panels;
 
 
+import gae.Controller;
+
 import java.awt.Color;
 
 import javax.swing.DefaultListModel;
@@ -10,8 +12,8 @@ import javax.swing.JTextArea;
 
 public class ObjectPanel extends EditPanel {
 	
-	public ObjectPanel(){
-		super();
+	public ObjectPanel(Controller controller){
+		super(controller);
 		DefaultListModel<String> model = new DefaultListModel<String>();
 		model.addElement("YOLO");
 		JList<String> objectList = new JList<String>(model);

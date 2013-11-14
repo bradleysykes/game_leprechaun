@@ -16,7 +16,9 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -39,6 +41,7 @@ public class UnitCreationDialogue extends JFrame {
 	private TileEditor myTileEditor;
 	private String myPackage;
 	private List<Thing> myProperties;
+	private Map<Thing,ViewItemField> myFieldViews = new HashMap<Thing,ViewItemField>();
 		
 	public UnitCreationDialogue(String frameTitle, List<Thing> modelProperties) {
 		super(frameTitle);
@@ -65,7 +68,9 @@ public class UnitCreationDialogue extends JFrame {
 	private void generateFields(){
 //		for(Thing t:myProperties){
 //			if(t.getValue()!=null){
-//				this.add(new ViewItemField(t.getName(),t.getField()));
+//				ViewItemField fieldView = new ViewItemField(t.getName(),t.getField());
+//				this.add(fieldView);
+//				myFieldViews.add(t,fieldView);
 //			}
 //		}
 		for(int x=0;x<12;x++){
@@ -84,19 +89,30 @@ public class UnitCreationDialogue extends JFrame {
 		private CreateUnitAction() {}
 
 		@Override
-		public void actionPerformed(ActionEvent e) {
-			List<String> args= myTileEditor.getEditorAreaContents();
-			PackageClassFinder finder = new PackageClassFinder(); 
-			Tile t = null;
-			try {
-				Class className = finder.getClassesForPackage("model.tile").get(0);	
-				t = (Tile) Reflection.createInstance(className.getCanonicalName(), Double.parseDouble(args.get(0)), Integer.parseInt(args.get(1)));
+		public void actionPerformed(ActionEvent arg0) {
+			// look through all fields and gather information
+			for(Thing thing:myFieldViews.keySet()){
+				//get the user-inputted information
+				String data = myFieldViews.get(thing).getData();
+				// convert data to appropriate Type
 			}
-			catch (ClassNotFoundException CNFE){
-				System.out.println("This sucks");
-			}	
-			System.out.println(t.getPassability()+ t.getImageName());
-		}	
+		}
+		
+		
+//		@Override
+//		public void actionPerformed(ActionEvent e) {
+//			List<String> args= myTileEditor.getEditorAreaContents();
+//			PackageClassFinder finder = new PackageClassFinder(); 
+//			Tile t = null;
+//			try {
+//				Class className = finder.getClassesForPackage("model.tile").get(0);	
+//				t = (Tile) Reflection.createInstance(className.getCanonicalName(), Double.parseDouble(args.get(0)), Integer.parseInt(args.get(1)));
+//			}
+//			catch (ClassNotFoundException CNFE){
+//				System.out.println("This sucks");
+//			}	
+//			System.out.println(t.getPassability()+ t.getImageName());
+//		}	
 	}
 //	public static void main(String[] args) {
 //		new UnitCreationDialogue("tile");

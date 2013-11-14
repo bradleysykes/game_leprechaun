@@ -6,16 +6,21 @@ import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import jgame.JGObject;
+import jgame.platform.JGEngine;
+
 import model.GameMap;
 import model.Player;
 import model.things.Thing;
 import model.unit.Unit;
 
 public class UnitViewItem extends ViewItem {
+	List<Thing> myProperties = new Unit("TEST",new Player(),new GameMap(400, 400)).getThings();
 	
 	public UnitViewItem(){
 		super();
 	}
+	
 	@Override
 	public Icon getListIcon() {
 		return new ImageIcon(ICON_PATH+"plus.gif");
@@ -27,7 +32,7 @@ public class UnitViewItem extends ViewItem {
 	}
 	@Override
 	public List<Thing> getModel() {
-		return new Unit("TEST",new Player(),new GameMap(400, 400)).getThings();
+		return myProperties;
 	}
 
 }

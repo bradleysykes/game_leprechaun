@@ -1,6 +1,7 @@
 package gae.panels;
 
 import gae.Constants;
+import gae.Controller;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -10,8 +11,13 @@ import javax.swing.JPanel;
 
 
 public abstract class EditPanel extends JPanel implements Constants {
-	public EditPanel(){
+	
+	private Controller myController;
+
+	public EditPanel(Controller controller){
 		this.setLayout(new BorderLayout());
+		controller.addPanel(this);
+		myController = controller;
 	}
 	
 	public void initialize(Component component){

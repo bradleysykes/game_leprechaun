@@ -1,5 +1,7 @@
 package gae;
 
+import gae.viewitems.ViewItem;
+
 import javax.xml.parsers.ParserConfigurationException;
 
 import data.encoder.MapEncoder;
@@ -32,8 +34,7 @@ public class GUIMap extends JGEngine {
 	
 	public void placeOnBoard(){
 		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
-//			defineImage(BoardBuffer.retrieve().getName(),"-",0, "resources/"+BoardBuffer.retrieve().getRelativeImagePath(),"-");
-//			new JGObject("test", true, this.getMouseX(),this.getMouseY(), 0, BoardBuffer.retrieve().getName());
+			BoardBuffer.retrieve().placeOnBoard(this);
 		}
 	}
 	
@@ -52,7 +53,7 @@ public class GUIMap extends JGEngine {
 		GameMap map = new GameMap(this.getWidth(),this.getHeight());
 		for(int q=0;q<this.pfHeight();q+=20){
 			for(int m = 0;m<this.pfWidth();m+=20){
-				System.out.println("Tile placed");
+//				System.out.println("Tile placed");
 //				Tile t = new Tile();
 //				myEncoder.addXmlElement(t);
 			}
