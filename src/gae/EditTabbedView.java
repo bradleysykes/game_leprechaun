@@ -25,11 +25,11 @@ public class EditTabbedView extends JTabbedPane {
 	private Map<String,JList> myTabContents = new HashMap<String,JList>();
 	private PackageClassFinder myFinder;
 	
-	public EditTabbedView(String[] tabs){
+	public EditTabbedView(String[] tabs, Controller controller){
 		myFinder = new PackageClassFinder();
-		myTabContents.put("Units", populateList(new UnitList()));
-		myTabContents.put("Tiles", populateList(new TileList()));
-		myTabContents.put("Conditions", populateList(new ConditionList()));
+		myTabContents.put("Units", populateList(new UnitList(controller)));
+		myTabContents.put("Tiles", populateList(new TileList(controller)));
+		myTabContents.put("Conditions", populateList(new ConditionList(controller)));
 		for(String tab : myTabContents.keySet()){
 			JScrollPane scroll = new JScrollPane(myTabContents.get(tab));
 			this.addTab(tab, scroll);

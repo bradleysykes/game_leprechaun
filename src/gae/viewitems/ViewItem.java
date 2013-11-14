@@ -3,6 +3,7 @@ package gae.viewitems;
 import java.util.List;
 
 import gae.Constants;
+import gae.Controller;
 import gae.UnitCreationDialogue;
 
 import javax.swing.Icon;
@@ -13,6 +14,8 @@ import jgame.platform.JGEngine;
 import model.things.Thing;
 
 public abstract class ViewItem implements Constants {
+
+	private Controller myController;
 
 	public abstract Icon getListIcon();
 	
@@ -29,5 +32,9 @@ public abstract class ViewItem implements Constants {
 		//engine.defineImage("unit", "-", 0, imgmap, mapidx, img_op, top, left, width, height)
 		//new JGObject(such and such);
 		return new JGObject(null, false, 0, 0, 0, null);
+	}
+
+	public void setController(Controller controller) {
+		myController = controller;
 	}
 }
