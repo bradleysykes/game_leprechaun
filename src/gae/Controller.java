@@ -17,8 +17,12 @@ public class Controller {
 	List<Player> myPlayers = new ArrayList<Player>();
 	
 	public Controller(){
+
+	}
+	
+	public void init(){
 		if(myPlayers.size()==0){
-			this.addViewItem(new TaskViewItem());
+			this.addViewItem(new TaskViewItem("Specify number of players"));
 		}
 	}
 	

@@ -10,7 +10,14 @@ import javax.swing.ImageIcon;
 import model.things.Thing;
 
 public class TaskViewItem extends ViewItem {
-
+	
+	private String myMessage;
+	
+	public TaskViewItem(String message){
+		super();
+		myMessage = message;
+	}
+	
 	@Override
 	public Icon getListIcon() {
 		// TODO Auto-generated method stub
@@ -20,7 +27,7 @@ public class TaskViewItem extends ViewItem {
 	@Override
 	public String getListMessage() {
 		// TODO Auto-generated method stub
-		return "Task";
+		return myMessage;
 	}
 
 	@Override

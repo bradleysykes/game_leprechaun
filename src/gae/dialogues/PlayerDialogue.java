@@ -19,6 +19,7 @@ public class PlayerDialogue extends JFrame {
 		panel.add(label);
 		this.add(panel);
 		this.setVisible(true);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.pack();
 	}
 }
