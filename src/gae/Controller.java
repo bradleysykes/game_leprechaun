@@ -2,6 +2,8 @@ package gae;
 
 import gae.dialogues.PlayerDialogue;
 import gae.panels.EditPanel;
+import gae.viewitems.BoardSizeTaskViewItem;
+import gae.viewitems.PlayerTaskViewItem;
 import gae.viewitems.TaskViewItem;
 import gae.viewitems.ViewItem;
 
@@ -22,7 +24,8 @@ public class Controller {
 	
 	public void init(){
 		if(myPlayers.size()==0){
-			this.addViewItem(new TaskViewItem("Specify number of players", this));
+			this.addViewItem(new PlayerTaskViewItem(this));
+			this.addViewItem(new BoardSizeTaskViewItem(this));
 		}
 	}
 	
