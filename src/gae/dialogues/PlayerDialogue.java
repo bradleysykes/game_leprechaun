@@ -21,51 +21,39 @@ import javax.swing.JPanel;
 import model.Player;
 import model.things.Thing;
 
-public class PlayerDialogue extends JFrame {
+public class PlayerDialogue extends InputDialogue {
 	private JComboBox myCombo;
-	private Controller myController; 
 	
 	public PlayerDialogue(Controller controller){
-		myController = controller;
-		JPanel panel = createGutsPanel();
-		this.add(panel);
-		this.setVisible(true);
-		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		this.pack();
+		super(controller);
 	}
+	
 	public PlayerDialogue(int numPlayers, Controller controller) {
 		this(controller);
 		myCombo.setSelectedIndex(numPlayers-1);
 	}
-
-	JPanel createGutsPanel() {
+	
+	@Override
+	public JPanel createGutsPanel() {
 		JPanel panel = new JPanel(new FlowLayout());
 		String[] numberChoices = {"1","2","3","4"};
 		myCombo = new JComboBox(numberChoices);
 		myCombo.setSelectedIndex(3);
 		JLabel label = new JLabel("Choose number of players");
 		JButton button = new JButton("OK");
-		button.addActionListener(new SetPlayersAction());
+		button.addActionListener(new GetDataAction());
 		panel.add(myCombo);
 		panel.add(label);
 		panel.add(button);
 		return panel;
 	}
-	
-	private class SetPlayersAction implements ActionListener {
-		private SetPlayersAction() {}
 
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			// look through all fields and gather information
-			int numPlayers = myCombo.getSelectedIndex()+1;
-			myController.postPlayers(numPlayers);
-			myController.removeTask(new PlayerTaskViewItem(myController));
-			disposeDialogue();
-		}
-	}
-
-	public void disposeDialogue() {
-		this.dispose();	
+	@Override
+	public void postInput() {
+		// look through all fields and gather information
+		int numPlayers = myCombo.getSelectedIndex()+1;
+		myController.postPlayers(numPlayers);
+		myController.removeTask(new PlayerTaskViewItem(myController));
+		disposeDialogue();
 	}
 }

@@ -13,7 +13,7 @@ public class BoardSizeTaskViewItem extends TaskViewItem {
 	}
 
 	@Override
-	public void onClick() {
+	public void onClick(Controller c) {
 		BoardSizeDialogue d = new BoardSizeDialogue(myController);
 	}
 

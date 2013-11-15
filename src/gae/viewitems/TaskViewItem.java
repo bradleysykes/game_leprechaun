@@ -40,7 +40,7 @@ public class TaskViewItem extends ViewItem {
 	}
 
 	@Override
-	public void onClick() {
+	public void onClick(Controller c) {
 		// TODO Auto-generated method stub
 	}
 

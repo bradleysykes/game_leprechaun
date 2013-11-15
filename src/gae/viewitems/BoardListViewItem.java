@@ -1,34 +1,27 @@
 package gae.viewitems;
 
 import gae.Controller;
-import gae.dialogues.PlayerDialogue;
+import gae.dialogues.InputDialogue;
+import gae.dialogues.UnitCreationDialogue;
 
 import java.util.List;
 
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
-import model.Player;
 import model.things.Thing;
 
-public class PlayerViewItem extends ViewItem {
-	
-	private Player myPlayer;
-	
-	public PlayerViewItem(Player playa){
-		super();
-		myPlayer = playa;
-	}
+public class BoardListViewItem extends ViewItem {
+
 	@Override
 	public Icon getListIcon() {
 		// TODO Auto-generated method stub
-		return new ImageIcon(ICON_PATH+"player_icon.gif");
+		return null;
 	}
 
 	@Override
 	public String getListMessage() {
 		// TODO Auto-generated method stub
-		return "Player";
+		return null;
 	}
 
 	@Override
@@ -36,9 +29,11 @@ public class PlayerViewItem extends ViewItem {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
 	public void onClick(Controller c) {
-		//PlayerDialogue d = new PlayerDialogue();
+		// TODO Auto-generated method stub
+		InputDialogue dialogue = new UnitCreationDialogue(getListMessage(),getModel(),c);
 	}
 
 }

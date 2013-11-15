@@ -12,7 +12,7 @@ public class PlayerTaskViewItem extends TaskViewItem {
 	}
 	
 	@Override
-	public void onClick() {
+	public void onClick(Controller c) {
 		PlayerDialogue p = new PlayerDialogue(myController);
 	}
 }
