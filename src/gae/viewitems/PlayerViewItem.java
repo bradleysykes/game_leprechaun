@@ -37,7 +37,7 @@ public class PlayerViewItem extends ViewItem {
 	}
 	@Override
 	public void onClick() {
-		PlayerDialogue d = new PlayerDialogue();
+		//PlayerDialogue d = new PlayerDialogue();
 	}
 
 }

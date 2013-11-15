@@ -49,6 +49,10 @@ public abstract class BoardList extends JList {
 		myModel.insertElementAt(item, 0);
 	}
 	
+	public void removeItem(int index) {
+		myModel.remove(index);
+	}
+	
 	public void sendData(List<Thing> properties){
 		myController.postProperties(properties);
 	}

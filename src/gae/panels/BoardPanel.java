@@ -30,7 +30,7 @@ public class BoardPanel extends EditPanel {
 	}
 
 	@Override
-	public void postPlayers(List<Player> myPlayers) {
+	public void postPlayers(int numPlayers) {
 		// TODO Auto-generated method stub
 		
 	}

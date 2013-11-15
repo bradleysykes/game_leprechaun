@@ -1,5 +1,7 @@
 package gae.panel_lists;
 
+import java.awt.Component;
+
 import gae.Controller;
 import gae.viewitems.TaskViewItem;
 
@@ -23,5 +25,4 @@ public class TaskList extends BoardList {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

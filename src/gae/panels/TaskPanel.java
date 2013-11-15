@@ -3,6 +3,7 @@ package gae.panels;
 
 import gae.Controller;
 import gae.panel_lists.TaskList;
+import gae.viewitems.TaskViewItem;
 import gae.viewitems.ViewItem;
 
 import java.awt.BorderLayout;
@@ -35,7 +36,7 @@ public class TaskPanel extends EditPanel {
 	}
 
 	@Override
-	public void postPlayers(List<Player> myPlayers) {
+	public void postPlayers(int numPlayers) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -43,5 +44,14 @@ public class TaskPanel extends EditPanel {
 	@Override
 	public void addViewItem(ViewItem item) {
 		myList.addNewItem(item);
+	}
+	
+	@Override
+	public void removeTask(TaskViewItem tvi) {	
+		for (int n=0; n<myList.getModel().getSize(); n++) {
+			if(tvi.getClass().equals(myList.getModel().getElementAt(n).getClass())) {
+				myList.removeItem(n);
+			}
+		}
 	}
 }
