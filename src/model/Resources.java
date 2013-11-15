@@ -1,22 +1,19 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+import model.things.ThingsThing;
 
-public class Resources {
+public class Resources extends ThingsThing {
 	
-	private List<Resource> myResources = new ArrayList<Resource>();
-	
-	public void addResource(Resource newResource){
-		myResources.add(newResource);
+	public Resources() {
+		super("Resources", "Thing");
 	}
 	
-	public List<Resource> getResources(){
-		return myResources;
+	public void addResource(Resource newResource){
+		this.addThing(newResource);
 	}
 
 	public void removeResource(Resource resource) {
-		myResources.remove(resource);
+		this.removeThing(resource);
 	}
 
 }

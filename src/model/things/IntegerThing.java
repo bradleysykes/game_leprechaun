@@ -4,6 +4,12 @@ public class IntegerThing extends Thing {
 	
 	public IntegerThing(String name) {
 		super(name, "Integer");
+		myValue = DEFAULT_INT;
+	}
+	
+	public IntegerThing(String name, int val){
+		this(name);
+		myValue = val;
 	}
 	
 	public Integer getValue(){

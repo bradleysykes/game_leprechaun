@@ -15,7 +15,7 @@ public class Player implements ModelConstants{
 	private Condition myWinningCondition;
 	
 	public Player(){
-		this(DEFAULT_NAME);
+		this(DEFAULT_STRING);
 	}
 	
 	public Player(String name){

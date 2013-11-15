@@ -1,7 +1,6 @@
 package model;
 
-import java.util.List;
-
+import model.things.Thing;
 import model.unit.Unit;
 
 public class Harvest extends Ability{
@@ -12,9 +11,9 @@ public class Harvest extends Ability{
 
 	@Override
 	public double useAbility(){
-		List<Resource> resources = myUnit.getCurrentTile().getResourcesOnTile();
-		for(Resource r : resources){
-			myUnit.getPlayer().adjustResources(r.getName(),r.harvest());
+		Resources resources = (Resources) myUnit.getCurrentTile().getThing("Resources");
+		for(Thing r : resources.getThings()){
+			myUnit.getPlayer().adjustResources(r.getName(),((Resource) r).harvest());
 		}
 		return 0;
 	}

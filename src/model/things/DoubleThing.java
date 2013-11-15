@@ -2,8 +2,14 @@ package model.things;
 
 public class DoubleThing extends Thing{
 	
-	public DoubleThing(String s) {
-		super(s,"Double");
+	public DoubleThing(String name) {
+		super(name,"Double");
+		myValue = DEFAULT_DOUBLE;
+	}
+	
+	public DoubleThing(String name, Double val){
+		this(name);
+		myValue = val;
 	}
 	
 	public void setValue(double value){
