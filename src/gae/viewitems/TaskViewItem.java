@@ -41,7 +41,7 @@ public class TaskViewItem extends ViewItem {
 
 	@Override
 	public void onClick() {
-		PlayerDialogue p = new PlayerDialogue(myController);
+		// TODO Auto-generated method stub
 	}
 
 }

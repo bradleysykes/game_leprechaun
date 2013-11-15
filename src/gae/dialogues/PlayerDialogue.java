@@ -2,6 +2,7 @@
 package gae.dialogues;
 
 import gae.Controller;
+import gae.viewitems.PlayerTaskViewItem;
 import gae.viewitems.PlayerViewItem;
 import gae.viewitems.TaskViewItem;
 
@@ -59,7 +60,7 @@ public class PlayerDialogue extends JFrame {
 			// look through all fields and gather information
 			int numPlayers = myCombo.getSelectedIndex()+1;
 			myController.postPlayers(numPlayers);
-			myController.removeTask(new TaskViewItem("Remover", myController));
+			myController.removeTask(new PlayerTaskViewItem(myController));
 			disposeDialogue();
 		}
 	}
