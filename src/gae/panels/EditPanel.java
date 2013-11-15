@@ -33,11 +33,17 @@ public abstract class EditPanel extends JPanel implements Constants {
 //		component.setPreferredSize(preferred);
 	}
 	
-	public abstract void postProperties(List<Thing> properties);
+	public void postProperties(List<Thing> properties){
+		// do nothing
+	}
 
-	public abstract void postPlayers(int numPlayers);
+	public void postPlayers(int numPlayers){
+		//do nothing
+	}
 	
-	public abstract void addViewItem(ViewItem item);
+	public void addViewItem(ViewItem item){
+		// do nothing
+	}
 
 	public void removeTask(TaskViewItem tvi) {
 		// Default is to do nothing

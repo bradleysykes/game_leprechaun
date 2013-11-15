@@ -54,23 +54,4 @@ public class MapPanel extends EditPanel {
 		this.setDefaultTiles();
 	}
 
-	@Override
-	public void postProperties(List<Thing> properties) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void postPlayers(int numPlayers) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addViewItem(ViewItem item) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 }

@@ -20,6 +20,7 @@ public class TileViewItem extends ViewItem {
 	@Override
 	
 	public Icon getListIcon(){
+		System.out.println(Constants.ICON_PATH+"plus.gif");
 		return new ImageIcon(Constants.ICON_PATH+"plus.gif");
 	}
 	

@@ -30,18 +30,6 @@ public class TaskPanel extends EditPanel {
 	}
 
 	@Override
-	public void postProperties(List<Thing> properties) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void postPlayers(int numPlayers) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void addViewItem(ViewItem item) {
 		myList.addNewItem(item);
 	}

@@ -29,12 +29,6 @@ public class PlayerPanel extends EditPanel {
 	}
 
 	@Override
-	public void postProperties(List<Thing> properties) {
-		//do nothing
-		
-	}
-
-	@Override
 	public void postPlayers(int numPlayers) {
 		while(myModelPlayerList.size()<numPlayers) {
 			Player nextPlayer = new Player();
@@ -46,11 +40,4 @@ public class PlayerPanel extends EditPanel {
 			myModelPlayerList.remove(numPlayers);
 		}
 	}
-
-	@Override
-	public void addViewItem(ViewItem item) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

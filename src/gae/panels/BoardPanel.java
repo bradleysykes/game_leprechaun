@@ -22,23 +22,5 @@ public class BoardPanel extends EditPanel {
 		this.add(myTabbedPane);
 		initialize(myTabbedPane);
 	}
-	
-	@Override
-	public void postProperties(List<Thing> properties) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void postPlayers(int numPlayers) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addViewItem(ViewItem item) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

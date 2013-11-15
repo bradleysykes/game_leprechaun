@@ -42,16 +42,4 @@ public class ObjectPanel extends EditPanel {
 //		}
 	}
 
-	@Override
-	public void postPlayers(int numPlayers) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addViewItem(ViewItem item) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
