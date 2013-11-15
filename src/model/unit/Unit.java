@@ -5,16 +5,18 @@ import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
+import model.things.StringThing;
 import model.things.Thing;
+import model.things.ThingsThing;
 import model.tile.Tile;
 import java.util.*;
 
-public class Unit implements ModelConstants {
+public class Unit extends ThingsThing implements ModelConstants {
 	
-	private String myName;
 	private GameMap myMap;
 	private Player myPlayer;
-	private Attributes myAttributes = new Attributes();
+	private Tile myCurrentTile;
+	
 	//private Movement myMovement;
 	//private Attack myAttack;
 	//private Spawner mySpawner;
@@ -22,12 +24,14 @@ public class Unit implements ModelConstants {
 	
 	List<Thing> myThings = new ArrayList<Thing>();
 	
-	private Stats myStats = new Stats(this);
-	
-	private Tile myCurrentTile;
-	
 	public Unit(String name, Player player, GameMap map){
-		setName(name);
+		super("Unit","Thing");
+		this.addThing(new StringThing("Name"));
+		this.addThing(new Attributes());
+		//this.addThing(new Attack());
+		//this.addThing(new BudgetMove());
+		//this.addThing(new Spawner());
+		//this.addThing(new Abilities());
 		myPlayer = player;
 		myMap = map;
 	}
@@ -69,7 +73,7 @@ public class Unit implements ModelConstants {
 //	}
 	
 	public Attributes getAttributes(){
-		return myAttributes;
+		return (Attributes) this.getThing("Attributes");
 	}
 	
 	public void setMapPosition(int newX, int newY){
@@ -84,8 +88,8 @@ public class Unit implements ModelConstants {
 		return myCurrentTile;
 	}
 	
-	public void useAbility(int index){
-		//myAbilities.use(index);
+	public void useAbility(String ability){
+		//this.getThing(ability).prepAbility();
 	}
 	
 	public Unit getTarget(int range){
@@ -99,11 +103,11 @@ public class Unit implements ModelConstants {
 	}
 
 	public String getName() {
-		return myName;
+		return (String) this.getValue("Name");
 	}
 
 	public void setName(String myName) {
-		this.myName = myName;
+		this.setValue("Name",myName);
 	}
 	
 	public boolean equals(Unit other){

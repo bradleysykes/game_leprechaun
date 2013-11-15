@@ -4,6 +4,12 @@ public class StringThing extends Thing {
 	
 	public StringThing(String name) {
 		super(name, "String");
+		myValue = DEFAULT_STRING;
+	}
+	
+	public StringThing(String name, String val){
+		this(name);
+		myValue = val;
 	}
 
 	public void setValue(String s) {

@@ -15,6 +15,10 @@ public class ThingsThing extends Thing {
 		myThings.add(t);
 	}
 	
+	public void removeThing(Thing t){
+		myThings.remove(t);
+	}
+	
 	public void setThings(List<Thing> things){
 		myThings = things;
 	}
@@ -23,7 +27,7 @@ public class ThingsThing extends Thing {
 		return myThings;
 	}
 	
-	public void setThing(String name, Object value){
+	public void setValue(String name, Object value){
 		this.getThing(name).setValue(value);
 	}
 	

@@ -22,18 +22,18 @@ public class Attack extends Ability{
 
 	@Override
 	public double useAbility(){
-		double enemyDefense = (Double) myTarget.getAttributes().getThing("Defense").getValue();
-		double enemyAttack  = (Double) myTarget.getAttributes().getThing("Attack").getValue();
-		double enemyHealth  = (Double) myTarget.getAttributes().getThing("Health").getValue();
-		double myDefense = (Double) myUnit.getAttributes().getThing("Defense").getValue();
-		double myAttack = (Double) myUnit.getAttributes().getThing("Attack").getValue();
-		double myHealth = (Double) myUnit.getAttributes().getThing("Health").getValue();
+		double enemyDefense = (Double) myTarget.getAttributes().getValue("Defense");
+		double enemyAttack  = (Double) myTarget.getAttributes().getValue("Attack");
+		double enemyHealth  = (Double) myTarget.getAttributes().getValue("Health");
+		double myDefense = (Double) myUnit.getAttributes().getValue("Defense");
+		double myAttack = (Double) myUnit.getAttributes().getValue("Attack");
+		double myHealth = (Double) myUnit.getAttributes().getValue("Health");
 		if (myAttack > enemyDefense)
 			enemyHealth = enemyHealth + enemyDefense - myAttack;
 		if (myDefense < enemyAttack)
 			myHealth = myHealth + myDefense - enemyAttack;
-		myUnit.getAttributes().setThing("Health",myHealth);
-		myTarget.getAttributes().setThing("Health",enemyHealth);
+		myUnit.getAttributes().setValue("Health",myHealth);
+		myTarget.getAttributes().setValue("Health",enemyHealth);
 		return myAttack - enemyDefense;
 	}
 

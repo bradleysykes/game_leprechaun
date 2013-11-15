@@ -7,9 +7,9 @@ public class Parameters implements ModelConstants {
 	private int myPower;
 
 	public Parameters(){
-		this.setRange(DEFAULT_PARAMETER);
-		this.setRadius(DEFAULT_PARAMETER);
-		this.setPower(DEFAULT_PARAMETER);
+		this.setRange(DEFAULT_INT);
+		this.setRadius(DEFAULT_INT);
+		this.setPower(DEFAULT_INT);
 	}
 	
 	public void setParameters(int range, int radius, int power){

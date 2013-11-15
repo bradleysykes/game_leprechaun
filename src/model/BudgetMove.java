@@ -41,7 +41,7 @@ public class BudgetMove extends Move {
 				if(r!=c && r!=-c){
 					int newX = currentX+r;
 					int newY = currentY+c;
-					double cost = map.getTile(newX, newY).getPassability();
+					double cost = (Double) map.getTile(newX, newY).getValue("Passability");
 					if(cost == 0)
 						continue;
 					double check = pathFinder(currentX+r,currentY+c,destX,destY,map,budget-cost);
