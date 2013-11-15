@@ -31,6 +31,12 @@ public class ThingsThing extends Thing {
 		this.getThing(name).setValue(value);
 	}
 	
+	
+    public void setValue(String name, String value){
+        this.getThing(name).setValue(value);
+    }
+
+	
 	public Object getValue(String name){
 		return this.getThing(name).getValue();
 	}

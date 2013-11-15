@@ -1,21 +1,14 @@
 package data.decoder;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import data.Attributes;
 import data.Elements;
-import engine.GameEngine;
 import model.things.Thing;
-import org.w3c.dom.Document;
+import model.things.ThingsThing;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 import util.reflection.Reflection;
 
 
@@ -45,20 +38,42 @@ public abstract class Decoder implements Attributes, Elements {
         myThingsClassPaths.put(DOUBLE_THING, "model.things.DoubleThing");
         myThingsClassPaths.put(STRING_THING, "model.things.StringThing");
     }
+    
     public String getAttribute(String tag, Element element) {
         return element.getAttribute(tag).toString();
     }
     
-    //use reflection
-    public Thing processThing(Element thingElement) {
-        String field = thingElement.getAttribute("field");
-        String name = thingElement.getAttribute("name");
-        if(field.equals(INT_THING)) {
-//            
-        }
-        Object value = thingElement.getAttribute("value");
-        return (Thing) Reflection.createInstance(myThingsClassPaths.get(field), name, value);
+    /**
+     * This method creates the "thing" object.
+     * 
+     * @param thingElement
+     * @return thing object
+     */
+    public Thing getThing(Element thingElement) {
+        String field = thingElement.getAttribute("field").toString();
+        String name = thingElement.getAttribute("name").toString();
+        String value = thingElement.getAttribute("value");
+        Thing thing = (Thing) Reflection.createInstance(myThingsClassPaths.get(field), name);
+        thing.setValue(value);
+        return thing;     
     }
     
+    public void setThings(Element element, ThingsThing things) {
+        NodeList thingList = element.getChildNodes();
+        for(int i = 0; i < thingList.getLength(); i++) {
+            Node thing = thingList.item(i);
+            if(thing.getNodeName().equals(THING)) {
+                setThing(things, (Element)thing);
+            }
+        }
+
+    }
+    
+    public void setThing(ThingsThing thing, Element ele) {
+        String name = getAttribute(NAME, ele);
+        String value = getAttribute(VALUE, ele);
+        thing.setValue(name, value);
+    }
+
     public abstract void load(Element root);
 }
