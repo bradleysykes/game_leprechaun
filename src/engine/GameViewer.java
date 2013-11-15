@@ -2,8 +2,10 @@ package engine;
 
 import java.awt.FlowLayout;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
+import javax.swing.JPanel;
 
 public class GameViewer extends JFrame {
 	
@@ -15,12 +17,14 @@ public class GameViewer extends JFrame {
 	public GameViewer() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle(myTitle);
-		setLayout(new FlowLayout());
-		myGameEngine = new GameEngine();
-		add(myGameEngine);
+		JPanel componentPane = new JPanel();
+		componentPane.setLayout(new BoxLayout(componentPane, BoxLayout.PAGE_AXIS));
 		myMenuBar = new JMenuBar();
 		myMenuBar.add(new ViewerMenu("Options", myGameEngine));
-		add(myMenuBar);
+		setJMenuBar(myMenuBar);
+		myGameEngine = new GameEngine();
+		componentPane.add(myGameEngine);
+		add(componentPane);
 		setResizable(false);
 		pack();
 		setVisible(true);

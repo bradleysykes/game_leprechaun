@@ -44,6 +44,14 @@ public class Unit extends ThingsThing implements ModelConstants {
 		return null;
 	}
 	
+	public List<Thing> getThings(){
+		return myThings;
+	}
+
+	public void setAttributes(double health, double attack, double defense, double stamina){
+		
+	}
+	
 	public void setMap(GameMap map){
 		myMap = map;
 	}
