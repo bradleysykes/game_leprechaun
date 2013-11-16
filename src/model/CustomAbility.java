@@ -29,6 +29,7 @@ public class CustomAbility extends Ability {
 	public void useAbility() {
 		for(Tile t : myTile.getTiles(this.getValue("Radius")))
 			myTargets.addAll(t.getUnits());
+		
 	}
 
 }
