@@ -5,13 +5,12 @@ import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
-import model.things.StringThing;
-import model.things.Thing;
-import model.things.ThingsThing;
+import model.things.Stat;
+import model.things.StatCollection;
 import model.tile.Tile;
 import java.util.*;
 
-public class Unit extends ThingsThing implements ModelConstants {
+public class Unit extends StatCollection implements ModelConstants {
 	
 	private GameMap myMap;
 	private Player myPlayer;
@@ -22,11 +21,9 @@ public class Unit extends ThingsThing implements ModelConstants {
 	//private Spawner mySpawner;
 	//private Abilities myAbilities;
 	
-	List<Thing> myThings = new ArrayList<Thing>();
-	
 	public Unit(String name, Player player, GameMap map){
-		super("Unit","Thing");
-		this.addThing(new StringThing("Name"));
+		super("Unit");
+		this.addThing(new Stat("Name"));
 		this.addThing(new Attributes());
 		//this.addThing(new Attack());
 		//this.addThing(new BudgetMove());
@@ -34,22 +31,6 @@ public class Unit extends ThingsThing implements ModelConstants {
 		//this.addThing(new Abilities());
 		myPlayer = player;
 		myMap = map;
-	}
-	
-	public Thing getThing(String name){
-		for(Thing t : myThings){
-			if(t.getName().equals(name))
-				return t;
-		}
-		return null;
-	}
-	
-	public List<Thing> getThings(){
-		return myThings;
-	}
-
-	public void setAttributes(double health, double attack, double defense, double stamina){
-		
 	}
 	
 	public void setMap(GameMap map){
@@ -71,10 +52,6 @@ public class Unit extends ThingsThing implements ModelConstants {
 //	public void setAttributes(){
 //		myAttributes.add(a.)
 //	}
-	
-	public Attributes getAttributes(){
-		return (Attributes) this.getThing("Attributes");
-	}
 	
 	public void setMapPosition(int newX, int newY){
 		myCurrentTile = myMap.getTile(newX,newY);

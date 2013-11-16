@@ -5,21 +5,20 @@ import java.util.*;
 import model.ModelConstants;
 import model.Resources;
 import model.Terrain;
-import model.things.DoubleThing;
-import model.things.IntegerThing;
-import model.things.ThingsThing;
+import model.things.Thing;
+import model.things.StatCollection;
 import model.unit.Unit;
 
-public class Tile extends ThingsThing implements ModelConstants{
+public class Tile extends StatCollection implements ModelConstants{
 	
 	private List<Unit> myUnits = new ArrayList<Unit>();
 	
 	public Tile(int x, int y){
 		super("Tile","Thing");
-		this.addThing(new IntegerThing("x",x));
-		this.addThing(new IntegerThing("y",y));
-		this.addThing(new DoubleThing("Passability"));
-		this.addThing(new IntegerThing("Max Population"));
+		this.addThing(new Thing<Integer>("x",x));
+		this.addThing(new Thing<Integer>("y",y));
+		this.addThing(new Thing<Double>("Passability",DEFAULT_DOUBLE));
+		this.addThing(new Thing<Integer>("Max Population",DEFAULT_INT));
 		this.addThing(new Resources());
 		this.addThing(new Terrain());
 	}

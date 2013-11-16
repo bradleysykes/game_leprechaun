@@ -15,7 +15,7 @@ public class BudgetMove extends Move {
 	@Override
 	public double canMoveToTile(Tile dest){
 		return pathFinder(myUnit.getCurrentTile().getX(),myUnit.getCurrentTile().getY(),
-				dest.getX(),dest.getY(),myUnit.getMap(),(Double) myUnit.getAttributes().getThing("Stamina").getValue());
+				dest.getX(),dest.getY(),myUnit.getMap(),(Double) myUnit.getAttributes().getValue("Stamina"));
 	}
 	
 	@Override
