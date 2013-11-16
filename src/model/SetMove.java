@@ -14,7 +14,7 @@ public class SetMove extends Move {
 	private List<Tile> myValidTiles = new ArrayList<Tile>();
 	
 	public SetMove(Unit abilityUser) {
-		super(abilityUser);
+		super("Set Move", abilityUser);
 	}
 
 	@Override

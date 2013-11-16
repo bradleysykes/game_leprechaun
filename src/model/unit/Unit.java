@@ -4,6 +4,7 @@ import java.util.*;
 
 import model.Attack;
 import model.Attributes;
+import model.BudgetMove;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
@@ -20,9 +21,9 @@ public class Unit extends StatCollection implements ModelConstants {
 	public Unit(String name, Player player, GameMap map){
 		super("Unit","Soldier");
 		this.addStat(new Attributes());
-		//this.addThing(new Attack());
-		//this.addThing(new BudgetMove());
-		//this.addThing(new Spawner());
+		this.addStat(new Attack(this));
+		this.addStat(new BudgetMove(this));
+		//this.addStat(new Spawner());
 		//this.addThing(new Abilities());
 		myPlayer = player;
 		myMap = map;

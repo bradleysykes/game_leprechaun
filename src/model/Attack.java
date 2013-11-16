@@ -8,7 +8,7 @@ import model.unit.Unit;
 public class Attack extends Ability{
 
 	public Attack(Unit abilityUser) {
-		super(abilityUser);
+		super("Attack", abilityUser);
 	}
 
 	@Override

@@ -7,8 +7,8 @@ import model.unit.Unit;
 
 public abstract class Move extends Ability{
 
-	public Move(Unit abilityUser) {
-		super(abilityUser);
+	public Move(String name, Unit abilityUser) {
+		super(name,abilityUser);
 	}
 	
 	public abstract List<Tile> getValidTiles();

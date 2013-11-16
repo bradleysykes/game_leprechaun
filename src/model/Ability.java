@@ -1,16 +1,17 @@
 package model;
 
+import model.things.StatCollection;
 import model.tile.Tile;
 import model.unit.Unit;
-import java.util.*;
 
-public abstract class Ability{
+public abstract class Ability extends StatCollection {
 	
 	protected Unit myUnit;
 	protected Parameters myParameters;
 	protected Tile myTile;
 
-	public Ability(Unit abilityUser) {
+	public Ability(String name, Unit abilityUser) {
+		super(name);
 		myUnit = abilityUser;
 	}
 	
