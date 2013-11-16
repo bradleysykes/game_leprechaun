@@ -15,7 +15,9 @@ public class SpawnEffect extends Effect {
 
 	@Override
 	public void enact(Unit target) {
-		// TODO Auto-generated method stub
+		// Tell Game Engine to create unit (provided the unit's ID)
+		// at a specified location.
+		// GameEngine.createUnit(id,x,y);
 	}
 
 }
