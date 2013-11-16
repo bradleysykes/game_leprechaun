@@ -8,7 +8,7 @@ import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import model.things.Thing;
+import model.things.Stat;
 
 public class TaskViewItem extends ViewItem {
 	
@@ -34,7 +34,7 @@ public class TaskViewItem extends ViewItem {
 	}
 
 	@Override
-	public List<Thing> getModel() {
+	public List<Stat> getModel() {
 		// TODO Auto-generated method stub
 		return null;
 	}

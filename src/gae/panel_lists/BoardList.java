@@ -20,7 +20,7 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import model.things.Thing;
+import model.things.Stat;
 
 import java.util.List;
 
@@ -56,7 +56,7 @@ public abstract class BoardList extends JList {
 		myModel.remove(index);
 	}
 	
-	public void sendData(List<Thing> properties){
+	public void sendData(List<Stat> properties){
 		myController.postProperties(properties);
 	}
 	

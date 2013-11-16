@@ -12,8 +12,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
-import model.MyAnnotation;
-
 public class TileEditor extends JPanel {
 	private Dimension myPreferredSize=new Dimension(600, 300);
 	private PackageClassFinder myFinder = new PackageClassFinder();
@@ -46,8 +44,8 @@ public class TileEditor extends JPanel {
 					for (Annotation[] alpha:annotations) {
 						for (Annotation a:alpha) {
 //							if (a instanceof MyAnnotation) {
-								MyAnnotation annoted = (MyAnnotation) a;
-								myProperties.addStringToPanel(annoted.name()+"   "+annoted.specs());
+								//MyAnnotation annoted = (MyAnnotation) a;
+								//myProperties.addStringToPanel(annoted.name()+"   "+annoted.specs());
 //							}
 						}	
 					}

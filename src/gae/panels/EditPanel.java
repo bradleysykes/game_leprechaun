@@ -13,7 +13,7 @@ import java.util.List;
 import javax.swing.JPanel;
 
 import model.Player;
-import model.things.Thing;
+import model.things.Stat;
 
 
 public abstract class EditPanel extends JPanel implements Constants {
@@ -33,7 +33,7 @@ public abstract class EditPanel extends JPanel implements Constants {
 //		component.setPreferredSize(preferred);
 	}
 	
-	public void postProperties(List<Thing> properties){
+	public void postProperties(List<Stat> properties){
 		// do nothing
 	}
 

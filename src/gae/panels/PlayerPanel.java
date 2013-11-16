@@ -15,7 +15,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import model.Player;
-import model.things.Thing;
 
 public class PlayerPanel extends EditPanel {
 	private PlayerList myList;
