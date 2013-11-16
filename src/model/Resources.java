@@ -1,8 +1,8 @@
 package model;
 
-import model.things.ThingsThing;
+import model.things.StatCollection;
 
-public class Resources extends ThingsThing {
+public class Resources extends StatCollection {
 	
 	public Resources() {
 		super("Resources", "Thing");

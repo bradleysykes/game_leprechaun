@@ -13,7 +13,8 @@ public class Harvest extends Ability{
 	public void useAbility(){
 		Resources resources = (Resources) myUnit.getCurrentTile().getThing("Resources");
 		for(Thing r : resources.getThings()){
-			myUnit.getPlayer().adjustResources(r.getName(),((Resource) r).harvest());
+			Resource resource = (Resource) r;
+			myUnit.getPlayer().adjustResources((String) resource.getValue("Name"),((Resource) r).harvest());
 		}
 	}
 	
