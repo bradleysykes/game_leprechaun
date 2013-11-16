@@ -7,7 +7,7 @@ import model.unit.Unit;
 public class ModifyAttribute extends Effect {
 	
 	public ModifyAttribute(String name, String attribute) {
-		this(name,attribute,DEFAULT_DOUBLE);
+		this(name,attribute,0);
 	}
 	
 	public ModifyAttribute(String name, String attribute, double power) {
@@ -17,7 +17,8 @@ public class ModifyAttribute extends Effect {
 
 	@Override
 	public void enact(Unit target) {
-		target.getStatCollection("Attributes").setStat(myID,this.getValue("Power"));
+		target.getStatCollection("Attributes").setStat(myID,
+				target.getStatCollection("Attributes").getValue(myID)+this.getValue("Power"));
 	}
 	
 }

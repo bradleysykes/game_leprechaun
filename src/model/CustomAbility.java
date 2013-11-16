@@ -14,6 +14,7 @@ public class CustomAbility extends Ability {
 		super(name, abilityUser);
 		this.addStat(new Stat("Range", Math.floor(abilityUser.getStatCollection("Attributes").getValue("Attack Range"))));
 		this.addStat(new Stat("Radius", 0.0));
+		//this.addStat(new ModifyAttribute(""));
 	}
 	
 	public void addEffect(Effect e){

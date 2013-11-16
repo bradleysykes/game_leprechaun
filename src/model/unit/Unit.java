@@ -1,14 +1,11 @@
 package model.unit;
 
-import java.util.*;
-
 import model.Attack;
 import model.Attributes;
 import model.BudgetMove;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
-import model.things.Stat;
 import model.things.StatCollection;
 import model.tile.Tile;
 

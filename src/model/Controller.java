@@ -4,7 +4,6 @@ import engine.GameEngine;
 import java.util.*;
 
 import model.tile.Tile;
-import model.unit.Unit;
 
 public class Controller {
 	private List<Player> myPlayers = new ArrayList<Player>();
