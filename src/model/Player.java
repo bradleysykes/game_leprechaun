@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import model.condition.Condition;
 import model.unit.Unit;
 
 public class Player implements ModelConstants{
@@ -13,6 +12,7 @@ public class Player implements ModelConstants{
 	private HashMap<String,Double> myResources;
 	private List<Unit> myUnits;
 	private Condition myWinningCondition;
+	private Controller myController;
 	
 	public Player(){
 		this(DEFAULT_STRING);
@@ -22,6 +22,10 @@ public class Player implements ModelConstants{
 		myName = name;
 		myResources = new HashMap<String,Double>();
 		myUnits = new ArrayList<Unit>();
+	}
+	
+	public void setController(Controller c){
+		myController = c;
 	}
 	
 	public String setName(String name){

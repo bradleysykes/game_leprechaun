@@ -1,5 +1,6 @@
 package model.condition;
 
+import model.Condition;
 import model.tile.Tile;
 import model.unit.Unit;
 

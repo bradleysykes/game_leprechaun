@@ -1,5 +1,6 @@
 package model.condition;
 
+import model.Condition;
 import model.unit.Unit;
 
 public class Defeat extends Condition {

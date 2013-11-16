@@ -10,7 +10,7 @@ import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import model.condition.Condition;
+import model.Condition;
 import model.condition.Create;
 import model.things.Thing;
 
