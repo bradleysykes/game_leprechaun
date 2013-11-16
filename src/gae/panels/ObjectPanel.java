@@ -36,22 +36,10 @@ public class ObjectPanel extends EditPanel {
 			Thing t = new DoubleThing("Cheese");
 			myModel.addElement(new DoubleThing(t.getName()+ "---"+t.getField()));
 		}
-		for(Thing t:properties){
+//		for(Thing t:properties){
 			//waiting for model to fill ThingList
 			//myModel.addElement(t);
-		}
-	}
-
-	@Override
-	public void postPlayers(List<Player> myPlayers) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addViewItem(ViewItem item) {
-		// TODO Auto-generated method stub
-		
+//		}
 	}
 
 }

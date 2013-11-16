@@ -14,7 +14,7 @@ import model.Player;
 import model.things.Thing;
 import model.unit.Unit;
 
-public class UnitViewItem extends ViewItem {
+public class UnitViewItem extends BoardListViewItem {
 	List<Thing> myProperties = new Unit("TEST",new Player(),new GameMap(400, 400)).getThings();
 	
 	public UnitViewItem(){
@@ -33,12 +33,6 @@ public class UnitViewItem extends ViewItem {
 	@Override
 	public List<Thing> getModel() {
 		return myProperties;
-	}
-
-	@Override
-	public void onClick() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

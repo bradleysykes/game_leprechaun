@@ -1,5 +1,6 @@
 <map x_dimension="20" y_dimension="20">
-  <tile image="src/gae_resources/grass.jpg" max_pop="3" passability="1.0" x="1" y="2">
+  <tiles>
+		  <tile ="src/gae_resources/grass.jpg" max_pop="3" passability="1.0" x="1" y="2">
     <terrain name="grass"/>
     <resources>
       <resource amount="10.0" harvest_rate="5.0" name="minerals"/>
@@ -13,4 +14,5 @@
       <resource amount="46.0" harvest_rate="25.0" name="gas"/>
     </resources>
   </tile>
+  </tiles>
 </map>

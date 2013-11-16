@@ -1,33 +1,77 @@
 <GameElements>
-	<map x_dimension="2" y_dimension="2">
-	  <tile image="src/resources/images/grass.jpg" max_pop="3" passability="1.0" x="0" y="0">
-	    <terrain name="grass"/>
-	    <resources>
-	      <resource amount="10.0" harvest_rate="5.0" name="minerals"/>
-	      <resource amount="20.0" harvest_rate="7.0" name="gas"/>
+  <map x_dimension="2" y_dimension="2">	
+	<tile x="0" y="0">
+	    <thing name="Passability" value="1.0"/>
+	  	<thing name="Max Population" value="2"/>
+	  	<terrain>
+	  	  <thing name="Type" value="string"/>
+	  	  <thing name="Attribute Impacted" value="string"/>
+	  	  <thing name="Unit Impacted" value="string"/>
+	  	  <thing name="Magnitude" value="2"/>	  		
+	  	</terrain>
+	  	<resources> 	
+		  <resource>
+		    <thing name="Name" value="string"/>
+  		    <thing name="Amount" value="2.0"/>
+  		    <thing name="Harvest Rate" value="3.0"/>
+		  </resource>
 	    </resources>
-	  </tile>
-	  <tile image="src/resources/images/sand.jpg" max_pop="10" passability="0.0" x="0" y="1">
-	    <terrain name="sand"/>
-	    <resources>
-	      <resource amount="36.0" harvest_rate="7.0" name="minerals"/>
-	      <resource amount="46.0" harvest_rate="25.0" name="gas"/>
+    </tile>
+	<tile x="0" y="1">
+	    <thing name="Passability" value="1.0"/>
+	  	<thing name="Max Population" value="2"/>
+	  	<terrain>
+	  	  <thing name="Type" value="string"/>
+	  	  <thing name="Attribute Impacted" value="string"/>
+	  	  <thing name="Unit Impacted" value="string"/>
+	  	  <thing name="Magnitude" value="2"/>	  		
+	  	</terrain>
+	  	<resources> 	
+		  <resource>
+		    <thing name="Name" value="string"/>
+  		    <thing name="Amount" value="2.0"/>
+  		    <thing name="Harvest Rate" value="3.0"/>
+		  </resource>
 	    </resources>
-	  </tile>
-	  <tile image="src/resources/images/sand.jpg" max_pop="20" passability="0.0" x="1" y="0">
-	    <terrain name="sand"/>
-	    <resources>
-	      <resource amount="36.0" harvest_rate="7.0" name="minerals"/>
-	      <resource amount="46.0" harvest_rate="25.0" name="gas"/>
+    </tile>
+	<tile x="1" y="0">
+	    <thing name="Passability" value="1.0"/>
+	  	<thing name="Max Population" value="2"/>
+	  	<terrain>
+	  	  <thing name="Type" value="string"/>
+	  	  <thing name="Attribute Impacted" value="string"/>
+	  	  <thing name="Unit Impacted" value="string"/>
+	  	  <thing name="Magnitude" value="2"/>	  		
+	  	</terrain>
+	  	<resources> 	
+		  <resource>
+		    <thing name="Name" value="string"/>
+  		    <thing name="Amount" value="2.0"/>
+  		    <thing name="Harvest Rate" value="3.0"/>
+		  </resource>
 	    </resources>
-	  </tile>
-	  <tile image="src/resources/images/sand.jpg" max_pop="20" passability="1.0" x="1" y="1">
-	    <terrain name="sand"/>
-	    <resources>
-	      <resource amount="36.0" harvest_rate="7.0" name="minerals"/>
-	      <resource amount="46.0" harvest_rate="25.0" name="gas"/>
+    </tile>
+	<tile x="1" y="1">
+	    <thing name="Passability" value="1.0"/>
+	  	<thing name="Max Population" value="2"/>
+	  	<terrain>
+	  	  <thing name="Type" value="string"/>
+	  	  <thing name="Attribute Impacted" value="string"/>
+	  	  <thing name="Unit Impacted" value="string"/>
+	  	  <thing name="Magnitude" value="2"/>	  		
+	  	</terrain>
+	  	<resources> 	
+		  <resource>
+		    <thing name="Name" value="string"/>
+  		    <thing name="Amount" value="2.0"/>
+  		    <thing name="Harvest Rate" value="3.0"/>
+		  </resource>
 	    </resources>
-	  </tile>
-	</map>
+    </tile>
+  </map>
+  <unit>
+  
+  
+  
+  </unit>	
 </GameElements>
-	

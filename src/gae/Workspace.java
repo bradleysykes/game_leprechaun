@@ -25,15 +25,10 @@ public class Workspace extends JPanel {
 		super(new BorderLayout(10,10));
 		myController = new Controller();
 		EditPanel tasks = new TaskPanel(myController);
-		myController.addPanel(tasks);
 		EditPanel board = new BoardPanel(myController);
-		myController.addPanel(board);
 		EditPanel map = new MapPanel(myController);
-		myController.addPanel(map);
 		EditPanel objects = new ObjectPanel(myController);
-		myController.addPanel(objects);
 		EditPanel players = new PlayerPanel(myController);
-		myController.addPanel(players);
 		myController.init();
 		Component left = new EditView(tasks, board, JSplitPane.VERTICAL_SPLIT,0.5);
 		Component right = new EditView(objects, players,JSplitPane.VERTICAL_SPLIT,0.5);

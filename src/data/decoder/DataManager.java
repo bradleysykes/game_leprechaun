@@ -2,7 +2,6 @@ package data.decoder;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,12 +11,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
-import model.Attributes;
 import model.GameMap;
 import model.Player;
 import model.unit.Unit;
-import engine.GameEngine;
-import util.reflection.Reflection;
 
 /**
  * DataManager class will receive the xml(json) file from
@@ -39,7 +35,7 @@ public class DataManager {
     
     private Map<String,Decoder> myDecoders;
     private Map<String,String> myImageResources;
-
+    
     
     public DataManager(File xmlFile) {
         myDecoders = new HashMap<String,Decoder>();
@@ -94,12 +90,11 @@ public class DataManager {
         myDecoders.put("MapDecoder", new MapDecoder(this));
         
     }
-    private void processDecoders() {
+    private void processDsecoders() {
         //for (String key: myDecoders.keySet()) {
         //    myDecoders.get(key).load(myRoot);
         //}
         myDecoders.get("MapDecoder").load((Element)myRoot.getElementsByTagName("map").item(0));
-        //use for each loop, having an arraylist or map of 
     }
     
 
@@ -122,16 +117,4 @@ public class DataManager {
         return new GameElements(myGameMap);
     }
     
-    //Test Use
-    public static void main(String[] args) throws ObjectWriteException {
-        DataManager fac = new DataManager(new File("src/data/resources/test_game.xml"));
-        GameElements ele = fac.getGameElements();
-        GameMap map = ele.getGameMap();
-        
-        
-        
-        
-        Attributes attr = new Attributes();
-        System.out.println(attr.getField());
-    }
 }

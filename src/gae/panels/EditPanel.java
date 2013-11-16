@@ -2,6 +2,7 @@ package gae.panels;
 
 import gae.Constants;
 import gae.Controller;
+import gae.viewitems.TaskViewItem;
 import gae.viewitems.ViewItem;
 
 import java.awt.BorderLayout;
@@ -32,11 +33,21 @@ public abstract class EditPanel extends JPanel implements Constants {
 //		component.setPreferredSize(preferred);
 	}
 	
-	public abstract void postProperties(List<Thing> properties);
+	public void postProperties(List<Thing> properties){
+		// do nothing
+	}
 
-	public abstract void postPlayers(List<Player> myPlayers);
+	public void postPlayers(int numPlayers){
+		//do nothing
+	}
 	
-	public abstract void addViewItem(ViewItem item);
+	public void addViewItem(ViewItem item){
+		// do nothing
+	}
+
+	public void removeTask(TaskViewItem tvi) {
+		// Default is to do nothing
+	}
 }
 	
 

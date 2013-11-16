@@ -2,6 +2,8 @@ package gae;
 
 import gae.dialogues.PlayerDialogue;
 import gae.panels.EditPanel;
+import gae.viewitems.BoardSizeTaskViewItem;
+import gae.viewitems.PlayerTaskViewItem;
 import gae.viewitems.TaskViewItem;
 import gae.viewitems.ViewItem;
 
@@ -22,7 +24,8 @@ public class Controller {
 	
 	public void init(){
 		if(myPlayers.size()==0){
-			this.addViewItem(new TaskViewItem("Specify number of players"));
+			this.addViewItem(new PlayerTaskViewItem(this));
+			this.addViewItem(new BoardSizeTaskViewItem(this));
 		}
 	}
 	
@@ -36,9 +39,9 @@ public class Controller {
 		myPanels.add(panel);
 	}
 	
-	public void postPlayers(){
+	public void postPlayers(int numPlayers){
 		for(EditPanel p:myPanels){
-			p.postPlayers(myPlayers);
+			p.postPlayers(numPlayers);
 		}
 			
 	}
@@ -46,6 +49,12 @@ public class Controller {
 	public void postProperties(List<Thing> props){
 		for(EditPanel p:myPanels){
 			p.postProperties(props);
+		}
+	}
+	
+	public void removeTask(TaskViewItem tvi) {
+		for(EditPanel p:myPanels){
+			p.removeTask(tvi);
 		}
 	}
 

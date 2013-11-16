@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
 import model.things.Thing;
 import model.tile.Tile;
 
-public class TileViewItem extends ViewItem {
+public class TileViewItem extends BoardListViewItem {
 
 	
 	public TileViewItem(){
@@ -20,6 +20,7 @@ public class TileViewItem extends ViewItem {
 	@Override
 	
 	public Icon getListIcon(){
+		System.out.println(Constants.ICON_PATH+"plus.gif");
 		return new ImageIcon(Constants.ICON_PATH+"plus.gif");
 	}
 	
@@ -30,11 +31,6 @@ public class TileViewItem extends ViewItem {
 	@Override
 	public List<Thing> getModel() {
 		return new ArrayList<Thing>();
-	}
-	@Override
-	public void onClick() {
-		// TODO Auto-generated method stub
-		
 	}
 	
 }

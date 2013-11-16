@@ -1,6 +1,7 @@
 package gae.viewitems;
 
 
+import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import model.condition.Condition;
 import model.condition.Create;
 import model.things.Thing;
 
-public class ConditionViewItem extends ViewItem {
+public class ConditionViewItem extends BoardListViewItem {
 
 	
 
@@ -30,12 +31,6 @@ public class ConditionViewItem extends ViewItem {
 	@Override
 	public List<Thing> getModel() {
 		return new ArrayList<Thing>();
-	}
-
-	@Override
-	public void onClick() {
-		// send myProperties to ObjectPanel
-		new UnitCreationDialogue(getListMessage(),getModel());
 	}
 
 }

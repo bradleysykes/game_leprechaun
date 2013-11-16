@@ -1,5 +1,6 @@
 package gae.viewitems;
 
+import gae.Controller;
 import gae.dialogues.PlayerDialogue;
 
 import java.util.List;
@@ -12,10 +13,12 @@ import model.things.Thing;
 public class TaskViewItem extends ViewItem {
 	
 	private String myMessage;
+	private Controller myController; // makeshift.  Eclipse won't recognize controller from superclass.
 	
-	public TaskViewItem(String message){
+	public TaskViewItem(String message, Controller controller){
 		super();
 		myMessage = message;
+		myController = controller;
 	}
 	
 	@Override
@@ -37,8 +40,8 @@ public class TaskViewItem extends ViewItem {
 	}
 
 	@Override
-	public void onClick() {
-		PlayerDialogue p = new PlayerDialogue();
+	public void onClick(Controller c) {
+		// TODO Auto-generated method stub
 	}
 
 }

@@ -1,5 +1,6 @@
 package gae.dialogues;
 
+import gae.Controller;
 import gae.TileEditor;
 import gae.ViewItemField;
 
@@ -35,7 +36,8 @@ import model.things.Thing;
 import model.tile.Tile;
 import model.unit.Unit;
 
-public class UnitCreationDialogue extends JFrame {
+public class UnitCreationDialogue extends InputDialogue {
+	
 	private Dimension myPreferredSize = new Dimension(600, 600);
 	private static String myModelPackage = "model.";
 	private List<String> myRuleNames;
@@ -45,91 +47,63 @@ public class UnitCreationDialogue extends JFrame {
 	private List<Thing> myProperties;
 	private Map<Thing,ViewItemField> myFieldViews = new HashMap<Thing,ViewItemField>();
 		
-	public UnitCreationDialogue(String frameTitle, List<Thing> modelProperties) {
-		super(frameTitle);
+	public UnitCreationDialogue(String frameTitle, List<Thing> modelProperties, Controller controller) {
+		super(controller);
 		//myPackage = myModelPackage+packageExtension;
 		myProperties = modelProperties;
 		myRuleNames = new ArrayList<String>();
 		this.setLayout(new FlowLayout());
-		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		this.setPreferredSize(myPreferredSize);
-		this.setVisible(true);
-		//JTextArea titleArea = new JTextArea();
-		//titleArea.setEditable(false);
-	
-		//myTileEditor = new TileEditor();
-		//this.add(new PropertiesChooser("Turn Rules", myModelPackage+packageExtension), BorderLayout.CENTER);
-		//this.add(myTileEditor, BorderLayout.CENTER);
 		myEnterButton = new JButton("Create");
-		myEnterButton.addActionListener(new CreateUnitAction());
-		this.add(myEnterButton, BorderLayout.SOUTH);
-		this.generateFields();
-		this.pack();		
+		myEnterButton.addActionListener(new GetDataAction());
+		this.add(myEnterButton, BorderLayout.SOUTH);		
 	}
 	
-	private void generateFields(){
-//		for(Thing t:myProperties){
-//			if(t.getValue()!=null){
-//				ViewItemField fieldView = new ViewItemField(t.getName(),t.getField());
-//				this.add(fieldView);
-//				myFieldViews.put(t,fieldView);
-//			}
-//			else{
-//				JButton button = new JButton("Edit"+t.getName());
-//				button.addActionListener(new ActionListener(){
-//
-//					@Override
-//					public void actionPerformed(ActionEvent arg0) {
-//						//UnitCreationDialogue d = new UnitCreationDialogue(t.getName(),t.getThings());
-//					}
-//					
-//				});
-//				this.add(button);
-//			}
-//		}
-		for(int x=0;x<12;x++){
-			JPanel fieldPanel = new JPanel(new BorderLayout());
-			JLabel fieldTitle = new JLabel("Field Name");
-			JLabel fieldDescription = new JLabel("Field description");
-			JTextField field = new JTextField();
-			fieldPanel.add(fieldTitle,BorderLayout.PAGE_START);
-			fieldPanel.add(fieldDescription,BorderLayout.CENTER);
-			fieldPanel.add(field,BorderLayout.PAGE_END);
-			this.add(fieldPanel, BorderLayout.NORTH);
-		} 
-	}
-	
-	private class CreateUnitAction implements ActionListener {
-		private CreateUnitAction() {}
-
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			// look through all fields and gather information
-			for(Thing thing:myFieldViews.keySet()){
-				//get the user-inputted information
-				String data = myFieldViews.get(thing).getData();
-				// convert data to appropriate Type
-			}
+	@Override
+	public void postInput() {
+		// look through all fields and gather information
+		List<String> inputData = new ArrayList<String>();
+		for(Thing thing:myFieldViews.keySet()){
+			String data = myFieldViews.get(thing).getData();
+			// convert data to appropriate Type
+			inputData.add(data);
 		}
-		
-		
-//		@Override
-//		public void actionPerformed(ActionEvent e) {
-//			List<String> args= myTileEditor.getEditorAreaContents();
-//			PackageClassFinder finder = new PackageClassFinder(); 
-//			Tile t = null;
-//			try {
-//				Class className = finder.getClassesForPackage("model.tile").get(0);	
-//				t = (Tile) Reflection.createInstance(className.getCanonicalName(), Double.parseDouble(args.get(0)), Integer.parseInt(args.get(1)));
-//			}
-//			catch (ClassNotFoundException CNFE){
-//				System.out.println("This sucks");
-//			}	
-//			System.out.println(t.getPassability()+ t.getImageName());
-//		}	
+		disposeDialogue();
 	}
-//	public static void main(String[] args) {
-//		new UnitCreationDialogue("tile");
+
+	@Override
+	public JPanel createGutsPanel() {
+//		for(Thing t:myProperties){
+//		if(t.getValue()!=null){
+//			ViewItemField fieldView = new ViewItemField(t.getName(),t.getField());
+//			this.add(fieldView);
+//			myFieldViews.put(t,fieldView);
+//		}
+//		else{
+//			JButton button = new JButton("Edit"+t.getName());
+//			button.addActionListener(new ActionListener(){
+//
+//				@Override
+//				public void actionPerformed(ActionEvent arg0) {
+//					//UnitCreationDialogue d = new UnitCreationDialogue(t.getName(),t.getThings());
+//				}
+//				
+//			});
+//			this.add(button);
+//		}
 //	}
+		JPanel panel = new JPanel();
+	for(int x=0;x<12;x++){
+		JPanel fieldPanel = new JPanel(new BorderLayout());
+		JLabel fieldTitle = new JLabel("Field Name");
+		JLabel fieldDescription = new JLabel("Field description");
+		JTextField field = new JTextField();
+		fieldPanel.add(fieldTitle,BorderLayout.PAGE_START);
+		fieldPanel.add(fieldDescription,BorderLayout.CENTER);
+		fieldPanel.add(field,BorderLayout.PAGE_END);
+		panel.add(fieldPanel, BorderLayout.NORTH);
+	}
+	return panel;
+	
+	}
 }
 

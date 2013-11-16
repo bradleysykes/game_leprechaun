@@ -1,16 +1,12 @@
 package data.decoder;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import model.GameMap;
 import model.Resource;
 import model.Resources;
-import model.Terrain;
+import model.things.ThingsThing;
 import model.tile.Tile;
-import model.unit.Unit;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import engine.GameEngine;
 
 /**
  * Map Decoder class that will receive the head node of Map Information
@@ -21,6 +17,9 @@ import engine.GameEngine;
  *
  */
 public class MapDecoder extends Decoder {
+    
+    private static final String TERRAIN_THING = "Terrain";
+    private static final String RESOURCES_THING = "Resources";
     
     private GameMap myGameMap;
     private DataManager myDataManager;
@@ -42,40 +41,44 @@ public class MapDecoder extends Decoder {
         }
     }
     
+    
     private void setTile(Element tile) {
-        String image = getAttribute(IMAGE, tile);
-        int maxPop = Integer.parseInt(getAttribute(MAX_POP, tile));
-        double passability = Double.parseDouble(getAttribute(PASSABILITY, tile));       
         int x = Integer.parseInt(getAttribute(X_COORD, tile));
         int y = Integer.parseInt(getAttribute(Y_COORD, tile));
         
-        Element terrElement = (Element) tile.getElementsByTagName(TERRAIN).item(0);
-        Terrain terrain = getTerrain(terrElement); 
-        Element resourceList = (Element) tile.getElementsByTagName(RESOURCES).item(0);
-        Resources resources = getResources(resourceList);
-
+        //create a new Tile with x,y informaiton
+        Tile resultTile = new Tile(x, y);
+        
+        //set attributes of tile(image name, max_pop, passability).
+        setThings(tile,resultTile);
+        
+        //set terrain to the tile
+        Element terrain = (Element) tile.getElementsByTagName(TERRAIN).item(0);
+        ThingsThing targetTerr = (ThingsThing) resultTile.getThing(TERRAIN_THING);
+        setTerrain(terrain, targetTerr);
+        
+        // set resources to the tile
+        Element resources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
+        ThingsThing targetRes = (ThingsThing) resultTile.getThing(RESOURCES_THING);
+        setResources(resources,targetRes);
+        
         //create tile 
-        Tile resultTile = new Tile(resources, passability, terrain, image, new ArrayList<Unit>(), maxPop, x, y);
         myGameMap.setTile(x, y, resultTile);
     }
     
-    private Terrain getTerrain(Element terrain) {
-        return new Terrain(getAttribute(NAME, terrain));
+    private void setTerrain(Element terrain, ThingsThing target) {
+        setThings(terrain, target);
     }
     
-    private Resources getResources(Element resources) {
-        Resources result = new Resources();
+    private void setResources(Element resources, ThingsThing target) {
+        Resources result = (Resources) target;
         NodeList resourceList = resources.getElementsByTagName(RESOURCE);
         for(int i = 0; i < resourceList.getLength(); i++) {
             Element resource = (Element) resourceList.item(i);
-            
-            double amount = Double.parseDouble(getAttribute(AMOUNT, resource));
-            double harvestRate = Double.parseDouble(getAttribute(HARVEST_RATE, resource));
-            String name = getAttribute(NAME, resource);
-            
-            result.addResource(new Resource(name, amount, harvestRate));
+            Resource res = new Resource();
+            setThings(resource, res);
+            result.addResource(res);
         }
-        return result;
     }
     
     @Override
