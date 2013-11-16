@@ -12,25 +12,14 @@ import javax.swing.ImageIcon;
 
 import model.Condition;
 import model.condition.Create;
-import model.things.Thing;
+import model.things.Stat;
 
 public class ConditionViewItem extends BoardListViewItem {
 
 	
-
 	@Override
-	public Icon getListIcon() {
-		return new ImageIcon(ICON_PATH+"plus.gif");
-	}
-
-	@Override
-	public String getListMessage() {
-		return "Create new victory condition";
-	}
-
-	@Override
-	public List<Thing> getModel() {
-		return new ArrayList<Thing>();
+	public List<Stat> getModel() {
+		return new ArrayList<Stat>();
 	}
 
 }

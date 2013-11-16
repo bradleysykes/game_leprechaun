@@ -10,7 +10,7 @@ import java.util.List;
 import javax.swing.JTabbedPane;
 
 import model.Player;
-import model.things.Thing;
+
 
 
 public class BoardPanel extends EditPanel {

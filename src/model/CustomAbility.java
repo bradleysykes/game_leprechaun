@@ -2,6 +2,7 @@ package model;
 
 import java.util.*;
 
+import model.tile.Tile;
 import model.unit.Unit;
 
 public class CustomAbility extends Ability {
@@ -37,12 +38,13 @@ public class CustomAbility extends Ability {
 	public void prepAbility() {
 		for (TargetModifier tm : myTargetModifiers)
 			tm.modify();
-		myUnit.getPlayer().getController().chooseTile(myUnit.getTiles(myRange));
+		myUnit.getPlayer().getController().chooseTile(myUnit.getCurrentTile().getTiles(myRange));
 	}
 
 	@Override
 	public void useAbility() {
-		myTargets.addAll(myTile.getUnits());
+		for(Tile t : myTile.getTiles(myRadius))
+			myTargets.addAll(t.getUnits());
 	}
 
 }

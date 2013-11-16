@@ -17,7 +17,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import model.Player;
-import model.things.Thing;
 
 public class TaskPanel extends EditPanel {
 	

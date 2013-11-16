@@ -4,8 +4,6 @@ import model.ModelConstants;
 
 public class Stat implements ModelConstants {
 	
-	// REFACTOR S.T. NAMES ARE READ FROM RESOURCE FILE (support languages)
-	
 	protected String myName;
 	protected Double myValue;
 	

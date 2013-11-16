@@ -19,7 +19,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import model.Player;
-import model.things.Thing;
 
 public class PlayerDialogue extends InputDialogue {
 	private JComboBox myCombo;

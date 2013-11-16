@@ -1,11 +1,11 @@
 package model;
 
+import java.util.List;
+
 import model.things.StatCollection;
 import model.unit.Unit;
 
 public class Attack extends Ability{
-	
-	private Unit myTarget;
 
 	public Attack(Unit abilityUser) {
 		super(abilityUser);
@@ -14,13 +14,21 @@ public class Attack extends Ability{
 	@Override
 	public void prepAbility(){
 		if (myParameters.getRange() > 0){
-			myTarget = myUnit.getTarget(myParameters.getRange());
-			useAbility();
+			//assumes correct selection, will need to be more fault-proof
+			//myUnit.getTarget(myParameters.getRange());
 		}
 	}
 
 	@Override
 	public void useAbility(){
+		List<Unit> units = myTile.getUnits();
+		Unit myTarget = units.get(0);
+		for(Unit u : units){
+			if(u.getStatCollection("Attributes").getValue("Health") < 
+					myTarget.getStatCollection("Attributes").getValue("Health")){
+				myTarget = u;
+			}
+		}		
 		StatCollection targetAttributes = myTarget.getStatCollection("Attributes");
 		StatCollection unitAttributes = myUnit.getStatCollection("Attributes");
 		double enemyDefense = targetAttributes.getValue("Defense");

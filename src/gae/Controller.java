@@ -2,16 +2,18 @@ package gae;
 
 import gae.dialogues.PlayerDialogue;
 import gae.panels.EditPanel;
+import gae.viewitems.BoardListViewItem;
 import gae.viewitems.BoardSizeTaskViewItem;
 import gae.viewitems.PlayerTaskViewItem;
 import gae.viewitems.TaskViewItem;
+import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import model.Player;
-import model.things.Thing;
+import model.things.Stat;
 
 public class Controller {
 	
@@ -39,6 +41,10 @@ public class Controller {
 		myPanels.add(panel);
 	}
 	
+	public void postBoardData(){
+		
+	}
+	
 	public void postPlayers(int numPlayers){
 		for(EditPanel p:myPanels){
 			p.postPlayers(numPlayers);
@@ -46,7 +52,7 @@ public class Controller {
 			
 	}
 	
-	public void postProperties(List<Thing> props){
+	public void postProperties(List<Stat> props){
 		for(EditPanel p:myPanels){
 			p.postProperties(props);
 		}
@@ -56,6 +62,12 @@ public class Controller {
 		for(EditPanel p:myPanels){
 			p.removeTask(tvi);
 		}
+	}
+
+	public void postBoardData(List<String> inputData) {
+		// method to create a new BoardViewItem and send to appropriate panel
+		BoardListViewItem newUnit = new UnitViewItem();
+		newUnit.createModel(inputData);
 	}
 
 }
