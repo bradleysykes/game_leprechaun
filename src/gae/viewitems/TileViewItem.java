@@ -17,17 +17,7 @@ public class TileViewItem extends BoardListViewItem {
 	public TileViewItem(){
 		
 	}
-	@Override
 	
-	public Icon getListIcon(){
-		System.out.println(Constants.ICON_PATH+"plus.gif");
-		return new ImageIcon(Constants.ICON_PATH+"plus.gif");
-	}
-	
-	@Override
-	public String getListMessage(){
-		return "Create new Tile";
-	}
 	@Override
 	public List<Thing> getModel() {
 		return new ArrayList<Thing>();

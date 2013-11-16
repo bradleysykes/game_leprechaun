@@ -10,7 +10,7 @@ import javax.swing.Icon;
 
 import model.things.Thing;
 
-public class BoardListViewItem extends ViewItem {
+public abstract class BoardListViewItem extends ViewItem {
 
 	@Override
 	public Icon getListIcon() {
@@ -34,6 +34,10 @@ public class BoardListViewItem extends ViewItem {
 	public void onClick(Controller c) {
 		// TODO Auto-generated method stub
 		InputDialogue dialogue = new UnitCreationDialogue(getListMessage(),getModel(),c);
+	}
+	
+	public void createModel(List<String> inputData){
+		// create new instance and store reference
 	}
 
 }

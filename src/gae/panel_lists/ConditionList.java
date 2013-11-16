@@ -3,12 +3,13 @@ package gae.panel_lists;
 import gae.Constants;
 import gae.Controller;
 import gae.viewitems.ConditionViewItem;
+import gae.viewitems.NewViewItem;
 
 public class ConditionList extends BoardList {
 	
 	public ConditionList(Controller controller){
 		super(controller);
-		this.addNewItem(new ConditionViewItem());
+		this.addNewItem(new NewViewItem());
 	}
 	@Override
 	public String getListType() {

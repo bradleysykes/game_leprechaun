@@ -17,17 +17,6 @@ import model.things.Thing;
 public class ConditionViewItem extends BoardListViewItem {
 
 	
-
-	@Override
-	public Icon getListIcon() {
-		return new ImageIcon(ICON_PATH+"plus.gif");
-	}
-
-	@Override
-	public String getListMessage() {
-		return "Create new victory condition";
-	}
-
 	@Override
 	public List<Thing> getModel() {
 		return new ArrayList<Thing>();

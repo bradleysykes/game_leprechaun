@@ -67,6 +67,7 @@ public class UnitCreationDialogue extends InputDialogue {
 			// convert data to appropriate Type
 			inputData.add(data);
 		}
+		myController.postBoardData(inputData);
 		disposeDialogue();
 	}
 
