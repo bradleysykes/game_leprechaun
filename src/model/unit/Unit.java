@@ -1,5 +1,8 @@
 package model.unit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import model.Attack;
 import model.Attributes;
 import model.GameMap;
@@ -8,7 +11,6 @@ import model.Player;
 import model.things.Stat;
 import model.things.StatCollection;
 import model.tile.Tile;
-import java.util.*;
 
 public class Unit extends StatCollection implements ModelConstants {
 	
@@ -22,9 +24,8 @@ public class Unit extends StatCollection implements ModelConstants {
 	//private Abilities myAbilities;
 	
 	public Unit(String name, Player player, GameMap map){
-		super("Unit");
-		this.addThing(new Stat("Name"));
-		this.addThing(new Attributes());
+		super("Unit","Soldier");
+		this.addStat(new Attributes());
 		//this.addThing(new Attack());
 		//this.addThing(new BudgetMove());
 		//this.addThing(new Spawner());
@@ -80,15 +81,15 @@ public class Unit extends StatCollection implements ModelConstants {
 	}
 
 	public String getName() {
-		return (String) this.getValue("Name");
+		return (String) this.getID();
 	}
 
-	public void setName(String myName) {
-		this.setValue("Name",myName);
+	public void setName(String id) {
+		this.setID(id);
 	}
 	
 	public boolean equals(Unit other){
-		return (myName.equals(other.getName()) && myPlayer.equals(other.getName()));
+		return (myID.equals(other.getID()) && myPlayer.equals(other.getPlayer()));
 	}
 	
 }

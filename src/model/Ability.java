@@ -1,6 +1,5 @@
 package model;
 
-import model.things.Thing;
 import model.unit.Unit;
 
 public abstract class Ability{

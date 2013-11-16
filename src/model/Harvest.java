@@ -1,6 +1,7 @@
 package model;
 
-import model.things.Thing;
+import model.things.Stat;
+import model.things.StatCollection;
 import model.unit.Unit;
 
 public class Harvest extends Ability{
@@ -11,10 +12,10 @@ public class Harvest extends Ability{
 
 	@Override
 	public double useAbility(){
-		Resources resources = (Resources) myUnit.getCurrentTile().getThing("Resources");
-		for(Thing r : resources.getThings()){
+		StatCollection resources = myUnit.getCurrentTile().getStatCollection("Resources");
+		for(Stat r : resources.getStats()){
 			Resource resource = (Resource) r;
-			myUnit.getPlayer().adjustResources((String) resource.getValue("Name"),((Resource) r).harvest());
+			myUnit.getPlayer().adjustResources(resource.getID(), resource.harvest());
 		}
 		return 0;
 	}

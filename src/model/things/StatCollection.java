@@ -5,25 +5,41 @@ import java.util.List;
 
 public class StatCollection extends Stat {
 	
+	protected String myID;
+	
 	public StatCollection(String name){
 		super(name,null);
+		myID = DEFAULT_STRING;
+	}
+	
+	public StatCollection(String name, String title){
+		this(name);
+		myID = title;
 	}
 	
 	protected List<Stat> myStats = new ArrayList<Stat>();
 	
-	public void addThing(Stat t){
+	public String getID(){
+		return myID;
+	}
+	
+	public void setID(String id){
+		myID = id;
+	}
+	
+	public void addStat(Stat t){
 		myStats.add(t);
 	}
 	
-	public void removeThing(Stat t){
+	public void removeStat(Stat t){
 		myStats.remove(t);
 	}
 	
-	public void setThings(List<Stat> stats){
+	public void setStats(List<Stat> stats){
 		myStats = stats;
 	}
 	
-	public List<Stat> getThings(){
+	public List<Stat> getStats(){
 		return myStats;
 	}
 	
