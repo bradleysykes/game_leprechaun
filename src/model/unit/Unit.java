@@ -1,7 +1,6 @@
 package model.unit;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import model.Attack;
 import model.Attributes;
@@ -68,16 +67,6 @@ public class Unit extends StatCollection implements ModelConstants {
 	
 	public void useAbility(String ability){
 		//this.getThing(ability).prepAbility();
-	}
-	
-	public Unit getTarget(int range){
-		List<Tile> validTiles = new ArrayList<Tile>();
-		for (int i = myCurrentTile.getX() - range; i <= myCurrentTile.getX() + range; i++){
-			for (int j = myCurrentTile.getY() - range; i <= myCurrentTile.getY() + range; j++){
-				validTiles.add(myMap.getTile(i, j));
-			}
-		}
-		return myMap.getTargetUnit(validTiles);
 	}
 
 	public String getName() {

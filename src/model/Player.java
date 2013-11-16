@@ -37,6 +37,10 @@ public class Player implements ModelConstants{
 		return myName;
 	}
 	
+	public Controller getController(){
+		return myController;
+	}
+	
 	public void addNewResourceType(String resourceType){
 		myResources.put(resourceType,0.0);
 	}

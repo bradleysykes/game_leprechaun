@@ -13,7 +13,7 @@ public class GameMap {
 		for(int i = 0; i < x; i++){
 			myTiles.add(new ArrayList<Tile>());
 			for(int q = 0; q < y; q++){
-				myTiles.get(i).add(new Tile(i,q));
+				myTiles.get(i).add(new Tile(i,q,this));
 				// Create default tile to populate map on startup.
 			}
 		}

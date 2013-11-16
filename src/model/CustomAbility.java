@@ -1,7 +1,7 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 import model.unit.Unit;
 
 public class CustomAbility extends Ability {
@@ -37,11 +37,12 @@ public class CustomAbility extends Ability {
 	public void prepAbility() {
 		for (TargetModifier tm : myTargetModifiers)
 			tm.modify();
-		
+		myUnit.getPlayer().getController().chooseTile(myUnit.getTiles(myRange));
 	}
 
 	@Override
 	public void useAbility() {
+		myTargets.addAll(myTile.getUnits());
 	}
 
 }

@@ -14,7 +14,6 @@ public class Attack extends Ability{
 	@Override
 	public void prepAbility(){
 		if (myParameters.getRange() > 0){
-			//assumes correct selection, will need to be more fault-proof
 			myTarget = myUnit.getTarget(myParameters.getRange());
 			useAbility();
 		}
