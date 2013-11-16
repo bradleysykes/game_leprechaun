@@ -1,4 +1,4 @@
-package model.condition;
+package model;
 
 public abstract class Condition {
 

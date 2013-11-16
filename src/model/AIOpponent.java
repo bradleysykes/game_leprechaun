@@ -1,5 +1,5 @@
 package model;
 
-public class AIOpponent {
+public class AIOpponent extends Player{
 
 }

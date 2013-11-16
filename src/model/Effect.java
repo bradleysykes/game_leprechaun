@@ -1,7 +1,6 @@
 package model;
 
-public class Effect {
-	
+public class Effect {	
 
 	public Effect() {
 	}
