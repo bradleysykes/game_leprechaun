@@ -18,11 +18,6 @@ public class Unit extends StatCollection implements ModelConstants {
 	private Player myPlayer;
 	private Tile myCurrentTile;
 	
-	//private Movement myMovement;
-	//private Attack myAttack;
-	//private Spawner mySpawner;
-	//private Abilities myAbilities;
-	
 	public Unit(String name, Player player, GameMap map){
 		super("Unit","Soldier");
 		this.addStat(new Attributes());

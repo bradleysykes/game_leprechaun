@@ -6,8 +6,6 @@ import model.tile.Tile;
 import model.unit.Unit;
 
 public abstract class Move extends Ability{
-	
-	private Tile myTarget;
 
 	public Move(Unit abilityUser) {
 		super(abilityUser);
@@ -17,15 +15,15 @@ public abstract class Move extends Ability{
 	
 	@Override
 	public void prepAbility(){
-		myTarget = myUnit.getMap().getTargetTile(getValidTiles());
+		myTile = myUnit.getMap().getTargetTile(getValidTiles());
 		useAbility();
 	}
 	
 	@Override
 	public void useAbility(){
-		double cost = canMoveToTile(myTarget);
+		double cost = canMoveToTile(myTile);
 		if(cost>0){
-			myUnit.setCurrentTile(myTarget);
+			myUnit.setCurrentTile(myTile);
 			myUnit.getStatCollection("Attributes").setStat("Stamina", 
 					myUnit.getStatCollection("Attributes").getValue("Stamina")-cost);
 		}

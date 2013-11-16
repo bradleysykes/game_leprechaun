@@ -27,6 +27,10 @@ public class Player implements ModelConstants{
 	public void setController(Controller c){
 		myController = c;
 	}
+
+	public Controller getController() {
+		return myController;
+	}
 	
 	public String setName(String name){
 		myName = name;
