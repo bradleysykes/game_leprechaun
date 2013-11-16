@@ -9,7 +9,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import model.Player;
-import model.things.Thing;
+import model.things.Stat;
 
 public class PlayerViewItem extends ViewItem {
 	
@@ -32,7 +32,7 @@ public class PlayerViewItem extends ViewItem {
 	}
 
 	@Override
-	public List<Thing> getModel() {
+	public List<Stat> getModel() {
 		// TODO Auto-generated method stub
 		return null;
 	}

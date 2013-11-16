@@ -8,10 +8,11 @@ import gae.dialogues.UnitCreationDialogue;
 
 import javax.swing.Icon;
 
+import model.things.Stat;
+
 import jgame.JGObject;
 import jgame.platform.JGEngine;
 
-import model.things.Thing;
 
 public abstract class ViewItem implements Constants {
 
@@ -21,7 +22,7 @@ public abstract class ViewItem implements Constants {
 	
 	public abstract String getListMessage();
 	
-	public abstract List<Thing> getModel();
+	public abstract List<Stat> getModel();
 
 	public abstract void onClick(Controller c);
 	

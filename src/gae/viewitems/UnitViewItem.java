@@ -8,14 +8,14 @@ import javax.swing.Icon;
 
 import model.GameMap;
 import model.Player;
-import model.things.Thing;
+import model.things.Stat;
 import model.unit.Unit;
 
 public class UnitViewItem extends BoardListViewItem {
-	List<Thing> myProperties = new Unit("TEST",new Player(),new GameMap(400, 400)).getThings();
+	List<Stat> myProperties = new Unit("TEST",new Player(),new GameMap(400, 400)).getStats();
 
 	@Override
-	public List<Thing> getModel() {
+	public List<Stat> getModel() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -8,7 +8,7 @@ import java.util.List;
 
 import javax.swing.Icon;
 
-import model.things.Thing;
+import model.things.Stat;
 
 public abstract class BoardListViewItem extends ViewItem {
 
@@ -25,7 +25,7 @@ public abstract class BoardListViewItem extends ViewItem {
 	}
 
 	@Override
-	public List<Thing> getModel() {
+	public List<Stat> getModel() {
 		// TODO Auto-generated method stub
 		return null;
 	}

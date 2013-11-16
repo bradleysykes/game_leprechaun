@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import model.Player;
-import model.things.Thing;
+
 import model.tile.Tile;
 
 import util.reflection.Reflection;

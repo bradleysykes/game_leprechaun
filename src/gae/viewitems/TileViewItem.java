@@ -8,7 +8,7 @@ import gae.Constants;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import model.things.Thing;
+import model.things.Stat;
 import model.tile.Tile;
 
 public class TileViewItem extends BoardListViewItem {
@@ -19,8 +19,8 @@ public class TileViewItem extends BoardListViewItem {
 	}
 	
 	@Override
-	public List<Thing> getModel() {
-		return new ArrayList<Thing>();
+	public List<Stat> getModel() {
+		return new ArrayList<Stat>();
 	}
 	
 }

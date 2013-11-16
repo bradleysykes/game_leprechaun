@@ -12,7 +12,7 @@ import jgame.platform.JGEngine;
 
 import model.GameMap;
 import model.Player;
-import model.things.Thing;
+import model.things.Stat;
 import model.unit.Unit;
 
 public class NewViewItem extends BoardListViewItem {
@@ -32,8 +32,8 @@ public class NewViewItem extends BoardListViewItem {
 		return "Create new";
 	}
 	@Override
-	public List<Thing> getModel() {
-		return new ArrayList<Thing>();
+	public List<Stat> getModel() {
+		return new ArrayList<Stat>();
 	}
 
 }

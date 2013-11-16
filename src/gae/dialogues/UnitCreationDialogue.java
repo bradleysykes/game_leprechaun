@@ -32,7 +32,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import model.things.Thing;
+import model.things.Stat;
 import model.tile.Tile;
 import model.unit.Unit;
 
@@ -44,10 +44,10 @@ public class UnitCreationDialogue extends InputDialogue {
 	private JButton myEnterButton;
 	private TileEditor myTileEditor;
 	private String myPackage;
-	private List<Thing> myProperties;
-	private Map<Thing,ViewItemField> myFieldViews = new HashMap<Thing,ViewItemField>();
+	private List<Stat> myProperties;
+	private Map<Stat,ViewItemField> myFieldViews = new HashMap<Stat,ViewItemField>();
 		
-	public UnitCreationDialogue(String frameTitle, List<Thing> modelProperties, Controller controller) {
+	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, Controller controller) {
 		super(controller);
 		//myPackage = myModelPackage+packageExtension;
 		myProperties = modelProperties;
@@ -62,8 +62,8 @@ public class UnitCreationDialogue extends InputDialogue {
 	public void postInput() {
 		// look through all fields and gather information
 		List<String> inputData = new ArrayList<String>();
-		for(Thing thing:myFieldViews.keySet()){
-			String data = myFieldViews.get(thing).getData();
+		for(Stat stat:myFieldViews.keySet()){
+			String data = myFieldViews.get(stat).getData();
 			// convert data to appropriate Type
 			inputData.add(data);
 		}

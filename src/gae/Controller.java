@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Player;
-import model.things.Thing;
+import model.things.Stat;
 
 public class Controller {
 	
@@ -52,7 +52,7 @@ public class Controller {
 			
 	}
 	
-	public void postProperties(List<Thing> props){
+	public void postProperties(List<Stat> props){
 		for(EditPanel p:myPanels){
 			p.postProperties(props);
 		}
