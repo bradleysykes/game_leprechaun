@@ -33,7 +33,15 @@ public class MapPanel extends EditPanel {
 		super(controller);
 		myFinder = new PackageClassFinder();
 		this.setLayout(new BorderLayout());
-		this.initialize();
+		
+	}
+	@Override
+	public void createMap(List<String> dimensions){
+		int width = Integer.parseInt(dimensions.get(0));
+		int height = Integer.parseInt(dimensions.get(1));
+		myMapView = new GUIMap(width, height);
+		this.add(myMapView, BorderLayout.CENTER);
+		this.setDefaultTiles();
 	}
 	
 	public void setDefaultTiles(){
@@ -47,11 +55,6 @@ public class MapPanel extends EditPanel {
 		}
 		
 	}
-	
-	public void initialize(){
-		myMapView = new GUIMap();
-		this.add(myMapView, BorderLayout.CENTER);
-		this.setDefaultTiles();
-	}
+
 
 }

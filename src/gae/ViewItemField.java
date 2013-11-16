@@ -7,9 +7,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-public class ViewItemField extends JPanel {
+public class ViewItemField<T> extends JPanel {
 	
 	private JTextField myField;
+	private T myData;
 
 	public ViewItemField(String title, String description){
 		this.setLayout(new BorderLayout());
@@ -29,4 +30,5 @@ public class ViewItemField extends JPanel {
 	public String getData(){
 		return myField.getText();
 	}
+ 
 }

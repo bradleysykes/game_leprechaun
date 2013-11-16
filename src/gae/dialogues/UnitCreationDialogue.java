@@ -73,37 +73,39 @@ public class UnitCreationDialogue extends InputDialogue {
 
 	@Override
 	public JPanel createGutsPanel() {
-//		for(Thing t:myProperties){
-//		if(t.getValue()!=null){
-//			ViewItemField fieldView = new ViewItemField(t.getName(),t.getField());
-//			this.add(fieldView);
-//			myFieldViews.put(t,fieldView);
-//		}
-//		else{
-//			JButton button = new JButton("Edit"+t.getName());
-//			button.addActionListener(new ActionListener(){
-//
-//				@Override
-//				public void actionPerformed(ActionEvent arg0) {
-//					//UnitCreationDialogue d = new UnitCreationDialogue(t.getName(),t.getThings());
-//				}
-//				
-//			});
-//			this.add(button);
-//		}
-//	}
-		JPanel panel = new JPanel();
-	for(int x=0;x<12;x++){
-		JPanel fieldPanel = new JPanel(new BorderLayout());
-		JLabel fieldTitle = new JLabel("Field Name");
-		JLabel fieldDescription = new JLabel("Field description");
-		JTextField field = new JTextField();
-		fieldPanel.add(fieldTitle,BorderLayout.PAGE_START);
-		fieldPanel.add(fieldDescription,BorderLayout.CENTER);
-		fieldPanel.add(field,BorderLayout.PAGE_END);
-		panel.add(fieldPanel, BorderLayout.NORTH);
+		JPanel mainPanel = new JPanel();
+		for(Stat t:myProperties){
+		if(t.getValue()!=null){
+			ViewItemField<Double> fieldView = new ViewItemField<Double>(t.getName(),t.getField());
+			mainPanel.add(fieldView);
+			myFieldViews.put(t,fieldView);
+		}
+		else{
+			JButton button = new JButton("Edit"+t.getName());
+			button.addActionListener(new ActionListener(){
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					//UnitCreationDialogue d = new UnitCreationDialogue(t.getName(),t.getThings());
+				}
+				
+			});
+			mainPanel.add(button);
+		}
 	}
-	return panel;
+		return mainPanel;
+//		JPanel panel = new JPanel();
+//	for(int x=0;x<12;x++){
+//		JPanel fieldPanel = new JPanel(new BorderLayout());
+//		JLabel fieldTitle = new JLabel("Field Name");
+//		JLabel fieldDescription = new JLabel("Field description");
+//		JTextField field = new JTextField();
+//		fieldPanel.add(fieldTitle,BorderLayout.PAGE_START);
+//		fieldPanel.add(fieldDescription,BorderLayout.CENTER);
+//		fieldPanel.add(field,BorderLayout.PAGE_END);
+//		panel.add(fieldPanel, BorderLayout.NORTH);
+//	}
+//	return panel;
 	
 	}
 }
