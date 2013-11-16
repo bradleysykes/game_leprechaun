@@ -1,18 +1,19 @@
 package model;
 
 import model.unit.Unit;
+import java.util.*;
 
 public abstract class Ability{
 	
 	protected Unit myUnit;
-	protected Parameters myParameters = new Parameters();
+	protected Parameters myParameters;
 
 	public Ability(Unit abilityUser) {
 		myUnit = abilityUser;
 	}
 	
-	public abstract double prepAbility();
+	public abstract void prepAbility();
 	
-	public abstract double useAbility();
+	public abstract void useAbility();
 	
 }

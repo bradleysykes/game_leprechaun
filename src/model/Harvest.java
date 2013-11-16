@@ -11,19 +11,18 @@ public class Harvest extends Ability{
 	}
 
 	@Override
-	public double useAbility(){
+	public void useAbility(){
 		StatCollection resources = myUnit.getCurrentTile().getStatCollection("Resources");
 		for(Stat r : resources.getStats()){
 			Resource resource = (Resource) r;
 			myUnit.getPlayer().adjustResources(resource.getID(), resource.harvest());
 		}
-		return 0;
 	}
 	
 	@Override
-	public double prepAbility(){
+	public void prepAbility(){
 		// Doesn't require special preparation - works with current tile.
-		return useAbility();
+		useAbility();
 	}
 
 }
