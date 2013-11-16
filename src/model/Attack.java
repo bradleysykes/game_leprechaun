@@ -11,17 +11,16 @@ public class Attack extends Ability{
 	}
 
 	@Override
-	public double prepAbility(){
+	public void prepAbility(){
 		if (myParameters.getRange() > 0){
 			//assumes correct selection, will need to be more fault-proof
 			myTarget = myUnit.getTarget(myParameters.getRange());
-			return useAbility();
+			useAbility();
 		}
-		return 0.0;
 	}
 
 	@Override
-	public double useAbility(){
+	public void useAbility(){
 		double enemyDefense = (Double) myTarget.getAttributes().getValue("Defense");
 		double enemyAttack  = (Double) myTarget.getAttributes().getValue("Attack");
 		double enemyHealth  = (Double) myTarget.getAttributes().getValue("Health");
@@ -34,7 +33,6 @@ public class Attack extends Ability{
 			myHealth = myHealth + myDefense - enemyAttack;
 		myUnit.getAttributes().setValue("Health",myHealth);
 		myTarget.getAttributes().setValue("Health",enemyHealth);
-		return myAttack - enemyDefense;
 	}
 
 }
