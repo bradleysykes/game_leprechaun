@@ -12,7 +12,7 @@ public class Attributes extends StatCollection {
 	public Attributes(){
 		super("Attributes");
 		for(String name : ATTRIBUTE_NAMES){
-			this.addThing(new Stat(name));
+			this.addStat(new Stat(name));
 		}
 	}
 

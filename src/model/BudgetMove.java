@@ -15,7 +15,7 @@ public class BudgetMove extends Move {
 	@Override
 	public double canMoveToTile(Tile dest){
 		return pathFinder(myUnit.getCurrentTile().getX(),myUnit.getCurrentTile().getY(),
-				dest.getX(),dest.getY(),myUnit.getMap(),(Double) myUnit.getAttributes().getValue("Stamina"));
+				dest.getX(),dest.getY(),myUnit.getMap(), myUnit.getStatCollection("Attributes").getValue("Stamina"));
 	}
 	
 	@Override
@@ -41,7 +41,7 @@ public class BudgetMove extends Move {
 				if(r!=c && r!=-c){
 					int newX = currentX+r;
 					int newY = currentY+c;
-					double cost = (Double) map.getTile(newX, newY).getValue("Passability");
+					double cost = map.getTile(newX, newY).getValue("Passability");
 					if(cost == 0)
 						continue;
 					double check = pathFinder(currentX+r,currentY+c,destX,destY,map,budget-cost);
