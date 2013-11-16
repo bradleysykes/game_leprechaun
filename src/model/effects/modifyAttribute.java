@@ -17,8 +17,8 @@ public class ModifyAttribute extends Effect {
 
 	@Override
 	public void enact(Unit target) {
-		target.getStatCollection("Attributes").setStat(myID,
-				target.getStatCollection("Attributes").getValue(myID)+this.getValue("Power"));
+		target.getStatCollection("Attributes").setStat(this.getID(),
+				target.getStatCollection("Attributes").getValue(this.getID())+this.getValue("Power"));
 	}
 	
 }

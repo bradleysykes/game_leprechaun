@@ -8,11 +8,11 @@ import model.tile.Tile;
 public class Controller {
 	private List<Player> myPlayers = new ArrayList<Player>();
 	private GameMap myMap;
-	private GameEngine myGame;
+	private GameEngine myGameEngine;
 	private Ability myQueuedAbility;
 
 	public Controller() {
-		
+
 	}
 	
 	public void addPlayer(Player p){
@@ -24,7 +24,7 @@ public class Controller {
 	}
 	
 	public void setGame(GameEngine ge){
-		myGame = ge;
+		myGameEngine = ge;
 	}
 	
 	public void setAbility(Ability a){
@@ -42,6 +42,7 @@ public class Controller {
 	
 	public Tile chooseTile(Collection<Tile> validTiles){
 		// Pass this information to Game Engine for appropriate tile to be selected.
+		// myGameEngine.selectTile(validTiles);
 		return null;
 	}
 	
