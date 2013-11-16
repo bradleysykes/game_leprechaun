@@ -9,7 +9,7 @@ import model.unit.Unit;
 public class BudgetMove extends Move {
 	
 	public BudgetMove(Unit abilityUser){
-		super(abilityUser);
+		super("Budget Move", abilityUser);
 	}
 	
 	@Override

@@ -1,14 +1,11 @@
 package model.unit;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import model.Attack;
 import model.Attributes;
+import model.BudgetMove;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
-import model.things.Stat;
 import model.things.StatCollection;
 import model.tile.Tile;
 
@@ -18,17 +15,12 @@ public class Unit extends StatCollection implements ModelConstants {
 	private Player myPlayer;
 	private Tile myCurrentTile;
 	
-	//private Movement myMovement;
-	//private Attack myAttack;
-	//private Spawner mySpawner;
-	//private Abilities myAbilities;
-	
 	public Unit(String name, Player player, GameMap map){
 		super("Unit","Soldier");
 		this.addStat(new Attributes());
-		//this.addThing(new Attack());
-		//this.addThing(new BudgetMove());
-		//this.addThing(new Spawner());
+		this.addStat(new Attack(this));
+		this.addStat(new BudgetMove(this));
+		//this.addStat(new Spawner());
 		//this.addThing(new Abilities());
 		myPlayer = player;
 		myMap = map;
@@ -68,16 +60,6 @@ public class Unit extends StatCollection implements ModelConstants {
 	
 	public void useAbility(String ability){
 		//this.getThing(ability).prepAbility();
-	}
-	
-	public Unit getTarget(int range){
-		List<Tile> validTiles = new ArrayList<Tile>();
-		for (int i = myCurrentTile.getX() - range; i <= myCurrentTile.getX() + range; i++){
-			for (int j = myCurrentTile.getY() - range; i <= myCurrentTile.getY() + range; j++){
-				validTiles.add(myMap.getTile(i, j));
-			}
-		}
-		return myMap.getTargetUnit(validTiles);
 	}
 
 	public String getName() {

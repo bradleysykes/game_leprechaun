@@ -2,6 +2,7 @@ package model.tile;
 
 import java.util.*;
 
+import model.GameMap;
 import model.ModelConstants;
 import model.Resources;
 import model.Terrain;
@@ -12,9 +13,11 @@ import model.unit.Unit;
 public class Tile extends StatCollection implements ModelConstants{
 	
 	private List<Unit> myUnits = new ArrayList<Unit>();
+	private GameMap myMap;
 	
-	public Tile(double x, double y){
+	public Tile(double x, double y, GameMap map){
 		super("Tile");
+		myMap = map;
 		this.addStat(new Stat("x",x));
 		this.addStat(new Stat("y",y));
 		this.addStat(new Stat("Passability"));
@@ -47,6 +50,18 @@ public class Tile extends StatCollection implements ModelConstants{
 	
 	public List<Unit> getUnits(){
 		return myUnits;
+	}
+	
+	
+	public Collection<Tile> getTiles(double r){
+		int range = (int) r;
+		List<Tile> validTiles = new ArrayList<Tile>();
+		for (int i = getX() - range; i <= getX() + range; i++){
+			for (int j = getY() - range; i <= getY() + range; j++){
+				validTiles.add(myMap.getTile(i, j));
+			}
+		}
+		return validTiles;
 	}
 	
 }

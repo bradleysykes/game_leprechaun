@@ -7,7 +7,7 @@ import model.unit.Unit;
 public class Harvest extends Ability{
 
 	public Harvest(Unit abilityUser) {
-		super(abilityUser);
+		super("Harvest",abilityUser);
 	}
 
 	@Override
