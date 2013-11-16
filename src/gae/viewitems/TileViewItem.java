@@ -22,5 +22,11 @@ public class TileViewItem extends BoardListViewItem {
 	public List<Stat> getModel() {
 		return new ArrayList<Stat>();
 	}
+
+	@Override
+	public void createModel(List<String> inputData) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

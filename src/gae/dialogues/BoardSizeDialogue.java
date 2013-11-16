@@ -7,6 +7,7 @@ import gae.viewitems.TaskViewItem;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -34,9 +35,9 @@ public class BoardSizeDialogue extends InputDialogue {
 	public JPanel createGutsPanel() {
 		JPanel panel = new JPanel(new FlowLayout());
 		JLabel widthLabel = new JLabel("Enter Board Width");
-		myWidthField = new JTextField();
+		myWidthField = new JTextField("000000");
 		JLabel heightLabel = new JLabel("Enter Board Height");
-		myHeightField = new JTextField();
+		myHeightField = new JTextField("00000");
 		JButton button = new JButton("OK");
 		button.addActionListener(new GetDataAction());
 		panel.add(widthLabel);
@@ -50,8 +51,10 @@ public class BoardSizeDialogue extends InputDialogue {
 	@Override
 	public void postInput() {
 		try{
-			int width = Integer.parseInt(myWidthField.getText());
-			int height = Integer.parseInt(myHeightField.getText());
+			List<String> data = new ArrayList<String>();
+			data.add(myWidthField.getText());
+			data.add(myHeightField.getText());
+			myController.createMap(data);
 			myController.removeTask(new BoardSizeTaskViewItem(myController));
 			disposeDialogue();
 			}

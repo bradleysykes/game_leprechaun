@@ -22,4 +22,10 @@ public class ConditionViewItem extends BoardListViewItem {
 		return new ArrayList<Stat>();
 	}
 
+	@Override
+	public void createModel(List<String> inputData) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

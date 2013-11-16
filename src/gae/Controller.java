@@ -63,6 +63,12 @@ public class Controller {
 			p.removeTask(tvi);
 		}
 	}
+	
+	public void createMap(List<String> data){
+		for(EditPanel p:myPanels){
+			p.createMap(data);
+		}
+	}
 
 	public void postBoardData(List<String> inputData) {
 		// method to create a new BoardViewItem and send to appropriate panel

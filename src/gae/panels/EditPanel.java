@@ -48,6 +48,11 @@ public abstract class EditPanel extends JPanel implements Constants {
 	public void removeTask(TaskViewItem tvi) {
 		// Default is to do nothing
 	}
+
+	public void createMap(List<String> data) {
+		// do nothing
+		
+	}
 }
 	
 

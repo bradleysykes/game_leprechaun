@@ -15,11 +15,15 @@ import jgame.platform.JGEngine;
 public class GUIMap extends JGEngine {
 	
 	private MapEncoder myEncoder;
+	private int myWidth;
+	private int myHeight;
 
-	public GUIMap(){
+	public GUIMap(int width, int height){
 		initEngineComponent(500,500);
+		myWidth = width;
+		myHeight = height;
 		try {
-			myEncoder = new MapEncoder(500,500);
+			myEncoder = new MapEncoder(width,height);
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,7 +33,7 @@ public class GUIMap extends JGEngine {
 	
 	@Override
 	public void initCanvas() {
-		setCanvasSettings(1, 1, displayWidth(), displayHeight(), JGColor.blue, JGColor.blue, null);
+		setCanvasSettings(1, 1, myWidth, myHeight, JGColor.blue, JGColor.blue, null);
 	}
 	
 	public void placeOnBoard(){

@@ -1,6 +1,10 @@
 package gae.viewitems;
 
 
+import gae.Controller;
+import gae.dialogues.InputDialogue;
+import gae.dialogues.UnitCreationDialogue;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +24,10 @@ public class NewViewItem extends BoardListViewItem {
 	public NewViewItem(){
 		super();
 	}
+	@Override
+	public void onClick(Controller c){
+		InputDialogue dialogue = new UnitCreationDialogue(getListMessage(),getModel(),c);
+	}
 	
 	@Override
 	public Icon getListIcon() {
@@ -33,7 +41,13 @@ public class NewViewItem extends BoardListViewItem {
 	}
 	@Override
 	public List<Stat> getModel() {
-		return new ArrayList<Stat>();
+		return new Unit("bob",new Player(),new GameMap(50,50)).getStats();
+	}
+
+	@Override
+	public void createModel(List<String> inputData) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
