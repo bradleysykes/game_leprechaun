@@ -1,18 +1,18 @@
 package model;
 
-import model.things.DoubleThing;
-import model.things.ThingsThing;
+import model.things.Stat;
+import model.things.StatCollection;
 
-public class Attributes extends ThingsThing {
+public class Attributes extends StatCollection {
 	
 	// Refactor using resource file
 	private final String[] ATTRIBUTE_NAMES = {"Base Help", "Health", "Base Attack", "Attack",
-			"Base Defense", "Defense", "Base Stamina", "Stamina"};
+			"Base Defense", "Defense", "Base Stamina", "Stamina", "Range"};
 	
 	public Attributes(){
-		super("Attributes","Thing");
-		for(String s : ATTRIBUTE_NAMES){
-			this.addThing(new DoubleThing(s));
+		super("Attributes");
+		for(String name : ATTRIBUTE_NAMES){
+			this.addStat(new Stat(name));
 		}
 	}
 

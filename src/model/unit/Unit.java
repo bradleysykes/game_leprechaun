@@ -1,17 +1,18 @@
 package model.unit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import model.Attack;
 import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
-import model.things.StringThing;
-import model.things.Thing;
-import model.things.ThingsThing;
+import model.things.Stat;
+import model.things.StatCollection;
 import model.tile.Tile;
-import java.util.*;
 
-public class Unit extends ThingsThing implements ModelConstants {
+public class Unit extends StatCollection implements ModelConstants {
 	
 	private GameMap myMap;
 	private Player myPlayer;
@@ -22,34 +23,15 @@ public class Unit extends ThingsThing implements ModelConstants {
 	//private Spawner mySpawner;
 	//private Abilities myAbilities;
 	
-	List<Thing> myThings = new ArrayList<Thing>();
-	
 	public Unit(String name, Player player, GameMap map){
-		super("Unit","Thing");
-		this.addThing(new StringThing("Name"));
-		this.addThing(new Attributes());
+		super("Unit","Soldier");
+		this.addStat(new Attributes());
 		//this.addThing(new Attack());
 		//this.addThing(new BudgetMove());
 		//this.addThing(new Spawner());
 		//this.addThing(new Abilities());
 		myPlayer = player;
 		myMap = map;
-	}
-	
-	public Thing getThing(String name){
-		for(Thing t : myThings){
-			if(t.getName().equals(name))
-				return t;
-		}
-		return null;
-	}
-	
-	public List<Thing> getThings(){
-		return myThings;
-	}
-
-	public void setAttributes(double health, double attack, double defense, double stamina){
-		
 	}
 	
 	public void setMap(GameMap map){
@@ -71,10 +53,6 @@ public class Unit extends ThingsThing implements ModelConstants {
 //	public void setAttributes(){
 //		myAttributes.add(a.)
 //	}
-	
-	public Attributes getAttributes(){
-		return (Attributes) this.getThing("Attributes");
-	}
 	
 	public void setMapPosition(int newX, int newY){
 		myCurrentTile = myMap.getTile(newX,newY);
@@ -103,15 +81,15 @@ public class Unit extends ThingsThing implements ModelConstants {
 	}
 
 	public String getName() {
-		return (String) this.getValue("Name");
+		return (String) this.getID();
 	}
 
-	public void setName(String myName) {
-		this.setValue("Name",myName);
+	public void setName(String id) {
+		this.setID(id);
 	}
 	
 	public boolean equals(Unit other){
-		return (myName.equals(other.getName()) && myPlayer.equals(other.getName()));
+		return (myID.equals(other.getID()) && myPlayer.equals(other.getPlayer()));
 	}
 	
 }

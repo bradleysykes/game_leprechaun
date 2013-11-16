@@ -28,8 +28,7 @@ public class SetMove extends Move {
 	}
 
 	@Override
-	public double prepAbility() {
-		return 0;
+	public void prepAbility() {
 	}
 
 }

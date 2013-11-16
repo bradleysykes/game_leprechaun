@@ -16,19 +16,19 @@ public abstract class Move extends Ability{
 	public abstract List<Tile> getValidTiles();
 	
 	@Override
-	public double prepAbility(){
+	public void prepAbility(){
 		myTarget = myUnit.getMap().getTargetTile(getValidTiles());
-		return useAbility();
+		useAbility();
 	}
 	
 	@Override
-	public double useAbility(){
+	public void useAbility(){
 		double cost = canMoveToTile(myTarget);
 		if(cost>0){
 			myUnit.setCurrentTile(myTarget);
-			myUnit.getAttributes().setValue("Stamina",(Double) myUnit.getAttributes().getThing("Stamina").getValue()-cost);
+			myUnit.getStatCollection("Attributes").setStat("Stamina", 
+					myUnit.getStatCollection("Attributes").getValue("Stamina")-cost);
 		}
-		return cost;
 	}
 	
 	public abstract double canMoveToTile(Tile dest);

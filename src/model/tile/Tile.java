@@ -5,27 +5,26 @@ import java.util.*;
 import model.ModelConstants;
 import model.Resources;
 import model.Terrain;
-import model.things.DoubleThing;
-import model.things.IntegerThing;
-import model.things.ThingsThing;
+import model.things.Stat;
+import model.things.StatCollection;
 import model.unit.Unit;
 
-public class Tile extends ThingsThing implements ModelConstants{
+public class Tile extends StatCollection implements ModelConstants{
 	
 	private List<Unit> myUnits = new ArrayList<Unit>();
 	
-	public Tile(int x, int y){
-		super("Tile","Thing");
-		this.addThing(new IntegerThing("x",x));
-		this.addThing(new IntegerThing("y",y));
-		this.addThing(new DoubleThing("Passability"));
-		this.addThing(new IntegerThing("Max Population"));
-		this.addThing(new Resources());
-		this.addThing(new Terrain());
+	public Tile(double x, double y){
+		super("Tile");
+		this.addStat(new Stat("x",x));
+		this.addStat(new Stat("y",y));
+		this.addStat(new Stat("Passability"));
+		this.addStat(new Stat("Max Population"));
+		this.addStat(new Resources());
+		this.addStat(new Terrain());
 	}
 	
 	public boolean addUnit(Unit unit){
-		if (myUnits.size() < (Integer) this.getValue("Max Population"))
+		if (myUnits.size() < this.getValue("Max Population"))
 			return myUnits.add(unit);
 		return false;
 	}
@@ -39,11 +38,11 @@ public class Tile extends ThingsThing implements ModelConstants{
 	}
 	
 	public int getX() {
-		return (Integer) this.getValue("x");
+		return (int) this.getValue("x").intValue();
 	}
 	
 	public int getY() {
-		return (Integer) this.getValue("y");
+		return (int) this.getValue("y").intValue();
 	}
 	
 	public List<Unit> getUnits(){

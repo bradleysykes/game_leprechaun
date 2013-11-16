@@ -1,18 +1,14 @@
 package model;
 
-import model.things.IntegerThing;
-import model.things.StringThing;
-import model.things.ThingsThing;
+import model.things.Stat;
+import model.things.StatCollection;
 import model.unit.Unit;
 
-public class Terrain extends ThingsThing implements ModelConstants {
+public class Terrain extends StatCollection implements ModelConstants {
 	
 	public Terrain(){
-		super("Terrain","Thing");
-		this.addThing(new StringThing("Type"));
-		this.addThing(new StringThing("Attribute Impacted"));
-		this.addThing(new StringThing("Unit Impacted"));
-		this.addThing(new IntegerThing("Magnitude"));
+		super("Terrain","Plains");
+		this.addStat(new Stat("Magnitude",DEFAULT_DOUBLE));
 	}
 	
 	public double modifyUnit(Unit unit){

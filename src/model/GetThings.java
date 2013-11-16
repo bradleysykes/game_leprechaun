@@ -2,10 +2,10 @@ package model;
 
 import java.util.List;
 
-import model.things.Thing;
+import model.things.Stat;
 
 public interface GetThings {
 	
-	public List<Thing> getThings();
+	public List<Stat> getStats();
 
 }
