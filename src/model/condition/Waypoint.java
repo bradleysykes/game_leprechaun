@@ -9,6 +9,7 @@ public class Waypoint extends Condition {
 	private Tile myTile;
 
 	public Waypoint(Unit wayfarer, Tile destination) {
+		super("Waypoint");
 		myUnit = wayfarer;
 		myTile = destination;
 	}

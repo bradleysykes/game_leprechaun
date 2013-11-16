@@ -7,6 +7,7 @@ public class Defeat extends Condition {
 	private Unit myUnit;
 
 	public Defeat(Unit target) {
+		super("Create");
 		myUnit = target;
 	}
 	

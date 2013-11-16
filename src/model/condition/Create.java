@@ -5,9 +5,11 @@ import model.tile.Tile;
 import model.unit.Unit;
 
 public class Create extends Condition {
+	
 	private Unit myUnit;
 
 	public Create(Unit goal) {
+		super("Create");
 		myUnit = goal;
 	}
 
