@@ -29,7 +29,11 @@ public class CustomAbility extends Ability {
 	public void useAbility() {
 		for(Tile t : myTile.getTiles(this.getValue("Radius")))
 			myTargets.addAll(t.getUnits());
-		
+		for(Effect effect : myEffects){
+			for(Unit target : myTargets){
+				effect.enact(target);
+			}
+		}		
 	}
 
 }
