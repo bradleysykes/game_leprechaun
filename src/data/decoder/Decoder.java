@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import data.Attributes;
 import data.Elements;
-import model.things.Thing;
-import model.things.ThingsThing;
+import model.things.Stat;
+import model.things.StatCollection;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -44,35 +44,33 @@ public abstract class Decoder implements Attributes, Elements {
     }
     
     /**
-     * This method creates the "thing" object.
+     * This method parses and creates the "stat" object.
      * 
-     * @param thingElement
+     * @param 
      * @return thing object
      */
-    public Thing getThing(Element thingElement) {
-        String field = thingElement.getAttribute("field").toString();
-        String name = thingElement.getAttribute("name").toString();
-        String value = thingElement.getAttribute("value");
-        Thing thing = (Thing) Reflection.createInstance(myThingsClassPaths.get(field), name);
-        thing.setValue(value);
-        return thing;     
+    public Stat getThing(Element element) {
+        String name = element.getAttribute("name").toString();
+        Double value = Double.parseDouble(element.getAttribute("value"));
+        Stat stat = (Stat) Reflection.createInstance(name);
+        stat.setValue(value);
+        return stat;     
     }
     
-    public void setThings(Element element, ThingsThing things) {
+    public void setStats(Element element, StatCollection things) {
         NodeList thingList = element.getChildNodes();
         for(int i = 0; i < thingList.getLength(); i++) {
             Node thing = thingList.item(i);
             if(thing.getNodeName().equals(THING)) {
-                setThing(things, (Element)thing);
+                setStat(things, (Element)thing);
             }
         }
-
     }
     
-    public void setThing(ThingsThing thing, Element ele) {
+    public void setStat(StatCollection stats, Element ele) {
         String name = getAttribute(NAME, ele);
-        String value = getAttribute(VALUE, ele);
-        thing.setValue(name, value);
+        Double value = Double.parseDouble(getAttribute(VALUE, ele));
+        stats.setStat(name, value);
     }
 
     public abstract void load(Element root);

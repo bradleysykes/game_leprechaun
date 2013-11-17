@@ -117,4 +117,9 @@ public class DataManager {
         return new GameElements(myGameMap);
     }
     
+    public static void main(String[] args) {
+        DataManager dm = new DataManager(new File("src/data/resources/map.xml"));
+        GameMap map = dm.getGameMap();
+        map.toString();
+    }
 }
