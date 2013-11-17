@@ -7,36 +7,15 @@ import gae.buttons.SaveInputButton;
 import gae.panel_lists.BoardList;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Constructor;
-import java.net.URL;
-import java.net.URLDecoder;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-
 import model.things.Stat;
-import model.tile.Tile;
-import model.unit.Unit;
+
 
 public class UnitCreationDialogue extends InputDialogue {
 	
@@ -79,20 +58,7 @@ public class UnitCreationDialogue extends InputDialogue {
 				mainPanel.add(button);
 			}
 	}
-		return mainPanel;
-//		JPanel panel = new JPanel();
-//	for(int x=0;x<12;x++){
-//		JPanel fieldPanel = new JPanel(new BorderLayout());
-//		JLabel fieldTitle = new JLabel("Field Name");
-//		JLabel fieldDescription = new JLabel("Field description");
-//		JTextField field = new JTextField();
-//		fieldPanel.add(fieldTitle,BorderLayout.PAGE_START);
-//		fieldPanel.add(fieldDescription,BorderLayout.CENTER);
-//		fieldPanel.add(field,BorderLayout.PAGE_END);
-//		panel.add(fieldPanel, BorderLayout.NORTH);
-//	}
-//	return panel;
-	
+		return mainPanel;	
 	}
 }
 

@@ -35,7 +35,6 @@ public class ObjectPanel extends EditPanel {
 //			Thing t = new DoubleThing("Cheese");
 //			myModel.addElement(new DoubleThing(t.getName()+ "---"+t.getField()));
 //		}
-		System.out.println(properties.size());
 		for(Stat t:properties){
 			//waiting for model to fill ThingList
 			myModel.addElement(t);
