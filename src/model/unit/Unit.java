@@ -2,10 +2,10 @@ package model.unit;
 
 import model.Attack;
 import model.Attributes;
-import model.BudgetMove;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
+import model.movement.BudgetMove;
 import model.things.StatCollection;
 import model.tile.Tile;
 
@@ -71,7 +71,7 @@ public class Unit extends StatCollection implements ModelConstants {
 	}
 	
 	public boolean equals(Unit other){
-		return (myID.equals(other.getID()) && myPlayer.equals(other.getPlayer()));
+		return (this.getID().equals(other.getID()) && myPlayer.equals(other.getPlayer()));
 	}
 	
 }

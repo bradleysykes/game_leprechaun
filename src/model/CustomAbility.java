@@ -2,11 +2,13 @@ package model;
 
 import java.util.*;
 
+import model.effects.ModifyAttribute;
 import model.things.Stat;
 import model.tile.Tile;
 import model.unit.Unit;
 
 public class CustomAbility extends Ability {
+	
 	protected List<Unit> myTargets = new ArrayList<Unit>();
 	protected List<Effect> myEffects = new ArrayList<Effect>();
 
@@ -14,7 +16,7 @@ public class CustomAbility extends Ability {
 		super(name, abilityUser);
 		this.addStat(new Stat("Range", Math.floor(abilityUser.getStatCollection("Attributes").getValue("Attack Range"))));
 		this.addStat(new Stat("Radius", 0.0));
-		//this.addStat(new ModifyAttribute(""));
+		this.addStat(new ModifyAttribute("Stat Buff","Health"));
 	}
 	
 	public void addEffect(Effect e){

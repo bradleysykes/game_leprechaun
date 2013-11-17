@@ -1,8 +1,10 @@
-package model;
+package model.movement;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import model.GameMap;
+import model.Move;
 import model.tile.Tile;
 import model.unit.Unit;
 
