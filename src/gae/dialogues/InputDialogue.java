@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 import gae.Controller;
+import gae.panel_lists.BoardList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,9 +16,11 @@ public abstract class InputDialogue extends JFrame {
 	
 	protected Controller myController;
 	protected List<Stat> myProperties;
+	protected BoardList myList;
 	
-	public InputDialogue(List<Stat> props){
+	public InputDialogue(List<Stat> props, BoardList list){
 		myProperties = props;
+		myList = list;
 		JPanel panel = createGutsPanel();
 		this.add(panel);
 		this.setVisible(true);

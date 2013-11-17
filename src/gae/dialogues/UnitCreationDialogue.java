@@ -3,6 +3,7 @@ package gae.dialogues;
 import gae.Controller;
 import gae.TileEditor;
 import gae.ViewItemField;
+import gae.buttons.SaveInputButton;
 import gae.panel_lists.BoardList;
 
 import java.awt.BorderLayout;
@@ -41,11 +42,9 @@ public class UnitCreationDialogue extends InputDialogue {
 	
 	private JButton myEnterButton;
 	private Map<Stat,ViewItemField> myFieldViews = new HashMap<Stat,ViewItemField>();
-	private BoardList myList;
 	
 	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, BoardList list) {
-		super(modelProperties);
-		myList = list;
+		super(modelProperties, list);
 		this.setLayout(new FlowLayout());
 		myEnterButton = new JButton("Create");
 		myEnterButton.addActionListener(new GetDataAction());
@@ -71,20 +70,12 @@ public class UnitCreationDialogue extends InputDialogue {
 		JPanel mainPanel = new JPanel();
 		for(Stat t:myProperties){
 			if(t.getValue()!=null){
-				ViewItemField<Double> fieldView = new ViewItemField<Double>(t.getName(),t.getField());
+				ViewItemField fieldView = new ViewItemField(t.getName(),t.getField());
 				mainPanel.add(fieldView);
 				myFieldViews.put(t,fieldView);
 			}
 			else{
-				JButton button = new JButton("Edit"+t.getName());
-				button.addActionListener(new ActionListener(){
-	
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						//UnitCreationDialogue d = new UnitCreationDialogue(t.getName(),t.getThings());
-					}
-					
-				});
+				SaveInputButton button = new SaveInputButton(t,myList);
 				mainPanel.add(button);
 			}
 	}
