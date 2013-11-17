@@ -25,4 +25,7 @@ public abstract class Ability extends StatCollection {
 		myTile = t;
 	}
 	
+	public void refresh(){
+		myValid = true;
+	}
 }
