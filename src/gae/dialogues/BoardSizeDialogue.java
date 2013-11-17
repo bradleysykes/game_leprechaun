@@ -23,6 +23,7 @@ public class BoardSizeDialogue extends InputDialogue {
 
 	public BoardSizeDialogue(Controller controller){
 		super();
+		myController = controller;
 	}
 	
 	public BoardSizeDialogue(int currentWidth, int currentHeight, Controller controller) {
