@@ -1,5 +1,7 @@
 package model;
 
+import model.abilities.CustomAbility;
+
 public abstract class TargetModifier {
 	protected CustomAbility myAbility;
 

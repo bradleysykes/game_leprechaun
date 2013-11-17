@@ -1,7 +1,8 @@
-package model;
+package model.abilities;
 
 import java.util.List;
 
+import model.Ability;
 import model.things.StatCollection;
 import model.unit.Unit;
 
@@ -12,15 +13,8 @@ public class Attack extends Ability{
 	}
 
 	@Override
-	public void prepAbility(){
-		if (myParameters.getRange() > 0){
-			//assumes correct selection, will need to be more fault-proof
-			//myUnit.getTarget(myParameters.getRange());
-		}
-	}
-
-	@Override
 	public void useAbility(){
+		if(!myValid) return;
 		List<Unit> units = myTile.getUnits();
 		Unit myTarget = units.get(0);
 		for(Unit u : units){
@@ -43,6 +37,7 @@ public class Attack extends Ability{
 			myHealth = myHealth + myDefense - enemyAttack;
 		unitAttributes.setStat("Health",myHealth);
 		targetAttributes.setStat("Health",enemyHealth);
+		myValid = false;
 	}
 
 }

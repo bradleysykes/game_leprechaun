@@ -1,7 +1,9 @@
-package model;
+package model.abilities;
 
 import java.util.*;
 
+import model.Ability;
+import model.Effect;
 import model.effects.ModifyAttribute;
 import model.things.Stat;
 import model.tile.Tile;
@@ -30,13 +32,15 @@ public class CustomAbility extends Ability {
 
 	@Override
 	public void useAbility() {
+		if(!myValid) return;
 		for(Tile t : myTile.getTiles(this.getValue("Radius")))
 			myTargets.addAll(t.getUnits());
 		for(Effect effect : myEffects){
 			for(Unit target : myTargets){
 				effect.enact(target);
 			}
-		}		
+		}	
+		myValid = false;
 	}
 
 }

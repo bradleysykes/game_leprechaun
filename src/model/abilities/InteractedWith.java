@@ -1,4 +1,4 @@
-package model;
+package model.abilities;
 
 public class InteractedWith {
 

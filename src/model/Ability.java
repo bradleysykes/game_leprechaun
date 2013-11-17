@@ -7,8 +7,8 @@ import model.unit.Unit;
 public abstract class Ability extends StatCollection {
 	
 	protected Unit myUnit;
-	protected Parameters myParameters;
 	protected Tile myTile;
+	protected boolean myValid;
 
 	public Ability(String name, Unit abilityUser) {
 		super(name);
