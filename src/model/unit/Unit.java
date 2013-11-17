@@ -1,10 +1,10 @@
 package model.unit;
 
-import model.Attack;
 import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
+import model.abilities.Attack;
 import model.movement.BudgetMove;
 import model.things.StatCollection;
 import model.tile.Tile;
@@ -62,11 +62,11 @@ public class Unit extends StatCollection implements ModelConstants {
 		//this.getThing(ability).prepAbility();
 	}
 
-	public String getName() {
+	public String getID() {
 		return (String) this.getID();
 	}
 
-	public void setName(String id) {
+	public void setID(String id) {
 		this.setID(id);
 	}
 	

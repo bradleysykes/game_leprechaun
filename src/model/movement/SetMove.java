@@ -3,7 +3,7 @@ package model.movement;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Move;
+import model.abilities.Move;
 import model.tile.Tile;
 import model.unit.Unit;
 
@@ -16,6 +16,13 @@ public class SetMove extends Move {
 	
 	public SetMove(Unit abilityUser) {
 		super("Set Move", abilityUser);
+	}
+	
+	@Override
+	public void useAbility(){
+		if(!myValid) return;
+		// move.
+		myValid = false;
 	}
 
 	@Override
