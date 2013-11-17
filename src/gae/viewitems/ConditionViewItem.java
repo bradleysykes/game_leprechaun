@@ -16,16 +16,31 @@ import model.things.Stat;
 
 public class ConditionViewItem extends BoardListViewItem {
 
-	
+	private Condition myCondition;
+
+	public ConditionViewItem(){
+		super();
+		// initialize this viewitem's list of properties
+		myProperties = new ArrayList<Stat>();
+	}
 	@Override
 	public List<Stat> getModel() {
-		return new ArrayList<Stat>();
+		return myProperties;
 	}
 
 	@Override
-	public void createModel(List<String> inputData) {
-		// TODO Auto-generated method stub
-		
+	public void createModel(List<Stat> inputData) {
+//		myCondition = new Condition();
+//		myCondition.setStats(inputData);
+	}
+
+	@Override
+	public String getListMessage() {
+		return "Condition List Message";
+	}
+	@Override
+	public Icon getListIcon() {
+		return new ImageIcon(ICON_PATH+"plus.gif");
 	}
 
 }

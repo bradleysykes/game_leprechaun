@@ -3,6 +3,7 @@ package gae.dialogues;
 import gae.Controller;
 import gae.TileEditor;
 import gae.ViewItemField;
+import gae.panel_lists.BoardList;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -38,20 +39,13 @@ import model.unit.Unit;
 
 public class UnitCreationDialogue extends InputDialogue {
 	
-	private Dimension myPreferredSize = new Dimension(600, 600);
-	private static String myModelPackage = "model.";
-	private List<String> myRuleNames;
 	private JButton myEnterButton;
-	private TileEditor myTileEditor;
-	private String myPackage;
-	private List<Stat> myProperties;
 	private Map<Stat,ViewItemField> myFieldViews = new HashMap<Stat,ViewItemField>();
-		
-	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, Controller controller) {
-		super(controller);
-		//myPackage = myModelPackage+packageExtension;
-		myProperties = modelProperties;
-		myRuleNames = new ArrayList<String>();
+	private BoardList myList;
+	
+	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, BoardList list) {
+		super(modelProperties);
+		myList = list;
 		this.setLayout(new FlowLayout());
 		myEnterButton = new JButton("Create");
 		myEnterButton.addActionListener(new GetDataAction());
@@ -61,13 +55,14 @@ public class UnitCreationDialogue extends InputDialogue {
 	@Override
 	public void postInput() {
 		// look through all fields and gather information
-		List<String> inputData = new ArrayList<String>();
+		List<Stat> inputData = new ArrayList<Stat>();
 		for(Stat stat:myFieldViews.keySet()){
 			String data = myFieldViews.get(stat).getData();
 			// convert data to appropriate Type
-			inputData.add(data);
+			stat.setValue(Double.parseDouble(data));
+			inputData.add(stat);
 		}
-		myController.postBoardData(inputData);
+		myList.postInput(inputData);
 		disposeDialogue();
 	}
 
@@ -75,23 +70,23 @@ public class UnitCreationDialogue extends InputDialogue {
 	public JPanel createGutsPanel() {
 		JPanel mainPanel = new JPanel();
 		for(Stat t:myProperties){
-		if(t.getValue()!=null){
-			ViewItemField<Double> fieldView = new ViewItemField<Double>(t.getName(),t.getField());
-			mainPanel.add(fieldView);
-			myFieldViews.put(t,fieldView);
-		}
-		else{
-			JButton button = new JButton("Edit"+t.getName());
-			button.addActionListener(new ActionListener(){
-
-				@Override
-				public void actionPerformed(ActionEvent arg0) {
-					//UnitCreationDialogue d = new UnitCreationDialogue(t.getName(),t.getThings());
-				}
-				
-			});
-			mainPanel.add(button);
-		}
+			if(t.getValue()!=null){
+				ViewItemField<Double> fieldView = new ViewItemField<Double>(t.getName(),t.getField());
+				mainPanel.add(fieldView);
+				myFieldViews.put(t,fieldView);
+			}
+			else{
+				JButton button = new JButton("Edit"+t.getName());
+				button.addActionListener(new ActionListener(){
+	
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						//UnitCreationDialogue d = new UnitCreationDialogue(t.getName(),t.getThings());
+					}
+					
+				});
+				mainPanel.add(button);
+			}
 	}
 		return mainPanel;
 //		JPanel panel = new JPanel();

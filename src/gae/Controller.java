@@ -70,10 +70,4 @@ public class Controller {
 		}
 	}
 
-	public void postBoardData(List<String> inputData) {
-		// method to create a new BoardViewItem and send to appropriate panel
-		BoardListViewItem newUnit = new UnitViewItem();
-		newUnit.createModel(inputData);
-	}
-
 }
