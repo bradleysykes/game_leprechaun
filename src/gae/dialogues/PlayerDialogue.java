@@ -24,7 +24,7 @@ public class PlayerDialogue extends InputDialogue {
 	private JComboBox myCombo;
 	
 	public PlayerDialogue(Controller controller){
-		super(controller);
+		super();
 	}
 	
 	public PlayerDialogue(int numPlayers, Controller controller) {

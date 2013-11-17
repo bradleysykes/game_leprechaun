@@ -9,12 +9,24 @@ import gae.Controller;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import model.things.Stat;
+
 public abstract class InputDialogue extends JFrame {
 	
 	protected Controller myController;
+	protected List<Stat> myProperties;
 	
-	public InputDialogue(Controller controller){
-		myController = controller;
+	public InputDialogue(List<Stat> props){
+		myProperties = props;
+		JPanel panel = createGutsPanel();
+		this.add(panel);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.pack();
+	}
+	
+	public InputDialogue(){
+		//myController = controller;
 		JPanel panel = createGutsPanel();
 		this.add(panel);
 		this.setVisible(true);

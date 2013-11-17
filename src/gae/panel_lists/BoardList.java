@@ -1,7 +1,10 @@
 package gae.panel_lists;
 import gae.Controller;
+import gae.dialogues.UnitCreationDialogue;
 import gae.listeners.BoardListSelectionListener;
 import gae.listeners.PopupListener;
+import gae.viewitems.BoardListViewItem;
+import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
 import java.awt.Component;
@@ -27,7 +30,8 @@ import java.util.List;
 public abstract class BoardList extends JList {
 		
 	private DefaultListModel myModel;
-	private Controller myController;
+	protected Controller myController;
+	protected BoardListViewItem myType;
 	
 	public BoardList(Controller controller){
 		myController = controller;
@@ -84,6 +88,26 @@ public abstract class BoardList extends JList {
 		public void actionPerformed(ActionEvent arg0) {
 			
 		}
+	}
+	
+	/**
+	 * called when create button clicked in list toolbar. 
+	 * Used to launch input dialogue.
+	 */
+	public void createCustomType() {
+		// create new dialogue, populate with model for this viewitem type
+		UnitCreationDialogue d = new UnitCreationDialogue(myType.getListMessage(),myType.getModel(),this);
+		// on close, dialogue sends it to postInput method
+	}
+	
+	/**
+	 * called by inputdialogue's create button action listener. 
+	 * Ships data for creation of a new custom type. 
+	 * @param inputData
+	 */
+	public void postInput(List<Stat> inputData){
+		myType.createModel(inputData);
+		this.addNewItem(myType);
 	}
 		
 }

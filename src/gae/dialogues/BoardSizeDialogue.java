@@ -22,7 +22,7 @@ public class BoardSizeDialogue extends InputDialogue {
 	private JTextField myHeightField;
 
 	public BoardSizeDialogue(Controller controller){
-		super(controller);
+		super();
 	}
 	
 	public BoardSizeDialogue(int currentWidth, int currentHeight, Controller controller) {

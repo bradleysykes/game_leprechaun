@@ -11,24 +11,16 @@ import javax.swing.Icon;
 import model.things.Stat;
 
 public abstract class BoardListViewItem extends ViewItem {
+	protected List<Stat> myProperties;
+	
+	@Override
+	public abstract Icon getListIcon();
 
 	@Override
-	public Icon getListIcon() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public abstract String getListMessage();
 
 	@Override
-	public String getListMessage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Stat> getModel() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public abstract List<Stat> getModel();
 
 	@Override
 	public void onClick(Controller c) {
@@ -36,6 +28,6 @@ public abstract class BoardListViewItem extends ViewItem {
 		
 	}
 	
-	public abstract void createModel(List<String> inputData);
+	public abstract void createModel(List<Stat> inputData);
 
 }

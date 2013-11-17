@@ -2,7 +2,6 @@ package gae.panel_lists;
 
 import gae.Constants;
 import gae.Controller;
-import gae.viewitems.NewViewItem;
 import gae.viewitems.TileViewItem;
 
 import javax.swing.Icon;
@@ -14,7 +13,7 @@ public class TileList extends BoardList {
 
 	public TileList(Controller controller){
 		super(controller);
-		this.addNewItem(new NewViewItem());
+		myType = new TileViewItem();
 	}
 	
 	@Override

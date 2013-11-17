@@ -3,14 +3,15 @@ package gae.panel_lists;
 import gae.Constants;
 import gae.Controller;
 import gae.viewitems.ConditionViewItem;
-import gae.viewitems.NewViewItem;
 
 public class ConditionList extends BoardList {
 	
 	public ConditionList(Controller controller){
 		super(controller);
-		this.addNewItem(new NewViewItem());
+		//tell the list what type of ViewItem it will hold
+		myType = new ConditionViewItem();
 	}
+	
 	@Override
 	public String getListType() {
 		// TODO Auto-generated method stub
