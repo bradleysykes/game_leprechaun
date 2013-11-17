@@ -66,5 +66,11 @@ public class Player implements ModelConstants{
 	public boolean equals(Player other){
 		return myName.equals(other.getName());
 	}
+	
+	public void refresh(){
+		for (Unit unit : myUnits){
+			unit.refresh();
+		}
+	}
 
 }

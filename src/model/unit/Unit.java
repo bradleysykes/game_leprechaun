@@ -1,11 +1,12 @@
 package model.unit;
 
+import model.Abilities;
+import model.Ability;
 import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
-import model.abilities.Attack;
-import model.movement.BudgetMove;
+import model.things.Stat;
 import model.things.StatCollection;
 import model.tile.Tile;
 
@@ -18,10 +19,7 @@ public class Unit extends StatCollection implements ModelConstants {
 	public Unit(String name, Player player, GameMap map){
 		super("Unit","Soldier");
 		this.addStat(new Attributes());
-		this.addStat(new Attack(this));
-		this.addStat(new BudgetMove(this));
-		//this.addStat(new Spawner());
-		//this.addThing(new Abilities());
+		this.addStat(new Abilities(this));
 		myPlayer = player;
 		myMap = map;
 	}
@@ -73,5 +71,13 @@ public class Unit extends StatCollection implements ModelConstants {
 	public boolean equals(Unit other){
 		return (this.getID().equals(other.getID()) && myPlayer.equals(other.getPlayer()));
 	}
+	
+	public void refresh(){
+		for (Stat s : this.getStatCollection("Abilities").getStats()){
+			Ability a = (Ability) s;
+			a.refresh();
+		}
+	}
+
 	
 }

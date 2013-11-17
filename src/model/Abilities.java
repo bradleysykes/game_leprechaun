@@ -1,8 +1,19 @@
 package model;
 
-public class Abilities {
+import model.abilities.Attack;
+import model.movement.BudgetMove;
+import model.things.StatCollection;
+import model.unit.Unit;
 
-	public Abilities() {
-		// TODO Auto-generated constructor stub
+public class Abilities extends StatCollection{	
+
+	public Abilities(Unit unit) {
+		super("Abilities");
+		this.addStat(new Attack(unit));
+		this.addStat(new BudgetMove(unit));
+	}
+	
+	public void addAbility(){
+		
 	}
 }
