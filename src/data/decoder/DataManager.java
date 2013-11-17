@@ -90,7 +90,7 @@ public class DataManager {
         myDecoders.put("MapDecoder", new MapDecoder(this));
         
     }
-    private void processDsecoders() {
+    private void processDecoders() {
         //for (String key: myDecoders.keySet()) {
         //    myDecoders.get(key).load(myRoot);
         //}

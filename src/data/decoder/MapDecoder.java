@@ -28,7 +28,7 @@ public class MapDecoder extends Decoder {
         myDataManager = manager;
     }
     
-    private void processMap(Element root) {
+    private void setGameMap(Element root) {
         int x_dim = Integer.parseInt(getAttribute(X_DIM, root));
         int y_dim = Integer.parseInt(getAttribute(Y_DIM, root));
         myGameMap = new GameMap(x_dim, y_dim);
@@ -55,7 +55,7 @@ public class MapDecoder extends Decoder {
         //set terrain to the tile
         Element terrain = (Element) tile.getElementsByTagName(TERRAIN).item(0);
         ThingsThing targetTerr = (ThingsThing) resultTile.getThing(TERRAIN_THING);
-        setTerrain(terrain, targetTerr);
+        setThings(terrain, targetTerr);
         
         // set resources to the tile
         Element resources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
@@ -65,11 +65,7 @@ public class MapDecoder extends Decoder {
         //create tile 
         myGameMap.setTile(x, y, resultTile);
     }
-    
-    private void setTerrain(Element terrain, ThingsThing target) {
-        setThings(terrain, target);
-    }
-    
+      
     private void setResources(Element resources, ThingsThing target) {
         Resources result = (Resources) target;
         NodeList resourceList = resources.getElementsByTagName(RESOURCE);
@@ -83,7 +79,7 @@ public class MapDecoder extends Decoder {
     
     @Override
     public void load(Element root) {
-        processMap(root);
+        setGameMap(root);
         myDataManager.setGameMap(myGameMap);
     }
 
