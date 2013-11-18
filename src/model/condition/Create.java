@@ -1,6 +1,7 @@
 package model.condition;
 
 import model.Condition;
+import model.Player;
 import model.tile.Tile;
 import model.unit.Unit;
 
@@ -8,8 +9,8 @@ public class Create extends Condition {
 	
 	private Unit myUnit;
 
-	public Create(Unit goal) {
-		super("Create");
+	public Create(Unit goal, Player p) {
+		super("Create", p);
 		myUnit = goal;
 	}
 
