@@ -4,28 +4,29 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import model.things.StatCollection;
 import model.unit.Unit;
 
-public class Player implements ModelConstants{
+public class Player extends StatCollection implements ModelConstants{
 	
 	private String myName;
-	private HashMap<String,Double> myResources;
 	private List<Unit> myUnits;
 	private Condition myWinningCondition;
-	private Controller myController;
+	private Model myModel;
 	
 	public Player(){
-		this(DEFAULT_STRING);
+		super("Player");
+		this.addStat(new Resources());
 	}
 	
-	public Player(String name){
-		myName = name;
-		myResources = new HashMap<String,Double>();
-		myUnits = new ArrayList<Unit>();
-	}
+//	public Player(String name){
+//		myName = name;
+//		myResources = new HashMap<String,Double>();
+//		myUnits = new ArrayList<Unit>();
+//	}
 	
-	public void setController(Controller c){
-		myController = c;
+	public void setModel(Model m){
+		myModel = m;
 	}
 	
 	public String setName(String name){
@@ -37,8 +38,8 @@ public class Player implements ModelConstants{
 		return myName;
 	}
 	
-	public Controller getController(){
-		return myController;
+	public Model getModel(){
+		return myModel;
 	}
 	
 	public void addNewResourceType(String resourceType){
