@@ -25,6 +25,7 @@ public class PlayerDialogue extends InputDialogue {
 	
 	public PlayerDialogue(Controller controller){
 		super();
+		this.myController = controller;
 	}
 	
 	public PlayerDialogue(int numPlayers, Controller controller) {

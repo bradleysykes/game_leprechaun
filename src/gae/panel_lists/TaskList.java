@@ -3,6 +3,7 @@ package gae.panel_lists;
 import java.awt.Component;
 
 import gae.Controller;
+import gae.listeners.BoardListSelectionListener;
 import gae.viewitems.TaskViewItem;
 
 
