@@ -11,6 +11,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
+import model.Controller;
 import model.GameMap;
 import model.Player;
 import model.unit.Unit;
@@ -27,7 +28,7 @@ import model.unit.Unit;
  */
 
 public class DataManager {
-    
+    private Controller myController;
     private Element myRoot;
     private GameMap myGameMap;
     private List<Unit> myUnits;

@@ -23,33 +23,21 @@ import util.reflection.Reflection;
  *
  */
 public abstract class Decoder implements Attributes, Elements {
-    public static final String INT_THING = "Integer";
-    public static final String DOUBLE_THING = "Double";
-    public static final String STRING_THING = "String";
     
-    public Map<String, String> myThingsClassPaths;
-    public Decoder() {
-        myThingsClassPaths = new HashMap<String,String>();
-        initThingsMap();
-    }
-    
-    public void initThingsMap() {
-        myThingsClassPaths.put(INT_THING, "model.things.IntegerThing");
-        myThingsClassPaths.put(DOUBLE_THING, "model.things.DoubleThing");
-        myThingsClassPaths.put(STRING_THING, "model.things.StringThing");
-    }
-    
+    /**
+     * return the attribute of element to the corresponding tag.  
+     */
     public String getAttribute(String tag, Element element) {
         return element.getAttribute(tag).toString();
     }
     
     /**
-     * This method parses and creates the "stat" object.
+     * This method parses and creates the "Stat" object.
      * 
-     * @param 
-     * @return thing object
+     * @param element the node of 
+     * @return Stat stat object
      */
-    public Stat getThing(Element element) {
+    public Stat getStat(Element element) {
         String name = element.getAttribute("name").toString();
         Double value = Double.parseDouble(element.getAttribute("value"));
         Stat stat = (Stat) Reflection.createInstance(name);
@@ -57,6 +45,11 @@ public abstract class Decoder implements Attributes, Elements {
         return stat;     
     }
     
+    /**
+     * 
+     * @param element
+     * @param things
+     */
     public void setStats(Element element, StatCollection things) {
         NodeList thingList = element.getChildNodes();
         for(int i = 0; i < thingList.getLength(); i++) {
@@ -67,9 +60,14 @@ public abstract class Decoder implements Attributes, Elements {
         }
     }
     
-    public void setStat(StatCollection stats, Element ele) {
-        String name = getAttribute(NAME, ele);
-        Double value = Double.parseDouble(getAttribute(VALUE, ele));
+    /**
+     * 
+     * @param stats
+     * @param ele
+     */
+    public void setStat(StatCollection stats, Element element) {
+        String name = getAttribute(NAME, element);
+        Double value = Double.parseDouble(getAttribute(VALUE, element));
         stats.setStat(name, value);
     }
 
