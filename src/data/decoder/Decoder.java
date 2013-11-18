@@ -71,5 +71,5 @@ public abstract class Decoder implements Attributes, Elements {
         stats.setStat(name, value);
     }
 
-    public abstract void load(Element root);
+    public abstract void decodeData(Element root);
 }

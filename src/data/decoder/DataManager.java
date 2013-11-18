@@ -11,6 +11,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
+import data.Attributes;
+import data.Elements;
 import model.Controller;
 import model.GameMap;
 import model.Player;
@@ -27,7 +29,7 @@ import model.unit.Unit;
  *
  */
 
-public class DataManager {
+public class DataManager implements Attributes, Elements {
     private Controller myController;
     private Element myRoot;
     private GameMap myGameMap;
@@ -95,7 +97,9 @@ public class DataManager {
         //for (String key: myDecoders.keySet()) {
         //    myDecoders.get(key).load(myRoot);
         //}
-        myDecoders.get("MapDecoder").load((Element)myRoot.getElementsByTagName("map").item(0));
+        myDecoders.get("MapDecoder").decodeData((Element)myRoot.getElementsByTagName(MAP_ROOT).item(0));
+        myDecoders.get("UnitDecoder").decodeData((Element)myRoot.getElementsByTagName(UNIT_ROOT).item(0));
+
     }
     
 
@@ -108,9 +112,16 @@ public class DataManager {
         return myGameMap;
     }
     
+    public void setUnits(List<Unit> units) {
+        myUnits = units;
+    }
+    
+    
     /**
      * Serialized objects are packed into GameElements object, which is
      * passed to GameLoader from the game player.
+     * 
+     * or maybe return controller?
      *  
      * @return GameElements
      */
