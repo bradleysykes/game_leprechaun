@@ -71,5 +71,9 @@ public abstract class Decoder implements Attributes, Elements {
         stats.setStat(name, value);
     }
 
+    /**
+     * this method will parse the data and set corresponding 
+     * @param root
+     */
     public abstract void decodeData(Element root);
 }

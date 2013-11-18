@@ -37,7 +37,7 @@ public class UnitDecoder extends Decoder {
     }
     
     private void processAttributes() {
-        
+            
     }
     
     private Tile getUnitTile(int x, int y) {

@@ -14,7 +14,6 @@ import org.xml.sax.SAXException;
 import data.Attributes;
 import data.Elements;
 import data.GameElements;
-import model.Controller;
 import model.GameMap;
 import model.Player;
 import model.unit.Unit;
@@ -31,7 +30,6 @@ import model.unit.Unit;
  */
 
 public class DataManager implements Attributes, Elements {
-    private Controller myController;
     private Element myRoot;
     private GameMap myGameMap;
     private List<Unit> myUnits;
@@ -127,9 +125,6 @@ public class DataManager implements Attributes, Elements {
     public void setUnits(List<Unit> units) {
         myUnits = units;
     }
-    
-    
-   
     
     public static void main(String[] args) {
         DataManager dm = new DataManager(new File("src/data/resources/map.xml"));
