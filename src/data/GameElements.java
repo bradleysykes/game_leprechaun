@@ -11,6 +11,7 @@ import model.unit.Unit;
 public class GameElements {
     private GameMap myGameMap;
     private List<Player> myPlayers;
+    //maps to id and 
     private Map<String, String> myImages;
 
     public GameElements(GameMap map, List<Unit> units, List<Player> players) {
