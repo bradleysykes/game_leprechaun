@@ -13,5 +13,10 @@ public class SubUnitDialogue extends UnitCreationDialogue {
 		super(frameTitle, modelProperties, list, true);
 		
 	}
+	
+	@Override
+	public void postInput() {
+	 // do nothing
+	}
 
 }
