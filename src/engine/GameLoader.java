@@ -1,6 +1,6 @@
 package engine;
 
-import data.decoder.GameElements;
+import data.GameElements;
 
 public class GameLoader  {
 	

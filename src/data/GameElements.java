@@ -1,7 +1,8 @@
-package data.decoder;
+package data;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import model.GameMap;
 import model.Player;
 import model.unit.Unit;
@@ -12,7 +13,8 @@ public class GameElements {
     private GameMap myGameMap;
     private List<Unit> myUnits;
     private List<Player> myPlayers;
-    
+    private Map<String, String> myImages;
+
     public GameElements(GameMap map, List<Unit> units, List<Player> players) {
         myGameMap = map;
         myUnits = units;

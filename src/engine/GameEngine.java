@@ -3,7 +3,7 @@ package engine;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
-import data.decoder.GameElements;
+import data.GameElements;
 import jgame.JGColor;
 import jgame.platform.JGEngine;
 import model.*;
