@@ -103,7 +103,18 @@ public class DataManager implements Attributes, Elements {
 
     }
     
-
+    /**
+     * Serialized objects are packed into GameElements object, which is
+     * passed to GameLoader from the game player.
+     * 
+     * or maybe return controller?
+     *  
+     * @return GameElements
+     */
+    public GameElements getGameElements() {
+        return new GameElements(myGameMap);
+    }
+    
     //get & set methods
     public void setGameMap(GameMap map){
         myGameMap = map;
@@ -118,17 +129,7 @@ public class DataManager implements Attributes, Elements {
     }
     
     
-    /**
-     * Serialized objects are packed into GameElements object, which is
-     * passed to GameLoader from the game player.
-     * 
-     * or maybe return controller?
-     *  
-     * @return GameElements
-     */
-    public GameElements getGameElements() {
-        return new GameElements(myGameMap);
-    }
+   
     
     public static void main(String[] args) {
         DataManager dm = new DataManager(new File("src/data/resources/map.xml"));

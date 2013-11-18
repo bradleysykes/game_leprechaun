@@ -2,6 +2,7 @@ package gae.panels;
 
 
 import gae.Controller;
+import gae.panel_lists.BoardList;
 import gae.panel_lists.TaskList;
 import gae.viewitems.TaskViewItem;
 import gae.viewitems.ViewItem;
@@ -16,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import data.GameElements;
 import model.Player;
 
 public class TaskPanel extends EditPanel {
@@ -40,5 +42,13 @@ public class TaskPanel extends EditPanel {
 				myList.removeItem(n);
 			}
 		}
+	}
+	
+	@Override
+	public GameElements insertStateObjects(GameElements currentState){
+		if (myList.getModel().getSize()==0) {
+			return currentState;
+		}
+		return null;
 	}
 }
