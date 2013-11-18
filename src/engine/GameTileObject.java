@@ -10,7 +10,7 @@ public class GameTileObject extends JGObject {
 	private static final int mySize = 20;
 	
 	public GameTileObject(Tile tile) {
-		super("tile", true, tilesToPixels(tile.getX()), tilesToPixels(tile.getY()), myCollisionID, tile.getImageName());   //all the game's images should be defined before any GameObjects are created
+		super("tile", true, tilesToPixels(tile.getX()), tilesToPixels(tile.getY()), myCollisionID, tile.getStatCollection("terrain").getID());   //all the game's images should be defined before any GameObjects are created
 	}
 	
 	public static int tilesToPixels(int x) {

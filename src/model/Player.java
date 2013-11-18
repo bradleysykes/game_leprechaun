@@ -1,55 +1,39 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
+import model.things.StatCollection;
 import model.unit.Unit;
 
-public class Player implements ModelConstants{
+public class Player extends StatCollection implements ModelConstants{
 	
-	private String myName;
-	private HashMap<String,Double> myResources;
 	private List<Unit> myUnits;
 	private Condition myWinningCondition;
-	private Controller myController;
+	private Model myModel;
 	
 	public Player(){
-		this(DEFAULT_STRING);
+		super("Player","Default Player Name");
+		this.addStat(new Resources());
 	}
 	
-	public Player(String name){
-		myName = name;
-		myResources = new HashMap<String,Double>();
-		myUnits = new ArrayList<Unit>();
+	public void setModel(Model m){
+		myModel = m;
 	}
 	
-	public void setController(Controller c){
-		myController = c;
+	public Model getModel(){
+		return myModel;
 	}
 	
-	public String setName(String name){
-		myName = name;
-		return myName;
-	}
-	
-	public String getName(){
-		return myName;
-	}
-	
-	public Controller getController(){
-		return myController;
-	}
-	
-	public void addNewResourceType(String resourceType){
-		myResources.put(resourceType,0.0);
+	public void addNewResourceType(String resourceType, double harvestRate){
+		this.getStatCollection("Resources").addStat(new Resource(resourceType,harvestRate,0.0));
 	}
 	
 	// Use negative value for amount to 'charge' the player.
 	public boolean adjustResources(String resourceType, double amount){
-		double finalResources = myResources.get(resourceType)+amount;
+		Resource r = (Resource) this.getStatCollection(resourceType);
+		double finalResources = r.getValue("Amount")+amount;
 		if(finalResources>0){
-			myResources.put(resourceType, myResources.get(resourceType)+amount);
+			r.setStat("Amount", finalResources);
 			return true;
 		}
 		return false;
@@ -64,7 +48,7 @@ public class Player implements ModelConstants{
 	}
 	
 	public boolean equals(Player other){
-		return myName.equals(other.getName());
+		return this.getID().equals(other.getID());
 	}
 	
 	public void refresh(){

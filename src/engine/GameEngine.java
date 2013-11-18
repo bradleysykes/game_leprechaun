@@ -1,12 +1,14 @@
 package engine;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
-import data.decoder.GameElements;
+import java.util.HashMap;
+
+import data.GameElements;
 import jgame.JGColor;
 import jgame.platform.JGEngine;
-import model.*;
+import model.GameMap;
+import model.Player;
 import model.tile.Tile;
 import model.unit.Unit;
 
@@ -71,6 +73,18 @@ public class GameEngine extends JGEngine {
 	public void initializeState(GameElements gameElements) {
 		myGameLoader = new GameLoader(gameElements, this);
 		myGameLoader.loadGame();
+	}
+	
+	public void initializeTiles(Collection<Tile> tiles) {
+		for (Tile tile : tiles) {
+			GameTileObject newTile = new GameTileObject(tile);
+		}
+	}
+	
+	public void initializeUnits(Collection<Unit> units) {
+		for (Unit unit : units) {
+			GameUnitObject newUnit = new GameUnitObject(unit);
+		}
 	}
 	
 }
