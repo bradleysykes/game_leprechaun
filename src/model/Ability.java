@@ -16,7 +16,7 @@ public abstract class Ability extends StatCollection {
 	}
 	
 	public void prepAbility(){
-		myUnit.getPlayer().getController().setAbility(this);
+		myUnit.getPlayer().getModel().setAbility(this);
 	}
 	
 	public abstract void useAbility();

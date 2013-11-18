@@ -8,7 +8,7 @@ public class Resource extends StatCollection {
 	//private final String[] RESOURCE_STAT_NAMES = {"Name", "Amount", "Harvest Rate"};
 
 	public Resource(String name, double amount, double harvestRate){
-		super("Resource");
+		super("Resource",name);
 		//this.addStat(new Stat("Name",DEFAULT_STRING));
 		this.addStat(new Stat("Amount",amount));
 		this.addStat(new Stat("Harvest Rate",harvestRate));

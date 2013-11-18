@@ -8,6 +8,8 @@ import gae.panel_lists.BoardList;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,12 +17,13 @@ import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import model.things.Stat;
+import model.things.StatCollection;
 
 
 public class UnitCreationDialogue extends InputDialogue {
 	
 	private JButton myEnterButton;
-	private Map<Stat,ViewItemField> myFieldViews = new HashMap<Stat,ViewItemField>();
+	private ViewItemField myName;
 	
 	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, BoardList list) {
 		super(modelProperties, list);
@@ -28,6 +31,31 @@ public class UnitCreationDialogue extends InputDialogue {
 		myEnterButton = new JButton("Create");
 		myEnterButton.addActionListener(new GetDataAction());
 		this.add(myEnterButton, BorderLayout.SOUTH);		
+	}
+	
+	protected UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, 
+			BoardList list, boolean isSubUnit){
+		super(modelProperties,list);
+		this.setLayout(new FlowLayout());
+		myEnterButton = new JButton("Create Subunit");
+		myEnterButton.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				for(Stat t: myFieldViews.keySet()){
+					ViewItemField field = myFieldViews.get(t);
+					Double data = Double.valueOf(field.getData());
+					t.setValue(data);
+					disposeDialogue();
+				}
+			}
+			
+		});
+		this.add(myEnterButton, BorderLayout.SOUTH);	
+	}
+	
+	public void initMap(){
+		
 	}
 	
 	@Override
@@ -49,15 +77,18 @@ public class UnitCreationDialogue extends InputDialogue {
 		JPanel mainPanel = new JPanel();
 		for(Stat t:myProperties){
 			if(t.getValue()!=null){
-				ViewItemField fieldView = new ViewItemField(t.getName(),t.getField());
+				ViewItemField fieldView = new ViewItemField(t);
 				mainPanel.add(fieldView);
 				myFieldViews.put(t,fieldView);
 			}
 			else{
-				SaveInputButton button = new SaveInputButton(t,myList);
+				StatCollection test = (StatCollection) t;
+				SaveInputButton button = new SaveInputButton(test,myList);
 				mainPanel.add(button);
 			}
-	}
+		}
+		myName = new ViewItemField("Custom name");
+		mainPanel.add(myName);
 		return mainPanel;	
 	}
 }

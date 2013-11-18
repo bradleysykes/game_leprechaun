@@ -6,25 +6,34 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import model.things.Stat;
+
 
 public class ViewItemField<T> extends JPanel {
 	
 	private JTextField myField;
 	private T myData;
 
-	public ViewItemField(String title, String description){
+	public ViewItemField(Stat stat){
 		this.setLayout(new BorderLayout());
-		create(title, description);
+		this.create(stat.getName(),"Double",stat.getValue().toString());
+	}
+	
+	public ViewItemField(String title){
+		this.setLayout(new BorderLayout());
+		this.create(title, "String", "Name me!");
 	}
 
-	private void create(String title, String description) {
-		JLabel fieldTitle = new JLabel(title);
-		JLabel fieldDescription = new JLabel(description);
-		JTextField field = new JTextField();
-		myField = field;
-		this.add(fieldTitle,BorderLayout.PAGE_START);
-		this.add(fieldDescription,BorderLayout.CENTER);
-		this.add(field,BorderLayout.PAGE_END);
+	private void create(String name, String type, String value) {
+		JLabel fieldTitle = new JLabel(name);
+		JLabel fieldDescription = new JLabel(type);
+		if(value!=null){
+			JTextField field = new JTextField(value);
+			myField = field;
+			this.add(fieldTitle,BorderLayout.PAGE_START);
+			this.add(fieldDescription,BorderLayout.CENTER);
+			this.add(field,BorderLayout.PAGE_END);
+		}
 	}
 	
 	public String getData(){

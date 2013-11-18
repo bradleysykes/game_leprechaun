@@ -1,6 +1,7 @@
 package gae.viewitems;
 
 
+import gae.GUIMap;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
 
@@ -41,6 +42,11 @@ public class ConditionViewItem extends BoardListViewItem {
 	@Override
 	public Icon getListIcon() {
 		return new ImageIcon(ICON_PATH+"plus.gif");
+	}
+	@Override
+	public void placeOnBoard(GUIMap map) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

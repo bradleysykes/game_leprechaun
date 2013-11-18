@@ -5,13 +5,13 @@ import java.util.*;
 
 import model.tile.Tile;
 
-public class Controller {
+public class Model {
 	private List<Player> myPlayers = new ArrayList<Player>();
 	private GameMap myMap;
 	private GameEngine myGameEngine;
 	private Ability myQueuedAbility;
 
-	public Controller() {
+	public Model() {
 
 	}
 	

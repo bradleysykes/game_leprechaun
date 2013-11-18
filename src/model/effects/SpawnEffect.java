@@ -10,7 +10,7 @@ public class SpawnEffect extends Effect {
 	}
 	
 	public void addUnit(String unitID){
-		myIDs.add(unitID);
+		myReferences.add(unitID);
 	}
 
 	@Override

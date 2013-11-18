@@ -17,9 +17,11 @@ public class GUIMap extends JGEngine {
 	private MapEncoder myEncoder;
 	private int myWidth;
 	private int myHeight;
+	private GameMap myMap;
 
 	public GUIMap(int width, int height){
 		initEngineComponent(500,500);
+		myMap = new GameMap(width,height);
 		myWidth = width;
 		myHeight = height;
 		try {
@@ -38,7 +40,7 @@ public class GUIMap extends JGEngine {
 	
 	public void placeOnBoard(){
 		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
-			BoardBuffer.retrieve().placeOnBoard(this);
+			BoardBuffer.retrieve().placeOnBoard(this, (double) this.getMouseX(), (double) this.getMouseY());
 		}
 	}
 	

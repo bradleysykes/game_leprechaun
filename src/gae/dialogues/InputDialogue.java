@@ -2,9 +2,12 @@ package gae.dialogues;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import gae.Controller;
+import gae.ViewItemField;
 import gae.panel_lists.BoardList;
 
 import javax.swing.JFrame;
@@ -17,9 +20,11 @@ public abstract class InputDialogue extends JFrame {
 	protected Controller myController;
 	protected List<Stat> myProperties;
 	protected BoardList myList;
+	protected Map<Stat,ViewItemField> myFieldViews; 
 	
 	public InputDialogue(List<Stat> props, BoardList list){
 		myProperties = props;
+		myFieldViews = new HashMap<Stat,ViewItemField>();
 		myList = list;
 		JPanel panel = createGutsPanel();
 		this.add(panel);

@@ -26,12 +26,6 @@ public abstract class ViewItem implements Constants {
 
 	public abstract void onClick(Controller c);
 	
-	public JGObject placeOnBoard(JGEngine engine){
-		//engine.defineImage("unit", "-", 0, imgmap, mapidx, img_op, top, left, width, height)
-		//new JGObject(such and such);
-		return new JGObject(null, false, 0, 0, 0, null);
-	}
-
 	public void setController(Controller controller) {
 		myController = controller;
 	}

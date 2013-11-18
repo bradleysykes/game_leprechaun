@@ -45,8 +45,22 @@
 		    </resources>
 	    </tile>
     </map>
+    <player name="enemy">
+	    <resources>
+			<resource name="mineral" value="2.0"/>
+			<resource name="gas" value="20.0"/>
+		</resources>
+		<condition>
+			(not clear yet)
+		</condition>
+		<units>
+	  		<unit id="2"/>
+	  		<unit id="3"/>
+	  	</units>
+  	<player>
 	<units>
 		<unit name="soldier" id="1">
+			<player id="enemy">
 			<tile x="1" y="1"/>
 			<attributes>
 				<stat name="Base Help" value="2.0"/>
@@ -61,6 +75,7 @@
 			</attributes>
 		</unit>
 		<unit name="soldier" id="2">
+			<player id="enemy">
 			<tile x="1" y="2"/>
 			<attributes>
 				<stat name="Base Help" value="2.0"/>
@@ -75,17 +90,4 @@
 			</attributes>
 		</unit>
 	</units>
-  	<player name="enemy>
-	    <resources>
-			<resource name="mineral" value="2.0"/>
-			<resource name="gas" value="20.0"/>
-		</resources>
-		<condition>
-			(not clear yet)
-		</condition>
-		<units>
-	  		<id>1</id>
-	  		<id>2</id>
-	  	</units>
-  	<player>
 </GameElements>
