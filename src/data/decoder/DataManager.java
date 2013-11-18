@@ -11,6 +11,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
+import model.Controller;
 import model.GameMap;
 import model.Player;
 import model.unit.Unit;
@@ -27,7 +28,7 @@ import model.unit.Unit;
  */
 
 public class DataManager {
-    
+    private Controller myController;
     private Element myRoot;
     private GameMap myGameMap;
     private List<Unit> myUnits;
@@ -90,7 +91,7 @@ public class DataManager {
         myDecoders.put("MapDecoder", new MapDecoder(this));
         
     }
-    private void processDsecoders() {
+    private void processDecoders() {
         //for (String key: myDecoders.keySet()) {
         //    myDecoders.get(key).load(myRoot);
         //}
@@ -117,4 +118,9 @@ public class DataManager {
         return new GameElements(myGameMap);
     }
     
+    public static void main(String[] args) {
+        DataManager dm = new DataManager(new File("src/data/resources/map.xml"));
+        GameMap map = dm.getGameMap();
+        map.toString();
+    }
 }

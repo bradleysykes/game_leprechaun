@@ -1,77 +1,87 @@
 <GameElements>
-  <map x_dimension="2" y_dimension="2">	
-	<tile x="0" y="0">
-	    <thing name="Passability" value="1.0"/>
-	  	<thing name="Max Population" value="2"/>
-	  	<terrain>
-	  	  <thing name="Type" value="string"/>
-	  	  <thing name="Attribute Impacted" value="string"/>
-	  	  <thing name="Unit Impacted" value="string"/>
-	  	  <thing name="Magnitude" value="2"/>	  		
-	  	</terrain>
-	  	<resources> 	
-		  <resource>
-		    <thing name="Name" value="string"/>
-  		    <thing name="Amount" value="2.0"/>
-  		    <thing name="Harvest Rate" value="3.0"/>
-		  </resource>
-	    </resources>
-    </tile>
-	<tile x="0" y="1">
-	    <thing name="Passability" value="1.0"/>
-	  	<thing name="Max Population" value="2"/>
-	  	<terrain>
-	  	  <thing name="Type" value="string"/>
-	  	  <thing name="Attribute Impacted" value="string"/>
-	  	  <thing name="Unit Impacted" value="string"/>
-	  	  <thing name="Magnitude" value="2"/>	  		
-	  	</terrain>
-	  	<resources> 	
-		  <resource>
-		    <thing name="Name" value="string"/>
-  		    <thing name="Amount" value="2.0"/>
-  		    <thing name="Harvest Rate" value="3.0"/>
-		  </resource>
-	    </resources>
-    </tile>
-	<tile x="1" y="0">
-	    <thing name="Passability" value="1.0"/>
-	  	<thing name="Max Population" value="2"/>
-	  	<terrain>
-	  	  <thing name="Type" value="string"/>
-	  	  <thing name="Attribute Impacted" value="string"/>
-	  	  <thing name="Unit Impacted" value="string"/>
-	  	  <thing name="Magnitude" value="2"/>	  		
-	  	</terrain>
-	  	<resources> 	
-		  <resource>
-		    <thing name="Name" value="string"/>
-  		    <thing name="Amount" value="2.0"/>
-  		    <thing name="Harvest Rate" value="3.0"/>
-		  </resource>
-	    </resources>
-    </tile>
-	<tile x="1" y="1">
-	    <thing name="Passability" value="1.0"/>
-	  	<thing name="Max Population" value="2"/>
-	  	<terrain>
-	  	  <thing name="Type" value="string"/>
-	  	  <thing name="Attribute Impacted" value="string"/>
-	  	  <thing name="Unit Impacted" value="string"/>
-	  	  <thing name="Magnitude" value="2"/>	  		
-	  	</terrain>
-	  	<resources> 	
-		  <resource>
-		    <thing name="Name" value="string"/>
-  		    <thing name="Amount" value="2.0"/>
-  		    <thing name="Harvest Rate" value="3.0"/>
-		  </resource>
-	    </resources>
-    </tile>
-  </map>
-  <unit>
-  
-  
-  
-  </unit>	
+    <map x_dimension="2" y_dimension="2">	
+	    <tile x="0" y="0">
+		    <stat name="Passability" value="1.0"/>
+		  	<stat name="Max Population" value="2.0"/>
+		  	<terrain>
+		  		<stat name="Magnitude" value="2.0"/>	  		
+		  	</terrain>
+		  	<resources> 	
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </resources>
+    	</tile>
+		<tile x="0" y="1">
+		    <stat name="Passability" value="1.0"/>
+		  	<stat name="Max Population" value="2"/>
+		  	<terrain>
+		  		<stat name="Magnitude" value="2"/>	  		
+		  	</terrain>
+		  	<resources> 	
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </resources>
+	    </tile>
+		<tile x="1" y="0">
+		    <stat name="Passability" value="1.0"/>
+		  	<stat name="Max Population" value="2"/>
+		  	<terrain>
+		  		<stat name="Magnitude" value="3.0"/>	  		
+		  	</terrain>
+		  	<resources> 	
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </resources>
+	    </tile>
+		<tile x="1" y="1">
+		    <stat name="Passability" value="1.0"/>
+		  	<stat name="Max Population" value="2.0"/>
+		  	<terrain>
+		  		<stat name="Magnitude" value="2.0"/>	  		
+		  	</terrain>
+		  	<resources> 	
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </resources>
+	    </tile>
+    </map>
+    <player name="enemy">
+	    <resources>
+			<resource name="mineral" value="2.0"/>
+			<resource name="gas" value="20.0"/>
+		</resources>
+		<condition>
+			(not clear yet)
+		</condition>
+		<units>
+			<unit name="soldier" id="1">
+				<tile x="1" y="1"/>
+				<attributes>
+					<stat name="Base Help" value="2.0"/>
+					<stat name="Health" value="10.0"/>
+					<stat name="Base Attack" value="10.0"/>
+					<stat name="Attack" value="2.0"/>	  		
+					<stat name="Base Defense" value="2.0"/>
+					<stat name="Defense" value="1.0"/>
+					<stat name="Base Stamina" value="10.0"/>
+					<stat name="Stamina" value="5.0"/>	
+					<stat name="Range" value="3.0"/>  		
+				</attributes>
+			</unit>
+			<unit name="soldier" id="2">
+				<tile x="1" y="2"/>
+				<attributes>
+					<stat name="Base Help" value="2.0"/>
+					<stat name="Health" value="10.0"/>
+					<stat name="Base Attack" value="10.0"/>
+					<stat name="Attack" value="2.0"/>	  		
+					<stat name="Base Defense" value="2.0"/>
+					<stat name="Defense" value="1.0"/>
+					<stat name="Base Stamina" value="10.0"/>
+					<stat name="Stamina" value="5.0"/>
+					<stat name="Range" value="3.0"/>  			  		
+				</attributes>
+			</unit>
+		</units>
+  	</player>
 </GameElements>

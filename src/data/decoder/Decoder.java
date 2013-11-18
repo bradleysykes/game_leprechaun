@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import data.Attributes;
 import data.Elements;
-import model.things.Thing;
-import model.things.ThingsThing;
+import model.things.Stat;
+import model.things.StatCollection;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -23,56 +23,52 @@ import util.reflection.Reflection;
  *
  */
 public abstract class Decoder implements Attributes, Elements {
-    public static final String INT_THING = "Integer";
-    public static final String DOUBLE_THING = "Double";
-    public static final String STRING_THING = "String";
     
-    public Map<String, String> myThingsClassPaths;
-    public Decoder() {
-        myThingsClassPaths = new HashMap<String,String>();
-        initThingsMap();
-    }
-    
-    public void initThingsMap() {
-        myThingsClassPaths.put(INT_THING, "model.things.IntegerThing");
-        myThingsClassPaths.put(DOUBLE_THING, "model.things.DoubleThing");
-        myThingsClassPaths.put(STRING_THING, "model.things.StringThing");
-    }
-    
+    /**
+     * return the attribute of element to the corresponding tag.  
+     */
     public String getAttribute(String tag, Element element) {
         return element.getAttribute(tag).toString();
     }
     
     /**
-     * This method creates the "thing" object.
+     * This method parses and creates the "Stat" object.
      * 
-     * @param thingElement
-     * @return thing object
+     * @param element the node of 
+     * @return Stat stat object
      */
-    public Thing getThing(Element thingElement) {
-        String field = thingElement.getAttribute("field").toString();
-        String name = thingElement.getAttribute("name").toString();
-        String value = thingElement.getAttribute("value");
-        Thing thing = (Thing) Reflection.createInstance(myThingsClassPaths.get(field), name);
-        thing.setValue(value);
-        return thing;     
+    public Stat getStat(Element element) {
+        String name = element.getAttribute("name").toString();
+        Double value = Double.parseDouble(element.getAttribute("value"));
+        Stat stat = (Stat) Reflection.createInstance(name);
+        stat.setValue(value);
+        return stat;     
     }
     
-    public void setThings(Element element, ThingsThing things) {
+    /**
+     * 
+     * @param element
+     * @param things
+     */
+    public void setStats(Element element, StatCollection things) {
         NodeList thingList = element.getChildNodes();
         for(int i = 0; i < thingList.getLength(); i++) {
             Node thing = thingList.item(i);
             if(thing.getNodeName().equals(THING)) {
-                setThing(things, (Element)thing);
+                setStat(things, (Element)thing);
             }
         }
-
     }
     
-    public void setThing(ThingsThing thing, Element ele) {
-        String name = getAttribute(NAME, ele);
-        String value = getAttribute(VALUE, ele);
-        thing.setValue(name, value);
+    /**
+     * 
+     * @param stats
+     * @param ele
+     */
+    public void setStat(StatCollection stats, Element element) {
+        String name = getAttribute(NAME, element);
+        Double value = Double.parseDouble(getAttribute(VALUE, element));
+        stats.setStat(name, value);
     }
 
     public abstract void load(Element root);

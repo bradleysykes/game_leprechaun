@@ -3,7 +3,7 @@ package data.decoder;
 import model.GameMap;
 import model.Resource;
 import model.Resources;
-import model.things.ThingsThing;
+import model.things.StatCollection;
 import model.tile.Tile;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -18,8 +18,8 @@ import org.w3c.dom.NodeList;
  */
 public class MapDecoder extends Decoder {
     
-    private static final String TERRAIN_THING = "Terrain";
-    private static final String RESOURCES_THING = "Resources";
+    private static final String TERRAIN_TAG= "Terrain";
+    private static final String RESOURCES_TAG = "Resources";
     
     private GameMap myGameMap;
     private DataManager myDataManager;
@@ -28,7 +28,7 @@ public class MapDecoder extends Decoder {
         myDataManager = manager;
     }
     
-    private void processMap(Element root) {
+    private GameMap processGameMap(Element root) {
         int x_dim = Integer.parseInt(getAttribute(X_DIM, root));
         int y_dim = Integer.parseInt(getAttribute(Y_DIM, root));
         myGameMap = new GameMap(x_dim, y_dim);
@@ -39,52 +39,57 @@ public class MapDecoder extends Decoder {
             Element tempTile = (Element)tiles.item(i);
             setTile(tempTile);
         }
+        return myGameMap;
     }
     
     
-    private void setTile(Element tile) {
+    private Tile setTile(Element tile) {
         int x = Integer.parseInt(getAttribute(X_COORD, tile));
         int y = Integer.parseInt(getAttribute(Y_COORD, tile));
         
         //create a new Tile with x,y informaiton
-        Tile resultTile = new Tile(x, y);
+        Tile resultTile = new Tile(x, y, myGameMap);
         
-        //set attributes of tile(image name, max_pop, passability).
-        setThings(tile,resultTile);
+        //set attributes of tile(max_pop, passability).
+        setStats(tile,resultTile);
         
         //set terrain to the tile
         Element terrain = (Element) tile.getElementsByTagName(TERRAIN).item(0);
-        ThingsThing targetTerr = (ThingsThing) resultTile.getThing(TERRAIN_THING);
-        setTerrain(terrain, targetTerr);
+        StatCollection targetTerr = (StatCollection) resultTile.getStatCollection(TERRAIN_TAG);
+        setStats(terrain, targetTerr);
         
         // set resources to the tile
-        Element resources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
-        ThingsThing targetRes = (ThingsThing) resultTile.getThing(RESOURCES_THING);
-        setResources(resources,targetRes);
+        Element elementResources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
+        Resources targetResources = (Resources) resultTile.getStatCollection(RESOURCES_TAG);
+        setResources(elementResources,targetResources);
         
         //create tile 
         myGameMap.setTile(x, y, resultTile);
+        
+        //test use
+        return resultTile;
     }
-    
-    private void setTerrain(Element terrain, ThingsThing target) {
-        setThings(terrain, target);
-    }
-    
-    private void setResources(Element resources, ThingsThing target) {
-        Resources result = (Resources) target;
+      
+    private Resources setResources(Element resources, Resources target) {
         NodeList resourceList = resources.getElementsByTagName(RESOURCE);
         for(int i = 0; i < resourceList.getLength(); i++) {
-            Element resource = (Element) resourceList.item(i);
-            Resource res = new Resource();
-            setThings(resource, res);
-            result.addResource(res);
+            target.addResource(getResource((Element)resourceList.item(i)));
         }
+        
+        //test use
+        return target;
+    }
+    
+    public Resource getResource(Element resource) {
+        String name = resource.getAttribute(NAME);
+        Double amount = Double.parseDouble(resource.getAttribute(AMOUNT));
+        Double harvestRate = Double.parseDouble(resource.getAttribute(HARVEST_RATE));
+        return new Resource(name, amount, harvestRate);
     }
     
     @Override
     public void load(Element root) {
-        processMap(root);
-        myDataManager.setGameMap(myGameMap);
+        myDataManager.setGameMap(processGameMap(root));
     }
 
 }
