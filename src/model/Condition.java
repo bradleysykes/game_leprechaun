@@ -1,6 +1,6 @@
 package model;
 
-import model.things.StatCollection;
+import model.stats.StatCollection;
 
 public abstract class Condition extends StatCollection {
 	protected Player myPlayer;

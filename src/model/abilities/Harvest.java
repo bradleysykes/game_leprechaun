@@ -2,8 +2,8 @@ package model.abilities;
 
 import model.Ability;
 import model.Resource;
-import model.things.Stat;
-import model.things.StatCollection;
+import model.stats.Stat;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
 public class Harvest extends Ability{

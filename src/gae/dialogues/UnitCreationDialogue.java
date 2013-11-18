@@ -8,6 +8,8 @@ import gae.panel_lists.BoardList;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +23,7 @@ import model.things.StatCollection;
 public class UnitCreationDialogue extends InputDialogue {
 	
 	private JButton myEnterButton;
+	private ViewItemField myName;
 	
 	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, BoardList list) {
 		super(modelProperties, list);
@@ -34,8 +37,20 @@ public class UnitCreationDialogue extends InputDialogue {
 			BoardList list, boolean isSubUnit){
 		super(modelProperties,list);
 		this.setLayout(new FlowLayout());
-		myEnterButton = new JButton("Create");
-		
+		myEnterButton = new JButton("Create Subunit");
+		myEnterButton.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				for(Stat t: myFieldViews.keySet()){
+					ViewItemField field = myFieldViews.get(t);
+					Double data = Double.valueOf(field.getData());
+					t.setValue(data);
+					disposeDialogue();
+				}
+			}
+			
+		});
 		this.add(myEnterButton, BorderLayout.SOUTH);	
 	}
 	
@@ -71,7 +86,9 @@ public class UnitCreationDialogue extends InputDialogue {
 				SaveInputButton button = new SaveInputButton(test,myList);
 				mainPanel.add(button);
 			}
-	}
+		}
+		myName = new ViewItemField("Custom name");
+		mainPanel.add(myName);
 		return mainPanel;	
 	}
 }

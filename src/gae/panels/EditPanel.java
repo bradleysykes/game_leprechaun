@@ -2,6 +2,7 @@ package gae.panels;
 
 import gae.Constants;
 import gae.Controller;
+import gae.panel_lists.BoardList;
 import gae.viewitems.TaskViewItem;
 import gae.viewitems.ViewItem;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import data.GameElements;
 import model.Player;
 import model.things.Stat;
 
@@ -52,6 +54,11 @@ public abstract class EditPanel extends JPanel implements Constants {
 	public void createMap(List<String> data) {
 		// do nothing
 		
+	}
+
+	public GameElements insertStateObjects(GameElements currentState) {
+		// TODO Auto-generated method stub
+		return currentState;
 	}
 }
 	

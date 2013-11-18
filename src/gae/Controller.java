@@ -1,6 +1,7 @@
 package gae;
 
 import gae.dialogues.PlayerDialogue;
+import gae.panel_lists.BoardList;
 import gae.panels.EditPanel;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.BoardSizeTaskViewItem;
@@ -12,6 +13,9 @@ import gae.viewitems.ViewItem;
 import java.util.ArrayList;
 import java.util.List;
 
+import sun.nio.cs.ext.JIS_X_0201.Encoder;
+import data.GameElements;
+import data.encoder.SaverHandler;
 import model.Player;
 import model.things.Stat;
 
@@ -27,7 +31,7 @@ public class Controller {
 	public void init(){
 		if(myPlayers.size()==0){
 			this.addViewItem(new PlayerTaskViewItem(this));
-			this.addViewItem(new BoardSizeTaskViewItem(this));
+			//this.addViewItem(new BoardSizeTaskViewItem(this));
 		}
 	}
 	
@@ -68,6 +72,20 @@ public class Controller {
 		for(EditPanel p:myPanels){
 			p.createMap(data);
 		}
+	}
+	
+	public void getAndSaveState() {
+		GameElements currentState = new GameElements();
+		for(EditPanel p:myPanels){
+			currentState = p.insertStateObjects(currentState);
+			if (currentState == null) {
+				// Popup dialog->not saved
+				return;
+			}
+		}
+		SaverHandler saverEncoder = new SaverHandler();
+		saverEncoder.doSave(currentState);
+		// create data object to send GameElements object to that.
 	}
 
 }

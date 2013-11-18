@@ -1,6 +1,6 @@
 package model;
 
-import model.things.StatCollection;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
 public abstract class Effect extends StatCollection{

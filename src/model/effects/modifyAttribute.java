@@ -1,7 +1,7 @@
 package model.effects;
 
 import model.Effect;
-import model.things.Stat;
+import model.stats.Stat;
 import model.unit.Unit;
 
 public class ModifyAttribute extends Effect {

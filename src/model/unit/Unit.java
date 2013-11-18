@@ -6,10 +6,16 @@ import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
-import model.things.Stat;
-import model.things.StatCollection;
+import model.stats.Stat;
+import model.stats.StatCollection;
 import model.tile.Tile;
 
+/**
+ * Unit which has behaviors / limitations controlled through modification
+ * of the objects it is composed of: Attributes and Abilities.
+ * @author Timo and John
+ *
+ */
 public class Unit extends StatCollection implements ModelConstants {
 	
 	private GameMap myMap;

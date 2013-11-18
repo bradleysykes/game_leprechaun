@@ -16,17 +16,24 @@ public class ViewItemField<T> extends JPanel {
 
 	public ViewItemField(Stat stat){
 		this.setLayout(new BorderLayout());
-		create(stat);
+		this.create(stat.getName(),"Double",stat.getValue().toString());
+	}
+	
+	public ViewItemField(String title){
+		this.setLayout(new BorderLayout());
+		this.create(title, "String", "Name me!");
 	}
 
-	private void create(Stat stat) {
-		JLabel fieldTitle = new JLabel(stat.getName());
-		JLabel fieldDescription = new JLabel("Double");
-		JTextField field = new JTextField(stat.getValue().toString());
-		myField = field;
-		this.add(fieldTitle,BorderLayout.PAGE_START);
-		this.add(fieldDescription,BorderLayout.CENTER);
-		this.add(field,BorderLayout.PAGE_END);
+	private void create(String name, String type, String value) {
+		JLabel fieldTitle = new JLabel(name);
+		JLabel fieldDescription = new JLabel(type);
+		if(value!=null){
+			JTextField field = new JTextField(value);
+			myField = field;
+			this.add(fieldTitle,BorderLayout.PAGE_START);
+			this.add(fieldDescription,BorderLayout.CENTER);
+			this.add(field,BorderLayout.PAGE_END);
+		}
 	}
 	
 	public String getData(){

@@ -1,8 +1,13 @@
 package model;
 
-import model.things.Stat;
-import model.things.StatCollection;
+import model.stats.Stat;
+import model.stats.StatCollection;
 
+/**
+ * Explicitly defines the stats of a unit.
+ * @author Timo and John
+ *
+ */
 public class Attributes extends StatCollection {
 	
 	// Refactor using resource file
