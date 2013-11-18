@@ -27,7 +27,7 @@ public class CustomAbility extends Ability {
 
 	@Override
 	public void prepAbility() {
-		myUnit.getPlayer().getController().chooseTile(myUnit.getCurrentTile().getTiles(this.getValue("Radius")));
+		myUnit.getPlayer().getModel().chooseTile(myUnit.getCurrentTile().getTiles(this.getValue("Radius")));
 	}
 
 	@Override
