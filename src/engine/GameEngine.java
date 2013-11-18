@@ -16,8 +16,8 @@ public class GameEngine extends JGEngine {
 	
 	private GameManager myGameManager;
 	private GameLoader myGameLoader;
-	private final int myViewerWidth = 800;
-	private final int myViewerHeight = 600;
+	private final int myViewerWidth = 600;
+	private final int myViewerHeight = 450;
 	private final int myTileWidth = 20;
 	private final int myTileHeight = 20;
 	private ArrayList<Unit> myUnits;
