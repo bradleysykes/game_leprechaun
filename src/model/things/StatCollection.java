@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StatCollection extends Stat {
-
-	protected List<String> myIDs = new ArrayList<String>();
+	
+	private String myID;
+	protected List<String> myReferences = new ArrayList<String>();
 
 	public StatCollection(String name){
 		super(name,null);
-		myIDs.add(DEFAULT_STRING);
+		myID = "";
 	}
 
-	public StatCollection(String name, String title){
+	public StatCollection(String name, String id){
 		this(name);
-		if(title!=null)
-			myIDs.add(title);
+		myID = id;
 	}
 
 	protected List<Stat> myStats = new ArrayList<Stat>();
 
 	public String getID(){
-		return myIDs.get(0);
+		return myID;
 	}
 
 	public void setID(String id){
-		myIDs.set(0, id);
+		myID = id;
 	}
 
 	public void addStat(Stat t){

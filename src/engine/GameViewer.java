@@ -17,14 +17,21 @@ public class GameViewer extends JFrame {
 	public GameViewer() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle(myTitle);
-		JPanel componentPane = new JPanel();
-		componentPane.setLayout(new BoxLayout(componentPane, BoxLayout.PAGE_AXIS));
+		myGameEngine = new GameEngine();
+		
 		myMenuBar = new JMenuBar();
 		myMenuBar.add(new ViewerMenu("Menu", myGameEngine));
 		setJMenuBar(myMenuBar);
-		myGameEngine = new GameEngine();
-		componentPane.add(myGameEngine);
-		add(componentPane);
+		
+		JPanel enginePane = new JPanel();
+		enginePane.setLayout(new BoxLayout(enginePane, BoxLayout.PAGE_AXIS));
+		enginePane.add(myGameEngine);
+		add(enginePane);
+		
+		JPanel controlPane = new JPanel();
+		controlPane.setLayout(new FlowLayout());
+		//controlPane.add()
+		
 		setResizable(false);
 		pack();
 		setVisible(true);
