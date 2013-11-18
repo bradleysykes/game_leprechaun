@@ -20,7 +20,7 @@ public class GameViewer extends JFrame {
 		JPanel componentPane = new JPanel();
 		componentPane.setLayout(new BoxLayout(componentPane, BoxLayout.PAGE_AXIS));
 		myMenuBar = new JMenuBar();
-		myMenuBar.add(new ViewerMenu("Options", myGameEngine));
+		myMenuBar.add(new ViewerMenu("Menu", myGameEngine));
 		setJMenuBar(myMenuBar);
 		myGameEngine = new GameEngine();
 		componentPane.add(myGameEngine);
