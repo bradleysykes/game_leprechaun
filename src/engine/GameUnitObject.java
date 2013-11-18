@@ -10,7 +10,7 @@ public class GameUnitObject extends JGObject {
 
 	public GameUnitObject(Unit unit) {
 		super("unit", true, GameTileObject.tilesToPixels(unit.getCurrentTile().getX()), GameTileObject.tilesToPixels(unit.getCurrentTile().getY()),
-				myCollisionID, unit.getName());
+				myCollisionID, unit.getID());
 	}
 	
 	public static int getCollisionID() {
