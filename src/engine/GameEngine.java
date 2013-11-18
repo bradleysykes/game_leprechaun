@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
+import data.GameElements;
 import jgame.JGColor;
 import jgame.platform.JGEngine;
 import model.GameMap;
 import model.Player;
 import model.tile.Tile;
 import model.unit.Unit;
-import data.decoder.GameElements;
 
 public class GameEngine extends JGEngine {
 	

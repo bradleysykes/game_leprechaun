@@ -13,6 +13,7 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 import data.Attributes;
 import data.Elements;
+import data.GameElements;
 import model.Controller;
 import model.GameMap;
 import model.Player;

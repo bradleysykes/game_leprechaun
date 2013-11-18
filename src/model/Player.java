@@ -8,7 +8,7 @@ import model.unit.Unit;
 
 public class Player implements ModelConstants{
 	
-	private String myName;
+	private String myID;
 	private HashMap<String,Double> myResources;
 	private List<Unit> myUnits;
 	private Condition myWinningCondition;
@@ -19,7 +19,7 @@ public class Player implements ModelConstants{
 	}
 	
 	public Player(String name){
-		myName = name;
+		myID = name;
 		myResources = new HashMap<String,Double>();
 		myUnits = new ArrayList<Unit>();
 	}
@@ -28,13 +28,13 @@ public class Player implements ModelConstants{
 		myController = c;
 	}
 	
-	public String setName(String name){
-		myName = name;
-		return myName;
+	public String setID(String name){
+		myID = name;
+		return myID;
 	}
 	
-	public String getName(){
-		return myName;
+	public String getID(){
+		return myID;
 	}
 	
 	public Controller getController(){
@@ -64,7 +64,7 @@ public class Player implements ModelConstants{
 	}
 	
 	public boolean equals(Player other){
-		return myName.equals(other.getName());
+		return myID.equals(other.getID());
 	}
 	
 	public void refresh(){

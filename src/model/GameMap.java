@@ -62,5 +62,17 @@ public class GameMap {
 		// Get selected tile from game engine.
 		return null;
 	}
+	
+	public double checkUnitCount(String unitID, String playerID){
+		double count = 0.0;
+		for(Tile t : this.getAllTiles()){
+			for(Unit u : t.getUnits()){
+				if(u.getID().equals(unitID) && u.getPlayer().getID().equals(playerID)){
+					count++;
+				}
+			}
+		}
+		return count;
+	}
 
 }

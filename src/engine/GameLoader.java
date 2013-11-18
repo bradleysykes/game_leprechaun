@@ -1,6 +1,7 @@
 package engine;
 
 import java.util.ArrayList;
+import data.GameElements;
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -8,7 +9,6 @@ import model.GameMap;
 import model.Player;
 import model.tile.Tile;
 import model.unit.Unit;
-import data.decoder.GameElements;
 
 public class GameLoader  {
 	
