@@ -6,8 +6,8 @@ import model.GameMap;
 import model.ModelConstants;
 import model.Resources;
 import model.Terrain;
-import model.things.Stat;
-import model.things.StatCollection;
+import model.stats.Stat;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
 public class Tile extends StatCollection implements ModelConstants{

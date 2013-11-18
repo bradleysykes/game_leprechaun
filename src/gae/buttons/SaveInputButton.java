@@ -1,5 +1,6 @@
 package gae.buttons;
 
+import gae.dialogues.SubUnitDialogue;
 import gae.dialogues.UnitCreationDialogue;
 import gae.panel_lists.BoardList;
 
@@ -25,7 +26,7 @@ public class SaveInputButton extends JButton {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				UnitCreationDialogue d = new UnitCreationDialogue(myStat.getName(),
+				SubUnitDialogue d = new SubUnitDialogue(myStat.getName(),
 						myStat.getStats(),myList);
 			}
 			

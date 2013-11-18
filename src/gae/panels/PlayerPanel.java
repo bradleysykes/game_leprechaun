@@ -14,6 +14,7 @@ import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import data.GameElements;
 import model.Player;
 
 public class PlayerPanel extends EditPanel {
@@ -38,5 +39,11 @@ public class PlayerPanel extends EditPanel {
 			myList.removeItem(numPlayers);
 			myModelPlayerList.remove(numPlayers);
 		}
+	}
+	
+	@Override
+	public GameElements insertStateObjects(GameElements currentState) {
+		currentState.setPlayerList(myModelPlayerList);
+		return currentState;
 	}
 }

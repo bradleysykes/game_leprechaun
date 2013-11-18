@@ -16,10 +16,10 @@ import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import data.GameElements;
+import model.GameMap;
 import model.Player;
-
 import model.tile.Tile;
-
 import util.reflection.Reflection;
 
 
@@ -28,6 +28,7 @@ public class MapPanel extends EditPanel {
 	
 	private GUIMap myMapView;
 	private PackageClassFinder myFinder;
+	private GameMap myModelMap;
 
 	public MapPanel(Controller controller){
 		super(controller);
@@ -53,8 +54,11 @@ public class MapPanel extends EditPanel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
-
-
+		
+	@Override
+	public GameElements insertStateObjects(GameElements currentState) {
+		currentState.setGameMap(myModelMap);
+		return currentState;
+	}
 }

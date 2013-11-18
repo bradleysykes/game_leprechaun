@@ -15,11 +15,20 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class EditMenuBar extends JMenuBar {
-	
-	public EditMenuBar(){
+	Controller myController;
+	public EditMenuBar(Controller controller){
+		myController = controller;
 		JMenu fileMenu = new JMenu("File");
 		this.add(fileMenu);
-		fileMenu.add(new JMenuItem("Export XML"));
+		JMenuItem saveButton = new JMenuItem("Export XML");
+		fileMenu.add(saveButton);
+		saveButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				saveData();
+			}
+
+		});
 		JMenu gameMenu = new JMenu("Game");
 		this.add(gameMenu);
 		JMenuItem mapSetup = new JMenuItem("Initial Map Setup");
@@ -33,5 +42,9 @@ public class EditMenuBar extends JMenuBar {
 			
 		});
 		gameMenu.add(mapSetup);
+	}
+	
+	private void saveData() {
+		myController.getAndSaveState();
 	}
 }

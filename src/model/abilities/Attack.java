@@ -3,9 +3,16 @@ package model.abilities;
 import java.util.List;
 
 import model.Ability;
-import model.things.StatCollection;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
+/**
+ * Allows a unit to attack another Unit. Currently, this ability acts upon a tile.
+ * The unit with the lowest health on the tile is attacked. Damage is dealt to both 
+ * the attacking and defending unit through simple arithmetic on their Attributes.
+ * @author Timo and John
+ *
+ */
 public class Attack extends Ability{
 
 	public Attack(Unit abilityUser) {

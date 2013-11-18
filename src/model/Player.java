@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-import model.things.StatCollection;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
 public class Player extends StatCollection implements ModelConstants{

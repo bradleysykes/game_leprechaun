@@ -1,7 +1,7 @@
 package model;
 
-import model.things.Stat;
-import model.things.StatCollection;
+import model.stats.Stat;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
 public class Terrain extends StatCollection implements ModelConstants {
