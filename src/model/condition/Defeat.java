@@ -1,20 +1,20 @@
 package model.condition;
 
 import model.Condition;
+import model.Player;
 import model.unit.Unit;
 
 public class Defeat extends Condition {
-	private Unit myUnit;
+	private String myUnitID;
 
-	public Defeat(Unit target) {
-		super("Create");
-		myUnit = target;
+	public Defeat(String target, Player p) {
+		super("Defeat", p);
+		myUnitID = target;
 	}
 	
 	@Override
 	public boolean check(){
-		if (myUnit == null)
-			return true;
+		
 		return false;
 	}
 
