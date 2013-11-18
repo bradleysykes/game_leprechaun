@@ -73,4 +73,8 @@ public class GameEngine extends JGEngine {
 		myGameLoader.loadGame();
 	}
 	
+	public void initializeTiles(Collection<Tile> tiles) {
+		
+	}
+	
 }
