@@ -5,8 +5,8 @@ import model.things.Stat;
 
 public class WinCondition extends Condition {
 	
-	public WinCondition(){
-		super("Win Condition");
+	public WinCondition(Player p){
+		super("Win Condition", p);
 		//this.addStat(new Defeat());
 	}
 
