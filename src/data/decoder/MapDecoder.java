@@ -36,14 +36,13 @@ public class MapDecoder extends Decoder {
         NodeList tiles = root.getElementsByTagName(TILE);
         
         for(int i = 0; i < tiles.getLength(); i++) {
-            Element tempTile = (Element)tiles.item(i);
-            setTile(tempTile);
+            processTile((Element)tiles.item(i));
         }
         return myGameMap;
     }
     
     
-    private Tile setTile(Element tile) {
+    private Tile processTile(Element tile) {
         int x = Integer.parseInt(getAttribute(X_COORD, tile));
         int y = Integer.parseInt(getAttribute(Y_COORD, tile));
         
@@ -61,7 +60,7 @@ public class MapDecoder extends Decoder {
         // set resources to the tile
         Element elementResources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
         Resources targetResources = (Resources) resultTile.getStatCollection(RESOURCES_TAG);
-        setResources(elementResources,targetResources);
+        processResources(elementResources,targetResources);
         
         //create tile 
         myGameMap.setTile(x, y, resultTile);
@@ -70,17 +69,17 @@ public class MapDecoder extends Decoder {
         return resultTile;
     }
       
-    private Resources setResources(Element resources, Resources target) {
+    private Resources processResources(Element resources, Resources target) {
         NodeList resourceList = resources.getElementsByTagName(RESOURCE);
         for(int i = 0; i < resourceList.getLength(); i++) {
-            target.addResource(getResource((Element)resourceList.item(i)));
+            target.addResource(processResource((Element)resourceList.item(i)));
         }
         
         //test use
         return target;
     }
     
-    public Resource getResource(Element resource) {
+    public Resource processResource(Element resource) {
         String name = resource.getAttribute(NAME);
         Double amount = Double.parseDouble(resource.getAttribute(AMOUNT));
         Double harvestRate = Double.parseDouble(resource.getAttribute(HARVEST_RATE));
@@ -88,7 +87,7 @@ public class MapDecoder extends Decoder {
     }
     
     @Override
-    public void load(Element root) {
+    public void decodeData(Element root) {
         myDataManager.setGameMap(processGameMap(root));
     }
 

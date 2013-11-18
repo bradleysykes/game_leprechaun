@@ -3,7 +3,7 @@ package engine;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
-import data.decoder.GameElements;
+import data.GameElements;
 import jgame.JGColor;
 import jgame.platform.JGEngine;
 import model.*;
@@ -22,6 +22,7 @@ public class GameEngine extends JGEngine {
 	private GameMap myGameMap;
 	private ArrayList<Player> myPlayers;
 	private Player myCurrentPlayer;
+	private ImageInfo myImageInfo;
 	
 	public GameEngine() {
 		initEngineComponent(myViewerWidth, myViewerHeight);
@@ -71,6 +72,13 @@ public class GameEngine extends JGEngine {
 	public void initializeState(GameElements gameElements) {
 		myGameLoader = new GameLoader(gameElements, this);
 		myGameLoader.loadGame();
+	}
+	
+	public void initializeTiles(Collection<Tile> tiles) {
+		for (Tile tile : tiles) {
+			Tile newTile = new GameTileObject(tile, tile.);
+			
+		}
 	}
 	
 }

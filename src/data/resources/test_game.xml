@@ -45,7 +45,37 @@
 		    </resources>
 	    </tile>
     </map>
-    <player name="enemy">
+	<units>
+		<unit name="soldier" id="1">
+			<tile x="1" y="1"/>
+			<attributes>
+				<stat name="Base Help" value="2.0"/>
+				<stat name="Health" value="10.0"/>
+				<stat name="Base Attack" value="10.0"/>
+				<stat name="Attack" value="2.0"/>	  		
+				<stat name="Base Defense" value="2.0"/>
+				<stat name="Defense" value="1.0"/>
+				<stat name="Base Stamina" value="10.0"/>
+				<stat name="Stamina" value="5.0"/>	
+				<stat name="Range" value="3.0"/>  		
+			</attributes>
+		</unit>
+		<unit name="soldier" id="2">
+			<tile x="1" y="2"/>
+			<attributes>
+				<stat name="Base Help" value="2.0"/>
+				<stat name="Health" value="10.0"/>
+				<stat name="Base Attack" value="10.0"/>
+				<stat name="Attack" value="2.0"/>	  		
+				<stat name="Base Defense" value="2.0"/>
+				<stat name="Defense" value="1.0"/>
+				<stat name="Base Stamina" value="10.0"/>
+				<stat name="Stamina" value="5.0"/>
+				<stat name="Range" value="3.0"/>  			  		
+			</attributes>
+		</unit>
+	</units>
+  	<player name="enemy>
 	    <resources>
 			<resource name="mineral" value="2.0"/>
 			<resource name="gas" value="20.0"/>
@@ -54,34 +84,8 @@
 			(not clear yet)
 		</condition>
 		<units>
-			<unit name="soldier" id="1">
-				<tile x="1" y="1"/>
-				<attributes>
-					<stat name="Base Help" value="2.0"/>
-					<stat name="Health" value="10.0"/>
-					<stat name="Base Attack" value="10.0"/>
-					<stat name="Attack" value="2.0"/>	  		
-					<stat name="Base Defense" value="2.0"/>
-					<stat name="Defense" value="1.0"/>
-					<stat name="Base Stamina" value="10.0"/>
-					<stat name="Stamina" value="5.0"/>	
-					<stat name="Range" value="3.0"/>  		
-				</attributes>
-			</unit>
-			<unit name="soldier" id="2">
-				<tile x="1" y="2"/>
-				<attributes>
-					<stat name="Base Help" value="2.0"/>
-					<stat name="Health" value="10.0"/>
-					<stat name="Base Attack" value="10.0"/>
-					<stat name="Attack" value="2.0"/>	  		
-					<stat name="Base Defense" value="2.0"/>
-					<stat name="Defense" value="1.0"/>
-					<stat name="Base Stamina" value="10.0"/>
-					<stat name="Stamina" value="5.0"/>
-					<stat name="Range" value="3.0"/>  			  		
-				</attributes>
-			</unit>
-		</units>
-  	</player>
+	  		<id>1</id>
+	  		<id>2</id>
+	  	</units>
+  	<player>
 </GameElements>
