@@ -1,14 +1,16 @@
 package engine;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
-import data.decoder.GameElements;
+import java.util.HashMap;
+
 import jgame.JGColor;
 import jgame.platform.JGEngine;
-import model.*;
+import model.GameMap;
+import model.Player;
 import model.tile.Tile;
 import model.unit.Unit;
+import data.decoder.GameElements;
 
 public class GameEngine extends JGEngine {
 	
@@ -22,7 +24,6 @@ public class GameEngine extends JGEngine {
 	private GameMap myGameMap;
 	private ArrayList<Player> myPlayers;
 	private Player myCurrentPlayer;
-	private ImageInfo myImageInfo;
 	
 	public GameEngine() {
 		initEngineComponent(myViewerWidth, myViewerHeight);
@@ -76,8 +77,13 @@ public class GameEngine extends JGEngine {
 	
 	public void initializeTiles(Collection<Tile> tiles) {
 		for (Tile tile : tiles) {
-			Tile newTile = new GameTileObject(tile, tile.);
-			
+			GameTileObject newTile = new GameTileObject(tile);
+		}
+	}
+	
+	public void initializeUnits(Collection<Unit> units) {
+		for (Unit unit : units) {
+			GameUnitObject newUnit = new GameUnitObject(unit);
 		}
 	}
 	
