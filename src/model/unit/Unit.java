@@ -1,47 +1,27 @@
 package model.unit;
 
-import model.Attack;
+import model.Abilities;
+import model.Ability;
 import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
-import model.things.Thing;
+import model.things.Stat;
+import model.things.StatCollection;
 import model.tile.Tile;
-import java.util.*;
 
-public class Unit implements ModelConstants {
+public class Unit extends StatCollection implements ModelConstants {
 	
-	private String myName;
 	private GameMap myMap;
 	private Player myPlayer;
-	private Attributes myAttributes = new Attributes();
-	//private Movement myMovement;
-	//private Attack myAttack;
-	//private Spawner mySpawner;
-	//private Abilities myAbilities;
-	
-	List<Thing> myThings = new ArrayList<Thing>();
-	
-	private Stats myStats = new Stats(this);
-	
 	private Tile myCurrentTile;
 	
 	public Unit(String name, Player player, GameMap map){
-		setName(name);
+		super("Unit","Soldier");
+		this.addStat(new Attributes());
+		this.addStat(new Abilities(this));
 		myPlayer = player;
 		myMap = map;
-	}
-	
-	public Thing getThing(String name){
-		for(Thing t : myThings){
-			if(t.getName().equals(name))
-				return t;
-		}
-		return null;
-	}
-
-	public void setAttributes(double health, double attack, double defense, double stamina){
-		
 	}
 	
 	public void setMap(GameMap map){
@@ -64,10 +44,6 @@ public class Unit implements ModelConstants {
 //		myAttributes.add(a.)
 //	}
 	
-	public Attributes getAttributes(){
-		return myAttributes;
-	}
-	
 	public void setMapPosition(int newX, int newY){
 		myCurrentTile = myMap.getTile(newX,newY);
 	}
@@ -80,30 +56,28 @@ public class Unit implements ModelConstants {
 		return myCurrentTile;
 	}
 	
-	public void useAbility(int index){
-		//myAbilities.use(index);
-	}
-	
-	public Unit getTarget(int range){
-		List<Tile> validTiles = new ArrayList<Tile>();
-		for (int i = myCurrentTile.getX() - range; i <= myCurrentTile.getX() + range; i++){
-			for (int j = myCurrentTile.getY() - range; i <= myCurrentTile.getY() + range; j++){
-				validTiles.add(myMap.getTile(i, j));
-			}
-		}
-		return myMap.getTargetUnit(validTiles);
+	public void useAbility(String ability){
+		//this.getThing(ability).prepAbility();
 	}
 
-	public String getName() {
-		return myName;
+	public String getID() {
+		return (String) this.getID();
 	}
 
-	public void setName(String myName) {
-		this.myName = myName;
+	public void setID(String id) {
+		this.setID(id);
 	}
 	
 	public boolean equals(Unit other){
-		return (myName.equals(other.getName()) && myPlayer.equals(other.getName()));
+		return (this.getID().equals(other.getID()) && myPlayer.equals(other.getPlayer()));
 	}
+	
+	public void refresh(){
+		for (Stat s : this.getStatCollection("Abilities").getStats()){
+			Ability a = (Ability) s;
+			a.refresh();
+		}
+	}
+
 	
 }

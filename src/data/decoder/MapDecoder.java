@@ -1,34 +1,34 @@
 package data.decoder;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import model.GameMap;
 import model.Resource;
 import model.Resources;
-import model.Terrain;
+import model.things.StatCollection;
 import model.tile.Tile;
-import model.unit.Unit;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-import engine.GameEngine;
 
 /**
  * Map Decoder class that will receive the head node of Map Information
  * in xml file. This class will creates the map corresponding objects and
- * load them to the game engine.
+ * load them to the data manager.
  * 
  * @author Seunghyun Lee
  *
  */
 public class MapDecoder extends Decoder {
     
-    GameMap myGameMap;
-    DataManager myFactory;
-    public MapDecoder (DataManager factory) {
-        myFactory = factory;
+    private static final String TERRAIN_TAG= "Terrain";
+    private static final String RESOURCES_TAG = "Resources";
+    
+    private GameMap myGameMap;
+    private DataManager myDataManager;
+    
+    public MapDecoder (DataManager manager) {
+        myDataManager = manager;
     }
     
-    public void processMap(Element root) {
+    private GameMap processGameMap(Element root) {
         int x_dim = Integer.parseInt(getAttribute(X_DIM, root));
         int y_dim = Integer.parseInt(getAttribute(Y_DIM, root));
         myGameMap = new GameMap(x_dim, y_dim);
@@ -39,47 +39,57 @@ public class MapDecoder extends Decoder {
             Element tempTile = (Element)tiles.item(i);
             setTile(tempTile);
         }
+        return myGameMap;
     }
     
-    public void setTile(Element tile) {
-        String image = getAttribute(IMAGE, tile);
-        int maxPop = Integer.parseInt(getAttribute(MAX_POP, tile));
-        double passability = Double.parseDouble(getAttribute(PASSABILITY, tile));       
+    
+    private Tile setTile(Element tile) {
         int x = Integer.parseInt(getAttribute(X_COORD, tile));
         int y = Integer.parseInt(getAttribute(Y_COORD, tile));
-        Element terrElement = (Element) tile.getElementsByTagName(TERRAIN).item(0);
-        Terrain terrain = getTerrain(terrElement); 
-        Element resourceList = (Element) tile.getElementsByTagName(RESOURCES).item(0);
-        Resources resources = getResources(resourceList);
-
+        
+        //create a new Tile with x,y informaiton
+        Tile resultTile = new Tile(x, y, myGameMap);
+        
+        //set attributes of tile(max_pop, passability).
+        setStats(tile,resultTile);
+        
+        //set terrain to the tile
+        Element terrain = (Element) tile.getElementsByTagName(TERRAIN).item(0);
+        StatCollection targetTerr = (StatCollection) resultTile.getStatCollection(TERRAIN_TAG);
+        setStats(terrain, targetTerr);
+        
+        // set resources to the tile
+        Element elementResources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
+        Resources targetResources = (Resources) resultTile.getStatCollection(RESOURCES_TAG);
+        setResources(elementResources,targetResources);
+        
         //create tile 
-        Tile resultTile = new Tile(resources, passability, terrain, image, new ArrayList<Unit>(), maxPop, x, y);
         myGameMap.setTile(x, y, resultTile);
+        
+        //test use
+        return resultTile;
     }
-    
-    public Terrain getTerrain(Element terrain) {
-        return new Terrain(getAttribute(NAME, terrain));
-    }
-    
-    public Resources getResources(Element resources) {
-        Resources result = new Resources();
+      
+    private Resources setResources(Element resources, Resources target) {
         NodeList resourceList = resources.getElementsByTagName(RESOURCE);
         for(int i = 0; i < resourceList.getLength(); i++) {
-            Element resource = (Element) resourceList.item(i);
-            
-            double amount = Double.parseDouble(getAttribute(AMOUNT, resource));
-            double harvestRate = Double.parseDouble(getAttribute(HARVEST_RATE, resource));
-            String name = getAttribute(NAME, resource);
-            
-            result.addResource(new Resource(name, amount, harvestRate));
+            target.addResource(getResource((Element)resourceList.item(i)));
         }
-        return result;
+        
+        //test use
+        return target;
+    }
+    
+    public Resource getResource(Element resource) {
+        String name = resource.getAttribute(NAME);
+        Double amount = Double.parseDouble(resource.getAttribute(AMOUNT));
+        Double harvestRate = Double.parseDouble(resource.getAttribute(HARVEST_RATE));
+        return new Resource(name, amount, harvestRate);
     }
     
     @Override
     public void load(Element root) {
-        processMap(root);
-        myFactory.setGameMap(myGameMap);
+        myDataManager.setGameMap(processGameMap(root));
     }
 
 }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import model.condition.Condition;
 import model.unit.Unit;
 
 public class Player implements ModelConstants{
@@ -13,15 +12,20 @@ public class Player implements ModelConstants{
 	private HashMap<String,Double> myResources;
 	private List<Unit> myUnits;
 	private Condition myWinningCondition;
+	private Controller myController;
 	
 	public Player(){
-		this(DEFAULT_NAME);
+		this(DEFAULT_STRING);
 	}
 	
 	public Player(String name){
 		myName = name;
 		myResources = new HashMap<String,Double>();
 		myUnits = new ArrayList<Unit>();
+	}
+	
+	public void setController(Controller c){
+		myController = c;
 	}
 	
 	public String setName(String name){
@@ -31,6 +35,10 @@ public class Player implements ModelConstants{
 	
 	public String getName(){
 		return myName;
+	}
+	
+	public Controller getController(){
+		return myController;
 	}
 	
 	public void addNewResourceType(String resourceType){
@@ -57,6 +65,12 @@ public class Player implements ModelConstants{
 	
 	public boolean equals(Player other){
 		return myName.equals(other.getName());
+	}
+	
+	public void refresh(){
+		for (Unit unit : myUnits){
+			unit.refresh();
+		}
 	}
 
 }

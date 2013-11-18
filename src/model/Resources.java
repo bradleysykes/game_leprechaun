@@ -1,22 +1,19 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
+import model.things.StatCollection;
 
-public class Resources {
+public class Resources extends StatCollection {
 	
-	private List<Resource> myResources = new ArrayList<Resource>();
-	
-	public void addResource(Resource newResource){
-		myResources.add(newResource);
+	public Resources() {
+		super("Resources");
 	}
 	
-	public List<Resource> getResources(){
-		return myResources;
+	public void addResource(Resource newResource){
+		this.addStat(newResource);
 	}
 
 	public void removeResource(Resource resource) {
-		myResources.remove(resource);
+		this.removeStat(resource);
 	}
 
 }

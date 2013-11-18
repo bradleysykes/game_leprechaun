@@ -9,15 +9,15 @@ import javax.swing.JToolBar;
 
 
 public class EditGUI extends JFrame implements Constants {
-	private GUIObserver myObserver;
 	public EditGUI(){
-		myObserver = new GUIObserver();
 		this.setLayout(new BorderLayout());
-		this.add(new Workspace(myObserver),BorderLayout.CENTER);
+		this.add(new Workspace(),BorderLayout.CENTER);
 		this.setPreferredSize(EDITGUI_INITIAL_SIZE);
 		this.setJMenuBar(new EditMenuBar());
 		this.pack();
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
+	
+
 }

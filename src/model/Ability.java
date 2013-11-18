@@ -1,19 +1,31 @@
 package model;
 
-import model.things.Thing;
+import model.things.StatCollection;
+import model.tile.Tile;
 import model.unit.Unit;
 
-public abstract class Ability{
+public abstract class Ability extends StatCollection {
 	
 	protected Unit myUnit;
-	protected Parameters myParameters = new Parameters();
+	protected Tile myTile;
+	protected boolean myValid;
 
-	public Ability(Unit abilityUser) {
+	public Ability(String name, Unit abilityUser) {
+		super(name);
 		myUnit = abilityUser;
 	}
 	
-	public abstract double prepAbility();
+	public void prepAbility(){
+		myUnit.getPlayer().getController().setAbility(this);
+	}
 	
-	public abstract double useAbility();
+	public abstract void useAbility();
 	
+	public void setTargetTile(Tile t){
+		myTile = t;
+	}
+	
+	public void refresh(){
+		myValid = true;
+	}
 }

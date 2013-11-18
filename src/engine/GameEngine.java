@@ -7,7 +7,6 @@ import data.decoder.GameElements;
 import jgame.JGColor;
 import jgame.platform.JGEngine;
 import model.*;
-import model.condition.Condition;
 import model.tile.Tile;
 import model.unit.Unit;
 

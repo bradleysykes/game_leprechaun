@@ -1,16 +1,48 @@
-<map x_dimension="20" y_dimension="20">
-  <tile image="src/gae_resources/grass.jpg" max_pop="3" passability="1.0" x="1" y="2">
-    <terrain name="grass"/>
-    <resources>
-      <resource amount="10.0" harvest_rate="5.0" name="minerals"/>
-      <resource amount="20.0" harvest_rate="7.0" name="gas"/>
-    </resources>
-  </tile>
-  <tile image="src/gae_resources/sand.jpg" max_pop="20" passability="2.0" x="3" y="5">
-    <terrain name="sand"/>
-    <resources>
-      <resource amount="36.0" harvest_rate="7.0" name="minerals"/>
-      <resource amount="46.0" harvest_rate="25.0" name="gas"/>
-    </resources>
-  </tile>
-</map>
+<GameElements>
+  <map x_dimension="2" y_dimension="2">	
+	<tile x="0" y="0">
+	    <stat name="Passability" value="1.0"/>
+	  	<stat name="Max Population" value="2.0"/>
+	  	<terrain>
+	  	  <stat name="Magnitude" value="2.0"/>	  		
+	  	</terrain>
+	  	<resources> 	
+		  <resource name="gas" amount="2.0" harvest_rate="2.0"/>
+		  <resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+	    </resources>
+    </tile>
+	<tile x="0" y="1">
+	    <stat name="Passability" value="1.0"/>
+	  	<stat name="Max Population" value="2"/>
+	  	<terrain>
+	  	  <stat name="Magnitude" value="2"/>	  		
+	  	</terrain>
+	  	<resources> 	
+		  <resource name="gas" amount="2.0" harvest_rate="2.0"/>
+		  <resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+	    </resources>
+    </tile>
+	<tile x="1" y="0">
+	    <stat name="Passability" value="1.0"/>
+	  	<stat name="Max Population" value="2"/>
+	  	<terrain>
+	  	  <stat name="Magnitude" value="3.0"/>	  		
+	  	</terrain>
+	  	<resources> 	
+		  <resource name="gas" amount="2.0" harvest_rate="2.0"/>
+		  <resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+	    </resources>
+    </tile>
+	<tile x="1" y="1">
+	    <stat name="Passability" value="1.0"/>
+	  	<stat name="Max Population" value="2.0"/>
+	  	<terrain>
+	  	  <stat name="Magnitude" value="2.0"/>	  		
+	  	</terrain>
+	  	<resources> 	
+		  <resource name="gas" amount="2.0" harvest_rate="2.0"/>
+		  <resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+	    </resources>
+    </tile>
+  </map>
+ </GameElements>

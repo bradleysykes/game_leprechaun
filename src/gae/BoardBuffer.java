@@ -1,18 +1,19 @@
 package gae;
 
+import gae.viewitems.ViewItem;
+
 import java.awt.Component;
 
 public class BoardBuffer {
 	
-	private static BoardListItem myItem;
+	private static ViewItem myItem;
 	
 	
-	public static BoardListItem retrieve(){
-		System.out.println("retrieve");
+	public static ViewItem retrieve(){
 		return myItem;
 	}
 	
-	public static void push(BoardListItem item){
+	public static void push(ViewItem item){
 		myItem = item;
 	}
 }

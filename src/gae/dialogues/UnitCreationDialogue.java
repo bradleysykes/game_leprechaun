@@ -1,0 +1,64 @@
+package gae.dialogues;
+
+import gae.Controller;
+import gae.TileEditor;
+import gae.ViewItemField;
+import gae.buttons.SaveInputButton;
+import gae.panel_lists.BoardList;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import model.things.Stat;
+
+
+public class UnitCreationDialogue extends InputDialogue {
+	
+	private JButton myEnterButton;
+	private Map<Stat,ViewItemField> myFieldViews = new HashMap<Stat,ViewItemField>();
+	
+	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, BoardList list) {
+		super(modelProperties, list);
+		this.setLayout(new FlowLayout());
+		myEnterButton = new JButton("Create");
+		myEnterButton.addActionListener(new GetDataAction());
+		this.add(myEnterButton, BorderLayout.SOUTH);		
+	}
+	
+	@Override
+	public void postInput() {
+		// look through all fields and gather information
+		List<Stat> inputData = new ArrayList<Stat>();
+		for(Stat stat:myFieldViews.keySet()){
+			String data = myFieldViews.get(stat).getData();
+			// convert data to appropriate Type
+			stat.setValue(Double.parseDouble(data));
+			inputData.add(stat);
+		}
+		myList.postInput(inputData);
+		disposeDialogue();
+	}
+
+	@Override
+	public JPanel createGutsPanel() {
+		JPanel mainPanel = new JPanel();
+		for(Stat t:myProperties){
+			if(t.getValue()!=null){
+				ViewItemField fieldView = new ViewItemField(t.getName(),t.getField());
+				mainPanel.add(fieldView);
+				myFieldViews.put(t,fieldView);
+			}
+			else{
+				SaveInputButton button = new SaveInputButton(t,myList);
+				mainPanel.add(button);
+			}
+	}
+		return mainPanel;	
+	}
+}
+

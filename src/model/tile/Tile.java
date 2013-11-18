@@ -2,49 +2,32 @@ package model.tile;
 
 import java.util.*;
 
+import model.GameMap;
 import model.ModelConstants;
-import model.MyAnnotation;
-import model.Resource;
 import model.Resources;
 import model.Terrain;
+import model.things.Stat;
+import model.things.StatCollection;
 import model.unit.Unit;
 
-public class Tile implements ModelConstants{
+public class Tile extends StatCollection implements ModelConstants{
 	
-	private Resources myResources = new Resources();
-	private double myPassability = DEFAULT_ATTRIBUTE;
-	private Terrain myTerrain = new Terrain(DEFAULT_NAME);
-	private String myGraphicName = DEFAULT_NAME;
-	private Collection<Unit> myUnits = new ArrayList<Unit>();
-	private int myX = 0;
-	private int myY = 0;
-	private int myMaxPopulation = (int) DEFAULT_ATTRIBUTE;
+	private List<Unit> myUnits = new ArrayList<Unit>();
+	private GameMap myMap;
 	
-	public Tile(int x, int y){
-		myX = x;
-		myY = y;
-	}
-	
-	public Tile(Resources resources, double passability, Terrain terrain, String name,
-			Collection<Unit> units, int population, int x, int y){
-		myResources = resources;
-		myPassability = passability;
-		myTerrain = terrain;
-		myGraphicName = name;
-		myUnits = units;
-		myMaxPopulation = population;
-		myX = x;
-		myY = y;
-	}
-
-	public Tile(@MyAnnotation(name = "Passability", specs = "Number greater than zero") double passability, 
-			@MyAnnotation(name = "Max Population on Tile", specs = "Number greater than zero") int maxPop){
-		myPassability = passability;
-		myMaxPopulation = maxPop;
+	public Tile(double x, double y, GameMap map){
+		super("Tile");
+		myMap = map;
+		this.addStat(new Stat("x",x));
+		this.addStat(new Stat("y",y));
+		this.addStat(new Stat("Passability"));
+		this.addStat(new Stat("Max Population"));
+		this.addStat(new Resources());
+		this.addStat(new Terrain());
 	}
 	
 	public boolean addUnit(Unit unit){
-		if (myUnits.size() < myMaxPopulation)
+		if (myUnits.size() < this.getValue("Max Population"))
 			return myUnits.add(unit);
 		return false;
 	}
@@ -57,84 +40,28 @@ public class Tile implements ModelConstants{
 		return(this.getX()==other.getX() && this.getY()==other.getY());
 	}
 	
-	public Resource addResource(Resource newResource){
-		myResources.addResource(newResource);
-		return newResource;
+	public int getX() {
+		return (int) this.getValue("x").intValue();
 	}
 	
-	public void removeResource(Resource resource){
-		myResources.removeResource(resource);
+	public int getY() {
+		return (int) this.getValue("y").intValue();
 	}
 	
-	public List<Resource> getResourcesOnTile(){
-		return myResources.getResources();
-	}
-	
-	// GETTERS AND SETTERS for every instance variable as requested by Data team.
-	
-	public void setUnits(Collection<Unit> u){
-		myUnits = u;
-	}
-	
-	public Collection<Unit> getUnits(){
+	public List<Unit> getUnits(){
 		return myUnits;
 	}
 	
-	public void setResources(Resources r){
-		myResources = r;
+	
+	public Collection<Tile> getTiles(double r){
+		int range = (int) r;
+		List<Tile> validTiles = new ArrayList<Tile>();
+		for (int i = getX() - range; i <= getX() + range; i++){
+			for (int j = getY() - range; i <= getY() + range; j++){
+				validTiles.add(myMap.getTile(i, j));
+			}
+		}
+		return validTiles;
 	}
 	
-	public Resources getResources(){
-		return myResources;
-	}
-	
-	public void setPassability(double p){
-		myPassability = p;
-	}
-	
-	public double getPassability(){
-		return myPassability;
-	}
-	
-	public void setTerrain(Terrain t){
-		myTerrain = t;
-	}
-	
-	public Terrain getTerrain(){
-		return myTerrain;
-	}
-	
-	public String setImageName(String newImageName){
-		myGraphicName = newImageName;
-		return myGraphicName;
-	}
-	
-	public String getImageName() {
-	    return myGraphicName;
-	}
-	
-	public void setX(int x){
-		myX = x;
-	}
-	
-	public int getX(){
-		return myX;
-	}
-	
-	public void setY(int y){
-		myY = y;
-	}
-	
-	public int getY(){
-		return myY;
-	}
-	
-	public void setMaxPop(int p){
-		myMaxPopulation = p;
-	}
-	
-	public int getMaxPop(){
-		return myMaxPopulation;
-	}
-
 }
