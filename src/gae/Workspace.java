@@ -35,6 +35,6 @@ public class Workspace extends JPanel {
 		EditView leftGroup = new EditView(left,map,JSplitPane.HORIZONTAL_SPLIT,0.3);
 		EditView everything = new EditView(leftGroup, right, JSplitPane.HORIZONTAL_SPLIT,0.5);
 		this.add(everything);
-		this.add(new EditToolbar(),BorderLayout.PAGE_START);
+		this.add(new EditToolbar(myController),BorderLayout.PAGE_START);
 	}
 }
