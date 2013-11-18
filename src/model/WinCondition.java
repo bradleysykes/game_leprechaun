@@ -1,7 +1,7 @@
 package model;
 
 import model.condition.Defeat;
-import model.things.Stat;
+import model.stats.Stat;
 
 public class WinCondition extends Condition {
 	

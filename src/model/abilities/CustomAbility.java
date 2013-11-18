@@ -5,7 +5,7 @@ import java.util.*;
 import model.Ability;
 import model.Effect;
 import model.effects.ModifyAttribute;
-import model.things.Stat;
+import model.stats.Stat;
 import model.tile.Tile;
 import model.unit.Unit;
 

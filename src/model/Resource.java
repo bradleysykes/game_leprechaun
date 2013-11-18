@@ -1,7 +1,7 @@
 package model;
 
-import model.things.Stat;
-import model.things.StatCollection;
+import model.stats.Stat;
+import model.stats.StatCollection;
 
 public class Resource extends StatCollection {
 

@@ -3,9 +3,14 @@ package model;
 import model.abilities.Attack;
 import model.abilities.Harvest;
 import model.movement.BudgetMove;
-import model.things.StatCollection;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
+/**
+ * Stores a collection of Abilities.
+ * @author Timo and John
+ *
+ */
 public class Abilities extends StatCollection{	
 
 	public Abilities(Unit unit) {

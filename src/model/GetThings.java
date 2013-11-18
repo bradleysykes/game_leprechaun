@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-import model.things.Stat;
+import model.stats.Stat;
 
 public interface GetThings {
 	
