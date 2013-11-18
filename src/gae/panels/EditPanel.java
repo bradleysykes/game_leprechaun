@@ -53,6 +53,11 @@ public abstract class EditPanel extends JPanel implements Constants {
 		// do nothing
 		
 	}
+
+	public List<ViewItem> getStateObjects() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 	
 
