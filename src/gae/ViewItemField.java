@@ -6,21 +6,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import model.things.Stat;
+
 
 public class ViewItemField<T> extends JPanel {
 	
 	private JTextField myField;
 	private T myData;
 
-	public ViewItemField(String title, String description){
+	public ViewItemField(Stat stat){
 		this.setLayout(new BorderLayout());
-		create(title, description);
+		create(stat);
 	}
 
-	private void create(String title, String description) {
-		JLabel fieldTitle = new JLabel(title);
-		JLabel fieldDescription = new JLabel(description);
-		JTextField field = new JTextField();
+	private void create(Stat stat) {
+		JLabel fieldTitle = new JLabel(stat.getName());
+		JLabel fieldDescription = new JLabel("Double");
+		JTextField field = new JTextField(stat.getValue().toString());
 		myField = field;
 		this.add(fieldTitle,BorderLayout.PAGE_START);
 		this.add(fieldDescription,BorderLayout.CENTER);

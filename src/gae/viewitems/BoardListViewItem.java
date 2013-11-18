@@ -1,6 +1,7 @@
 package gae.viewitems;
 
 import gae.Controller;
+import gae.GUIMap;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
 
@@ -21,6 +22,8 @@ public abstract class BoardListViewItem extends ViewItem {
 
 	@Override
 	public abstract List<Stat> getModel();
+	
+	public abstract void placeOnBoard(GUIMap map, double x, double y);
 
 	@Override
 	public void onClick(Controller c) {
