@@ -21,9 +21,9 @@ public class Workspace extends JPanel {
 	
 	private Controller myController;
 	
-	public Workspace(){
+	public Workspace(Controller controller){
 		super(new BorderLayout(10,10));
-		myController = new Controller();
+		myController = controller;
 		EditPanel tasks = new TaskPanel(myController);
 		EditPanel board = new BoardPanel(myController);
 		EditPanel map = new MapPanel(myController);
@@ -36,5 +36,9 @@ public class Workspace extends JPanel {
 		EditView everything = new EditView(leftGroup, right, JSplitPane.HORIZONTAL_SPLIT,0.5);
 		this.add(everything);
 		this.add(new EditToolbar(myController),BorderLayout.PAGE_START);
+	}
+	
+	public Controller getController() {
+		return myController;
 	}
 }
