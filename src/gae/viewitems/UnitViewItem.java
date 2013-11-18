@@ -1,11 +1,14 @@
 package gae.viewitems;
 
 import gae.Controller;
+import gae.GUIMap;
 
 import java.util.List;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
+import jgame.JGObject;
 
 import model.GameMap;
 import model.Player;
@@ -16,6 +19,7 @@ public class UnitViewItem extends BoardListViewItem {
 
 	private static final String UNIT_LIST_MESSAGE = "Unit List Message";
 	private Unit myUnit = new Unit("TEST",new Player(),new GameMap(400, 400));
+	private MapObject myMapObject;
 	
 	public UnitViewItem(){
 		super();
@@ -39,6 +43,10 @@ public class UnitViewItem extends BoardListViewItem {
 	public void createModel(List<Stat> stats) {
 		myUnit.setStats(stats);
 	}
+	
+	public String getImagePath(){
+		return "resources/plus.gif";
+	}
 
 	@Override
 	public String getListMessage() {
@@ -47,6 +55,12 @@ public class UnitViewItem extends BoardListViewItem {
 	@Override
 	public Icon getListIcon() {
 		return new ImageIcon(ICON_PATH+"plus.gif");
+	}
+	@Override
+	public void placeOnBoard(GUIMap map, double x, double y) {
+		map.defineImage("unit", "-", 0, getImagePath(),"-");
+		//new JGObject(such and such);
+		MapObject object = new MapObject(x,y,"unit", this);
 	}
 
 }

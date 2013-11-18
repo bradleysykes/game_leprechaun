@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gae.Constants;
+import gae.GUIMap;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -42,6 +43,12 @@ public class TileViewItem extends BoardListViewItem {
 	@Override
 	public Icon getListIcon() {
 		return new ImageIcon(ICON_PATH+"plus.gif");
+	}
+
+	@Override
+	public void placeOnBoard(GUIMap map) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
