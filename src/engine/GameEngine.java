@@ -3,6 +3,7 @@ package engine;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 import data.GameElements;
 import jgame.JGColor;
@@ -81,6 +82,12 @@ public class GameEngine extends JGEngine {
 	public void initializeUnits(Collection<Unit> units) {
 		for (Unit unit : units) {
 			GameUnitObject newUnit = new GameUnitObject(unit);
+		}
+	}
+	
+	public void highlightTiles(List<Tile> tileList) {
+		for (Tile tile : tileList) {
+			TileHighlightObject highlight = new TileHighlightObject(tile, this);
 		}
 	}
 	
