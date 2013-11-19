@@ -41,22 +41,15 @@ public class GameEngine extends JGEngine {
 	
 	public void initGame() {
 		setFrameRate(35, 1);
-		
-		//defineAllImages();
 	}
 	
 	public void doFrame() {
-		//checkWinningConditions();
+		
 	}
 	
-//	public void checkWinningConditions() {     //pending implementation of checkVictory()
-//		for (Player p : myPlayers) {
-//			if(p.checkVictory()) {
-//				System.out.println(p.getName() + " wins!");  //just print for testing
-//			}
-//		}
-//				
-//	}
+	public void checkCollision() {
+		
+	}
 	
 	public void nextPlayer() {
 		
@@ -68,6 +61,10 @@ public class GameEngine extends JGEngine {
 	
 	public ArrayList<Player> getPlayers() {
 		return myPlayers;
+	}
+	
+	public void setPlayers(Collection<Player> players) {
+		myPlayers = (ArrayList<Player>) players;
 	}
 	
 	public void initializeState(GameElements gameElements) {

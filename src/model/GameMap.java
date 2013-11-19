@@ -74,5 +74,13 @@ public class GameMap {
 		}
 		return count;
 	}
+	
+	public int getSizeX() {
+		return myTiles.get(0).size();
+	}
+	
+	public int getSizeY() {
+		return myTiles.size();
+	}
 
 }
