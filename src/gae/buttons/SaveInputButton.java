@@ -9,8 +9,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import model.things.Stat;
-import model.things.StatCollection;
+import model.stats.Stat;
+import model.stats.StatCollection;
 
 public class SaveInputButton extends JButton {
 	

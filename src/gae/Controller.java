@@ -17,7 +17,7 @@ import sun.nio.cs.ext.JIS_X_0201.Encoder;
 import data.GameElements;
 import data.encoder.SaverHandler;
 import model.Player;
-import model.things.Stat;
+import model.stats.Stat;
 
 public class Controller {
 	
@@ -31,7 +31,7 @@ public class Controller {
 	public void init(){
 		if(myPlayers.size()==0){
 			this.addViewItem(new PlayerTaskViewItem(this));
-			//this.addViewItem(new BoardSizeTaskViewItem(this));
+			this.addViewItem(new BoardSizeTaskViewItem(this));
 		}
 	}
 	
@@ -77,7 +77,7 @@ public class Controller {
 	public void getAndSaveState() {
 		GameElements currentState = new GameElements();
 		for(EditPanel p:myPanels){
-			currentState = p.insertStateObjects(currentState);
+			currentState = p.giveStateObjects(currentState);
 			if (currentState == null) {
 				// Popup dialog->not saved
 				return;

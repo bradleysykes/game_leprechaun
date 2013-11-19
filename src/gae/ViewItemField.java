@@ -6,7 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import model.things.Stat;
+import model.stats.Stat;
 
 
 public class ViewItemField<T> extends JPanel {
