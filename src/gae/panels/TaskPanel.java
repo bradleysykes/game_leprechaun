@@ -45,7 +45,7 @@ public class TaskPanel extends EditPanel {
 	}
 	
 	@Override
-	public GameElements insertStateObjects(GameElements currentState){
+	public GameElements giveStateObjects(GameElements currentState){
 		if (myList.getModel().getSize()==0) {
 			return currentState;
 		}

@@ -57,7 +57,7 @@ public class MapPanel extends EditPanel {
 	}
 		
 	@Override
-	public GameElements insertStateObjects(GameElements currentState) {
+	public GameElements giveStateObjects(GameElements currentState) {
 		currentState.setGameMap(myModelMap);
 		return currentState;
 	}

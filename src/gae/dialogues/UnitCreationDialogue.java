@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import model.things.Stat;
-import model.things.StatCollection;
+import model.stats.Stat;
+import model.stats.StatCollection;
 
 
 public class UnitCreationDialogue extends InputDialogue {

@@ -15,8 +15,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import model.Player;
-import model.things.Stat;
-import model.things.StatCollection;
+import model.stats.Stat;
+import model.stats.StatCollection;
 
 public class ObjectPanel extends EditPanel {
 	

@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 import data.GameElements;
 import model.Player;
-import model.things.Stat;
+import model.stats.Stat;
 
 
 public abstract class EditPanel extends JPanel implements Constants {
@@ -56,7 +56,7 @@ public abstract class EditPanel extends JPanel implements Constants {
 		
 	}
 
-	public GameElements insertStateObjects(GameElements currentState) {
+	public GameElements giveStateObjects(GameElements currentState) {
 		// TODO Auto-generated method stub
 		return currentState;
 	}

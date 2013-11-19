@@ -13,7 +13,7 @@ import gae.panel_lists.BoardList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import model.things.Stat;
+import model.stats.Stat;
 
 public abstract class InputDialogue extends JFrame {
 	
