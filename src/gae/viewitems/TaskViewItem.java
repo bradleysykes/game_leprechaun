@@ -3,12 +3,13 @@ package gae.viewitems;
 import gae.Controller;
 import gae.dialogues.PlayerDialogue;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import model.things.Stat;
+import model.stats.Stat;
 
 public class TaskViewItem extends ViewItem {
 	
@@ -31,12 +32,6 @@ public class TaskViewItem extends ViewItem {
 	public String getListMessage() {
 		// TODO Auto-generated method stub
 		return myMessage;
-	}
-
-	@Override
-	public List<Stat> getModel() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override

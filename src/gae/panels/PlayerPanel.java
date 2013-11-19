@@ -42,7 +42,7 @@ public class PlayerPanel extends EditPanel {
 	}
 	
 	@Override
-	public GameElements insertStateObjects(GameElements currentState) {
+	public GameElements giveStateObjects(GameElements currentState) {
 		currentState.setPlayerList(myModelPlayerList);
 		return currentState;
 	}

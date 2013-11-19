@@ -5,6 +5,8 @@ import java.awt.FlowLayout;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
+import engine.listeners.LoadGameListener;
+
 public class ViewerMenu extends JMenu {
 	
 	private JMenuItem myLoadGameItem;

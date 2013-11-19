@@ -12,7 +12,7 @@ import jgame.JGObject;
 
 import model.GameMap;
 import model.Player;
-import model.things.Stat;
+import model.stats.Stat;
 import model.unit.Unit;
 
 public class UnitViewItem extends BoardListViewItem {

@@ -21,11 +21,12 @@ public class GameLoader  {
 	}
 	
 	public void loadGame() {
-		myGameEngine.removeObjects("tile", GameTileObject.getCollisionID());
+		myGameEngine.removeObjects("-tile", GameTileObject.getCollisionID());
 		myGameEngine.removeObjects("unit", GameUnitObject.getCollisionID());
 		GameMap gameMap = myGameElements.getGameMap();
+		myGameEngine.setPFSize(gameMap.getSizeX() , gameMap.getSizeY());
 		Collection<Tile> allTiles = gameMap.getAllTiles();
-		HashMap<String, String> myImages = myGameElements.getImages();
+		HashMap<String, String> myImages = (HashMap) myGameElements.getImageMap();
 		
 		for (String all : myImages.keySet()) {
 			myGameEngine.defineImage(all, "-", 0, myImages.get(all),"-");
@@ -37,11 +38,10 @@ public class GameLoader  {
 			allUnits.addAll(player.getAllUnits());
 		}
 		
+		myGameEngine.setPlayers(allPlayers);
 		myGameEngine.initializeTiles(allTiles);
 		myGameEngine.initializeUnits(allUnits);
 	
-		
-		//load here when.. still need image information from gamedata
 	}
 	
 }
