@@ -3,6 +3,7 @@ package model.abilities;
 import java.util.List;
 
 import model.Ability;
+import model.Attributes;
 import model.stats.StatCollection;
 import model.unit.Unit;
 
@@ -30,13 +31,13 @@ public class Attack extends Ability{
 				myTarget = u;
 			}
 		}		
-		StatCollection targetAttributes = myTarget.getStatCollection("Attributes");
-		StatCollection unitAttributes = myUnit.getStatCollection("Attributes");
-		double enemyDefense = targetAttributes.getValue("Defense");
-		double enemyAttack  = targetAttributes.getValue("Attack");
+		Attributes targetAttributes = (Attributes) myTarget.getStatCollection("Attributes");
+		Attributes unitAttributes = (Attributes) myUnit.getStatCollection("Attributes");
+		double enemyDefense = targetAttributes.getDefense();
+		double enemyAttack  = targetAttributes.getAttack();
 		double enemyHealth  = targetAttributes.getValue("Health");
-		double myDefense = unitAttributes.getValue("Defense");
-		double myAttack = unitAttributes.getValue("Attack");
+		double myDefense = unitAttributes.getDefense();
+		double myAttack = unitAttributes.getAttack();
 		double myHealth = unitAttributes.getValue("Health");
 		if (myAttack > enemyDefense)
 			enemyHealth = enemyHealth + enemyDefense - myAttack;
