@@ -10,7 +10,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import model.GameMap;
-import model.things.Stat;
+import model.stats.Stat;
 import model.tile.Tile;
 
 public class TileViewItem extends BoardListViewItem {
@@ -46,7 +46,7 @@ public class TileViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public void placeOnBoard(GUIMap map) {
+	public void placeOnBoard(GUIMap map, double x, double y) {
 		// TODO Auto-generated method stub
 		
 	}

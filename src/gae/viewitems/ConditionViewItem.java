@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 
 import model.Condition;
 import model.condition.Create;
-import model.things.Stat;
+import model.stats.Stat;
 
 public class ConditionViewItem extends BoardListViewItem {
 
@@ -43,8 +43,9 @@ public class ConditionViewItem extends BoardListViewItem {
 	public Icon getListIcon() {
 		return new ImageIcon(ICON_PATH+"plus.gif");
 	}
+
 	@Override
-	public void placeOnBoard(GUIMap map) {
+	public void placeOnBoard(GUIMap map, double x, double y) {
 		// TODO Auto-generated method stub
 		
 	}

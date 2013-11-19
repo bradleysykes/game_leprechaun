@@ -9,7 +9,7 @@ import java.util.List;
 
 import javax.swing.Icon;
 
-import model.things.Stat;
+import model.stats.Stat;
 
 public abstract class BoardListViewItem extends ViewItem {
 	protected List<Stat> myProperties;
@@ -20,7 +20,6 @@ public abstract class BoardListViewItem extends ViewItem {
 	@Override
 	public abstract String getListMessage();
 
-	@Override
 	public abstract List<Stat> getModel();
 	
 	public abstract void placeOnBoard(GUIMap map, double x, double y);
