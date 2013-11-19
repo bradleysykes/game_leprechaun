@@ -36,7 +36,7 @@ public class GUIMap extends JGEngine {
 	
 	@Override
 	public void initCanvas() {
-		setCanvasSettings(1, 1, 1000/myWidth, 1000/myHeight, JGColor.blue, JGColor.blue, null);
+		setCanvasSettings(1, 1, myWidth, myHeight, JGColor.blue, JGColor.blue, null);
 	}
 	
 	public void placeOnBoard(){
@@ -52,7 +52,7 @@ public class GUIMap extends JGEngine {
 	@Override
 	public void initGame() {
 		setFrameRate(40, 1);
-		setPFSize(1,1);
+		setPFSize(myWidth,myHeight);
 	}
 
 

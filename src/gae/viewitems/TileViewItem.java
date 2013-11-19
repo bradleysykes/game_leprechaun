@@ -36,6 +36,10 @@ public class TileViewItem extends BoardListViewItem {
 	public String getListMessage() {
 		return "Tile List Message";
 	}
+	
+	public String getImagePath(){
+		return "resources/test_tile.png";
+	}
 
 	/**
 	 * icon used to display viewitem in its list

@@ -45,7 +45,7 @@ public class UnitViewItem extends BoardListViewItem {
 	}
 	
 	public String getImagePath(){
-		return "resources/plus.gif";
+		return "resources/test_icon_image.png";
 	}
 
 	@Override
