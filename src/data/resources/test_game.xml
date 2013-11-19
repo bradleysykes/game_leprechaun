@@ -62,6 +62,9 @@
 		<unit name="soldier" id="1">
 			<player id="enemy">
 			<tile x="1" y="1"/>
+			<abilities>
+				
+			</abilities>
 			<attributes>
 				<stat name="Base Help" value="2.0"/>
 				<stat name="Health" value="10.0"/>

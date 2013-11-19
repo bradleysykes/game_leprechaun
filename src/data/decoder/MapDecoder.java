@@ -3,7 +3,7 @@ package data.decoder;
 import model.GameMap;
 import model.Resource;
 import model.Resources;
-import model.things.StatCollection;
+import model.stats.StatCollection;
 import model.tile.Tile;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;

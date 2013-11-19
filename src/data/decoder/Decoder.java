@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import data.Attributes;
 import data.Elements;
-import model.things.Stat;
-import model.things.StatCollection;
+import model.stats.Stat;
+import model.stats.StatCollection;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -16,8 +16,8 @@ import util.reflection.Reflection;
  * Abstract Decoder class.
  * 
  * This class will be the superclass of specific decoders.
- * Decoder will parse the xml file, get the corresponding data,
- * and create the objects.
+ * Decoder will receive the dom element, parse the data,
+ * and create the corresponding objects.
  * 
  * @author Seunghyun Lee
  *
@@ -53,9 +53,9 @@ public abstract class Decoder implements Attributes, Elements {
     public void setStats(Element element, StatCollection things) {
         NodeList thingList = element.getChildNodes();
         for(int i = 0; i < thingList.getLength(); i++) {
-            Node thing = thingList.item(i);
-            if(thing.getNodeName().equals(THING)) {
-                setStat(things, (Element)thing);
+            Node stat = thingList.item(i);
+            if(stat.getNodeName().equals(STAT)) {
+                setStat(things, (Element)stat);
             }
         }
     }

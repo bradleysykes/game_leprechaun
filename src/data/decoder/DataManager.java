@@ -39,35 +39,13 @@ public class DataManager implements Attributes, Elements {
     private Map<String,String> myImageResources;
     
     
-    public DataManager(File xmlFile) {
+    public DataManager() {
         myDecoders = new HashMap<String,Decoder>();
         myImageResources = new HashMap<String,String>();
-        try {
-            initXmlFile(xmlFile);
-            initDecoders();
-            processDecoders();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        initDecoders();
     }
     
-    /**
-     * Sets the root element to the data manager class.
-     * Input will be the user selected xml file that is received 
-     * from the player GUI.
-     * 
-     * @param xml
-     */
-    private void initXmlFile(File xml) {
-        try {
-            Document doc = getDocument(xml);
-            doc.getDocumentElement().normalize();
-            myRoot = doc.getDocumentElement();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-    
+   
     /**
      * Basic Parsing function. Convert xml file into dom Document
      * so that it can be parsed.
@@ -77,11 +55,12 @@ public class DataManager implements Attributes, Elements {
      * @throws SAXException
      * @throws IOException
      */
-    public Document getDocument(File xml) throws ParserConfigurationException, SAXException, IOException {
+    public void initXmlFile(File xml) throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         Document doc = dBuilder.parse(xml);
-        return doc;  
+        doc.getDocumentElement().normalize();
+        myRoot = doc.getDocumentElement();
     }
     
     /**
@@ -89,27 +68,33 @@ public class DataManager implements Attributes, Elements {
      */
     private void initDecoders() {
         //hard code for the test use
-        myDecoders.put("MapDecoder", new MapDecoder(this));
-        
+        myDecoders.put("MapDecoder", new MapDecoder(this));        
     }
+    
     private void processDecoders() {
         //for (String key: myDecoders.keySet()) {
         //    myDecoders.get(key).load(myRoot);
         //}
         myDecoders.get("MapDecoder").decodeData((Element)myRoot.getElementsByTagName(MAP_ROOT).item(0));
-        myDecoders.get("UnitDecoder").decodeData((Element)myRoot.getElementsByTagName(UNIT_ROOT).item(0));
+        //myDecoders.get("UnitDecoder").decodeData((Element)myRoot.getElementsByTagName(UNIT_ROOT).item(0));
 
     }
     
     /**
      * Serialized objects are packed into GameElements object, which is
      * passed to GameLoader from the game player.
-     * 
-     * or maybe return controller?
-     *  
+     *   
      * @return GameElements
      */
-    public GameElements getGameElements() {
+    public GameElements getGameElements(File xmlFile) {
+        try {
+            //converts xml file object to dom document object
+            initXmlFile(xmlFile);
+            //calls decoders to instantiate the game elements
+            processDecoders();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
         return new GameElements(myGameMap);
     }
     
@@ -127,8 +112,8 @@ public class DataManager implements Attributes, Elements {
     }
     
     public static void main(String[] args) {
-        DataManager dm = new DataManager(new File("src/data/resources/map.xml"));
-        GameMap map = dm.getGameMap();
+        DataManager dm = new DataManager();
+        GameElements map = dm.getGameElements(new File("src/data/resources/map.xml"));
         map.toString();
     }
 }
