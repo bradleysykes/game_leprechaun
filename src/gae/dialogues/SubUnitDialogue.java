@@ -4,7 +4,7 @@ import gae.panel_lists.BoardList;
 
 import java.util.List;
 
-import model.things.Stat;
+import model.stats.Stat;
 
 public class SubUnitDialogue extends UnitCreationDialogue {
 

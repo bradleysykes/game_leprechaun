@@ -20,22 +20,23 @@ public class GUIMap extends JGEngine {
 	private GameMap myMap;
 
 	public GUIMap(int width, int height){
-		initEngineComponent(500,500);
-		myMap = new GameMap(width,height);
 		myWidth = width;
 		myHeight = height;
-		try {
-			myEncoder = new MapEncoder(width,height);
-		} catch (ParserConfigurationException e) {
+		initEngineComponent(1000,1000);
+		myMap = new GameMap(width,height);
+
+//		try {
+//			myEncoder = new MapEncoder(width,height);
+//		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//			e.printStackTrace();
+//		}
 	}
 	
 	
 	@Override
 	public void initCanvas() {
-		setCanvasSettings(1, 1, myWidth, myHeight, JGColor.blue, JGColor.blue, null);
+		setCanvasSettings(1, 1, 1000/myWidth, 1000/myHeight, JGColor.blue, JGColor.blue, null);
 	}
 	
 	public void placeOnBoard(){

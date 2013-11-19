@@ -23,7 +23,7 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import model.things.Stat;
+import model.stats.Stat;
 
 import java.util.List;
 
