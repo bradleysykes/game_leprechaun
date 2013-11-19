@@ -1,4 +1,4 @@
-package gae.panels;
+GMypackage gae.panels;
 
 import gae.Constants;
 import gae.Controller;
