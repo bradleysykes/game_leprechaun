@@ -68,7 +68,8 @@ public class UnitCreationDialogue extends InputDialogue {
 			stat.setValue(Double.parseDouble(data));
 			inputData.add(stat);
 		}
-		myList.postInput(inputData);
+		String name = myName.getData();
+		myList.postInput(inputData, name);
 		disposeDialogue();
 	}
 
