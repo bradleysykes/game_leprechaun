@@ -9,17 +9,14 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * Map Decoder class that will receive the head node of Map Information
- * in xml file. This class will creates the map corresponding objects and
- * load them to the data manager.
+ * Map Decoder class is in charge of instantiating all the game map 
+ * related objects. It will load the objects back to the data manager
+ * after it finishes to create the objects.
  * 
  * @author Seunghyun Lee
  *
  */
 public class MapDecoder extends Decoder {
-    
-    private static final String TERRAIN_TAG= "Terrain";
-    private static final String RESOURCES_TAG = "Resources";
     
     private GameMap myGameMap;
     private DataManager myDataManager;
@@ -28,9 +25,18 @@ public class MapDecoder extends Decoder {
         myDataManager = manager;
     }
     
+    /**
+     * This method instantiates the 'GameMap' Objects that
+     * is filled with 'Tile' objects.
+     * 
+     * @param root
+     * @return
+     */
     private GameMap processGameMap(Element root) {
-        int x_dim = Integer.parseInt(getAttribute(X_DIM, root));
-        int y_dim = Integer.parseInt(getAttribute(Y_DIM, root));
+        Element map = (Element)root.getElementsByTagName(MAP_ROOT).item(0);
+      
+        int x_dim = Integer.parseInt(getAttribute(X_DIM, map));
+        int y_dim = Integer.parseInt(getAttribute(Y_DIM, map));
         myGameMap = new GameMap(x_dim, y_dim);
 
         NodeList tiles = root.getElementsByTagName(TILE);
@@ -41,7 +47,12 @@ public class MapDecoder extends Decoder {
         return myGameMap;
     }
     
-    
+    /**
+     * This method parses and instantiates Tile and other related objects.
+     * 
+     * @param tile
+     * @return
+     */
     private Tile processTile(Element tile) {
         int x = Integer.parseInt(getAttribute(X_COORD, tile));
         int y = Integer.parseInt(getAttribute(Y_COORD, tile));
@@ -68,24 +79,10 @@ public class MapDecoder extends Decoder {
         //test use
         return resultTile;
     }
-      
-    private Resources processResources(Element resources, Resources target) {
-        NodeList resourceList = resources.getElementsByTagName(RESOURCE);
-        for(int i = 0; i < resourceList.getLength(); i++) {
-            target.addResource(processResource((Element)resourceList.item(i)));
-        }
-        
-        //test use
-        return target;
-    }
+          
     
-    public Resource processResource(Element resource) {
-        String name = resource.getAttribute(NAME);
-        Double amount = Double.parseDouble(resource.getAttribute(AMOUNT));
-        Double harvestRate = Double.parseDouble(resource.getAttribute(HARVEST_RATE));
-        return new Resource(name, amount, harvestRate);
-    }
-    
+
+
     @Override
     public void decodeData(Element root) {
         myDataManager.setGameMap(processGameMap(root));

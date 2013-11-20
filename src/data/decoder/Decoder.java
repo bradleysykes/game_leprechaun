@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import data.Attributes;
 import data.Elements;
+import model.Resource;
+import model.Resources;
 import model.stats.Stat;
 import model.stats.StatCollection;
 import org.w3c.dom.Element;
@@ -15,15 +17,16 @@ import util.reflection.Reflection;
 /**
  * Abstract Decoder class.
  * 
- * This class will be the superclass of specific decoders.
- * Decoder will receive the dom element, parse the data,
- * and create the corresponding objects.
+ * Abstract Decoder class receives the ¡®dom¡¯ document object from 
+ * the data manager, instantiates the right elements and load them 
+ * back to the Data Manager. 
  * 
  * @author Seunghyun Lee
  *
  */
 public abstract class Decoder implements Attributes, Elements {
     
+  
     /**
      * return the attribute of element to the corresponding tag.  
      */
@@ -32,45 +35,69 @@ public abstract class Decoder implements Attributes, Elements {
     }
     
     /**
-     * This method parses and creates the "Stat" object.
+     * This method parses and instantiates the "Stat" object.
      * 
      * @param element the node of 
      * @return Stat stat object
      */
     public Stat getStat(Element element) {
-        String name = element.getAttribute("name").toString();
-        Double value = Double.parseDouble(element.getAttribute("value"));
+        String name = element.getAttribute(NAME).toString();
+        Double value = Double.parseDouble(element.getAttribute(VALUE));
         Stat stat = (Stat) Reflection.createInstance(name);
         stat.setValue(value);
         return stat;     
     }
     
     /**
+     * This method instantiates and set corresponding Stat objects to
+     * StatCollection object.
      * 
      * @param element
-     * @param things
+     * @param stats
      */
-    public void setStats(Element element, StatCollection things) {
-        NodeList thingList = element.getChildNodes();
-        for(int i = 0; i < thingList.getLength(); i++) {
-            Node stat = thingList.item(i);
+    public void setStats(Element element, StatCollection stats) {
+        NodeList statList = element.getChildNodes();
+        for(int i = 0; i < statList.getLength(); i++) {
+            Node stat = statList.item(i);
             if(stat.getNodeName().equals(STAT)) {
-                setStat(things, (Element)stat);
+                setStat((Element)stat, stats);
             }
         }
     }
     
     /**
+     * This method instantiates a single Stat object and set it to the
+     * given StatCollection object.
      * 
+     * @param element
      * @param stats
-     * @param ele
      */
-    public void setStat(StatCollection stats, Element element) {
+    public void setStat(Element element, StatCollection stats) {
         String name = getAttribute(NAME, element);
         Double value = Double.parseDouble(getAttribute(VALUE, element));
         stats.setStat(name, value);
     }
-
+ 
+    /**
+     * This method parses and instantiates Resources objects. It is used both in
+     * PlayerDecoder and MapDecoder.
+     * 
+     * @param resources
+     * @param target
+     * @return
+     */
+    public Resources processResources(Element resources, Resources target) {
+        NodeList resourceList = resources.getElementsByTagName(RESOURCE);
+        for(int i = 0; i < resourceList.getLength(); i++) {
+            Element resource = (Element) resourceList.item(i);
+            String name = resource.getAttribute(NAME);
+            Double amount = Double.parseDouble(resource.getAttribute(AMOUNT));
+            Double harvestRate = Double.parseDouble(resource.getAttribute(HARVEST_RATE));
+            target.addResource(new Resource(name, amount, harvestRate));
+       }
+       return target;
+    }
+    
     /**
      * this method will parse the data and set corresponding 
      * @param root

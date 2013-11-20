@@ -19,6 +19,7 @@ public interface Attributes {
     String MAX_POP = "max_pop";
     String VALUE = "value";
     String STAT = "stat";
+    String ID = "id";
     
     
 }

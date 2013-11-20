@@ -19,14 +19,25 @@ import model.Player;
 import model.unit.Unit;
 
 /**
- * DataManager class will receive the xml(json) file from
- * the player gui and process the file to recreate all the
- * objects specified in the file through specific decoders. 
- * All the game elements will be packed into "GameElement" object 
- * and be sent to the game player.
+ * 
+ * DataManager class receives the xml file of defined game elements. 
+ * It converts the XML file into the dom document object, pass it to 
+ * the decoders. It also collects the objects back from the decoders, 
+ * finalizes the deserialization, and sends the game element object to 
+ * the game player. 
  * 
  * @author Seunghyun Lee
  *
+ */
+
+/*
+ * 
+ * TODO:
+ * 1. put units to tiles
+ * 2. put units to players
+ * 3. put players to units
+ * 4. condition(separate?)
+ * 5. put map to units
  */
 
 public class DataManager implements Attributes, Elements {
@@ -68,16 +79,18 @@ public class DataManager implements Attributes, Elements {
      */
     private void initDecoders() {
         //hard code for the test use
-        myDecoders.put("MapDecoder", new MapDecoder(this));        
+        myDecoders.put("MapDecoder", new MapDecoder(this));
+        myDecoders.put("PlayerDecoder", new PlayerDecoder(this));
     }
     
+    /**
+     * pass the root element to all decoders so that they can parse and instantiates
+     * corresponding objects.
+     */
     private void processDecoders() {
-        //for (String key: myDecoders.keySet()) {
-        //    myDecoders.get(key).load(myRoot);
-        //}
-        myDecoders.get("MapDecoder").decodeData((Element)myRoot.getElementsByTagName(MAP_ROOT).item(0));
-        //myDecoders.get("UnitDecoder").decodeData((Element)myRoot.getElementsByTagName(UNIT_ROOT).item(0));
-
+        for (String key: myDecoders.keySet()) {
+            myDecoders.get(key).decodeData(myRoot);
+        }
     }
     
     /**
@@ -111,9 +124,15 @@ public class DataManager implements Attributes, Elements {
         myUnits = units;
     }
     
+    public void setPlayers (List<Player> players) {
+        myPlayers = players;
+    }
+    
     public static void main(String[] args) {
         DataManager dm = new DataManager();
         GameElements map = dm.getGameElements(new File("src/data/resources/map.xml"));
         map.toString();
     }
+
+
 }

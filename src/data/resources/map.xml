@@ -45,4 +45,17 @@
 		    </resources>
 	    </tile>
     </map>
+    <players>
+	    <player id="enemy">
+		    <resources>
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+			</resources>
+			<units>
+		  		<unit id="2"/>
+		  		<unit id="3"/>
+		  	</units>
+	  	</player>
+	</players>
+    
 </GameElements>
