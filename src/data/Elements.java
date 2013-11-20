@@ -19,4 +19,10 @@ public interface Elements {
     String ATTRIBUTES = "Attributes";
     
     //for PlayerDecoder
+    String PLAYER_ROOT = "players";
+    String PLAYER = "player";
+    
+    String TERRAIN_TAG= "Terrain";
+    String RESOURCES_TAG = "Resources";
+
 }
