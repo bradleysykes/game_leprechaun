@@ -28,8 +28,10 @@ public class TileViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public void createModel(List<Stat> inputData) {
-		myTile.setStats(inputData);
+	public BoardListViewItem createModel(List<Stat> inputData, String name) {
+		BoardListViewItem newGuy = new TileViewItem();
+		//newGuy.setStats(inputData);
+		return newGuy;
 	}
 
 	@Override
