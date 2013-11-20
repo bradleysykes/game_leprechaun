@@ -30,6 +30,6 @@ public abstract class BoardListViewItem extends ViewItem {
 		
 	}
 	
-	public abstract void createModel(List<Stat> inputData);
+	public abstract BoardListViewItem createModel(List<Stat> inputData, String name);
 
 }

@@ -1,9 +1,12 @@
 package engine;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+
+import javax.swing.BorderFactory;
 
 import data.GameElements;
 import jgame.JGColor;
@@ -17,8 +20,8 @@ public class GameEngine extends JGEngine {
 	
 	private GameManager myGameManager;
 	private GameLoader myGameLoader;
-	private final int myViewerWidth = 600;
-	private final int myViewerHeight = 450;
+	private static final int myViewerWidth = 800;
+	private static final int myViewerHeight = 500;
 	private final int myTileWidth = 20;
 	private final int myTileHeight = 20;
 	private ArrayList<Unit> myUnits;
@@ -89,6 +92,14 @@ public class GameEngine extends JGEngine {
 		for (Tile tile : tileList) {
 			TileHighlightObject highlight = new TileHighlightObject(tile, this);
 		}
+	}
+	
+	public static int getViewerWidth() {
+		return myViewerWidth;
+	}
+	
+	public static int getViewerHeight() {
+		return myViewerHeight;
 	}
 	
 }

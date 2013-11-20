@@ -9,6 +9,7 @@ import model.unit.Unit;
 
 
 public class GameElements {
+
     private GameMap myGameMap;
     private List<Player> myPlayers;
     private Map<String, String> myImages;

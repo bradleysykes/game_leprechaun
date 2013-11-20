@@ -1,48 +1,61 @@
 <GameElements>
-  <map x_dimension="2" y_dimension="2">	
-	<tile x="0" y="0">
-	    <stat name="Passability" value="1.0"/>
-	  	<stat name="Max Population" value="2.0"/>
-	  	<terrain>
-	  	  <stat name="Magnitude" value="2.0"/>	  		
-	  	</terrain>
-	  	<resources> 	
-		  <resource name="gas" amount="2.0" harvest_rate="2.0"/>
-		  <resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-	    </resources>
-    </tile>
-	<tile x="0" y="1">
-	    <stat name="Passability" value="1.0"/>
-	  	<stat name="Max Population" value="2"/>
-	  	<terrain>
-	  	  <stat name="Magnitude" value="2"/>	  		
-	  	</terrain>
-	  	<resources> 	
-		  <resource name="gas" amount="2.0" harvest_rate="2.0"/>
-		  <resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-	    </resources>
-    </tile>
-	<tile x="1" y="0">
-	    <stat name="Passability" value="1.0"/>
-	  	<stat name="Max Population" value="2"/>
-	  	<terrain>
-	  	  <stat name="Magnitude" value="3.0"/>	  		
-	  	</terrain>
-	  	<resources> 	
-		  <resource name="gas" amount="2.0" harvest_rate="2.0"/>
-		  <resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-	    </resources>
-    </tile>
-	<tile x="1" y="1">
-	    <stat name="Passability" value="1.0"/>
-	  	<stat name="Max Population" value="2.0"/>
-	  	<terrain>
-	  	  <stat name="Magnitude" value="2.0"/>	  		
-	  	</terrain>
-	  	<resources> 	
-		  <resource name="gas" amount="2.0" harvest_rate="2.0"/>
-		  <resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-	    </resources>
-    </tile>
-  </map>
- </GameElements>
+    <map x_dimension="2" y_dimension="2">	
+	    <tile x="0" y="0">
+		    <stat name="Passability" value="1.0"/>
+		  	<stat name="Max Population" value="2.0"/>
+		  	<terrain>
+		  		<stat name="Magnitude" value="2.0"/>	  		
+		  	</terrain>
+		  	<resources> 	
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </resources>
+    	</tile>
+		<tile x="0" y="1">
+		    <stat name="Passability" value="1.0"/>
+		  	<stat name="Max Population" value="2"/>
+		  	<terrain>
+		  		<stat name="Magnitude" value="2"/>	  		
+		  	</terrain>
+		  	<resources> 	
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </resources>
+	    </tile>
+		<tile x="1" y="0">
+		    <stat name="Passability" value="1.0"/>
+		  	<stat name="Max Population" value="2"/>
+		  	<terrain>
+		  		<stat name="Magnitude" value="3.0"/>	  		
+		  	</terrain>
+		  	<resources> 	
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </resources>
+	    </tile>
+		<tile x="1" y="1">
+		    <stat name="Passability" value="1.0"/>
+		  	<stat name="Max Population" value="2.0"/>
+		  	<terrain>
+		  		<stat name="Magnitude" value="2.0"/>	  		
+		  	</terrain>
+		  	<resources> 	
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </resources>
+	    </tile>
+    </map>
+    <players>
+	    <player id="enemy">
+		    <resources>
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+			</resources>
+			<units>
+		  		<unit id="2"/>
+		  		<unit id="3"/>
+		  	</units>
+	  	</player>
+	</players>
+    
+</GameElements>

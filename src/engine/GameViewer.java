@@ -14,18 +14,25 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import engine.gui.ActionPanel;
+import engine.gui.FeedbackPanel;
+import engine.gui.NextTurnButton;
+import engine.listeners.NextTurnListener;
+
 public class GameViewer extends JFrame {
 	
 	private final String myTitle = "OOGASALAD";
 	private GameEngine myGameEngine;
 	private JMenuBar myMenuBar;
-	
+	private ActionPanel myActionPanel;
+	private FeedbackPanel myFeedbackPanel;
 	
 	public GameViewer() {
 		// Initializing Steps
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle(myTitle);
 		myGameEngine = new GameEngine();
+		myGameEngine.setMaximumSize(new Dimension(GameEngine.getViewerWidth(), GameEngine.getViewerHeight()));
 		
 		// Add Menu Bar
 		myMenuBar = new JMenuBar();
@@ -39,14 +46,23 @@ public class GameViewer extends JFrame {
 		// Create control pane. Make Button. Make Text Boxes.
 		JPanel controlPane = new JPanel();
 		controlPane.setLayout(new FlowLayout());
-		makeButton("Next Turn", controlPane);
-		makeTextBox(controlPane,10,30);
-		makeTextBox(controlPane,10,20);
+		controlPane.setPreferredSize(new Dimension(1000, 250));
+//		makeButton("Next Turn", controlPane);
+//		makeTextBox(controlPane,10,30);
+//		makeTextBox(controlPane,10,20);
+		
+		//make and add various components to controlPane
+		myActionPanel = new ActionPanel();
+		myFeedbackPanel = new FeedbackPanel();
+		
+		controlPane.add(myActionPanel);
+		controlPane.add(myFeedbackPanel);
+		
 
 		// Add Panels to Container
 		containerPane.add(myGameEngine);
 		containerPane.add(controlPane);
-		setLayout(new BoxLayout(containerPane, BoxLayout.PAGE_AXIS));
+		//setLayout(new BoxLayout(containerPane, BoxLayout.PAGE_AXIS));
 		
 		// Pack and show Container
 		setResizable(false);

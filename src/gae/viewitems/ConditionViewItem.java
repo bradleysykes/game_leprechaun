@@ -30,9 +30,10 @@ public class ConditionViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public void createModel(List<Stat> inputData) {
+	public BoardListViewItem createModel(List<Stat> inputData, String name) {
 //		myCondition = new Condition();
 //		myCondition.setStats(inputData);
+		return new ConditionViewItem();
 	}
 
 	@Override
