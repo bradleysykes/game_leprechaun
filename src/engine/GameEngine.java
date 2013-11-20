@@ -20,8 +20,8 @@ public class GameEngine extends JGEngine {
 	
 	private GameManager myGameManager;
 	private GameLoader myGameLoader;
-	private final int myViewerWidth = 800;
-	private final int myViewerHeight = 500;
+	private static final int myViewerWidth = 800;
+	private static final int myViewerHeight = 500;
 	private final int myTileWidth = 20;
 	private final int myTileHeight = 20;
 	private ArrayList<Unit> myUnits;
@@ -92,6 +92,14 @@ public class GameEngine extends JGEngine {
 		for (Tile tile : tileList) {
 			TileHighlightObject highlight = new TileHighlightObject(tile, this);
 		}
+	}
+	
+	public static int getViewerWidth() {
+		return myViewerWidth;
+	}
+	
+	public static int getViewerHeight() {
+		return myViewerHeight;
 	}
 	
 }
