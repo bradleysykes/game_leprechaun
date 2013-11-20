@@ -9,7 +9,7 @@ import engine.listeners.NextTurnListener;
 public class NextTurnButton extends JButton {
 	
 	private static final String myName = "Next Turn";
-	private static final Dimension mySize = new Dimension(50, 30);	
+	private static final Dimension mySize = new Dimension(40, 20);	
 	public NextTurnButton() {
 		super(myName);
 		setPreferredSize(mySize);
