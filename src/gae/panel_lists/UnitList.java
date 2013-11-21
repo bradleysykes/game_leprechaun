@@ -2,10 +2,11 @@ package gae.panel_lists;
 
 import gae.Constants;
 import gae.Controller;
+import gae.popup_menus.GAEPopupMenu;
 import gae.viewitems.UnitViewItem;
 
 public class UnitList extends BoardList {
-	
+		
 	public UnitList(Controller controller){
 		super(controller);
 		// this list will only hold UnitViewItems
@@ -24,5 +25,7 @@ public class UnitList extends BoardList {
 	public String getPackageName() {
 		return Constants.UNIT_PACKAGE_NAME;
 	}
+
+	
 	
 }

@@ -3,6 +3,8 @@ import gae.Controller;
 import gae.dialogues.UnitCreationDialogue;
 import gae.listeners.BoardListSelectionListener;
 import gae.listeners.PopupListener;
+import gae.popup_menus.GAEPopupMenu;
+import gae.popup_menus.TilePopupMenu;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
@@ -33,6 +35,7 @@ public abstract class BoardList extends JList {
 	private DefaultListModel myModel;
 	protected Controller myController;
 	protected BoardListViewItem myType;
+	protected GAEPopupMenu myPopup;
 	
 	public BoardList(Controller controller){
 		myController = controller;
@@ -42,7 +45,8 @@ public abstract class BoardList extends JList {
 		this.addListSelectionListener(new BoardListSelectionListener());
 		this.setCellRenderer(new EditListRenderer());
 		//this.addNewItem(new NewUnit(getListType()));
-		this.addMouseListener(new PopupListener());
+		myPopup = this.getPopupMenu();
+		this.addMouseListener(new PopupListener(myPopup));
 		//FOR DEBUG
 //		BoardListItem tu = new ToyUnit();
 //		this.addNewItem(tu);
@@ -55,6 +59,10 @@ public abstract class BoardList extends JList {
 	}
 	public Controller getController(){
 		return myController;
+	}
+	
+	public GAEPopupMenu getPopupMenu(){
+		return new TilePopupMenu();
 	}
 	
 	public void removeItem(int index) {
