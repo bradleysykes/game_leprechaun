@@ -16,7 +16,7 @@ import model.tile.Tile;
 public class TileViewItem extends BoardListViewItem {
 
 	private Tile myTile = new Tile(20,20,new GameMap(20,20));
-	
+	private MapObject myMapObject;
 	public TileViewItem(){
 		super();
 		myProperties = myTile.getStats();
