@@ -1,9 +1,10 @@
 package gae.panel_lists;
 
 import gae.Controller;
+import gae.popup_menus.GAEPopupMenu;
 
 public class PlayerList extends BoardList {
-
+	
 	public PlayerList(Controller controller) {
 		super(controller);
 	}
@@ -19,5 +20,7 @@ public class PlayerList extends BoardList {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }

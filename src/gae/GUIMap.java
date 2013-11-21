@@ -1,5 +1,6 @@
 package gae;
 
+import gae.viewitems.TileViewItem;
 import gae.viewitems.ViewItem;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -19,24 +20,18 @@ public class GUIMap extends JGEngine {
 	private int myHeight;
 	private GameMap myMap;
 
-	public GUIMap(int width, int height){
+	public GUIMap(int width, int height, int componentWidth, int componentHeight){
 		myWidth = width;
 		myHeight = height;
-		initEngineComponent(1000,1000);
-		myMap = new GameMap(width,height);
-
-//		try {
-//			myEncoder = new MapEncoder(width,height);
-//		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		initEngineComponent(componentWidth,componentHeight);
+		//myMap = new GameMap(width,height);
+		this.setDefaultTiles();
 	}
 	
 	
 	@Override
 	public void initCanvas() {
-		setCanvasSettings(1, 1, 1000/myWidth, 1000/myHeight, JGColor.blue, JGColor.blue, null);
+		setCanvasSettings(1, 1, myWidth, myHeight, null,null, null);
 	}
 	
 	public void placeOnBoard(){
@@ -52,17 +47,21 @@ public class GUIMap extends JGEngine {
 	@Override
 	public void initGame() {
 		setFrameRate(40, 1);
-		setPFSize(1,1);
+		setPFSize(myWidth,myHeight);
 	}
 
 
 	public void setDefaultTiles() {
-		GameMap map = new GameMap(this.getWidth(),this.getHeight());
-		for(int q=0;q<this.pfHeight();q+=20){
-			for(int m = 0;m<this.pfWidth();m+=20){
-//				System.out.println("Tile placed");
-//				Tile t = new Tile();
-//				myEncoder.addXmlElement(t);
+		TileViewItem t = new TileViewItem();
+		int x = 0;
+		for(int q=0;q<myHeight;q+=1){
+			for(int m = 0;m<myWidth;m+=1){
+				if(x==100){
+					return;
+				}
+				System.out.println("Tile placed");
+				t.placeOnBoard(this, q, m);
+				x++;
 			}
 		}
 	}

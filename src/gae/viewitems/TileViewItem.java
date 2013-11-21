@@ -1,5 +1,6 @@
 package gae.viewitems;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,8 @@ import model.tile.Tile;
 public class TileViewItem extends BoardListViewItem {
 
 	private Tile myTile = new Tile(20,20,new GameMap(20,20));
+	private MapObject myMapObject;
+	private File myImage = new File("resources/test_tile.jpg");
 	
 	public TileViewItem(){
 		super();
@@ -28,7 +31,7 @@ public class TileViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public BoardListViewItem createModel(List<Stat> inputData, String name) {
+	public BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile) {
 		BoardListViewItem newGuy = new TileViewItem();
 		//newGuy.setStats(inputData);
 		return newGuy;
@@ -38,6 +41,10 @@ public class TileViewItem extends BoardListViewItem {
 	public String getListMessage() {
 		return "Tile List Message";
 	}
+	
+	public String getImagePath(){
+		return myImage.getPath();
+	}
 
 	/**
 	 * icon used to display viewitem in its list
@@ -46,11 +53,19 @@ public class TileViewItem extends BoardListViewItem {
 	public Icon getListIcon() {
 		return new ImageIcon(ICON_PATH+"plus.gif");
 	}
+	
+	public int getImageHeight(){
+		return 0;
+	}
+	public int getImageWidth(){
+		return 0;
+	}
 
 	@Override
 	public void placeOnBoard(GUIMap map, double x, double y) {
-		// TODO Auto-generated method stub
-		
+		map.defineImage("tile", "-", 0,getImagePath().replace("\\","/"),"-");
+		//new JGObject(such and such);
+		myMapObject = new MapObject(x,y,"tile", this);
 	}
 	
 }

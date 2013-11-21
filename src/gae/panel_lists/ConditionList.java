@@ -2,6 +2,7 @@ package gae.panel_lists;
 
 import gae.Constants;
 import gae.Controller;
+import gae.popup_menus.GAEPopupMenu;
 import gae.viewitems.ConditionViewItem;
 
 public class ConditionList extends BoardList {
@@ -23,5 +24,7 @@ public class ConditionList extends BoardList {
 		// TODO Auto-generated method stub
 		return Constants.CONDITION_PACKAGE_NAME;
 	}
+
+	
 
 }
