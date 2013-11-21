@@ -40,11 +40,9 @@ public class MapPanel extends EditPanel {
 	public void createMap(List<String> dimensions){
 		int width = Integer.parseInt(dimensions.get(0));
 		int height = Integer.parseInt(dimensions.get(1));
-		myMapView = new GUIMap(width, height);
+		myMapView = new GUIMap(width, height, this.getWidth(), this.getHeight());
 		this.add(myMapView, BorderLayout.CENTER);
-		this.setDefaultTiles();
-		this.repaint();
-	}
+		this.repaint();}
 	
 	public void setDefaultTiles(){
 		try {

@@ -4,6 +4,7 @@ import gae.Controller;
 import gae.GUIMap;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.swing.Icon;
@@ -21,10 +22,12 @@ public class UnitViewItem extends BoardListViewItem {
 	private String UNIT_LIST_MESSAGE = "Unit List Message";
 	private Unit myUnit;
 	private MapObject myMapObject;
+	private File myImage;
 	
-	public UnitViewItem(List<Stat> stats, String name){
+	public UnitViewItem(List<Stat> stats, String name, File imageFile){
 		this(name);
 		myProperties = stats;
+		myImage = imageFile;
 		myUnit.setStats(myProperties);		
 	}
 	
@@ -51,12 +54,18 @@ public class UnitViewItem extends BoardListViewItem {
 	@Override
 	public BoardListViewItem createModel(List<Stat> stats, String name, 
 			File imageFile) {
-		BoardListViewItem newGuy = new UnitViewItem(stats, name);
+		BoardListViewItem newGuy = new UnitViewItem(stats, name, imageFile);
 		return newGuy;
 	}
 	
 	public String getImagePath(){
-		return "resources/test_icon_image.png";
+		try {
+			return myImage.getCanonicalPath();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
+		}
 	}
 
 	@Override
@@ -65,7 +74,7 @@ public class UnitViewItem extends BoardListViewItem {
 	}
 	@Override
 	public Icon getListIcon() {
-		return new ImageIcon(ICON_PATH+"plus.gif");
+		return new ImageIcon(myImage.getAbsolutePath());
 	}
 	@Override
 	public void placeOnBoard(GUIMap map, double x, double y) {

@@ -18,6 +18,8 @@ public class TileViewItem extends BoardListViewItem {
 
 	private Tile myTile = new Tile(20,20,new GameMap(20,20));
 	private MapObject myMapObject;
+	private File myImage = new File("resources/test_tile.jpg");
+	
 	public TileViewItem(){
 		super();
 		myProperties = myTile.getStats();
@@ -41,7 +43,7 @@ public class TileViewItem extends BoardListViewItem {
 	}
 	
 	public String getImagePath(){
-		return "resources/test_tile.png";
+		return myImage.getPath();
 	}
 
 	/**
@@ -51,11 +53,19 @@ public class TileViewItem extends BoardListViewItem {
 	public Icon getListIcon() {
 		return new ImageIcon(ICON_PATH+"plus.gif");
 	}
+	
+	public int getImageHeight(){
+		return 0;
+	}
+	public int getImageWidth(){
+		return 0;
+	}
 
 	@Override
 	public void placeOnBoard(GUIMap map, double x, double y) {
-		// TODO Auto-generated method stub
-		
+		map.defineImage("tile", "-", 0,getImagePath().replace("\\","/"),"-");
+		//new JGObject(such and such);
+		myMapObject = new MapObject(x,y,"tile", this);
 	}
 	
 }

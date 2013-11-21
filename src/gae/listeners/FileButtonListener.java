@@ -11,9 +11,9 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class FileButtonListener implements ActionListener {
-	private Component myParent;
-	public FileButtonListener(Component component){
-		
+	private FileButton myParent;
+	public FileButtonListener(FileButton button){
+		myParent = button;
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -24,7 +24,7 @@ public class FileButtonListener implements ActionListener {
 		    chooser.setFileFilter(filter);
 		    int returnVal = chooser.showOpenDialog(myParent);
 		    if(returnVal == JFileChooser.APPROVE_OPTION) {
-		            ((FileButton)myParent).sendFile(chooser.getSelectedFile());
+		            myParent.sendFile(chooser.getSelectedFile());
 		    }
 	}
 	
