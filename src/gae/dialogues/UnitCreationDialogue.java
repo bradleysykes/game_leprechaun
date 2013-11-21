@@ -3,6 +3,7 @@ package gae.dialogues;
 import gae.Controller;
 import gae.TileEditor;
 import gae.ViewItemField;
+import gae.buttons.FileButton;
 import gae.buttons.SaveInputButton;
 import gae.panel_lists.BoardList;
 
@@ -10,6 +11,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +25,7 @@ import model.stats.StatCollection;
 public class UnitCreationDialogue extends InputDialogue {
 	
 	private JButton myEnterButton;
+	private File myImage;
 	private ViewItemField myName;
 	
 	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, BoardList list) {
@@ -69,8 +72,12 @@ public class UnitCreationDialogue extends InputDialogue {
 			inputData.add(stat);
 		}
 		String name = myName.getData();
-		myList.postInput(inputData, name);
+		myList.postInput(inputData, name, myImage);
 		disposeDialogue();
+	}
+	
+	public void setImage(File image){
+		myImage = image;
 	}
 
 	@Override
@@ -90,7 +97,9 @@ public class UnitCreationDialogue extends InputDialogue {
 		}
 		myName = new ViewItemField("Custom name");
 		mainPanel.add(myName);
-		return mainPanel;	
+		FileButton imageButton = new FileButton("Upload image", this);
+		mainPanel.add(imageButton);
+		return mainPanel;
 	}
 }
 

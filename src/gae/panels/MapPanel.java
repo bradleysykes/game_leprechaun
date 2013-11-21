@@ -43,6 +43,7 @@ public class MapPanel extends EditPanel {
 		myMapView = new GUIMap(width, height);
 		this.add(myMapView, BorderLayout.CENTER);
 		this.setDefaultTiles();
+		this.repaint();
 	}
 	
 	public void setDefaultTiles(){

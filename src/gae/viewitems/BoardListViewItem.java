@@ -5,6 +5,7 @@ import gae.GUIMap;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
 
+import java.io.File;
 import java.util.List;
 
 import javax.swing.Icon;
@@ -30,6 +31,7 @@ public abstract class BoardListViewItem extends ViewItem {
 		
 	}
 	
-	public abstract BoardListViewItem createModel(List<Stat> inputData, String name);
+	public abstract BoardListViewItem createModel(List<Stat> inputData, 
+			String name, File imageFile);
 
 }

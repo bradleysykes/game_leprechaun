@@ -3,6 +3,7 @@ package gae.viewitems;
 import gae.Controller;
 import gae.GUIMap;
 
+import java.io.File;
 import java.util.List;
 
 import javax.swing.Icon;
@@ -48,7 +49,8 @@ public class UnitViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public BoardListViewItem createModel(List<Stat> stats, String name) {
+	public BoardListViewItem createModel(List<Stat> stats, String name, 
+			File imageFile) {
 		BoardListViewItem newGuy = new UnitViewItem(stats, name);
 		return newGuy;
 	}

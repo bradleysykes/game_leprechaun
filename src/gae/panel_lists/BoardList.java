@@ -10,6 +10,7 @@ import gae.viewitems.ViewItem;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListCellRenderer;
@@ -106,8 +107,8 @@ public abstract class BoardList extends JList {
 	 * @param inputData
 	 * @param name 
 	 */
-	public void postInput(List<Stat> inputData, String name){
-		BoardListViewItem newItem = myType.createModel(inputData, name);
+	public void postInput(List<Stat> inputData, String name, File f){
+		BoardListViewItem newItem = myType.createModel(inputData, name,f);
 		this.addNewItem(newItem);
 	}
 		

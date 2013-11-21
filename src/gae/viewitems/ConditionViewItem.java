@@ -5,6 +5,7 @@ import gae.GUIMap;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,8 @@ public class ConditionViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public BoardListViewItem createModel(List<Stat> inputData, String name) {
+	public BoardListViewItem createModel(List<Stat> inputData, String name, 
+			File imageFile) {
 //		myCondition = new Condition();
 //		myCondition.setStats(inputData);
 		return new ConditionViewItem();
