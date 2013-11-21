@@ -17,13 +17,21 @@ import model.unit.Unit;
 
 public class UnitViewItem extends BoardListViewItem {
 
-	private static final String UNIT_LIST_MESSAGE = "Unit List Message";
-	private Unit myUnit = new Unit("TEST",new Player(),new GameMap(400, 400));
+	private String UNIT_LIST_MESSAGE = "Unit List Message";
+	private Unit myUnit;
 	private MapObject myMapObject;
 	
-	public UnitViewItem(){
+	public UnitViewItem(List<Stat> stats, String name){
+		this(name);
+		myProperties = stats;
+		myUnit.setStats(myProperties);		
+	}
+	
+	public UnitViewItem(String name) {
 		super();
+		myUnit = new Unit("TEST",new Player(),new GameMap(400, 400));
 		myProperties = myUnit.getStats();
+		UNIT_LIST_MESSAGE = name;
 	}
 	/**
 	 * use to figure out what properties this type needs
@@ -40,8 +48,9 @@ public class UnitViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public void createModel(List<Stat> stats) {
-		myUnit.setStats(stats);
+	public BoardListViewItem createModel(List<Stat> stats, String name) {
+		BoardListViewItem newGuy = new UnitViewItem(stats, name);
+		return newGuy;
 	}
 	
 	public String getImagePath(){

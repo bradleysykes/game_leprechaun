@@ -104,10 +104,11 @@ public abstract class BoardList extends JList {
 	 * called by inputdialogue's create button action listener. 
 	 * Ships data for creation of a new custom type. 
 	 * @param inputData
+	 * @param name 
 	 */
-	public void postInput(List<Stat> inputData){
-		myType.createModel(inputData);
-		this.addNewItem(myType);
+	public void postInput(List<Stat> inputData, String name){
+		BoardListViewItem newItem = myType.createModel(inputData, name);
+		this.addNewItem(newItem);
 	}
 		
 }

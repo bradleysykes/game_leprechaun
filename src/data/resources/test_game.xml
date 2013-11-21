@@ -45,23 +45,28 @@
 		    </resources>
 	    </tile>
     </map>
-    <player name="enemy">
-	    <resources>
-			<resource name="mineral" value="2.0"/>
-			<resource name="gas" value="20.0"/>
-		</resources>
-		<condition>
-			(not clear yet)
-		</condition>
-		<units>
-	  		<unit id="2"/>
-	  		<unit id="3"/>
-	  	</units>
-  	<player>
+    <players>
+	    <player id="enemy">
+		    <resources>
+				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+			</resources>
+			<units>
+		  		<unit id="2"/>
+		  		<unit id="3"/>
+		  	</units>
+	  	<player>
+	</players>
+  	<conditions>
+  	
+  	</conditions>
 	<units>
 		<unit name="soldier" id="1">
 			<player id="enemy">
 			<tile x="1" y="1"/>
+			<abilities>
+				
+			</abilities>
 			<attributes>
 				<stat name="Base Help" value="2.0"/>
 				<stat name="Health" value="10.0"/>

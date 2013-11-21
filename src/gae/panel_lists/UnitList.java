@@ -9,7 +9,7 @@ public class UnitList extends BoardList {
 	public UnitList(Controller controller){
 		super(controller);
 		// this list will only hold UnitViewItems
-		myType = new UnitViewItem();
+		myType = new UnitViewItem("Type Holder");
 	}
 	
 	/**

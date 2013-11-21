@@ -18,7 +18,8 @@ public interface Attributes {
     String HARVEST_RATE = "harvest_rate";
     String MAX_POP = "max_pop";
     String VALUE = "value";
-    String THING = "thing";
+    String STAT = "stat";
+    String ID = "id";
     
     
 }
