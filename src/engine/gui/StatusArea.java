@@ -29,4 +29,8 @@ public class StatusArea extends JPanel {
 		add(myScrollPane);
 	}
 	
+	public void setStatusText(String report) {
+		myStatusArea.setText(report);
+	}
+	
 }
