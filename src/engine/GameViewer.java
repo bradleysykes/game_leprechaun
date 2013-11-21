@@ -24,8 +24,8 @@ public class GameViewer extends JFrame {
 	private final String myTitle = "OOGASALAD";
 	private GameEngine myGameEngine;
 	private JMenuBar myMenuBar;
-	private ActionPanel myActionPanel;
-	private FeedbackPanel myFeedbackPanel;
+	private static ActionPanel myActionPanel;
+	private static FeedbackPanel myFeedbackPanel;
 	
 	public GameViewer() {
 		// Initializing Steps
@@ -90,5 +90,12 @@ public class GameViewer extends JFrame {
 		return myGameEngine;
 	}
 	
+	public static ActionPanel getActionPanel() {
+		return myActionPanel;
+	}
+	
+	public static FeedbackPanel getFeedbackPanel() {
+		return myFeedbackPanel;
+	}
 	
 }
