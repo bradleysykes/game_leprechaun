@@ -1,10 +1,19 @@
 package data.encoder;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import model.GameMap;
@@ -38,7 +47,15 @@ public class SaveHandler implements Elements {
         myPlayerEncoder = new PlayerEncoder(myXmlDocument, currentState.getPlayers(), root);
         myPlayerEncoder.encode();
         
-        saveXML("name", myXmlDocument);
+        try {
+            saveXML("name", myXmlDocument);
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch (TransformerException e) {
+            e.printStackTrace();
+        }
 	}
 	
 	/**
@@ -57,13 +74,32 @@ public class SaveHandler implements Elements {
         return builder.newDocument();
 	}
 	
-	
 	/**
 	 * Save the XML file to disc
+	 * @throws FileNotFoundException 
+	 * @throws TransformerException 
 	 */
-    public void saveXML(String filename, Document doc) {
-	    
+    public void saveXML(String filename, Document doc) throws FileNotFoundException, TransformerException {
+        //FileOutputStream fos = new FileOutputStream(new File("test.xml"));
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        Transformer transformer = null;
+        transformer = formatXML(tFactory.newTransformer());
+        //use fos for saving to file; use System.out for printing to console
+        transformer.transform(new DOMSource(myXmlDocument), new StreamResult(System.out));
 	}
+    
+    /**
+     * Formats the XML file to omit XML Declaration and create indentations 
+     * @param transformer
+     * @return
+     */
+    protected Transformer formatXML(Transformer transformer) {
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+        return transformer;
+    }
+    
     
     //for testing; create an instance of the GameElements object
     public static void main(String[] args) {

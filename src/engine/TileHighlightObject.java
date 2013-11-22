@@ -8,7 +8,7 @@ public class TileHighlightObject extends JGObject {
 	
 	private Tile myTile;
 	private GameEngine myGameEngine;
-	private static final int myCollisionID = 6;
+	private static final int myCollisionID = 4;
 	private final double myThickness = 3;
 	private final JGColor myColor = JGColor.black;
 	
@@ -22,6 +22,10 @@ public class TileHighlightObject extends JGObject {
 		double size = GameTileObject.getSize();
 		myGameEngine.drawRect(GameTileObject.tilesToPixels(myTile.getX()), GameTileObject.tilesToPixels(myTile.getY()), 
 				GameTileObject.getSize(), GameTileObject.getSize(), false, false, myThickness, myColor);
+	}
+	
+	public static int getCollisionID() {
+		return myCollisionID;
 	}
 	
 }

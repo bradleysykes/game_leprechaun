@@ -41,6 +41,13 @@ public class GUIMap extends JGEngine implements Constants{
 	}
 	
 	public void doFrame(){
+		if (getMouseButton(1)) {
+			clearMouseButton(1);
+			System.out.println("Mouse at: "+ this.getMouseX() + ","+this.getMouseY());
+			
+			//System.out.println(this.countObjects("turtle", 50));
+			//onClickAction();
+		}
 		placeOnBoard();
 		//System.out.println(this.getMouseX()+" "+this.getMouseY());
 		//this.drawString("Test",this.getMouseX(),this.getMouseY(),0);

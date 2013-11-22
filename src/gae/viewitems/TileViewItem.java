@@ -25,11 +25,7 @@ public class TileViewItem extends BoardListViewItem {
 	private String myImagePath;
 	
 	public TileViewItem(){
-		super("Test Tile");
-		myProperties = myTile.getStats();
-		myImagePath="C://Users//Bradley//Desktop//workspace_java//oogasalad_MISSINGNO//src//gae//resources//test_tile.jpg";
-		myImage = new File(myImagePath);
-		ImageTool.scaleAndOverwriteImage(myImage.getPath(), 80,80);
+		this(new Tile(20,20,new GameMap(20,20)).getStats(),"Default",new File(System.getProperty("user.dir")+"//gae//resources//test_tile.jpg"));
 	}
 	
 	public TileViewItem(List<Stat> stats,String name, File f){
@@ -41,7 +37,7 @@ public class TileViewItem extends BoardListViewItem {
 			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 79, 79);
 		}
 		else{
-			myImagePath="C://Users//Bradley//Desktop//workspace_java//oogasalad_MISSINGNO//src//gae//resources//test_tile.jpg";
+			myImagePath=System.getProperty("user.dir")+"//gae//resources//test_tile.jpg";
 			myImage = new File(myImagePath);
 			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 79,79);
 		}

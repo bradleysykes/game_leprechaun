@@ -15,6 +15,7 @@ import jgame.JGObject;
 import model.GameMap;
 import model.Player;
 import model.stats.Stat;
+import model.tile.Tile;
 import model.unit.Unit;
 
 public class UnitViewItem extends BoardListViewItem {
@@ -32,9 +33,10 @@ public class UnitViewItem extends BoardListViewItem {
 	}
 	
 	public UnitViewItem(String name) {
-		super(name);
-		myUnit = new Unit("TEST",new Player(),new GameMap(400, 400));
-		myProperties = myUnit.getStats();
+		this(new Unit("Unit",new Player(), new GameMap(50,50)).getStats(),name,new File("C://Users//Bradley//Desktop//workspace_java//oogasalad_MISSINGNO//src//gae//resources//test_tile.jpg"));
+//		super(name);
+//		myUnit = new Unit("TEST",new Player(),new GameMap(400, 400));
+//		myProperties = myUnit.getStats();
 	}
 	/**
 	 * use to figure out what properties this type needs

@@ -35,17 +35,7 @@ import data.Elements;
  */
 public abstract class Encoder implements Elements, Attributes {
     
-    /**
-     * Formats the XML file to omit XML Declaration and create indentations 
-     * @param transformer
-     * @return
-     */
-    protected Transformer formatXML(Transformer transformer) {
-        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-        return transformer;
-    }
+    
     
     /**
      * Saves the XML to a separate file specified by fileName

@@ -6,6 +6,10 @@ import model.unit.Unit;
 
 public class Defeat extends Condition {
 	private String myUnitID;
+	
+	public Defeat(){
+		super("Defeat",null);
+	}
 
 	public Defeat(String target, Player p) {
 		super("Defeat", p);
