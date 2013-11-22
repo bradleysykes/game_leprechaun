@@ -14,7 +14,11 @@ import model.stats.Stat;
 
 public abstract class BoardListViewItem extends ViewItem {
 	protected List<Stat> myProperties;
+	protected String myName;
 	
+	public BoardListViewItem(String name){
+		myName = name;
+	}
 	@Override
 	public abstract Icon getListIcon();
 

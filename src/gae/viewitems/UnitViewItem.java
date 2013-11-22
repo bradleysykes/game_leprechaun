@@ -28,14 +28,13 @@ public class UnitViewItem extends BoardListViewItem {
 		this(name);
 		myProperties = stats;
 		myImage = imageFile;
-		myUnit.setStats(myProperties);		
+		myUnit.setStats(myProperties);
 	}
 	
 	public UnitViewItem(String name) {
-		super();
+		super(name);
 		myUnit = new Unit("TEST",new Player(),new GameMap(400, 400));
 		myProperties = myUnit.getStats();
-		UNIT_LIST_MESSAGE = name;
 	}
 	/**
 	 * use to figure out what properties this type needs
@@ -54,8 +53,7 @@ public class UnitViewItem extends BoardListViewItem {
 	@Override
 	public BoardListViewItem createModel(List<Stat> stats, String name, 
 			File imageFile) {
-		BoardListViewItem newGuy = new UnitViewItem(stats, name, imageFile);
-		return newGuy;
+		return new UnitViewItem(stats, name, imageFile);
 	}
 	
 	public String getImagePath(){
@@ -70,11 +68,14 @@ public class UnitViewItem extends BoardListViewItem {
 
 	@Override
 	public String getListMessage() {
-		return UNIT_LIST_MESSAGE;
+		return myName;
 	}
 	@Override
 	public Icon getListIcon() {
-		return new ImageIcon(myImage.getAbsolutePath());
+		if(myImage!=null){
+			return new ImageIcon(myImage.getAbsolutePath());
+		}
+		return new ImageIcon(ICON_PATH+"test_icon_image.png");
 	}
 	@Override
 	public void placeOnBoard(GUIMap map, double x, double y) {

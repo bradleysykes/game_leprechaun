@@ -53,8 +53,8 @@ public class GUIMap extends JGEngine {
 	public void fillBoard(ViewItem tile) {
 		TileViewItem t = (TileViewItem)tile;
 		int x = 0;
-		for(int q=0;q<myHeight;q+=1){
-			for(int m = 0;m<myWidth;m+=1){
+		for(int q=0;q<myWidth;q+=1){
+			for(int m = 0;m<myHeight;m+=1){
 				if(x==100){
 					return;
 				}

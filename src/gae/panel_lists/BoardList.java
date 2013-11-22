@@ -54,7 +54,6 @@ public abstract class BoardList extends JList {
 	
 
 	public void addNewItem(ViewItem item){
-		item.setController(myController);
 		myModel.insertElementAt(item, 0);
 	}
 	public Controller getController(){
@@ -117,7 +116,7 @@ public abstract class BoardList extends JList {
 	 */
 	public void postInput(List<Stat> inputData, String name, File f){
 		BoardListViewItem newItem = myType.createModel(inputData, name,f);
-		this.addNewItem(newItem);
+        this.addNewItem(newItem);
 	}
 		
 }

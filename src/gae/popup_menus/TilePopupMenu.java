@@ -10,10 +10,8 @@ import javax.swing.JMenuItem;
 
 public class TilePopupMenu extends GAEPopupMenu {
 	
-	private Controller myController;
-	
 	public TilePopupMenu(Controller controller){
-		myController = controller;
+		super(controller);
 	}
 	
 	@Override

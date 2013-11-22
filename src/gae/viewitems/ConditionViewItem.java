@@ -20,11 +20,17 @@ public class ConditionViewItem extends BoardListViewItem {
 
 	private Condition myCondition;
 
-	public ConditionViewItem(){
-		super();
+	public ConditionViewItem(String name){
+		super(name);
 		// initialize this viewitem's list of properties
 		myProperties = new ArrayList<Stat>();
 	}
+	
+	public ConditionViewItem(){
+		this("test condition");
+	}
+	
+	
 	@Override
 	public List<Stat> getModel() {
 		return myProperties;
@@ -35,12 +41,12 @@ public class ConditionViewItem extends BoardListViewItem {
 			File imageFile) {
 //		myCondition = new Condition();
 //		myCondition.setStats(inputData);
-		return new ConditionViewItem();
+		return new ConditionViewItem("Test Name");
 	}
 
 	@Override
 	public String getListMessage() {
-		return "Condition List Message";
+		return myName;
 	}
 	@Override
 	public Icon getListIcon() {

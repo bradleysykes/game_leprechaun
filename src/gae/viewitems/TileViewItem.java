@@ -21,8 +21,14 @@ public class TileViewItem extends BoardListViewItem {
 	private File myImage = new File("resources/test_tile.jpg");
 	
 	public TileViewItem(){
-		super();
+		super("Test Tile");
 		myProperties = myTile.getStats();
+	}
+	
+	public TileViewItem(List<Stat> stats,String name, File f){
+		super(name);
+		myProperties = stats;
+		myImage = f;
 	}
 	
 	@Override
@@ -39,11 +45,14 @@ public class TileViewItem extends BoardListViewItem {
 
 	@Override
 	public String getListMessage() {
-		return "Tile List Message";
+		return myName;
 	}
 	
 	public String getImagePath(){
-		return myImage.getPath();
+		if(myImage!=null){
+			return myImage.getPath();
+		}
+		return "resources/test_tile.jpg";
 	}
 
 	/**
