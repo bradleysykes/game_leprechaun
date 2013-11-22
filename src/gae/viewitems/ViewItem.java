@@ -27,4 +27,8 @@ public abstract class ViewItem implements Constants {
 	public void setController(Controller controller) {
 		myController = controller;
 	}
+	
+	public boolean dialogueActive(){
+		return false;
+	}
 }

@@ -12,7 +12,8 @@ import javax.swing.event.ListSelectionListener;
 import model.tile.Tile;
 
 public class BoardListSelectionListener implements ListSelectionListener {
-
+	
+	
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		/**
@@ -24,7 +25,9 @@ public class BoardListSelectionListener implements ListSelectionListener {
 			if(listSource.getSelectedIndex()!=-1){
 				ViewItem selectedItem = (ViewItem)listSource.getSelectedValue();
 				BoardBuffer.push(selectedItem);
-				selectedItem.onClick(listSource.getController());
+				if(!selectedItem.dialogueActive()){
+					selectedItem.onClick(listSource.getController());
+				}
 				if (selectedItem instanceof BoardListViewItem) {
 					BoardListViewItem castedselectedItem = (BoardListViewItem) selectedItem;
 					listSource.sendData(castedselectedItem.getModel());
