@@ -25,7 +25,7 @@ public class TileViewItem extends BoardListViewItem {
 	private String myImagePath;
 	
 	public TileViewItem(){
-		this(new Tile(20,20,new GameMap(20,20)).getStats(),"Default",new File(System.getProperty("user.dir")+"//gae//resources//test_tile.jpg"));
+		this(new Tile(20,20,new GameMap(20,20)).getStats(),"Default",new File(System.getProperty("user.dir")+"\\src\\gae\\resources\\test_tile.jpg"));
 	}
 	
 	public TileViewItem(List<Stat> stats,String name, File f){
@@ -37,7 +37,7 @@ public class TileViewItem extends BoardListViewItem {
 			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 79, 79);
 		}
 		else{
-			myImagePath=System.getProperty("user.dir")+"//gae//resources//test_tile.jpg";
+			myImagePath=System.getProperty("user.dir")+"\\src\\gae\\resources\\test_tile.jpg";
 			myImage = new File(myImagePath);
 			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 79,79);
 		}
@@ -90,7 +90,7 @@ public class TileViewItem extends BoardListViewItem {
 	}
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y){
-		map.defineImage("tile", "-", 0, this.getImagePath().replace("\\","/"),"-");
+		map.defineImage("tile", "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		System.out.println(x + "   " +y);
 		myMapObject = new MapObject(x-x%TILE_SIZE,y-y%TILE_SIZE,"tile",this);
 	}
