@@ -6,11 +6,15 @@ import model.unit.Unit;
 public class SpawnEffect extends Effect {
 
 	public SpawnEffect() {
-		super("Spawn Effect", null);
+		super("Spawn Effect", null, "Spawnable Units");
 	}
 	
 	public void addUnit(String unitID){
 		myReferences.add(unitID);
+	}
+	
+	public void removeUnit(String unitID){
+		myReferences.remove(unitID);
 	}
 
 	@Override

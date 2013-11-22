@@ -22,12 +22,17 @@ public class StatCollection extends Stat {
 
 	public StatCollection(String name){
 		super(name,null);
-		myID = "";
+		myID = "";		// May switch to myID = null by default so know it's not a useful field.
 	}
 
 	public StatCollection(String name, String id){
 		this(name);
 		myID = id;
+	}
+	
+	public StatCollection(String name, String id, String referenceTypes){
+		this(name,id);
+		myReferences.add(referenceTypes);
 	}
 
 	protected List<Stat> myStats = new ArrayList<Stat>();
