@@ -65,6 +65,11 @@ public abstract class EditPanel extends JPanel implements Constants {
 		// default is to do nothing
 		//override where necessary
 	}
+
+	public List<Player> getPlayers() {
+		// default is do nothing
+		return null;
+	}
 }
 	
 
