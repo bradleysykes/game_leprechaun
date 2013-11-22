@@ -28,6 +28,7 @@ public class GameEngine extends JGEngine {
 	private GameMap myGameMap;
 	private ArrayList<Player> myPlayers;
 	private Player myCurrentPlayer;
+	private MouseObject myMouseObject;
 	
 	public GameEngine() {
 		initEngineComponent(myViewerWidth, myViewerHeight);
@@ -45,6 +46,7 @@ public class GameEngine extends JGEngine {
 	
 	public void initGame() {
 		setFrameRate(35, 1);
+		myMouseObject = new MouseObject(this);
 	}
 	
 	public void doFrame() {

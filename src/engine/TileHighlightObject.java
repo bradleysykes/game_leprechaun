@@ -8,7 +8,7 @@ public class TileHighlightObject extends JGObject {
 	
 	private Tile myTile;
 	private GameEngine myGameEngine;
-	private static final int myCollisionID = 6;
+	private static final int myCollisionID = 4;
 	private final double myThickness = 3;
 	private final JGColor myColor = JGColor.black;
 	
