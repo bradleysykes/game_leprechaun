@@ -20,12 +20,12 @@ import model.unit.Unit;
 public class UnitViewItem extends BoardListViewItem {
 
 	private String UNIT_LIST_MESSAGE = "Unit List Message";
-	private Unit myUnit;
+	private Unit myUnit = new Unit("Unit",new Player(), new GameMap(50,50));
 	private MapObject myMapObject;
 	private File myImage = new File("resources/test_icon_image.png");
 	
 	public UnitViewItem(List<Stat> stats, String name, File imageFile){
-		this(name);
+		super(name);
 		myProperties = stats;
 		myImage = imageFile;
 		myUnit.setStats(myProperties);
@@ -53,7 +53,8 @@ public class UnitViewItem extends BoardListViewItem {
 	@Override
 	public BoardListViewItem createModel(List<Stat> stats, String name, 
 			File imageFile) {
-		return new UnitViewItem(stats, name, imageFile);
+		UnitViewItem item = new UnitViewItem(stats, name, imageFile);
+		return item;
 	}
 	
 	public String getImagePath(){

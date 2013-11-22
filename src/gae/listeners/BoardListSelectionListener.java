@@ -1,5 +1,7 @@
 package gae.listeners;
 
+import java.util.List;
+
 import gae.BoardBuffer;
 import gae.panel_lists.BoardList;
 import gae.viewitems.BoardListViewItem;
@@ -9,6 +11,7 @@ import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import model.stats.Stat;
 import model.tile.Tile;
 
 public class BoardListSelectionListener implements ListSelectionListener {
@@ -30,6 +33,7 @@ public class BoardListSelectionListener implements ListSelectionListener {
 				}
 				if (selectedItem instanceof BoardListViewItem) {
 					BoardListViewItem castedselectedItem = (BoardListViewItem) selectedItem;
+					List<Stat> x = castedselectedItem.getModel();
 					listSource.sendData(castedselectedItem.getModel());
 				}
 				
