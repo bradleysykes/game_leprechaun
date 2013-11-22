@@ -31,6 +31,11 @@ public class Model {
 		myQueuedAbility.setTargetTile(t);
 		myQueuedAbility.useAbility();
 	}
+	
+	public static void useAbility(String s){
+//		myQueuedAbility.setTargetString(s);
+//		myQueuedAbility.useAbility();
+	}
 
 //	public Unit chooseUnit(Collection<Tile> validTiles){
 //		return null;
