@@ -9,10 +9,10 @@ public class Model {
 	private List<Player> myPlayers = new ArrayList<Player>();
 	private GameMap myMap;
 	private GameEngine myGameEngine;
-	private Ability myQueuedAbility;
+	private static Ability myQueuedAbility;
 
-	public Model() {
-
+	public Model(GameEngine ge) {
+		myGameEngine = ge;
 	}
 	
 	public void addPlayer(Player p){
@@ -31,7 +31,7 @@ public class Model {
 		myQueuedAbility = a;
 	}
 	
-	public void useAbility(Tile t){
+	public static void useAbility(Tile t){
 		myQueuedAbility.setTargetTile(t);
 		myQueuedAbility.useAbility();
 	}
@@ -40,10 +40,8 @@ public class Model {
 //		return null;
 //	}
 	
-	public Tile chooseTile(Collection<Tile> validTiles){
-		// Pass this information to Game Engine for appropriate tile to be selected.
-		// myGameEngine.selectTile(validTiles);
-		return null;
+	public void chooseTile(List<Tile> validTiles){
+		myGameEngine.highlightTiles(validTiles);
 	}
 	
 }

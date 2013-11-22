@@ -11,4 +11,6 @@ public interface Constants {
 	final String UNIT_PACKAGE_NAME = "tile";
 	final String TILE_PACKAGE_NAME = "tile";
 	final String CONDITION_PACKAGE_NAME = "tile";
+	
+	final int TILE_SIZE = 80;
 }

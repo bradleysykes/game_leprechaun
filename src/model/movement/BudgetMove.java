@@ -53,10 +53,11 @@ public class BudgetMove extends Move {
 				if(r!=c && r!=-c){
 					int newX = currentX+r;
 					int newY = currentY+c;
+					if(!map.contains(newX, newY)) continue;
 					double cost = map.getTile(newX, newY).getValue("Passability");
 					if(cost == 0)
 						continue;
-					double check = pathFinder(currentX+r,currentY+c,destX,destY,map,budget-cost);
+					double check = pathFinder(newX,newY,destX,destY,map,budget-cost);
 					if(check>0)
 						return check;
 				}

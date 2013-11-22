@@ -35,6 +35,9 @@ public abstract class BoardListViewItem extends ViewItem {
 		
 	}
 	
+	public void clickOnBoard(GUIMap map, double x, double y){
+		
+	}
 	public abstract BoardListViewItem createModel(List<Stat> inputData, 
 			String name, File imageFile);
 
