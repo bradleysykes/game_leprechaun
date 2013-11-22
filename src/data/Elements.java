@@ -6,12 +6,14 @@ package data;
  *
  */
 public interface Elements {
+    String GAME_ELEMENTS = "GameElements";
     // for MapEncoder and MapDecoder
-    String MAP_ROOT = "map";
-    String TILE = "tile";
-    String TERRAIN = "terrain";
-    String RESOURCES = "resources";
-    String RESOURCE = "resource";
+    String MAP_ROOT = "Map";
+    String TILE = "Tile";
+    String STAT = "Stat";
+    String TERRAIN = "Terrain";
+    String RESOURCES = "Resources";
+    String RESOURCE = "Resource";
     
     // for UnitEncoder and UnitDecoder
     String UNIT_ROOT = "units";

@@ -15,7 +15,7 @@ import java.util.List;
 
 import sun.nio.cs.ext.JIS_X_0201.Encoder;
 import data.GameElements;
-import data.encoder.SaverHandler;
+import data.encoder.SaveHandler;
 import model.Player;
 import model.stats.Stat;
 
@@ -83,7 +83,7 @@ public class Controller {
 				return;
 			}
 		}
-		SaverHandler saverEncoder = new SaverHandler();
+		SaveHandler saverEncoder = new SaveHandler();
 		saverEncoder.doSave(currentState);
 		// create data object to send GameElements object to that.
 	}
