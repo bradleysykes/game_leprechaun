@@ -9,7 +9,7 @@ public class Model {
 	private List<Player> myPlayers = new ArrayList<Player>();
 	private GameMap myMap;
 	private GameEngine myGameEngine;
-	private Ability myQueuedAbility;
+	private static Ability myQueuedAbility;
 
 	public Model(GameEngine ge) {
 		myGameEngine = ge;
@@ -31,7 +31,7 @@ public class Model {
 		myQueuedAbility = a;
 	}
 	
-	public void useAbility(Tile t){
+	public static void useAbility(Tile t){
 		myQueuedAbility.setTargetTile(t);
 		myQueuedAbility.useAbility();
 	}
