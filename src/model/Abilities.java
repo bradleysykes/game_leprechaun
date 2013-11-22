@@ -2,6 +2,7 @@ package model;
 
 import model.abilities.Attack;
 import model.abilities.Harvest;
+import model.abilities.Spawn;
 import model.movement.BudgetMove;
 import model.stats.StatCollection;
 import model.unit.Unit;
@@ -18,6 +19,7 @@ public class Abilities extends StatCollection{
 		this.addStat(new Attack(unit));
 		this.addStat(new BudgetMove(unit));
 		this.addStat(new Harvest(unit));
+		this.addStat(new Spawn(unit));
 	}
 	
 	public void addAbility(){

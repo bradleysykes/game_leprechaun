@@ -7,7 +7,6 @@ import model.tile.Tile;
 
 public class Model {
 	private List<Player> myPlayers = new ArrayList<Player>();
-	private GameMap myMap;
 	private GameEngine myGameEngine;
 	private static Ability myQueuedAbility;
 
@@ -19,16 +18,13 @@ public class Model {
 		myPlayers.add(p);
 	}
 	
-	public void setMap(GameMap map){
-		myMap = map;
-	}
-	
 	public void setGame(GameEngine ge){
 		myGameEngine = ge;
 	}
 	
 	public void setAbility(Ability a){
 		myQueuedAbility = a;
+		myQueuedAbility.requestEngineInput(myGameEngine);
 	}
 	
 	public static void useAbility(Tile t){
@@ -42,6 +38,10 @@ public class Model {
 	
 	public void chooseTile(List<Tile> validTiles){
 		myGameEngine.highlightTiles(validTiles);
+	}
+	
+	public void chooseString(){
+		//
 	}
 	
 }

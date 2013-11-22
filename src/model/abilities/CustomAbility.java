@@ -2,6 +2,8 @@ package model.abilities;
 
 import java.util.*;
 
+import engine.GameEngine;
+
 import model.Ability;
 import model.Effect;
 import model.effects.ModifyAttribute;
@@ -41,6 +43,11 @@ public class CustomAbility extends Ability {
 			}
 		}	
 		myValid = false;
+	}
+
+	@Override
+	public void requestEngineInput(GameEngine myGameEngine) {
+		// Get tile from list of valid tiles.
 	}
 
 }

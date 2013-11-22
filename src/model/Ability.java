@@ -1,5 +1,6 @@
 package model;
 
+import engine.GameEngine;
 import model.stats.StatCollection;
 import model.tile.Tile;
 import model.unit.Unit;
@@ -15,6 +16,12 @@ public abstract class Ability extends StatCollection {
 		myUnit = abilityUser;
 	}
 	
+	public Ability(String name, Unit abilityUser, String referenceType){
+		super(name,"",referenceType);
+		myUnit = abilityUser;
+	}
+	
+	// Game Engine can either just call this on the ability of setAbility via Model.
 	public void prepAbility(){
 		myUnit.getPlayer().getModel().setAbility(this);
 	}
@@ -28,4 +35,6 @@ public abstract class Ability extends StatCollection {
 	public void refresh(){
 		myValid = true;
 	}
+
+	public abstract void requestEngineInput(GameEngine myGameEngine);
 }
