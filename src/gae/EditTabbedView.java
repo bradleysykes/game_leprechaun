@@ -41,7 +41,7 @@ public class EditTabbedView extends JTabbedPane {
 		for(String tab : myTabContents.keySet()){
 			BoardList list = myTabContents.get(tab);
 			JPanel panel = new JPanel(new BorderLayout());
-			JToolBar tool = new JToolBar();
+			JToolBar tool = new JToolBar("Board Objectsj");
 			CreateCustomButton button = new CreateCustomButton(list);
 			tool.add(button);
 			panel.add(list, BorderLayout.CENTER);
