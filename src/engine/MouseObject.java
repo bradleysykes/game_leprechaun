@@ -39,4 +39,8 @@ public class MouseObject extends JGObject {
 		}
 	}
 	
+	public static int getCollisionID() {
+		return myCollisionID;
+	}
+	
 }
