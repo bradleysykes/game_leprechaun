@@ -25,7 +25,7 @@ public class DataPrimer {
 	}
 	
 	private File selectAndParseXML() {
-		int value = myFileChooser.showOpenDialog(myGameEngine); //needs a parent component.. probably the GAE
+		int value = myFileChooser.showOpenDialog(myGameEngine);
 		File xmlFile = null;
 		if (value == myFileChooser.APPROVE_OPTION) {
 			xmlFile = myFileChooser.getSelectedFile();

@@ -1,11 +1,5 @@
 package data.encoder;
 
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import model.GameMap;
 import model.Resource;
 import model.Resources;
@@ -39,7 +33,6 @@ public class MapEncoder extends Encoder {
     @Override
     public void encode () {
         appendMap(myGameMap);
-        printToConsole();
     }
     
     /**
@@ -65,11 +58,11 @@ public class MapEncoder extends Encoder {
         tileElement.setAttribute(X_COORD, String.valueOf(tile.getX()));
         tileElement.setAttribute(Y_COORD, String.valueOf(tile.getY()));
         
-        appendStat(tileElement, tile.getStat(PASSABILITY));
-        appendStat(tileElement, tile.getStat(MAX_POP));
+        appendStat(tile.getStat(PASSABILITY), tileElement);
+        appendStat(tile.getStat(MAX_POP), tileElement);
         
-        appendTerrain(tileElement, (Terrain) tile.getStat(TERRAIN));
-        appendResources(tileElement, (Resources) tile.getStat(RESOURCES));
+        appendTerrain((Terrain) tile.getStat(TERRAIN), tileElement);
+        appendResources((Resources) tile.getStat(RESOURCES), tileElement);
         
         mapRoot.appendChild(tileElement);
     }
@@ -80,7 +73,7 @@ public class MapEncoder extends Encoder {
      * 
      * @param tileElement
      */
-    private void appendStat(Element tileElement, Stat stat) {
+    private void appendStat(Stat stat, Element tileElement) {
         Element statElement = myXmlDocument.createElement(STAT);
         statElement.setAttribute(NAME, stat.getName());
         statElement.setAttribute(VALUE, String.valueOf(stat.getValue()));
@@ -90,22 +83,22 @@ public class MapEncoder extends Encoder {
     /**
      * Create a terrainElement for the given terrain and append it to the 
      * specified tileElement
-     * @param tileElement
      * @param terrain
+     * @param tileElement
      */
-    private void appendTerrain (Element tileElement, Terrain terrain) {
+    private void appendTerrain (Terrain terrain, Element tileElement) {
         Element terrainElement = myXmlDocument.createElement(TERRAIN);
-        appendStat(terrainElement, terrain.getStat(MAGNITUDE));
+        appendStat(terrain.getStat(MAGNITUDE), terrainElement);
         tileElement.appendChild(terrainElement);
     }
     
     /**
      * Create a Resources Element for the given terrain and append it to the 
-     * specified tileElemen
-     * @param tileElement
+     * specified tileElement
      * @param resources
+     * @param tileElement
      */
-    private void appendResources (Element tileElement, Resources resources) {
+    private void appendResources (Resources resources, Element tileElement) {
         Element resourcesElement = myXmlDocument.createElement(RESOURCE);
         for(Stat resource : resources.getStats()) {
             Resource res = (Resource) resource;
@@ -115,28 +108,5 @@ public class MapEncoder extends Encoder {
             resourcesElement.appendChild(resElement);
         }
         tileElement.appendChild(resourcesElement);
-    }
-
-
-    //for testing
-    private void printToConsole() {
-      //FileOutputStream fos = new FileOutputStream(new File("test.xml"));
-        TransformerFactory tFactory = TransformerFactory.newInstance();
-        Transformer transformer = null;
-        try {
-            transformer = formatXML(tFactory.newTransformer());
-        }
-        catch (TransformerConfigurationException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        }
-        //use fos for saving to file; use System.out for printing to console
-        try {
-            transformer.transform(new DOMSource(myXmlDocument), new StreamResult(System.out));
-        }
-        catch (TransformerException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
     }
 }
