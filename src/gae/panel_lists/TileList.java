@@ -34,7 +34,7 @@ public class TileList extends BoardList {
 	@Override
 	public GAEPopupMenu getPopupMenu() {
 		// TODO Auto-generated method stub
-		return new TilePopupMenu(myController);
+		return new TilePopupMenu(myController, this);
 	}
 	
 	public void postInput(List<Stat> inputData, String name, File f){

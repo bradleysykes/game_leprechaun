@@ -6,13 +6,14 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
 
 import gae.Controller;
+import gae.panel_lists.BoardList;
 import gae.popup_menus.TilePopupMenu.FillListener;
 
 
 public class UnitPopupMenu extends GAEPopupMenu {
 	
-	public UnitPopupMenu(Controller controller){
-		super(controller);
+	public UnitPopupMenu(Controller controller, BoardList list){
+		super(controller, list);
 	}
 	@Override
 	public void subInitialize() {

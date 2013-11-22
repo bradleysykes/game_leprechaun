@@ -61,11 +61,11 @@ public abstract class BoardList extends JList {
 	}
 	
 	public GAEPopupMenu getPopupMenu(){
-		return new TilePopupMenu(myController);
+		return new TilePopupMenu(myController, this);
 	}
 	
 	public void removeItem(int index) {
-		myModel.remove(index);
+		myModel.removeElementAt(index);
 	}
 	
 	public void sendData(List<Stat> properties){
@@ -89,13 +89,6 @@ public abstract class BoardList extends JList {
 			return this;
 		}
 		
-	}
-	
-	public class DeleteListener implements ActionListener{
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			
-		}
 	}
 	
 	/**

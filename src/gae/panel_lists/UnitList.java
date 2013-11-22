@@ -33,7 +33,7 @@ public class UnitList extends BoardList {
 	}
 	@Override
 	public GAEPopupMenu getPopupMenu(){
-		return new UnitPopupMenu(myController);
+		return new UnitPopupMenu(myController, this);
 	}
 
 	

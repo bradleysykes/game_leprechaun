@@ -22,7 +22,7 @@ public class UnitViewItem extends BoardListViewItem {
 	private String UNIT_LIST_MESSAGE = "Unit List Message";
 	private Unit myUnit;
 	private MapObject myMapObject;
-	private File myImage;
+	private File myImage = new File("resources/test_icon_image.png");
 	
 	public UnitViewItem(List<Stat> stats, String name, File imageFile){
 		this(name);
@@ -62,7 +62,7 @@ public class UnitViewItem extends BoardListViewItem {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return "";
+			return "resources/test_icon_image.png";
 		}
 	}
 
