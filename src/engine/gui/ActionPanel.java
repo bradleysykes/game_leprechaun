@@ -34,4 +34,12 @@ public class ActionPanel extends JPanel {
 		add(myAbilityListArea);
 	}
 	
+	public JPanel getUnitListArea() {
+		return myUnitListArea;
+	}
+	
+	public JPanel getAbilityListArea() {
+		return myAbilityListArea;
+	}
+	
 }

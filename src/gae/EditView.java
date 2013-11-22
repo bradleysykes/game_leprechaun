@@ -17,7 +17,7 @@ public class EditView extends JSplitPane {
 		this.setPreferredSize(new Dimension(600,600));
 		this.setOneTouchExpandable(true);
 		this.setResizeWeight(resizeWeight);
-		this.setMinimumSize(new Dimension(200,200));
+		//this.setMinimumSize(new Dimension(200,200));
 		
 	}
 	

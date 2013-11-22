@@ -1,51 +1,42 @@
 package gae.listeners;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import gae.panel_lists.BoardList;
+import gae.popup_menus.GAEPopupMenu;
+import gae.viewitems.ViewItem;
 
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 
-public class PopupListener implements MouseListener {
-
+public class PopupListener extends MouseAdapter {
+		
+		
+		private GAEPopupMenu myMenu;
+		private BoardList mySource;
 	
-
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			showPopup(e);
+		public PopupListener(GAEPopupMenu menu, BoardList source){
+			myMenu = menu;
+			mySource = source;
 		}
+		
+		public void mousePressed(MouseEvent e) {
+	        maybeShowPopup(e);
+	    }
 
-		private void showPopup(MouseEvent e) {
-			if(e.isPopupTrigger()){
-				JPopupMenu jMenu = new JPopupMenu();
-				jMenu.add(new JMenuItem("Delete"));
-				jMenu.validate();
-			    jMenu.show(e.getComponent(), e.getX(), e.getY());
-			}
-		}
+	    public void mouseReleased(MouseEvent e) {
+	        maybeShowPopup(e);
+	    }
 
-		@Override
-		public void mouseEntered(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseExited(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mousePressed(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
+	    private void maybeShowPopup(MouseEvent e) {
+	        if (e.isPopupTrigger()) {
+	            myMenu.show(e.getComponent(),e.getX(), e.getY());
+	            //finds the selected ViewItem
+	            mySource.setSelectedIndex(mySource.locationToIndex(e.getPoint()));
+	            boolean x = mySource.getSelectionModel().isSelectedIndex(0);
+	            myMenu.setSource((ViewItem)mySource.getSelectedValue());
+	        }
+	    }
 
 }

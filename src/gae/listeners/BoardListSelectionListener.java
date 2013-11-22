@@ -30,7 +30,7 @@ public class BoardListSelectionListener implements ListSelectionListener {
 					listSource.sendData(castedselectedItem.getModel());
 				}
 				
-				listSource.clearSelection();
+				//listSource.clearSelection();
 			}
 			}
 			catch(Exception exception){

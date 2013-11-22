@@ -40,19 +40,25 @@ public class MapPanel extends EditPanel {
 	public void createMap(List<String> dimensions){
 		int width = Integer.parseInt(dimensions.get(0));
 		int height = Integer.parseInt(dimensions.get(1));
-		myMapView = new GUIMap(width, height);
+		myMapView = new GUIMap(width, height, this.getWidth(), this.getHeight());
 		this.add(myMapView, BorderLayout.CENTER);
-		this.setDefaultTiles();
-	}
+		this.repaint();}
 	
-	public void setDefaultTiles(){
-		try {
-			List<Class> classes = myFinder.getClassesForPackage(Constants.TILE_PACKAGE_NAME);
-			
-			myMapView.setDefaultTiles();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+//	public void setDefaultTiles(){
+//		try {
+//			List<Class> classes = myFinder.getClassesForPackage(Constants.TILE_PACKAGE_NAME);
+//			
+//			myMapView.setDefaultTiles();
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+	
+	@Override
+	public void fillBoard(ViewItem tile){
+		if(myMapView!=null){
+			myMapView.fillBoard(tile);
 		}
 	}
 		

@@ -28,4 +28,12 @@ public class FeedbackPanel extends JPanel {
 		add(myPlayerStatusArea);
 	}
 	
+	public JPanel getUnitStatusArea() {
+		return myUnitStatusArea;
+	}
+	
+	public JPanel getPlayerStatusArea() {
+		return myPlayerStatusArea;
+	}
+	
 }

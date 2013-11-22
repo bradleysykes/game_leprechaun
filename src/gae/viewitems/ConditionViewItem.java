@@ -5,6 +5,7 @@ import gae.GUIMap;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,26 +20,33 @@ public class ConditionViewItem extends BoardListViewItem {
 
 	private Condition myCondition;
 
-	public ConditionViewItem(){
-		super();
+	public ConditionViewItem(String name){
+		super(name);
 		// initialize this viewitem's list of properties
 		myProperties = new ArrayList<Stat>();
 	}
+	
+	public ConditionViewItem(){
+		this("test condition");
+	}
+	
+	
 	@Override
 	public List<Stat> getModel() {
 		return myProperties;
 	}
 
 	@Override
-	public BoardListViewItem createModel(List<Stat> inputData, String name) {
+	public BoardListViewItem createModel(List<Stat> inputData, String name, 
+			File imageFile) {
 //		myCondition = new Condition();
 //		myCondition.setStats(inputData);
-		return new ConditionViewItem();
+		return new ConditionViewItem("Test Name");
 	}
 
 	@Override
 	public String getListMessage() {
-		return "Condition List Message";
+		return myName;
 	}
 	@Override
 	public Icon getListIcon() {

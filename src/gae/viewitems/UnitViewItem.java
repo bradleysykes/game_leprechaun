@@ -3,6 +3,8 @@ package gae.viewitems;
 import gae.Controller;
 import gae.GUIMap;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.swing.Icon;
@@ -20,18 +22,19 @@ public class UnitViewItem extends BoardListViewItem {
 	private String UNIT_LIST_MESSAGE = "Unit List Message";
 	private Unit myUnit;
 	private MapObject myMapObject;
+	private File myImage;
 	
-	public UnitViewItem(List<Stat> stats, String name){
+	public UnitViewItem(List<Stat> stats, String name, File imageFile){
 		this(name);
 		myProperties = stats;
-		myUnit.setStats(myProperties);		
+		myImage = imageFile;
+		myUnit.setStats(myProperties);
 	}
 	
 	public UnitViewItem(String name) {
-		super();
+		super(name);
 		myUnit = new Unit("TEST",new Player(),new GameMap(400, 400));
 		myProperties = myUnit.getStats();
-		UNIT_LIST_MESSAGE = name;
 	}
 	/**
 	 * use to figure out what properties this type needs
@@ -48,22 +51,31 @@ public class UnitViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public BoardListViewItem createModel(List<Stat> stats, String name) {
-		BoardListViewItem newGuy = new UnitViewItem(stats, name);
-		return newGuy;
+	public BoardListViewItem createModel(List<Stat> stats, String name, 
+			File imageFile) {
+		return new UnitViewItem(stats, name, imageFile);
 	}
 	
 	public String getImagePath(){
-		return "resources/plus.gif";
+		try {
+			return myImage.getCanonicalPath();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
+		}
 	}
 
 	@Override
 	public String getListMessage() {
-		return UNIT_LIST_MESSAGE;
+		return myName;
 	}
 	@Override
 	public Icon getListIcon() {
-		return new ImageIcon(ICON_PATH+"plus.gif");
+		if(myImage!=null){
+			return new ImageIcon(myImage.getAbsolutePath());
+		}
+		return new ImageIcon(ICON_PATH+"test_icon_image.png");
 	}
 	@Override
 	public void placeOnBoard(GUIMap map, double x, double y) {

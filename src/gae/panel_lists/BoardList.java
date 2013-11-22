@@ -3,6 +3,8 @@ import gae.Controller;
 import gae.dialogues.UnitCreationDialogue;
 import gae.listeners.BoardListSelectionListener;
 import gae.listeners.PopupListener;
+import gae.popup_menus.GAEPopupMenu;
+import gae.popup_menus.TilePopupMenu;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
@@ -10,6 +12,7 @@ import gae.viewitems.ViewItem;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListCellRenderer;
@@ -32,6 +35,7 @@ public abstract class BoardList extends JList {
 	private DefaultListModel myModel;
 	protected Controller myController;
 	protected BoardListViewItem myType;
+	protected GAEPopupMenu myPopup;
 	
 	public BoardList(Controller controller){
 		myController = controller;
@@ -41,7 +45,8 @@ public abstract class BoardList extends JList {
 		this.addListSelectionListener(new BoardListSelectionListener());
 		this.setCellRenderer(new EditListRenderer());
 		//this.addNewItem(new NewUnit(getListType()));
-		this.addMouseListener(new PopupListener());
+		myPopup = this.getPopupMenu();
+		this.addMouseListener(new PopupListener(myPopup, this));
 		//FOR DEBUG
 //		BoardListItem tu = new ToyUnit();
 //		this.addNewItem(tu);
@@ -49,11 +54,14 @@ public abstract class BoardList extends JList {
 	
 
 	public void addNewItem(ViewItem item){
-		item.setController(myController);
 		myModel.insertElementAt(item, 0);
 	}
 	public Controller getController(){
 		return myController;
+	}
+	
+	public GAEPopupMenu getPopupMenu(){
+		return new TilePopupMenu(myController);
 	}
 	
 	public void removeItem(int index) {
@@ -106,9 +114,9 @@ public abstract class BoardList extends JList {
 	 * @param inputData
 	 * @param name 
 	 */
-	public void postInput(List<Stat> inputData, String name){
-		BoardListViewItem newItem = myType.createModel(inputData, name);
-		this.addNewItem(newItem);
+	public void postInput(List<Stat> inputData, String name, File f){
+		BoardListViewItem newItem = myType.createModel(inputData, name,f);
+        this.addNewItem(newItem);
 	}
 		
 }

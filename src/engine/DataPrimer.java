@@ -35,8 +35,8 @@ public class DataPrimer {
 	}
 	
 	private void loadGame(File xmlFile) {
-		DataManager factory = new DataManager(xmlFile);
-		GameElements gameElements = factory.getGameElements();
+		DataManager dataManager = new DataManager();
+		GameElements gameElements = dataManager.getGameElements(xmlFile);
 		myGameEngine.initializeState(gameElements);
 	}
 	
