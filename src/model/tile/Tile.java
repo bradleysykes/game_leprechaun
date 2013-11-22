@@ -53,7 +53,7 @@ public class Tile extends StatCollection implements ModelConstants{
 	}
 	
 	
-	public Collection<Tile> getTiles(double r){
+	public List<Tile> getTiles(double r){
 		int range = (int) r;
 		List<Tile> validTiles = new ArrayList<Tile>();
 		for (int i = getX() - range; i <= getX() + range; i++){

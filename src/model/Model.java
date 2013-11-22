@@ -11,8 +11,8 @@ public class Model {
 	private GameEngine myGameEngine;
 	private Ability myQueuedAbility;
 
-	public Model() {
-
+	public Model(GameEngine ge) {
+		myGameEngine = ge;
 	}
 	
 	public void addPlayer(Player p){
@@ -40,10 +40,8 @@ public class Model {
 //		return null;
 //	}
 	
-	public Tile chooseTile(Collection<Tile> validTiles){
-		// Pass this information to Game Engine for appropriate tile to be selected.
-		// myGameEngine.selectTile(validTiles);
-		return null;
+	public void chooseTile(List<Tile> validTiles){
+		myGameEngine.highlightTiles(validTiles);
 	}
 	
 }
