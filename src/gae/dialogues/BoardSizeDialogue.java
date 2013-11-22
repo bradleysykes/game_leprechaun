@@ -36,9 +36,9 @@ public class BoardSizeDialogue extends InputDialogue {
 	public JPanel createGutsPanel() {
 		JPanel panel = new JPanel(new FlowLayout());
 		JLabel widthLabel = new JLabel("Enter Board Width");
-		myWidthField = new JTextField("1000");
+		myWidthField = new JTextField("10");
 		JLabel heightLabel = new JLabel("Enter Board Height");
-		myHeightField = new JTextField("1000");
+		myHeightField = new JTextField("10");
 		JButton button = new JButton("OK");
 		button.addActionListener(new GetDataAction());
 		panel.add(widthLabel);

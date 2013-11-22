@@ -13,7 +13,7 @@ import jgame.JGColor;
 import jgame.JGObject;
 import jgame.platform.JGEngine;
 
-public class GUIMap extends JGEngine {
+public class GUIMap extends JGEngine implements Constants{
 	
 	private MapEncoder myEncoder;
 	private int myWidth;
@@ -23,19 +23,20 @@ public class GUIMap extends JGEngine {
 	public GUIMap(int width, int height, int componentWidth, int componentHeight){
 		myWidth = width;
 		myHeight = height;
-		initEngineComponent(componentWidth,componentHeight);
+		//System.out.println(componentWidth + " " + componentHeight);
+		initEngineComponent(TILE_SIZE*myWidth,TILE_SIZE*myHeight);
 		//myMap = new GameMap(width,height);
 	}
 	
 	
 	@Override
 	public void initCanvas() {
-		setCanvasSettings(1, 1, myWidth, myHeight, null,null, null);
+		setCanvasSettings(1, 1, TILE_SIZE*myWidth, TILE_SIZE*myHeight, null,null, null);
 	}
 	
 	public void placeOnBoard(){
 		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
-			BoardBuffer.retrieve().placeOnBoard(this, (double) this.getMouseX(), (double) this.getMouseY());
+			BoardBuffer.retrieve().clickOnBoard(this, (double) this.getMouseX(), (double) this.getMouseY());
 		}
 	}
 	
@@ -48,26 +49,26 @@ public class GUIMap extends JGEngine {
 			//onClickAction();
 		}
 		placeOnBoard();
+		//System.out.println(this.getMouseX()+" "+this.getMouseY());
+		//this.drawString("Test",this.getMouseX(),this.getMouseY(),0);
+		//this.setViewOffset(this.getWidth()/2-this.getMouseX(), this.getHeight()/2-this.getMouseX(), true);
 	}
 
 	@Override
 	public void initGame() {
 		setFrameRate(40, 1);
-		setPFSize(myWidth,myHeight);
+		//setPFSize(myWidth*TILE_SIZE,myWidth*TILE_SIZE);
 	}
 
 
 	public void fillBoard(ViewItem tile) {
 		TileViewItem t = (TileViewItem)tile;
-		int x = 0;
+		System.out.println(myWidth);
+		System.out.println(myHeight);
+		
 		for(int q=0;q<myWidth;q+=1){
 			for(int m = 0;m<myHeight;m+=1){
-				if(x==100){
-					return;
-				}
-				//System.out.println("Tile placed");
 				t.placeOnBoard(this, q, m);
-				x++;
 			}
 		}
 	}

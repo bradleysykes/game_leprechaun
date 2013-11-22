@@ -78,9 +78,9 @@ public class UnitViewItem extends BoardListViewItem {
 		}
 		return new ImageIcon(ICON_PATH+"test_icon_image.png");
 	}
+	
 	@Override
 	public void placeOnBoard(GUIMap map, double x, double y) {
-		map.defineImage("unit", "-", 0, getImagePath(),"-");
 		//new JGObject(such and such);
 		MapObject object = new MapObject(x,y,"unit", this);
 	}
