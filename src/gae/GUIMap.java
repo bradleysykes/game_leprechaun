@@ -65,7 +65,7 @@ public class GUIMap extends JGEngine implements Constants{
 		TileViewItem t = (TileViewItem)tile;
 		System.out.println(myWidth);
 		System.out.println(myHeight);
-		this.defineImage("tile", "-", 0, t.getImagePath().replace("\\","/"),"-");
+		this.defineImage("tile", "-", 0, "/"+t.getImagePath(),"-");
 		for(int q=0;q<myWidth;q+=1){
 			for(int m = 0;m<myHeight;m+=1){
 				t.placeOnBoard(this, q, m);
