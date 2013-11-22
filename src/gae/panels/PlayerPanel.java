@@ -46,4 +46,8 @@ public class PlayerPanel extends EditPanel {
 		currentState.setPlayerList(myModelPlayerList);
 		return currentState;
 	}
+	@Override
+	public List<Player> getPlayers() {
+		return myModelPlayerList;
+	}
 }

@@ -40,6 +40,13 @@ public class GUIMap extends JGEngine {
 	}
 	
 	public void doFrame(){
+		if (getMouseButton(1)) {
+			clearMouseButton(1);
+			System.out.println("Mouse at: "+ this.getMouseX() + ","+this.getMouseY());
+			
+			//System.out.println(this.countObjects("turtle", 50));
+			//onClickAction();
+		}
 		placeOnBoard();
 	}
 
@@ -58,7 +65,7 @@ public class GUIMap extends JGEngine {
 				if(x==100){
 					return;
 				}
-				System.out.println("Tile placed");
+				//System.out.println("Tile placed");
 				t.placeOnBoard(this, q, m);
 				x++;
 			}

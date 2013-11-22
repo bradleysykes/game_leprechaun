@@ -16,7 +16,7 @@ import jgame.platform.JGEngine;
 
 public abstract class ViewItem implements Constants {
 
-	private Controller myController;
+	protected Controller myController;
 
 	public abstract Icon getListIcon();
 	

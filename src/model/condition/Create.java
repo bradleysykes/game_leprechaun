@@ -9,6 +9,10 @@ public class Create extends Condition {
 	
 	private Unit myUnit;
 
+	public Create(){
+		super("Create",null);
+	}
+	
 	public Create(Unit goal, Player p) {
 		super("Create", p);
 		myUnit = goal;

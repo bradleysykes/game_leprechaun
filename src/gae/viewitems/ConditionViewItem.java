@@ -2,6 +2,7 @@ package gae.viewitems;
 
 
 import gae.GUIMap;
+import gae.dialogues.ConditionDialogue;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
 
@@ -15,6 +16,7 @@ import javax.swing.ImageIcon;
 import model.Condition;
 import model.condition.Create;
 import model.stats.Stat;
+import model.*;
 
 public class ConditionViewItem extends BoardListViewItem {
 
@@ -39,8 +41,9 @@ public class ConditionViewItem extends BoardListViewItem {
 	@Override
 	public BoardListViewItem createModel(List<Stat> inputData, String name, 
 			File imageFile) {
-//		myCondition = new Condition();
-//		myCondition.setStats(inputData);
+		myController.getPlayers();
+		myCondition = new Create(null, null);
+		myCondition.setStats(inputData);
 		return new ConditionViewItem("Test Name");
 	}
 
