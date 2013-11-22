@@ -60,11 +60,7 @@ public class GameEngine extends JGEngine {
 	}
 	
 	public void doFrame() {
-		
-	}
-	
-	public void checkCollision() {
-		
+		checkCollision(GameTileObject.getCollisionID(), MouseObject.getCollisionID());
 	}
 	
 	public void nextPlayer() {
