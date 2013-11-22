@@ -1,5 +1,6 @@
 package model.abilities;
 
+import engine.GameEngine;
 import model.Ability;
 import model.Resource;
 import model.stats.Stat;
@@ -28,6 +29,11 @@ public class Harvest extends Ability{
 		// Doesn't require special preparation - works with current tile.
 		useAbility();
 		// How will this impact the current queued ability... will that be confusing?
+	}
+
+	@Override
+	public void requestEngineInput(GameEngine myGameEngine) {
+		// Do nothing.		
 	}
 
 }
