@@ -29,7 +29,8 @@ public class MouseObject extends JGObject {
 			GameTileObject gameTile = (GameTileObject) object;
 			Tile tile = gameTile.getTile();
 			if (gameTile.isHighlighted()) { 
-				Model.useAbility(tile);
+				myGameEngine.getModel().useAbility(tile);
+				myGameEngine.removeHighlights();
 				return;
 			}
 			List<Unit> unitList = tile.getUnits();

@@ -24,4 +24,8 @@ public class TileHighlightObject extends JGObject {
 				GameTileObject.getSize(), GameTileObject.getSize(), false, false, myThickness, myColor);
 	}
 	
+	public static int getCollisionID() {
+		return myCollisionID;
+	}
+	
 }
