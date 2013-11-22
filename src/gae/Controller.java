@@ -93,5 +93,16 @@ public class Controller {
 			p.fillBoard(mySource);
 		}
 	}
+	
+	public List<Player> getPlayers(){
+		List<Player> players = null;
+		for(EditPanel p:myPanels){
+			players= p.getPlayers();
+			if (players!=null) {
+				break;
+			}
+		}
+		return players;
+	}
 
 }

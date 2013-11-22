@@ -2,6 +2,7 @@ package gae.panel_lists;
 
 import gae.Constants;
 import gae.Controller;
+import gae.dialogues.ConditionDialogue;
 import gae.popup_menus.GAEPopupMenu;
 import gae.viewitems.ConditionViewItem;
 
@@ -25,6 +26,9 @@ public class ConditionList extends BoardList {
 		return Constants.CONDITION_PACKAGE_NAME;
 	}
 
-	
+	@Override
+	public void createCustomType(){
+		new ConditionDialogue(myController);
+	}
 
 }
