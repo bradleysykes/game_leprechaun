@@ -30,7 +30,7 @@ public class TileList extends BoardList {
 	@Override
 	public GAEPopupMenu getPopupMenu() {
 		// TODO Auto-generated method stub
-		return new TilePopupMenu();
+		return new TilePopupMenu(myController);
 	}
 
 }

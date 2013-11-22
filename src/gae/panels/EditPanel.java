@@ -60,6 +60,11 @@ public abstract class EditPanel extends JPanel implements Constants {
 		// TODO Auto-generated method stub
 		return currentState;
 	}
+
+	public void fillBoard(ViewItem mySource) {
+		// default is to do nothing
+		//override where necessary
+	}
 }
 	
 

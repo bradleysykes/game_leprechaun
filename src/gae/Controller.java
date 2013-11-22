@@ -88,4 +88,10 @@ public class Controller {
 		// create data object to send GameElements object to that.
 	}
 
+	public void fillBoard(ViewItem mySource) {
+		for(EditPanel p:myPanels){
+			p.fillBoard(mySource);
+		}
+	}
+
 }

@@ -1,5 +1,7 @@
 package gae.popup_menus;
 
+import gae.Controller;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -7,7 +9,13 @@ import javax.swing.JMenuItem;
 
 
 public class TilePopupMenu extends GAEPopupMenu {
-
+	
+	private Controller myController;
+	
+	public TilePopupMenu(Controller controller){
+		myController = controller;
+	}
+	
 	@Override
 	public void subInitialize() {
 		// TODO Auto-generated method stub
@@ -17,10 +25,15 @@ public class TilePopupMenu extends GAEPopupMenu {
 	}
 	
 	public class FillListener implements ActionListener{
-
+		
+		/**
+		 * fills every position on the map with this type of tile
+		 */
 		@Override
-		public void actionPerformed(ActionEvent arg0) {
+		public void actionPerformed(ActionEvent e) {
+			//send view item to MapPanel
 			System.out.println("fill map performed");
+			myController.fillBoard(mySource);
 		}
 		
 	}

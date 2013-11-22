@@ -25,7 +25,6 @@ public class GUIMap extends JGEngine {
 		myHeight = height;
 		initEngineComponent(componentWidth,componentHeight);
 		//myMap = new GameMap(width,height);
-		this.setDefaultTiles();
 	}
 	
 	
@@ -51,8 +50,8 @@ public class GUIMap extends JGEngine {
 	}
 
 
-	public void setDefaultTiles() {
-		TileViewItem t = new TileViewItem();
+	public void fillBoard(ViewItem tile) {
+		TileViewItem t = (TileViewItem)tile;
 		int x = 0;
 		for(int q=0;q<myHeight;q+=1){
 			for(int m = 0;m<myWidth;m+=1){

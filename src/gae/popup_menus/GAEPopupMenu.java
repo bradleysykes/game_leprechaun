@@ -1,8 +1,12 @@
 package gae.popup_menus;
 
+import gae.viewitems.ViewItem;
+
 import javax.swing.JPopupMenu;
 
 public abstract class GAEPopupMenu extends JPopupMenu {
+	
+	protected ViewItem mySource;
 	
 	public GAEPopupMenu(){
 		super();
@@ -16,4 +20,8 @@ public abstract class GAEPopupMenu extends JPopupMenu {
 	}
 	
 	public abstract void subInitialize();
+	
+	public void setSource(ViewItem source){
+		mySource = source;
+	}
 }

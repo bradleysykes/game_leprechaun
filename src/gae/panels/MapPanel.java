@@ -44,14 +44,21 @@ public class MapPanel extends EditPanel {
 		this.add(myMapView, BorderLayout.CENTER);
 		this.repaint();}
 	
-	public void setDefaultTiles(){
-		try {
-			List<Class> classes = myFinder.getClassesForPackage(Constants.TILE_PACKAGE_NAME);
-			
-			myMapView.setDefaultTiles();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+//	public void setDefaultTiles(){
+//		try {
+//			List<Class> classes = myFinder.getClassesForPackage(Constants.TILE_PACKAGE_NAME);
+//			
+//			myMapView.setDefaultTiles();
+//		} catch (ClassNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+	
+	@Override
+	public void fillBoard(ViewItem tile){
+		if(myMapView!=null){
+			myMapView.fillBoard(tile);
 		}
 	}
 		

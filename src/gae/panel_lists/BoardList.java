@@ -46,7 +46,7 @@ public abstract class BoardList extends JList {
 		this.setCellRenderer(new EditListRenderer());
 		//this.addNewItem(new NewUnit(getListType()));
 		myPopup = this.getPopupMenu();
-		this.addMouseListener(new PopupListener(myPopup));
+		this.addMouseListener(new PopupListener(myPopup, this));
 		//FOR DEBUG
 //		BoardListItem tu = new ToyUnit();
 //		this.addNewItem(tu);
@@ -62,7 +62,7 @@ public abstract class BoardList extends JList {
 	}
 	
 	public GAEPopupMenu getPopupMenu(){
-		return new TilePopupMenu();
+		return new TilePopupMenu(myController);
 	}
 	
 	public void removeItem(int index) {

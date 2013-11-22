@@ -32,8 +32,8 @@ public class TileViewItem extends BoardListViewItem {
 
 	@Override
 	public BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile) {
-		BoardListViewItem newGuy = new TileViewItem();
 		//newGuy.setStats(inputData);
+		BoardListViewItem newGuy = new TileViewItem();
 		return newGuy;
 	}
 
