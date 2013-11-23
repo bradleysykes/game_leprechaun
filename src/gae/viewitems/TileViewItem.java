@@ -20,7 +20,6 @@ import model.tile.Tile;
 public class TileViewItem extends BoardListViewItem {
 
 	private Tile myTile = new Tile(20,20,new GameMap(20,20));
-	private MapObject myMapObject;
 	private File myImage;
 	private String myImagePath;
 	
@@ -91,9 +90,12 @@ public class TileViewItem extends BoardListViewItem {
 	}
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player){
-		map.defineImage("tile", "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
+		int xTile = (int) ((x-x%TILE_SIZE)/TILE_SIZE);
+		int yTile = (int) ((y-y%TILE_SIZE)/TILE_SIZE);
+		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		System.out.println(x + "   " +y);
-		myMapObject = new MapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,"tile",this);
+		myMapObject = new TileMapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,myMapObjectPrefix,this);
+		map.getModelMap().setTile(xTile, yTile, myTile);
 	}
 	
 }

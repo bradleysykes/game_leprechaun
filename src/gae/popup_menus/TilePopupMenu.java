@@ -1,8 +1,10 @@
 package gae.popup_menus;
 
+import gae.BoardBuffer;
 import gae.Controller;
 import gae.panel_lists.BoardList;
 import gae.popup_menus.GAEPopupMenu.DeleteListener;
+import gae.viewitems.BoardListViewItem;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,6 +29,9 @@ public class TilePopupMenu extends GAEPopupMenu {
 		JMenuItem delete = new JMenuItem("Delete");
 		delete.addActionListener(new DeleteListener(myListSource));
 		this.add(delete);
+		JMenuItem removeFromMap = new JMenuItem("Remove All From Map");
+		removeFromMap.addActionListener(new RemoveListener(myListSource));
+		this.add(removeFromMap);
 	}
 	
 	public class FillListener implements ActionListener{
@@ -42,5 +47,4 @@ public class TilePopupMenu extends GAEPopupMenu {
 		}
 		
 	}
-
 }

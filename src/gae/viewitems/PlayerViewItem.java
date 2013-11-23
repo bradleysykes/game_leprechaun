@@ -37,7 +37,7 @@ public class PlayerViewItem extends ViewItem {
 	}
 	
 	public void assignUnit(Unit myItem) {
-		// Need model method to add unit to player
+		myPlayer.addUnit(myItem);
 	}
 	
 	public Player getPlayer() {

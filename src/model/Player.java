@@ -56,5 +56,9 @@ public class Player extends StatCollection implements ModelConstants{
 			unit.refresh();
 		}
 	}
+	
+	public void addUnit(Unit addMe) {
+		myUnits.add(addMe);
+	}
 
 }
