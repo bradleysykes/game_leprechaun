@@ -7,6 +7,7 @@ import javax.swing.JMenuItem;
 
 import gae.Controller;
 import gae.panel_lists.BoardList;
+import gae.popup_menus.GAEPopupMenu.DeleteListener;
 import gae.popup_menus.TilePopupMenu.FillListener;
 
 
@@ -24,6 +25,9 @@ public class UnitPopupMenu extends GAEPopupMenu {
 		JMenuItem item = new JMenuItem("Edit");
 		item.addActionListener(new EditListener());
 		this.add(item);
+		JMenuItem delete = new JMenuItem("Delete");
+		delete.addActionListener(new DeleteListener(myListSource));
+		this.add(delete);
 	}
 	
 	public class EditListener implements ActionListener{
