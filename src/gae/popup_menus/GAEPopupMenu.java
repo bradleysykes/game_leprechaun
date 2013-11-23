@@ -3,8 +3,10 @@ package gae.popup_menus;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import gae.BoardBuffer;
 import gae.Controller;
 import gae.panel_lists.BoardList;
+import gae.viewitems.BoardListViewItem;
 import gae.viewitems.ViewItem;
 
 import javax.swing.JMenuItem;
@@ -23,9 +25,20 @@ public abstract class GAEPopupMenu extends JPopupMenu {
 	protected void initialize() {
 		//all shared menu items go here
 		//then call subclass initialize
-		JMenuItem item = new JMenuItem("Properties");
-		this.add(item);
+		JMenuItem propertiesItem = new JMenuItem("Properties");
+		propertiesItem.addActionListener(new PropertiesListener());
+		this.add(propertiesItem);
 		subInitialize();
+	}
+	
+	public class PropertiesListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// launch view of this item's properties
+			mySource.showProperties();
+		}
+		
 	}
 	
 	public abstract void subInitialize();
@@ -43,8 +56,11 @@ public abstract class GAEPopupMenu extends JPopupMenu {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			//remove from panel display
 			myList.removeItem(myList.getSelectedIndex());
-			System.out.println(myList.getModel().getSize());
+			// clear buffer so it cannot be placed on map
+			BoardBuffer.clear();
+			myController.removeBoardObject((BoardListViewItem)mySource);
 		}
 		
 	}

@@ -59,10 +59,11 @@ public class GUIMap extends JGEngine implements Constants{
 		//this.drawString("Test",this.getMouseX(),this.getMouseY(),0);
 		//this.setViewOffset(this.getWidth()/2-this.getMouseX(), this.getHeight()/2-this.getMouseX(), true);
 	}
-
+	
 	private void checkPopup() {
 		if(this.getKey(KeyMouse3)&&myPopup!=null){
 			myPopup.show(this,this.getMouseX(),this.getMouseY());
+			myPopup.revalidate();
 		}
 	}
 

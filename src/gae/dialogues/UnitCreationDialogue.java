@@ -6,6 +6,8 @@ import gae.ViewItemField;
 import gae.buttons.FileButton;
 import gae.buttons.SaveInputButton;
 import gae.panel_lists.BoardList;
+import gae.panel_lists.NullBoardList;
+import gae.viewitems.BoardListViewItem;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -56,6 +58,11 @@ public class UnitCreationDialogue extends InputDialogue {
 		this.add(myEnterButton);	
 	}
 	
+	public UnitCreationDialogue(String name, List<Stat> model,BoardListViewItem itemSource) {
+		// launch edit properties view
+		super(model,new NullBoardList());
+	}
+
 	public void initMap(){
 		
 	}

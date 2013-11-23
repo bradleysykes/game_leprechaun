@@ -2,9 +2,9 @@ package gae.listeners;
 
 import gae.Controller;
 import gae.GUIMap;
-import gae.dialogues.MapPopupMenu;
 import gae.panels.MapPanel;
 import gae.popup_menus.GAEPopupMenu;
+import gae.popup_menus.MapPopupMenu;
 import gae.viewitems.ViewItem;
 
 import java.awt.event.MouseAdapter;

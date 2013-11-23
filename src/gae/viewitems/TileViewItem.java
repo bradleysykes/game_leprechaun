@@ -31,6 +31,7 @@ public class TileViewItem extends BoardListViewItem {
 	public TileViewItem(List<Stat> stats,String name, File f){
 		super(name);
 		myProperties = stats;
+		myMapObjectPrefix = name+hashCode();
 		if(!(f==null)){
 			myImagePath = f.getPath();
 			myImage = f;
@@ -85,14 +86,14 @@ public class TileViewItem extends BoardListViewItem {
 	@Override
 	public void placeOnBoard(GUIMap map, double x, double y) {
 		//new JGObject(such and such);
-		myMapObject = new MapObject(x*TILE_SIZE,y*TILE_SIZE,"tile", this);
+		myMapObject = new MapObject(myMapObjectPrefix,x*TILE_SIZE,y*TILE_SIZE,"tile", this);
 		//System.out.println("tile placed");
 	}
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y){
 		map.defineImage("tile", "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		System.out.println(x + "   " +y);
-		myMapObject = new MapObject(x-x%TILE_SIZE,y-y%TILE_SIZE,"tile",this);
+		myMapObject = new MapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,"tile",this);
 	}
 	
 }

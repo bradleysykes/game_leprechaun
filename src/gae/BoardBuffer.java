@@ -14,6 +14,10 @@ public class BoardBuffer {
 		return myItem;
 	}
 	
+	public static void clear(){
+		myItem = null;
+	}
+	
 	public static void push(ViewItem item){
 		if(item instanceof BoardListViewItem){
 			myItem = (BoardListViewItem)item;

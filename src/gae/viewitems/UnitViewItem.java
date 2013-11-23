@@ -2,6 +2,8 @@ package gae.viewitems;
 
 import gae.Controller;
 import gae.GUIMap;
+import gae.dialogues.InputDialogue;
+import gae.dialogues.UnitCreationDialogue;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +12,7 @@ import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import sun.util.calendar.LocalGregorianCalendar.Date;
 import util.ImageTool;
 
 import jgame.JGObject;
@@ -24,25 +27,25 @@ public class UnitViewItem extends BoardListViewItem {
 
 	private String UNIT_LIST_MESSAGE = "Unit List Message";
 	private Unit myUnit = new Unit("Unit",new Player(), new GameMap(50,50));
-	private MapObject myMapObject;
 	private File myImage;
 	private String myImagePath;
 	
 	public UnitViewItem(List<Stat> stats, String name, File imageFile){
 		super(name);
 		myProperties = stats;
+		myMapObjectPrefix = name+hashCode();
 		if(!(imageFile==null)){
 			//image file has been uploaded by user
 			myImagePath = imageFile.getPath();
 			myImage = imageFile;
 			System.out.println(myImage.getPath());
-			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 79, 79);
+			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 60, 60);
 		}
 		else{
 			//default image file
 			myImagePath=System.getProperty("user.dir")+"\\src\\gae\\resources\\test_icon_image.png";
 			myImage = new File(myImagePath);
-			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 79,79);
+			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 60,60);
 		}
 		myUnit.setStats(myProperties);
 	}
@@ -92,18 +95,21 @@ public class UnitViewItem extends BoardListViewItem {
 	public Icon getListIcon() {
 		return new ImageIcon(myImage.getPath());
 	}
+	@Override
+	public void showProperties(){
+		InputDialogue d = new UnitCreationDialogue(myName,this.getModel(),this);
+	}
 	
 	@Override
 	public void placeOnBoard(GUIMap map, double x, double y) {
 		//new JGObject(such and such);
-		MapObject object = new MapObject(x,y,"unit", this);
+		myMapObject = new MapObject(myMapObjectPrefix, x,y,"unit", this);
 	}
 
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y) {
 		map.defineImage("unit", "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
-		System.out.println(x + "   " +y);
-		myMapObject = new MapObject(x-x%UNIT_SIZE,y-y%UNIT_SIZE,"unit",this);
+		myMapObject = new MapObject(myMapObjectPrefix,x-x%UNIT_SIZE,y-y%UNIT_SIZE,"unit",this);
 	}
 
 }

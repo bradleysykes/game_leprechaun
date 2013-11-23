@@ -3,6 +3,7 @@ package gae.panels;
 import gae.Constants;
 import gae.Controller;
 import gae.panel_lists.BoardList;
+import gae.viewitems.BoardListViewItem;
 import gae.viewitems.TaskViewItem;
 import gae.viewitems.ViewItem;
 
@@ -37,6 +38,10 @@ public abstract class EditPanel extends JPanel implements Constants {
 //		this.setMinimumSize(minimum);
 //		this.setPreferredSize(preferred);
 //		component.setPreferredSize(preferred);
+	}
+	
+	public void removeBoardObject(BoardListViewItem item){
+		// default is to do nothing
 	}
 	
 	/*Used to display the title of each panel*/

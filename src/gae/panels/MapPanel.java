@@ -4,8 +4,9 @@ import gae.Constants;
 import gae.Controller;
 import gae.GUIMap;
 import gae.PackageClassFinder;
-import gae.dialogues.MapPopupMenu;
 import gae.listeners.MapPopupListener;
+import gae.popup_menus.MapPopupMenu;
+import gae.viewitems.BoardListViewItem;
 import gae.viewitems.ViewItem;
 
 import java.awt.BorderLayout;
@@ -47,6 +48,11 @@ public class MapPanel extends EditPanel {
 		this.add(myMapView, BorderLayout.CENTER);
 		this.revalidate();
 		}
+	
+	public void removeBoardObject(BoardListViewItem item){
+		myMapView.removeObjects(item.getPrefix(),item.getMapObject().colid);
+		System.out.println("hah");
+	}
 	
 //	public void setDefaultTiles(){
 //		try {

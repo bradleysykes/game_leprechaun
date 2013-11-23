@@ -40,6 +40,12 @@ public class Controller {
 			p.addViewItem(item);
 		}
 	}
+	
+	public void removeBoardObject(BoardListViewItem item){
+		for(EditPanel p:myPanels){
+			p.removeBoardObject(item);
+		}
+	}
 
 	public void addPanel(EditPanel panel){
 		myPanels.add(panel);

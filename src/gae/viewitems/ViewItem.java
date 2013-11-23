@@ -31,4 +31,9 @@ public abstract class ViewItem implements Constants {
 	public boolean dialogueActive(){
 		return false;
 	}
+
+	public void showProperties() {
+		// TODO Auto-generated method stub
+		
+	}
 }

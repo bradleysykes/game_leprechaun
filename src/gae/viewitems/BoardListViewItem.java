@@ -10,15 +10,29 @@ import java.util.List;
 
 import javax.swing.Icon;
 
+import jgame.JGObject;
+
 import model.stats.Stat;
 
 public abstract class BoardListViewItem extends ViewItem {
 	protected List<Stat> myProperties;
 	protected String myName;
+	protected MapObject myMapObject;
+	protected String myMapObjectPrefix;
 	
 	public BoardListViewItem(String name){
 		myName = name;
 	}
+	
+	@Override
+	public int hashCode(){
+		return (int)System.currentTimeMillis();
+	}
+	
+	public String getPrefix(){
+		return myMapObjectPrefix;
+	}
+	
 	@Override
 	public abstract Icon getListIcon();
 
@@ -37,7 +51,10 @@ public abstract class BoardListViewItem extends ViewItem {
 		
 	}
 
-	public abstract BoardListViewItem createModel(List<Stat> inputData, 
-			String name, File imageFile);
+	public abstract BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile);
+	
+	public JGObject getMapObject() {
+		return myMapObject;
+	}
 
 }

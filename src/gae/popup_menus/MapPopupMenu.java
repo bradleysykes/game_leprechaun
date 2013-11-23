@@ -1,4 +1,4 @@
-package gae.dialogues;
+package gae.popup_menus;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,7 +9,6 @@ import gae.Controller;
 import gae.GUIMap;
 import gae.panels.EditPanel;
 import gae.panels.MapPanel;
-import gae.popup_menus.GAEPopupMenu;
 
 public class MapPopupMenu extends GAEPopupMenu {
 	
