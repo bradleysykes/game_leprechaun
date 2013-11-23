@@ -92,9 +92,9 @@ public class TileViewItem extends BoardListViewItem {
 	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player){
 		int xTile = (int) ((x-x%TILE_SIZE)/TILE_SIZE);
 		int yTile = (int) ((y-y%TILE_SIZE)/TILE_SIZE);
-		map.defineImage("tile", "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
+		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		System.out.println(x + "   " +y);
-		myMapObject = new TileMapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,"tile",this);
+		myMapObject = new TileMapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,myMapObjectPrefix,this);
 		map.getModelMap().setTile(xTile, yTile, myTile);
 	}
 	
