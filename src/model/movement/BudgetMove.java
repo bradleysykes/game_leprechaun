@@ -3,6 +3,8 @@ package model.movement;
 import java.util.ArrayList;
 import java.util.List;
 
+import engine.GameEngine;
+
 import model.GameMap;
 import model.abilities.Move;
 import model.tile.Tile;
@@ -65,5 +67,4 @@ public class BudgetMove extends Move {
 		}
 		return -1;
 	}
-
 }

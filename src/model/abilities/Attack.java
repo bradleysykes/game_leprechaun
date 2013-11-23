@@ -2,6 +2,8 @@ package model.abilities;
 
 import java.util.List;
 
+import engine.GameEngine;
+
 import model.Ability;
 import model.Attributes;
 import model.stats.StatCollection;
@@ -46,6 +48,11 @@ public class Attack extends Ability{
 		unitAttributes.setStat("Health",myHealth);
 		targetAttributes.setStat("Health",enemyHealth);
 		myValid = false;
+	}
+
+	@Override
+	public void requestEngineInput(GameEngine myGameEngine) {
+		// Request tile from list of valid tiles.
 	}
 
 }
