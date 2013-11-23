@@ -117,7 +117,6 @@ public class UnitViewItem extends BoardListViewItem {
 		newGuy.setMapPosition(tileX/UNIT_SIZE,tileY/UNIT_SIZE);
 		player.assignUnit(newGuy);
 		System.out.println(player.getPlayer().hashCode());
-		//Need a method to place on map
 	}
 
 }
