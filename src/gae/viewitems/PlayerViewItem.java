@@ -23,7 +23,6 @@ public class PlayerViewItem extends ViewItem {
 	}
 	@Override
 	public Icon getListIcon() {
-		System.out.println(myImagePath);
 		return new ImageIcon(myImagePath);
 	}
 

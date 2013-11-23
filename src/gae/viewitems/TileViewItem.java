@@ -35,12 +35,12 @@ public class TileViewItem extends BoardListViewItem {
 		if(!(f==null)){
 			myImagePath = f.getPath();
 			myImage = f;
-			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 79, 79);
+			ImageTool.scaleAndOverwriteImage(myImage.getPath(), TILE_IMAGE_RESIZE, TILE_IMAGE_RESIZE);
 		}
 		else{
 			myImagePath=System.getProperty("user.dir")+"\\src\\gae\\resources\\test_tile.jpg";
 			myImage = new File(myImagePath);
-			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 79,79);
+			ImageTool.scaleAndOverwriteImage(myImage.getPath(), TILE_IMAGE_RESIZE,TILE_IMAGE_RESIZE);
 		}
 	}
 	

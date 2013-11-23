@@ -39,13 +39,13 @@ public class UnitViewItem extends BoardListViewItem {
 			myImagePath = imageFile.getPath();
 			myImage = imageFile;
 			System.out.println(myImage.getPath());
-			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 60, 60);
+			ImageTool.scaleAndOverwriteImage(myImage.getPath(), UNIT_IMAGE_RESIZE,UNIT_IMAGE_RESIZE);
 		}
 		else{
 			//default image file
 			myImagePath=System.getProperty("user.dir")+"\\src\\gae\\resources\\test_icon_image.png";
 			myImage = new File(myImagePath);
-			ImageTool.scaleAndOverwriteImage(myImage.getPath(), 60,60);
+			ImageTool.scaleAndOverwriteImage(myImage.getPath(), UNIT_IMAGE_RESIZE,UNIT_IMAGE_RESIZE);
 		}
 		myUnit.setStats(myProperties);
 	}

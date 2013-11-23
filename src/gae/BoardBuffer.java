@@ -25,9 +25,9 @@ public class BoardBuffer {
 			return myItem;
 		}
 		else{
-			JDialog dialog = new JDialog();
-			dialog.setLocation(10, 10);
-			JOptionPane.showMessageDialog(dialog, "Please go die");
+//			JDialog dialog = new JDialog();
+//			dialog.setLocation(10, 10);
+//			JOptionPane.showMessageDialog(dialog, "Please go die");
 			return new NullViewItem();
 		}
 	}

@@ -14,6 +14,7 @@ import model.GameMap;
 import model.Player;
 import model.tile.Tile;
 import jgame.JGColor;
+import jgame.JGFont;
 import jgame.JGObject;
 import jgame.platform.JGEngine;
 
@@ -24,10 +25,11 @@ public class GUIMap extends JGEngine implements Constants{
 	private int myHeight;
 	private GameMap myMap;
 	private GAEPopupMenu myPopup;
+	private int xOffset = 0, yOffset=0;
+	
 	public GUIMap(int width, int height, int componentWidth, int componentHeight){
 		myWidth = width;
 		myHeight = height;
-		//System.out.println(componentWidth + " " + componentHeight);
 		initEngineComponent(TILE_SIZE*myWidth,TILE_SIZE*myHeight);
 		myMap = new GameMap(width,height);
 	}
@@ -39,46 +41,52 @@ public class GUIMap extends JGEngine implements Constants{
 	
 	@Override
 	public void initCanvas() {
-		setCanvasSettings(1, 1, TILE_SIZE*myWidth, TILE_SIZE*myHeight, null,null, null);
+		setCanvasSettings(1, 1, (TILE_SIZE*myWidth)/2, (TILE_SIZE*myHeight)/2, null,null, null);
 	}
 	
-	public void placeOnBoard(){
+	@Override
+	public void initGame() {
+		setFrameRate(45, 2);
+		setPFSize(2,2);
+	}
+	
+	public void checkMouse(){
 		if(this.getKey(256)){
 			PlayerViewItem active = BoardBuffer.getActivePlayer();
-			BoardBuffer.retrieve().clickOnBoard(this, (double) this.getMouseX(), (double) this.getMouseY(), active);
+			BoardBuffer.retrieve().clickOnBoard(this, (double) xOffset, (double) yOffset, active);
+			this.revalidate();
 		}
-	}
-	
-	public void doFrame(){
-		if (getMouseButton(1)) {
-			clearMouseButton(1);
-			System.out.println("Mouse at: "+ this.getMouseX() + ","+this.getMouseY());
-			
-			//System.out.println(this.countObjects("turtle", 50));
-			//onClickAction();
-		}
-		placeOnBoard();
-		checkPopup();
-		//System.out.println(this.getMouseX()+" "+this.getMouseY());
-		//this.drawString("Test",this.getMouseX(),this.getMouseY(),0);
-		//this.setViewOffset(this.getWidth()/2-this.getMouseX(), this.getHeight()/2-this.getMouseX(), true);
-	}
-	
-	private void checkPopup() {
 		if(this.getKey(KeyMouse3)&&myPopup!=null){
 			myPopup.show(this,this.getMouseX(),this.getMouseY());
 			myPopup.revalidate();
 		}
 	}
-
-
-	@Override
-	public void initGame() {
-		setFrameRate(40, 1);
-		//setPFSize(myWidth*TILE_SIZE,myWidth*TILE_SIZE);
+	
+	public void paintFrame(){
+		setColor(JGColor.white);
+		setFont(new JGFont("Arial",0,20));
+		drawString("Objects on board = "+this.countObjects(null, 0),viewWidth()/2, 40, 0 );
+		//drawString("Playfield Size: ("+this.pfWidth()+","+this.pfHeight()+").",viewWidth()/2, 40, 0);
+		drawString("View Dimensions: ("+this.viewWidth()+","+this.viewHeight()+").",viewWidth()/2, 10, 0);
+		drawString("Move the mouse to scroll.", viewWidth()/2, 80, 0);
+		drawString("Playfield offset is now ("+xOffset+","+yOffset+").",viewWidth()/2, 120, 0);
+		drawString("Mouse currently at ("+this.getMouseX()+","+this.getMouseY()+").",viewWidth()/2, 160, 0);
+//		drawString("TOP LEFT",     0,         8,             -1,
+//				true // indicate it should be drawn relative to playfield
+//			);
+//			drawString("BOTTOM LEFT",  0,         -1*pfHeight()-20, -1, true);
+//			drawString("TOP RIGHT",    pfWidth(), 8,              1, true);
+//			drawString("BOTTOM RIGHT", pfWidth(), -1*pfHeight()-20,  1, true);
 	}
-
-
+	
+	public void doFrame(){
+		checkMouse();
+		this.clearKey(256);
+		xOffset =  getMouseX() * pfWidth() / viewWidth();
+		yOffset = (getMouseY() *pfHeight()/viewHeight());
+		this.setViewOffset(xOffset,yOffset, true);
+	}
+	
 	public void fillBoard(ViewItem tile) {
 		TileViewItem t = (TileViewItem)tile;
 		System.out.println(myWidth);
