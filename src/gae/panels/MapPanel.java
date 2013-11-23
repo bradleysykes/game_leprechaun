@@ -31,7 +31,6 @@ public class MapPanel extends EditPanel {
 	
 	private GUIMap myMapView;
 	private PackageClassFinder myFinder;
-	private GameMap myModelMap;
 
 	public MapPanel(Controller controller){
 		super(controller);
@@ -74,7 +73,7 @@ public class MapPanel extends EditPanel {
 		
 	@Override
 	public GameElements giveStateObjects(GameElements currentState) {
-		currentState.setGameMap(myModelMap);
+		currentState.setGameMap(myMapView.getModelMap());
 		return currentState;
 	}
 	public void clearMap() {

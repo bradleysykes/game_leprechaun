@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 
 import model.Player;
 import model.stats.Stat;
+import model.unit.Unit;
 
 public class PlayerViewItem extends ViewItem {
 	
@@ -28,13 +29,20 @@ public class PlayerViewItem extends ViewItem {
 
 	@Override
 	public String getListMessage() {
-		// TODO Auto-generated method stub
 		return "Player";
 	}
 
 	@Override
 	public void onClick(Controller c) {
-		//PlayerDialogue d = new PlayerDialogue();
+	
+	}
+	
+	public void assignUnit(Unit myItem) {
+		// Need model method to add unit to player
+	}
+	
+	public Player getPlayer() {
+		return myPlayer;
 	}
 
 }

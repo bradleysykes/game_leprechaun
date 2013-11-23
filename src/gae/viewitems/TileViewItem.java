@@ -90,7 +90,7 @@ public class TileViewItem extends BoardListViewItem {
 		//System.out.println("tile placed");
 	}
 	@Override
-	public void clickOnBoard(GUIMap map, double x, double y){
+	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player){
 		map.defineImage("tile", "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		System.out.println(x + "   " +y);
 		myMapObject = new MapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,"tile",this);

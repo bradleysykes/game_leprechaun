@@ -1,6 +1,7 @@
 package gae;
 
 import gae.popup_menus.GAEPopupMenu;
+import gae.viewitems.PlayerViewItem;
 import gae.viewitems.TileViewItem;
 import gae.viewitems.ViewItem;
 
@@ -9,6 +10,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import data.encoder.MapEncoder;
 import util.reflection.Reflection;
 import model.GameMap;
+import model.Player;
 import model.tile.Tile;
 import jgame.JGColor;
 import jgame.JGObject;
@@ -26,7 +28,7 @@ public class GUIMap extends JGEngine implements Constants{
 		myHeight = height;
 		//System.out.println(componentWidth + " " + componentHeight);
 		initEngineComponent(TILE_SIZE*myWidth,TILE_SIZE*myHeight);
-		//myMap = new GameMap(width,height);
+		myMap = new GameMap(width,height);
 	}
 	
 	public void setPopup(GAEPopupMenu popup){
@@ -41,7 +43,8 @@ public class GUIMap extends JGEngine implements Constants{
 	
 	public void placeOnBoard(){
 		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
-			BoardBuffer.retrieve().clickOnBoard(this, (double) this.getMouseX(), (double) this.getMouseY());
+			PlayerViewItem active = BoardBuffer.getActivePlayer();
+			BoardBuffer.retrieve().clickOnBoard(this, (double) this.getMouseX(), (double) this.getMouseY(), active);
 		}
 	}
 	
@@ -85,6 +88,10 @@ public class GUIMap extends JGEngine implements Constants{
 				t.placeOnBoard(this, q, m);
 			}
 		}
+	}
+
+	public GameMap getModelMap() {
+		return myMap;
 	}
 
 }

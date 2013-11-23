@@ -43,7 +43,8 @@ public abstract class BoardListViewItem extends ViewItem {
 	
 	public abstract void placeOnBoard(GUIMap map, double x, double y);
 	
-	public abstract void clickOnBoard(GUIMap map, double x, double y);
+	public abstract void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem activePlayer);
+	 
 
 	@Override
 	public void onClick(Controller c) {

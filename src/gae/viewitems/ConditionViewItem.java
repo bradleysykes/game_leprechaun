@@ -63,7 +63,7 @@ public class ConditionViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public void clickOnBoard(GUIMap map, double x, double y) {
+	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player) {
 		// TODO Auto-generated method stub
 		
 	}
