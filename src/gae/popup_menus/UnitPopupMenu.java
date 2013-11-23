@@ -11,10 +11,13 @@ import gae.popup_menus.TilePopupMenu.FillListener;
 
 
 public class UnitPopupMenu extends GAEPopupMenu {
-	
+	private BoardList myListSource;
 	public UnitPopupMenu(Controller controller, BoardList list){
-		super(controller, list);
+		super(controller);
+		myListSource = list;
+		initialize();
 	}
+	
 	@Override
 	public void subInitialize() {
 		// TODO Auto-generated method stub

@@ -54,7 +54,7 @@ public class UnitCreationDialogue extends InputDialogue {
 			}
 			
 		});
-		this.add(myEnterButton, BorderLayout.SOUTH);	
+		this.add(myEnterButton);	
 	}
 	
 	public void initMap(){

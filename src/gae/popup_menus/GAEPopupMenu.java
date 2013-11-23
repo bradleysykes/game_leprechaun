@@ -14,23 +14,17 @@ public abstract class GAEPopupMenu extends JPopupMenu {
 	
 	protected ViewItem mySource;
 	protected Controller myController;
-	protected BoardList myList;
 	
-	public GAEPopupMenu(Controller controller, BoardList list){
+	public GAEPopupMenu(Controller controller){
 		super();
 		myController = controller;
-		myList = list;
-		initialize();
 	}
 
-	private void initialize() {
+	protected void initialize() {
 		//all shared menu items go here
 		//then call subclass initialize
 		JMenuItem item = new JMenuItem("Properties");
 		this.add(item);
-		JMenuItem delete = new JMenuItem("Delete");
-		delete.addActionListener(new DeleteListener());
-		this.add(delete);
 		subInitialize();
 	}
 	
@@ -41,7 +35,12 @@ public abstract class GAEPopupMenu extends JPopupMenu {
 	}
 	
 	public class DeleteListener implements ActionListener {
-
+		private BoardList myList;
+		
+		public DeleteListener(BoardList list){
+			myList = list;
+		}
+		
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			myList.removeItem(myList.getSelectedIndex());

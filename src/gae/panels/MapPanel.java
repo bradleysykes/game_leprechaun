@@ -68,4 +68,10 @@ public class MapPanel extends EditPanel {
 		currentState.setGameMap(myModelMap);
 		return currentState;
 	}
+	public void clearMap() {
+		myMapView.removeObjects(null, 0);
+	}
+	public boolean hasMap() {
+		return myMapView!=null;
+	}
 }
