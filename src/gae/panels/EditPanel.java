@@ -11,6 +11,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.util.List;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import data.GameElements;
@@ -20,10 +21,13 @@ import model.stats.Stat;
 
 public abstract class EditPanel extends JPanel implements Constants {
 	
-	private Controller myController;
+	protected Controller myController;
 
 	public EditPanel(Controller controller){
 		this.setLayout(new BorderLayout());
+		JLabel titleLabel = new JLabel();
+		titleLabel.setText("<html><h3>"+this.getTitle()+"</h3>");
+		this.add(titleLabel,BorderLayout.PAGE_START);
 		controller.addPanel(this);
 		myController = controller;
 	}
@@ -34,6 +38,9 @@ public abstract class EditPanel extends JPanel implements Constants {
 //		this.setPreferredSize(preferred);
 //		component.setPreferredSize(preferred);
 	}
+	
+	/*Used to display the title of each panel*/
+	public abstract String getTitle();
 	
 	public void postProperties(List<Stat> properties){
 		// do nothing

@@ -51,4 +51,10 @@ public class TaskPanel extends EditPanel {
 		}
 		return null;
 	}
+
+	@Override
+	public String getTitle() {
+		// TODO Auto-generated method stub
+		return TASK_PANEL_TITLE;
+	}
 }

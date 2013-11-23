@@ -7,7 +7,6 @@ import gae.dialogues.InputDialogue;
 public class BoardSizeTaskViewItem extends TaskViewItem {
 	private static String myMessage = "Select Board Size";
 	private Controller myController;
-	private InputDialogue myDialogue;
 	
 	public BoardSizeTaskViewItem(Controller controller) {
 		super(myMessage, controller);

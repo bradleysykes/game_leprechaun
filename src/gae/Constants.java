@@ -13,4 +13,10 @@ public interface Constants {
 	final String CONDITION_PACKAGE_NAME = "tile";
 	
 	final int TILE_SIZE = 80;
+	
+	final String BOARD_PANEL_TITLE = "Board Objects";
+	final String MAP_PANEL_TITLE = "Game Map";
+	final String OBJECT_PANEL_TITLE = "Object Properties";
+	final String PLAYER_PANEL_TITLE = "Available Players";
+	final String TASK_PANEL_TITLE = "Game To-Dos";
 }

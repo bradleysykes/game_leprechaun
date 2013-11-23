@@ -8,6 +8,7 @@ import java.util.Map;
 
 import gae.Controller;
 import gae.ViewItemField;
+import gae.listeners.GAEWindowListener;
 import gae.panel_lists.BoardList;
 
 import javax.swing.JFrame;
@@ -28,6 +29,7 @@ public abstract class InputDialogue extends JFrame {
 		myList = list;
 		JPanel panel = createGutsPanel();
 		this.add(panel);
+		this.addWindowListener(new GAEWindowListener(this));
 		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.pack();
@@ -69,5 +71,10 @@ public abstract class InputDialogue extends JFrame {
 		public void actionPerformed(ActionEvent arg0) {
 			postInput();
 		}
+	}
+
+	public void onClose() {
+		// do nothing...yet
+		
 	}
 }

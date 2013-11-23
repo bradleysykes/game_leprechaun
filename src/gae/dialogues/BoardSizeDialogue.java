@@ -48,6 +48,11 @@ public class BoardSizeDialogue extends InputDialogue {
 		panel.add(button);
 		return panel;
 	}
+	
+	@Override 
+	public void onClose(){
+		
+	}
 
 	@Override
 	public void postInput() {

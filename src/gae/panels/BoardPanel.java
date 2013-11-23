@@ -14,6 +14,7 @@ import model.Player;
 
 
 public class BoardPanel extends EditPanel {
+	
 	private JTabbedPane myTabbedPane;
 	public BoardPanel(Controller controller){
 		super(controller);
@@ -21,6 +22,11 @@ public class BoardPanel extends EditPanel {
 		myTabbedPane = new EditTabbedView(tabs, controller);
 		this.add(myTabbedPane);
 		initialize(myTabbedPane);
+	}
+	@Override
+	public String getTitle() {
+		// TODO Auto-generated method stub
+		return BOARD_PANEL_TITLE;
 	}
 
 }

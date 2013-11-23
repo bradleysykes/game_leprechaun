@@ -52,4 +52,11 @@ public class ObjectPanel extends EditPanel {
 		}
 ;	}
 
+
+
+	@Override
+	public String getTitle() {
+		return OBJECT_PANEL_TITLE;
+	}
+
 }

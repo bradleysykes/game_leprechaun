@@ -15,9 +15,9 @@ public class MapPopupListener extends MouseAdapter {
 	
 	private GAEPopupMenu myMenu;
 	private Controller myController;
-	private MapPanel myPanelSource;
+	private GUIMap myPanelSource;
 	
-	public MapPopupListener(Controller controller, MapPanel panelSource){
+	public MapPopupListener(Controller controller, GUIMap panelSource){
 		myController = controller;
 		myPanelSource = panelSource;
 		myMenu = new MapPopupMenu(myController,myPanelSource);
@@ -35,6 +35,7 @@ public class MapPopupListener extends MouseAdapter {
         if (e.isPopupTrigger()) {
             myMenu.show(e.getComponent(),e.getX(), e.getY());
             //finds the selected ViewItem
+            System.out.println(e.getX()+ "  "+ e.getY());
         }
     }
 }

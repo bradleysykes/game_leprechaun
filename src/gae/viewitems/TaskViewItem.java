@@ -1,6 +1,7 @@
 package gae.viewitems;
 
 import gae.Controller;
+import gae.dialogues.InputDialogue;
 import gae.dialogues.PlayerDialogue;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class TaskViewItem extends ViewItem {
 	
 	private String myMessage;
 	private Controller myController; // makeshift.  Eclipse won't recognize controller from superclass.
-	
+	protected InputDialogue myDialogue;
 	public TaskViewItem(String message, Controller controller){
 		super();
 		myMessage = message;

@@ -9,6 +9,7 @@ import gae.panel_lists.BoardList;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -16,6 +17,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import model.stats.Stat;
@@ -29,17 +32,13 @@ public class UnitCreationDialogue extends InputDialogue {
 	private ViewItemField myName;
 	
 	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, BoardList list) {
-		super(modelProperties, list);
-		this.setLayout(new FlowLayout());
-		myEnterButton = new JButton("Create");
-		myEnterButton.addActionListener(new GetDataAction());
-		this.add(myEnterButton, BorderLayout.SOUTH);		
+		super(modelProperties, list);		
 	}
 	
 	protected UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, 
 			BoardList list, boolean isSubUnit){
 		super(modelProperties,list);
-		this.setLayout(new FlowLayout());
+		this.getContentPane().setLayout(new BoxLayout(this.getContentPane(),BoxLayout.PAGE_AXIS));
 		myEnterButton = new JButton("Create Subunit");
 		myEnterButton.addActionListener(new ActionListener(){
 
@@ -83,6 +82,7 @@ public class UnitCreationDialogue extends InputDialogue {
 	@Override
 	public JPanel createGutsPanel() {
 		JPanel mainPanel = new JPanel();
+		mainPanel.setLayout(new BoxLayout(mainPanel,BoxLayout.PAGE_AXIS));
 		for(Stat t:myProperties){
 			if(t.getValue()!=null){
 				ViewItemField fieldView = new ViewItemField(t);
@@ -99,6 +99,9 @@ public class UnitCreationDialogue extends InputDialogue {
 		mainPanel.add(myName);
 		FileButton imageButton = new FileButton("Upload image", this);
 		mainPanel.add(imageButton);
+		myEnterButton = new JButton("Create");
+		myEnterButton.addActionListener(new GetDataAction());
+		mainPanel.add(myEnterButton);
 		return mainPanel;
 	}
 }

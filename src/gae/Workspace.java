@@ -28,7 +28,6 @@ public class Workspace extends JPanel {
 		EditPanel tasks = new TaskPanel(myController);
 		EditPanel board = new BoardPanel(myController);
 		EditPanel map = new MapPanel(myController);
-		map.addMouseListener(new MapPopupListener(myController,(MapPanel)map));
 		EditPanel objects = new ObjectPanel(myController);
 		EditPanel players = new PlayerPanel(myController);
 		myController.init();

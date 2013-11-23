@@ -50,4 +50,10 @@ public class PlayerPanel extends EditPanel {
 	public List<Player> getPlayers() {
 		return myModelPlayerList;
 	}
+
+	@Override
+	public String getTitle() {
+		// TODO Auto-generated method stub
+		return PLAYER_PANEL_TITLE;
+	}
 }

@@ -4,6 +4,8 @@ import gae.Constants;
 import gae.Controller;
 import gae.GUIMap;
 import gae.PackageClassFinder;
+import gae.dialogues.MapPopupMenu;
+import gae.listeners.MapPopupListener;
 import gae.viewitems.ViewItem;
 
 import java.awt.BorderLayout;
@@ -41,6 +43,7 @@ public class MapPanel extends EditPanel {
 		int width = Integer.parseInt(dimensions.get(0));
 		int height = Integer.parseInt(dimensions.get(1));
 		myMapView = new GUIMap(width, height, this.getWidth(), this.getHeight());
+		myMapView.setPopup(new MapPopupMenu(myController,myMapView));
 		this.add(myMapView, BorderLayout.CENTER);
 		this.revalidate();
 		}
@@ -73,5 +76,10 @@ public class MapPanel extends EditPanel {
 	}
 	public boolean hasMap() {
 		return myMapView!=null;
+	}
+	
+	@Override
+	public String getTitle() {
+		return MAP_PANEL_TITLE;
 	}
 }
