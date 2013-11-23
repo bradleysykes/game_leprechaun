@@ -1,6 +1,7 @@
 package gae;
 
 import gae.popup_menus.GAEPopupMenu;
+import gae.viewitems.NullViewItem;
 import gae.viewitems.PlayerViewItem;
 import gae.viewitems.TileViewItem;
 import gae.viewitems.ViewItem;
@@ -42,7 +43,7 @@ public class GUIMap extends JGEngine implements Constants{
 	}
 	
 	public void placeOnBoard(){
-		if(this.getKey(256)&&BoardBuffer.retrieve()!=null){
+		if(this.getKey(256)){
 			PlayerViewItem active = BoardBuffer.getActivePlayer();
 			BoardBuffer.retrieve().clickOnBoard(this, (double) this.getMouseX(), (double) this.getMouseY(), active);
 		}

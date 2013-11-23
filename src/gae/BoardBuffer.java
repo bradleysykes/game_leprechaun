@@ -8,6 +8,10 @@ import gae.viewitems.ViewItem;
 
 import java.awt.Component;
 
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import model.Player;
 
 public class BoardBuffer {
@@ -17,11 +21,13 @@ public class BoardBuffer {
 	
 	
 	public static BoardListViewItem retrieve(){
-		if(myPlayer!=null){
+		if(myPlayer!=null&&myItem!=null){
 			return myItem;
 		}
 		else{
-			System.out.println("Please select a player");
+			JDialog dialog = new JDialog();
+			dialog.setLocation(10, 10);
+			JOptionPane.showMessageDialog(dialog, "Please go die");
 			return new NullViewItem();
 		}
 	}
