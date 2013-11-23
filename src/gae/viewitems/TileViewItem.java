@@ -72,7 +72,7 @@ public class TileViewItem extends BoardListViewItem {
 	 */
 	@Override
 	public Icon getListIcon() {
-		return new ImageIcon(ICON_PATH+"plus.gif");
+		return new ImageIcon(myImage.getPath());
 	}
 	
 	public int getImageHeight(){

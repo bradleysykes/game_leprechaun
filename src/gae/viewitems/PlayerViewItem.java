@@ -14,6 +14,7 @@ import model.stats.Stat;
 public class PlayerViewItem extends ViewItem {
 	
 	private Player myPlayer;
+	private String myImagePath = ICON_PATH+"player_icon.gif";
 	
 	public PlayerViewItem(Player playa){
 		super();
@@ -21,8 +22,8 @@ public class PlayerViewItem extends ViewItem {
 	}
 	@Override
 	public Icon getListIcon() {
-		// TODO Auto-generated method stub
-		return new ImageIcon(ICON_PATH+"player_icon.gif");
+		System.out.println(myImagePath);
+		return new ImageIcon(myImagePath);
 	}
 
 	@Override

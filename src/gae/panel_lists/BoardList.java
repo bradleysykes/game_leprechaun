@@ -44,7 +44,6 @@ public abstract class BoardList extends JList {
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.addListSelectionListener(new BoardListSelectionListener());
 		this.setCellRenderer(new EditListRenderer());
-		//this.addNewItem(new NewUnit(getListType()));
 		myPopup = this.getPopupMenu();
 		this.addMouseListener(new PopupListener(myPopup, this));
 		//FOR DEBUG

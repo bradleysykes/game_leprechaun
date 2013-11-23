@@ -28,16 +28,15 @@ public abstract class BoardListViewItem extends ViewItem {
 	public abstract List<Stat> getModel();
 	
 	public abstract void placeOnBoard(GUIMap map, double x, double y);
+	
+	public abstract void clickOnBoard(GUIMap map, double x, double y);
 
 	@Override
 	public void onClick(Controller c) {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	public void clickOnBoard(GUIMap map, double x, double y){
-		
-	}
+
 	public abstract BoardListViewItem createModel(List<Stat> inputData, 
 			String name, File imageFile);
 
