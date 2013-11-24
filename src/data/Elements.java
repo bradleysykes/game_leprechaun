@@ -24,6 +24,5 @@ public interface Elements {
     //for PlayerDecoder
     String PLAYERS = "Players";
     String PLAYER = "Player";
-    String TERRAIN_TAG= "Terrain";
 
 }

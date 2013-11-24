@@ -148,6 +148,4 @@ public class DataManager implements Attributes, Elements {
         GameElements map = dm.getGameElements(new File("src/data/resources/test_game.xml"));
         map.toString();
     }
-
-
 }
