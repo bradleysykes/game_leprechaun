@@ -8,7 +8,7 @@ package data;
 public interface Elements {
     String GAME_ELEMENTS = "GameElements";
     // for MapEncoder and MapDecoder
-    String MAP_ROOT = "Map";
+    String MAP = "Map";
     String TILE = "Tile";
     String STAT = "Stat";
     String TERRAIN = "Terrain";
@@ -16,16 +16,16 @@ public interface Elements {
     String RESOURCE = "Resource";
     
     // for UnitEncoder and UnitDecoder
-    String UNIT_ROOT = "units";
-    String UNIT = "unit";
+    String UNITS = "Units";
+    String UNIT = "Unit2";
     String ATTRIBUTES = "Attributes";
-    String PLAYERS = "Players";
+    String ABILITITES = "Abilities";
+    String UNIT_PLAYER = "UnitPlayer";
+    String UNIT_TILE = "UnitTile";
     
     //for PlayerDecoder
-    String PLAYER_ROOT = "Players";
+    String PLAYERS = "Players";
     String PLAYER = "Player";
-    
     String TERRAIN_TAG= "Terrain";
-    String RESOURCES_TAG = "Resources";
 
 }

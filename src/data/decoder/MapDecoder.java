@@ -33,7 +33,7 @@ public class MapDecoder extends Decoder {
      * @return
      */
     private GameMap processGameMap(Element root) {
-        Element map = (Element)root.getElementsByTagName(MAP_ROOT).item(0);
+        Element map = (Element)root.getElementsByTagName(MAP).item(0);
       
         int x_dim = Integer.parseInt(getAttribute(X_DIM, map));
         int y_dim = Integer.parseInt(getAttribute(Y_DIM, map));
@@ -65,12 +65,12 @@ public class MapDecoder extends Decoder {
         
         //set terrain to the tile
         Element terrain = (Element) tile.getElementsByTagName(TERRAIN).item(0);
-        StatCollection targetTerr = (StatCollection) resultTile.getStatCollection(TERRAIN_TAG);
+        StatCollection targetTerr = (StatCollection) resultTile.getStatCollection(TERRAIN);
         setStats(terrain, targetTerr);
         
         // set resources to the tile
         Element elementResources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
-        Resources targetResources = (Resources) resultTile.getStatCollection(RESOURCES_TAG);
+        Resources targetResources = (Resources) resultTile.getStatCollection(RESOURCES);
         processResources(elementResources,targetResources);
         
         //create tile 

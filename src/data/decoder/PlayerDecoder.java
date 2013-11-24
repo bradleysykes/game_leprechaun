@@ -28,7 +28,7 @@ public class PlayerDecoder extends Decoder {
     }
     
     public List<Player> processPlayers(Element root) {
-        Element players = (Element)root.getElementsByTagName(PLAYER_ROOT).item(0);
+        Element players = (Element)root.getElementsByTagName(PLAYERS).item(0);
         NodeList playerList = players.getElementsByTagName(PLAYER);
         for(int i = 0; i < playerList.getLength(); i++) {
             myPlayers.add(getPlayer((Element) playerList.item(i)));
@@ -43,7 +43,7 @@ public class PlayerDecoder extends Decoder {
         
         // set resources to the tile
         Element elementResources = (Element) player.getElementsByTagName(RESOURCES).item(0);
-        Resources targetResources = (Resources) resultPlayer.getStatCollection(RESOURCES_TAG);
+        Resources targetResources = (Resources) resultPlayer.getStatCollection(RESOURCES);
         processResources(elementResources,targetResources);
         
         return resultPlayer;

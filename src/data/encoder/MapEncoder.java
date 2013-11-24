@@ -40,7 +40,7 @@ public class MapEncoder extends Encoder {
      * @param gameMap
      */
     private void appendMap (GameMap gameMap) {
-        Element mapElement = myXmlDocument.createElement(MAP_ROOT);
+        Element mapElement = myXmlDocument.createElement(MAP);
         mapElement.setAttribute(X_DIM, String.valueOf(myGameMap.getSizeX()));
         mapElement.setAttribute(Y_DIM, String.valueOf(myGameMap.getSizeY()));
         for(Tile tile : gameMap.getAllTiles()) {
