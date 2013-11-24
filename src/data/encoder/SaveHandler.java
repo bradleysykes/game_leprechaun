@@ -107,6 +107,8 @@ public class SaveHandler implements Elements {
     public static void main(String[] args) {
         SaveHandler sh = new SaveHandler();
         GameElements currentState = new GameElements();
+        
+        //add map to currentState
         GameMap map = new GameMap(3,3);
         Resource minerals = new Resource("minerals", 50, 2);
         Resource gas = new Resource("gas", 50, 2);
@@ -115,11 +117,21 @@ public class SaveHandler implements Elements {
             tile.getStatCollection(RESOURCES).addStat(gas);
         }
         currentState.setGameMap(map);
+        
+        //add playerList to currentState
         List<Player> playerList = new ArrayList<Player>();
+        Resource playerMinerals = new Resource("minerals", 500, 0);
+        Resource playerGas = new Resource("gas", 350, 0);
         Player p1 = new Player();
+        p1.getStatCollection(RESOURCES).addStat(playerMinerals);
+        p1.getStatCollection(RESOURCES).addStat(playerGas);
         Player p2 = new Player();
+        p2.getStatCollection(RESOURCES).addStat(playerMinerals);
+        p2.getStatCollection(RESOURCES).addStat(playerGas);
         playerList.add(p1); playerList.add(p2);
         currentState.setPlayerList(playerList);
+        
+        //save to XML file
         sh.doSave(currentState);
     }
 	

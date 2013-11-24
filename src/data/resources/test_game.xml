@@ -50,7 +50,7 @@
 		    <Resources>
 				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
 				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-			</Resources
+			</Resources>
 	  	</Player>
 	</Players>
   	<Conditions>

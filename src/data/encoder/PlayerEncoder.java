@@ -5,7 +5,6 @@ import model.Player;
 import model.Resource;
 import model.Resources;
 import model.stats.Stat;
-import model.unit.Unit;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -40,7 +39,6 @@ public class PlayerEncoder extends Encoder {
         playersRoot.appendChild(playerElement);
         
         appendResources((Resources) player.getStat(RESOURCES), playerElement);
-        appendUnits(player.getAllUnits(), playerElement);
     }
     
     private void appendResources (Resources resources, Element playerElement) {
@@ -48,23 +46,14 @@ public class PlayerEncoder extends Encoder {
         for(Stat resource : resources.getStats()) {
             Resource res = (Resource) resource;
             Element resElement = myXmlDocument.createElement(RESOURCE);
-            resElement.setAttribute(NAME, res.getName());
-            resElement.setAttribute(VALUE, String.valueOf(res.getValue()));
+            resElement.setAttribute(NAME, res.getID());
+            for(Stat stat : res.getStats()) {
+                resElement.setAttribute(stat.getName().toLowerCase().replaceAll("\\s+","_"), 
+                                        String.valueOf(stat.getValue()).replaceAll("\\b0.0\\b", "null"));
+            }
             resourcesElement.appendChild(resElement);
         }
         playerElement.appendChild(resourcesElement);
     }
-
-    private void appendUnits (List<Unit> units, Element playerElement) {
-        Element unitsElement = myXmlDocument.createElement(UNITS);
-        for(Unit unit : units) {
-            Element unitElement = myXmlDocument.createElement(UNIT);
-            unitElement.setAttribute(NAME, unit.getID());
-            unitsElement.appendChild(unitElement);
-        }
-        playerElement.appendChild(unitsElement);
-    }
-
-
 
 }
