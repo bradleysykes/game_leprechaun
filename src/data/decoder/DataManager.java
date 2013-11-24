@@ -33,11 +33,9 @@ import model.tile.Tile;
  */
 
 /*
- * 
  * TODO:
- * 1. condition(separate?)
- * 2. abilities
- * 
+ * 1. condition(separate?) - player
+ * 2. abilities - unit
  */
 
 public class DataManager extends GameElements implements Attributes, Elements {
@@ -48,8 +46,7 @@ public class DataManager extends GameElements implements Attributes, Elements {
         myDecoders = new ArrayList<Decoder>();
         initDecoders();
     }
-    
-   
+     
     /**
      * Basic Parsing function. Convert xml file into dom Document
      * so that it can be parsed.
@@ -67,6 +64,9 @@ public class DataManager extends GameElements implements Attributes, Elements {
         myRoot = doc.getDocumentElement();
     }
     
+    /**
+     * Initializes the decoder
+     */
     private void initDecoders() {
         myDecoders.add(new MapDecoder(this));
         myDecoders.add(new PlayerDecoder(this));
@@ -92,32 +92,27 @@ public class DataManager extends GameElements implements Attributes, Elements {
      */
     public GameElements getGameElements(File xmlFile) {
         try {
-            //converts xml file object to dom document object
             initXmlFile(xmlFile);
-            //calls decoders to instantiate the game elements
             processDecoders();
         } catch(Exception e) {
             e.printStackTrace();
         }
-
         return (GameElements) this;
     }
     
-    
+    /**
+     * return the player that matches to the input id.
+     * @param id
+     * @return
+     */
     public Player getPlayer(String id) {
         for (Player p : myPlayers) {
-            if (p.getID().equals(id)) {
-                return p;
-            }
+            if (p.getID().equals(id)) return p;
         }
         return null;
     }
     
-    public Tile getTile(int x, int y) {
-        return myGameMap.getTile(x,y);
-    }
- 
-    
+    //test use
     public static void main(String[] args) {
         DataManager dm = new DataManager();
         GameElements map = dm.getGameElements(new File("src/data/resources/test_game.xml"));

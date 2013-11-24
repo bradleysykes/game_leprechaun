@@ -79,9 +79,6 @@ public class MapDecoder extends Decoder {
         return resultTile;
     }
           
-    
-
-
     @Override
     public void decodeData(Element root) {
         myDataManager.setGameMap(processGameMap(root));

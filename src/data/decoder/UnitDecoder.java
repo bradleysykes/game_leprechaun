@@ -50,7 +50,7 @@ public class UnitDecoder extends Decoder {
         Element tile = (Element)unit.getElementsByTagName(UNIT_TILE).item(0);
         int x = Integer.parseInt(tile.getAttribute(X_COORD));
         int y = Integer.parseInt(tile.getAttribute(Y_COORD));
-        Tile targetTile = myDataManager.getTile(x, y);
+        Tile targetTile = myDataManager.getGameMap().getTile(x, y);
         
         //put unit into tile, set tile to unit, add unit to player
         targetTile.addUnit(newUnit);

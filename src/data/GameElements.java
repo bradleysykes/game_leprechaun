@@ -67,4 +67,10 @@ public class GameElements {
         myUnitImages = imageMap;
     }
 
+    public Player getPlayer(String id) {
+        for (Player p : myPlayers) {
+            if (p.getID().equals(id)) return p;
+        }
+        return null;
+    }
 }

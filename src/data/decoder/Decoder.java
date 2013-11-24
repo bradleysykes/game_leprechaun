@@ -98,19 +98,6 @@ public abstract class Decoder implements Attributes, Elements {
        return target;
     }
     
-    public List<Element> getChildrenByTagName(Element parent, String name) {
-        List<Element> nodeList = new ArrayList<Element>();
-        for (Node child = parent.getFirstChild(); child != null; child = child.getNextSibling()) {
-          if (child.getNodeType() == Node.ELEMENT_NODE && 
-              name.equals(child.getNodeName())) {
-            nodeList.add((Element) child);
-          }
-        }
-
-        return nodeList;
-      }
-
-    
     /**
      * this method will parse the data and set corresponding 
      * @param root
