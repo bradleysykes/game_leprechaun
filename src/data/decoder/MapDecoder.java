@@ -69,7 +69,7 @@ public class MapDecoder extends Decoder {
         setStats(terrain, targetTerr);
         
         // set resources to the tile
-        Element elementResources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
+        Element elementResources = (Element) getChildrenByTagName(tile, RESOURCES).get(0);
         Resources targetResources = (Resources) resultTile.getStatCollection(RESOURCES);
         processResources(elementResources,targetResources);
         

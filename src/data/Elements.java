@@ -17,7 +17,7 @@ public interface Elements {
     
     // for UnitEncoder and UnitDecoder
     String UNITS = "Units";
-    String UNIT = "Unit2";
+    String UNIT = "Unit";
     String ATTRIBUTES = "Attributes";
     String ABILITITES = "Abilities";
     String UNIT_PLAYER = "UnitPlayer";
@@ -26,6 +26,5 @@ public interface Elements {
     //for PlayerDecoder
     String PLAYERS = "Players";
     String PLAYER = "Player";
-    String TERRAIN_TAG= "Terrain";
 
 }

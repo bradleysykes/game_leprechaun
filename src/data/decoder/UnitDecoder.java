@@ -8,6 +8,7 @@ import model.stats.StatCollection;
 import model.tile.Tile;
 import model.unit.Unit;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 
@@ -30,7 +31,6 @@ public class UnitDecoder extends Decoder {
         Element units = (Element)root.getElementsByTagName(UNITS).item(0);
         NodeList unitList = units.getElementsByTagName(UNIT);
         for(int i = 0; i < unitList.getLength(); i++) {
-            //myUnits.add(createSingleUnit((Element)unit.item(i)));
             createSingleUnit((Element)unitList.item(i));
         }
         
@@ -62,8 +62,8 @@ public class UnitDecoder extends Decoder {
         //set abilities
         
         //set attributes
-        Element attributes = (Element) tile.getElementsByTagName(ATTRIBUTES).item(0);
-        StatCollection targetAttributes = (StatCollection) newUnit.getStatCollection(TERRAIN_TAG);
+        Element attributes = (Element) unit.getElementsByTagName(ATTRIBUTES).item(0);
+        StatCollection targetAttributes = (StatCollection) newUnit.getStatCollection(ATTRIBUTES);
         setStats(attributes, targetAttributes);
 
         return newUnit;
