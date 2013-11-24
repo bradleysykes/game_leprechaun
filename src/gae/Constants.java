@@ -22,4 +22,7 @@ public interface Constants {
 	final String OBJECT_PANEL_TITLE = "Object Properties";
 	final String PLAYER_PANEL_TITLE = "Available Players";
 	final String TASK_PANEL_TITLE = "Game To-Dos";
+	
+	final String DEFAULT_TILE_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\test_tile.jpg";
+	final String DEFAULT_UNIT_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\test_icon_image.png";
 }
