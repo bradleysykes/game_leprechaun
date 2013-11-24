@@ -56,7 +56,7 @@ public class PlayerEncoder extends Encoder {
     }
 
     private void appendUnits (List<Unit> units, Element playerElement) {
-        Element unitsElement = myXmlDocument.createElement(UNIT_ROOT);
+        Element unitsElement = myXmlDocument.createElement(UNITS);
         for(Unit unit : units) {
             Element unitElement = myXmlDocument.createElement(UNIT);
             unitElement.setAttribute(NAME, unit.getID());

@@ -50,19 +50,14 @@
 		    <Resources>
 				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
 				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-			</Resources>
-			<Units>
-<<<<<<< HEAD
-		  		<Unit id="2"/>
-		  		<Unit id="3"/>
-		  	</Units>
+			</Resources
 	  	</Player>
 	</Players>
   	<Conditions>
   	
   	</Conditions>
 	<Units>
-		<Unit name="soldier" id="1">
+		<Unit id="soldier">
 			<UnitPlayer id="enemy"/>
 			<UnitTile x="1" y="1"/>
 			<Abilities>
@@ -79,7 +74,7 @@
 				<Stat name="Range" value="3.0"/>  		
 			</Attributes>
 		</Unit>
-		<Unit name="soldier" id="2">
+		<Unit id="soldier" id="2">
 			<UnitPlayer id="enemy"/>
 			<UnitTile x="1" y="2"/>
 			<Abilities>

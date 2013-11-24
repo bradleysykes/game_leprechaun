@@ -1,5 +1,6 @@
 package data.encoder;
 
+import java.util.List;
 import model.GameMap;
 import model.Resource;
 import model.Resources;
@@ -9,6 +10,7 @@ import model.tile.Tile;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 
 
 /**
@@ -18,7 +20,7 @@ import org.w3c.dom.Element;
  *
  */
 public class MapEncoder extends Encoder {
- 
+
     private GameMap myGameMap;
     private Document myXmlDocument;
     private Element myRoot;
@@ -103,8 +105,12 @@ public class MapEncoder extends Encoder {
         for(Stat resource : resources.getStats()) {
             Resource res = (Resource) resource;
             Element resElement = myXmlDocument.createElement(RESOURCE);
-            resElement.setAttribute(NAME, res.getName());
-            resElement.setAttribute(VALUE, String.valueOf(res.getValue()));
+            resElement.setAttribute(NAME, res.getID());
+            for(Stat stat : res.getStats()) {
+                String name = stat.getName().toLowerCase();
+                resElement.setAttribute(name.replaceAll("\\s+","_"), 
+                                        String.valueOf(stat.getValue()));
+            }
             resourcesElement.appendChild(resElement);
         }
         tileElement.appendChild(resourcesElement);
