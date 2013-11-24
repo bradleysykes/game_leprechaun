@@ -31,7 +31,7 @@ public class MapEncoder extends Encoder {
     }
     
     @Override
-    public void encode () {
+    protected void encode () {
         appendMap(myGameMap);
     }
     
