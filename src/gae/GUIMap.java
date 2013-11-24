@@ -53,14 +53,16 @@ public class GUIMap extends JGEngine implements Constants{
 	}
 	
 	public void checkMouse(){
-		if(this.getKey(256)&&myMap.getTile(x, y)){
+		if(this.getKey(256)&&!(myMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE).isOccupied())){
 			PlayerViewItem active = BoardBuffer.getActivePlayer();
 			BoardBuffer.retrieve().clickOnBoard(this, (double) xOffset, (double) yOffset, active);
 			this.revalidate();
 		}
-		if(this.getKey(KeyMouse3)&&myPopup!=null){
+		if(this.getKey(KeyMouse3)&&myMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE).isOccupied()){
+			//there is a unit on this tile, right click to display popup menu
 			myPopup.show(this,this.getMouseX(),this.getMouseY());
 			myPopup.revalidate();
+			
 		}
 	}
 	
@@ -83,11 +85,10 @@ public class GUIMap extends JGEngine implements Constants{
 	
 	public void doFrame(){
 		checkMouse();
-		this.clearKey(256);
 		tileX = this.getMouseX()-this.getMouseX()%TILE_SIZE;
 		tileY = (int)this.getMouseX()-this.getMouseY()%TILE_SIZE;
-		unitX =
-		unitY = 
+		unitX = this.getMouseX()-this.getMouseX()%UNIT_SIZE;
+		unitY = this.getMouseY()-this.getMouseY()%UNIT_SIZE;
 		xOffset =  getMouseX() * pfWidth() / viewWidth();
 		yOffset = (getMouseY() *pfHeight()/viewHeight());
 		this.setViewOffset(xOffset,yOffset, true);

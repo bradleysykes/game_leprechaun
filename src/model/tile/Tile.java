@@ -1,5 +1,6 @@
 package model.tile;
 
+import java.awt.Point;
 import java.util.*;
 
 import model.GameMap;
@@ -50,6 +51,16 @@ public class Tile extends StatCollection implements ModelConstants{
 
 	public List<Unit> getUnits(){
 		return myUnits;
+	}
+	
+	/**
+	 * method to check if a unit 
+	 * @param x
+	 * @param y
+	 * @return
+	 */
+	public boolean isOccupied(){
+		return myUnits.size()>0;
 	}
 
 
