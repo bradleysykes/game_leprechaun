@@ -202,7 +202,7 @@ public class ConditionDialogue extends InputDialogue {
 				}
 			}
 			else {
-				myVariable2Combo.setEnabled(false);
+//				myVariable2Combo.setEnabled(false);
 			}
 		}
 
@@ -210,17 +210,20 @@ public class ConditionDialogue extends InputDialogue {
 	public class Var1ValueListener implements ActionListener {
 
 		@Override
-		public void actionPerformed(ActionEvent arg0) { 
-			myVariable2Combo.removeAll();
-			myVariable2 = myParamsetter.getSecondVariableOptions(myVariable1Combo.getSelectedIndex());
+		public void actionPerformed(ActionEvent arg0) {
+			if (myVariable1Combo.getItemCount()!=0) {
+			int var1Num =myVariable1Combo.getSelectedIndex();
+			myVariable2 = myParamsetter.getSecondVariableOptions(var1Num);
 			if (myVariable2!=null) {
-				myVariable2Combo.setEnabled(true);
+//				myVariable2Combo.setEnabled(true);
+				myVariable2Combo.removeAllItems();
 				for (Unit u:myVariable2) {
 					myVariable2Combo.addItem(u.getName());
 				}
 			}
 			else {
-				myVariable2Combo.setEnabled(false);
+//				myVariable2Combo.setEnabled(false);
+			}
 			}
 		}
 		

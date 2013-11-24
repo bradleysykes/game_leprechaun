@@ -13,7 +13,7 @@ public interface Constants {
 	final String CONDITION_PACKAGE_NAME = "tile";
 	
 	final int TILE_SIZE =80;
-	final int UNIT_SIZE = 60;
+	final int UNIT_SIZE = 80;
 	final int TILE_IMAGE_RESIZE = 79;
 	final int UNIT_IMAGE_RESIZE = 59;
 	

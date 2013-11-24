@@ -3,14 +3,17 @@ package data;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 import model.GameMap;
 import model.Player;
+import model.unit.Unit;
 
 
 public class GameElements {
 
     protected GameMap myGameMap;
     protected List<Player> myPlayers;
+    protected List<Unit> myUnitTypes;
     protected Map<String, String> myTileImages;
     protected Map<String, String> myUnitImages;
 
@@ -65,6 +68,14 @@ public class GameElements {
     
     public void setUnitImageMap(Map<String, String> imageMap) {
         myUnitImages = imageMap;
+    }
+    
+    public void setUnitTypes(List<Unit> unitTypes) {
+    	myUnitTypes = unitTypes;
+    }
+    
+    public List<Unit> getUnitTypes() {
+    	return myUnitTypes;
     }
 
 }
