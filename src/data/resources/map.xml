@@ -1,3 +1,4 @@
+<?xml version="1.1"?>
 <GameElements>
     <Map x_dimension="2" y_dimension="2">	
 	    <Tile x="0" y="0">
@@ -7,8 +8,8 @@
 		  		<stat name="Magnitude" value="2.0"/>	  		
 		  	</Terrain>
 		  	<Resources> 	
-				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="a" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="b" amount="2.0" harvest_rate="2.0"/>
 		    </Resources>
     	</Tile>
 		<Tile x="0" y="1">
@@ -18,8 +19,8 @@
 		  		<Stat name="Magnitude" value="2"/>	  		
 		  	</Terrain>
 		  	<Resources> 	
-				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="c" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="d" amount="2.0" harvest_rate="2.0"/>
 		    </Resources>
 	    </Tile>
 		<Tile x="1" y="0">
@@ -29,8 +30,8 @@
 		  		<Stat name="Magnitude" value="3.0"/>	  		
 		  	</Terrain>
 		  	<Resources> 	
-				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="e" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="f" amount="2.0" harvest_rate="2.0"/>
 		    </Resources>
 	    </Tile>
 		<Tile x="1" y="1">
@@ -40,21 +41,9 @@
 		  		<Stat name="Magnitude" value="2.0"/>	  		
 		  	</Terrain>
 		  	<Resources> 	
-				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="g" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="h" amount="2.0" harvest_rate="2.0"/>
 		    </Resources>
 	    </Tile>
     </Map>
-    <Players>
-	    <Player id="enemy">
-		    <Resources>
-				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-			</Resources>
-			<Units>
-		  		<unit id="2"/>
-		  		<unit id="3"/>
-		  	</Units>
-	  	</Player>
-	</Players>
 </GameElements>

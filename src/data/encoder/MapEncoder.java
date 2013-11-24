@@ -18,7 +18,7 @@ import org.w3c.dom.Element;
  *
  */
 public class MapEncoder extends Encoder {
- 
+
     private GameMap myGameMap;
     private Document myXmlDocument;
     private Element myRoot;
@@ -99,12 +99,15 @@ public class MapEncoder extends Encoder {
      * @param tileElement
      */
     private void appendResources (Resources resources, Element tileElement) {
-        Element resourcesElement = myXmlDocument.createElement(RESOURCE);
+        Element resourcesElement = myXmlDocument.createElement(RESOURCES);
         for(Stat resource : resources.getStats()) {
             Resource res = (Resource) resource;
             Element resElement = myXmlDocument.createElement(RESOURCE);
-            resElement.setAttribute(NAME, res.getName());
-            resElement.setAttribute(VALUE, String.valueOf(res.getValue()));
+            resElement.setAttribute(NAME, res.getID());
+            for(Stat stat : res.getStats()) {
+                resElement.setAttribute(stat.getName().toLowerCase().replaceAll("\\s+","_"), 
+                                        String.valueOf(stat.getValue()));
+            }
             resourcesElement.appendChild(resElement);
         }
         tileElement.appendChild(resourcesElement);

@@ -1,3 +1,4 @@
+<?xml version="1.1"?>
 <GameElements>
     <Map x_dimension="2" y_dimension="2">	
 	    <Tile x="0" y="0">
@@ -15,11 +16,11 @@
 		    <Stat name="Passability" value="1.0"/>
 		  	<Stat name="Max Population" value="2"/>
 		  	<Terrain>
-		  		<Stat name="Magnitude" value="2"/>	  		
+		  		<Stat name="Magnitude" value="1"/>	  		
 		  	</Terrain>
 		  	<Resources> 	
-				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="bye" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="test" amount="2.0" harvest_rate="2.0"/>
 		    </Resources>
 	    </Tile>
 		<Tile x="1" y="0">
@@ -29,8 +30,8 @@
 		  		<Stat name="Magnitude" value="3.0"/>	  		
 		  	</Terrain>
 		  	<Resources> 	
-				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="hi" amount="1.0" harvest_rate="2.0"/>
+				<Resource name="bye" amount="3.0" harvest_rate="2.0"/>
 		    </Resources>
 	    </Tile>
 		<Tile x="1" y="1">
@@ -48,30 +49,52 @@
     <Players>
 	    <Player id="enemy">
 		    <Resources>
-				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+				<Resource id="gas" amount="2.0" harvest_rate="2.0"/>
+				<Resource id="mineral" amount="2.0" harvest_rate="2.0"/>
 			</Resources>
-			<Units>
-		  		<unit id="2"/>
-		  		<unit id="3"/>
-		  	</Units>
 	  	</Player>
 	</Players>
+  	<Conditions>
+  	
+  	</Conditions>
 	<Units>
-		<Unit2 id="soldier">
-			<UnitPlayer id="player"/>
+		<Unit id="soldier">
+			<UnitPlayer id="enemy"/>
 			<UnitTile x="1" y="1"/>
+			<Abilities>
+			</Abilities>
 			<Attributes>
-				<Stat name="Base Help" value="2.0"/>
-				<Stat name="Health" value="10.0"/>
+				<Stat name="Health" value="2.0"/>
+				<Stat name="Max Health" value="10.0"/>
 				<Stat name="Base Attack" value="10.0"/>
-				<Stat name="Attack" value="2.0"/>	  		
-				<Stat name="Base Defense" value="2.0"/>
-				<Stat name="Defense" value="1.0"/>
-				<Stat name="Base Stamina" value="10.0"/>
-				<Stat name="Stamina" value="5.0"/>	
-				<Stat name="Range" value="3.0"/>  		
+				<Stat name="Base Attack" value="2.0"/>	  		
+				<Stat name="Stamina Defense"="2.0"/>
+				<Stat name="Base Stamina" value="1.0"/>
+				<Stat name="Range" value="10.0"/>
 			</Attributes>
-		</Unit2>
+		</Unit>
+		<Unit id="soldier">
+			<UnitPlayer id="enemy"/>
+			<UnitTile x="1" y="0"/>
+			<Attributes>
+				<Stat name="Health" value="2.0"/>
+				<Stat name="Max Health" value="10.0"/>
+				<Stat name="Base Attack" value="10.0"/>
+				<Stat name="Base Defense" value="2.0"/>	  		
+				<Stat name="Stamina" value="2.0"/>
+				<Stat name="Base Stamina" value="1.0"/>
+				<Stat name="Range" value="10.0"/>
+			</Attributes>
+		</Unit>
 	</Units>
+	
+	<ImageMap>
+	    <tileImages>
+	        <Image id="" src="">
+	    </tileImages>
+	    <unitImages>
+	        <Image id="" src="">
+	    </unitImages>
+	</ImageMap>
 </GameElements>
+
