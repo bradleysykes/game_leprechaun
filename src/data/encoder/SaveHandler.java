@@ -1,8 +1,6 @@
 package data.encoder;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
@@ -19,15 +17,15 @@ import org.w3c.dom.Element;
 import model.GameMap;
 import model.Player;
 import model.Resource;
-import model.Resources;
 import model.tile.Tile;
+import model.unit.Unit;
 import data.Elements;
 import data.GameElements;
 
 //Place Holder Class for Save method in gae.controller
 public class SaveHandler implements Elements {
 	
-    private Encoder myMapEncoder, myPlayerEncoder;
+    private Encoder myMapEncoder, myPlayerEncoder, myUnitEncoder;
     Document myXmlDocument;
 	
     public SaveHandler() {
@@ -49,6 +47,9 @@ public class SaveHandler implements Elements {
 	    
         myPlayerEncoder = new PlayerEncoder(myXmlDocument, currentState.getPlayers(), root);
         myPlayerEncoder.encode();
+        
+        myUnitEncoder = new UnitEncoder(myXmlDocument, currentState.getPlayers(), root);
+        myUnitEncoder.encode();
         
         try {
             saveXML("name", myXmlDocument);
@@ -120,16 +121,25 @@ public class SaveHandler implements Elements {
         
         //add playerList to currentState
         List<Player> playerList = new ArrayList<Player>();
-        Resource playerMinerals = new Resource("minerals", 500, 0);
-        Resource playerGas = new Resource("gas", 350, 0);
         Player p1 = new Player();
-        p1.getStatCollection(RESOURCES).addStat(playerMinerals);
-        p1.getStatCollection(RESOURCES).addStat(playerGas);
+        p1.getStatCollection(RESOURCES).addStat(new Resource("minerals", 500, 0));
+        p1.getStatCollection(RESOURCES).addStat(new Resource("gas", 350, 0));
+        Unit unit1 = new Unit("unit1",p1,map);
+        Tile t1 = new Tile(2,1,map);
+        unit1.setCurrentTile(t1);
+        p1.addUnit(unit1);
+        
         Player p2 = new Player();
-        p2.getStatCollection(RESOURCES).addStat(playerMinerals);
-        p2.getStatCollection(RESOURCES).addStat(playerGas);
+        p2.getStatCollection(RESOURCES).addStat(new Resource("minerals", 820, 0));
+        p2.getStatCollection(RESOURCES).addStat(new Resource("gas", 620, 0));
+        Unit unit2 = new Unit("unit2",p2,map);
+        Tile t2 = new Tile(1,0,map);
+        unit2.setCurrentTile(t2);
+        p1.addUnit(unit2);
+        
         playerList.add(p1); playerList.add(p2);
         currentState.setPlayerList(playerList);
+        
         
         //save to XML file
         sh.doSave(currentState);

@@ -25,8 +25,9 @@ public class Unit extends StatCollection implements ModelConstants {
 	private Tile myCurrentTile;
 	private int myX,  myY;
 	
-	public Unit(String name, Player player, GameMap map){
-		super("Unit","Soldier");
+	//change name to id?
+	public Unit(String id, Player player, GameMap map){
+		super("Unit",id);
 		this.addStat(new Attributes());
 		this.addStat(new Abilities(this));
 		myPlayer = player;
@@ -75,9 +76,10 @@ public class Unit extends StatCollection implements ModelConstants {
 		//this.getThing(ability).prepAbility();
 	}
 
-	public String getID() {
-		return (String) this.getID();
-	}
+	//don't need this!
+//	public String getID() {
+//		return (String) this.getID();
+//	}
 
 	public void setID(String id) {
 		this.setID(id);

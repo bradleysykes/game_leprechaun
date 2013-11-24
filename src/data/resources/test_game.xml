@@ -58,38 +58,41 @@
   	</Conditions>
 	<Units>
 		<Unit id="soldier">
-			<UnitPlayer id="enemy"/>
-			<UnitTile x="1" y="1"/>
+			<Player id="enemy"/>
+			<Tile x="1" y="1"/>
 			<Abilities>
 			</Abilities>
 			<Attributes>
-				<Stat name="Base Help" value="2.0"/>
 				<Stat name="Health" value="10.0"/>
+				<Stat name="Max Health" value="10.0"/>
 				<Stat name="Base Attack" value="10.0"/>
-				<Stat name="Attack" value="2.0"/>	  		
 				<Stat name="Base Defense" value="2.0"/>
-				<Stat name="Defense" value="1.0"/>
-				<Stat name="Base Stamina" value="10.0"/>
-				<Stat name="Stamina" value="5.0"/>	
+				<Stat name="Stamina" value="10.0"/>
 				<Stat name="Range" value="3.0"/>  		
 			</Attributes>
 		</Unit>
-		<Unit id="soldier" id="2">
-			<UnitPlayer id="enemy"/>
-			<UnitTile x="1" y="2"/>
+		<Unit id="soldier">
+			<Player id="enemy"/>
+			<Tile x="1" y="2"/>
 			<Abilities>
 			</Abilities>
 			<Attributes>
-				<Stat name="Base Help" value="2.0"/>
 				<Stat name="Health" value="10.0"/>
+				<Stat name="Max Health" value="10.0"/>
 				<Stat name="Base Attack" value="10.0"/>
-				<Stat name="Attack" value="2.0"/>	  		
 				<Stat name="Base Defense" value="2.0"/>
-				<Stat name="Defense" value="1.0"/>
-				<Stat name="Base Stamina" value="10.0"/>
-				<Stat name="Stamina" value="5.0"/>
-				<Stat name="Range" value="3.0"/>  			  		
+				<Stat name="Stamina" value="10.0"/>
+				<Stat name="Range" value="3.0"/>  	  			  		
 			</Attributes>
 		</Unit>
 	</Units>
+	
+	<ImageMap>
+	    <tileImages>
+	        <Image id="" src="">
+	    </tileImages>
+	    <unitImages>
+	        <Image id="" src="">
+	    </unitImages>
+	</ImageMap>
 </GameElements>
