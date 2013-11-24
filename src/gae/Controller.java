@@ -89,8 +89,9 @@ public class Controller {
 				return;
 			}
 		}
-		SaveHandler saverEncoder = new SaveHandler();
-		saverEncoder.doSave(currentState);
+		
+		SaveHandler saveHandler = new SaveHandler(currentState, "./src/data/resources/savedState.xml");
+		saveHandler.doSave();
 		// create data object to send GameElements object to that.
 	}
 
