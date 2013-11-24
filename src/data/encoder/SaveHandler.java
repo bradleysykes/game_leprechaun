@@ -4,10 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
@@ -15,17 +12,14 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import model.GameMap;
-import model.Player;
-import model.Resource;
-import model.tile.Tile;
-import model.unit.Unit;
 import data.Elements;
 import data.GameElements;
+
 
 /**
  * This is the class that handles the XML saving process when the user chooses to
@@ -38,100 +32,94 @@ import data.GameElements;
  */
 public class SaveHandler implements Elements {
 	
-    private Encoder myMapEncoder, myPlayerEncoder, myUnitEncoder;
-    private String myFilePath;
+    private List<Encoder> myEncoderList;
+    private Document myXmlDocument;
     private GameElements myCurrentState;
-	
+    private String myFilePath;
+    
     /**
-     * Initializes GameElements object that holds the current state, and initializes
-     * the path to which the resulting xml file should be saved
+     * Initializes GameElements object that holds the current state, sets the path
+     * to which the resulting xml file should be saved, and initializes a list
+     * of encoders
      * @param currentState
      * @param filePath
      */
     public SaveHandler(GameElements currentState, String filePath) {
         myFilePath = filePath;
         myCurrentState = currentState;
+        myEncoderList = new ArrayList<Encoder>();
     }
+    
+    
     
     /**
      * Save the information from the current GameElement by encoding it into an
      * XML file and then saving it to disc  
-     * @param currentState
      */
 	public void doSave() {
-	    Document xmlDocument = initializeDocument();
-        initializeEncoders(myCurrentState, xmlDocument);
+	    initializeDocument();
+        initializeEncoders();
 	    performEncoding();
-        saveXmlToFile(xmlDocument);
+        saveXmlToFile();
 	}
 	
     /**
-     * Create a new XML document that will be added to
+     * Create a new XML document and append a root node
      * @return
      */
-    private Document initializeDocument() {
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = null;
+    private void initializeDocument() {
         try {
-            builder = factory.newDocumentBuilder();
+            myXmlDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+            Element root = myXmlDocument.createElement(GAME_ELEMENTS);
+            myXmlDocument.appendChild(root);
         }
         catch (ParserConfigurationException e) {
             e.printStackTrace();
         }
-        Document xmlDocument = builder.newDocument();
-        Element root = xmlDocument.createElement(GAME_ELEMENTS);
-        xmlDocument.appendChild(root);
-        return xmlDocument;
     }
 	
 	/**
-	 * Initialize the encoders using the current GameElements object
-	 * @param currentState the GameElements object to create the XML file from 
-	 * @param the xmlDocument to write to
+	 * Initialize the encoders using the current GameElements object and store them
+	 * in a list
 	 */
-	private void initializeEncoders (GameElements currentState, Document xmlDocument) {
-	    Element root = (Element) xmlDocument.getFirstChild();
-	    myMapEncoder = new MapEncoder(xmlDocument, currentState.getGameMap(), root);
-	    myPlayerEncoder = new PlayerEncoder(xmlDocument, currentState.getPlayers(), root);
-	    myUnitEncoder = new UnitEncoder(xmlDocument, currentState.getPlayers(), root);
+	private void initializeEncoders () {
+	    Element root = (Element) myXmlDocument.getFirstChild();
+	    myEncoderList.add(new MapEncoder(myXmlDocument, myCurrentState.getGameMap(), root));
+	    myEncoderList.add(new PlayerEncoder(myXmlDocument, myCurrentState.getPlayers(), root));
+	    myEncoderList.add(new UnitEncoder(myXmlDocument, myCurrentState.getPlayers(), root));
     }
 	
 	/**
 	 * Performs the encoding using the appropriate encoders
 	 */
     private void performEncoding () {
-        myMapEncoder.encode();
-        myPlayerEncoder.encode();
-        myUnitEncoder.encode();
+        for(Encoder encoder : myEncoderList) {
+            encoder.encode();
+        }
     }
 
 	/**
 	 * Save the XML file to disk
-	 * @param doc xml document to save
 	 * @throws FileNotFoundException 
 	 * @throws TransformerException 
 	 */
-    private void saveXmlToFile(Document doc) {
-        FileOutputStream fos = null;
+    private void saveXmlToFile() {
+        //use fos for saving to file; use System.out for printing to console
         try {
-            fos = new FileOutputStream(new File(myFilePath));
-        }
-        catch (FileNotFoundException e1) {
-            e1.printStackTrace();
-        }
-        TransformerFactory tFactory = TransformerFactory.newInstance();
-        Transformer transformer = null;
-        try {
-            transformer = formatXML(tFactory.newTransformer());
+            Transformer transformer = formatXML(TransformerFactory.newInstance().newTransformer());
+            FileOutputStream fos = new FileOutputStream(new File(myFilePath));
+            transformer.transform(new DOMSource(myXmlDocument), new StreamResult(fos));
         }
         catch (TransformerConfigurationException e) {
             e.printStackTrace();
         }
-        //use fos for saving to file; use System.out for printing to console
-        try {
-            transformer.transform(new DOMSource(doc), new StreamResult(fos));
+        catch (TransformerFactoryConfigurationError e) {
+            e.printStackTrace();
         }
         catch (TransformerException e) {
+            e.printStackTrace();
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 	}
@@ -144,7 +132,7 @@ public class SaveHandler implements Elements {
     private Transformer formatXML(Transformer transformer) {
         transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
         return transformer;
     }
     
