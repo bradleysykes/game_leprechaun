@@ -11,10 +11,18 @@ public class GameElements {
 
     private GameMap myGameMap;
     private List<Player> myPlayers;
-    private Map<String, String> myImages;
+    private Map<String, String> myTileImages;
+    private Map<String, String> myUnitImages;
 
+    public GameElements(GameMap map, List<Player> players, Map<String, String> tileImages, 
+                        Map<String, String> unitImages) {
+        this(map, players);
+        myTileImages = tileImages;
+        myUnitImages = unitImages;
+    }
+    
     public GameElements(GameMap map, List<Player> players) {
-        myGameMap = map;
+        this(map);
         myPlayers = players;
     }
     
@@ -47,12 +55,16 @@ public class GameElements {
         myPlayers.add(player);
     }
     
-    public void setImageMap(Map<String, String> imageMap) {
-    	myImages = imageMap;
+    public void setTileImageMap(Map<String, String> imageMap) {
+    	myTileImages = imageMap;
     }
     
     public Map<String, String> getImageMap() {
-        return myImages;
+        return myTileImages;
+    }
+    
+    public void setUnitImageMap(Map<String, String> imageMap) {
+        myUnitImages = imageMap;
     }
 
 }

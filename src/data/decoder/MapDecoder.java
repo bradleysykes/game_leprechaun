@@ -1,7 +1,6 @@
 package data.decoder;
 
 import model.GameMap;
-import model.Resource;
 import model.Resources;
 import model.stats.StatCollection;
 import model.tile.Tile;
@@ -69,7 +68,7 @@ public class MapDecoder extends Decoder {
         setStats(terrain, targetTerr);
         
         // set resources to the tile
-        Element elementResources = (Element) getChildrenByTagName(tile, RESOURCES).get(0);
+        Element elementResources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
         Resources targetResources = (Resources) resultTile.getStatCollection(RESOURCES);
         processResources(elementResources,targetResources);
         
