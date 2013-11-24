@@ -26,6 +26,8 @@ public class GUIMap extends JGEngine implements Constants{
 	private GameMap myMap;
 	private GAEPopupMenu myPopup;
 	private int xOffset = 0, yOffset=0;
+	private int tileX = 0, tileY = 0;
+	private int unitX = 0, unitY=0;
 	
 	public GUIMap(int width, int height, int componentWidth, int componentHeight){
 		myWidth = width;
@@ -51,7 +53,7 @@ public class GUIMap extends JGEngine implements Constants{
 	}
 	
 	public void checkMouse(){
-		if(this.getKey(256)){
+		if(this.getKey(256)&&myMap.getTile(x, y)){
 			PlayerViewItem active = BoardBuffer.getActivePlayer();
 			BoardBuffer.retrieve().clickOnBoard(this, (double) xOffset, (double) yOffset, active);
 			this.revalidate();
@@ -68,9 +70,9 @@ public class GUIMap extends JGEngine implements Constants{
 		drawString("Objects on board = "+this.countObjects(null, 0),viewWidth()/2, 40, 0 );
 		//drawString("Playfield Size: ("+this.pfWidth()+","+this.pfHeight()+").",viewWidth()/2, 40, 0);
 		drawString("View Dimensions: ("+this.viewWidth()+","+this.viewHeight()+").",viewWidth()/2, 10, 0);
-		drawString("Move the mouse to scroll.", viewWidth()/2, 80, 0);
-		drawString("Playfield offset is now ("+xOffset+","+yOffset+").",viewWidth()/2, 120, 0);
-		drawString("Mouse currently at ("+this.getMouseX()+","+this.getMouseY()+").",viewWidth()/2, 160, 0);
+		//drawString("Move the mouse to scroll.", viewWidth()/2, 80, 0);
+		drawString("Playfield offset is now ("+xOffset+","+yOffset+").",viewWidth()/2, 80, 0);
+		drawString("Mouse currently at ("+this.getMouseX()+","+this.getMouseY()+").",viewWidth()/2, 120, 0);
 //		drawString("TOP LEFT",     0,         8,             -1,
 //				true // indicate it should be drawn relative to playfield
 //			);
@@ -82,6 +84,10 @@ public class GUIMap extends JGEngine implements Constants{
 	public void doFrame(){
 		checkMouse();
 		this.clearKey(256);
+		tileX = this.getMouseX()-this.getMouseX()%TILE_SIZE;
+		tileY = (int)this.getMouseX()-this.getMouseY()%TILE_SIZE;
+		unitX =
+		unitY = 
 		xOffset =  getMouseX() * pfWidth() / viewWidth();
 		yOffset = (getMouseY() *pfHeight()/viewHeight());
 		this.setViewOffset(xOffset,yOffset, true);

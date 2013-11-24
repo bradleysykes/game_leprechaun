@@ -114,6 +114,8 @@ public class UnitViewItem extends BoardListViewItem {
 		myMapObject = new MapObject(myMapObjectPrefix,tileX,tileY,"unit",this);
 		GameMap modelMap = map.getModelMap();
 		Unit newGuy = new Unit(myName, player.getPlayer(), modelMap);
+		Tile selectedTile = modelMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE);
+		selectedTile.addUnit(newGuy);
 		newGuy.setMapPosition(tileX/UNIT_SIZE,tileY/UNIT_SIZE);
 		player.assignUnit(newGuy);
 		System.out.println(player.getPlayer().hashCode());
