@@ -18,6 +18,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import model.GameMap;
 import model.Player;
+import model.Resource;
+import model.Resources;
+import model.tile.Tile;
 import data.Elements;
 import data.GameElements;
 
@@ -82,8 +85,7 @@ public class SaveHandler implements Elements {
     public void saveXML(String filename, Document doc) throws FileNotFoundException, TransformerException {
         //FileOutputStream fos = new FileOutputStream(new File("test.xml"));
         TransformerFactory tFactory = TransformerFactory.newInstance();
-        Transformer transformer = null;
-        transformer = formatXML(tFactory.newTransformer());
+        Transformer transformer = formatXML(tFactory.newTransformer());
         //use fos for saving to file; use System.out for printing to console
         transformer.transform(new DOMSource(myXmlDocument), new StreamResult(System.out));
 	}
@@ -106,6 +108,12 @@ public class SaveHandler implements Elements {
         SaveHandler sh = new SaveHandler();
         GameElements currentState = new GameElements();
         GameMap map = new GameMap(3,3);
+        Resource minerals = new Resource("minerals", 50, 2);
+        Resource gas = new Resource("gas", 50, 2);
+        for(Tile tile : map.getAllTiles()) {
+            tile.getStatCollection(RESOURCES).addStat(minerals);
+            tile.getStatCollection(RESOURCES).addStat(gas);
+        }
         currentState.setGameMap(map);
         List<Player> playerList = new ArrayList<Player>();
         Player p1 = new Player();

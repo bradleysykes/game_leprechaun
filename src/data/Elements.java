@@ -16,8 +16,8 @@ public interface Elements {
     String RESOURCE = "Resource";
     
     // for UnitEncoder and UnitDecoder
-    String UNIT_ROOT = "units";
-    String UNIT = "unit";
+    String UNIT_ROOT = "Units";
+    String UNIT = "Unit";
     String ATTRIBUTES = "Attributes";
     String PLAYERS = "Players";
     

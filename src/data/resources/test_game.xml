@@ -1,98 +1,98 @@
 <GameElements>
-    <map x_dimension="2" y_dimension="2">	
-	    <tile x="0" y="0">
-		    <stat name="Passability" value="1.0"/>
-		  	<stat name="Max Population" value="2.0"/>
-		  	<terrain>
-		  		<stat name="Magnitude" value="2.0"/>	  		
-		  	</terrain>
-		  	<resources> 	
-				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-		    </resources>
-    	</tile>
-		<tile x="0" y="1">
-		    <stat name="Passability" value="1.0"/>
-		  	<stat name="Max Population" value="2"/>
-		  	<terrain>
-		  		<stat name="Magnitude" value="2"/>	  		
-		  	</terrain>
-		  	<resources> 	
-				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-		    </resources>
-	    </tile>
-		<tile x="1" y="0">
-		    <stat name="Passability" value="1.0"/>
-		  	<stat name="Max Population" value="2"/>
-		  	<terrain>
-		  		<stat name="Magnitude" value="3.0"/>	  		
-		  	</terrain>
-		  	<resources> 	
-				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-		    </resources>
-	    </tile>
-		<tile x="1" y="1">
-		    <stat name="Passability" value="1.0"/>
-		  	<stat name="Max Population" value="2.0"/>
-		  	<terrain>
-		  		<stat name="Magnitude" value="2.0"/>	  		
-		  	</terrain>
-		  	<resources> 	
-				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-		    </resources>
-	    </tile>
-    </map>
-    <players>
-	    <player id="enemy">
-		    <resources>
-				<resource name="gas" amount="2.0" harvest_rate="2.0"/>
-				<resource name="mineral" amount="2.0" harvest_rate="2.0"/>
-			</resources>
-			<units>
-		  		<unit id="2"/>
-		  		<unit id="3"/>
-		  	</units>
-	  	<player>
-	</players>
-  	<conditions>
+    <Map x_dimension="2" y_dimension="2">	
+	    <Tile x="0" y="0">
+		    <Stat name="Passability" value="1.0"/>
+		  	<Stat name="Max Population" value="2.0"/>
+		  	<Terrain>
+		  		<Stat name="Magnitude" value="2.0"/>	  		
+		  	</Terrain>
+		  	<Resources> 	
+				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </Resources>
+    	</Tile>
+		<Tile x="0" y="1">
+		    <Stat name="Passability" value="1.0"/>
+		  	<Stat name="Max Population" value="2"/>
+		  	<Terrain>
+		  		<Stat name="Magnitude" value="2"/>	  		
+		  	</Terrain>
+		  	<Resources> 	
+				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </Resources>
+	    </Tile>
+		<Tile x="1" y="0">
+		    <Stat name="Passability" value="1.0"/>
+		  	<Stat name="Max Population" value="2"/>
+		  	<Terrain>
+		  		<Stat name="Magnitude" value="3.0"/>	  		
+		  	</Terrain>
+		  	<Resources> 	
+				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </Resources>
+	    </Tile>
+		<Tile x="1" y="1">
+		    <Stat name="Passability" value="1.0"/>
+		  	<Stat name="Max Population" value="2.0"/>
+		  	<Terrain>
+		  		<Stat name="Magnitude" value="2.0"/>	  		
+		  	</Terrain>
+		  	<Resources> 	
+				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+		    </Resources>
+	    </Tile>
+    </Map>
+    <Players>
+	    <Player id="enemy">
+		    <Resources>
+				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
+				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
+			</Resources>
+			<Units>
+		  		<Unit id="2"/>
+		  		<Unit id="3"/>
+		  	</Units>
+	  	</Player>
+	</Players>
+  	<Conditions>
   	
-  	</conditions>
-	<units>
-		<unit name="soldier" id="1">
-			<player id="enemy">
-			<tile x="1" y="1"/>
-			<abilities>
+  	</Conditions>
+	<Units>
+		<Unit name="soldier" id="1">
+			<Player id="enemy"/>
+			<Tile x="1" y="1"/>
+			<Abilities>
 				
-			</abilities>
-			<attributes>
-				<stat name="Base Help" value="2.0"/>
-				<stat name="Health" value="10.0"/>
-				<stat name="Base Attack" value="10.0"/>
-				<stat name="Attack" value="2.0"/>	  		
-				<stat name="Base Defense" value="2.0"/>
-				<stat name="Defense" value="1.0"/>
-				<stat name="Base Stamina" value="10.0"/>
-				<stat name="Stamina" value="5.0"/>	
-				<stat name="Range" value="3.0"/>  		
-			</attributes>
-		</unit>
-		<unit name="soldier" id="2">
-			<player id="enemy">
-			<tile x="1" y="2"/>
-			<attributes>
-				<stat name="Base Help" value="2.0"/>
-				<stat name="Health" value="10.0"/>
-				<stat name="Base Attack" value="10.0"/>
-				<stat name="Attack" value="2.0"/>	  		
-				<stat name="Base Defense" value="2.0"/>
-				<stat name="Defense" value="1.0"/>
-				<stat name="Base Stamina" value="10.0"/>
-				<stat name="Stamina" value="5.0"/>
-				<stat name="Range" value="3.0"/>  			  		
-			</attributes>
-		</unit>
-	</units>
+			</Abilities>
+			<Attributes>
+				<Stat name="Base Help" value="2.0"/>
+				<Stat name="Health" value="10.0"/>
+				<Stat name="Base Attack" value="10.0"/>
+				<Stat name="Attack" value="2.0"/>	  		
+				<Stat name="Base Defense" value="2.0"/>
+				<Stat name="Defense" value="1.0"/>
+				<Stat name="Base Stamina" value="10.0"/>
+				<Stat name="Stamina" value="5.0"/>	
+				<Stat name="Range" value="3.0"/>  		
+			</Attributes>
+		</Unit>
+		<Unit name="soldier" id="2">
+			<Player id="enemy"/>
+			<Tile x="1" y="2"/>
+			<Attributes>
+				<Stat name="Base Help" value="2.0"/>
+				<Stat name="Health" value="10.0"/>
+				<Stat name="Base Attack" value="10.0"/>
+				<Stat name="Attack" value="2.0"/>	  		
+				<Stat name="Base Defense" value="2.0"/>
+				<Stat name="Defense" value="1.0"/>
+				<Stat name="Base Stamina" value="10.0"/>
+				<Stat name="Stamina" value="5.0"/>
+				<Stat name="Range" value="3.0"/>  			  		
+			</Attributes>
+		</Unit>
+	</Units>
 </GameElements>

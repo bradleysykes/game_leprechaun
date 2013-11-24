@@ -99,7 +99,7 @@ public class MapEncoder extends Encoder {
      * @param tileElement
      */
     private void appendResources (Resources resources, Element tileElement) {
-        Element resourcesElement = myXmlDocument.createElement(RESOURCE);
+        Element resourcesElement = myXmlDocument.createElement(RESOURCES);
         for(Stat resource : resources.getStats()) {
             Resource res = (Resource) resource;
             Element resElement = myXmlDocument.createElement(RESOURCE);
