@@ -34,6 +34,9 @@ public class UnitPopupMenu extends GAEPopupMenu {
 		JMenuItem delete = new JMenuItem("Delete");
 		delete.addActionListener(new DeleteListener(myListSource));
 		this.add(delete);
+		JMenuItem removeFromMap = new JMenuItem("Remove All From Map");
+		removeFromMap.addActionListener(new RemoveListener(myListSource));
+		this.add(removeFromMap);
 	}
 	
 	public class EditListener implements ActionListener{

@@ -93,7 +93,6 @@ public class TileViewItem extends BoardListViewItem {
 		int xTile = (int) ((x-x%TILE_SIZE)/TILE_SIZE);
 		int yTile = (int) ((y-y%TILE_SIZE)/TILE_SIZE);
 		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
-		System.out.println(x + "   " +y);
 		myMapObject = new TileMapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,myMapObjectPrefix,this);
 		map.getModelMap().setTile(xTile, yTile, myTile);
 	}

@@ -66,13 +66,10 @@ public abstract class GAEPopupMenu extends JPopupMenu {
 	}
 	
 	public class RemoveListener implements ActionListener {
-		public RemoveListener(BoardList list){
-			System.out.println("ListenerMade");
-		}
+		public RemoveListener(BoardList list){}
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("ListenerHit");
 			myController.removeBoardObject((BoardListViewItem)mySource);
 		}
 		

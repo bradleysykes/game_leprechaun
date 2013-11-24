@@ -108,17 +108,16 @@ public class UnitViewItem extends BoardListViewItem {
 
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player) {
-		map.defineImage("unit", "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
+		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		int tileX = (int)(x-x%UNIT_SIZE);
 		int tileY = (int)(y-y%UNIT_SIZE);
-		myMapObject = new MapObject(myMapObjectPrefix,tileX,tileY,"unit",this);
+		myMapObject = new MapObject(myMapObjectPrefix,tileX,tileY,myMapObjectPrefix,this);
 		GameMap modelMap = map.getModelMap();
 		Unit newGuy = new Unit(myName, player.getPlayer(), modelMap);
 		Tile selectedTile = modelMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE);
 		selectedTile.addUnit(newGuy);
 		newGuy.setMapPosition(tileX/UNIT_SIZE,tileY/UNIT_SIZE);
 		player.assignUnit(newGuy);
-		System.out.println(player.getPlayer().hashCode());
 	}
 
 }
