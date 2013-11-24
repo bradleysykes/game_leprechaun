@@ -19,11 +19,11 @@ public class DefeatParameterSetter implements IConditionParameterSetter {
 	public DefeatParameterSetter(Controller controller) {
 		myController = controller;
 		myPlayers = controller.getPlayers();
+		myWOSelected = new ArrayList<Player>();
 	}
 
 	@Override
 	public List<Player> getFirstVariableOptions(int playerNum) {
-		List<Player> myWOSelected = new ArrayList<Player>();
 		for (int i=0; i<myPlayers.size(); i++) {
 			if(i!=playerNum) {
 				myWOSelected.add(myPlayers.get(i));

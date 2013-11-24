@@ -41,6 +41,7 @@ public class ConditionDialogue extends InputDialogue {
 	private List<Unit> myVariable2;
 	private List<String> conditionNames;
 	private BoardList myList;
+	private IConditionParameterSetter myParamsetter;
 
 	public ConditionDialogue(Controller controller, BoardList list) {
 		super(controller);
@@ -64,9 +65,9 @@ public class ConditionDialogue extends InputDialogue {
 		myPlayersCombo = new JComboBox<String>();
 		myVariable1Combo = new JComboBox<String>();
 		myVariable2Combo = new JComboBox<String>();
-		myConditions.addPropertyChangeListener(new WatchValueListener());
-		myPlayersCombo.addPropertyChangeListener(new WatchValueListener());
-		myVariable1Combo.addPropertyChangeListener(new WatchValueListener());
+		myConditions.addActionListener(new WatchValueListener());
+		myPlayersCombo.addActionListener(new WatchValueListener());
+		myVariable1Combo.addActionListener(new Var1ValueListener());
 		for (String s:conditionNames) {
 			myConditions.addItem(s);
 		}
@@ -163,10 +164,11 @@ public class ConditionDialogue extends InputDialogue {
 		return commands;
 	}
 	public class MakeConditionListener implements ActionListener {
+
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			int conditionNum = myConditions.getSelectedIndex();	
-			IConditionParameterSetter paramsetter = myConditionsParameters.get(conditionNum);
+			myParamsetter = myConditionsParameters.get(conditionNum);
 			int playerNum = myPlayersCombo.getSelectedIndex();
 			Player player = myPlayers.get(playerNum);
 			if(myVariable1Combo.isEnabled()){
@@ -175,7 +177,7 @@ public class ConditionDialogue extends InputDialogue {
 			Unit goal=null;
 			if (myVariable2Combo.isEnabled()) {
 				goal = myVariable2.get(myVariable2Combo.getSelectedIndex());
-				Condition condition = paramsetter.getCondition(player, goal);
+				Condition condition = myParamsetter.getCondition(player, goal);
 				String name = myNameField.getText();
 				ConditionViewItem cvi = new ConditionViewItem(name, condition);
 				myList.addNewItem(cvi);
@@ -184,35 +186,43 @@ public class ConditionDialogue extends InputDialogue {
 		}
 	}
 
-	public class WatchValueListener implements PropertyChangeListener {
+	public class WatchValueListener implements ActionListener {
 
 		@Override
-		public void propertyChange(PropertyChangeEvent arg0) {
+		public void actionPerformed(ActionEvent arg0) {
 			int conditionNum = myConditions.getSelectedIndex();	
-			IConditionParameterSetter paramsetter = myConditionsParameters.get(conditionNum);
+			myParamsetter = myConditionsParameters.get(conditionNum);
 			int playerNum = myPlayersCombo.getSelectedIndex();
-			myVariable1 = paramsetter.getFirstVariableOptions(playerNum);
+			myVariable1 = myParamsetter.getFirstVariableOptions(playerNum);
 			if (myVariable1!=null) {
-				myVariable1Combo.setEnabled(true);
+//				myVariable1Combo.setEnabled(true);
+				myVariable1Combo.removeAllItems();
 				for (Player p:myVariable1) {
 					myVariable1Combo.addItem(p.getName());
 				}
-				myVariable2 = paramsetter.getSecondVariableOptions(myVariable1Combo.getSelectedIndex());
-				if (myVariable2!=null) {
-					myVariable2Combo.setEnabled(true);
-					for (Unit u:myVariable2) {
-						myVariable2Combo.addItem(u.getName());
-					}
-				}
-				else {
-					myVariable2Combo.setEnabled(false);
-				}
 			}
 			else {
-//				myVariable1Combo.setEnabled(false);
-//				myVariable2Combo.setEnabled(false);
+				myVariable2Combo.setEnabled(false);
 			}
 		}
 
+	}
+	public class Var1ValueListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) { 
+			myVariable2Combo.removeAll();
+			myVariable2 = myParamsetter.getSecondVariableOptions(myVariable1Combo.getSelectedIndex());
+			if (myVariable2!=null) {
+				myVariable2Combo.setEnabled(true);
+				for (Unit u:myVariable2) {
+					myVariable2Combo.addItem(u.getName());
+				}
+			}
+			else {
+				myVariable2Combo.setEnabled(false);
+			}
+		}
+		
 	}
 }
