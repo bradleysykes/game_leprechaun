@@ -1,5 +1,7 @@
 package gae.panel_lists;
 import gae.Controller;
+import gae.dialogues.EditDialogue;
+import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
 import gae.listeners.BoardListSelectionListener;
 import gae.listeners.PopupListener;
@@ -106,9 +108,13 @@ public abstract class BoardList extends JList {
 	 * @param inputData
 	 * @param name 
 	 */
-	public void postInput(List<Stat> inputData, String name, File f){
+	public void postNewInput(List<Stat> inputData, String name, File f){
 		BoardListViewItem newItem = myType.createModel(inputData, name,f);
-        this.addNewItem(newItem);
+		this.addNewItem(newItem);
+	}
+	
+	public void postEditInput(List<Stat> inputData, String name, File f){
+		BoardListViewItem newItem = myType.createModel(inputData, name,f);
 	}
 		
 }

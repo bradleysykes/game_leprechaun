@@ -47,7 +47,7 @@ public class UnitPopupMenu extends GAEPopupMenu {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Edit begins");
-			
+			mySource.launchEdit();
 		}
 		
 	}

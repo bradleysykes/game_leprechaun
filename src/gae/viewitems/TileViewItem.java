@@ -20,27 +20,13 @@ import model.tile.Tile;
 public class TileViewItem extends BoardListViewItem {
 
 	private Tile myTile = new Tile(20,20,new GameMap(20,20));
-	private File myImage;
-	private String myImagePath;
 	
 	public TileViewItem(){
-		this(new Tile(20,20,new GameMap(20,20)).getStats(),"Default",new File(System.getProperty("user.dir")+"\\src\\gae\\resources\\test_tile.jpg"));
+		this(new Tile(20,20,new GameMap(20,20)).getStats(),"Default",new File(DEFAULT_TILE_PATH));
 	}
 	
 	public TileViewItem(List<Stat> stats,String name, File f){
-		super(name);
-		myProperties = stats;
-		myMapObjectPrefix = name+hashCode();
-		if(!(f==null)){
-			myImagePath = f.getPath();
-			myImage = f;
-			ImageTool.scaleAndOverwriteImage(myImage.getPath(), TILE_IMAGE_RESIZE, TILE_IMAGE_RESIZE);
-		}
-		else{
-			myImagePath=System.getProperty("user.dir")+"\\src\\gae\\resources\\test_tile.jpg";
-			myImage = new File(myImagePath);
-			ImageTool.scaleAndOverwriteImage(myImage.getPath(), TILE_IMAGE_RESIZE,TILE_IMAGE_RESIZE);
-		}
+		super(stats, name, f);
 	}
 	
 	@Override
@@ -67,14 +53,6 @@ public class TileViewItem extends BoardListViewItem {
 		return "resources/test_tile.jpg";
 	}
 
-	/**
-	 * icon used to display viewitem in its list
-	 */
-	@Override
-	public Icon getListIcon() {
-		return new ImageIcon(myImage.getPath());
-	}
-	
 	public int getImageHeight(){
 		return 0;
 	}
@@ -86,7 +64,6 @@ public class TileViewItem extends BoardListViewItem {
 	public void placeOnBoard(GUIMap map, double x, double y) {
 		//new JGObject(such and such);
 		myMapObject = new MapObject(myMapObjectPrefix,x*TILE_SIZE,y*TILE_SIZE,"tile", this);
-		//System.out.println("tile placed");
 	}
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player){
@@ -95,6 +72,16 @@ public class TileViewItem extends BoardListViewItem {
 		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		myMapObject = new TileMapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,myMapObjectPrefix,this);
 		map.getModelMap().setTile(xTile, yTile, myTile);
+	}
+	
+	@Override
+	protected String getDefaultImagePath() {
+		return DEFAULT_TILE_PATH;
+	}
+
+	@Override
+	protected int getResizeDimensions() {
+		return TILE_IMAGE_RESIZE;
 	}
 	
 }

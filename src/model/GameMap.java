@@ -23,6 +23,10 @@ public class GameMap {
 		List<Tile> tileRow = myTiles.get(x);
 		tileRow.set(y, t);
 	}
+	
+	public void clearTiles(){
+		myTiles.clear();
+	}
 
 	public boolean contains(int x, int y){
 		if(myTiles.get(x)!=null){

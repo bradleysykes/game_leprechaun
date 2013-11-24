@@ -40,6 +40,18 @@ public class GUIMap extends JGEngine implements Constants{
 		myPopup = popup;
 	}
 	
+	@Override
+	public void removeObjects(String prefix, int cidmask){
+		if(prefix==null&&cidmask==0){
+			//clear everything
+			myMap.clearTiles();
+		}
+		else{
+			// clear only the objects being removed
+		}
+		super.removeObjects(prefix, cidmask);
+	}
+	
 	
 	@Override
 	public void initCanvas() {
@@ -57,8 +69,9 @@ public class GUIMap extends JGEngine implements Constants{
 			PlayerViewItem active = BoardBuffer.getActivePlayer();
 			BoardBuffer.retrieve().clickOnBoard(this, (double) xOffset, (double) yOffset, active);
 			this.revalidate();
+			this.clearKey(256);
 		}
-		if(this.getKey(KeyMouse3)&&myMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE).isOccupied()){
+		if(this.getKey(KeyMouse3)){
 			//there is a unit on this tile, right click to display popup menu
 			myPopup.show(this,this.getMouseX(),this.getMouseY());
 			myPopup.revalidate();
@@ -75,6 +88,7 @@ public class GUIMap extends JGEngine implements Constants{
 		//drawString("Move the mouse to scroll.", viewWidth()/2, 80, 0);
 		drawString("Playfield offset is now ("+xOffset+","+yOffset+").",viewWidth()/2, 80, 0);
 		drawString("Mouse currently at ("+this.getMouseX()+","+this.getMouseY()+").",viewWidth()/2, 120, 0);
+		drawString("Unit on tile: "+myMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE).isOccupied(),viewWidth()/2,160,0);
 //		drawString("TOP LEFT",     0,         8,             -1,
 //				true // indicate it should be drawn relative to playfield
 //			);

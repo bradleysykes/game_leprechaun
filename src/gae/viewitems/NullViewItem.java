@@ -53,4 +53,14 @@ public class NullViewItem extends BoardListViewItem {
 		return new NullViewItem();
 	}
 
+	@Override
+	protected int getResizeDimensions() {
+		return 0;
+	}
+
+	@Override
+	protected String getDefaultImagePath() {
+		return DEFAULT_UNIT_PATH;
+	}
+
 }

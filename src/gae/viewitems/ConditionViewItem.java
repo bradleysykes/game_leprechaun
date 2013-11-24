@@ -64,8 +64,17 @@ public class ConditionViewItem extends BoardListViewItem {
 
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player) {
-		// TODO Auto-generated method stub
-		
+		// to do 
+	}
+
+	@Override
+	protected int getResizeDimensions() {
+		return 0;
+	}
+
+	@Override
+	protected String getDefaultImagePath() {
+		return DEFAULT_UNIT_PATH;
 	}
 
 }
