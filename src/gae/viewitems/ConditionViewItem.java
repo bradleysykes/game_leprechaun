@@ -22,14 +22,15 @@ public class ConditionViewItem extends BoardListViewItem {
 
 	private Condition myCondition;
 
-	public ConditionViewItem(String name){
+	public ConditionViewItem(String name, Condition condition){
 		super(name);
+		myCondition = condition;
 		// initialize this viewitem's list of properties
 		myProperties = new ArrayList<Stat>();
 	}
 	
 	public ConditionViewItem(){
-		this("test condition");
+		this("test condition", null);
 	}
 	
 	
@@ -44,7 +45,7 @@ public class ConditionViewItem extends BoardListViewItem {
 		myController.getPlayers();
 		myCondition = new Create(null, null);
 		myCondition.setStats(inputData);
-		return new ConditionViewItem("Test Name");
+		return new ConditionViewItem("Test Name", null);
 	}
 
 	@Override
