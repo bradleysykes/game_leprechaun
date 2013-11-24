@@ -2,6 +2,7 @@ package data.decoder;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,7 @@ import data.Elements;
 import data.GameElements;
 import model.GameMap;
 import model.Player;
+import model.tile.Tile;
 import model.unit.Unit;
 
 /**
@@ -33,9 +35,9 @@ import model.unit.Unit;
 /*
  * 
  * TODO:
- * 1. put units to tiles
- * 2. put units to players
- * 3. put players to units
+ * 1. put units to tiles  
+ * 2. put units to players o
+ * 3. put players to units X
  * 4. condition(separate?)
  * 5. put map to units
  */
@@ -43,16 +45,19 @@ import model.unit.Unit;
 public class DataManager implements Attributes, Elements {
     private Element myRoot;
     private GameMap myGameMap;
-    private List<Unit> myUnits;
+    //private List<Unit> myUnits;
     private List<Player> myPlayers;
     
-    private Map<String,Decoder> myDecoders;
-    private Map<String,String> myImageResources;
+    private List<Decoder> myDecoders;
+    
+    private Map<String,String> myTileImageResources;
+    private Map<String,String> myUnitImageResources;
     
     
     public DataManager() {
-        myDecoders = new HashMap<String,Decoder>();
-        myImageResources = new HashMap<String,String>();
+        myDecoders = new ArrayList<Decoder>();
+        myTileImageResources = new HashMap<String,String>();
+        myUnitImageResources = new HashMap<String,String>();
         initDecoders();
     }
     
@@ -74,13 +79,10 @@ public class DataManager implements Attributes, Elements {
         myRoot = doc.getDocumentElement();
     }
     
-    /**
-     * Use reflection to create all the decoders.
-     */
     private void initDecoders() {
-        //hard code for the test use
-        myDecoders.put("MapDecoder", new MapDecoder(this));
-        myDecoders.put("PlayerDecoder", new PlayerDecoder(this));
+        myDecoders.add(new MapDecoder(this));
+        myDecoders.add(new PlayerDecoder(this));
+        myDecoders.add(new UnitDecoder(this));
     }
     
     /**
@@ -88,8 +90,8 @@ public class DataManager implements Attributes, Elements {
      * corresponding objects.
      */
     private void processDecoders() {
-        for (String key: myDecoders.keySet()) {
-            myDecoders.get(key).decodeData(myRoot);
+        for (Decoder decoder: myDecoders) {
+            decoder.decodeData(myRoot);
         }
     }
     
@@ -108,7 +110,7 @@ public class DataManager implements Attributes, Elements {
         } catch(Exception e) {
             e.printStackTrace();
         }
-        return new GameElements(myGameMap);
+        return new GameElements(myGameMap, myPlayers);
     }
     
     //get & set methods
@@ -119,18 +121,31 @@ public class DataManager implements Attributes, Elements {
     public GameMap getGameMap() {
         return myGameMap;
     }
-    
+/*
     public void setUnits(List<Unit> units) {
         myUnits = units;
     }
-    
+*/
     public void setPlayers (List<Player> players) {
         myPlayers = players;
     }
     
+    public Player getPlayer(String id) {
+        for (Player p : myPlayers) {
+            if (p.getID().equals(id)) {
+                return p;
+            }
+        }
+        return null;
+    }
+    
+    public Tile getTile(int x, int y) {
+        return myGameMap.getTile(x,y);
+    }
+    
     public static void main(String[] args) {
         DataManager dm = new DataManager();
-        GameElements map = dm.getGameElements(new File("src/data/resources/map.xml"));
+        GameElements map = dm.getGameElements(new File("src/data/resources/test_game.xml"));
         map.toString();
     }
 

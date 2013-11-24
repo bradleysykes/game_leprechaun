@@ -10,11 +10,11 @@ import model.unit.Unit;
 
 public interface IConditionParameterSetter {
 
-	public abstract List<ViewItem> getFirstVariableOptions();
+	public abstract List<Player> getFirstVariableOptions(int playerNum);
 	
-	public abstract List<ViewItem> getSecondVariableOptions();
+	public abstract List<Unit> getSecondVariableOptions(int var1Num);
 	
-	public abstract List<ViewItem> getThirdVariableOptions();
+	public abstract List<ViewItem> getThirdVariableOptions(int var2Num);
 	
-	public abstract List<Condition> getCondition(List<Player> players, Unit goal);
+	public abstract Condition getCondition(Player player, Unit goal);
 }

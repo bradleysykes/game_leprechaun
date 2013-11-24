@@ -28,7 +28,7 @@ public class ConditionList extends BoardList {
 
 	@Override
 	public void createCustomType(){
-		new ConditionDialogue(myController);
+		new ConditionDialogue(myController, this);
 	}
 
 }

@@ -4,7 +4,7 @@
 		    <Stat name="Passability" value="1.0"/>
 		  	<Stat name="Max Population" value="2.0"/>
 		  	<Terrain>
-		  		<Stat name="Magnitude" value="2.0"/>	  		
+		  		<stat name="Magnitude" value="2.0"/>	  		
 		  	</Terrain>
 		  	<Resources> 	
 				<Resource name="gas" amount="2.0" harvest_rate="2.0"/>
@@ -52,6 +52,7 @@
 				<Resource name="mineral" amount="2.0" harvest_rate="2.0"/>
 			</Resources>
 			<Units>
+<<<<<<< HEAD
 		  		<Unit id="2"/>
 		  		<Unit id="3"/>
 		  	</Units>
@@ -62,10 +63,9 @@
   	</Conditions>
 	<Units>
 		<Unit name="soldier" id="1">
-			<Player id="enemy"/>
-			<Tile x="1" y="1"/>
+			<UnitPlayer id="enemy"/>
+			<UnitTile x="1" y="1"/>
 			<Abilities>
-				
 			</Abilities>
 			<Attributes>
 				<Stat name="Base Help" value="2.0"/>
@@ -80,8 +80,10 @@
 			</Attributes>
 		</Unit>
 		<Unit name="soldier" id="2">
-			<Player id="enemy"/>
-			<Tile x="1" y="2"/>
+			<UnitPlayer id="enemy"/>
+			<UnitTile x="1" y="2"/>
+			<Abilities>
+			</Abilities>
 			<Attributes>
 				<Stat name="Base Help" value="2.0"/>
 				<Stat name="Health" value="10.0"/>

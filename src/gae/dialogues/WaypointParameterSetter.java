@@ -16,25 +16,25 @@ public class WaypointParameterSetter implements IConditionParameterSetter {
 	}
 
 	@Override
-	public List<ViewItem> getFirstVariableOptions() {
+	public List<Player> getFirstVariableOptions(int playerNum) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<ViewItem> getSecondVariableOptions() {
+	public List<Unit> getSecondVariableOptions(int var1Num) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<ViewItem> getThirdVariableOptions() {
+	public List<ViewItem> getThirdVariableOptions(int var2Num) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Condition> getCondition(List<Player> players, Unit goal) {
+	public Condition getCondition(Player players, Unit goal) {
 		// TODO Auto-generated method stub
 		return null;
 	}
