@@ -3,6 +3,7 @@ package data.decoder;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +19,6 @@ import data.GameElements;
 import model.GameMap;
 import model.Player;
 import model.tile.Tile;
-import model.unit.Unit;
 
 /**
  * 
@@ -35,11 +35,9 @@ import model.unit.Unit;
 /*
  * 
  * TODO:
- * 1. put units to tiles  
- * 2. put units to players o
- * 3. put players to units X
- * 4. condition(separate?)
- * 5. put map to units
+ * 1. condition(separate?)
+ * 2. abilities
+ * 
  */
 
 public class DataManager implements Attributes, Elements {
@@ -47,7 +45,6 @@ public class DataManager implements Attributes, Elements {
     private GameMap myGameMap;
     //private List<Unit> myUnits;
     private List<Player> myPlayers;
-    
     private List<Decoder> myDecoders;
     
     private Map<String,String> myTileImageResources;
@@ -81,6 +78,7 @@ public class DataManager implements Attributes, Elements {
     
     private void initDecoders() {
         myDecoders.add(new MapDecoder(this));
+        
         myDecoders.add(new PlayerDecoder(this));
         myDecoders.add(new UnitDecoder(this));
     }
@@ -110,7 +108,8 @@ public class DataManager implements Attributes, Elements {
         } catch(Exception e) {
             e.printStackTrace();
         }
-        return new GameElements(myGameMap, myPlayers);
+
+        return new GameElements(myGameMap, myPlayers, myTileImageResources, myUnitImageResources);
     }
     
     //get & set methods
@@ -142,6 +141,7 @@ public class DataManager implements Attributes, Elements {
     public Tile getTile(int x, int y) {
         return myGameMap.getTile(x,y);
     }
+ 
     
     public static void main(String[] args) {
         DataManager dm = new DataManager();

@@ -2,13 +2,11 @@ package data.decoder;
 
 import java.util.ArrayList;
 import java.util.List;
-import model.GameMap;
 import model.Player;
 import model.stats.StatCollection;
 import model.tile.Tile;
 import model.unit.Unit;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 
@@ -41,7 +39,7 @@ public class UnitDecoder extends Decoder {
         String id = unit.getAttribute(ID);
         
         //get the player that this unit belongs to
-        Element player = (Element)unit.getElementsByTagName(PLAYER).item(0);
+        Element player = (Element)unit.getElementsByTagName(UNIT_PLAYER).item(0);
         String playerID = player.getAttribute(ID);
         Player targetPlayer = myDataManager.getPlayer(playerID);
         
@@ -49,7 +47,7 @@ public class UnitDecoder extends Decoder {
         Unit newUnit = new Unit(id, targetPlayer, myDataManager.getGameMap());
                
         //get the tile that this unit places at
-        Element tile = (Element)unit.getElementsByTagName(TILE).item(0);
+        Element tile = (Element)unit.getElementsByTagName(UNIT_TILE).item(0);
         int x = Integer.parseInt(tile.getAttribute(X_COORD));
         int y = Integer.parseInt(tile.getAttribute(Y_COORD));
         Tile targetTile = myDataManager.getTile(x, y);

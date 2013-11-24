@@ -1,26 +1,22 @@
 package data.decoder;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import model.Player;
-import model.Resource;
 import model.Resources;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
 /**
  * TODO: Winning Condition!
  * 
- * @author shlee0605
+ * @author Seunghyun Lee
  *
  */
 public class PlayerDecoder extends Decoder {
     
     private DataManager myDataManager;
     private List<Player> myPlayers;
-    private Map<String, List<String>> myPlayerUnitMap;
     
     public PlayerDecoder(DataManager manager) {
         myDataManager = manager;

@@ -20,9 +20,12 @@ public interface Elements {
     String UNIT = "Unit";
     String ATTRIBUTES = "Attributes";
     String ABILITIES = "Abilities";
+    String UNIT_TILE = "UnitTile";
+    String UNIT_PLAYER = "UnitPlayer";
     
     //for PlayerDecoder
     String PLAYERS = "Players";
     String PLAYER = "Player";
 
+    //for 
 }
