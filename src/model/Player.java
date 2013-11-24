@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import model.stats.StatCollection;
@@ -14,6 +15,7 @@ public class Player extends StatCollection implements ModelConstants{
 	public Player(){
 		super("Player","Default Player Name");
 		this.addStat(new Resources());
+		myUnits = new ArrayList<Unit>();
 	}
 	
 	public void setModel(Model m){

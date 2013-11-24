@@ -10,9 +10,11 @@ import java.io.FilenameFilter;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
+
 import model.stats.Stat;
 import model.unit.Unit;
 import model.Player;
@@ -20,13 +22,12 @@ import model.Condition;
 
 @SuppressWarnings("serial")
 public class ConditionDialogue extends InputDialogue {
-	private JComboBox<String> players;// = new JComboBox<String>();
-	private JComboBox<String> conditions;// = new JComboBox<String>();
-	private JComboBox<String> units;// = new JComboBox<String>();
 
-	public ConditionDialogue(List<Stat> props, BoardList list) {
-		super(props, list);
-	}
+	private JComboBox<String> myConditions;// = new JComboBox<String>();
+	private JComboBox<String> myPlayers;// = new JComboBox<String>();
+	private JComboBox<String> myVariable1;
+	private JComboBox<String> myVariable2;// = new JComboBox<String>();
+//	private Map<String, ConditionParameterSetter> myConditionsParameters;
 
 	public ConditionDialogue(Controller controller) {
 		super(controller);
@@ -40,38 +41,38 @@ public class ConditionDialogue extends InputDialogue {
 		/*JComboBox<String> players = new JComboBox<String>();
 		JComboBox<String> conditions = new JComboBox<String>();
 		JComboBox<String> units = new JComboBox<String>();*/
-		
-		players = new JComboBox<String>();
-		conditions = new JComboBox<String>();
+		myConditions = new JComboBox<String>();
+		myPlayers = new JComboBox<String>();
+
 		units = new JComboBox<String>();
 		
-		List<Condition> myConditions = new ArrayList<Condition>();
+		List<Condition> conditions = new ArrayList<Condition>();
 		try {
 			for(Class<Condition> c : reflectOnConditionsPackage()){
-				myConditions.add(c.newInstance());
+				conditions.add(c.newInstance());
 			}
 		} catch (Exception e) {
 
 		}
-		for (Condition c : myConditions){
-			conditions.addItem(c.getName());
+		for (Condition c : conditions){
+			myConditions.addItem(c.getName());
 		}
 		for (Player p : myController.getPlayers()){
-			players.addItem(p.getName());
+			myPlayers.addItem(p.getName());
 		}
-		players.addActionListener(new ActionListener() {
+		myPlayers.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("if only players had units to add...");
-				Player playa = myController.getPlayers().get(players.getSelectedIndex());
+				Player playa = myController.getPlayers().get(myPlayers.getSelectedIndex());
 				units.removeAll();
 /*				for(Unit u : playa.getAllUnits()){
 					units.addItem(u.getName());
 				}*/
 			}
 		});
-		guts.add(conditions);
-		guts.add(players);
+		guts.add(myConditions);
+		guts.add(myPlayers);
 		guts.add(units);
 		return guts;
 	}
