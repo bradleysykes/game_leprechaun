@@ -12,8 +12,10 @@ public interface Constants {
 	final String TILE_PACKAGE_NAME = "tile";
 	final String CONDITION_PACKAGE_NAME = "tile";
 	
-	final int TILE_SIZE = 80;
+	final int TILE_SIZE =80;
 	final int UNIT_SIZE = 60;
+	final int TILE_IMAGE_RESIZE = 79;
+	final int UNIT_IMAGE_RESIZE = 59;
 	
 	final String BOARD_PANEL_TITLE = "Board Objects";
 	final String MAP_PANEL_TITLE = "Game Map";
