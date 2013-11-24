@@ -29,9 +29,9 @@ import model.stats.StatCollection;
 
 public class UnitCreationDialogue extends InputDialogue {
 	
-	private JButton myEnterButton;
-	private File myImage;
-	private ViewItemField myName;
+	protected JButton myEnterButton;
+	protected File myImage;
+	protected ViewItemField myName;
 	
 	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, BoardList list) {
 		super(modelProperties, list);		
@@ -62,10 +62,6 @@ public class UnitCreationDialogue extends InputDialogue {
 		// launch edit properties view
 		super(model,new NullBoardList());
 	}
-
-	public void initMap(){
-		
-	}
 	
 	@Override
 	public void postInput() {
@@ -78,7 +74,7 @@ public class UnitCreationDialogue extends InputDialogue {
 			inputData.add(stat);
 		}
 		String name = myName.getData();
-		myList.postInput(inputData, name, myImage);
+		myList.postNewInput(inputData, name, myImage);
 		disposeDialogue();
 	}
 	

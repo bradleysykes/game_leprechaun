@@ -1,5 +1,7 @@
 package model.unit;
 
+import java.awt.Point;
+
 import model.Abilities;
 import model.Ability;
 import model.Attributes;
@@ -21,6 +23,7 @@ public class Unit extends StatCollection implements ModelConstants {
 	private GameMap myMap;
 	private Player myPlayer;
 	private Tile myCurrentTile;
+	private int myX,  myY;
 	
 	public Unit(String name, Player player, GameMap map){
 		super("Unit","Soldier");
@@ -51,7 +54,13 @@ public class Unit extends StatCollection implements ModelConstants {
 //	}
 	
 	public void setMapPosition(int newX, int newY){
+		myX = newX;
+		myY = newY;
 		myCurrentTile = myMap.getTile(newX,newY);
+	}
+	
+	public Point getMapPosition(){
+		return new Point(myX,myY);
 	}
 	
 	public void setCurrentTile(Tile t){

@@ -36,4 +36,9 @@ public abstract class ViewItem implements Constants {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void launchEdit() {
+		// TODO Auto-generated method stub
+		
+	}
 }

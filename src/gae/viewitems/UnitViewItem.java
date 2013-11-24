@@ -2,21 +2,12 @@ package gae.viewitems;
 
 import gae.Controller;
 import gae.GUIMap;
+import gae.dialogues.EditDialogue;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
-import sun.util.calendar.LocalGregorianCalendar.Date;
-import util.ImageTool;
-
-import jgame.JGObject;
-
 import model.GameMap;
 import model.Player;
 import model.stats.Stat;
@@ -25,36 +16,16 @@ import model.unit.Unit;
 
 public class UnitViewItem extends BoardListViewItem {
 
-	private String UNIT_LIST_MESSAGE = "Unit List Message";
 	private Unit myUnit = new Unit("Unit",new Player(), new GameMap(50,50));
-	private File myImage;
-	private String myImagePath;
+	private InputDialogue myDialogue;
 	
 	public UnitViewItem(List<Stat> stats, String name, File imageFile){
-		super(name);
-		myProperties = stats;
-		myMapObjectPrefix = name+hashCode();
-		if(!(imageFile==null)){
-			//image file has been uploaded by user
-			myImagePath = imageFile.getPath();
-			myImage = imageFile;
-			System.out.println(myImage.getPath());
-			ImageTool.scaleAndOverwriteImage(myImage.getPath(), UNIT_IMAGE_RESIZE,UNIT_IMAGE_RESIZE);
-		}
-		else{
-			//default image file
-			myImagePath=System.getProperty("user.dir")+"\\src\\gae\\resources\\test_icon_image.png";
-			myImage = new File(myImagePath);
-			ImageTool.scaleAndOverwriteImage(myImage.getPath(), UNIT_IMAGE_RESIZE,UNIT_IMAGE_RESIZE);
-		}
+		super(stats, name, imageFile);
 		myUnit.setStats(myProperties);
 	}
 	
 	public UnitViewItem(String name) {
 		this(new Unit("Unit",new Player(), new GameMap(50,50)).getStats(),name,new File(System.getProperty("user.dir")+"\\src\\gae\\resources\\test_icon_image.png"));
-//		super(name);
-//		myUnit = new Unit("TEST",new Player(),new GameMap(400, 400));
-//		myProperties = myUnit.getStats();
 	}
 	/**
 	 * use to figure out what properties this type needs
@@ -91,13 +62,10 @@ public class UnitViewItem extends BoardListViewItem {
 	public String getListMessage() {
 		return myName;
 	}
-	@Override
-	public Icon getListIcon() {
-		return new ImageIcon(myImage.getPath());
-	}
+	
 	@Override
 	public void showProperties(){
-		InputDialogue d = new UnitCreationDialogue(myName,this.getModel(),this);
+		myDialogue = new UnitCreationDialogue(myName,this.getModel(),this);
 	}
 	
 	@Override
@@ -114,8 +82,30 @@ public class UnitViewItem extends BoardListViewItem {
 		myMapObject = new MapObject(myMapObjectPrefix,tileX,tileY,myMapObjectPrefix,this);
 		GameMap modelMap = map.getModelMap();
 		Unit newGuy = new Unit(myName, player.getPlayer(), modelMap);
+		Tile selectedTile = modelMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE);
+		selectedTile.addUnit(newGuy);
 		newGuy.setMapPosition(tileX/UNIT_SIZE,tileY/UNIT_SIZE);
 		player.assignUnit(newGuy);
+	}
+	
+	@Override
+	public void launchEdit(){
+		myDialogue = new EditDialogue(myName,this.getModel(),this);
+	}
+
+	@Override
+	protected String getDefaultImagePath() {
+		return DEFAULT_UNIT_PATH;
+	}
+
+	@Override
+	protected int getResizeDimensions() {
+		return UNIT_IMAGE_RESIZE;
+	}
+
+	@Override
+	protected String getMapPrefix() {
+		return "z"+myName+hashCode();
 	}
 
 }
