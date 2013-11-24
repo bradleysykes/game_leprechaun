@@ -63,4 +63,9 @@ public class NullViewItem extends BoardListViewItem {
 		return DEFAULT_UNIT_PATH;
 	}
 
+	@Override
+	protected String getMapPrefix() {
+		return "";
+	}
+
 }

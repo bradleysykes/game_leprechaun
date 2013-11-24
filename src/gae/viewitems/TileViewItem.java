@@ -83,5 +83,10 @@ public class TileViewItem extends BoardListViewItem {
 	protected int getResizeDimensions() {
 		return TILE_IMAGE_RESIZE;
 	}
+
+	@Override
+	protected String getMapPrefix() {
+		return "a"+myName+this.hashCode();
+	}
 	
 }

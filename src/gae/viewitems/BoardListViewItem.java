@@ -29,7 +29,7 @@ public abstract class BoardListViewItem extends ViewItem {
 	public BoardListViewItem(List<Stat> stats, String name, File imageFile){
 		myName = name;
 		myProperties = stats;
-		myMapObjectPrefix = name+this.hashCode();
+		myMapObjectPrefix = getMapPrefix();
 		int resizeDimensions = getResizeDimensions();
 		if(!(imageFile==null)){
 			//image file has been uploaded by user
@@ -45,6 +45,8 @@ public abstract class BoardListViewItem extends ViewItem {
 		}
 	}
 	
+	protected abstract String getMapPrefix();
+
 	protected BoardListViewItem(String name){
 		//special constructor for a Condition
 		myName = name;

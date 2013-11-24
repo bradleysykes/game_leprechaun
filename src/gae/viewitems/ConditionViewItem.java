@@ -77,4 +77,9 @@ public class ConditionViewItem extends BoardListViewItem {
 		return DEFAULT_UNIT_PATH;
 	}
 
+	@Override
+	protected String getMapPrefix() {
+		return "";
+	}
+
 }

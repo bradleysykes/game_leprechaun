@@ -103,4 +103,9 @@ public class UnitViewItem extends BoardListViewItem {
 		return UNIT_IMAGE_RESIZE;
 	}
 
+	@Override
+	protected String getMapPrefix() {
+		return "z"+myName+hashCode();
+	}
+
 }
