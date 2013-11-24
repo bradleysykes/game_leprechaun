@@ -9,10 +9,10 @@ import model.Player;
 
 public class GameElements {
 
-    private GameMap myGameMap;
-    private List<Player> myPlayers;
-    private Map<String, String> myTileImages;
-    private Map<String, String> myUnitImages;
+    protected GameMap myGameMap;
+    protected List<Player> myPlayers;
+    protected Map<String, String> myTileImages;
+    protected Map<String, String> myUnitImages;
 
     public GameElements(GameMap map, List<Player> players, Map<String, String> tileImages, 
                         Map<String, String> unitImages) {

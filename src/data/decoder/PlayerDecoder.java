@@ -48,7 +48,7 @@ public class PlayerDecoder extends Decoder {
     
     @Override
     public void decodeData (Element root) {
-        myDataManager.setPlayers(processPlayers(root));
+        myDataManager.setPlayerList(processPlayers(root));
     }
 
 }

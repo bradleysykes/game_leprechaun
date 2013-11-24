@@ -90,10 +90,10 @@
 	
 	<ImageMap>
 	    <tileImages>
-	        <Image id="" src=""/>
+	        <Image id="plain" src="test_icon_image.jpg"/>
 	    </tileImages>
 	    <unitImages>
-	        <Image id="" src=""/>
+	        <Image id="soldier" src="src/gae/resources/test_tile.jpg"/>
 	    </unitImages>
 	</ImageMap> 
 </GameElements>

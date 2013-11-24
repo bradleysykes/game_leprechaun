@@ -20,6 +20,6 @@ public interface Attributes {
     String MAGNITUDE = "Magnitude";
     String VALUE = "value";
     String ID = "id";
-    
+    String SRC = "src";
     
 }

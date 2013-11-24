@@ -40,21 +40,12 @@ import model.tile.Tile;
  * 
  */
 
-public class DataManager implements Attributes, Elements {
+public class DataManager extends GameElements implements Attributes, Elements {
     private Element myRoot;
-    private GameMap myGameMap;
-    //private List<Unit> myUnits;
-    private List<Player> myPlayers;
     private List<Decoder> myDecoders;
-    
-    private Map<String,String> myTileImageResources;
-    private Map<String,String> myUnitImageResources;
-    
-    
     public DataManager() {
+        super();
         myDecoders = new ArrayList<Decoder>();
-        myTileImageResources = new HashMap<String,String>();
-        myUnitImageResources = new HashMap<String,String>();
         initDecoders();
     }
     
@@ -78,9 +69,9 @@ public class DataManager implements Attributes, Elements {
     
     private void initDecoders() {
         myDecoders.add(new MapDecoder(this));
-        
         myDecoders.add(new PlayerDecoder(this));
         myDecoders.add(new UnitDecoder(this));
+        myDecoders.add(new ImageResourcesDecoder(this));
     }
     
     /**
@@ -109,25 +100,9 @@ public class DataManager implements Attributes, Elements {
             e.printStackTrace();
         }
 
-        return new GameElements(myGameMap, myPlayers, myTileImageResources, myUnitImageResources);
+        return (GameElements) this;
     }
     
-    //get & set methods
-    public void setGameMap(GameMap map){
-        myGameMap = map;
-    }
-    
-    public GameMap getGameMap() {
-        return myGameMap;
-    }
-/*
-    public void setUnits(List<Unit> units) {
-        myUnits = units;
-    }
-*/
-    public void setPlayers (List<Player> players) {
-        myPlayers = players;
-    }
     
     public Player getPlayer(String id) {
         for (Player p : myPlayers) {
