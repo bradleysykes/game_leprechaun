@@ -1,7 +1,5 @@
 package data.decoder;
 
-import java.util.ArrayList;
-import java.util.List;
 import data.Attributes;
 import data.Elements;
 import model.Resource;

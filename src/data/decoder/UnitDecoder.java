@@ -31,7 +31,6 @@ public class UnitDecoder extends Decoder {
         for(int i = 0; i < unitList.getLength(); i++) {
             createSingleUnit((Element)unitList.item(i));
         }
-        
         return myUnits;
     }
     

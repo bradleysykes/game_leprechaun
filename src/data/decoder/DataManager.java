@@ -3,10 +3,7 @@ package data.decoder;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -16,9 +13,7 @@ import org.xml.sax.SAXException;
 import data.Attributes;
 import data.Elements;
 import data.GameElements;
-import model.GameMap;
 import model.Player;
-import model.tile.Tile;
 
 /**
  * 

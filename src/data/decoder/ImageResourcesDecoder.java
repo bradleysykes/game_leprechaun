@@ -1,9 +1,7 @@
 package data.decoder;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import model.unit.Unit;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
