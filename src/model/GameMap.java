@@ -28,15 +28,23 @@ public class GameMap {
 		myTiles.clear();
 	}
 
+	//this class was throwing errors, so i rewrote it
 	public boolean contains(int x, int y){
-		if(myTiles.size() < x || myTiles.get(0).size() < y || x < 0 || y < 0)
+/*		if(myTiles.size() < x || myTiles.get(0).size() < y || x < 0 || y < 0)
 			return false;
 		if(myTiles.get(x)!=null){
 			if(myTiles.get(x).get(y)!=null){
 				return true;
 			}
 		}
-		return false;
+		return false;*/
+		if(x < 0 || y < 0)
+			return false;
+		if(myTiles.size() <= x)
+			return false;
+		if(myTiles.get(x).size() <= y)
+			return false;
+		return true;
 	}
 
 	public Tile getTile(int x, int y){
