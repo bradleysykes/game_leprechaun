@@ -184,7 +184,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="20" y="20">
+        <Tile x="2" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -192,7 +192,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="20" y="20">
+        <Tile x="2" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -256,7 +256,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="20" y="20">
+        <Tile x="3" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -264,7 +264,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="20" y="20">
+        <Tile x="3" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -272,7 +272,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="20" y="20">
+        <Tile x="3" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -336,7 +336,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="20" y="20">
+        <Tile x="4" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -344,7 +344,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="20" y="20">
+        <Tile x="4" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -352,7 +352,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="20" y="20">
+        <Tile x="4" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -424,7 +424,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="20" y="20">
+        <Tile x="5" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -432,7 +432,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="20" y="20">
+        <Tile x="5" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -816,153 +816,9 @@
         </Player>
     </Players>
     <Units>
-        <Unit id="SpaceDude|0">
+        <Unit id="Name me!|0">
             <UnitPlayer id="Default Player Name"/>
-<<<<<<< HEAD
-            <UnitTile x="5" y="3"/>
-=======
-            <UnitTile x="20" y="20"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="SpaceDude|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="20" y="20"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="SpaceDude|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="20" y="20"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="SpaceDude|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="20" y="20"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="SpaceDude|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="20" y="20"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="SpaceDude|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="20" y="20"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="SpaceDude|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="20" y="20"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="bomb|1">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="20" y="20"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="bomb|1">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="20" y="20"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="bomb|1">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="2" y="5"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="bomb|1">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="4" y="5"/>
->>>>>>> 369b79a490ceb22b3a364dc64e0e88bef6eeb4f0
+            <UnitTile x="5" y="2"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -975,19 +831,13 @@
             </Attributes>
         </Unit>
     </Units>
-    <Conditions/>
+    <Conditions>
+        <Condition name="model.condition.Defeat" player_id="Default Player Name" unit_id="Name me!|0"/>
+    </Conditions>
     <ImageMap>
         <tileImages>
-<<<<<<< HEAD
-            <image id="Unit" src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\test_icon_image.png"/>
+            <image id="Unit" src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\default_unit.png"/>
         </tileImages>
         <unitImages/>
-=======
-            <image id="Unit" src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\space_soldier.png"/>
-        </tileImages>
-        <unitImages>
-            <image id="" src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\sand.jpg"/>
-        </unitImages>
->>>>>>> 369b79a490ceb22b3a364dc64e0e88bef6eeb4f0
     </ImageMap>
 </GameElements>
