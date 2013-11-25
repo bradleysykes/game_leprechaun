@@ -3,7 +3,7 @@
         <Tile x="0" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain>
+            <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -14,7 +14,7 @@
         <Tile x="0" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain>
+            <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -25,7 +25,7 @@
         <Tile x="0" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain>
+            <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -36,7 +36,7 @@
         <Tile x="1" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain>
+            <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -47,7 +47,7 @@
         <Tile x="1" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain>
+            <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -58,7 +58,7 @@
         <Tile x="1" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain>
+            <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -69,7 +69,7 @@
         <Tile x="2" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain>
+            <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -80,7 +80,7 @@
         <Tile x="2" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain>
+            <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -91,7 +91,7 @@
         <Tile x="2" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain>
+            <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -144,6 +144,7 @@
             </Attributes>
         </Unit>
     </Units>
+    <Conditions/>
     <ImageMap>
         <tileImages>
             <image id="Plains" src="test_icon_image.jpg"/>
