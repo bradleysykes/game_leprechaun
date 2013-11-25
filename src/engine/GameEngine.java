@@ -60,6 +60,11 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	public void doFrame() {
 		this.moveObjects();
 		this.checkCollision(MOUSE_COL_ID, 2);
+/*		if(getMouseButton(1)){
+			clearMouseButton(1);
+			for(Tile T : myTileObjectMap.keySet())
+				new TileHighlightObject(T, this);
+		}*/
 	}
 	
 	public void nextPlayer() {
@@ -99,7 +104,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	public void highlightTiles(List<Tile> tileList) {
 		for (Tile tile : tileList) {
 			new TileHighlightObject(tile, this);
-			myTileObjectMap.get(tile).toggleIsHighlighted();
+			//myTileObjectMap.get(tile).toggleIsHighlighted();
 		}
 		System.out.println("Tiles highlighted");
 	}

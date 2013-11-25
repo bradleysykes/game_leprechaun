@@ -16,6 +16,7 @@ public class TileHighlightObject extends JGObject {
 		super("ahighlight", true, 0, 0, myCollisionID, null);
 		myTile = tile;   
 		myGameEngine = gameEngine;
+		System.out.println("Tiles!");
 	}
 	
 	@Override
