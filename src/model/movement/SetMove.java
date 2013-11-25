@@ -35,8 +35,4 @@ public class SetMove extends Move {
 		return myValidTiles;
 	}
 
-	@Override
-	public void prepAbility() {
-	}
-
 }

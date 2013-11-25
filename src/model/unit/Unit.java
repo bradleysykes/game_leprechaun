@@ -62,7 +62,11 @@ public class Unit extends StatCollection implements ModelConstants {
 	}
 	
 	public void setCurrentTile(Tile t){
+		if(myCurrentTile.containsUnit(this))
+			myCurrentTile.removeUnit(this);
 		myCurrentTile = t;
+		myCurrentTile.addUnit(this);
+		this.setMap(t.getMap());
 	}
 	
 	public Tile getCurrentTile(){
@@ -71,15 +75,6 @@ public class Unit extends StatCollection implements ModelConstants {
 	
 	public void useAbility(String ability){
 		//this.getThing(ability).prepAbility();
-	}
-
-//don't need this!
-//	public String getID() {
-//		return (String) this.getID();
-//	}
-
-	public void setID(String id) {
-		this.setID(id);
 	}
 	
 	public boolean equals(Unit other){
@@ -92,6 +87,5 @@ public class Unit extends StatCollection implements ModelConstants {
 			a.refresh();
 		}
 	}
-
 	
 }
