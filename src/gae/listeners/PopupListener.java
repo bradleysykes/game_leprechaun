@@ -36,6 +36,7 @@ public class PopupListener extends MouseAdapter {
 	            mySource.setSelectedIndex(mySource.locationToIndex(e.getPoint()));
 	            boolean x = mySource.getSelectionModel().isSelectedIndex(0);
 	            myMenu.setSource((ViewItem)mySource.getSelectedValue());
+	            myMenu.populate();
 	        }
 	    }
 

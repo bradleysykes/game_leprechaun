@@ -74,4 +74,9 @@ public abstract class GAEPopupMenu extends JPopupMenu {
 		}
 		
 	}
+
+	public void populate() {
+		// do nothing
+		
+	}
 }
