@@ -21,7 +21,7 @@ public class DataPrimer {
 		myFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		myFileChooser.setFileFilter(filter);
 		File xmlFile = selectAndParseXML();*/
-		File xmlFile = new File("src/data/resources/savedTestFile.xml");		
+		File xmlFile = new File("src/data/resources/TestFile.xml");		
 		loadGame(xmlFile);
 	}
 	

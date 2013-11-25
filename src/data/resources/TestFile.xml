@@ -1,0 +1,165 @@
+<GameElements>
+    <Map x_dimension="3" y_dimension="3">
+        <Tile x="0" y="0">
+            <Stat name="Passability" value="10.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="50.0" harvest_rate="2.0" name="minerals"/>
+                <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
+            </Resources>
+        </Tile>
+        <Tile x="0" y="1">
+            <Stat name="Passability" value="10.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="50.0" harvest_rate="2.0" name="minerals"/>
+                <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
+            </Resources>
+        </Tile>
+        <Tile x="0" y="2">
+            <Stat name="Passability" value="10.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="50.0" harvest_rate="2.0" name="minerals"/>
+                <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
+            </Resources>
+        </Tile>
+        <Tile x="1" y="0">
+            <Stat name="Passability" value="10.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="50.0" harvest_rate="2.0" name="minerals"/>
+                <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
+            </Resources>
+        </Tile>
+        <Tile x="1" y="1">
+            <Stat name="Passability" value="10.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="50.0" harvest_rate="2.0" name="minerals"/>
+                <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
+            </Resources>
+        </Tile>
+        <Tile x="1" y="2">
+            <Stat name="Passability" value="10.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="50.0" harvest_rate="2.0" name="minerals"/>
+                <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
+            </Resources>
+        </Tile>
+        <Tile x="2" y="0">
+            <Stat name="Passability" value="10.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="50.0" harvest_rate="2.0" name="minerals"/>
+                <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
+            </Resources>
+        </Tile>
+        <Tile x="2" y="1">
+            <Stat name="Passability" value="10.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="50.0" harvest_rate="2.0" name="minerals"/>
+                <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
+            </Resources>
+        </Tile>
+        <Tile x="2" y="2">
+            <Stat name="Passability" value="10.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="50.0" harvest_rate="2.0" name="minerals"/>
+                <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
+            </Resources>
+        </Tile>
+    </Map>
+    <Players>
+        <Player id="Default Player Name">
+            <Resources>
+                <Resource amount="500.0" harvest_rate="-1.0" name="minerals"/>
+                <Resource amount="350.0" harvest_rate="-1.0" name="gas"/>
+            </Resources>
+        </Player>
+        <Player id="Default Player Name">
+            <Resources>
+                <Resource amount="820.0" harvest_rate="-1.0" name="minerals"/>
+                <Resource amount="620.0" harvest_rate="-1.0" name="gas"/>
+            </Resources>
+        </Player>
+    </Players>
+    <Units>
+        <Unit id="soldier">
+            <UnitPlayer id="Default Player Name"/>
+            <UnitTile x="2" y="1"/>
+            <Abilities/>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="10.0"/>
+                <Stat name="Base Stamina" value="10.0"/>
+                <Stat name="Range" value="10.0"/>
+            </Attributes>
+        </Unit>
+        <Unit id="soldier">
+            <UnitPlayer id="Default Player Name"/>
+            <UnitTile x="1" y="0"/>
+            <Abilities/>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="10.0"/>
+                <Stat name="Base Stamina" value="10.0"/>
+                <Stat name="Range" value="10.0"/>
+            </Attributes>
+        </Unit>
+    </Units>
+    <Conditions>
+        <Condition name="Defeat">
+            <ConditionUnit id="soldier10"/>
+            <ConditionPlayer id="Default Player Name"/>
+        </Condition>
+        <Condition name="Create">
+            <ConditionUnit id="soldier5"/>
+            <ConditionPlayer id="Default Player Name"/>
+        </Condition>
+    </Conditions>
+    <ImageMap>
+        <tileImages>
+            <image id="Plains" src="test_icon_image.jpg"/>
+        </tileImages>
+        <unitImages>
+            <image id="soldier" src="soldier.png"/>
+        </unitImages>
+    </ImageMap>
+</GameElements>
