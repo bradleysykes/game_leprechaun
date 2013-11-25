@@ -26,10 +26,11 @@ public class GameLoader  {
 		GameMap gameMap = myGameElements.getGameMap();
 		myGameEngine.setPFSize(gameMap.getSizeX() , gameMap.getSizeY());
 		Collection<Tile> allTiles = gameMap.getAllTiles();
-		HashMap<String, String> myImages = (HashMap) myGameElements.getImageMap();
+		HashMap<String, String> myTileImages = (HashMap) myGameElements.getTileImageMap();
+		HashMap<String, String> myUnitImages = (HashMap) myGameElements.getUnitImageMap();
 		
-		for (String all : myImages.keySet()) {
-			myGameEngine.defineImage(all, "-", 0, myImages.get(all),"-");
+		for (String all : myUnitImages.keySet()) {
+			myGameEngine.defineImage(all, "-", 0, myUnitImages.get(all),"-");
 		}
 		
 		Collection<Player> allPlayers = myGameElements.getPlayers();

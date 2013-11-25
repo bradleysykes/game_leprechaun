@@ -76,6 +76,10 @@ public class GameElements {
         myUnitImages = imageMap;
     }
     
+    public Map<String, String> getUnitImageMap() {
+        return myUnitImages;
+    }
+    
     public void setUnitTypes(List<Unit> unitTypes) {
     	myUnitTypes = unitTypes;
     }
