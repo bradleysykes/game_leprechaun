@@ -68,4 +68,10 @@ public class NullViewItem extends BoardListViewItem {
 		return "";
 	}
 
+	@Override
+	public Object getModelObject() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -5,9 +5,11 @@ import gae.GUIMap;
 import gae.dialogues.EditDialogue;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
 import model.GameMap;
 import model.Player;
 import model.stats.Stat;
@@ -106,6 +108,11 @@ public class UnitViewItem extends BoardListViewItem {
 	@Override
 	protected String getMapPrefix() {
 		return "z"+myName+hashCode();
+	}
+
+	@Override
+	public Object getModelObject() {
+		return myUnit;
 	}
 
 }
