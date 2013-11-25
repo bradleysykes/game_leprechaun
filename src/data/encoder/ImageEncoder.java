@@ -1,7 +1,6 @@
 package data.encoder;
 
 import java.util.Map;
-import model.tile.Tile;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -33,19 +32,26 @@ public class ImageEncoder extends Encoder {
     }
     
     private void appendUnitImages(Element imageMapElement) {
-        Element unitImages = myXmlDocument.createElement(UNIT_IMAGES);  
-        appendSingleImage();
+        Element unitImages = myXmlDocument.createElement(UNIT_IMAGES);
+        for(String id : myUnitImagesMap.keySet()) {
+            appendSingleImage(id, myUnitImagesMap, unitImages);
+        }
         imageMapElement.appendChild(unitImages);
     }
     
     private void appendTileImages(Element imageMapElement) {
         Element tileImages = myXmlDocument.createElement(TILE_IMAGES);
-        appendSingleImage();
+        for(String id : myTileImagesMap.keySet()) {
+            appendSingleImage(id, myTileImagesMap, tileImages);
+        }
         imageMapElement.appendChild(tileImages);
     }
     
-    private void appendSingleImage () {
-        
+    private void appendSingleImage (String id, Map<String, String> map, Element parent) {
+        Element imageElement = myXmlDocument.createElement(IMAGE);
+        imageElement.setAttribute(ID,id);
+        imageElement.setAttribute(SRC,map.get(id));
+        parent.appendChild(imageElement);
     }
     
     

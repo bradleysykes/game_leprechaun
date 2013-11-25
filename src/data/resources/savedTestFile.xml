@@ -103,14 +103,14 @@
     <Players>
         <Player id="Default Player Name">
             <Resources>
-                <Resource amount="500.0" harvest_rate="null" name="minerals"/>
-                <Resource amount="350.0" harvest_rate="null" name="gas"/>
+                <Resource amount="500.0" harvest_rate="-1" name="minerals"/>
+                <Resource amount="350.0" harvest_rate="-1" name="gas"/>
             </Resources>
         </Player>
         <Player id="Default Player Name">
             <Resources>
-                <Resource amount="820.0" harvest_rate="null" name="minerals"/>
-                <Resource amount="620.0" harvest_rate="null" name="gas"/>
+                <Resource amount="820.0" harvest_rate="-1" name="minerals"/>
+                <Resource amount="620.0" harvest_rate="-1" name="gas"/>
             </Resources>
         </Player>
     </Players>
@@ -144,4 +144,12 @@
             </Attributes>
         </Unit>
     </Units>
+    <ImageMap>
+        <tileImages>
+            <image id="test1" src="src/test1"/>
+        </tileImages>
+        <unitImages>
+            <image id="test1" src="src/test2"/>
+        </unitImages>
+    </ImageMap>
 </GameElements>
