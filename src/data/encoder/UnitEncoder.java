@@ -43,11 +43,11 @@ public class UnitEncoder extends Encoder {
         unitElement.setAttribute(ID, unit.getID());
         unitsElement.appendChild(unitElement);
         
-        Element playerElement = myXmlDocument.createElement(PLAYER);
-        playerElement.setAttribute(PLAYER, unit.getPlayer().getID());
+        Element playerElement = myXmlDocument.createElement(UNIT_PLAYER);
+        playerElement.setAttribute(ID, unit.getPlayer().getID());
         unitElement.appendChild(playerElement);
         
-        Element tileElement = myXmlDocument.createElement(TILE);
+        Element tileElement = myXmlDocument.createElement(UNIT_TILE);
         tileElement.setAttribute(X_COORD, String.valueOf(unit.getCurrentTile().getX()));
         tileElement.setAttribute(Y_COORD, String.valueOf(unit.getCurrentTile().getY()));
         unitElement.appendChild(tileElement);
