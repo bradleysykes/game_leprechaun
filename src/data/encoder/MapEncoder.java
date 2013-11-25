@@ -88,6 +88,7 @@ public class MapEncoder extends Encoder {
      */
     private void appendTerrain (Terrain terrain, Element tileElement) {
         Element terrainElement = myXmlDocument.createElement(TERRAIN);
+        terrainElement.setAttribute(ID, terrain.getID());
         appendStat(terrain.getStat(MAGNITUDE), terrainElement);
         tileElement.appendChild(terrainElement);
     }

@@ -136,6 +136,7 @@ public class GameEngine extends JGEngine {
 	public void requestStringFromList(List<String> list){
 		// Display list of spawnable units to user, allow them to select one.
 		// Ideally, eventually have Portrait displayed for each spawnable unit.
+		// This will lead to 'sendModelUnit' being called.
 	}
 	
 }
