@@ -39,6 +39,7 @@ public abstract class BoardList extends JList {
 	protected Controller myController;
 	protected BoardListViewItem myType;
 	protected GAEPopupMenu myPopup;
+	private int myCounter;
 	
 	public BoardList(Controller controller){
 		myController = controller;
@@ -49,6 +50,7 @@ public abstract class BoardList extends JList {
 		this.setCellRenderer(new EditListRenderer());
 		myPopup = this.getPopupMenu();
 		this.addMouseListener(new PopupListener(myPopup, this));
+		myCounter = 0;
 		//FOR DEBUG
 //		BoardListItem tu = new ToyUnit();
 //		this.addNewItem(tu);
@@ -110,12 +112,13 @@ public abstract class BoardList extends JList {
 	 * @param name 
 	 */
 	public void postNewInput(List<Stat> inputData, String name, File f){
-		BoardListViewItem newItem = myType.createModel(inputData, name,f);
+		BoardListViewItem newItem = myType.createModel(inputData, name,f, myCounter);
+		myCounter++;
 		this.addNewItem(newItem);
 	}
 	
 	public void postEditInput(List<Stat> inputData, String name, File f){
-		BoardListViewItem newItem = myType.createModel(inputData, name,f);
+		BoardListViewItem newItem = myType.createModel(inputData, name,f, myCounter++);
 	}
 
 
