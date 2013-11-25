@@ -26,13 +26,14 @@ public class GameLoader  {
 		GameMap gameMap = myGameElements.getGameMap();
 		myGameEngine.setPFSize(gameMap.getSizeX() , gameMap.getSizeY());
 		Collection<Tile> allTiles = gameMap.getAllTiles();
-		HashMap<String, String> myTileImages = myGameElements.getTileImageMap();
-		HashMap<String, String> myUnitImages = myGameElements.getUnitImageMap();
+		HashMap<String, String> myTileImages = (HashMap<String, String>) myGameElements.getTileImageMap();
+		HashMap<String, String> myUnitImages = (HashMap<String, String>) myGameElements.getUnitImageMap();
 		
 		System.out.println(myUnitImages.keySet());
 
 		//myGameEngine.defineImage("Plains", "-", 0,"test_icon_image.jpg","-");
-		//myGameEngine.defineImage("soldier", "-", 0,"soldier.png","-");
+		myGameEngine.defineImage("soldier", "-", 0,"soldier.png","-");
+		myGameEngine.defineImage("", "-", 0, "soldier.png", "-");
 		
 		for (String all : myTileImages.keySet()) {
 			myGameEngine.defineImage(all, "-", 0,myTileImages.get(all),"-");
