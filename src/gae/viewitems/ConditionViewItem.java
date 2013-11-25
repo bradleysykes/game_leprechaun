@@ -23,16 +23,11 @@ public class ConditionViewItem extends BoardListViewItem {
 	private Condition myCondition;
 
 	public ConditionViewItem(String name, Condition condition){
-		super(name);
+		super(new ArrayList<Stat>(), name ,new File(DEFAULT_CONDITION_PATH));
 		myCondition = condition;
 		// initialize this viewitem's list of properties
 		myProperties = new ArrayList<Stat>();
-	}
-	
-	public ConditionViewItem(){
-		this("test condition", null);
-	}
-	
+	}	
 	
 	@Override
 	public List<Stat> getModel() {
@@ -54,12 +49,11 @@ public class ConditionViewItem extends BoardListViewItem {
 	}
 	@Override
 	public Icon getListIcon() {
-		return new ImageIcon(ICON_PATH+"plus.gif");
+		return new ImageIcon(myImagePath);
 	}
 
 	@Override
 	public void placeOnBoard(GUIMap map, double x, double y) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -70,7 +64,7 @@ public class ConditionViewItem extends BoardListViewItem {
 
 	@Override
 	protected int getResizeDimensions() {
-		return 0;
+		return CONDITION_IMAGE_RESIZE;
 	}
 
 	@Override

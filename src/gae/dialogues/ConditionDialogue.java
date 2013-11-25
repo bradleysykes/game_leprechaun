@@ -118,6 +118,7 @@ public class ConditionDialogue extends InputDialogue {
 		JButton create = new JButton("Create");
 		create.addActionListener(new MakeConditionListener());
 		guts.add(create);
+		guts.add(myNameField);
 		return guts;
 	}
 
@@ -156,7 +157,6 @@ public class ConditionDialogue extends InputDialogue {
 					commands.add((Class<Condition>) cls);
 				}
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
