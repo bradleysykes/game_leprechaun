@@ -28,13 +28,14 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import data.GameElements;
 import model.stats.Stat;
 
 import java.util.List;
 
 public abstract class BoardList extends JList {
 		
-	private DefaultListModel myModel;
+	protected DefaultListModel myModel;
 	protected Controller myController;
 	protected BoardListViewItem myType;
 	protected GAEPopupMenu myPopup;
@@ -115,6 +116,11 @@ public abstract class BoardList extends JList {
 	
 	public void postEditInput(List<Stat> inputData, String name, File f){
 		BoardListViewItem newItem = myType.createModel(inputData, name,f);
+	}
+
+
+	public GameElements giveStateObjects(GameElements currentState) {
+		return currentState;
 	}
 		
 }

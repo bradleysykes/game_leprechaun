@@ -12,7 +12,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import util.ImageTool;
-
 import model.GameMap;
 import model.stats.Stat;
 import model.tile.Tile;
@@ -87,6 +86,11 @@ public class TileViewItem extends BoardListViewItem {
 	@Override
 	protected String getMapPrefix() {
 		return "a"+myName+this.hashCode();
+	}
+
+	@Override
+	public Object getModelObject() {
+		return myTile;
 	}
 	
 }
