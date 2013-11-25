@@ -52,9 +52,9 @@ public class EncoderMain implements Elements {
         currentState.setPlayerList(playerList);*/
         
         //add imageMap to currentState
-        Map<String, String> unitImageMap = new HashMap<String, String>();
+        HashMap<String, String> unitImageMap = new HashMap<String, String>();
         unitImageMap.put("test1", "src/test1");
-        Map<String, String> tileImageMap = new HashMap<String, String>();
+        HashMap<String, String> tileImageMap = new HashMap<String, String>();
         tileImageMap.put("test1", "src/test2");
         //populate the imageMaps... then
         currentState.setUnitImageMap(unitImageMap);
