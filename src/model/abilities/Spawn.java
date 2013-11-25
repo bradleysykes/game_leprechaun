@@ -12,12 +12,14 @@ public class Spawn extends Ability {
 
 	@Override
 	public void useAbility() {
-		//myUnit.getPlayer().addUnit(new Unit())
+		myTargetUnit.setPlayer(myUnit.getPlayer());
+		myTargetUnit.setCurrentTile(myUnit.getMap().getNearestValidTile(myUnit));
+		
 	}
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		//myGameEngine.requestStringFromList(myReferences);
+		//myGameEngine.selectStringFromList(myReferences);
 	}
 
 }

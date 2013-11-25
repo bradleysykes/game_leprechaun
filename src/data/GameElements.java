@@ -64,14 +64,18 @@ public class GameElements {
     	myTileImages = imageMap;
     }
     
-    public Map<String, String> getImageMap() {
+    public Map<String, String> getTileImageMap() {
         return myTileImages;
+    }
+    
+    public Map<String, String> getUnitImageMap() {
+        return myUnitImages;
     }
     
     public void setUnitImageMap(Map<String, String> imageMap) {
         myUnitImages = imageMap;
     }
-    
+        
     public void setUnitTypes(List<Unit> unitTypes) {
     	myUnitTypes = unitTypes;
     }

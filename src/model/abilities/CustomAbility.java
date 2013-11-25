@@ -30,7 +30,7 @@ public class CustomAbility extends Ability {
 	@Override
 	public void useAbility() {
 		if(!myValid) return;
-		for(Tile t : myTargetTile.getTiles(this.getValue("Radius")))
+		for(Tile t : myUnit.getMap().getTilesInRadius(this.getValue("Radius"),myTargetTile))
 			myTargets.addAll(t.getUnits());
 		for(Effect effect : myEffects){
 			for(Unit target : myTargets){

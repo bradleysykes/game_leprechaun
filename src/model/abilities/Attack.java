@@ -52,7 +52,8 @@ public class Attack extends Ability{
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		myGameEngine.highlightTiles(myUnit.getCurrentTile().getTiles(myUnit.getStatCollection("Attributes").getValue("Range")));
+		myGameEngine.highlightTiles(myUnit.getMap().getTilesInRadius
+				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile()));
 	}
 
 }

@@ -65,8 +65,8 @@ public class DataManager extends GameElements implements Attributes, Elements {
     private void initDecoders() {
         myDecoders.add(new MapDecoder(this));
         myDecoders.add(new PlayerDecoder(this));
-        myDecoders.add(new UnitDecoder(this));
-        myDecoders.add(new ImageResourcesDecoder(this));
+        //myDecoders.add(new UnitDecoder(this));
+        //myDecoders.add(new ImageResourcesDecoder(this));
     }
     
     /**
@@ -110,7 +110,7 @@ public class DataManager extends GameElements implements Attributes, Elements {
     //test use
     public static void main(String[] args) {
         DataManager dm = new DataManager();
-        GameElements map = dm.getGameElements(new File("src/data/resources/test_game.xml"));
+        GameElements map = dm.getGameElements(new File("src/data/resources/savedTestFile.xml"));
         map.toString();
     }
 }

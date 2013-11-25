@@ -1,10 +1,10 @@
 package model.tile;
 
-import java.awt.Point;
 import java.util.*;
 
 import model.GameMap;
 import model.ModelConstants;
+import model.Player;
 import model.Resources;
 import model.Terrain;
 import model.stats.Stat;
@@ -63,17 +63,17 @@ public class Tile extends StatCollection implements ModelConstants{
 	public boolean isOccupied(){
 		return myUnits.size()>0;
 	}
-
-	public List<Tile> getTiles(double r){
-		int range = (int) r;
-		List<Tile> validTiles = new ArrayList<Tile>();
-		for (int i = getX() - range; i <= getX() + range; i++){
-			for (int j = getY() - range; i <= getY() + range; j++){
-				if(myMap.contains(i, j))
-					validTiles.add(myMap.getTile(i, j));
-			}
+	
+	public boolean containsUnit(Unit u){
+		return myUnits.contains(u);
+	}
+	
+	public boolean isOccupiedByOpponent(Player p){
+		for(Unit u : myUnits){
+			if(!u.getPlayer().equals(p))
+				return true;
 		}
-		return validTiles;
+		return false;
 	}
 
 }

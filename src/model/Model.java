@@ -19,7 +19,7 @@ public class Model {
 		myPlayers.add(p);
 	}
 	
-	public void setGame(GameEngine ge){
+	public void setGameEngine(GameEngine ge){
 		myGameEngine = ge;
 	}
 	
@@ -38,8 +38,10 @@ public class Model {
 		myQueuedAbility.useAbility();
 	}
 	
-	public void chooseString(){
-		//
+	public void refresh(){
+		for(Player p : myPlayers){
+			p.refresh();
+		}
 	}
-	
+
 }

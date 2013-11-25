@@ -103,21 +103,21 @@
     <Players>
         <Player id="Default Player Name">
             <Resources>
-                <Resource amount="500.0" harvest_rate="null" name="minerals"/>
-                <Resource amount="350.0" harvest_rate="null" name="gas"/>
+                <Resource amount="500.0" harvest_rate="-1.0" name="minerals"/>
+                <Resource amount="350.0" harvest_rate="-1.0" name="gas"/>
             </Resources>
         </Player>
         <Player id="Default Player Name">
             <Resources>
-                <Resource amount="820.0" harvest_rate="null" name="minerals"/>
-                <Resource amount="620.0" harvest_rate="null" name="gas"/>
+                <Resource amount="820.0" harvest_rate="-1.0" name="minerals"/>
+                <Resource amount="620.0" harvest_rate="-1.0" name="gas"/>
             </Resources>
         </Player>
     </Players>
     <Units>
         <Unit id="unit1">
-            <Player Player="Default Player Name"/>
-            <Tile x="2" y="1"/>
+            <UnitPlayer id="Default Player Name"/>
+            <UnitTile x="2" y="1"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -130,8 +130,8 @@
             </Attributes>
         </Unit>
         <Unit id="unit2">
-            <Player Player="Default Player Name"/>
-            <Tile x="1" y="0"/>
+            <UnitPlayer id="Default Player Name"/>
+            <UnitTile x="1" y="0"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -144,4 +144,12 @@
             </Attributes>
         </Unit>
     </Units>
+    <ImageMap>
+        <tileImages>
+            <image id="test1" src="src/test1"/>
+        </tileImages>
+        <unitImages>
+            <image id="test1" src="src/test2"/>
+        </unitImages>
+    </ImageMap>
 </GameElements>
