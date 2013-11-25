@@ -185,7 +185,7 @@
             <Resources/>
         </Tile>
         <Tile x="2" y="3">
-            <Stat name="Passability" value="2.0"/>
+            <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -193,7 +193,7 @@
             <Resources/>
         </Tile>
         <Tile x="2" y="4">
-            <Stat name="Passability" value="2.0"/>
+            <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -257,7 +257,7 @@
             <Resources/>
         </Tile>
         <Tile x="3" y="2">
-            <Stat name="Passability" value="2.0"/>
+            <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -265,7 +265,7 @@
             <Resources/>
         </Tile>
         <Tile x="3" y="3">
-            <Stat name="Passability" value="2.0"/>
+            <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -273,7 +273,7 @@
             <Resources/>
         </Tile>
         <Tile x="3" y="4">
-            <Stat name="Passability" value="2.0"/>
+            <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -337,7 +337,7 @@
             <Resources/>
         </Tile>
         <Tile x="4" y="2">
-            <Stat name="Passability" value="2.0"/>
+            <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -345,7 +345,7 @@
             <Resources/>
         </Tile>
         <Tile x="4" y="3">
-            <Stat name="Passability" value="2.0"/>
+            <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -353,7 +353,7 @@
             <Resources/>
         </Tile>
         <Tile x="4" y="4">
-            <Stat name="Passability" value="2.0"/>
+            <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -425,7 +425,7 @@
             <Resources/>
         </Tile>
         <Tile x="5" y="3">
-            <Stat name="Passability" value="2.0"/>
+            <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -433,7 +433,7 @@
             <Resources/>
         </Tile>
         <Tile x="5" y="4">
-            <Stat name="Passability" value="2.0"/>
+            <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -810,21 +810,7 @@
         </Player>
     </Players>
     <Units>
-        <Unit id="Bob|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="4" y="3"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Bob|0">
+        <Unit id="Name me!|0">
             <UnitPlayer id="Default Player Name"/>
             <UnitTile x="5" y="2"/>
             <Abilities/>
@@ -838,30 +824,14 @@
                 <Stat name="Range" value="10.0"/>
             </Attributes>
         </Unit>
-        <Unit id="Bob|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="7" y="5"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
     </Units>
     <Conditions>
-        <Condition name="model.condition.Defeat" player_id="Default Player Name" unit_id="Bob|0"/>
+        <Condition name="model.condition.Defeat" player_id="Default Player Name" unit_id="Name me!|0"/>
     </Conditions>
     <ImageMap>
         <tileImages>
-            <image id="Bob|0" src="C:\Users\John\workspace\oogasalad_MISSINGNO\src\gae\resources\player_icon.gif"/>
+            <image id="Unit" src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\default_unit.png"/>
         </tileImages>
-        <unitImages>
-            <image id="Plains" src="C:\Users\John\workspace\oogasalad_MISSINGNO\src\gae\resources\rock.jpg"/>
-        </unitImages>
+        <unitImages/>
     </ImageMap>
 </GameElements>

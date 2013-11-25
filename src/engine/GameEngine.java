@@ -63,7 +63,6 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		if(getMouseButton(1)){
 			clearMouseButton(1);
 			this.checkCollision(0, 0);
-			System.out.println("Mouse clicked");
 		}
 	}
 	
