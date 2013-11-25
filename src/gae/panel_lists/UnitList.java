@@ -8,7 +8,10 @@ import java.util.Map;
 
 import data.GameElements;
 import model.Condition;
+import model.GameMap;
+import model.Player;
 import model.stats.Stat;
+import model.tile.Tile;
 import model.unit.Unit;
 import gae.Constants;
 import gae.Controller;
@@ -33,6 +36,12 @@ public class UnitList extends BoardList {
 	@Override
 	public String getListType() {
 		return "Unit";
+	}
+	
+	@Override
+	public List<Stat> getDefaultStats(){
+		Unit unit = new Unit("Jeff",new Player(),new Tile(2,2,new GameMap(2,2)));
+		return unit.getStats();
 	}
 	
 	@Override
