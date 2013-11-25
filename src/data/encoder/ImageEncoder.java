@@ -27,21 +27,21 @@ public class ImageEncoder extends Encoder {
 
     private void appendImages () {
         Element imageMapElement = myXmlDocument.createElement(IMAGE_MAP);
-        appendTileImages();
-        appendUnitImages();
+        appendTileImages(imageMapElement);
+        appendUnitImages(imageMapElement);
         myRoot.appendChild(imageMapElement);
     }
     
-    private void appendTileImages() {
-        Element unitImages = myXmlDocument.createElement(UNIT_IMAGES);
+    private void appendUnitImages(Element imageMapElement) {
+        Element unitImages = myXmlDocument.createElement(UNIT_IMAGES);  
         appendSingleImage();
-        
+        imageMapElement.appendChild(unitImages);
     }
     
-
-    private void appendUnitImages() {
-        Element unitImages = myXmlDocument.createElement(TILE_IMAGES);  
+    private void appendTileImages(Element imageMapElement) {
+        Element tileImages = myXmlDocument.createElement(TILE_IMAGES);
         appendSingleImage();
+        imageMapElement.appendChild(tileImages);
     }
     
     private void appendSingleImage () {
