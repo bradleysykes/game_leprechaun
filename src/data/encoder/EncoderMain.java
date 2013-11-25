@@ -35,7 +35,7 @@ public class EncoderMain implements Elements {
         currentState.setGameMap(map);
         
         //add playerList to currentState
-        List<Player> playerList = new ArrayList<Player>();
+/*        List<Player> playerList = new ArrayList<Player>();
         Player p1 = new Player();
         p1.getStatCollection(RESOURCES).addStat(new Resource("minerals", 500, 0));
         p1.getStatCollection(RESOURCES).addStat(new Resource("gas", 350, 0));
@@ -51,7 +51,7 @@ public class EncoderMain implements Elements {
         p1.addUnit(unit2);
         
         playerList.add(p1); playerList.add(p2);
-        currentState.setPlayerList(playerList);
+        currentState.setPlayerList(playerList);*/
         
         //add Conditions to currentState
         List<Condition> conditionList = new ArrayList<Condition>();

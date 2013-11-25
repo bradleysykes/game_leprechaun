@@ -60,7 +60,12 @@ public class GameEngine extends JGEngine {
 	}
 	
 	public void doFrame() {
+		this.moveObjects();
 		checkCollision(GameTileObject.getCollisionID(), MouseObject.getCollisionID());
+		if (getMouseButton(1)){
+			clearMouseButton(1);
+			System.out.println(this.countObjects(null, 0));
+		}
 	}
 	
 	public void nextPlayer() {
@@ -86,14 +91,14 @@ public class GameEngine extends JGEngine {
 	
 	public void initializeTiles(Collection<Tile> tiles) {
 		for (Tile tile : tiles) {
-			GameTileObject newTile = new GameTileObject(tile);
+			GameTileObject newTile = new GameTileObject(tile,this);
 			myTileObjectMap.put(tile, newTile);
 		}
 	}
 	
 	public void initializeUnits(Collection<Unit> units) {
 		for (Unit unit : units) {
-			GameUnitObject newUnit = new GameUnitObject(unit);
+			GameUnitObject newUnit = new GameUnitObject(unit,this);
 		}
 	}
 	
@@ -117,6 +122,20 @@ public class GameEngine extends JGEngine {
 	
 	public static int getViewerHeight() {
 		return myViewerHeight;
+	}
+	
+	public GameTileObject getGameTile(Tile tile){
+		return myTileObjectMap.get(tile);
+	}
+	
+	public void sendModelUnit(Unit u){
+		myModel.useAbility(u);		// For sending a newly created unit from the list of strings,
+									// with one string selected by player (Spawning).
+	}
+	
+	public void requestStringFromList(List<String> list){
+		// Display list of spawnable units to user, allow them to select one.
+		// Ideally, eventually have Portrait displayed for each spawnable unit.
 	}
 	
 }

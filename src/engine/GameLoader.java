@@ -11,38 +11,47 @@ import model.tile.Tile;
 import model.unit.Unit;
 
 public class GameLoader  {
-	
+
 	private GameEngine myGameEngine;
 	private GameElements myGameElements;
-	
+
 	public GameLoader(GameElements gameElements, GameEngine gameEngine) {
 		myGameEngine = gameEngine;
 		myGameElements = gameElements;
 	}
-	
+
 	public void loadGame() {
 		myGameEngine.removeObjects("-tile", GameTileObject.getCollisionID());
 		myGameEngine.removeObjects("unit", GameUnitObject.getCollisionID());
 		GameMap gameMap = myGameElements.getGameMap();
 		myGameEngine.setPFSize(gameMap.getSizeX() , gameMap.getSizeY());
 		Collection<Tile> allTiles = gameMap.getAllTiles();
-		HashMap<String, String> myTileImages = (HashMap) myGameElements.getTileImageMap();
-		HashMap<String, String> myUnitImages = (HashMap) myGameElements.getUnitImageMap();
+		HashMap<String, String> myTileImages = myGameElements.getTileImageMap();
+		HashMap<String, String> myUnitImages = myGameElements.getUnitImageMap();
+		
+		System.out.println(myUnitImages.keySet());
+
+		//myGameEngine.defineImage("Plains", "-", 0,"test_icon_image.jpg","-");
+		//myGameEngine.defineImage("soldier", "-", 0,"soldier.png","-");
+		
+		for (String all : myTileImages.keySet()) {
+			myGameEngine.defineImage(all, "-", 0,myTileImages.get(all),"-");
+		}		
 		
 		for (String all : myUnitImages.keySet()) {
-			myGameEngine.defineImage(all, "-", 0, myUnitImages.get(all),"-");
+			myGameEngine.defineImage(all, "-", 0,myUnitImages.get(all),"-");
 		}
-		
+
 		Collection<Player> allPlayers = myGameElements.getPlayers();
 		Collection<Unit> allUnits = new ArrayList<Unit>();
 		for (Player player : allPlayers) {
 			allUnits.addAll(player.getAllUnits());
 		}
-		
+
 		myGameEngine.setPlayers(allPlayers);
 		myGameEngine.initializeTiles(allTiles);
 		myGameEngine.initializeUnits(allUnits);
-	
+
 	}
-	
+
 }

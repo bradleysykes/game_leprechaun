@@ -1,4 +1,5 @@
 package gae.panel_lists;
+import gae.Constants;
 import gae.Controller;
 import gae.dialogues.EditDialogue;
 import gae.dialogues.InputDialogue;
@@ -33,12 +34,15 @@ import model.stats.Stat;
 
 import java.util.List;
 
-public abstract class BoardList extends JList {
+public abstract class BoardList extends JList implements Constants{
 		
 	protected DefaultListModel myModel;
 	protected Controller myController;
-	protected BoardListViewItem myType;
+	protected Class myType;
 	protected GAEPopupMenu myPopup;
+	protected List<Stat> myDefaultModel;
+	private int myCounter;
+
 	
 	public BoardList(Controller controller){
 		myController = controller;
@@ -49,6 +53,7 @@ public abstract class BoardList extends JList {
 		this.setCellRenderer(new EditListRenderer());
 		myPopup = this.getPopupMenu();
 		this.addMouseListener(new PopupListener(myPopup, this));
+		myCounter = 0;
 		//FOR DEBUG
 //		BoardListItem tu = new ToyUnit();
 //		this.addNewItem(tu);
@@ -99,8 +104,7 @@ public abstract class BoardList extends JList {
 	 */
 	public void createCustomType() {
 		// create new dialogue, populate with model for this viewitem type
-		UnitCreationDialogue d = new UnitCreationDialogue(myType.getListMessage(),myType.getModel(),this);
-		// on close, dialogue sends it to postInput method
+		UnitCreationDialogue d = new UnitCreationDialogue("Create me!",myDefaultModel,this);
 	}
 	
 	/**
@@ -110,13 +114,16 @@ public abstract class BoardList extends JList {
 	 * @param name 
 	 */
 	public void postNewInput(List<Stat> inputData, String name, File f){
-		BoardListViewItem newItem = myType.createModel(inputData, name,f);
+		BoardListViewItem newItem = getNewItem(inputData, name,f, myCounter);
+		myCounter++;
 		this.addNewItem(newItem);
 	}
 	
 	public void postEditInput(List<Stat> inputData, String name, File f){
-		BoardListViewItem newItem = myType.createModel(inputData, name,f);
+		BoardListViewItem newItem = getNewItem(inputData, name,f, myCounter);
 	}
+	
+	protected abstract BoardListViewItem getNewItem(List<Stat> inputData, String name,File f, int counter);
 
 
 	public GameElements giveStateObjects(GameElements currentState) {

@@ -19,7 +19,7 @@ public class Spawn extends Ability {
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		//myGameEngine.selectStringFromList(myReferences);
+		myGameEngine.requestStringFromList(myReferences);
 	}
 
 }

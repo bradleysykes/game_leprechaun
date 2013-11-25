@@ -16,7 +16,12 @@ public class ViewItemField<T> extends JPanel {
 
 	public ViewItemField(Stat stat){
 		this.setLayout(new BorderLayout());
-		this.create(stat.getName(),"Double",stat.getValue().toString());
+		if(stat.getValue()!=null){
+			this.create(stat.getName(),"Double",stat.getValue().toString());
+		}
+		else{
+			myField = new JTextField("0");
+		}
 	}
 	
 	public ViewItemField(String title){
@@ -28,7 +33,7 @@ public class ViewItemField<T> extends JPanel {
 		JLabel fieldTitle = new JLabel(name);
 		JLabel fieldDescription = new JLabel(type);
 		if(value!=null){
-			JTextField field = new JTextField(value);
+			JTextField field = new JTextField(String.valueOf(value));
 			myField = field;
 			this.add(fieldTitle,BorderLayout.PAGE_START);
 			this.add(fieldDescription,BorderLayout.CENTER);

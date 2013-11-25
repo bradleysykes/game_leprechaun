@@ -26,7 +26,7 @@ public class SaveInputButton extends JButton {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				SubUnitDialogue d = new SubUnitDialogue(myStat.getName(),
+				SubUnitDialogue d = new SubUnitDialogue(myStat,myStat.getName(),
 						myStat.getStats(),myList);
 			}
 			

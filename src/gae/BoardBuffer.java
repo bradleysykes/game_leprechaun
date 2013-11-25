@@ -1,5 +1,6 @@
 package gae;
 
+import gae.dialogues.UnitAlert;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.NullViewItem;
 import gae.viewitems.PlayerViewItem;
@@ -10,6 +11,7 @@ import java.awt.Component;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import model.Player;
@@ -25,9 +27,10 @@ public class BoardBuffer {
 			return myItem;
 		}
 		else{
-//			JDialog dialog = new JDialog();
-//			dialog.setLocation(10, 10);
-//			JOptionPane.showMessageDialog(dialog, "Please go die");
+			JOptionPane alertPane = new JOptionPane("Please select a unit and a player before placing on map.");
+			JDialog dialog = alertPane.createDialog(null,"Player alert");
+			dialog.setLocation(10, 10);
+			dialog.setVisible(true);
 			return new NullViewItem();
 		}
 	}

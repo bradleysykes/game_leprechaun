@@ -49,7 +49,7 @@ public class NullViewItem extends BoardListViewItem {
 
 	@Override
 	public BoardListViewItem createModel(List<Stat> inputData, String name,
-			File imageFile) {
+			File imageFile, int counter) {
 		return new NullViewItem();
 	}
 
@@ -69,6 +69,10 @@ public class NullViewItem extends BoardListViewItem {
 	}
 
 	@Override
+	public List<Stat> getDefaults() {
+		return this.myDefaults;
+	}
+
 	public Object getModelObject() {
 		// TODO Auto-generated method stub
 		return null;
