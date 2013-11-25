@@ -38,12 +38,12 @@ public class UnitDecoder extends Decoder {
         String id = unit.getAttribute(ID);
         
         //get the player that this unit belongs to
-        Element player = (Element)unit.getElementsByTagName(PLAYER).item(0);
+        Element player = (Element)unit.getElementsByTagName(UNIT_PLAYER).item(0);
         String playerID = player.getAttribute(ID);
         Player targetPlayer = myDataManager.getPlayer(playerID);
                
         //get the tile that this unit places at
-        Element tile = (Element)unit.getElementsByTagName(TILE).item(0);
+        Element tile = (Element)unit.getElementsByTagName(UNIT_TILE).item(0);
         int x = Integer.parseInt(tile.getAttribute(X_COORD));
         int y = Integer.parseInt(tile.getAttribute(Y_COORD));
         Tile targetTile = myDataManager.getGameMap().getTile(x, y);

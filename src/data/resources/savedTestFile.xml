@@ -117,8 +117,8 @@
     </Players>
     <Units>
         <Unit id="unit1">
-            <Player Player="Default Player Name"/>
-            <Tile x="2" y="1"/>
+            <UnitPlayer id="Default Player Name"/>
+            <UnitTile x="2" y="1"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -131,8 +131,8 @@
             </Attributes>
         </Unit>
         <Unit id="unit2">
-            <Player Player="Default Player Name"/>
-            <Tile x="1" y="0"/>
+            <UnitPlayer id="Default Player Name"/>
+            <UnitTile x="1" y="0"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
