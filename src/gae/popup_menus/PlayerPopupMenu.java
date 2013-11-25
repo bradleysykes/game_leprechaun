@@ -27,7 +27,7 @@ public class PlayerPopupMenu extends GAEPopupMenu {
 		initialize();
 	}
 	
-	public List<Unit> getPlayers(){
+	public List<Unit> getUnits(){
 		PlayerViewItem item = (PlayerViewItem)mySource;
 		if(item!=null){
 			return item.getPlayer().getAllUnits();
@@ -38,12 +38,20 @@ public class PlayerPopupMenu extends GAEPopupMenu {
 	@Override
 	public void populate(){
 		myUnitsSubMenu.removeAll();
-		for(Unit u:this.getPlayers()){
-			String unitID = u.getID();
-			String unitName = unitID.substring(0, unitID.indexOf("|"));
-			JMenuItem unitItem = new JMenuItem(unitName);
-			unitItem.addActionListener(new UnitPropertyListener(u));
-			myUnitsSubMenu.add(unitItem);
+		int counter = 1;
+		List<Unit> units = this.getUnits();
+		if(units.size()==0){
+			myUnitsSubMenu.add(new JMenuItem("NONE"));
+		}
+		else{
+			for(Unit u:units){
+				String unitID = u.getID();
+				String unitName = unitID.substring(0, unitID.indexOf("|"));
+				JMenuItem unitItem = new JMenuItem(unitName+" ("+counter+")");
+				unitItem.addActionListener(new UnitPropertyListener(u));
+				myUnitsSubMenu.add(unitItem);
+				counter++;
+			}
 		}
 	}
 	

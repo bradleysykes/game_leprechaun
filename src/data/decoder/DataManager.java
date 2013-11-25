@@ -69,6 +69,7 @@ public class DataManager extends GameElements implements Attributes, Elements {
         myDecoders.add(new PlayerDecoder(this));
         myDecoders.add(new UnitDecoder(this));
         myDecoders.add(new ImageResourcesDecoder(this));
+        myDecoders.add(new ConditionDecoder(this));
     }
     
     /**
@@ -112,7 +113,7 @@ public class DataManager extends GameElements implements Attributes, Elements {
     //test use
     public static void main(String[] args) {
         DataManager dm = new DataManager();
-        GameElements map = dm.getGameElements(new File("src/data/resources/TestFile.xml"));
+        GameElements map = dm.getGameElements(new File("src/data/resources/savedState.xml"));
         map.toString();
         System.out.println(map.getTileImageMap().keySet());
         System.out.println(map.getClass());

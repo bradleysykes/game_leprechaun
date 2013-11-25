@@ -1,7 +1,7 @@
 <GameElements>
     <Map x_dimension="3" y_dimension="3">
         <Tile x="0" y="0">
-            <Stat name="Passability" value="10.0"/>
+            <Stat name="Passability" value="5.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -12,7 +12,7 @@
             </Resources>
         </Tile>
         <Tile x="0" y="1">
-            <Stat name="Passability" value="10.0"/>
+            <Stat name="Passability" value="5.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -23,7 +23,7 @@
             </Resources>
         </Tile>
         <Tile x="0" y="2">
-            <Stat name="Passability" value="10.0"/>
+            <Stat name="Passability" value="5.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -34,7 +34,7 @@
             </Resources>
         </Tile>
         <Tile x="1" y="0">
-            <Stat name="Passability" value="10.0"/>
+            <Stat name="Passability" value="5.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -45,7 +45,7 @@
             </Resources>
         </Tile>
         <Tile x="1" y="1">
-            <Stat name="Passability" value="10.0"/>
+            <Stat name="Passability" value="5.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -56,7 +56,7 @@
             </Resources>
         </Tile>
         <Tile x="1" y="2">
-            <Stat name="Passability" value="10.0"/>
+            <Stat name="Passability" value="5.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -67,7 +67,7 @@
             </Resources>
         </Tile>
         <Tile x="2" y="0">
-            <Stat name="Passability" value="10.0"/>
+            <Stat name="Passability" value="5.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -78,7 +78,7 @@
             </Resources>
         </Tile>
         <Tile x="2" y="1">
-            <Stat name="Passability" value="10.0"/>
+            <Stat name="Passability" value="5.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -89,7 +89,7 @@
             </Resources>
         </Tile>
         <Tile x="2" y="2">
-            <Stat name="Passability" value="10.0"/>
+            <Stat name="Passability" value="5.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
@@ -145,14 +145,8 @@
         </Unit>
     </Units>
     <Conditions>
-        <Condition name="model.condition.Defeat">
-            <ConditionUnit id="soldier10"/>
-            <ConditionPlayer id="Default Player Name"/>
-        </Condition>
-        <Condition name="model.condition.Create">
-            <ConditionUnit id="soldier5"/>
-            <ConditionPlayer id="Default Player Name"/>
-        </Condition>
+        <Condition name="model.condition.Defeat" player_id="Default Player Name" unit_id="soldier10"/>
+        <Condition name="model.condition.Create" player_id="Default Player Name" unit_id="soldier5"/>
     </Conditions>
     <ImageMap>
         <tileImages>

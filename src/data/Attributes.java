@@ -21,5 +21,7 @@ public interface Attributes {
     String VALUE = "value";
     String ID = "id";
     String SRC = "src";
+    String UNIT_ID = "unit_id";
+    String PLAYER_ID = "player_id";
     
 }

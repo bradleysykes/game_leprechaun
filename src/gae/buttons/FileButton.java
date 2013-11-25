@@ -24,7 +24,6 @@ public class FileButton extends JButton {
 	 * @param selectedFile
 	 */
 	public void sendFile(File selectedFile) {
-		// TODO Auto-generated method stub
 		myImage = selectedFile;
 		myParent.setImage(selectedFile);
 	}
