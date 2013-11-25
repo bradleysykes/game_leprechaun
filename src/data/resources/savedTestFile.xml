@@ -3,7 +3,7 @@
         <Tile x="0" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain>
+            <Terrain id="Plains">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -145,7 +145,14 @@
         </Unit>
     </Units>
     <Conditions>
-        <Condition name="Defeat"/>
+        <Condition name="Defeat">
+            <ConditionUnit id="soldier10"/>
+            <ConditionPlayer id="Default Player Name"/>
+        </Condition>
+        <Condition name="Create">
+            <ConditionUnit id="soldier5"/>
+            <ConditionPlayer id="Default Player Name"/>
+        </Condition>
     </Conditions>
     <ImageMap>
         <tileImages>
