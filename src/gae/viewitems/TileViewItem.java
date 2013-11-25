@@ -25,6 +25,7 @@ public class TileViewItem extends BoardListViewItem {
 		super(stats, name, f);
 		myTile = new Tile(20,20,new GameMap(20,20));
 		myIDEnding = "|"+counter;
+		myTile.getStatCollection("Terrain").setID(myTile.getStatCollection("Terrain").getID()+myIDEnding);
 	}
 	
 	@Override
@@ -62,6 +63,7 @@ public class TileViewItem extends BoardListViewItem {
 	public void placeOnBoard(GUIMap map, double x, double y) {
 		//new JGObject(such and such);
 		myMapObject = new MapObject(myMapObjectPrefix,x*TILE_SIZE,y*TILE_SIZE,"tile", this);
+		map.getModelMap().setTile((int)x, (int)y, myTile);
 	}
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player){

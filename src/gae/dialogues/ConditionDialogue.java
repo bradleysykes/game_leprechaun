@@ -32,10 +32,10 @@ public class ConditionDialogue extends InputDialogue {
 
 	private JTextField myNameField;
 	private JComboBox<String> myConditions;// = new JComboBox<String>();
-	private JComboBox<String> myPlayersCombo;// = new JComboBox<String>();
+	private JComboBox<NameObject> myPlayersCombo;// = new JComboBox<String>();
 	private List<Player> myPlayers;
-	private JComboBox<String> myVariable1Combo;
-	private JComboBox<String> myVariable2Combo;// = new JComboBox<String>();
+	private JComboBox<NameObject> myVariable1Combo;
+	private JComboBox<NameObject> myVariable2Combo;// = new JComboBox<String>();
 	private List<IConditionParameterSetter> myConditionsParameters;
 	private List<Player> myVariable1; //may need to change type
 	private List<Unit> myVariable2;
@@ -51,7 +51,7 @@ public class ConditionDialogue extends InputDialogue {
 
 	@Override
 	public JPanel createGutsPanel() {
-		myNameField= new JTextField("Name me!");
+		myNameField= new JTextField("Bob's your uncle");
 		conditionNames = new ArrayList<String>();
 		myVariable1 = new ArrayList<Player>();
 		myVariable2 = new ArrayList<Unit>();
@@ -62,9 +62,9 @@ public class ConditionDialogue extends InputDialogue {
 		fillConditionParameters();
 		JPanel guts = new JPanel();
 		myConditions = new JComboBox<String>();
-		myPlayersCombo = new JComboBox<String>();
-		myVariable1Combo = new JComboBox<String>();
-		myVariable2Combo = new JComboBox<String>();
+		myPlayersCombo = new JComboBox<NameObject>();
+		myVariable1Combo = new JComboBox<NameObject>();
+		myVariable2Combo = new JComboBox<NameObject>();
 		myConditions.addActionListener(new WatchValueListener());
 		myPlayersCombo.addActionListener(new WatchValueListener());
 		myVariable1Combo.addActionListener(new Var1ValueListener());
@@ -72,7 +72,7 @@ public class ConditionDialogue extends InputDialogue {
 			myConditions.addItem(s);
 		}
 		for (Player p : myController.getPlayers()){
-			myPlayersCombo.addItem(p.getName());
+			myPlayersCombo.addItem(new NameObject(p.getName()));
 			myPlayers.add(p);
 		}		
 		
@@ -118,6 +118,7 @@ public class ConditionDialogue extends InputDialogue {
 		JButton create = new JButton("Create");
 		create.addActionListener(new MakeConditionListener());
 		guts.add(create);
+		guts.add(myNameField);
 		return guts;
 	}
 
@@ -156,7 +157,6 @@ public class ConditionDialogue extends InputDialogue {
 					commands.add((Class<Condition>) cls);
 				}
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -172,7 +172,7 @@ public class ConditionDialogue extends InputDialogue {
 			int playerNum = myPlayersCombo.getSelectedIndex();
 			Player player = myPlayers.get(playerNum);
 			if(myVariable1Combo.isEnabled()){
-			Player target = myVariable1.get(myVariable1Combo.getSelectedIndex());
+//			Player target = myVariable1.get(myVariable1Combo.getSelectedIndex());
 			}
 			Unit goal=null;
 			if (myVariable2Combo.isEnabled()) {
@@ -198,7 +198,7 @@ public class ConditionDialogue extends InputDialogue {
 //				myVariable1Combo.setEnabled(true);
 				myVariable1Combo.removeAllItems();
 				for (Player p:myVariable1) {
-					myVariable1Combo.addItem(p.getName());
+					myVariable1Combo.addItem(new NameObject(p.getName()));
 				}
 			}
 			else {
@@ -218,7 +218,7 @@ public class ConditionDialogue extends InputDialogue {
 //				myVariable2Combo.setEnabled(true);
 				myVariable2Combo.removeAllItems();
 				for (Unit u:myVariable2) {
-					myVariable2Combo.addItem(u.getName());
+					myVariable2Combo.addItem(new NameObject(u.getName()));
 				}
 			}
 			else {
@@ -227,5 +227,14 @@ public class ConditionDialogue extends InputDialogue {
 			}
 		}
 		
+	}
+	private class NameObject {
+		private String myName;
+		public NameObject(String name) {
+			myName = name;
+		}
+		public String toString() {
+			return myName;
+		}
 	}
 }

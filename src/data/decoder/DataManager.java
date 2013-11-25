@@ -69,6 +69,7 @@ public class DataManager extends GameElements implements Attributes, Elements {
         myDecoders.add(new PlayerDecoder(this));
         myDecoders.add(new UnitDecoder(this));
         myDecoders.add(new ImageResourcesDecoder(this));
+        myDecoders.add(new ConditionDecoder(this));
     }
     
     /**
