@@ -10,6 +10,7 @@ import gae.Constants;
 import gae.Controller;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
+import gae.viewitems.BoardListViewItem;
 import gae.viewitems.TileViewItem;
 import gae.viewitems.UnitViewItem;
 
@@ -25,7 +26,7 @@ public class TileList extends BoardList {
 	
 	public TileList(Controller controller){
 		super(controller);
-		myType = new TileViewItem();
+		myDefaultModel = DEFAULT_TILE_STATS;
 	}
 	
 	@Override
@@ -42,10 +43,10 @@ public class TileList extends BoardList {
 		// TODO Auto-generated method stub
 		return new TilePopupMenu(myController, this);
 	}
-	
-	public void postInput(List<Stat> inputData, String name, File f){
-		myType = new TileViewItem(inputData,name,f);
-		this.addNewItem(myType);
+
+	@Override
+	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,File f,int counter) {
+		return new TileViewItem(inputData,name,f,counter);
 	}
 
 	@Override

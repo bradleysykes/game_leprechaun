@@ -20,6 +20,7 @@ import model.Player;
 public class PlayerPanel extends EditPanel {
 	private PlayerList myList;
 	private List<Player> myModelPlayerList;
+	private int myPlayerNumber = 1;
 
 	public PlayerPanel(Controller controller){
 		super(controller);
@@ -32,12 +33,14 @@ public class PlayerPanel extends EditPanel {
 	public void postPlayers(int numPlayers) {
 		while(myModelPlayerList.size()<numPlayers) {
 			Player nextPlayer = new Player();
-			myList.addNewItem(new PlayerViewItem(nextPlayer));
+			myList.addNewItem(new PlayerViewItem(nextPlayer, myPlayerNumber));
 			myModelPlayerList.add(nextPlayer);
+			myPlayerNumber++;
 		}
 		while(myModelPlayerList.size()>numPlayers) {
 			myList.removeItem(numPlayers);
 			myModelPlayerList.remove(numPlayers);
+			myPlayerNumber--;
 		}
 	}
 	

@@ -20,8 +20,7 @@ public class Unit extends StatCollection implements ModelConstants {
 	private GameMap myMap;
 	private Player myPlayer;
 	private Tile myCurrentTile;
-	
-	//change name to id?
+
 	public Unit(String id, Player player, Tile t) {
 		super("Unit",id);
 		this.addStat(new Attributes());

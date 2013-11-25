@@ -20,6 +20,7 @@ import model.stats.Stat;
 
 public abstract class BoardListViewItem extends ViewItem {
 	protected List<Stat> myProperties = new ArrayList<Stat>();
+	protected List<Stat> myDefaults;
 	protected String myName;
 	protected MapObject myMapObject;
 	protected String myMapObjectPrefix;
@@ -44,6 +45,8 @@ public abstract class BoardListViewItem extends ViewItem {
 			ImageTool.scaleAndOverwriteImage(myImage.getPath(), resizeDimensions,resizeDimensions);
 		}
 	}
+	
+	public abstract List<Stat> getDefaults();
 	
 	protected abstract String getMapPrefix();
 

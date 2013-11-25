@@ -4,7 +4,7 @@
 	    <Tile x="0" y="0">
 		    <Stat name="Passability" value="1.0"/>
 		  	<Stat name="Max Population" value="2.0"/>
-		  	<Terrain id="Pl>
+		  	<Terrain>
 		  		<Stat name="Magnitude" value="3"/>	  		
 		  	</Terrain>
 		  	<Resources> 	
@@ -90,10 +90,10 @@
 	
 	<ImageMap>
 	    <tileImages>
-	        <Image id="plain" src="test_icon_image.jpg"/>
+	        <Image id="Plains" src="test_icon_image.jpg"/>
 	    </tileImages>
 	    <unitImages>
-	        <Image id="soldier" src="src/gae/resources/test_tile.jpg"/>
+	        <Image id="soldier" src="soldier.jpg"/>
 	    </unitImages>
 	</ImageMap> 
 </GameElements>

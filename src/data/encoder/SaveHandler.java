@@ -96,8 +96,10 @@ public class SaveHandler implements Elements {
     	    myEncoderList.add(new MapEncoder(myXmlDocument, myCurrentState.getGameMap(), root));
     	    myEncoderList.add(new PlayerEncoder(myXmlDocument, myCurrentState.getPlayers(), root));
     	    myEncoderList.add(new UnitEncoder(myXmlDocument, myCurrentState.getPlayers(), root));
+    	    myEncoderList.add(new ConditionEncoder(myXmlDocument, myCurrentState.getConditions(), root));
     	    myEncoderList.add(new ImageEncoder(myXmlDocument, myCurrentState.getUnitImageMap(),
     	                                       myCurrentState.getTileImageMap(),root));
+    	    
 	    }
     }
 	

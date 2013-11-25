@@ -13,7 +13,9 @@ import javax.swing.JMenuItem;
 
 
 public class TilePopupMenu extends GAEPopupMenu {
+	
 	private BoardList myListSource;
+	
 	public TilePopupMenu(Controller controller, BoardList source){
 		super(controller);
 		myListSource = source;
@@ -22,7 +24,6 @@ public class TilePopupMenu extends GAEPopupMenu {
 	
 	@Override
 	public void subInitialize() {
-		// TODO Auto-generated method stub
 		JMenuItem item = new JMenuItem("Fill Map");
 		item.addActionListener(new FillListener());
 		this.add(item);
