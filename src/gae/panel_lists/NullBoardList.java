@@ -29,8 +29,7 @@ public class NullBoardList extends BoardList {
 
 	@Override
 	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,
-			File f) {
-		// TODO Auto-generated method stub
+			File f, int counter) {
 		return new NullViewItem();
 	}
 

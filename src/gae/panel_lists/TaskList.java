@@ -43,7 +43,7 @@ public class TaskList extends BoardList {
 
 	@Override
 	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,
-			File f) {
+			File f, int counter) {
 		return new NullViewItem();
 	}
 	

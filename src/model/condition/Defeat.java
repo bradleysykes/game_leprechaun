@@ -5,6 +5,7 @@ import model.Player;
 import model.unit.Unit;
 
 public class Defeat extends Condition {
+	
 	private String myUnitID;
 	
 	public Defeat(){

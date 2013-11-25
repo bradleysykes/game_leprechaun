@@ -41,6 +41,8 @@ public abstract class BoardList extends JList implements Constants{
 	protected Class myType;
 	protected GAEPopupMenu myPopup;
 	protected List<Stat> myDefaultModel;
+	private int myCounter;
+
 	
 	public BoardList(Controller controller){
 		myController = controller;
@@ -51,6 +53,10 @@ public abstract class BoardList extends JList implements Constants{
 		this.setCellRenderer(new EditListRenderer());
 		myPopup = this.getPopupMenu();
 		this.addMouseListener(new PopupListener(myPopup, this));
+		myCounter = 0;
+		//FOR DEBUG
+//		BoardListItem tu = new ToyUnit();
+//		this.addNewItem(tu);
 	}
 	
 
@@ -108,17 +114,16 @@ public abstract class BoardList extends JList implements Constants{
 	 * @param name 
 	 */
 	public void postNewInput(List<Stat> inputData, String name, File f){
-		BoardListViewItem newItem = getNewItem(inputData,name,f);
+		BoardListViewItem newItem = getNewItem(inputData, name,f, myCounter);
+		myCounter++;
 		this.addNewItem(newItem);
 	}
 	
-	protected abstract BoardListViewItem getNewItem(List<Stat> inputData, String name,
-			File f);
-
-
 	public void postEditInput(List<Stat> inputData, String name, File f){
-		BoardListViewItem newItem = getNewItem(inputData, name,f);
+		BoardListViewItem newItem = getNewItem(inputData, name,f, myCounter);
 	}
+	
+	protected abstract BoardListViewItem getNewItem(List<Stat> inputData, String name,File f, int counter);
 
 
 	public GameElements giveStateObjects(GameElements currentState) {

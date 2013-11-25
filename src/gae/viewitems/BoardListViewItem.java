@@ -89,7 +89,7 @@ public abstract class BoardListViewItem extends ViewItem {
 		
 	}
 
-	public abstract BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile);
+	public abstract BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile, int myCounter);
 	
 	public JGObject getMapObject() {
 		return myMapObject;

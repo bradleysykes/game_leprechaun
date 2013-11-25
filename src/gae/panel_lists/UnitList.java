@@ -1,15 +1,22 @@
 package gae.panel_lists;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import data.GameElements;
+import model.Condition;
 import model.stats.Stat;
+import model.unit.Unit;
 import gae.Constants;
 import gae.Controller;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
 import gae.popup_menus.UnitPopupMenu;
 import gae.viewitems.BoardListViewItem;
+import gae.viewitems.ConditionViewItem;
 import gae.viewitems.UnitViewItem;
 
 public class UnitList extends BoardList {
@@ -38,11 +45,24 @@ public class UnitList extends BoardList {
 	}
 
 	@Override
-	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,
-			File f) {
-		return new UnitViewItem(inputData,name,f);
+	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,File f, int counter) {
+		return new UnitViewItem(inputData,name,f,counter);
 	}
 
-	
+	public GameElements giveStateObjects(GameElements currentState) {
+		Object[] list = new Object[myModel.size()];
+		myModel.copyInto(list);
+		List<Unit> unitList = new ArrayList<Unit>();
+		Map<String, String> unitImageMap = new HashMap<String, String>();
+		for (Object o:list) {
+			UnitViewItem uvi = (UnitViewItem) o;
+			Unit u = (Unit) uvi.getModelObject();
+			unitList.add(u);
+			unitImageMap.put(u.getID(), uvi.getImagePath());
+		}
+		currentState.setUnitTypes(unitList);
+		currentState.setUnitImageMap(unitImageMap);
+		return currentState;
+	}
 	
 }

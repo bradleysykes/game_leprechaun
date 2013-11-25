@@ -49,7 +49,7 @@ public class PlayerEncoder extends Encoder {
             resElement.setAttribute(NAME, res.getID());
             for(Stat stat : res.getStats()) {
                 resElement.setAttribute(stat.getName().toLowerCase().replaceAll("\\s+","_"), 
-                                        String.valueOf(stat.getValue()).replaceAll("\\b0.0\\b", "null"));
+                                        String.valueOf(stat.getValue()).replaceAll("\\b0.0\\b", "-1.0"));
             }
             resourcesElement.appendChild(resElement);
         }

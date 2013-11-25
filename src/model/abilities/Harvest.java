@@ -23,17 +23,11 @@ public class Harvest extends Ability{
 		}
 		myValid = false;
 	}
-	
-	@Override
-	public void prepAbility(){
-		// Doesn't require special preparation - works with current tile.
-		useAbility();
-		// How will this impact the current queued ability... will that be confusing?
-	}
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		// Do nothing.		
+		useAbility();
+		// Doesn't require outside input.
 	}
 
 }

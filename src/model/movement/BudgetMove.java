@@ -3,8 +3,6 @@ package model.movement;
 import java.util.ArrayList;
 import java.util.List;
 
-import engine.GameEngine;
-
 import model.GameMap;
 import model.abilities.Move;
 import model.tile.Tile;
@@ -18,9 +16,9 @@ public class BudgetMove extends Move {
 	
 	@Override
 	public void useAbility(){
-		double cost = canMoveToTile(myTile);
+		double cost = canMoveToTile(myTargetTile);
 		if(cost>0){
-			myUnit.setCurrentTile(myTile);
+			myUnit.setCurrentTile(myTargetTile);
 			myUnit.getStatCollection("Attributes").setStat("Stamina", 
 					myUnit.getStatCollection("Attributes").getValue("Stamina")-cost);
 		}
