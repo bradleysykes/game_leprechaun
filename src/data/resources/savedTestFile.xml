@@ -144,7 +144,10 @@
             </Attributes>
         </Unit>
     </Units>
-    <Conditions/>
+    <Conditions>
+        <Condition name="model.condition.Defeat" player_id="Default Player Name" unit_id="soldier10"/>
+        <Condition name="model.condition.Create" player_id="Default Player Name" unit_id="soldier5"/>
+    </Conditions>
     <ImageMap>
         <tileImages>
             <image id="Plains" src="test_icon_image.jpg"/>

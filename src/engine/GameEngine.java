@@ -18,24 +18,22 @@ import model.Player;
 import model.tile.Tile;
 import model.unit.Unit;
 
-public class GameEngine extends JGEngine {
+public class GameEngine extends JGEngine implements EngineConstants {
 	
 	private GameManager myGameManager;
 	private Model myModel;
 	private GameLoader myGameLoader;
-	private static final int myViewerWidth = 800;
-	private static final int myViewerHeight = 500;
-	private final int myTileWidth = 20;
-	private final int myTileHeight = 20;
 	private ArrayList<Unit> myUnits;
 	private GameMap myGameMap;
 	private Map<Tile, GameTileObject> myTileObjectMap;
 	private ArrayList<Player> myPlayers;
 	private Player myCurrentPlayer;
 	private MouseObject myMouseObject;
+	private GameViewer myGameViewer;
 	
-	public GameEngine() {
-		initEngineComponent(myViewerWidth, myViewerHeight);
+	public GameEngine(GameViewer gv) {
+		initEngineComponent(600, 400);
+		myGameViewer = gv;
 	}
 	
 	public void initCanvas() {
@@ -61,11 +59,12 @@ public class GameEngine extends JGEngine {
 	
 	public void doFrame() {
 		this.moveObjects();
-		checkCollision(GameTileObject.getCollisionID(), MouseObject.getCollisionID());
-		if (getMouseButton(1)){
+		this.checkCollision(MOUSE_COL_ID, 2);
+/*		if(getMouseButton(1)){
 			clearMouseButton(1);
-			System.out.println(this.countObjects(null, 0));
-		}
+			for(Tile T : myTileObjectMap.keySet())
+				new TileHighlightObject(T, this);
+		}*/
 	}
 	
 	public void nextPlayer() {
@@ -104,9 +103,10 @@ public class GameEngine extends JGEngine {
 	
 	public void highlightTiles(List<Tile> tileList) {
 		for (Tile tile : tileList) {
-			TileHighlightObject highlight = new TileHighlightObject(tile, this);
-			myTileObjectMap.get(tile).toggleIsHighlighted();
+			new TileHighlightObject(tile, this);
+			//myTileObjectMap.get(tile).toggleIsHighlighted();
 		}
+		System.out.println("Tiles highlighted");
 	}
 	
 	public void removeHighlights() {
@@ -126,6 +126,10 @@ public class GameEngine extends JGEngine {
 	
 	public GameTileObject getGameTile(Tile tile){
 		return myTileObjectMap.get(tile);
+	}
+	
+	public void setSelectedUnit(Unit u){
+		myGameViewer.setSelectedUnit(u);
 	}
 	
 	public void sendModelUnit(Unit u){

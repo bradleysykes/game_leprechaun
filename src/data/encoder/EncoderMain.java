@@ -7,6 +7,7 @@ import model.Condition;
 import model.GameMap;
 import model.Player;
 import model.Resource;
+import model.condition.Create;
 import model.condition.Defeat;
 import model.tile.Tile;
 import model.unit.Unit;
@@ -54,8 +55,10 @@ public class EncoderMain implements Elements {
         
         //add Conditions to currentState
         List<Condition> conditionList = new ArrayList<Condition>();
-        Condition defeatCond = new Defeat("defeatTest",p1);
+        Condition defeatCond = new Defeat("soldier10",p1);
         conditionList.add(defeatCond);
+        Condition createCond = new Create("soldier5",p1);
+        conditionList.add(createCond);
         currentState.setConditions(conditionList);
         
         //add imageMap to currentState

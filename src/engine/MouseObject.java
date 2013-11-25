@@ -8,39 +8,36 @@ import model.Model;
 import model.tile.Tile;
 import model.unit.Unit;
 import jgame.JGObject;
+import jgame.JGTimer;
 
-public class MouseObject extends JGObject {
+public class MouseObject extends JGObject implements EngineConstants{
 	
 	private GameEngine myGameEngine;
-	private static final int myCollisionID = 8;
+	private boolean myClickDelay = false;
 	
 	public MouseObject(GameEngine gameEngine) {
-		super("mouse", false, gameEngine.getMouseX(), gameEngine.getMouseY(), myCollisionID, null);
+		super("mouse", false, gameEngine.getMouseX(), gameEngine.getMouseY(), MOUSE_COL_ID, null);
+		this.setBBox((int)x,(int)y,1,1);
 		myGameEngine = gameEngine;
 	}
 	
 	public void move() {
 		x = myGameEngine.getMouseX();
 		y = myGameEngine.getMouseY();
-	}
-	
-	public void hit(JGObject object) {
-		if (object.colid == GameTileObject.getCollisionID()) {
-			GameTileObject gameTile = (GameTileObject) object;
-			Tile tile = gameTile.getTile();
-			if (gameTile.isHighlighted()) { 
-				myGameEngine.getModel().useAbility(tile);
-				myGameEngine.removeHighlights();
-				return;
-			}
-			List<Unit> unitList = tile.getUnits();
-			UnitListArea unitListArea = (UnitListArea) GameViewer.getActionPanel().getUnitListArea();
-			unitListArea.loadUnitList(unitList);
+		
+		// Helps prevent unintentional double-clicks
+		if(myGameEngine.getMouseButton(1) && !myClickDelay){
+			this.colid = MOUSE_COL_ID;
+			myClickDelay = true;
+			new JGTimer(10, true){
+				public void alarm() {
+					myClickDelay = false;
+				}
+			};
 		}
-	}
-	
-	public static int getCollisionID() {
-		return myCollisionID;
+		else{
+			this.colid = 0;	
+		}
 	}
 	
 }

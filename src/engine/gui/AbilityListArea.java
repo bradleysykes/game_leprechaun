@@ -1,54 +1,60 @@
 package engine.gui;
 
-import java.awt.Dimension;
 import java.awt.Label;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
+import engine.GameEngine;
+
+import model.Abilities;
 import model.Ability;
+import model.stats.Stat;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
 public class AbilityListArea extends JPanel {
 
-	private JComboBox<String> myComboBox;
-	private DefaultComboBoxModel<String> myComboBoxModel;
-	private List<Ability> myAbilities;
-	private Unit myUnit;
-	private final Dimension mySize = new Dimension(150, 10);
-	
-	public AbilityListArea() {
+	private GameEngine myEngine;
+	private Abilities myAbilities;
+	private JComboBox<String> myComboBoxModel;
+	private boolean myStatus = false;
+
+	public AbilityListArea(GameEngine ge) {
+		myEngine = ge;
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-		
-		myAbilities = new ArrayList<Ability>();
-		myComboBoxModel = new DefaultComboBoxModel<String>();
-		myComboBox = new JComboBox<String>(myComboBoxModel);
-		myComboBox.setPreferredSize(mySize);
-		
-		add(new Label("Abilities:"));
-		add(myComboBox);
+		myComboBoxModel = new JComboBox<String>();
+		myComboBoxModel.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if(myStatus){
+					System.out.println(myComboBoxModel.getSelectedItem().toString());
+					Ability ability = (Ability) myAbilities.getStat(myComboBoxModel.getSelectedItem().toString());
+					myEngine.getModel().setAbility(ability);
+				}
+				else{		// Bug with first click. Should be a better solution.
+					myStatus = true;
+				}
+			}
+		});
+		this.add(new Label("Abilities:"));
+		this.add(myComboBoxModel);
 	}
-	
-	public void clearAbilities() {
-		myAbilities.clear();
-	}
-	
-	public void refreshAbilities(List<Ability> abilities) {
-		myAbilities = abilities;
-		myComboBoxModel.removeAllElements();
-		for (Ability ability : abilities) {
-			myComboBoxModel.addElement(ability.getID());
+
+	public void refreshAbilities(StatCollection a) {
+		myComboBoxModel.removeAllItems();
+		for (Stat s : a.getStats()) {
+			myComboBoxModel.addItem(s.getName());
 		}
+		myComboBoxModel.revalidate();
 	}
-	
+
 	public void setUnit(Unit unit) {
-		myUnit = unit;
+		myAbilities = (Abilities) unit.getStatCollection("Abilities");
+		this.refreshAbilities(myAbilities);
 	}
-	
+
 }

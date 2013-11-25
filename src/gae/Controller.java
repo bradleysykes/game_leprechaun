@@ -25,7 +25,7 @@ public class Controller {
 	List<Player> myPlayers = new ArrayList<Player>();
 	
 	public Controller(){
-
+		
 	}
 	
 	public void init(){

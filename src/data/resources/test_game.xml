@@ -85,20 +85,22 @@
 				<Stat name="Range" value="3.0"/>  		
 			</Attributes>
 		</Unit>	
-		<Conditions>
-		    <Condition name="create">
-		        <ConditionUnit id="soldier"/>
-		    </Condition>
-		    <Condition name="defeat">
-		        <ConditionUnit id="soldier"/>
-		    </Condition>
-		    <Condition name="waypoint">
-		        <ConditionUnit id="soldier"/>
-		        <ConditionTile x="1" y="2"/>
-		    </Condition>
-		</Conditions>
 	</Units>
-	
+	<Conditions>
+	    <Condition name="Create">
+	        <ConditionUnit id="soldier"/>
+	        <ConditionPlayer id="player1"/>
+	    </Condition>
+	    <Condition name="Defeat">
+	        <ConditionUnit id="soldier"/>
+	        <ConditionPlayer id="player2"/>
+	    </Condition>
+	    <Condition name="Waypoint">
+	        <ConditionUnit id="soldier"/>
+	        <ConditionTile x="1" y="2"/>
+	        <ConditionPlayer id="player2"/>
+	    </Condition>
+	</Conditions>
 	<ImageMap>
 	    <tileImages>
 	        <Image id="Plains" src="test_icon_image.jpg"/>

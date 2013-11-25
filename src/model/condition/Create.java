@@ -7,25 +7,19 @@ import model.unit.Unit;
 
 public class Create extends Condition {
 	
-	private Unit myUnit;
-
 	public Create(){
-		super("Create",null);
+		super("Create","",null);
 	}
 	
-	public Create(Unit goal, Player p) {
-		super("Create", p);
-		myUnit = goal;
+	public Create(String goal, Player p) {
+		super("Create",goal, p);
 	}
 
 	@Override
 	public boolean check(){
-		for (Tile tile : myUnit.getMap().getAllTiles()){
-			for (Unit unit : tile.getUnits()){
-				if (unit.equals(myUnit)){
-					return true;
-				}
-			}
+		for(Unit u : myPlayer.getAllUnits()){
+			if(u.getID().equals(this.getID()))
+				return true;
 		}
 		return false;
 	}
