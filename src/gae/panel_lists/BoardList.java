@@ -104,7 +104,11 @@ public abstract class BoardList extends JList implements Constants{
 	 */
 	public void createCustomType() {
 		// create new dialogue, populate with model for this viewitem type
-		UnitCreationDialogue d = new UnitCreationDialogue("Create me!",myDefaultModel,this);
+		UnitCreationDialogue d = new UnitCreationDialogue("Create me!",getDefaultStats(),this);
+	}
+	
+	public List<Stat> getDefaultStats(){
+		return new ArrayList<Stat>();
 	}
 	
 	/**
