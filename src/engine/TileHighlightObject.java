@@ -16,10 +16,11 @@ public class TileHighlightObject extends JGObject {
 		super("zhighlight", true, 0, 0, myCollisionID, null);
 		myTile = tile;   
 		myGameEngine = gameEngine;
+		System.out.println("Tiles!");
 	}
 	
 	@Override
-	public void move() {
+	public void paint() {
 		myGameEngine.drawRect(myTile.getX()*myGameEngine.getGameTile(myTile).getImageBBox().width, 
 				myTile.getY()*myGameEngine.getGameTile(myTile).getImageBBox().height, 
 				myGameEngine.getGameTile(myTile).getImageBBox().width, 
