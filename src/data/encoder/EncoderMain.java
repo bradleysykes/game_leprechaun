@@ -37,26 +37,26 @@ public class EncoderMain implements Elements {
         Player p1 = new Player();
         p1.getStatCollection(RESOURCES).addStat(new Resource("minerals", 500, 0));
         p1.getStatCollection(RESOURCES).addStat(new Resource("gas", 350, 0));
-        Unit unit1 = new Unit("unit1",p1,map);
         Tile t1 = new Tile(2,1,map);
-        unit1.setCurrentTile(t1);
+        Unit unit1 = new Unit("unit1",p1, t1);
         p1.addUnit(unit1);
         
         Player p2 = new Player();
         p2.getStatCollection(RESOURCES).addStat(new Resource("minerals", 820, 0));
         p2.getStatCollection(RESOURCES).addStat(new Resource("gas", 620, 0));
-        Unit unit2 = new Unit("unit2",p2,map);
         Tile t2 = new Tile(1,0,map);
-        unit2.setCurrentTile(t2);
+        Unit unit2 = new Unit("unit2",p2,t2);
         p1.addUnit(unit2);
         
         playerList.add(p1); playerList.add(p2);
         currentState.setPlayerList(playerList);
         
         //add imageMap to currentState
-        Map<String, String> imageMap = new HashMap<String, String>();
-        //populate the imageMap... then
-        currentState.setImageMap(imageMap);
+        Map<String, String> unitImageMap = new HashMap<String, String>();
+        //Map<String, String> tileImageMap = new HashMap<String, String>();
+        //populate the imageMaps... then
+        currentState.setUnitImageMap(unitImageMap);
+        //currentState.setTileImageMap(tileImageMap);
 
         // create a SaveHandler and save an xml file to the specified path
         SaveHandler sh = new SaveHandler(currentState, "./src/data/resources/savedTestFile.xml");
