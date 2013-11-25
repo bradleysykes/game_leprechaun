@@ -19,7 +19,7 @@ public class Model {
 		myPlayers.add(p);
 	}
 	
-	public void setGame(GameEngine ge){
+	public void setGameEngine(GameEngine ge){
 		myGameEngine = ge;
 	}
 	
@@ -36,6 +36,12 @@ public class Model {
 	public static void useAbility(Unit u){
 		myQueuedAbility.setTargetUnit(u);
 		myQueuedAbility.useAbility();
+	}
+	
+	public void refresh(){
+		for(Player p : myPlayers){
+			p.refresh();
+		}
 	}
 
 }
