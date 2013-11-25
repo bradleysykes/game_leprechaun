@@ -15,12 +15,12 @@ public class GameElements {
     protected GameMap myGameMap;
     protected List<Player> myPlayers;
     protected List<Unit> myUnitTypes;
-    protected HashMap<String, String> myTileImages;
-    protected HashMap<String, String> myUnitImages;
+    protected Map<String, String> myTileImages;
+    protected Map<String, String> myUnitImages;
     protected List<Condition> myVictoryConditions;
 
-    public GameElements(GameMap map, List<Player> players, HashMap<String, String> tileImages, 
-                        HashMap<String, String> unitImages) {
+    public GameElements(GameMap map, List<Player> players, Map<String, String> tileImages, 
+                        Map<String, String> unitImages) {
         this(map, players);
         myTileImages = tileImages;
         myUnitImages = unitImages;
@@ -60,19 +60,19 @@ public class GameElements {
         myPlayers.add(player);
     }
     
-    public void setTileImageMap(HashMap<String, String> imageMap) {
+    public void setTileImageMap(Map<String, String> imageMap) {
     	myTileImages = imageMap;
     }
     
-    public HashMap<String, String> getTileImageMap() {
+    public Map<String, String> getTileImageMap() {
         return myTileImages;
     }
     
-    public HashMap<String, String> getUnitImageMap() {
+    public Map<String, String> getUnitImageMap() {
         return myUnitImages;
     }
     
-    public void setUnitImageMap(HashMap<String, String> imageMap) {
+    public void setUnitImageMap(Map<String, String> imageMap) {
         myUnitImages = imageMap;
     }
         

@@ -816,51 +816,9 @@
         </Player>
     </Players>
     <Units>
-        <Unit id="Name me!|1">
-            <Player Player="Default Player Name"/>
-            <Tile x="6" y="4"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|1">
-            <Player Player="Default Player Name"/>
-            <Tile x="5" y="3"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|1">
-            <Player Player="Default Player Name"/>
-            <Tile x="4" y="3"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|1">
-            <Player Player="Default Player Name"/>
-            <Tile x="5" y="4"/>
+        <Unit id="Name me!|0">
+            <UnitPlayer id="Default Player Name"/>
+            <UnitTile x="4" y="3"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -873,8 +831,8 @@
             </Attributes>
         </Unit>
         <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="4" y="3"/>
+            <UnitPlayer id="Default Player Name"/>
+            <UnitTile x="3" y="4"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -887,8 +845,8 @@
             </Attributes>
         </Unit>
         <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="4" y="2"/>
+            <UnitPlayer id="Default Player Name"/>
+            <UnitTile x="7" y="5"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -901,218 +859,8 @@
             </Attributes>
         </Unit>
         <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="5" y="2"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="4" y="3"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="4" y="4"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="4" y="5"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="4" y="5"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="4" y="5"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="3" y="5"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="3" y="4"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="3" y="4"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="3" y="3"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="3" y="3"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="3" y="1"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="5" y="2"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="5" y="5"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="5" y="5"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <Player Player="Default Player Name"/>
-            <Tile x="4" y="5"/>
+            <UnitPlayer id="Default Player Name"/>
+            <UnitTile x="4" y="4"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -1125,4 +873,12 @@
             </Attributes>
         </Unit>
     </Units>
+    <ImageMap>
+        <tileImages>
+            <image id="Unit" src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\test_icon_image.png"/>
+        </tileImages>
+        <unitImages>
+            <image id="" src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\test_tile.jpg"/>
+        </unitImages>
+    </ImageMap>
 </GameElements>

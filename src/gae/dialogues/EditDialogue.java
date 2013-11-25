@@ -20,7 +20,6 @@ public class EditDialogue extends UnitCreationDialogue {
 		List<Stat> inputData = new ArrayList<Stat>();
 		for(Stat stat:myFieldViews.keySet()){
 			String data = myFieldViews.get(stat).getData();
-			// convert data to appropriate Type
 			stat.setValue(Double.parseDouble(data));
 			inputData.add(stat);
 		}

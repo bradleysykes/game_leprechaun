@@ -1,5 +1,6 @@
 package gae;
 
+import gae.dialogues.BoardSizeDialogue;
 import gae.dialogues.PlayerDialogue;
 
 import java.awt.event.ActionEvent;
@@ -15,16 +16,28 @@ public class EditToolbar extends JPanel {
 		myController = controller;
 		JToolBar editToolbar = new JToolBar();
 		JButton numPlayersButton = new JButton("Edit Number of Players");
-		numPlayersButton.addActionListener(new editNumPlayersAction());
+		numPlayersButton.addActionListener(new EditNumPlayersActionListener());
 		editToolbar.add(numPlayersButton);
-		editToolbar.add(new JButton("Task 2"));
+		JButton resizeButton = new JButton("Resize Map");
+		resizeButton.addActionListener(new ResizeListener());
+		editToolbar.add(resizeButton);
 		editToolbar.add(new JButton("Task 3"));
 		this.add(editToolbar);
 	}
-	class editNumPlayersAction implements ActionListener {
+	
+	private class ResizeListener implements ActionListener {
 
 		@Override
-		public void actionPerformed(ActionEvent arg0) {
+		public void actionPerformed(ActionEvent e) {
+			new BoardSizeDialogue(myController);
+		}
+		
+	}
+	
+	public class EditNumPlayersActionListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
 			new PlayerDialogue(myController);
 			
 		}

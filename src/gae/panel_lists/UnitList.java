@@ -8,13 +8,17 @@ import java.util.Map;
 
 import data.GameElements;
 import model.Condition;
+import model.GameMap;
+import model.Player;
 import model.stats.Stat;
+import model.tile.Tile;
 import model.unit.Unit;
 import gae.Constants;
 import gae.Controller;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
 import gae.popup_menus.UnitPopupMenu;
+import gae.viewitems.BoardListViewItem;
 import gae.viewitems.ConditionViewItem;
 import gae.viewitems.UnitViewItem;
 
@@ -23,7 +27,7 @@ public class UnitList extends BoardList {
 	public UnitList(Controller controller){
 		super(controller);
 		// this list will only hold UnitViewItems
-		myType = new UnitViewItem("Type Holder");
+		myDefaultModel = DEFAULT_UNIT_STATS;
 	}
 	
 	/**
@@ -32,6 +36,12 @@ public class UnitList extends BoardList {
 	@Override
 	public String getListType() {
 		return "Unit";
+	}
+	
+	@Override
+	public List<Stat> getDefaultStats(){
+		Unit unit = new Unit("Jeff",new Player(),new Tile(2,2,new GameMap(2,2)));
+		return unit.getStats();
 	}
 	
 	@Override
@@ -44,6 +54,10 @@ public class UnitList extends BoardList {
 	}
 
 	@Override
+	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,File f, int counter) {
+		return new UnitViewItem(inputData,name,f,counter);
+	}
+
 	public GameElements giveStateObjects(GameElements currentState) {
 		Object[] list = new Object[myModel.size()];
 		myModel.copyInto(list);

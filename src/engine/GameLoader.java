@@ -3,7 +3,7 @@ package engine;
 import java.util.ArrayList;
 import data.GameElements;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.Map;
 
 import model.GameMap;
 import model.Player;
@@ -26,8 +26,8 @@ public class GameLoader  {
 		GameMap gameMap = myGameElements.getGameMap();
 		myGameEngine.setPFSize(gameMap.getSizeX() , gameMap.getSizeY());
 		Collection<Tile> allTiles = gameMap.getAllTiles();
-		HashMap<String, String> myTileImages = myGameElements.getTileImageMap();
-		HashMap<String, String> myUnitImages = myGameElements.getUnitImageMap();
+		Map<String, String> myTileImages = myGameElements.getTileImageMap();
+		Map<String, String> myUnitImages = myGameElements.getUnitImageMap();
 		
 		for (String all : myTileImages.keySet()) {
 			myGameEngine.defineImage(all, "-", 0,myTileImages.get(all),"-");

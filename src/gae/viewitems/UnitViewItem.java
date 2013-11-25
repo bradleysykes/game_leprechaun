@@ -24,20 +24,23 @@ public class UnitViewItem extends BoardListViewItem {
 	
 	public UnitViewItem(List<Stat> stats, String name, File imageFile, int IDcounter){
 		super(stats, name, imageFile);
-		myUnit = new Unit("Unit",new Player(), new GameMap(50,50));
+		myUnit = new Unit("Unit",new Player(), new Tile(3,3,new GameMap(2,2)));
+		myDefaults = myUnit.getStats();
 		myUnit.setStats(myProperties);
 		myIDEnding = "|"+IDcounter;
 	}
 	
-	public UnitViewItem(String name) {
-		this(new Unit("Unit",new Player(), new GameMap(50,50)).getStats(),name,new File(System.getProperty("user.dir")+"\\src\\gae\\resources\\test_icon_image.png"), 0);
-	}
 	/**
 	 * use to figure out what properties this type needs
 	 */
 	@Override
 	public List<Stat> getModel() {
 		return myProperties;
+	}
+	
+	@Override
+	public List<Stat> getDefaults(){
+		return myDefaults;
 	}
 
 	@Override
@@ -49,6 +52,7 @@ public class UnitViewItem extends BoardListViewItem {
 	@Override
 	public BoardListViewItem createModel(List<Stat> stats, String name, File imageFile, int counter) {
 		UnitViewItem item = new UnitViewItem(stats, name, imageFile, counter);
+		myProperties = stats;
 		return item;
 	}
 	
@@ -81,14 +85,14 @@ public class UnitViewItem extends BoardListViewItem {
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player) {
 		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
-		int tileX = (int)(x-x%UNIT_SIZE);
-		int tileY = (int)(y-y%UNIT_SIZE);
+		int tileX = (int)(x-x%TILE_SIZE);
+		int tileY = (int)(y-y%TILE_SIZE);
 		myMapObject = new MapObject(myMapObjectPrefix,tileX,tileY,myMapObjectPrefix,this);
 		GameMap modelMap = map.getModelMap();
-		Unit newGuy = new Unit(myName+myIDEnding, player.getPlayer(), modelMap);
 		Tile selectedTile = modelMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE);
+		Unit newGuy = new Unit(myName+myIDEnding, player.getPlayer(), selectedTile);
 		selectedTile.addUnit(newGuy);
-		newGuy.setMapPosition(tileX/UNIT_SIZE,tileY/UNIT_SIZE);
+		newGuy.setCurrentTile(selectedTile);
 		player.assignUnit(newGuy);
 	}
 	
