@@ -44,7 +44,7 @@ public class GUIMap extends JGEngine implements Constants{
 	public void removeObjects(String prefix, int cidmask){
 		if(prefix==null&&cidmask==0){
 			//clear everything
-			myMap.clearTiles();
+			//it myMap.
 			
 		}
 		else{

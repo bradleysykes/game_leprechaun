@@ -4,6 +4,7 @@ import gae.dialogues.UnitAlert;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.NullViewItem;
 import gae.viewitems.PlayerViewItem;
+import gae.viewitems.TileViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
@@ -26,13 +27,19 @@ public class BoardBuffer {
 		if(myPlayer!=null&&myItem!=null){
 			return myItem;
 		}
-		else{
+		if(myPlayer==null&&myItem instanceof UnitViewItem){
+			//requires units to be assigned player before placement
 			JOptionPane alertPane = new JOptionPane("Please select a unit and a player before placing on map.");
 			JDialog dialog = alertPane.createDialog(null,"Player alert");
 			dialog.setLocation(10, 10);
 			dialog.setVisible(true);
 			return new NullViewItem();
 		}
+		if(myPlayer==null&&myItem instanceof TileViewItem){
+			//allows user to place tile without assigning player
+			return myItem;
+		}
+		return new NullViewItem();
 	}
 	
 	public static void clear(){

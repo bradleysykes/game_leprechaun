@@ -25,6 +25,8 @@ import model.unit.Unit;
 
 public class TileList extends BoardList {
 	
+	private int myIDCounter;
+
 	public TileList(Controller controller){
 		super(controller);
 		myDefaultModel = DEFAULT_TILE_STATS;
@@ -53,6 +55,7 @@ public class TileList extends BoardList {
 
 	@Override
 	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,File f,int counter) {
+		myIDCounter = counter;
 		return new TileViewItem(inputData,name,f,counter);
 	}
 
@@ -66,7 +69,7 @@ public class TileList extends BoardList {
 			TileViewItem tvi = (TileViewItem) o;
 			Tile t = (Tile) tvi.getModelObject();
 			tileList.add(t);
-			tileImageMap.put(t.getID(), tvi.getImagePath());
+			tileImageMap.put(t.getStatCollection("Terrain").getID(), tvi.getImagePath());
 		}
 		currentState.setTileImageMap(tileImageMap);
 		return currentState;
