@@ -18,14 +18,17 @@ import model.tile.Tile;
 
 public class TileViewItem extends BoardListViewItem {
 
-	private Tile myTile = new Tile(20,20,new GameMap(20,20));
+	private Tile myTile;
+	private String myIDEnding;
 	
 	public TileViewItem(){
-		this(new Tile(20,20,new GameMap(20,20)).getStats(),"Default",new File(DEFAULT_TILE_PATH));
+		this(new Tile(20,20,new GameMap(20,20)).getStats(),"Default",new File(DEFAULT_TILE_PATH), 0);
 	}
 	
-	public TileViewItem(List<Stat> stats,String name, File f){
+	public TileViewItem(List<Stat> stats,String name, File f, int counter){
 		super(stats, name, f);
+		myTile = new Tile(20,20,new GameMap(20,20));
+		myIDEnding = "|"+counter;
 	}
 	
 	@Override
@@ -34,9 +37,9 @@ public class TileViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile) {
+	public BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile, int counter) {
 		//newGuy.setStats(inputData);
-		BoardListViewItem newGuy = new TileViewItem(inputData,name,imageFile);
+		BoardListViewItem newGuy = new TileViewItem(inputData,name,imageFile, counter);
 		return newGuy;
 	}
 
