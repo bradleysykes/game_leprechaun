@@ -21,6 +21,7 @@ public class UnitViewItem extends BoardListViewItem {
 	
 	public UnitViewItem(List<Stat> stats, String name, File imageFile){
 		super(stats, name, imageFile);
+		myDefaults = myUnit.getStats();
 		myUnit.setStats(myProperties);
 	}
 	
@@ -34,6 +35,11 @@ public class UnitViewItem extends BoardListViewItem {
 	public List<Stat> getModel() {
 		return myProperties;
 	}
+	
+	@Override
+	public List<Stat> getDefaults(){
+		return myDefaults;
+	}
 
 	@Override
 	public void onClick(Controller c) {
@@ -45,6 +51,7 @@ public class UnitViewItem extends BoardListViewItem {
 	public BoardListViewItem createModel(List<Stat> stats, String name, 
 			File imageFile) {
 		UnitViewItem item = new UnitViewItem(stats, name, imageFile);
+		myProperties = stats;
 		return item;
 	}
 	

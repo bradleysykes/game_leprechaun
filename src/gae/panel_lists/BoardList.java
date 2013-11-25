@@ -1,4 +1,5 @@
 package gae.panel_lists;
+import gae.Constants;
 import gae.Controller;
 import gae.dialogues.EditDialogue;
 import gae.dialogues.InputDialogue;
@@ -32,12 +33,13 @@ import model.stats.Stat;
 
 import java.util.List;
 
-public abstract class BoardList extends JList {
+public abstract class BoardList extends JList implements Constants{
 		
 	private DefaultListModel myModel;
 	protected Controller myController;
-	protected BoardListViewItem myType;
+	protected Class myType;
 	protected GAEPopupMenu myPopup;
+	protected List<Stat> myDefaultModel;
 	
 	public BoardList(Controller controller){
 		myController = controller;
@@ -98,8 +100,7 @@ public abstract class BoardList extends JList {
 	 */
 	public void createCustomType() {
 		// create new dialogue, populate with model for this viewitem type
-		UnitCreationDialogue d = new UnitCreationDialogue(myType.getListMessage(),myType.getModel(),this);
-		// on close, dialogue sends it to postInput method
+		UnitCreationDialogue d = new UnitCreationDialogue("Create me!",myDefaultModel,this);
 	}
 	
 	/**
@@ -109,12 +110,16 @@ public abstract class BoardList extends JList {
 	 * @param name 
 	 */
 	public void postNewInput(List<Stat> inputData, String name, File f){
-		BoardListViewItem newItem = myType.createModel(inputData, name,f);
+		BoardListViewItem newItem = getNewItem(inputData,name,f);
 		this.addNewItem(newItem);
 	}
 	
+	protected abstract BoardListViewItem getNewItem(List<Stat> inputData, String name,
+			File f);
+
+
 	public void postEditInput(List<Stat> inputData, String name, File f){
-		BoardListViewItem newItem = myType.createModel(inputData, name,f);
+		BoardListViewItem newItem = getNewItem(inputData, name,f);
 	}
 		
 }

@@ -7,6 +7,7 @@ import gae.Constants;
 import gae.Controller;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
+import gae.viewitems.BoardListViewItem;
 import gae.viewitems.TileViewItem;
 
 import javax.swing.Icon;
@@ -19,7 +20,7 @@ public class TileList extends BoardList {
 	
 	public TileList(Controller controller){
 		super(controller);
-		myType = new TileViewItem();
+		myDefaultModel = DEFAULT_TILE_STATS;
 	}
 	
 	@Override
@@ -37,9 +38,15 @@ public class TileList extends BoardList {
 		return new TilePopupMenu(myController, this);
 	}
 	
-	public void postInput(List<Stat> inputData, String name, File f){
-		myType = new TileViewItem(inputData,name,f);
-		this.addNewItem(myType);
+	public void postInput(List<Stat> inputData, String name, File imageFile){
+		BoardListViewItem newItem = getNewItem(inputData,name,imageFile);
+		this.addNewItem(newItem);
+	}
+
+	@Override
+	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,
+			File f) {
+		return new TileViewItem(inputData,name,f);
 	}
 
 }

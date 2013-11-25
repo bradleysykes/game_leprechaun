@@ -83,4 +83,9 @@ public class ConditionViewItem extends BoardListViewItem {
 		return "";
 	}
 
+	@Override
+	public List<Stat> getDefaults() {
+		return null;
+	}
+
 }

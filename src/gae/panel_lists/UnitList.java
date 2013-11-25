@@ -9,6 +9,7 @@ import gae.Controller;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
 import gae.popup_menus.UnitPopupMenu;
+import gae.viewitems.BoardListViewItem;
 import gae.viewitems.UnitViewItem;
 
 public class UnitList extends BoardList {
@@ -16,7 +17,7 @@ public class UnitList extends BoardList {
 	public UnitList(Controller controller){
 		super(controller);
 		// this list will only hold UnitViewItems
-		myType = new UnitViewItem("Type Holder");
+		myDefaultModel = DEFAULT_UNIT_STATS;
 	}
 	
 	/**
@@ -34,6 +35,12 @@ public class UnitList extends BoardList {
 	@Override
 	public GAEPopupMenu getPopupMenu(){
 		return new UnitPopupMenu(myController, this);
+	}
+
+	@Override
+	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,
+			File f) {
+		return new UnitViewItem(inputData,name,f);
 	}
 
 	

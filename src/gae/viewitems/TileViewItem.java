@@ -1,18 +1,8 @@
 package gae.viewitems;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
-
-import gae.Constants;
 import gae.GUIMap;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-
-import util.ImageTool;
-
 import model.GameMap;
 import model.stats.Stat;
 import model.tile.Tile;
@@ -87,6 +77,12 @@ public class TileViewItem extends BoardListViewItem {
 	@Override
 	protected String getMapPrefix() {
 		return "a"+myName+this.hashCode();
+	}
+
+	@Override
+	public List<Stat> getDefaults() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

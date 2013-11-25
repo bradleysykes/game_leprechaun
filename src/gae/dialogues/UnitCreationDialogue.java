@@ -94,6 +94,7 @@ public class UnitCreationDialogue extends InputDialogue {
 			}
 			else{
 				StatCollection test = (StatCollection) t;
+				myFieldViews.put(test,new ViewItemField(t));
 				SaveInputButton button = new SaveInputButton(test,myList);
 				mainPanel.add(button);
 			}
