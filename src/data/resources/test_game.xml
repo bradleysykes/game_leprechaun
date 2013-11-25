@@ -87,15 +87,18 @@
 		</Unit>	
 	</Units>
 	<Conditions>
-	    <Condition name="create">
+	    <Condition name="Create">
 	        <ConditionUnit id="soldier"/>
+	        <ConditionPlayer id="player1"/>
 	    </Condition>
-	    <Condition name="defeat">
+	    <Condition name="Defeat">
 	        <ConditionUnit id="soldier"/>
+	        <ConditionPlayer id="player2"/>
 	    </Condition>
-	    <Condition name="waypoint">
+	    <Condition name="Waypoint">
 	        <ConditionUnit id="soldier"/>
 	        <ConditionTile x="1" y="2"/>
+	        <ConditionPlayer id="player2"/>
 	    </Condition>
 	</Conditions>
 	<ImageMap>

@@ -24,7 +24,26 @@ public class ConditionEncoder extends Encoder {
 
     private void appendConditions (List<Condition> conditionsList) {
         Element conditionsElement = myXmlDocument.createElement(CONDITIONS);
+        for(Condition condition : conditionsList) {
+            appendSingleCondition(conditionsElement, condition);
+        }
         myRoot.appendChild(conditionsElement);
     }
+
+    private void appendSingleCondition (Element conditionsElement, Condition condition) {
+        Element conditionElement = myXmlDocument.createElement(CONDITION);
+        conditionElement.setAttribute(NAME, condition.getName());
+        
+        Element conditionUnitElement = myXmlDocument.createElement(CONDITION_UNIT);
+        conditionUnitElement.setAttribute(ID, condition.getID());
+        conditionElement.appendChild(conditionUnitElement);
+        
+        Element conditionPlayerElement = myXmlDocument.createElement(CONDITION_PLAYER);
+        conditionPlayerElement.setAttribute(ID, condition.getPlayer().getID());
+        conditionElement.appendChild(conditionPlayerElement);
+        
+        conditionsElement.appendChild(conditionElement);
+    }
+    
 
 }
