@@ -10,9 +10,11 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
+import util.reflection.Reflection;
 import data.Attributes;
 import data.Elements;
 import data.GameElements;
+import model.Condition;
 import model.Player;
 
 /**
@@ -67,6 +69,7 @@ public class DataManager extends GameElements implements Attributes, Elements {
         myDecoders.add(new PlayerDecoder(this));
         myDecoders.add(new UnitDecoder(this));
         myDecoders.add(new ImageResourcesDecoder(this));
+        myDecoders.add(new ConditionDecoder(this));
     }
     
     /**
@@ -110,8 +113,11 @@ public class DataManager extends GameElements implements Attributes, Elements {
     //test use
     public static void main(String[] args) {
         DataManager dm = new DataManager();
-        GameElements map = dm.getGameElements(new File("src/data/resources/test_game.xml"));
+        GameElements map = dm.getGameElements(new File("src/data/resources/TestFile.xml"));
         map.toString();
         System.out.println(map.getTileImageMap().keySet());
+        System.out.println(map.getClass());
+        Condition hi = (Condition) Reflection.createInstance("model.condition.Create");
+        System.out.println(hi.getClass());
     }
 }

@@ -27,8 +27,10 @@ public interface Elements {
     String PLAYERS = "Players";
     String PLAYER = "Player";
     
+    //for ConditionEncoder
     String CONDITIONS = "Conditions";
-    
+    String CONDITION = "Condition";
+    String CONDITION_PLAYER = "ConditionPlayer";
 
     //for ImageResourceDecoder
     String IMAGE_MAP = "ImageMap";

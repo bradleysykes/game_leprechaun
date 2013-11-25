@@ -6,21 +6,26 @@ import model.unit.Unit;
 
 public class Defeat extends Condition {
 	
-	private String myUnitID;
-	
 	public Defeat(){
-		super("Defeat",null);
+		super("Defeat", "", null);
 	}
 
 	public Defeat(String target, Player p) {
-		super("Defeat", p);
-		myUnitID = target;
+		super("Defeat", target, p);
 	}
 	
 	@Override
 	public boolean check(){
+		for(Player p : myPlayer.getModel().getPlayers()){
+			if (!p.equals(myPlayer)){
+				for(Unit u : p.getAllUnits()){
+					if(u.getID().equals(this.getID()))
+						return false;
+				}
+			}
+		}
 		
-		return false;
+		return true;
 	}
 
 }

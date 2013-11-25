@@ -4,7 +4,7 @@ import model.unit.Unit;
 import jgame.JGObject;
 import jgame.platform.JGEngine;
 
-public class GameUnitObject extends JGObject {
+public class GameUnitObject extends JGObject implements EngineConstants{
 	
 	private Unit myUnit;
 	private GameEngine myEngine;
@@ -25,6 +25,13 @@ public class GameUnitObject extends JGObject {
 	
 	public static int getCollisionID() {
 		return myCollisionID;
+	}
+	
+	@Override
+	public void hit(JGObject other){
+		if(other.colid == MOUSE_COL_ID){
+			myEngine.setSelectedUnit(myUnit);
+		}
 	}
 	
 	
