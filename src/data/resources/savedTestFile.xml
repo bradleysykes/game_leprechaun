@@ -3,7 +3,7 @@
         <Tile x="0" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain>
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources>
@@ -115,7 +115,7 @@
         </Player>
     </Players>
     <Units>
-        <Unit id="unit1">
+        <Unit id="soldier">
             <UnitPlayer id="Default Player Name"/>
             <UnitTile x="2" y="1"/>
             <Abilities/>
@@ -129,7 +129,7 @@
                 <Stat name="Range" value="10.0"/>
             </Attributes>
         </Unit>
-        <Unit id="unit2">
+        <Unit id="soldier">
             <UnitPlayer id="Default Player Name"/>
             <UnitTile x="1" y="0"/>
             <Abilities/>
@@ -156,10 +156,10 @@
     </Conditions>
     <ImageMap>
         <tileImages>
-            <image id="test1" src="src/test1"/>
+            <image id="Plains" src="test_icon_image.jpg"/>
         </tileImages>
         <unitImages>
-            <image id="test1" src="src/test2"/>
+            <image id="soldier" src="soldier.png"/>
         </unitImages>
     </ImageMap>
 </GameElements>

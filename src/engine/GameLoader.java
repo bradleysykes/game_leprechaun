@@ -28,7 +28,6 @@ public class GameLoader  {
 		Collection<Tile> allTiles = gameMap.getAllTiles();
 		Map<String, String> myTileImages = myGameElements.getTileImageMap();
 		Map<String, String> myUnitImages = myGameElements.getUnitImageMap();
-		
 		for (String all : myTileImages.keySet()) {
 			myGameEngine.defineImage(all, "-", 0,myTileImages.get(all),"-");
 		}		
