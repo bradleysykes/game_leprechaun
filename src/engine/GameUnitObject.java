@@ -31,7 +31,6 @@ public class GameUnitObject extends JGObject implements EngineConstants{
 	public void hit(JGObject other){
 		if(other.colid == MOUSE_COL_ID){
 			myEngine.setSelectedUnit(myUnit);
-			System.out.println("beep");
 		}
 	}
 	

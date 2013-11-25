@@ -17,7 +17,7 @@ public class GameElements {
     protected List<Unit> myUnitTypes;
     protected Map<String, String> myTileImages;
     protected Map<String, String> myUnitImages;
-    protected List<Condition> myVictoryConditions;
+    protected List<Condition> myConditions;
 
     public GameElements(GameMap map, List<Player> players, Map<String, String> tileImages, 
                         Map<String, String> unitImages) {
@@ -85,11 +85,11 @@ public class GameElements {
     }
 
 	public void setConditions(List<Condition> conditionList) {
-		myVictoryConditions = conditionList;		
+		myConditions = conditionList;		
 	}
 	
 	public List<Condition> getConditions() {
-		return myVictoryConditions;
+		return myConditions;
 	}
 
 }

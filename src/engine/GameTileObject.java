@@ -17,7 +17,7 @@ public class GameTileObject extends JGObject implements EngineConstants{
 	private GameEngine myEngine;
 
 	public GameTileObject(Tile tile, GameEngine engine) {
-		super("-tile", true, 0, 0, 
+		super("tile", true, 0, 0, 
 				myCollisionID, tile.getStatCollection("Terrain").getID());
 		myEngine = engine;
 		myTile = tile;
