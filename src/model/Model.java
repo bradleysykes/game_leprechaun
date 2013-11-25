@@ -43,5 +43,9 @@ public class Model {
 			p.refresh();
 		}
 	}
+	
+	public List<Player> getPlayers(){
+		return myPlayers;
+	}
 
 }
