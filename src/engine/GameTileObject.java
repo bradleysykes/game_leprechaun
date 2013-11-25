@@ -11,7 +11,7 @@ import jgame.platform.JGEngine;
 public class GameTileObject extends JGObject implements EngineConstants{
 
 	private Tile myTile;
-	private static final int myCollisionID = 0;
+	private static final int myCollisionID = 5;
 	private static final int mySize = 79;
 	private boolean isHighlighted = false;
 	private GameEngine myEngine;
