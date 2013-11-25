@@ -88,12 +88,12 @@
 		
 	</Units>
 	
-	<Images>
+	<ImageMap>
 	    <tileImages>
-	        <Image id="plain" src="test_icon_image.jpg"/>
+	        <Image id="Plains" src="test_icon_image.jpg"/>
 	    </tileImages>
 	    <unitImages>
-	        <Image id="soldier" src="src/gae/resources/test_tile.jpg"/>
+	        <Image id="soldier" src="soldier.jpg"/>
 	    </unitImages>
-	</Images> 
+	</ImageMap> 
 </GameElements>
