@@ -60,11 +60,11 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	public void doFrame() {
 		this.moveObjects();
 		this.checkCollision(MOUSE_COL_ID, 2);
-/*		if(getMouseButton(1)){
+		if(getMouseButton(1)){
 			clearMouseButton(1);
-			for(Tile T : myTileObjectMap.keySet())
-				new TileHighlightObject(T, this);
-		}*/
+			this.checkCollision(0, 0);
+			System.out.println("Mouse clicked");
+		}
 	}
 	
 	public void nextPlayer() {

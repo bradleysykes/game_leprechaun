@@ -16,12 +16,14 @@ public class BudgetMove extends Move {
 	
 	@Override
 	public void useAbility(){
-		double cost = canMoveToTile(myTargetTile);
+/*		double cost = canMoveToTile(myTargetTile);
 		if(cost>0){
 			myUnit.setCurrentTile(myTargetTile);
 			myUnit.getStatCollection("Attributes").setStat("Stamina", 
 					myUnit.getStatCollection("Attributes").getValue("Stamina")-cost);
-		}
+		}*/
+		System.out.println("Using BudgetMove");
+		myUnit.setCurrentTile(myTargetTile);
 	}
 	
 	@Override
