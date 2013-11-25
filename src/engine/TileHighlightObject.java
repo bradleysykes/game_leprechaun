@@ -13,15 +13,17 @@ public class TileHighlightObject extends JGObject {
 	private final JGColor myColor = JGColor.black;
 	
 	public TileHighlightObject(Tile tile, GameEngine gameEngine) {
-		super("zhighlight", true, GameTileObject.tilesToPixels(tile.getX()), GameTileObject.tilesToPixels(tile.getY()), myCollisionID, null);
-		myTile = tile;    //"zhighlight so that it is draw last.. need to find a better way of doing this"
+		super("zhighlight", true, 0, 0, myCollisionID, null);
+		myTile = tile;   
 		myGameEngine = gameEngine;
 	}
 	
-	public void paint() {
-		double size = GameTileObject.getSize();
-		myGameEngine.drawRect(GameTileObject.tilesToPixels(myTile.getX()), GameTileObject.tilesToPixels(myTile.getY()), 
-				GameTileObject.getSize(), GameTileObject.getSize(), false, false, myThickness, myColor);
+	@Override
+	public void move() {
+		myGameEngine.drawRect(myTile.getX()*myGameEngine.getGameTile(myTile).getImageBBox().width, 
+				myTile.getY()*myGameEngine.getGameTile(myTile).getImageBBox().height, 
+				myGameEngine.getGameTile(myTile).getImageBBox().width, 
+				myGameEngine.getGameTile(myTile).getImageBBox().height, false, false, myThickness, myColor);
 	}
 	
 	public static int getCollisionID() {
