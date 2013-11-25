@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import model.Condition;
 import model.GameMap;
 import model.Player;
 import model.Resource;
+import model.condition.Defeat;
 import model.tile.Tile;
 import model.unit.Unit;
 import data.Elements;
@@ -50,6 +52,12 @@ public class EncoderMain implements Elements {
         
         playerList.add(p1); playerList.add(p2);
         currentState.setPlayerList(playerList);*/
+        
+        //add Conditions to currentState
+        List<Condition> conditionList = new ArrayList<Condition>();
+        Condition defeatCond = new Defeat("defeatTest",p1);
+        conditionList.add(defeatCond);
+        currentState.setConditions(conditionList);
         
         //add imageMap to currentState
         Map<String, String> unitImageMap = new HashMap<String, String>();
