@@ -12,13 +12,14 @@ public class Spawn extends Ability {
 
 	@Override
 	public void useAbility() {
-		// TODO Auto-generated method stub
+		myTargetUnit.setPlayer(myUnit.getPlayer());
+		myTargetUnit.setCurrentTile(myUnit.getMap().getNearestValidTile(myUnit));
 		
 	}
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		//myGameEngine.requestStringFromList(myReferences);
+		//myGameEngine.selectStringFromList(myReferences);
 	}
 
 }

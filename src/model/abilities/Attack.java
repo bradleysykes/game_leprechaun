@@ -25,7 +25,7 @@ public class Attack extends Ability{
 	@Override
 	public void useAbility(){
 		if(!myValid) return;
-		List<Unit> units = myTile.getUnits();
+		List<Unit> units = myTargetTile.getUnits();
 		Unit myTarget = units.get(0);
 		for(Unit u : units){
 			if(u.getStatCollection("Attributes").getValue("Health") < 
@@ -52,7 +52,8 @@ public class Attack extends Ability{
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		// Request tile from list of valid tiles.
+		myGameEngine.highlightTiles(myUnit.getMap().getTilesInRadius
+				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile()));
 	}
 
 }

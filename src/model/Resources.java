@@ -8,8 +8,8 @@ public class Resources extends StatCollection {
 		super("Resources");
 	}
 	
-	public void addResource(Resource newResource){
-		this.addStat(newResource);
+	public void addResource(Resource resource){
+		this.addStat(resource);
 	}
 
 	public void removeResource(Resource resource) {

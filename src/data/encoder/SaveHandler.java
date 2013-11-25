@@ -53,7 +53,15 @@ public class SaveHandler implements Elements {
     
     
     /**
-     * Save the information from the current GameElement by encoding it into an
+     * Adds an encoder corresponding to the type of object to be encoded  
+     * @param encoder
+     */
+    public void addEncoder(Encoder encoder) {
+        myEncoderList.add(encoder);
+    }
+    
+    /**
+     * Saves the information from the current GameElement by encoding it into an
      * XML file and then saving it to disc  
      */
 	public void doSave() {
@@ -64,7 +72,7 @@ public class SaveHandler implements Elements {
 	}
 	
     /**
-     * Create a new XML document and append a root node
+     * Creates a new XML document and append a root node
      * @return
      */
     private void initializeDocument() {
@@ -79,14 +87,18 @@ public class SaveHandler implements Elements {
     }
 	
 	/**
-	 * Initialize the encoders using the current GameElements object and store them
+	 * Initializes the encoders using the current GameElements object and stores them
 	 * in a list
 	 */
 	private void initializeEncoders () {
-	    Element root = (Element) myXmlDocument.getFirstChild();
-	    myEncoderList.add(new MapEncoder(myXmlDocument, myCurrentState.getGameMap(), root));
-	    myEncoderList.add(new PlayerEncoder(myXmlDocument, myCurrentState.getPlayers(), root));
-	    myEncoderList.add(new UnitEncoder(myXmlDocument, myCurrentState.getPlayers(), root));
+	    if(myEncoderList.isEmpty()) {
+    	    Element root = (Element) myXmlDocument.getFirstChild();
+    	    myEncoderList.add(new MapEncoder(myXmlDocument, myCurrentState.getGameMap(), root));
+    	    myEncoderList.add(new PlayerEncoder(myXmlDocument, myCurrentState.getPlayers(), root));
+    	    myEncoderList.add(new UnitEncoder(myXmlDocument, myCurrentState.getPlayers(), root));
+    	    myEncoderList.add(new ImageEncoder(myXmlDocument, myCurrentState.getUnitImageMap(),
+    	                                       myCurrentState.getTileImageMap(),root));
+	    }
     }
 	
 	/**
@@ -99,7 +111,7 @@ public class SaveHandler implements Elements {
     }
 
 	/**
-	 * Save the XML file to disk
+	 * Saves the XML file to disk
 	 * @throws FileNotFoundException 
 	 * @throws TransformerException 
 	 */

@@ -41,9 +41,6 @@ public class UnitDecoder extends Decoder {
         Element player = (Element)unit.getElementsByTagName(UNIT_PLAYER).item(0);
         String playerID = player.getAttribute(ID);
         Player targetPlayer = myDataManager.getPlayer(playerID);
-        
-        //create unit object
-        Unit newUnit = new Unit(id, targetPlayer, myDataManager.getGameMap());
                
         //get the tile that this unit places at
         Element tile = (Element)unit.getElementsByTagName(UNIT_TILE).item(0);
@@ -51,9 +48,11 @@ public class UnitDecoder extends Decoder {
         int y = Integer.parseInt(tile.getAttribute(Y_COORD));
         Tile targetTile = myDataManager.getGameMap().getTile(x, y);
         
+        //create unit object
+        Unit newUnit = new Unit(id, targetPlayer, targetTile);
+        
         //put unit into tile, set tile to unit, add unit to player
         targetTile.addUnit(newUnit);
-        newUnit.setCurrentTile(targetTile);
         targetPlayer.addUnit(newUnit);
         
         //set abilities

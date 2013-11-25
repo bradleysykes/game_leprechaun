@@ -16,11 +16,12 @@ public class DataPrimer {
 	
 	public DataPrimer(GameEngine gameEngine) {
 		myGameEngine = gameEngine;
-		myFileChooser = new JFileChooser();
+/*		myFileChooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("XML Files Only", "xml");
 		myFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		myFileChooser.setFileFilter(filter);
-		File xmlFile = selectAndParseXML();
+		File xmlFile = selectAndParseXML();*/
+		File xmlFile = new File("src/data/resources/test_game.xml");		
 		loadGame(xmlFile);
 	}
 	
@@ -36,6 +37,7 @@ public class DataPrimer {
 	
 	private void loadGame(File xmlFile) {
 		DataManager dataManager = new DataManager();
+
 		GameElements gameElements = dataManager.getGameElements(xmlFile);
 		myGameEngine.initializeState(gameElements);
 	}

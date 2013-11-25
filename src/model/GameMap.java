@@ -79,6 +79,27 @@ public class GameMap {
 		return count;
 	}
 	
+	public List<Tile> getTilesInRadius(double r, Tile t){
+		int range = (int) r;
+		List<Tile> validTiles = new ArrayList<Tile>();
+		for (int i = t.getX() - range; i <= t.getX() + range; i++){
+			for (int j = t.getY() - range; i <= t.getY() + range; j++){
+				if(this.contains(i, j))
+					validTiles.add(this.getTile(i, j));
+			}
+		}
+		return validTiles;
+	}
+	
+	public Tile getNearestValidTile(Unit u){
+		List<Tile> possible = getTilesInRadius(1,u.getCurrentTile());
+		for(Tile t : possible){
+			if(!t.isOccupiedByOpponent(u.getPlayer()))
+					return t;
+		}
+		return u.getCurrentTile();		
+	}
+	
 	public int getSizeX() {
 		return myTiles.get(0).size();
 	}

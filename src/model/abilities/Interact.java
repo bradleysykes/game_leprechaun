@@ -11,10 +11,6 @@ public class Interact extends Ability{
 	}
 
 	@Override
-	public void prepAbility() {
-	}
-
-	@Override
 	public void useAbility() {
 		if(!myValid) return;
 		myValid = false;
