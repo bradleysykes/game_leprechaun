@@ -10,7 +10,6 @@ public class Resource extends StatCollection {
     //change name to id?
 	public Resource(String id, double amount, double harvestRate){
 		super("Resource",id);
-		//this.addStat(new Stat("Name",DEFAULT_STRING));
 		this.addStat(new Stat("Amount",amount));
 		this.addStat(new Stat("Harvest Rate",harvestRate));
 	}

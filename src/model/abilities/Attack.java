@@ -52,7 +52,7 @@ public class Attack extends Ability{
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		// Request tile from list of valid tiles.
+		myGameEngine.highlightTiles(myUnit.getCurrentTile().getTiles(myUnit.getStatCollection("Attributes").getValue("Range")));
 	}
 
 }
