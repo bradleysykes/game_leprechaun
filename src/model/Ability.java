@@ -8,7 +8,8 @@ import model.unit.Unit;
 public abstract class Ability extends StatCollection {
 	
 	protected Unit myUnit;
-	protected Tile myTile;
+	protected Tile myTargetTile;
+	protected Unit myTargetUnit;
 	protected boolean myValid;
 
 	public Ability(String name, Unit abilityUser) {
@@ -21,15 +22,14 @@ public abstract class Ability extends StatCollection {
 		myUnit = abilityUser;
 	}
 	
-	// Game Engine can either just call this on the ability of setAbility via Model.
-	public void prepAbility(){
-		myUnit.getPlayer().getModel().setAbility(this);
-	}
-	
 	public abstract void useAbility();
 	
 	public void setTargetTile(Tile t){
-		myTile = t;
+		myTargetTile = t;
+	}
+	
+	public void setTargetUnit(Unit u){
+		myTargetUnit = u;
 	}
 	
 	public void refresh(){

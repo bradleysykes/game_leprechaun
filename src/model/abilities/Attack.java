@@ -25,7 +25,7 @@ public class Attack extends Ability{
 	@Override
 	public void useAbility(){
 		if(!myValid) return;
-		List<Unit> units = myTile.getUnits();
+		List<Unit> units = myTargetTile.getUnits();
 		Unit myTarget = units.get(0);
 		for(Unit u : units){
 			if(u.getStatCollection("Attributes").getValue("Health") < 

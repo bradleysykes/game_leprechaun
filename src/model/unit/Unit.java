@@ -51,10 +51,6 @@ public class Unit extends StatCollection implements ModelConstants {
 		return myPlayer;
 	}
 	
-//	public void setAttributes(){
-//		myAttributes.add(a.)
-//	}
-	
 	public void setMapPosition(int newX, int newY){
 		myX = newX;
 		myY = newY;
@@ -77,7 +73,7 @@ public class Unit extends StatCollection implements ModelConstants {
 		//this.getThing(ability).prepAbility();
 	}
 
-	//don't need this!
+//don't need this!
 //	public String getID() {
 //		return (String) this.getID();
 //	}

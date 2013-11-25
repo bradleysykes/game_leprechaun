@@ -4,6 +4,7 @@ import engine.GameEngine;
 import java.util.*;
 
 import model.tile.Tile;
+import model.unit.Unit;
 
 public class Model {
 	private List<Player> myPlayers = new ArrayList<Player>();
@@ -32,17 +33,9 @@ public class Model {
 		myQueuedAbility.useAbility();
 	}
 	
-	public static void useAbility(String s){
-//		myQueuedAbility.setTargetString(s);
-//		myQueuedAbility.useAbility();
-	}
-
-//	public Unit chooseUnit(Collection<Tile> validTiles){
-//		return null;
-//	}
-	
-	public void chooseTile(List<Tile> validTiles){
-		myGameEngine.highlightTiles(validTiles);
+	public static void useAbility(Unit u){
+		myQueuedAbility.setTargetUnit(u);
+		myQueuedAbility.useAbility();
 	}
 	
 	public void chooseString(){

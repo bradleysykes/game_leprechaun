@@ -12,7 +12,7 @@ public class Spawn extends Ability {
 
 	@Override
 	public void useAbility() {
-		
+		//myUnit.getPlayer().addUnit(new Unit())
 	}
 
 	@Override
