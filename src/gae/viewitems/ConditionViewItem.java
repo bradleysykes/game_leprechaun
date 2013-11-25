@@ -41,7 +41,7 @@ public class ConditionViewItem extends BoardListViewItem {
 
 	@Override
 	public BoardListViewItem createModel(List<Stat> inputData, String name, 
-			File imageFile) {
+			File imageFile, int counter) {
 		myController.getPlayers();
 		myCondition = new Create(null, null);
 		myCondition.setStats(inputData);

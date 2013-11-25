@@ -18,16 +18,19 @@ import model.unit.Unit;
 
 public class UnitViewItem extends BoardListViewItem {
 
-	private Unit myUnit = new Unit("Unit",new Player(), new GameMap(50,50));
+	private Unit myUnit;
 	private InputDialogue myDialogue;
+	private String myIDEnding;
 	
-	public UnitViewItem(List<Stat> stats, String name, File imageFile){
+	public UnitViewItem(List<Stat> stats, String name, File imageFile, int IDcounter){
 		super(stats, name, imageFile);
+		myUnit = new Unit("Unit",new Player(), new GameMap(50,50));
 		myUnit.setStats(myProperties);
+		myIDEnding = "|"+IDcounter;
 	}
 	
 	public UnitViewItem(String name) {
-		this(new Unit("Unit",new Player(), new GameMap(50,50)).getStats(),name,new File(System.getProperty("user.dir")+"\\src\\gae\\resources\\test_icon_image.png"));
+		this(new Unit("Unit",new Player(), new GameMap(50,50)).getStats(),name,new File(System.getProperty("user.dir")+"\\src\\gae\\resources\\test_icon_image.png"), 0);
 	}
 	/**
 	 * use to figure out what properties this type needs
@@ -44,9 +47,8 @@ public class UnitViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public BoardListViewItem createModel(List<Stat> stats, String name, 
-			File imageFile) {
-		UnitViewItem item = new UnitViewItem(stats, name, imageFile);
+	public BoardListViewItem createModel(List<Stat> stats, String name, File imageFile, int counter) {
+		UnitViewItem item = new UnitViewItem(stats, name, imageFile, counter);
 		return item;
 	}
 	
@@ -83,7 +85,7 @@ public class UnitViewItem extends BoardListViewItem {
 		int tileY = (int)(y-y%UNIT_SIZE);
 		myMapObject = new MapObject(myMapObjectPrefix,tileX,tileY,myMapObjectPrefix,this);
 		GameMap modelMap = map.getModelMap();
-		Unit newGuy = new Unit(myName, player.getPlayer(), modelMap);
+		Unit newGuy = new Unit(myName+myIDEnding, player.getPlayer(), modelMap);
 		Tile selectedTile = modelMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE);
 		selectedTile.addUnit(newGuy);
 		newGuy.setMapPosition(tileX/UNIT_SIZE,tileY/UNIT_SIZE);

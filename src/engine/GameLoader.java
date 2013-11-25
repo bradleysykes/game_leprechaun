@@ -28,9 +28,12 @@ public class GameLoader  {
 		Collection<Tile> allTiles = gameMap.getAllTiles();
 		HashMap<String, String> myTileImages = (HashMap) myGameElements.getTileImageMap();
 		HashMap<String, String> myUnitImages = (HashMap) myGameElements.getUnitImageMap();
-		
+
 		for (String all : myUnitImages.keySet()) {
-			myGameEngine.defineImage(all, "-", 0, myUnitImages.get(all),"-");
+			//myGameEngine.defineImage(all, "-", 0, myImages.get(all),"-");
+			myGameEngine.defineImage(all, "-", 0,myUnitImages.get(all),"-");
+			myGameEngine.defineImage("Plains", "-", 0,"test_icon_image.jpg","-");
+			myGameEngine.defineImage("soldier", "-", 0,"soldier.png","-");
 		}
 		
 		Collection<Player> allPlayers = myGameElements.getPlayers();
