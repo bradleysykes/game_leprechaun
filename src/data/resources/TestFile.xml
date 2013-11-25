@@ -145,14 +145,8 @@
         </Unit>
     </Units>
     <Conditions>
-        <Condition name="model.condition.Defeat">
-            <ConditionUnit id="soldier10"/>
-            <ConditionPlayer id="Default Player Name"/>
-        </Condition>
-        <Condition name="model.condition.Create">
-            <ConditionUnit id="soldier5"/>
-            <ConditionPlayer id="Default Player Name"/>
-        </Condition>
+        <Condition name="model.condition.Defeat" player_id="Default Player Name" unit_id="soldier10"/>
+        <Condition name="model.condition.Create" player_id="Default Player Name" unit_id="soldier5"/>
     </Conditions>
     <ImageMap>
         <tileImages>

@@ -34,15 +34,8 @@ public class ConditionEncoder extends Encoder {
         Element conditionElement = myXmlDocument.createElement(CONDITION);
         String className = condition.getClass().toString().replaceAll("class\\s+","");
         conditionElement.setAttribute(NAME, className);
-        
-        Element conditionUnitElement = myXmlDocument.createElement(CONDITION_UNIT);
-        conditionUnitElement.setAttribute(ID, condition.getID());
-        conditionElement.appendChild(conditionUnitElement);
-        
-        Element conditionPlayerElement = myXmlDocument.createElement(CONDITION_PLAYER);
-        conditionPlayerElement.setAttribute(ID, condition.getPlayer().getID());
-        conditionElement.appendChild(conditionPlayerElement);
-        
+        conditionElement.setAttribute(UNIT_ID, condition.getID());
+        conditionElement.setAttribute(PLAYER_ID, condition.getPlayer().getID());        
         conditionsElement.appendChild(conditionElement);
     }
     

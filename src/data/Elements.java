@@ -30,8 +30,6 @@ public interface Elements {
     //for ConditionEncoder
     String CONDITIONS = "Conditions";
     String CONDITION = "Condition";
-    String CONDITION_UNIT = "ConditionUnit";
-    String CONDITION_TILE = "ConditionTile";
     String CONDITION_PLAYER = "ConditionPlayer";
 
     //for ImageResourceDecoder
