@@ -32,7 +32,8 @@ public class ConditionEncoder extends Encoder {
 
     private void appendSingleCondition (Element conditionsElement, Condition condition) {
         Element conditionElement = myXmlDocument.createElement(CONDITION);
-        conditionElement.setAttribute(NAME, condition.getName());
+        String className = condition.getClass().toString().replaceAll("class\\s+","");
+        conditionElement.setAttribute(NAME, className);
         
         Element conditionUnitElement = myXmlDocument.createElement(CONDITION_UNIT);
         conditionUnitElement.setAttribute(ID, condition.getID());

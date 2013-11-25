@@ -145,11 +145,11 @@
         </Unit>
     </Units>
     <Conditions>
-        <Condition name="Defeat">
+        <Condition name="model.condition.Defeat">
             <ConditionUnit id="soldier10"/>
             <ConditionPlayer id="Default Player Name"/>
         </Condition>
-        <Condition name="Create">
+        <Condition name="model.condition.Create">
             <ConditionUnit id="soldier5"/>
             <ConditionPlayer id="Default Player Name"/>
         </Condition>
