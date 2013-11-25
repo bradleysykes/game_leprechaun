@@ -57,9 +57,6 @@ public class Tile extends StatCollection implements ModelConstants{
 		return myUnits;
 	}
 	
-	/**
-	 * method to check if a unit is on the tile.
-	 */
 	public boolean isOccupied(){
 		return myUnits.size()>0;
 	}
