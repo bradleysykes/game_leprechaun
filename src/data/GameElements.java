@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import model.Condition;
 import model.GameMap;
 import model.Player;
 import model.unit.Unit;
@@ -16,6 +17,7 @@ public class GameElements {
     protected List<Unit> myUnitTypes;
     protected Map<String, String> myTileImages;
     protected Map<String, String> myUnitImages;
+    protected List<Condition> myVictoryConditions;
 
     public GameElements(GameMap map, List<Player> players, Map<String, String> tileImages, 
                         Map<String, String> unitImages) {
@@ -77,5 +79,13 @@ public class GameElements {
     public List<Unit> getUnitTypes() {
     	return myUnitTypes;
     }
+
+	public void setConditions(List<Condition> conditionList) {
+		myVictoryConditions = conditionList;		
+	}
+	
+	public List<Condition> getConditions() {
+		return myVictoryConditions;
+	}
 
 }

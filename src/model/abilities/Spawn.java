@@ -12,7 +12,6 @@ public class Spawn extends Ability {
 
 	@Override
 	public void useAbility() {
-		// TODO Auto-generated method stub
 		
 	}
 

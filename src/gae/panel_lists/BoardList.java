@@ -29,13 +29,14 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import data.GameElements;
 import model.stats.Stat;
 
 import java.util.List;
 
 public abstract class BoardList extends JList implements Constants{
 		
-	private DefaultListModel myModel;
+	protected DefaultListModel myModel;
 	protected Controller myController;
 	protected Class myType;
 	protected GAEPopupMenu myPopup;
@@ -50,9 +51,6 @@ public abstract class BoardList extends JList implements Constants{
 		this.setCellRenderer(new EditListRenderer());
 		myPopup = this.getPopupMenu();
 		this.addMouseListener(new PopupListener(myPopup, this));
-		//FOR DEBUG
-//		BoardListItem tu = new ToyUnit();
-//		this.addNewItem(tu);
 	}
 	
 
@@ -120,6 +118,11 @@ public abstract class BoardList extends JList implements Constants{
 
 	public void postEditInput(List<Stat> inputData, String name, File f){
 		BoardListViewItem newItem = getNewItem(inputData, name,f);
+	}
+
+
+	public GameElements giveStateObjects(GameElements currentState) {
+		return currentState;
 	}
 		
 }

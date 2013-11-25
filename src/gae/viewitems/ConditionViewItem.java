@@ -88,4 +88,8 @@ public class ConditionViewItem extends BoardListViewItem {
 		return null;
 	}
 
+	public Object getModelObject() {
+		return myCondition;
+	}
+
 }

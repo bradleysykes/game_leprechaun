@@ -5,6 +5,11 @@ import java.util.List;
 
 import model.Condition;
 import model.stats.Stat;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Condition;
+import data.GameElements;
 import gae.Constants;
 import gae.Controller;
 import gae.dialogues.ConditionDialogue;
@@ -35,6 +40,19 @@ public class ConditionList extends BoardList {
 	@Override
 	public void createCustomType(){
 		new ConditionDialogue(myController, this);
+	}
+	
+	@Override
+	public GameElements giveStateObjects(GameElements currentState) {
+		Object[] list = new Object[myModel.size()];
+		myModel.copyInto(list);
+		List<Condition> conditionList = new ArrayList<Condition>();
+		for (Object o:list) {
+			ConditionViewItem cvi = (ConditionViewItem) o;
+			conditionList.add((Condition) cvi.getModelObject());
+		}
+		currentState.setConditions(conditionList);
+		return currentState;
 	}
 
 	@Override

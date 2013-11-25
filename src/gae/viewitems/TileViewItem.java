@@ -3,6 +3,11 @@ package gae.viewitems;
 import java.io.File;
 import java.util.List;
 import gae.GUIMap;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+import util.ImageTool;
+
 import model.GameMap;
 import model.stats.Stat;
 import model.tile.Tile;
@@ -82,7 +87,11 @@ public class TileViewItem extends BoardListViewItem {
 	@Override
 	public List<Stat> getDefaults() {
 		// TODO Auto-generated method stub
-		return null;
+		return myDefaults;
+	}
+	
+	public Object getModelObject() {
+		return myTile;
 	}
 	
 }

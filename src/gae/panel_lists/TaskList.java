@@ -1,15 +1,21 @@
 package gae.panel_lists;
 
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.List;
 
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
+import javax.swing.Timer;
 
 import model.stats.Stat;
 
 import gae.Controller;
 import gae.listeners.BoardListSelectionListener;
+import gae.listeners.TimerListener;
 import gae.popup_menus.GAEPopupMenu;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.NullViewItem;
@@ -40,6 +46,18 @@ public class TaskList extends BoardList {
 			File f) {
 		return new NullViewItem();
 	}
-
+	
+	@Override
+	public void removeItem(int index){
+		super.removeItem(index);
+		if(myModel.size()==0){
+			JOptionPane alertPane = new JOptionPane("You can now save at any time.");
+			JDialog alertDialog = alertPane.createDialog(null, "State alert");
+			Timer timer = new Timer(2500,new TimerListener(alertDialog));
+			timer.setRepeats(false);
+			timer.start();
+			alertDialog.setVisible(true);
+		}
+	}
 
 }

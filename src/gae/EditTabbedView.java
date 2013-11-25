@@ -25,6 +25,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JToolBar;
 
+import data.GameElements;
+
 
 public class EditTabbedView extends JTabbedPane {
 	
@@ -69,5 +71,12 @@ public class EditTabbedView extends JTabbedPane {
 			e.printStackTrace();
 		}
 		return new ArrayList();
+	}
+	public GameElements giveStateObjects(GameElements currentState) {
+		for (String s:myTabContents.keySet()) {
+			currentState = myTabContents.get(s).giveStateObjects(currentState);
+		}
+		return currentState;
+		
 	}
 }

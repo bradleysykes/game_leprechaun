@@ -5,9 +5,11 @@ import gae.GUIMap;
 import gae.dialogues.EditDialogue;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
 import model.GameMap;
 import model.Player;
 import model.stats.Stat;
@@ -16,7 +18,7 @@ import model.unit.Unit;
 
 public class UnitViewItem extends BoardListViewItem {
 
-	private Unit myUnit = new Unit("Unit",new Player(), new GameMap(50,50));
+	private Unit myUnit = new Unit("Unit",new Player(), new Tile(3,3,new GameMap(2,2)));
 	private InputDialogue myDialogue;
 	
 	public UnitViewItem(List<Stat> stats, String name, File imageFile){
@@ -25,9 +27,6 @@ public class UnitViewItem extends BoardListViewItem {
 		myUnit.setStats(myProperties);
 	}
 	
-	public UnitViewItem(String name) {
-		this(new Unit("Unit",new Player(), new GameMap(50,50)).getStats(),name,new File(System.getProperty("user.dir")+"\\src\\gae\\resources\\test_icon_image.png"));
-	}
 	/**
 	 * use to figure out what properties this type needs
 	 */
@@ -84,14 +83,14 @@ public class UnitViewItem extends BoardListViewItem {
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player) {
 		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
-		int tileX = (int)(x-x%UNIT_SIZE);
-		int tileY = (int)(y-y%UNIT_SIZE);
+		int tileX = (int)(x-x%TILE_SIZE);
+		int tileY = (int)(y-y%TILE_SIZE);
 		myMapObject = new MapObject(myMapObjectPrefix,tileX,tileY,myMapObjectPrefix,this);
 		GameMap modelMap = map.getModelMap();
-		Unit newGuy = new Unit(myName, player.getPlayer(), modelMap);
 		Tile selectedTile = modelMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE);
+		Unit newGuy = new Unit(myName, player.getPlayer(), selectedTile);
 		selectedTile.addUnit(newGuy);
-		newGuy.setMapPosition(tileX/UNIT_SIZE,tileY/UNIT_SIZE);
+		newGuy.setMapPosition(tileX/TILE_SIZE,tileY/TILE_SIZE);
 		player.assignUnit(newGuy);
 	}
 	
@@ -113,6 +112,11 @@ public class UnitViewItem extends BoardListViewItem {
 	@Override
 	protected String getMapPrefix() {
 		return "z"+myName+hashCode();
+	}
+
+	@Override
+	public Object getModelObject() {
+		return myUnit;
 	}
 
 }

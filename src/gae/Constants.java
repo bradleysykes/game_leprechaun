@@ -12,7 +12,7 @@ import model.unit.Unit;
 public interface Constants {
 	final Dimension minimum = new Dimension(100,100);
 	final Dimension preferred = new Dimension(300,300);
-	final Dimension EDITGUI_INITIAL_SIZE = new Dimension(1000,700);
+	final Dimension EDITGUI_INITIAL_SIZE = new Dimension(1500,700);
 	final String ICON_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\";
 	final String NEW_ICON_RELATIVEPATH = "plus.gif";
 	final String UNIT_PACKAGE_NAME = "tile";
@@ -33,6 +33,6 @@ public interface Constants {
 	final String DEFAULT_TILE_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\test_tile.jpg";
 	final String DEFAULT_UNIT_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\test_icon_image.png";
 	
-	final List<Stat> DEFAULT_UNIT_STATS = new Unit("Unit",new Player(), new GameMap(50,50)).getStats();
+	final List<Stat> DEFAULT_UNIT_STATS = new Unit("Unit",new Player(), new Tile(3,3,new GameMap(50,50))).getStats();
 	final List<Stat> DEFAULT_TILE_STATS = new Tile(1.0,1.0, new GameMap(50,50)).getStats();
 }

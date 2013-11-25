@@ -16,10 +16,12 @@ public class PlayerViewItem extends ViewItem {
 	
 	private Player myPlayer;
 	private String myImagePath = ICON_PATH+"player_icon.gif";
+	private int myNumber;
 	
-	public PlayerViewItem(Player playa){
+	public PlayerViewItem(Player playa, int playerNumber){
 		super();
 		myPlayer = playa;
+		myNumber = playerNumber;
 	}
 	@Override
 	public Icon getListIcon() {
@@ -28,7 +30,7 @@ public class PlayerViewItem extends ViewItem {
 
 	@Override
 	public String getListMessage() {
-		return "Player";
+		return "Player "+myNumber;
 	}
 
 	@Override

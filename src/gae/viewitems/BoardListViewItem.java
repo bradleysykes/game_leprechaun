@@ -94,5 +94,7 @@ public abstract class BoardListViewItem extends ViewItem {
 	public JGObject getMapObject() {
 		return myMapObject;
 	}
+	
+	public abstract Object getModelObject();
 
 }

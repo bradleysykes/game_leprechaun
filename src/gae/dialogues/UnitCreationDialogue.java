@@ -22,6 +22,7 @@ import java.util.Map;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import model.stats.Stat;
 import model.stats.StatCollection;
@@ -101,8 +102,12 @@ public class UnitCreationDialogue extends InputDialogue {
 		}
 		myName = new ViewItemField("Custom name");
 		mainPanel.add(myName);
+		JPanel imageButtonPanel = new JPanel(new BorderLayout());
 		FileButton imageButton = new FileButton("Upload image", this);
-		mainPanel.add(imageButton);
+		imageButtonPanel.add(imageButton, BorderLayout.PAGE_START);
+		JLabel imageHint = new JLabel("For best quality, please limit size to X by X.");
+		imageButtonPanel.add(imageHint, BorderLayout.PAGE_END);
+		mainPanel.add(imageButtonPanel);
 		myEnterButton = new JButton("Create");
 		myEnterButton.addActionListener(new GetDataAction());
 		mainPanel.add(myEnterButton);

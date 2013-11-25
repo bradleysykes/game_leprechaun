@@ -40,6 +40,10 @@ public class Tile extends StatCollection implements ModelConstants{
 	public boolean equals(Tile other){
 		return(this.getX()==other.getX() && this.getY()==other.getY());
 	}
+	
+	public GameMap getMap(){
+		return myMap;
+	}
 
 	public int getX() {
 		return (int) this.getValue("x").intValue();
@@ -54,15 +58,11 @@ public class Tile extends StatCollection implements ModelConstants{
 	}
 	
 	/**
-	 * method to check if a unit 
-	 * @param x
-	 * @param y
-	 * @return
+	 * method to check if a unit is on the tile.
 	 */
 	public boolean isOccupied(){
 		return myUnits.size()>0;
 	}
-
 
 	public List<Tile> getTiles(double r){
 		int range = (int) r;

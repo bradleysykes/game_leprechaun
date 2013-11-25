@@ -36,6 +36,7 @@ public class MapPanel extends EditPanel {
 		super(controller);
 		myFinder = new PackageClassFinder();
 		this.setLayout(new BorderLayout());
+		this.setMinimumSize(new Dimension(500,300));
 		
 	}
 	@Override
