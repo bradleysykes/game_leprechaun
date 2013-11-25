@@ -17,7 +17,7 @@ public abstract class Move extends Ability{
 	public abstract List<Tile> getValidTiles();
 	
 	public abstract double canMoveToTile(Tile dest);
-	// Can use this to loop through map and see which tiles are valid points for movement.
+	// use this to loop through map and see which tiles are valid points for movement.
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
