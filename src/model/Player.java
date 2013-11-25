@@ -8,9 +8,9 @@ import model.unit.Unit;
 
 public class Player extends StatCollection implements ModelConstants{
 	
-	private List<Unit> myUnits;
-	private Condition myWinningCondition;
-	private Model myModel;
+	protected List<Unit> myUnits;
+	protected Condition myWinningCondition;
+	protected Model myModel;
 	
 	public Player(){
 		super("Player","Default Player Name");
