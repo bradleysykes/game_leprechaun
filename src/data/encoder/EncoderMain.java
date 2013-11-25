@@ -53,10 +53,12 @@ public class EncoderMain implements Elements {
         
         //add imageMap to currentState
         Map<String, String> unitImageMap = new HashMap<String, String>();
-        //Map<String, String> tileImageMap = new HashMap<String, String>();
+        unitImageMap.put("test1", "src/test1");
+        Map<String, String> tileImageMap = new HashMap<String, String>();
+        tileImageMap.put("test1", "src/test2");
         //populate the imageMaps... then
         currentState.setUnitImageMap(unitImageMap);
-        //currentState.setTileImageMap(tileImageMap);
+        currentState.setTileImageMap(tileImageMap);
 
         // create a SaveHandler and save an xml file to the specified path
         SaveHandler sh = new SaveHandler(currentState, "./src/data/resources/savedTestFile.xml");
