@@ -59,11 +59,11 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	
 	public void doFrame() {
 		this.moveObjects();
-		this.checkCollision(MOUSE_COL_ID, 2);
-		if(getMouseButton(1)){
+		this.checkCollision(MOUSE_COL_ID, 2+8);
+/*		if(getMouseButton(1)){
 			clearMouseButton(1);
-			this.checkCollision(0, 0);
-		}
+			this.checkCollision(MOUSE_COL_ID, 2+8);
+		}*/
 	}
 	
 	public void nextPlayer() {
