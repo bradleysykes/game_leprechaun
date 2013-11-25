@@ -54,9 +54,11 @@ public class EncoderMain implements Elements {
         currentState.setPlayerList(playerList);
         
         //add imageMap to currentState
-        Map<String, String> imageMap = new HashMap<String, String>();
-        //populate the imageMap... then
-        currentState.setImageMap(imageMap);
+        Map<String, String> unitImageMap = new HashMap<String, String>();
+        //Map<String, String> tileImageMap = new HashMap<String, String>();
+        //populate the imageMaps... then
+        currentState.setUnitImageMap(unitImageMap);
+        //currentState.setTileImageMap(tileImageMap);
 
         // create a SaveHandler and save an xml file to the specified path
         SaveHandler sh = new SaveHandler(currentState, "./src/data/resources/savedTestFile.xml");

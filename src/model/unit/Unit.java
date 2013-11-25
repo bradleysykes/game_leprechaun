@@ -76,7 +76,7 @@ public class Unit extends StatCollection implements ModelConstants {
 		//this.getThing(ability).prepAbility();
 	}
 
-	//don't need this!
+	//don't need this! creates an infinite loop!
 //	public String getID() {
 //		return (String) this.getID();
 //	}
