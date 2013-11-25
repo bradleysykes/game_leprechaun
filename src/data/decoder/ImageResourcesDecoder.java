@@ -13,8 +13,8 @@ public class ImageResourcesDecoder extends Decoder {
         myDataManager = manager;
     }
     
-    private Map<String, String> getImageMap(Element root, String tag) {
-        Map<String, String> imageMap = new HashMap<String, String>();
+    private HashMap<String, String> getImageMap(Element root, String tag) {
+        HashMap<String, String> imageMap = new HashMap<String, String>();
         Element images = (Element)root.getElementsByTagName(tag).item(0);
         NodeList imageList = images.getElementsByTagName(IMAGE);
         for(int i = 0; i < imageList.getLength(); i++) {
