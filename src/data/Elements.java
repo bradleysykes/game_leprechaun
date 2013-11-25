@@ -26,6 +26,9 @@ public interface Elements {
     //for PlayerDecoder
     String PLAYERS = "Players";
     String PLAYER = "Player";
+    
+    String CONDITIONS = "Conditions";
+    
 
     //for ImageResourceDecoder
     String IMAGE_MAP = "ImageMap";
