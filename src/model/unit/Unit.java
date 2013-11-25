@@ -26,12 +26,13 @@ public class Unit extends StatCollection implements ModelConstants {
 	private int myX,  myY;
 	
 	//change name to id?
-	public Unit(String id, Player player, GameMap map){
+	public Unit(String id, Player player, Tile t){
 		super("Unit",id);
 		this.addStat(new Attributes());
 		this.addStat(new Abilities(this));
 		myPlayer = player;
-		myMap = map;
+		myCurrentTile = t;
+		myMap = t.getMap();
 	}
 	
 	public void setMap(GameMap map){
@@ -49,10 +50,6 @@ public class Unit extends StatCollection implements ModelConstants {
 	public Player getPlayer(){
 		return myPlayer;
 	}
-	
-//	public void setAttributes(){
-//		myAttributes.add(a.)
-//	}
 	
 	public void setMapPosition(int newX, int newY){
 		myX = newX;

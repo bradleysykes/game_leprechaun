@@ -12,8 +12,7 @@ public class Spawn extends Ability {
 
 	@Override
 	public void useAbility() {
-		// TODO Auto-generated method stub
-		
+		//myUnit.getPlayer().addUnit(new Unit())
 	}
 
 	@Override

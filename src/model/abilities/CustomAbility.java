@@ -28,14 +28,9 @@ public class CustomAbility extends Ability {
 	}
 
 	@Override
-	public void prepAbility() {
-		myUnit.getPlayer().getModel().chooseTile(myUnit.getCurrentTile().getTiles(this.getValue("Radius")));
-	}
-
-	@Override
 	public void useAbility() {
 		if(!myValid) return;
-		for(Tile t : myTile.getTiles(this.getValue("Radius")))
+		for(Tile t : myTargetTile.getTiles(this.getValue("Radius")))
 			myTargets.addAll(t.getUnits());
 		for(Effect effect : myEffects){
 			for(Unit target : myTargets){

@@ -9,13 +9,14 @@ import java.util.List;
 
 import javax.swing.JTabbedPane;
 
+import data.GameElements;
 import model.Player;
 
 
 
 public class BoardPanel extends EditPanel {
 	
-	private JTabbedPane myTabbedPane;
+	private EditTabbedView myTabbedPane;
 	public BoardPanel(Controller controller){
 		super(controller);
 		String[] tabs = {"Objects","Tiles","Conditions"};
@@ -27,6 +28,11 @@ public class BoardPanel extends EditPanel {
 	public String getTitle() {
 		// TODO Auto-generated method stub
 		return BOARD_PANEL_TITLE;
+	}
+	
+	@Override
+	public GameElements giveStateObjects(GameElements currentState) {
+			return myTabbedPane.giveStateObjects(currentState);
 	}
 
 }
