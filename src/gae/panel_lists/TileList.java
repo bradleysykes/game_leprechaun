@@ -18,6 +18,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import data.GameElements;
+import model.GameMap;
 import model.stats.Stat;
 import model.tile.Tile;
 import model.unit.Unit;
@@ -32,6 +33,12 @@ public class TileList extends BoardList {
 	@Override
 	public String getListType() {
 		return "Tiles";
+	}
+	
+	@Override
+	public List<Stat> getDefaultStats(){
+		Tile tile = new Tile(2,2,new GameMap(2,2));
+		return tile.getStats();
 	}
 	@Override
 	public String getPackageName() {

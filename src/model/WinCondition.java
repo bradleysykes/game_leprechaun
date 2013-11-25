@@ -6,7 +6,7 @@ import model.stats.Stat;
 public class WinCondition extends Condition {
 	
 	public WinCondition(Player p){
-		super("Win Condition", p);
+		super("Win Condition","", p);
 		//this.addStat(new Defeat());
 	}
 

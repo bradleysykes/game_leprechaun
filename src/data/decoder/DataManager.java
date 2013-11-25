@@ -112,5 +112,6 @@ public class DataManager extends GameElements implements Attributes, Elements {
         DataManager dm = new DataManager();
         GameElements map = dm.getGameElements(new File("src/data/resources/savedTestFile.xml"));
         map.toString();
+        System.out.println(map.getTileImageMap().keySet());
     }
 }

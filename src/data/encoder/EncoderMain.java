@@ -3,11 +3,11 @@ package data.encoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import model.Condition;
 import model.GameMap;
 import model.Player;
 import model.Resource;
+import model.condition.Create;
 import model.condition.Defeat;
 import model.tile.Tile;
 import model.unit.Unit;
@@ -35,7 +35,7 @@ public class EncoderMain implements Elements {
         currentState.setGameMap(map);
         
         //add playerList to currentState
-/*        List<Player> playerList = new ArrayList<Player>();
+        List<Player> playerList = new ArrayList<Player>();
         Player p1 = new Player();
         p1.getStatCollection(RESOURCES).addStat(new Resource("minerals", 500, 0));
         p1.getStatCollection(RESOURCES).addStat(new Resource("gas", 350, 0));
@@ -51,18 +51,20 @@ public class EncoderMain implements Elements {
         p1.addUnit(unit2);
         
         playerList.add(p1); playerList.add(p2);
-        currentState.setPlayerList(playerList);*/
+        currentState.setPlayerList(playerList);
         
         //add Conditions to currentState
         List<Condition> conditionList = new ArrayList<Condition>();
-        Condition defeatCond = new Defeat("defeatTest",p1);
+        Condition defeatCond = new Defeat("soldier10",p1);
         conditionList.add(defeatCond);
+        Condition createCond = new Create("soldier5",p1);
+        conditionList.add(createCond);
         currentState.setConditions(conditionList);
         
         //add imageMap to currentState
-        Map<String, String> unitImageMap = new HashMap<String, String>();
+        HashMap<String, String> unitImageMap = new HashMap<String, String>();
         unitImageMap.put("test1", "src/test1");
-        Map<String, String> tileImageMap = new HashMap<String, String>();
+        HashMap<String, String> tileImageMap = new HashMap<String, String>();
         tileImageMap.put("test1", "src/test2");
         //populate the imageMaps... then
         currentState.setUnitImageMap(unitImageMap);

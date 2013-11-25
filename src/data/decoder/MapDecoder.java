@@ -65,6 +65,7 @@ public class MapDecoder extends Decoder {
         //set terrain to the tile
         Element terrain = (Element) tile.getElementsByTagName(TERRAIN).item(0);
         StatCollection targetTerr = (StatCollection) resultTile.getStatCollection(TERRAIN);
+        targetTerr.setID(terrain.getAttribute(ID));
         setStats(terrain, targetTerr);
         
         // set resources to the tile
