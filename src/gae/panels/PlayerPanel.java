@@ -42,6 +42,7 @@ public class PlayerPanel extends EditPanel {
 			myModelPlayerList.remove(numPlayers);
 			myPlayerNumber--;
 		}
+		myController.setPlayer(myModelPlayerList);
 	}
 	
 	@Override
