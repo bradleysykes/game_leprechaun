@@ -7,7 +7,7 @@ import model.unit.Unit;
 public class Spawn extends Ability {
 
 	public Spawn(Unit abilityUser) {
-		super("Spawner", abilityUser,"List of Spawnable Units");
+		super("Spawn", abilityUser,"List of Spawnable Units");
 	}
 
 	@Override

@@ -29,6 +29,8 @@ public class GameMap {
 	}
 
 	public boolean contains(int x, int y){
+		if(myTiles.size() < x || myTiles.get(0).size() < y)
+			return false;
 		if(myTiles.get(x)!=null){
 			if(myTiles.get(x).get(y)!=null){
 				return true;

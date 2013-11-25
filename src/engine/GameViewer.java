@@ -14,6 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import model.unit.Unit;
+
 import engine.gui.ActionPanel;
 import engine.gui.FeedbackPanel;
 import engine.gui.NextTurnButton;
@@ -31,7 +33,7 @@ public class GameViewer extends JFrame {
 		// Initializing Steps
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle(myTitle);
-		myGameEngine = new GameEngine();
+		myGameEngine = new GameEngine(this);
 		myGameEngine.setMaximumSize(new Dimension(GameEngine.getViewerWidth(), GameEngine.getViewerHeight()));
 		
 		// Add Menu Bar
@@ -52,7 +54,7 @@ public class GameViewer extends JFrame {
 //		makeTextBox(controlPane,10,20);
 		
 		//make and add various components to controlPane
-		myActionPanel = new ActionPanel();
+		myActionPanel = new ActionPanel(myGameEngine);
 		myFeedbackPanel = new FeedbackPanel();
 		
 		controlPane.add(myActionPanel);
@@ -65,7 +67,7 @@ public class GameViewer extends JFrame {
 		//setLayout(new BoxLayout(containerPane, BoxLayout.PAGE_AXIS));
 		
 		// Pack and show Container
-		setResizable(false);
+		//setResizable(false);
 		pack();
 		setVisible(true);
 	}
@@ -96,6 +98,10 @@ public class GameViewer extends JFrame {
 	
 	public static FeedbackPanel getFeedbackPanel() {
 		return myFeedbackPanel;
+	}
+
+	public void setSelectedUnit(Unit u) {
+		myActionPanel.setSelectedUnit(u);
 	}
 	
 }
