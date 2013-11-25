@@ -37,9 +37,5 @@ public class Model {
 		myQueuedAbility.setTargetUnit(u);
 		myQueuedAbility.useAbility();
 	}
-	
-	public void chooseString(){
-		//
-	}
-	
+
 }

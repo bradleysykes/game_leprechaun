@@ -16,6 +16,7 @@ import java.util.List;
 public class StatCollection extends Stat {
 	
 	private String myID;
+	private String myReferenceType;
 	protected List<String> myReferences = new ArrayList<String>();
 	protected List<Stat> myStats = new ArrayList<Stat>();
 	// First element in myReferences will just be a name for what the list is (e.g. Spawner will have "Items that can be spawned")
@@ -33,7 +34,11 @@ public class StatCollection extends Stat {
 	
 	public StatCollection(String name, String id, String referenceTypes){
 		this(name,id);
-		myReferences.add(referenceTypes);
+		myReferenceType = referenceTypes;
+	}
+	
+	public String getReferenceType(){
+		return myReferenceType;
 	}
 
 	public String getID(){
