@@ -61,6 +61,10 @@ public class GameEngine extends JGEngine {
 	
 	public void doFrame() {
 		checkCollision(GameTileObject.getCollisionID(), MouseObject.getCollisionID());
+		if (getMouseButton(1)){
+			clearMouseButton(1);
+			System.out.println();
+		}
 	}
 	
 	public void nextPlayer() {

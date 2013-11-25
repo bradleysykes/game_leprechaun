@@ -11,7 +11,7 @@ public class GameTileObject extends JGObject {
 	private boolean isHighlighted = false;
 	
 	public GameTileObject(Tile tile) {
-		super("-tile", true, tilesToPixels(tile.getX()), tilesToPixels(tile.getY()), myCollisionID, tile.getStatCollection("terrain").getID());   //all the game's images should be defined before any GameObjects are created
+		super("-tile", true, tilesToPixels(tile.getX()), tilesToPixels(tile.getY()), myCollisionID, tile.getStatCollection("Terrain").getID());   //all the game's images should be defined before any GameObjects are created
 	} //"-tile" to ensure tiles are drawn first
 	
 	public static int tilesToPixels(int x) {
