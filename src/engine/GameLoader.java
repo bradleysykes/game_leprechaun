@@ -30,7 +30,6 @@ public class GameLoader  {
 		
 		for (String all : myImages.keySet()) {
 			//myGameEngine.defineImage(all, "-", 0, myImages.get(all),"-");
-			System.out.println(all+ " "+myImages.get(all) );
 			myGameEngine.defineImage(all, "-", 0,myImages.get(all),"-");
 			myGameEngine.defineImage("Plains", "-", 0,"test_icon_image.jpg","-");
 			myGameEngine.defineImage("soldier", "-", 0,"soldier.png","-");

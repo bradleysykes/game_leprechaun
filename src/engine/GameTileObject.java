@@ -2,40 +2,46 @@ package engine;
 
 import model.tile.Tile;
 import jgame.JGObject;
+import jgame.platform.JGEngine;
 
 public class GameTileObject extends JGObject {
-	
+
 	private Tile myTile;
 	private static final int myCollisionID = 0;
-	private static final int mySize = 20;
+	private static final int mySize = 79;
 	private boolean isHighlighted = false;
+	private JGEngine myEngine;
+
+	public GameTileObject(Tile tile, JGEngine engine) {
+		super("-tile", true, 0, 0, 
+				myCollisionID, tile.getStatCollection("Terrain").getID());
+		myEngine = engine;
+		myTile = tile;
+	} 
 	
-	public GameTileObject(Tile tile) {
-		super("-tile", true, tilesToPixels(tile.getX()), tilesToPixels(tile.getY()), myCollisionID, tile.getStatCollection("Terrain").getID());   //all the game's images should be defined before any GameObjects are created
-	} //"-tile" to ensure tiles are drawn first
-	
-	public static int tilesToPixels(int x) {
-		return x*mySize;
+	@Override
+	public void move(){
+		this.setPos(myTile.getX()*this.getImageBBox().width, myTile.getY()*this.getImageBBox().height);
 	}
-	
+
 	public static int getCollisionID() {
 		return myCollisionID;
 	}
-	
+
 	public static int getSize() {
 		return mySize;
 	}
-	
+
 	public Tile getTile() {
 		return myTile;
 	}
-	
+
 	public void toggleIsHighlighted() {
 		isHighlighted = !isHighlighted;
 	}
-	
+
 	public boolean isHighlighted() {
 		return isHighlighted;
 	}
-	
+
 }
