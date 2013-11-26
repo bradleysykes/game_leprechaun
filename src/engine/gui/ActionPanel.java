@@ -10,14 +10,20 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
+import engine.GameEngine;
+
+import model.unit.Unit;
+
 public class ActionPanel extends JPanel {
 	
 	private Dimension mySize = new Dimension(250, 230);
 	private JButton myNextTurnButton;
 	private JPanel myUnitListArea;
-	private JPanel myAbilityListArea;
+	private AbilityListArea myAbilityListArea;
+	private GameEngine myGameEngine;
 	
-	public ActionPanel() {
+	public ActionPanel(GameEngine ge) {
+		myGameEngine = ge;
 		setPreferredSize(mySize);
 		
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
@@ -25,9 +31,9 @@ public class ActionPanel extends JPanel {
 		titledBorder.setTitleJustification(TitledBorder.LEFT);
 		setBorder(titledBorder);
 		
-		myNextTurnButton = new NextTurnButton();
+		myNextTurnButton = new NextTurnButton(myGameEngine);
 		myUnitListArea = new UnitListArea();
-		myAbilityListArea = new AbilityListArea();
+		myAbilityListArea = new AbilityListArea(myGameEngine);
 		
 		add(myNextTurnButton);
 		add(myUnitListArea);
@@ -40,6 +46,11 @@ public class ActionPanel extends JPanel {
 	
 	public JPanel getAbilityListArea() {
 		return myAbilityListArea;
+	}
+	
+	public void setSelectedUnit(Unit u){
+		myAbilityListArea.setUnit(u);
+		//myUnitListArea.setUnit(u); ?? what does this panel do?
 	}
 	
 }

@@ -22,6 +22,8 @@ public class BudgetMove extends Move {
 			myUnit.getStatCollection("Attributes").setStat("Stamina", 
 					myUnit.getStatCollection("Attributes").getValue("Stamina")-cost);
 		}
+		System.out.println("Using BudgetMove");
+		myUnit.setCurrentTile(myTargetTile);
 	}
 	
 	@Override

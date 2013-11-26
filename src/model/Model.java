@@ -28,12 +28,12 @@ public class Model {
 		myQueuedAbility.requestEngineInput(myGameEngine);
 	}
 	
-	public static void useAbility(Tile t){
+	public void useAbility(Tile t){
 		myQueuedAbility.setTargetTile(t);
 		myQueuedAbility.useAbility();
 	}
 	
-	public static void useAbility(Unit u){
+	public void useAbility(Unit u){
 		myQueuedAbility.setTargetUnit(u);
 		myQueuedAbility.useAbility();
 	}
@@ -42,6 +42,10 @@ public class Model {
 		for(Player p : myPlayers){
 			p.refresh();
 		}
+	}
+	
+	public List<Player> getPlayers(){
+		return myPlayers;
 	}
 
 }

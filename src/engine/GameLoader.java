@@ -3,7 +3,7 @@ package engine;
 import java.util.ArrayList;
 import data.GameElements;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.Map;
 
 import model.GameMap;
 import model.Player;
@@ -26,21 +26,16 @@ public class GameLoader  {
 		GameMap gameMap = myGameElements.getGameMap();
 		myGameEngine.setPFSize(gameMap.getSizeX() , gameMap.getSizeY());
 		Collection<Tile> allTiles = gameMap.getAllTiles();
-		HashMap<String, String> myTileImages = (HashMap<String, String>) myGameElements.getTileImageMap();
-		HashMap<String, String> myUnitImages = (HashMap<String, String>) myGameElements.getUnitImageMap();
-		
-		System.out.println(myUnitImages.keySet());
 
-		//myGameEngine.defineImage("Plains", "-", 0,"test_icon_image.jpg","-");
-		myGameEngine.defineImage("soldier", "-", 0,"soldier.png","-");
-		myGameEngine.defineImage("", "-", 0, "soldier.png", "-");
-		
+		Map<String, String> myTileImages = myGameElements.getTileImageMap();
+		Map<String, String> myUnitImages = myGameElements.getUnitImageMap();
+
 		for (String all : myTileImages.keySet()) {
-			myGameEngine.defineImage(all, "-", 0,myTileImages.get(all),"-");
+			myGameEngine.defineImage(all, "-", 0,"/"+myTileImages.get(all),"-");
 		}		
 		
 		for (String all : myUnitImages.keySet()) {
-			myGameEngine.defineImage(all, "-", 0,myUnitImages.get(all),"-");
+			myGameEngine.defineImage(all, "-", 0,"/"+myUnitImages.get(all),"-");
 		}
 
 		Collection<Player> allPlayers = myGameElements.getPlayers();

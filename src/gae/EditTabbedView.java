@@ -1,6 +1,7 @@
 package gae;
 
 import gae.buttons.CreateCustomButton;
+import gae.listeners.DeselectListener;
 import gae.panel_lists.BoardList;
 import gae.panel_lists.ConditionList;
 import gae.panel_lists.TileList;
@@ -46,6 +47,9 @@ public class EditTabbedView extends JTabbedPane {
 			JToolBar tool = new JToolBar("Board Objectsj");
 			CreateCustomButton button = new CreateCustomButton(list);
 			tool.add(button);
+			JButton deselect = new JButton("Unselect");
+			deselect.addActionListener(new DeselectListener(list));
+			tool.add(deselect);
 			panel.add(list, BorderLayout.CENTER);
 			panel.add(tool, BorderLayout.PAGE_START);
 			JScrollPane scroll = new JScrollPane(panel);

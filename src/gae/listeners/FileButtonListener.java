@@ -1,5 +1,6 @@
 package gae.listeners;
 
+import gae.Constants;
 import gae.buttons.FileButton;
 
 import java.awt.Component;
@@ -10,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class FileButtonListener implements ActionListener {
+public class FileButtonListener implements ActionListener, Constants{
 	private FileButton myParent;
 	public FileButtonListener(FileButton button){
 		myParent = button;
@@ -18,13 +19,13 @@ public class FileButtonListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		//launch a new file chooser
-		JFileChooser chooser = new JFileChooser();
+		
 		FileNameExtensionFilter filter = new FileNameExtensionFilter(
 		        "JPG & GIF Images", "jpg", "gif");
-		    chooser.setFileFilter(filter);
-		    int returnVal = chooser.showOpenDialog(myParent);
+		    FILE_CHOOSER.setFileFilter(filter);
+		    int returnVal = FILE_CHOOSER.showOpenDialog(myParent);
 		    if(returnVal == JFileChooser.APPROVE_OPTION) {
-		            myParent.sendFile(chooser.getSelectedFile());
+		            myParent.sendFile(FILE_CHOOSER.getSelectedFile());
 		    }
 	}
 	

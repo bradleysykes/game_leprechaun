@@ -33,8 +33,8 @@ public class MapPopupMenu extends GAEPopupMenu {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
 			myMapPanel.removeObjects(null, 0);
+			myController.clearMap();
 		}
 		
 	}

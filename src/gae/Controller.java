@@ -18,14 +18,15 @@ import data.GameElements;
 import data.encoder.SaveHandler;
 import model.Player;
 import model.stats.Stat;
+import model.unit.Unit;
 
 public class Controller {
 	
-	List<EditPanel> myPanels = new ArrayList<EditPanel>();
-	List<Player> myPlayers = new ArrayList<Player>();
+	private List<EditPanel> myPanels = new ArrayList<EditPanel>();
+	private List<Player> myPlayers = new ArrayList<Player>();
 	
 	public Controller(){
-
+		
 	}
 	
 	public void init(){
@@ -41,14 +42,36 @@ public class Controller {
 		}
 	}
 	
+	public void clearMap(){
+		for(Player player:myPlayers){
+			player.getAllUnits().clear();
+		}
+	}
+	
 	public void removeBoardObject(BoardListViewItem item){
 		for(EditPanel p:myPanels){
 			p.removeBoardObject(item);
+//			for(Player p:myPlayers){
+//			List<Unit> units = p.getAllUnits();
+//			Object toRemove = item.getModelObject();
+//			List<Unit> copy = new ArrayList<Unit>();
+//			for(Unit u:units){
+//				if(u.getID()!=((Unit)toRemove).getgetID()){
+//					copy.add(u);
+//				}
+//			}
+//			units=copy;
+//		}}
+//	
 		}
 	}
 
 	public void addPanel(EditPanel panel){
 		myPanels.add(panel);
+	}
+	
+	public void setPlayer(List<Player> players){
+		myPlayers = players;
 	}
 	
 	public void postBoardData(){
