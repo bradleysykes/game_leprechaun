@@ -9,6 +9,7 @@ import java.util.List;
 import model.Condition;
 import model.Player;
 import model.condition.Defeat;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
 public class DefeatParameterSetter implements IConditionParameterSetter {
@@ -23,30 +24,39 @@ public class DefeatParameterSetter implements IConditionParameterSetter {
 	}
 
 	@Override
-	public List<Player> getFirstVariableOptions(int playerNum) {
+	public List<StatCollection> getFirstVariableOptions(int playerNum) {
 		myWOSelected = new ArrayList<Player>();
 		for (int i=0; i<myPlayers.size(); i++) {
 			if(i!=playerNum) {
 				myWOSelected.add(myPlayers.get(i));
 			}
 		}
-		return myWOSelected;
+		List<StatCollection> toReturn = new ArrayList<StatCollection>();
+		for (Player p:myWOSelected) {
+			toReturn.add(p);
+		}
+		return toReturn;
 	}
 
 	@Override
-	public List<Unit> getSecondVariableOptions(int var1Num) {
+	public List<StatCollection> getSecondVariableOptions(int var1Num) {
 		Player p =myWOSelected.get(var1Num);
-		return p.getAllUnits();
+		List<StatCollection> toReturn = new ArrayList<StatCollection>();
+		for (Unit u:p.getAllUnits()) {
+			toReturn.add(u);
+		}
+		return toReturn;
 	}
 
 	@Override
-	public List<ViewItem> getThirdVariableOptions(int var2Num) {
+	public List<StatCollection> getThirdVariableOptions(int var2Num) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Condition getCondition(Player player, Unit goal) {	
+	public Condition getCondition(Player player, StatCollection...objects) {
+		Unit goal = (Unit) objects[0];
 		return new Defeat(goal.getID(), player);
 	}
 

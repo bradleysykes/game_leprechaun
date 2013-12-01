@@ -26,6 +26,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JToolBar;
 
+import model.unit.Unit;
 import data.GameElements;
 
 
@@ -82,5 +83,16 @@ public class EditTabbedView extends JTabbedPane {
 		}
 		return currentState;
 		
+	}
+
+	public List<Unit> getUnitTypes() {
+		List<Unit> u = null;
+		for (String s:myTabContents.keySet()) {
+			u = myTabContents.get(s).getUnitTypes();
+			if (u!=null) {
+				break;
+			}
+		}
+		return u;
 	}
 }

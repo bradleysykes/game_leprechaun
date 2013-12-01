@@ -7,6 +7,7 @@ import java.util.List;
 
 import model.Condition;
 import model.Player;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
 public class WaypointParameterSetter implements IConditionParameterSetter {
@@ -16,25 +17,25 @@ public class WaypointParameterSetter implements IConditionParameterSetter {
 	}
 
 	@Override
-	public List<Player> getFirstVariableOptions(int playerNum) {
+	public List<StatCollection> getFirstVariableOptions(int playerNum) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Unit> getSecondVariableOptions(int var1Num) {
+	public List<StatCollection> getSecondVariableOptions(int var1Num) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<ViewItem> getThirdVariableOptions(int var2Num) {
+	public List<StatCollection> getThirdVariableOptions(int var2Num) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Condition getCondition(Player players, Unit goal) {
+	public Condition getCondition(Player players, StatCollection...objects) {
 		// TODO Auto-generated method stub
 		return null;
 	}
