@@ -172,18 +172,20 @@ public class ConditionDialogue extends InputDialogue {
 			myParamsetter = myConditionsParameters.get(conditionNum);
 			int playerNum = myPlayersCombo.getSelectedIndex();
 			Player player = myPlayers.get(playerNum);
+			StatCollection goal1 = null;
 			if(myVariable1Combo.isEnabled()){
-//			Player target = myVariable1.get(myVariable1Combo.getSelectedIndex());
+				goal1 = myVariable1.get(myVariable1Combo.getSelectedIndex());
 			}
-			StatCollection goal=null;
+			
+			StatCollection goal2=null;
 			if (myVariable2Combo.isEnabled()) {
-				goal = myVariable2.get(myVariable2Combo.getSelectedIndex());
-				Condition condition = myParamsetter.getCondition(player, goal);
-				String name = myNameField.getText();
-				ConditionViewItem cvi = new ConditionViewItem(name, condition);
-				myList.addNewItem(cvi);
-				disposeDialogue();
+				goal2 = myVariable2.get(myVariable2Combo.getSelectedIndex());
 			}
+			Condition condition = myParamsetter.getCondition(player, goal1, goal2);
+			String name = myNameField.getText();
+			ConditionViewItem cvi = new ConditionViewItem(name, condition);
+			myList.addNewItem(cvi);
+			disposeDialogue();
 		}
 	}
 
