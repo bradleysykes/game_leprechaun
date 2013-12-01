@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import data.GameElements;
 import model.Player;
 import model.stats.Stat;
+import model.unit.Unit;
 
 
 public abstract class EditPanel extends JPanel implements Constants {
@@ -80,6 +81,11 @@ public abstract class EditPanel extends JPanel implements Constants {
 
 	public List<Player> getPlayers() {
 		// default is do nothing
+		return null;
+	}
+
+	public List<Unit> getUnitTypes() {
+		// default is to return null
 		return null;
 	}
 }
