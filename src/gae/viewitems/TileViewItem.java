@@ -63,7 +63,9 @@ public class TileViewItem extends BoardListViewItem {
 	public void placeOnBoard(GUIMap map, double x, double y) {
 		//new JGObject(such and such);
 		myMapObject = new MapObject(myMapObjectPrefix,x*TILE_SIZE,y*TILE_SIZE,"tile", this);
-		map.getModelMap().setTile((int)x, (int)y, myTile);
+		Tile tile = new Tile((int) x,(int) y, map.getModelMap());
+		tile.getStatCollection("Terrain").setID(myTile.getStatCollection("Terrain").getID());
+		map.getModelMap().setTile((int)x, (int)y, tile);
 	}
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player){
@@ -71,7 +73,9 @@ public class TileViewItem extends BoardListViewItem {
 		int yTile = (int) ((y-y%TILE_SIZE)/TILE_SIZE);
 		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		myMapObject = new TileMapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,myMapObjectPrefix,this);
-		map.getModelMap().setTile(xTile, yTile, myTile);
+		Tile tile = new Tile((int) x,(int) y, map.getModelMap());
+		tile.getStatCollection("Terrain").setID(myTile.getStatCollection("Terrain").getID());
+		map.getModelMap().setTile(xTile, yTile, tile);
 	}
 	
 	@Override

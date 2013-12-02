@@ -28,7 +28,6 @@ public class GameMap {
 		myTiles.clear();
 	}
 
-	//this class was throwing errors, so i rewrote it
 	public boolean contains(int x, int y){
 /*		if(myTiles.size() < x || myTiles.get(0).size() < y || x < 0 || y < 0)
 			return false;

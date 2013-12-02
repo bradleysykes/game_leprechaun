@@ -87,8 +87,8 @@ public class GUIMap extends JGEngine implements Constants{
 		//drawString("Playfield Size: ("+this.pfWidth()+","+this.pfHeight()+").",viewWidth()/2, 40, 0);
 		drawString("Map Dimensions: ("+myWidth+"x"+myHeight+")",viewWidth()*0.75, 10, 0);
 		//drawString("Move the mouse to scroll.", viewWidth()/2, 80, 0);
-		//drawString("Playfield offset is now ("+xOffset+","+yOffset+").",viewWidth()/2, 80, 0);
-		//drawString("Mouse currently at ("+this.getMouseX()+","+this.getMouseY()+").",viewWidth()/2, 120, 0);
+		drawString("Playfield offset is now ("+xOffset+","+yOffset+").",viewWidth()/2, 80, 0);
+		drawString("Mouse currently at ("+this.getMouseX()+","+this.getMouseY()+").",viewWidth()/2, 120, 0);
 		//drawString("Unit on tile: "+myMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE).isOccupied(),viewWidth()/2,160,0);
 //		drawString("TOP LEFT",     0,         8,             -1,
 //				true // indicate it should be drawn relative to playfield
@@ -105,7 +105,7 @@ public class GUIMap extends JGEngine implements Constants{
 		unitX = this.getMouseX()-this.getMouseX()%UNIT_SIZE;
 		unitY = this.getMouseY()-this.getMouseY()%UNIT_SIZE;
 		xOffset =  getMouseX() * pfWidth() / viewWidth();
-		yOffset = (getMouseY() *pfHeight()/viewHeight());
+		yOffset = getMouseY() *pfHeight()/viewHeight();
 		this.setViewOffset(xOffset,yOffset, true);
 	}
 	

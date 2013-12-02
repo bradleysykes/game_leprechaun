@@ -24,7 +24,7 @@ public class UnitViewItem extends BoardListViewItem {
 	
 	public UnitViewItem(List<Stat> stats, String name, File imageFile, int IDcounter){
 		super(stats, name, imageFile);
-		myUnit = new Unit("Unit",new Player(), new Tile(3,3,new GameMap(2,2)));
+		myUnit = new Unit(name+"|"+IDcounter,new Player(), new Tile(3,3,new GameMap(2,2)));
 		myDefaults = myUnit.getStats();
 		myUnit.setStats(myProperties);
 		myIDEnding = "|"+IDcounter;
