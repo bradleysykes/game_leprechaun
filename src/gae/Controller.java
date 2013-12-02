@@ -127,12 +127,23 @@ public class Controller {
 	public List<Player> getPlayers(){
 		List<Player> players = null;
 		for(EditPanel p:myPanels){
-			players= p.getPlayers();
+			players = p.getPlayers();
 			if (players!=null) {
 				break;
 			}
 		}
 		return players;
+	}
+
+	public List<Unit> getUnitTypes() {
+		List<Unit> units = null;
+		for(EditPanel p:myPanels){
+			units = p.getUnitTypes();
+			if (units!=null) {
+				break;
+			}
+		}
+		return units;
 	}
 
 }

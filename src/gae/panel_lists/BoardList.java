@@ -31,6 +31,7 @@ import javax.swing.event.ListSelectionListener;
 
 import data.GameElements;
 import model.stats.Stat;
+import model.unit.Unit;
 
 import java.util.List;
 
@@ -132,6 +133,12 @@ public abstract class BoardList extends JList implements Constants{
 
 	public GameElements giveStateObjects(GameElements currentState) {
 		return currentState;
+	}
+
+
+	public List<Unit> getUnitTypes() {
+		// Default is return null
+		return null;
 	}
 		
 }

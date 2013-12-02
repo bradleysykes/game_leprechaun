@@ -11,6 +11,7 @@ import javax.swing.JTabbedPane;
 
 import data.GameElements;
 import model.Player;
+import model.unit.Unit;
 
 
 
@@ -33,6 +34,11 @@ public class BoardPanel extends EditPanel {
 	@Override
 	public GameElements giveStateObjects(GameElements currentState) {
 			return myTabbedPane.giveStateObjects(currentState);
+	}
+	
+	@Override
+	public List<Unit> getUnitTypes() {
+		return myTabbedPane.getUnitTypes();
 	}
 
 }

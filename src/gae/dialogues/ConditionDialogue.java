@@ -23,6 +23,7 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 import model.stats.Stat;
+import model.stats.StatCollection;
 import model.unit.Unit;
 import model.Player;
 import model.Condition;
@@ -37,8 +38,8 @@ public class ConditionDialogue extends InputDialogue {
 	private JComboBox<NameObject> myVariable1Combo;
 	private JComboBox<NameObject> myVariable2Combo;// = new JComboBox<String>();
 	private List<IConditionParameterSetter> myConditionsParameters;
-	private List<Player> myVariable1; //may need to change type
-	private List<Unit> myVariable2;
+	private List<StatCollection> myVariable1; //may need to change type
+	private List<StatCollection> myVariable2;
 	private List<String> conditionNames;
 	private BoardList myList;
 	private IConditionParameterSetter myParamsetter;
@@ -51,10 +52,10 @@ public class ConditionDialogue extends InputDialogue {
 
 	@Override
 	public JPanel createGutsPanel() {
-		myNameField= new JTextField("Bob's your uncle");
+		myNameField= new JTextField("Victory Condition");
 		conditionNames = new ArrayList<String>();
-		myVariable1 = new ArrayList<Player>();
-		myVariable2 = new ArrayList<Unit>();
+		myVariable1 = new ArrayList<StatCollection>();
+		myVariable2 = new ArrayList<StatCollection>();
 		myPlayers = new ArrayList<Player>();
 		conditionNames.add("Create"); 
 		conditionNames.add("Defeat"); 
@@ -171,18 +172,20 @@ public class ConditionDialogue extends InputDialogue {
 			myParamsetter = myConditionsParameters.get(conditionNum);
 			int playerNum = myPlayersCombo.getSelectedIndex();
 			Player player = myPlayers.get(playerNum);
+			StatCollection goal1 = null;
 			if(myVariable1Combo.isEnabled()){
-//			Player target = myVariable1.get(myVariable1Combo.getSelectedIndex());
+				goal1 = myVariable1.get(myVariable1Combo.getSelectedIndex());
 			}
-			Unit goal=null;
+			
+			StatCollection goal2=null;
 			if (myVariable2Combo.isEnabled()) {
-				goal = myVariable2.get(myVariable2Combo.getSelectedIndex());
-				Condition condition = myParamsetter.getCondition(player, goal);
-				String name = myNameField.getText();
-				ConditionViewItem cvi = new ConditionViewItem(name, condition);
-				myList.addNewItem(cvi);
-				disposeDialogue();
+				goal2 = myVariable2.get(myVariable2Combo.getSelectedIndex());
 			}
+			Condition condition = myParamsetter.getCondition(player, goal1, goal2);
+			String name = myNameField.getText();
+			ConditionViewItem cvi = new ConditionViewItem(name, condition);
+			myList.addNewItem(cvi);
+			disposeDialogue();
 		}
 	}
 
@@ -197,8 +200,8 @@ public class ConditionDialogue extends InputDialogue {
 			if (myVariable1!=null) {
 //				myVariable1Combo.setEnabled(true);
 				myVariable1Combo.removeAllItems();
-				for (Player p:myVariable1) {
-					myVariable1Combo.addItem(new NameObject(p.getName()));
+				for (StatCollection sc:myVariable1) {
+					myVariable1Combo.addItem(new NameObject(sc.getName()));
 				}
 			}
 			else {
@@ -217,8 +220,8 @@ public class ConditionDialogue extends InputDialogue {
 			if (myVariable2!=null) {
 //				myVariable2Combo.setEnabled(true);
 				myVariable2Combo.removeAllItems();
-				for (Unit u:myVariable2) {
-					myVariable2Combo.addItem(new NameObject(u.getName()));
+				for (StatCollection sc:myVariable2) {
+					myVariable2Combo.addItem(new NameObject(sc.getName()));
 				}
 			}
 			else {

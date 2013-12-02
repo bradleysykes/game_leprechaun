@@ -74,4 +74,17 @@ public class UnitList extends BoardList {
 		return currentState;
 	}
 	
+	@Override
+	public List<Unit> getUnitTypes() {
+		Object[] list = new Object[myModel.size()];
+		myModel.copyInto(list);
+		List<Unit> unitList = new ArrayList<Unit>();
+		for (Object o:list) {
+			UnitViewItem uvi = (UnitViewItem) o;
+			Unit u = (Unit) uvi.getModelObject();
+			unitList.add(u);
+		}
+		return unitList;
+	}
+	
 }
