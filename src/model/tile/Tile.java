@@ -16,6 +16,9 @@ public class Tile extends StatCollection implements ModelConstants{
 	private List<Unit> myUnits = new ArrayList<Unit>();
 	private GameMap myMap;
 
+	// Change constructor to take in Tile, alone?
+	// Will help GAE with front-end library
+	
 	public Tile(double x, double y, GameMap map){
 		super("Tile");
 		myMap = map;
