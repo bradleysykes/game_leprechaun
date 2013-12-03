@@ -10,12 +10,14 @@ import gae.viewitems.TaskViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 
 import sun.nio.cs.ext.JIS_X_0201.Encoder;
 import data.GameElements;
 import data.encoder.SaveHandler;
+import model.GameMap;
 import model.Player;
 import model.stats.Stat;
 import model.unit.Unit;
@@ -144,6 +146,17 @@ public class Controller {
 			}
 		}
 		return units;
+	}
+	
+	public GameMap getMap() {
+		GameMap map = null;
+		for(EditPanel p:myPanels) {
+			map = p.getMap();
+			if (map!=null) {
+				return map;
+			}
+		}
+		return null;
 	}
 
 }

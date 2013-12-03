@@ -31,6 +31,8 @@ public class MapPanel extends EditPanel {
 	
 	private GUIMap myMapView;
 	private PackageClassFinder myFinder;
+	private int myMapWidth = 0;
+	private int myMapHeight = 0;
 
 	public MapPanel(Controller controller){
 		super(controller);
@@ -41,9 +43,9 @@ public class MapPanel extends EditPanel {
 	}
 	@Override
 	public void createMap(List<String> dimensions){
-		int width = Integer.parseInt(dimensions.get(0));
-		int height = Integer.parseInt(dimensions.get(1));
-		myMapView = new GUIMap(width, height, this.getWidth(), this.getHeight());
+		myMapWidth = Integer.parseInt(dimensions.get(0));
+		myMapHeight = Integer.parseInt(dimensions.get(1));
+		myMapView = new GUIMap(myMapWidth, myMapHeight, this.getWidth(), this.getHeight());
 		myMapView.setPopup(new MapPopupMenu(myController,myMapView));
 		this.add(myMapView, BorderLayout.CENTER);
 		this.revalidate();
@@ -87,5 +89,10 @@ public class MapPanel extends EditPanel {
 	@Override
 	public String getTitle() {
 		return MAP_PANEL_TITLE;
+	}
+	
+	@Override
+	public GameMap getMap() {
+		return myMapView.getModelMap();
 	}
 }
