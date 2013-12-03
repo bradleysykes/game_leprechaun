@@ -10,9 +10,13 @@ import gae.viewitems.TaskViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
-import java.awt.Dimension;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 import sun.nio.cs.ext.JIS_X_0201.Encoder;
 import data.GameElements;
@@ -22,7 +26,7 @@ import model.Player;
 import model.stats.Stat;
 import model.unit.Unit;
 
-public class Controller {
+public class Controller implements Constants{
 	
 	private List<EditPanel> myPanels = new ArrayList<EditPanel>();
 	private List<Player> myPlayers = new ArrayList<Player>();
@@ -111,11 +115,16 @@ public class Controller {
 			currentState = p.giveStateObjects(currentState);
 			if (currentState == null) {
 				// Popup dialog->not saved
+				JOptionPane alertPane = new JOptionPane("Please complete all tasks before saving.");
+				JDialog dialog = alertPane.createDialog(null,"Save alert");
+				dialog.setLocation(10, 10);
+				dialog.setVisible(true);
 				return;
 			}
 		}
-		
-		SaveHandler saveHandler = new SaveHandler(currentState, "./src/data/resources/savedState.xml");
+		int returnVal = FILE_CHOOSER.showOpenDialog(myPanels.get(0));
+	    String filePath = FILE_CHOOSER.getSelectedFile().getAbsolutePath();
+	    SaveHandler saveHandler = new SaveHandler(currentState, filePath);
 		saveHandler.doSave();
 		// create data object to send GameElements object to that.
 	}
@@ -157,6 +166,12 @@ public class Controller {
 			}
 		}
 		return null;
+	}
+
+	public void displayFile(File file) {
+		for(EditPanel p:myPanels){
+			p.displayFile(file);
+		}
 	}
 
 }

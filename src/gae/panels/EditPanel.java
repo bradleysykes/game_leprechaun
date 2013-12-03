@@ -10,6 +10,7 @@ import gae.viewitems.ViewItem;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.io.File;
 import java.util.List;
 
 import javax.swing.JLabel;
@@ -90,9 +91,15 @@ public abstract class EditPanel extends JPanel implements Constants {
 		return null;
 	}
 
+<<<<<<< HEAD
 	public GameMap getMap() {
 		// Default is to return null
 		return null;
+=======
+	public void displayFile(File file) {
+		// default is to do nothing
+		
+>>>>>>> c321a79ae918b073238297fdd22773c5af49a192
 	}
 }
 	

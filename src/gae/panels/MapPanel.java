@@ -2,6 +2,7 @@ package gae.panels;
 
 import gae.Constants;
 import gae.Controller;
+import gae.EditTabbedView;
 import gae.GUIMap;
 import gae.PackageClassFinder;
 import gae.listeners.MapPopupListener;
@@ -14,9 +15,15 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 
 import data.GameElements;
@@ -31,8 +38,12 @@ public class MapPanel extends EditPanel {
 	
 	private GUIMap myMapView;
 	private PackageClassFinder myFinder;
+<<<<<<< HEAD
 	private int myMapWidth = 0;
 	private int myMapHeight = 0;
+=======
+	private JTabbedPane myTabbedView;
+>>>>>>> c321a79ae918b073238297fdd22773c5af49a192
 
 	public MapPanel(Controller controller){
 		super(controller);
@@ -47,13 +58,32 @@ public class MapPanel extends EditPanel {
 		myMapHeight = Integer.parseInt(dimensions.get(1));
 		myMapView = new GUIMap(myMapWidth, myMapHeight, this.getWidth(), this.getHeight());
 		myMapView.setPopup(new MapPopupMenu(myController,myMapView));
-		this.add(myMapView, BorderLayout.CENTER);
+		myTabbedView = new JTabbedPane();
+		myTabbedView.addTab("Map",myMapView);
+		this.add(myTabbedView);
 		this.revalidate();
 		}
 	
 	public void removeBoardObject(BoardListViewItem item){
 		myMapView.removeObjects(item.getPrefix(),item.getMapObject().colid);
 		System.out.println("hah");
+	}
+	
+	@Override
+	public void displayFile(File file){
+		JTextArea fileView = new JTextArea();
+		fileView.setEditable(false);
+		try {
+			Scanner in = new Scanner(new FileReader(file.getAbsolutePath()));
+			while(in.hasNextLine()){
+				fileView.append(in.nextLine()+"\n");
+			}
+			in.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		JScrollPane scrollPane = new JScrollPane(fileView);
+		myTabbedView.addTab("Game File", scrollPane);
 	}
 	
 //	public void setDefaultTiles(){
