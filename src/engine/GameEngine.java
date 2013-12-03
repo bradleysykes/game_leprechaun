@@ -1,6 +1,7 @@
 package engine;
 
 import java.awt.Color;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -30,6 +31,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private Player myCurrentPlayer;
 	private MouseObject myMouseObject;
 	private GameViewer myGameViewer;
+	private File mySourceFile;
 	
 	public GameEngine(GameViewer gv) {
 		initEngineComponent(600, 400);
@@ -137,6 +139,14 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		// Display list of spawnable units to user, allow them to select one.
 		// Ideally, eventually have Portrait displayed for each spawnable unit.
 		// This will lead to 'sendModelUnit' being called.
+	}
+
+	public void setSourceFile(File file) {
+		mySourceFile = file;
+	}
+
+	public File getSourceFile() {
+		return mySourceFile;
 	}
 	
 }

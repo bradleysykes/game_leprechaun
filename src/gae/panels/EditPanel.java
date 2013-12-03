@@ -94,6 +94,11 @@ public abstract class EditPanel extends JPanel implements Constants {
 		// default is to do nothing
 		
 	}
+
+	public void closeMap() {
+		// TODO Auto-generated method stub
+		
+	}
 }
 	
 

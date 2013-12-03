@@ -13,6 +13,7 @@ import gae.viewitems.ViewItem;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
@@ -21,10 +22,12 @@ import java.io.FileReader;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 
 import data.GameElements;
 import model.GameMap;
@@ -55,6 +58,40 @@ public class MapPanel extends EditPanel {
 		myMapView.setPopup(new MapPopupMenu(myController,myMapView));
 		myTabbedView = new JTabbedPane();
 		myTabbedView.addTab("Map",myMapView);
+		myTabbedView.addMouseListener(new MouseAdapter(){
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)&&myTabbedView.getSelectedIndex()!=0){
+					myTabbedView.remove(myTabbedView.getSelectedComponent());
+				}
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		this.add(myTabbedView);
 		this.revalidate();
 		}
@@ -63,22 +100,30 @@ public class MapPanel extends EditPanel {
 		myMapView.removeObjects(item.getPrefix(),item.getMapObject().colid);
 		System.out.println("hah");
 	}
+	@Override
+	public void closeMap(){
+		myMapView.destroy();
+		this.revalidate();
+	}
 	
 	@Override
 	public void displayFile(File file){
-		JTextArea fileView = new JTextArea();
-		fileView.setEditable(false);
-		try {
-			Scanner in = new Scanner(new FileReader(file.getAbsolutePath()));
-			while(in.hasNextLine()){
-				fileView.append(in.nextLine()+"\n");
+		if(myTabbedView.getTabCount()<2){
+			JTextArea fileView = new JTextArea();
+			fileView.setEditable(false);
+			try {
+				Scanner in = new Scanner(new FileReader(file.getAbsolutePath()));
+				while(in.hasNextLine()){
+					fileView.append(in.nextLine()+"\n");
+				}
+				in.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
 			}
-			in.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			JScrollPane scrollPane = new JScrollPane(fileView);
+			myTabbedView.addTab("Game File", scrollPane);
 		}
-		JScrollPane scrollPane = new JScrollPane(fileView);
-		myTabbedView.addTab("Game File", scrollPane);
+		myTabbedView.setSelectedIndex(myTabbedView.getTabCount()-1);
 	}
 	
 //	public void setDefaultTiles(){
