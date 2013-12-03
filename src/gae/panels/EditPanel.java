@@ -91,15 +91,15 @@ public abstract class EditPanel extends JPanel implements Constants {
 		return null;
 	}
 
-<<<<<<< HEAD
+
 	public GameMap getMap() {
 		// Default is to return null
 		return null;
-=======
+	}
+
 	public void displayFile(File file) {
 		// default is to do nothing
 		
->>>>>>> c321a79ae918b073238297fdd22773c5af49a192
 	}
 }
 	

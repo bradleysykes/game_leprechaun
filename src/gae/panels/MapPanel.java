@@ -38,12 +38,8 @@ public class MapPanel extends EditPanel {
 	
 	private GUIMap myMapView;
 	private PackageClassFinder myFinder;
-<<<<<<< HEAD
-	private int myMapWidth = 0;
-	private int myMapHeight = 0;
-=======
 	private JTabbedPane myTabbedView;
->>>>>>> c321a79ae918b073238297fdd22773c5af49a192
+
 
 	public MapPanel(Controller controller){
 		super(controller);
@@ -54,9 +50,9 @@ public class MapPanel extends EditPanel {
 	}
 	@Override
 	public void createMap(List<String> dimensions){
-		myMapWidth = Integer.parseInt(dimensions.get(0));
-		myMapHeight = Integer.parseInt(dimensions.get(1));
-		myMapView = new GUIMap(myMapWidth, myMapHeight, this.getWidth(), this.getHeight());
+		int mapWidth = Integer.parseInt(dimensions.get(0));
+		int mapHeight = Integer.parseInt(dimensions.get(1));
+		myMapView = new GUIMap(mapWidth, mapHeight, this.getWidth(), this.getHeight());
 		myMapView.setPopup(new MapPopupMenu(myController,myMapView));
 		myTabbedView = new JTabbedPane();
 		myTabbedView.addTab("Map",myMapView);
