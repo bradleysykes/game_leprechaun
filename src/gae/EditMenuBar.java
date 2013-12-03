@@ -25,10 +25,20 @@ public class EditMenuBar extends JMenuBar implements Constants {
 		JMenu fileMenu = new JMenu("File");
 		this.add(fileMenu);
 		JMenuItem saveAsItem = new JMenuItem("Save As");
+		JMenuItem exitItem = new JMenuItem("Exit");
+		exitItem.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				myController.exit();
+			}
+			
+		});
 		mySaveItem = new JMenuItem("Save");
 		mySaveItem.setEnabled(false);
 		fileMenu.add(saveAsItem);
 		fileMenu.add(mySaveItem);
+		fileMenu.add(exitItem);
 		mySaveItem.addActionListener(new ActionListener(){
 
 			@Override

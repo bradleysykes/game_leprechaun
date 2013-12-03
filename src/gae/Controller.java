@@ -208,4 +208,11 @@ public class Controller implements Constants{
 		myGUI.dispose();
 	}
 
+	public void exit() {
+		if(canSave()){
+			this.save();
+		}
+		myGUI.dispose();
+	}
+
 }
