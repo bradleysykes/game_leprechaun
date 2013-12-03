@@ -23,6 +23,7 @@ import sun.nio.cs.ext.JIS_X_0201.Encoder;
 import data.GameElements;
 import data.encoder.SaveHandler;
 import engine.GameViewer;
+import model.GameMap;
 import model.Player;
 import model.stats.Stat;
 import model.unit.Unit;
@@ -180,6 +181,17 @@ public class Controller implements Constants{
 			}
 		}
 		return units;
+	}
+	
+	public GameMap getMap() {
+		GameMap map = null;
+		for(EditPanel p:myPanels) {
+			map = p.getMap();
+			if (map!=null) {
+				return map;
+			}
+		}
+		return null;
 	}
 
 	public void displayFile() {

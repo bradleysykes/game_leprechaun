@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import data.GameElements;
+import model.GameMap;
 import model.Player;
 import model.stats.Stat;
 import model.unit.Unit;
@@ -90,9 +91,13 @@ public abstract class EditPanel extends JPanel implements Constants {
 		return null;
 	}
 
+	public GameMap getMap() {
+		// Default is to return null
+		return null;
+	}
+
 	public void displayFile(File file) {
 		// default is to do nothing
-		
 	}
 
 	public void closeMap() {
