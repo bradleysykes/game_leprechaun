@@ -14,7 +14,6 @@ public class Spawn extends Ability {
 	public void useAbility() {
 		myTargetUnit.setPlayer(myUnit.getPlayer());
 		myTargetUnit.setCurrentTile(myUnit.getMap().getNearestValidTile(myUnit));
-		
 	}
 
 	@Override
