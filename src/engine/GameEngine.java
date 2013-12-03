@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.swing.BorderFactory;
 
 import data.GameElements;
+import engine.listeners.ViewOffsetListener;
 import jgame.JGColor;
 import jgame.platform.JGEngine;
 import model.GameMap;
@@ -31,6 +32,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private Player myCurrentPlayer;
 	private MouseObject myMouseObject;
 	private GameViewer myGameViewer;
+	private ViewOffsetListener myViewListener;
 	private File mySourceFile;
 	
 	public GameEngine(GameViewer gv) {
@@ -53,6 +55,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myMouseObject = new MouseObject(this);
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myModel = new Model(this);
+		myViewListener = new ViewOffsetListener(this);
 	}
 	
 	public Model getModel() {
@@ -60,6 +63,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	}
 	
 	public void doFrame() {
+		//myViewListener.setOffset();
 		this.moveObjects();
 		this.checkCollision(MOUSE_COL_ID, 2+8);
 	}

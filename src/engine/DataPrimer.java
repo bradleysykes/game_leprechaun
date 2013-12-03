@@ -27,7 +27,7 @@ public class DataPrimer {
 			xmlFile = gameEngine.getSourceFile();
 		}
 		else{
-			xmlFile = new File("src/data/resources/savedState.xml");
+			xmlFile = new File("src/data/resources/dylanTest.xml");
 		}
 		System.out.println("Loading from file "+xmlFile.getAbsolutePath());
 		loadGame(xmlFile);
