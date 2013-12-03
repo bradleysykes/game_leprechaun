@@ -91,7 +91,6 @@ public abstract class EditPanel extends JPanel implements Constants {
 		return null;
 	}
 
-
 	public GameMap getMap() {
 		// Default is to return null
 		return null;
@@ -99,6 +98,10 @@ public abstract class EditPanel extends JPanel implements Constants {
 
 	public void displayFile(File file) {
 		// default is to do nothing
+	}
+
+	public void closeMap() {
+		// TODO Auto-generated method stub
 		
 	}
 }

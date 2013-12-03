@@ -11,6 +11,7 @@ import javax.swing.JToolBar;
 public class EditGUI extends JFrame implements Constants {
 	public EditGUI(){
 		Controller controller = new Controller();
+		controller.setGUI(this);
 		this.setLayout(new BorderLayout());
 		this.add(new Workspace(controller),BorderLayout.CENTER);
 		this.setPreferredSize(EDITGUI_INITIAL_SIZE);
