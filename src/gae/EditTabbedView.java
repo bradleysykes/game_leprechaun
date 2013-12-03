@@ -25,6 +25,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JToolBar;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import model.unit.Unit;
 import data.GameElements;
@@ -34,6 +36,7 @@ public class EditTabbedView extends JTabbedPane {
 	
 	private Map<String,BoardList> myTabContents = new HashMap<String,BoardList>();
 	private PackageClassFinder myFinder;
+	private int mySelectedIndex = this.getSelectedIndex();
 	
 	public EditTabbedView(String[] tabs, Controller controller){
 		myFinder = new PackageClassFinder();

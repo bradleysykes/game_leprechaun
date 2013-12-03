@@ -2,6 +2,7 @@ package gae.panels;
 
 import gae.Constants;
 import gae.Controller;
+import gae.EditTabbedView;
 import gae.GUIMap;
 import gae.PackageClassFinder;
 import gae.listeners.MapPopupListener;
@@ -12,12 +13,21 @@ import gae.viewitems.ViewItem;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
+import java.util.Scanner;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 
 import data.GameElements;
 import model.GameMap;
@@ -31,6 +41,7 @@ public class MapPanel extends EditPanel {
 	
 	private GUIMap myMapView;
 	private PackageClassFinder myFinder;
+	private JTabbedPane myTabbedView;
 
 	public MapPanel(Controller controller){
 		super(controller);
@@ -41,17 +52,78 @@ public class MapPanel extends EditPanel {
 	}
 	@Override
 	public void createMap(List<String> dimensions){
-		int width = Integer.parseInt(dimensions.get(0));
-		int height = Integer.parseInt(dimensions.get(1));
-		myMapView = new GUIMap(width, height, this.getWidth(), this.getHeight());
+		int mapWidth = Integer.parseInt(dimensions.get(0));
+		int mapHeight = Integer.parseInt(dimensions.get(1));
+		myMapView = new GUIMap(mapWidth, mapHeight, this.getWidth(), this.getHeight());
 		myMapView.setPopup(new MapPopupMenu(myController,myMapView));
-		this.add(myMapView, BorderLayout.CENTER);
+		myTabbedView = new JTabbedPane();
+		myTabbedView.addTab("Map",myMapView);
+		myTabbedView.addMouseListener(new MouseAdapter(){
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)&&myTabbedView.getSelectedIndex()!=0){
+					myTabbedView.remove(myTabbedView.getSelectedComponent());
+				}
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		this.add(myTabbedView);
 		this.revalidate();
 		}
 	
 	public void removeBoardObject(BoardListViewItem item){
 		myMapView.removeObjects(item.getPrefix(),item.getMapObject().colid);
 		System.out.println("hah");
+	}
+	@Override
+	public void closeMap(){
+		myMapView.destroy();
+		this.revalidate();
+	}
+	
+	@Override
+	public void displayFile(File file){
+		if(myTabbedView.getTabCount()<2){
+			JTextArea fileView = new JTextArea();
+			fileView.setEditable(false);
+			try {
+				Scanner in = new Scanner(new FileReader(file.getAbsolutePath()));
+				while(in.hasNextLine()){
+					fileView.append(in.nextLine()+"\n");
+				}
+				in.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			JScrollPane scrollPane = new JScrollPane(fileView);
+			myTabbedView.addTab("Game File", scrollPane);
+		}
+		myTabbedView.setSelectedIndex(myTabbedView.getTabCount()-1);
 	}
 	
 //	public void setDefaultTiles(){
@@ -87,5 +159,10 @@ public class MapPanel extends EditPanel {
 	@Override
 	public String getTitle() {
 		return MAP_PANEL_TITLE;
+	}
+	
+	@Override
+	public GameMap getMap() {
+		return myMapView.getModelMap();
 	}
 }
