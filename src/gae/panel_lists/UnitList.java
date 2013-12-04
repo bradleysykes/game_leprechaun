@@ -35,7 +35,7 @@ public class UnitList extends BoardList {
 	 */
 	@Override
 	public String getListType() {
-		return "Unit";
+		return "Units";
 	}
 	
 	@Override

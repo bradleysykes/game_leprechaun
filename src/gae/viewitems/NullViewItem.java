@@ -68,11 +68,6 @@ public class NullViewItem extends BoardListViewItem {
 		return "";
 	}
 
-	@Override
-	public List<Stat> getDefaults() {
-		return this.myDefaults;
-	}
-
 	public Object getModelObject() {
 		// TODO Auto-generated method stub
 		return null;

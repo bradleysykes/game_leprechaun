@@ -92,11 +92,6 @@ public class TileViewItem extends BoardListViewItem {
 	protected String getMapPrefix() {
 		return "a"+myName+this.hashCode();
 	}
-
-	@Override
-	public List<Stat> getDefaults() {
-		return myDefaults;
-	}
 	
 	public Object getModelObject() {
 		return myTile;

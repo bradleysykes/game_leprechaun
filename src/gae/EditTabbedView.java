@@ -4,6 +4,7 @@ import gae.buttons.CreateCustomButton;
 import gae.listeners.DeselectListener;
 import gae.panel_lists.BoardList;
 import gae.panel_lists.ConditionList;
+import gae.panel_lists.ResourceList;
 import gae.panel_lists.TileList;
 import gae.panel_lists.UnitList;
 
@@ -38,15 +39,13 @@ public class EditTabbedView extends JTabbedPane {
 	private PackageClassFinder myFinder;
 	private int mySelectedIndex = this.getSelectedIndex();
 	
-	public EditTabbedView(String[] tabs, Controller controller){
-		myFinder = new PackageClassFinder();
-		myTabContents.put("Units", populateList(new UnitList(controller)));
-		myTabContents.put("Tiles", populateList(new TileList(controller)));
-		myTabContents.put("Conditions", populateList(new ConditionList(controller)));
+	public EditTabbedView(BoardList[] tabs, Controller controller){
+		for(BoardList tab:tabs){
+			myTabContents.put(tab.getListType(), tab);
+		}
 		// create a panel for each list that contains a toolbar and list to
 		//display viewitems. 
-		for(String tab : myTabContents.keySet()){
-			BoardList list = myTabContents.get(tab);
+		for(BoardList list : myTabContents.values()){
 			JPanel panel = new JPanel(new BorderLayout());
 			JToolBar tool = new JToolBar("Board Objectsj");
 			CreateCustomButton button = new CreateCustomButton(list);
@@ -57,17 +56,8 @@ public class EditTabbedView extends JTabbedPane {
 			panel.add(list, BorderLayout.CENTER);
 			panel.add(tool, BorderLayout.PAGE_START);
 			JScrollPane scroll = new JScrollPane(panel);
-			this.addTab(tab, scroll);
+			this.addTab(list.getListType(), scroll);
 		}
-	}
-	
-	public BoardList populateList(BoardList list){
-//		for(Class c:getClasses(list.getPackageName())){
-//			BoardListItem item = (BoardListItem) Reflection.createInstance(c.getName());
-//			list.addNewItem(item);
-//		}
-//		return list;
-		return list;
 	}
 	
 	
