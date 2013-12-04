@@ -42,8 +42,8 @@ public class GameTileObject extends JGObject implements EngineConstants{
 		return myTile;
 	}
 
-	public void toggleIsHighlighted() {
-		isHighlighted = !isHighlighted;
+	public void setHighlighted(boolean highlighted) {
+		isHighlighted = highlighted;
 	}
 
 	public boolean isHighlighted() {
@@ -56,6 +56,7 @@ public class GameTileObject extends JGObject implements EngineConstants{
 		if (other.colid == MOUSE_COL_ID && myEngine.getMouseButton(1)) {
 			myEngine.clearMouseButton(1);
 			System.out.println("tile hit");
+			System.out.println(isHighlighted());
 			if (this.isHighlighted()) { 
 				myEngine.getModel().useAbility(myTile);
 				myEngine.removeHighlights();

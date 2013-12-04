@@ -9,7 +9,7 @@ import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
 import engine.GameEngine;
-
+import engine.listeners.AbilityListListener;
 import model.Abilities;
 import model.Ability;
 import model.stats.Stat;
@@ -22,6 +22,7 @@ public class AbilityListArea extends JPanel {
 	private Abilities myAbilities;
 	private JComboBox<String> myComboBox;
 	private boolean myStatus = false;
+	private AbilityListListener myListener;
 
 	public AbilityListArea(GameEngine ge) {
 		myEngine = ge;
@@ -45,21 +46,31 @@ public class AbilityListArea extends JPanel {
 //				}
 //			}
 //		});
-		//myComboBox.addItemListener(new AbilityListListener());
+		myListener = new AbilityListListener(this);
+		myComboBox.addItemListener(myListener);
 		
+	}
+	
+	public void setAbilitySelection(String abilityName) {
+		Ability ability = (Ability) myAbilities.getStat(abilityName);
+		myEngine.getModel().setAbility(ability);
 	}
 	
 	public void clear() {
 		myAbilities = null;
+		myListener.setActive(false);
 		myComboBox.removeAllItems();
+		myListener.setActive(true);
 	}
 
 	public void refreshAbilities(StatCollection a) {
+		myListener.setActive(false);
 		myComboBox.removeAllItems();
 		for (Stat s : a.getStats()) {
 			myComboBox.addItem(s.getName());
 		}
 		myComboBox.revalidate();
+		myListener.setActive(true);
 	}
 
 	public void setUnit(Unit unit) {

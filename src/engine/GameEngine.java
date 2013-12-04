@@ -106,16 +106,18 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		System.out.println("there are "+tileList.size()+" tiles in the list");
 		for (Tile tile : tileList) {
 			new TileHighlightObject(tile, this);
-			myTileObjectMap.get(tile).toggleIsHighlighted();
+			myTileObjectMap.get(tile).setHighlighted(true);
+			System.out.println(myTileObjectMap.get(tile).isHighlighted());
 		}
 		System.out.println("Tiles highlighted");
 	}
 	
 	public void removeHighlights() {
 		for (Tile tile : myTileObjectMap.keySet()) {
-			if (myTileObjectMap.get(tile).isHighlighted()) myTileObjectMap.get(tile).toggleIsHighlighted();
+			if (myTileObjectMap.get(tile).isHighlighted()) myTileObjectMap.get(tile).setHighlighted(false);
 		}
 		removeObjects("zhighlight", TileHighlightObject.getCollisionID()); //not a typo it actually is "zhighlight"
+		System.out.println("highlights removed");
 	}
 	
 	public static int getViewerWidth() {
