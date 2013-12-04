@@ -31,7 +31,10 @@ public class Stat implements ModelConstants {
 	}
 	
 	public Double getValue(){
-		return myValue;
+		if(myValue == null)			// Stat will never return null value.
+			return DEFAULT_DOUBLE;
+		else
+			return myValue;
 	}
 
 	public void setValue(Double val){

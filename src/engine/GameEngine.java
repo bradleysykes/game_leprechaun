@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.swing.BorderFactory;
 
 import data.GameElements;
+import engine.listeners.ViewOffsetListener;
 import jgame.JGColor;
 import jgame.platform.JGEngine;
 import model.GameMap;
@@ -24,13 +25,13 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private GameManager myGameManager;
 	private Model myModel;
 	private GameLoader myGameLoader;
+	private List<Player> myPlayers;
 	private ArrayList<Unit> myUnits;
 	private GameMap myGameMap;
 	private Map<Tile, GameTileObject> myTileObjectMap;
-	private ArrayList<Player> myPlayers;
-	private Player myCurrentPlayer;
 	private MouseObject myMouseObject;
 	private GameViewer myGameViewer;
+	private ViewOffsetListener myViewListener;
 	private File mySourceFile;
 	
 	public GameEngine(GameViewer gv) {
@@ -53,6 +54,8 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myMouseObject = new MouseObject(this);
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myModel = new Model(this);
+		myViewListener = new ViewOffsetListener(this);
+		myGameManager = new GameManager(this);
 	}
 	
 	public Model getModel() {
@@ -60,24 +63,9 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	}
 	
 	public void doFrame() {
+		//myViewListener.setOffset();
 		this.moveObjects();
 		this.checkCollision(MOUSE_COL_ID, 2+8);
-	}
-	
-	public void nextPlayer() {
-		
-	}
-	
-	public Player getCurrentPlayer() {
-		return myCurrentPlayer;
-	}
-	
-	public ArrayList<Player> getPlayers() {
-		return myPlayers;
-	}
-	
-	public void setPlayers(Collection<Player> players) {
-		myPlayers = (ArrayList<Player>) players;
 	}
 	
 	public void initializeState(GameElements gameElements) {
@@ -102,16 +90,18 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		System.out.println("there are "+tileList.size()+" tiles in the list");
 		for (Tile tile : tileList) {
 			new TileHighlightObject(tile, this);
-			myTileObjectMap.get(tile).toggleIsHighlighted();
+			myTileObjectMap.get(tile).setHighlighted(true);
+			System.out.println(myTileObjectMap.get(tile).isHighlighted());
 		}
 		System.out.println("Tiles highlighted");
 	}
 	
 	public void removeHighlights() {
 		for (Tile tile : myTileObjectMap.keySet()) {
-			if (myTileObjectMap.get(tile).isHighlighted()) myTileObjectMap.get(tile).toggleIsHighlighted();
+			if (myTileObjectMap.get(tile).isHighlighted()) myTileObjectMap.get(tile).setHighlighted(false);
 		}
 		removeObjects("zhighlight", TileHighlightObject.getCollisionID()); //not a typo it actually is "zhighlight"
+		System.out.println("highlights removed");
 	}
 	
 	public static int getViewerWidth() {
@@ -124,6 +114,14 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	
 	public GameTileObject getGameTile(Tile tile){
 		return myTileObjectMap.get(tile);
+	}
+	
+	public void setPlayers(Collection<Player> players) {
+		myPlayers = (List<Player>) players;
+	}
+	
+	public List<Player> getPlayers() {
+		return myPlayers;
 	}
 	
 	public void setSelectedUnit(Unit u){
@@ -147,6 +145,10 @@ public class GameEngine extends JGEngine implements EngineConstants {
 
 	public File getSourceFile() {
 		return mySourceFile;
+	}
+	
+	public GameManager getGameManager() {
+		return myGameManager;
 	}
 	
 }

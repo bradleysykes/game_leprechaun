@@ -98,5 +98,19 @@ public class StatCollection extends Stat {
 	public void setValue(Double d) {
 		// do nothing		
 	}
+	
+	public StatCollection copy(){
+		StatCollection toReturn = new StatCollection(myName,myID,myReferenceType);
+		for(Stat s : this.getStats()){
+			if(s.getValue()==null){
+				StatCollection sc = (StatCollection) s;
+				toReturn.addStat(sc.copy());
+			}
+			else{
+				toReturn.addStat(new Stat(s.getName(),s.getValue()));
+			}
+		}
+		return toReturn;
+	}
 
 }

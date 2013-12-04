@@ -810,8 +810,6 @@
         </Player>
     </Players>
     <Units>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <Unit id="Zombie|0">
             <UnitPlayer id="Default Player Name"/>
             <UnitTile x="20" y="20"/>
@@ -857,7 +855,6 @@
         <Unit id="Zombie|0">
             <UnitPlayer id="Default Player Name"/>
             <UnitTile x="20" y="20"/>
-=======
         <Unit id="Bob|0">
             <UnitPlayer id="Default Player Name"/>
             <UnitTile x="4" y="2"/>

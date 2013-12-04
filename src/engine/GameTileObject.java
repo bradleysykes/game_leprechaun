@@ -1,8 +1,10 @@
 package engine;
 
-import java.util.List;
+import java.util.*;
 
+import engine.gui.AbilityListArea;
 import engine.gui.UnitListArea;
+import engine.gui.UnitStatusArea;
 import model.tile.Tile;
 import model.unit.Unit;
 import jgame.JGObject;
@@ -40,8 +42,8 @@ public class GameTileObject extends JGObject implements EngineConstants{
 		return myTile;
 	}
 
-	public void toggleIsHighlighted() {
-		isHighlighted = !isHighlighted;
+	public void setHighlighted(boolean highlighted) {
+		isHighlighted = highlighted;
 	}
 
 	public boolean isHighlighted() {
@@ -50,16 +52,33 @@ public class GameTileObject extends JGObject implements EngineConstants{
 
 	@Override
 	public void hit(JGObject other){
-		System.out.println("Tile hit");
-		if (other.colid == MOUSE_COL_ID) {
+		//System.out.println("Tile hit");
+		if (other.colid == MOUSE_COL_ID && myEngine.getMouseButton(1)) {
+			myEngine.clearMouseButton(1);
+			System.out.println("tile hit");
+			System.out.println(isHighlighted());
 			if (this.isHighlighted()) { 
 				myEngine.getModel().useAbility(myTile);
 				myEngine.removeHighlights();
 				return;
 			}
+			
 			List<Unit> unitList = myTile.getUnits();
+			List<Unit> selectableUnitList = new ArrayList<Unit>();
+			for (Unit unit : unitList) {
+				if (myEngine.getGameManager().getCurrentPlayer().equals(unit.getPlayer())) {
+					selectableUnitList.add(unit);
+				}
+			}
+			for (Unit unit : unitList) {
+				System.out.println(unit.getID());
+			}
+			AbilityListArea abilityListArea = (AbilityListArea) GameViewer.getActionPanel().getAbilityListArea();
+			abilityListArea.clear();
+			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
+			unitStatusArea.setStatusText("");
 			UnitListArea unitListArea = (UnitListArea) GameViewer.getActionPanel().getUnitListArea();
-			unitListArea.loadUnitList(unitList);
+			unitListArea.loadUnitList(selectableUnitList);
 		}
 	}
 

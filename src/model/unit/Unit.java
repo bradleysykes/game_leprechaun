@@ -6,6 +6,7 @@ import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
+import model.Resources;
 import model.stats.Stat;
 import model.stats.StatCollection;
 import model.tile.Tile;
@@ -25,6 +26,8 @@ public class Unit extends StatCollection implements ModelConstants {
 		super("Unit",id);
 		this.addStat(new Attributes());
 		this.addStat(new Abilities(this));
+		// Resources object to track cost of the unit
+		this.addStat(new Resources());
 		myPlayer = player;
 		myCurrentTile = t;
 		myMap = t.getMap();
@@ -58,10 +61,6 @@ public class Unit extends StatCollection implements ModelConstants {
 		return myCurrentTile;
 	}
 	
-	public void useAbility(String ability){
-		//this.getThing(ability).prepAbility();
-	}
-	
 	public boolean equals(Unit other){
 		return (this.getID().equals(other.getID()) && myPlayer.equals(other.getPlayer()));
 	}
@@ -71,6 +70,8 @@ public class Unit extends StatCollection implements ModelConstants {
 			Ability a = (Ability) s;
 			a.refresh();
 		}
+		Attributes a = (Attributes) this.getStatCollection("Attributes");
+		a.refresh();
 	}
 	
 }
