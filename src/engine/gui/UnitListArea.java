@@ -30,7 +30,7 @@ public class UnitListArea extends JPanel {
 		
 		myListModel = new DefaultListModel<String>();
 		
-		myUnitList = new JList();
+		myUnitList = new JList(myListModel);
 		myUnitList.addListSelectionListener(new UnitListSelectionListener(this));
 		myUnitList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		myUnitList.setLayoutOrientation(JList.VERTICAL);

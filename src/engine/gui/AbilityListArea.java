@@ -20,36 +20,43 @@ public class AbilityListArea extends JPanel {
 
 	private GameEngine myEngine;
 	private Abilities myAbilities;
-	private JComboBox<String> myComboBoxModel;
+	private JComboBox<String> myComboBox;
 	private boolean myStatus = false;
 
 	public AbilityListArea(GameEngine ge) {
 		myEngine = ge;
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-		myComboBoxModel = new JComboBox<String>();
-		myComboBoxModel.addActionListener(new ActionListener(){
+		myComboBox = new JComboBox<String>();
+		this.add(new Label("Abilities:"));
+		this.add(myComboBox);
+		myComboBox.addActionListener(new ActionListener(){
+			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if(myStatus){
-					System.out.println(myComboBoxModel.getSelectedItem().toString());
-					Ability ability = (Ability) myAbilities.getStat(myComboBoxModel.getSelectedItem().toString());
+					System.out.println(myComboBox.getSelectedItem().toString());
+					Ability ability = (Ability) myAbilities.getStat(myComboBox.getSelectedItem().toString());
 					myEngine.getModel().setAbility(ability);
 				}
 				else{		// Bug with first click. Should be a better solution.
-					myStatus = true;
+					//myStatus = true;
 				}
 			}
 		});
-		this.add(new Label("Abilities:"));
-		this.add(myComboBoxModel);
+		
+	}
+	
+	public void clear() {
+		myAbilities = null;
+		myComboBox.removeAllItems();
 	}
 
 	public void refreshAbilities(StatCollection a) {
-		myComboBoxModel.removeAllItems();
+		myComboBox.removeAllItems();
 		for (Stat s : a.getStats()) {
-			myComboBoxModel.addItem(s.getName());
+			myComboBox.addItem(s.getName());
 		}
-		myComboBoxModel.revalidate();
+		myComboBox.revalidate();
 	}
 
 	public void setUnit(Unit unit) {

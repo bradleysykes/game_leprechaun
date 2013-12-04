@@ -29,9 +29,9 @@ public class GameUnitObject extends JGObject implements EngineConstants{
 	
 	@Override
 	public void hit(JGObject other){
-		if(other.colid == MOUSE_COL_ID){
-			myEngine.setSelectedUnit(myUnit);
-		}
+//		if(other.colid == MOUSE_COL_ID){
+//			myEngine.setSelectedUnit(myUnit);
+//		}
 	}
 	
 	

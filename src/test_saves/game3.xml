@@ -876,10 +876,10 @@
     <Conditions/>
     <ImageMap>
         <tileImages>
-            <image id="Name me!|0" src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\default_unit.png"/>
+            <image id="Name me!|0" src="C:\Users\Dylan\cs308\oogasalad_MISSINGNO\src\gae\resources\default_unit.png"/>
         </tileImages>
         <unitImages>
-            <image id="Plains|0" src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\rock.jpg"/>
+            <image id="Plains|0" src="C:\Users\Dylan\cs308\oogasalad_MISSINGNO\src\gae\resources\rock.jpg"/>
         </unitImages>
     </ImageMap>
 </GameElements>
