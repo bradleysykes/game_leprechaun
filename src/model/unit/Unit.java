@@ -71,6 +71,8 @@ public class Unit extends StatCollection implements ModelConstants {
 			Ability a = (Ability) s;
 			a.refresh();
 		}
+		Attributes a = (Attributes) this.getStatCollection("Attributes");
+		a.refresh();
 	}
 	
 }
