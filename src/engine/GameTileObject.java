@@ -2,7 +2,9 @@ package engine;
 
 import java.util.List;
 
+import engine.gui.AbilityListArea;
 import engine.gui.UnitListArea;
+import engine.gui.UnitStatusArea;
 import model.tile.Tile;
 import model.unit.Unit;
 import jgame.JGObject;
@@ -50,14 +52,24 @@ public class GameTileObject extends JGObject implements EngineConstants{
 
 	@Override
 	public void hit(JGObject other){
-		System.out.println("Tile hit");
-		if (other.colid == MOUSE_COL_ID) {
+		//System.out.println("Tile hit");
+		if (other.colid == MOUSE_COL_ID && myEngine.getMouseButton(1)) {
+			myEngine.clearMouseButton(1);
+			System.out.println("tile hit");
 			if (this.isHighlighted()) { 
 				myEngine.getModel().useAbility(myTile);
 				myEngine.removeHighlights();
 				return;
 			}
+			
 			List<Unit> unitList = myTile.getUnits();
+			for (Unit unit : unitList) {
+				System.out.println(unit.getID());
+			}
+			AbilityListArea abilityListArea = (AbilityListArea) GameViewer.getActionPanel().getAbilityListArea();
+			abilityListArea.clear();
+			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
+			unitStatusArea.setStatusText("");
 			UnitListArea unitListArea = (UnitListArea) GameViewer.getActionPanel().getUnitListArea();
 			unitListArea.loadUnitList(unitList);
 		}

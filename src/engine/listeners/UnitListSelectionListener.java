@@ -26,23 +26,24 @@ public class UnitListSelectionListener implements ListSelectionListener {
 		myUnitListArea = unitListArea;
 	}
 
-//	public void valueChanged(ListSelectionEvent e) {
-//		JList<String> list = (JList<String>) e.getSource();
-//		int index = list.getSelectedIndex();
-//		if (index != -1) {
-//			Unit selectedUnit = myUnitListArea.getUnits().get(index);
-//			
-//			AbilityListArea abilityListArea = (AbilityListArea) GameViewer.getActionPanel().getAbilityListArea();
-//			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
-//			
-//			StatCollection abilitiesStatCollection = selectedUnit.getStatCollection("Abilities");
-//			populateAbilityListArea(abilitiesStatCollection, abilityListArea);
-//			abilityListArea.setUnit(selectedUnit);
-//			
-//			StatCollection attributesStatCollection = selectedUnit.getStatCollection("Attributes");
-//			setUnitStatusArea(attributesStatCollection, unitStatusArea, selectedUnit);
-//		}
-//	}
+	public void valueChanged(ListSelectionEvent e) {
+		JList<String> list = (JList<String>) e.getSource();
+		int index = list.getSelectedIndex();
+		if (index != -1) {
+			Unit selectedUnit = myUnitListArea.getUnits().get(index);
+			
+			AbilityListArea abilityListArea = (AbilityListArea) GameViewer.getActionPanel().getAbilityListArea();
+			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
+			
+			StatCollection abilitiesStatCollection = selectedUnit.getStatCollection("Abilities");
+			//abilityListArea.refreshAbilities(abilitiesStatCollection);
+			//populateAbilityListArea(abilitiesStatCollection, abilityListArea);
+			abilityListArea.setUnit(selectedUnit);
+			
+			StatCollection attributesStatCollection = selectedUnit.getStatCollection("Attributes");
+			setUnitStatusArea(attributesStatCollection, unitStatusArea, selectedUnit);
+		}
+	}
 	
 //	private void populateAbilityListArea(StatCollection collection, AbilityListArea abilityListArea) {
 //		Abilities abilities = (Abilities) collection;
@@ -63,12 +64,6 @@ public class UnitListSelectionListener implements ListSelectionListener {
 			attributeReport += stat.getName() + ":" + " " + stat.getValue() + "\n";
 		}
 		unitStatusArea.setStatusText(attributeReport);
-	}
-
-	@Override
-	public void valueChanged(ListSelectionEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
