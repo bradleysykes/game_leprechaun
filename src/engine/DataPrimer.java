@@ -21,8 +21,15 @@ public class DataPrimer {
 		myFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		myFileChooser.setFileFilter(filter);
 		File xmlFile = selectAndParseXML();*/
-		//File xmlFile = new File("src/data/resources/TestFile.xml");	
-		File xmlFile = new File("src/data/resources/savedState.xml");
+		//File xmlFile = new File("src/data/resources/TestFile.xml");
+		File xmlFile;
+		if(gameEngine.getSourceFile()!=null){
+			xmlFile = gameEngine.getSourceFile();
+		}
+		else{
+			xmlFile = new File("src/test_saves/game3.xml");
+		}
+		System.out.println("Loading from file "+xmlFile.getAbsolutePath());
 		loadGame(xmlFile);
 	}
 	

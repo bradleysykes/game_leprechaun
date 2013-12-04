@@ -26,6 +26,8 @@ public class ConditionDecoder extends Decoder {
             String unitID = ((Element)conditionList.item(i)).getAttribute(UNIT_ID);
             String playerID = ((Element)conditionList.item(i)).getAttribute(PLAYER_ID);
             Player player = myDataManager.getPlayer(playerID);
+            
+            //user reflection to create the coressponding condition
             myConditions.add((Condition)Reflection.createInstance(className, unitID, player));
         }    
     }

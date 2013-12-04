@@ -14,7 +14,7 @@ public class NextTurnButton extends JButton {
 	public NextTurnButton(GameEngine ge) {
 		super(myName);
 		setPreferredSize(mySize);
-		addActionListener(new NextTurnListener(ge.getModel()));
+		addActionListener(new NextTurnListener(ge.getModel(),ge));
 		this.setAlignmentX(0.5f);
 	}
 	

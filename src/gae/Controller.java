@@ -10,23 +10,38 @@ import gae.viewitems.TaskViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import sun.nio.cs.ext.JIS_X_0201.Encoder;
 import data.GameElements;
 import data.encoder.SaveHandler;
+import engine.GameViewer;
+import model.GameMap;
 import model.Player;
 import model.stats.Stat;
 import model.unit.Unit;
 
-public class Controller {
+public class Controller implements Constants{
 	
 	private List<EditPanel> myPanels = new ArrayList<EditPanel>();
 	private List<Player> myPlayers = new ArrayList<Player>();
+	private String myGameFilePath;
+	private GameElements myCurrentState;
+	private JFrame myGUI;
 	
 	public Controller(){
 		
+	}
+	
+	public void setGUI(JFrame gui){
+		myGUI = gui;
 	}
 	
 	public void init(){
@@ -103,18 +118,40 @@ public class Controller {
 		}
 	}
 	
-	public void getAndSaveState() {
-		GameElements currentState = new GameElements();
+	public void save(){
+		getAndSaveState(myGameFilePath);
+	}
+	
+	public boolean canSave(){
+		myCurrentState = new GameElements();
 		for(EditPanel p:myPanels){
-			currentState = p.giveStateObjects(currentState);
-			if (currentState == null) {
-				// Popup dialog->not saved
-				return;
+			myCurrentState = p.giveStateObjects(myCurrentState);
+			if (myCurrentState == null) {
+				return false;
 			}
 		}
-		
-		SaveHandler saveHandler = new SaveHandler(currentState, "./src/data/resources/savedState.xml");
+		return true;
+	}
+	
+	public void getAndSaveState(String filePath) {
+		if(!canSave()){
+			// Popup dialog->not saved
+			JOptionPane alertPane = new JOptionPane("Please complete all tasks before saving.");
+			JDialog dialog = alertPane.createDialog(null,"Save alert");
+			dialog.setLocation(10, 10);
+			dialog.setVisible(true);
+			return;
+		}
+		if(filePath==""){
+			int returnVal = FILE_CHOOSER.showOpenDialog(myPanels.get(0));
+		    myGameFilePath = FILE_CHOOSER.getSelectedFile().getAbsolutePath();
+		}
+		else{
+			myGameFilePath = filePath;
+		}
+	    SaveHandler saveHandler = new SaveHandler(myCurrentState, myGameFilePath);
 		saveHandler.doSave();
+		
 		// create data object to send GameElements object to that.
 	}
 
@@ -144,6 +181,38 @@ public class Controller {
 			}
 		}
 		return units;
+	}
+	
+	public GameMap getMap() {
+		GameMap map = null;
+		for(EditPanel p:myPanels) {
+			map = p.getMap();
+			if (map!=null) {
+				return map;
+			}
+		}
+		return null;
+	}
+
+	public void displayFile() {
+		for(EditPanel p:myPanels){
+			p.displayFile(new File(myGameFilePath));
+		}
+	}
+
+	public void closeMap() {
+		for(EditPanel p:myPanels){
+			p.closeMap();
+		}
+		new GameViewer().launch(myGameFilePath);
+		myGUI.dispose();
+	}
+
+	public void exit() {
+		if(canSave()){
+			this.save();
+		}
+		myGUI.dispose();
 	}
 
 }
