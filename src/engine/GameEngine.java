@@ -25,11 +25,10 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private GameManager myGameManager;
 	private Model myModel;
 	private GameLoader myGameLoader;
+	private List<Player> myPlayers;
 	private ArrayList<Unit> myUnits;
 	private GameMap myGameMap;
 	private Map<Tile, GameTileObject> myTileObjectMap;
-	private ArrayList<Player> myPlayers;
-	private Player myCurrentPlayer;
 	private MouseObject myMouseObject;
 	private GameViewer myGameViewer;
 	private ViewOffsetListener myViewListener;
@@ -56,6 +55,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myModel = new Model(this);
 		myViewListener = new ViewOffsetListener(this);
+		myGameManager = new GameManager(this);
 	}
 	
 	public Model getModel() {
@@ -66,22 +66,6 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		//myViewListener.setOffset();
 		this.moveObjects();
 		this.checkCollision(MOUSE_COL_ID, 2+8);
-	}
-	
-	public void nextPlayer() {
-		
-	}
-	
-	public Player getCurrentPlayer() {
-		return myCurrentPlayer;
-	}
-	
-	public ArrayList<Player> getPlayers() {
-		return myPlayers;
-	}
-	
-	public void setPlayers(Collection<Player> players) {
-		myPlayers = (ArrayList<Player>) players;
 	}
 	
 	public void initializeState(GameElements gameElements) {
@@ -130,6 +114,14 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		return myTileObjectMap.get(tile);
 	}
 	
+	public void setPlayers(Collection<Player> players) {
+		myPlayers = (List<Player>) players;
+	}
+	
+	public List<Player> getPlayers() {
+		return myPlayers;
+	}
+	
 	public void setSelectedUnit(Unit u){
 		myGameViewer.setSelectedUnit(u);
 	}
@@ -151,6 +143,10 @@ public class GameEngine extends JGEngine implements EngineConstants {
 
 	public File getSourceFile() {
 		return mySourceFile;
+	}
+	
+	public GameManager getGameManager() {
+		return myGameManager;
 	}
 	
 }

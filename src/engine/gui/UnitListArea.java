@@ -19,7 +19,7 @@ import model.unit.Unit;
 public class UnitListArea extends JPanel {
 	
 	private JList myUnitList;
-	private DefaultListModel<String> myListModel;
+	private DefaultListModel myListModel;
 	private JScrollPane myScrollPane;
 	private List<Unit> myUnits;
 	private final Dimension mySize = new Dimension(150, 70);
@@ -28,7 +28,7 @@ public class UnitListArea extends JPanel {
 	public UnitListArea() {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		
-		myListModel = new DefaultListModel<String>();
+		myListModel = new DefaultListModel();
 		
 		myUnitList = new JList(myListModel);
 		myUnitList.addListSelectionListener(new UnitListSelectionListener(this));
