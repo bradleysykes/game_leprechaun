@@ -1,6 +1,6 @@
 package engine;
 
-import java.util.List;
+import java.util.*;
 
 import engine.gui.AbilityListArea;
 import engine.gui.UnitListArea;
@@ -64,6 +64,12 @@ public class GameTileObject extends JGObject implements EngineConstants{
 			}
 			
 			List<Unit> unitList = myTile.getUnits();
+			List<Unit> selectableUnitList = new ArrayList<Unit>();
+			for (Unit unit : unitList) {
+				if (myEngine.getGameManager().getCurrentPlayer().equals(unit.getPlayer())) {
+					selectableUnitList.add(unit);
+				}
+			}
 			for (Unit unit : unitList) {
 				System.out.println(unit.getID());
 			}
@@ -72,7 +78,7 @@ public class GameTileObject extends JGObject implements EngineConstants{
 			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
 			unitStatusArea.setStatusText("");
 			UnitListArea unitListArea = (UnitListArea) GameViewer.getActionPanel().getUnitListArea();
-			unitListArea.loadUnitList(unitList);
+			unitListArea.loadUnitList(selectableUnitList);
 		}
 	}
 
