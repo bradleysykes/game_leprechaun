@@ -47,7 +47,7 @@ public class GameLoader  {
 		myGameEngine.setPlayers(allPlayers);
 		myGameEngine.initializeTiles(allTiles);
 		myGameEngine.initializeUnits(allUnits);
-
+		myGameEngine.initializeGameManager();
 	}
 
 }

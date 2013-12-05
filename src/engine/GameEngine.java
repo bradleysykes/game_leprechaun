@@ -55,7 +55,6 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myModel = new Model(this);
 		myViewListener = new ViewOffsetListener(this);
-		//myGameManager = new GameManager(this);
 	}
 	
 	public Model getModel() {
@@ -81,9 +80,29 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	}
 	
 	public void initializeUnits(Collection<Unit> units) {
+		myUnits = new ArrayList<Unit>();
 		for (Unit unit : units) {
-			GameUnitObject newUnit = new GameUnitObject(unit,this);
+			new GameUnitObject(unit,this);
+			myUnits.add(unit);
 		}
+	}
+	
+	public void initializeGameManager() {
+		myGameManager = new GameManager(this);
+	}
+			
+	
+	public void highlightCurrentPlayer() {
+		for (Unit unit : myUnits) {
+			if (unit.getPlayer().equals(myGameManager.getCurrentPlayer())) {
+				Tile tile = unit.getCurrentTile();
+				new PlayerHighlightObject(tile, this);
+			}
+		}
+	}
+	
+	public void removeCurrentPlayerHighlights() {
+		removeObjects(EngineConstants.PlayerHighlightName, EngineConstants.PlayerHighlight_COL_ID);
 	}
 	
 	public void highlightTiles(List<Tile> tileList) {
@@ -96,11 +115,11 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		System.out.println("Tiles highlighted");
 	}
 	
-	public void removeHighlights() {
+	public void removeTileHighlights() {
 		for (Tile tile : myTileObjectMap.keySet()) {
 			if (myTileObjectMap.get(tile).isHighlighted()) myTileObjectMap.get(tile).setHighlighted(false);
 		}
-		removeObjects("zhighlight", TileHighlightObject.getCollisionID()); //not a typo it actually is "zhighlight"
+		removeObjects(EngineConstants.TileHighlightName, EngineConstants.TileHighlight_COL_ID);
 		System.out.println("highlights removed");
 	}
 	

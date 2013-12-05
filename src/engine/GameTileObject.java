@@ -59,27 +59,27 @@ public class GameTileObject extends JGObject implements EngineConstants{
 			System.out.println(isHighlighted());
 			if (this.isHighlighted()) { 
 				myEngine.getModel().useAbility(myTile);
-				myEngine.removeHighlights();
+				myEngine.removeTileHighlights();
 				return;
 			}
-			myEngine.removeHighlights();
+			myEngine.removeTileHighlights();
 			
 			List<Unit> unitList = myTile.getUnits();
-//			List<Unit> selectableUnitList = new ArrayList<Unit>();
-//			for (Unit unit : unitList) {
-//				if (myEngine.getGameManager().getCurrentPlayer().equals(unit.getPlayer())) {
-//					selectableUnitList.add(unit);
-//				}
-//			}
-//			for (Unit unit : unitList) {
-//				System.out.println(unit.getID());
-//			}
+			List<Unit> selectableUnitList = new ArrayList<Unit>();
+			for (Unit unit : unitList) {
+				if (myEngine.getGameManager().getCurrentPlayer().equals(unit.getPlayer())) {
+					selectableUnitList.add(unit);
+				}
+			}
+			for (Unit unit : unitList) {
+				System.out.println(unit.getID());
+			}
 			AbilityListArea abilityListArea = (AbilityListArea) GameViewer.getActionPanel().getAbilityListArea();
 			abilityListArea.clear();
 			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
 			unitStatusArea.setStatusText("");
 			UnitListArea unitListArea = (UnitListArea) GameViewer.getActionPanel().getUnitListArea();
-			unitListArea.loadUnitList(unitList);
+			unitListArea.loadUnitList(selectableUnitList);
 		}
 	}
 
