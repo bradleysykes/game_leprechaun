@@ -50,7 +50,6 @@ public class GameLoader  {
 		myGameEngine.initializeTiles(allTiles);
 		myGameEngine.initializeUnits(allUnits);
 		myGameEngine.initializeGameManager();
-
 	}
 	
 	/**
