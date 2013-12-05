@@ -27,7 +27,7 @@ public class DataPrimer {
 			xmlFile = gameEngine.getSourceFile();
 		}
 		else{
-			xmlFile = new File("src/test_saves/game3.xml");
+			xmlFile = new File("src/data/resources/testtest.xml");
 		}
 		System.out.println("Loading from file "+xmlFile.getAbsolutePath());
 		loadGame(xmlFile);
