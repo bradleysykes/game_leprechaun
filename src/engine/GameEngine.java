@@ -55,7 +55,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myModel = new Model(this);
 		myViewListener = new ViewOffsetListener(this);
-		myGameManager = new GameManager(this);
+		//myGameManager = new GameManager(this);
 	}
 	
 	public Model getModel() {
