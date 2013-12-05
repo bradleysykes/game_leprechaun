@@ -18,7 +18,7 @@ public class BudgetMove extends Move {
 	public void useAbility(){
 		double cost = canMoveToTile(myTargetTile);
 		if(cost>0){
-			myUnit.setCurrentTile(myTargetTile);
+			//myUnit.setCurrentTile(myTargetTile);
 			myUnit.getStatCollection("Attributes").setStat("Stamina", 
 					myUnit.getStatCollection("Attributes").getValue("Stamina")-cost);
 		}
