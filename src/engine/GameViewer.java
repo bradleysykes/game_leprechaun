@@ -50,9 +50,6 @@ public class GameViewer extends JFrame {
 		JPanel controlPane = new JPanel();
 		controlPane.setLayout(new FlowLayout());
 		controlPane.setPreferredSize(new Dimension(1000, 250));
-//		makeButton("Next Turn", controlPane);
-//		makeTextBox(controlPane,10,30);
-//		makeTextBox(controlPane,10,20);
 		
 		//make and add various components to controlPane
 		myActionPanel = new ActionPanel(myGameEngine);
@@ -65,29 +62,10 @@ public class GameViewer extends JFrame {
 		// Add Panels to Container
 		containerPane.add(myGameEngine);
 		containerPane.add(controlPane);
-		//setLayout(new BoxLayout(containerPane, BoxLayout.PAGE_AXIS));
 		
-		// Pack and show Container
-		//setResizable(false);
 		pack();
 		setVisible(true);
 	}
-	
-	public void makeTextBox(Container container, int height, int width) {
-		JTextArea textArea = new JTextArea(height,width);
-		JScrollPane textPane = new JScrollPane(textArea);
-    	textArea.setBackground(Color.black);
-    	textArea.setForeground(Color.green);
-    	textArea.setEditable(false);
-		//textPane.setSize(new Dimension(500, 500));
-    	container.add(textPane);
-	}
-	
-	public void makeButton(String buttonName, Container container) {
-        JButton button = new JButton(buttonName);
-        button.setAlignmentX(Component.CENTER_ALIGNMENT);
-        container.add(button);
-    }
 	
 	public GameEngine getGameEngine() {
 		return myGameEngine;

@@ -35,26 +35,12 @@ public class UnitListSelectionListener implements ListSelectionListener {
 			AbilityListArea abilityListArea = (AbilityListArea) GameViewer.getActionPanel().getAbilityListArea();
 			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
 			
-			StatCollection abilitiesStatCollection = selectedUnit.getStatCollection("Abilities");
-			//abilityListArea.refreshAbilities(abilitiesStatCollection);
-			//populateAbilityListArea(abilitiesStatCollection, abilityListArea);
 			abilityListArea.setUnit(selectedUnit);
 			
 			StatCollection attributesStatCollection = selectedUnit.getStatCollection("Attributes");
 			setUnitStatusArea(attributesStatCollection, unitStatusArea, selectedUnit);
 		}
 	}
-	
-//	private void populateAbilityListArea(StatCollection collection, AbilityListArea abilityListArea) {
-//		Abilities abilities = (Abilities) collection;
-//		List<Stat> abilityStatList = abilities.getStats();
-//		List<Ability> abilityList = new ArrayList<Ability>();
-//		for (Stat stat : abilityStatList) {
-//			abilityList.add((Ability) stat);
-//		}
-//		
-//		abilityListArea.refreshAbilities(abilityList);
-//	}
 	
 	private void setUnitStatusArea(StatCollection collection, UnitStatusArea unitStatusArea, Unit unit) {
 		Attributes attributes = (Attributes) collection;
