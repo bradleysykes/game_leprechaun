@@ -11,8 +11,13 @@ public class Terrain extends StatCollection implements ModelConstants {
 		this.addStat(new Stat("Magnitude",DEFAULT_DOUBLE));
 	}
 	
+	public Terrain(Terrain stored){
+		super("Terrain");
+		this.setID(stored.getID());
+		this.addStat(new Stat("Magnitude",stored.getValue("Magnitude")));
+	}
+	
 	public double modifyUnit(Unit unit){
-		//return unit.getAttributes.alter(myAttributeImpacted,myMagnitude);
 		return (Double) this.getValue("Magnitude");
 	}
 

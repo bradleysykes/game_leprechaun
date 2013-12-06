@@ -104,6 +104,7 @@ public class StatCollection extends Stat {
 	 * and all stats it contains are new objects, independent of the original.
 	 * @return copied StatCollection
 	 */
+	@Override
 	public StatCollection copy(){
 		StatCollection toReturn = new StatCollection(myName,myID,myReferenceType);
 		for(Stat s : this.getStats()){
