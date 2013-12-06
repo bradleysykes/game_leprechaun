@@ -2,7 +2,9 @@ package data.decoder;
 
 import java.util.HashMap;
 import java.util.Map;
+import model.Player;
 import model.tile.Tile;
+import model.unit.Unit;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
@@ -27,7 +29,7 @@ public class ImageResourcesDecoder extends Decoder {
         return imageMap;
     }
 
-    private Map<Tile, String> convertImageMap (Map<String, String> map) {
+    private Map<Tile, String> convertTileImageMap (Map<String, String> map) {
         Map<Tile, String> imageMap = new HashMap<Tile, String>();
         for(String id : map.keySet()) {
             Tile key = myDataManager.getTile(id);
@@ -36,11 +38,20 @@ public class ImageResourcesDecoder extends Decoder {
         return imageMap;
     }
     
+    private Map<Unit, String> convertUnitImageMap (Map<String, String> map) {
+        Map<Unit, String> imageMap = new HashMap<Unit, String>();
+        for (String id : map.keySet()) {
+           Unit key = myDataManager.getUnit(id);
+           imageMap.put(key, map.get(id));
+        }
+        return null;
+    }
+    
     @Override
     public void decodeData (Element root) {
         Element imageRoot = (Element)root.getElementsByTagName(IMAGE_MAP).item(0);
-        myDataManager.setTileImageMap(convertImageMap(getImageMap(imageRoot, TILE_IMAGES)));
-        myDataManager.setUnitImageMap(getImageMap(imageRoot, UNIT_IMAGES));
+        myDataManager.setTileImageMap(convertTileImageMap(getImageMap(imageRoot, TILE_IMAGES)));
+        myDataManager.setUnitImageMap(convertUnitImageMap(getImageMap(imageRoot, UNIT_IMAGES)));
     }
 }
 
