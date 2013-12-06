@@ -133,13 +133,18 @@ public class Controller implements Constants{
 		return true;
 	}
 	
+	public void alertSave(){
+		JOptionPane alertPane = new JOptionPane("Please complete all tasks before saving.");
+		JDialog dialog = alertPane.createDialog(null,"Save alert");
+		dialog.setLocation(10, 10);
+		dialog.setVisible(true);
+	}
+	
 	public void getAndSaveState(String filePath) {
 		if(!canSave()){
 			// Popup dialog->not saved
-			JOptionPane alertPane = new JOptionPane("Please complete all tasks before saving.");
-			JDialog dialog = alertPane.createDialog(null,"Save alert");
-			dialog.setLocation(10, 10);
-			dialog.setVisible(true);
+		
+			alertSave();
 			return;
 		}
 		if(filePath==""){
@@ -211,6 +216,7 @@ public class Controller implements Constants{
 	public void exit() {
 		if(canSave()){
 			this.save();
+			System.out.println("Game saved to " + myGameFilePath +".");
 		}
 		myGUI.dispose();
 	}

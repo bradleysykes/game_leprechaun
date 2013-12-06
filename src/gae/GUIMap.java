@@ -77,11 +77,40 @@ public class GUIMap extends JGEngine implements Constants{
 		myObjects.put(object.getPoint(), object);
 	}
 	
-	public void checkMouse(){
+
+	private int getActualYCoordinate(int coordinate){
+		if(0<coordinate&&coordinate<pfHeight()*.125){
+			return coordinate;
+		}
+		if(pfHeight()*.125<=coordinate&&coordinate<=pfHeight()*.375){
+			System.out.println(coordinate);
+			return 100+(coordinate-100)*4;
+		}
+		else{
+			return 400+coordinate;
+	}
+}
+	
+	private int getActualXCoordinate(int coordinate){
+		if(0<coordinate&&coordinate<pfWidth()*.125){
+			return coordinate;
+		}
+		if(pfWidth()*.125<=coordinate&&coordinate<=pfWidth()*.375){
+			System.out.println(coordinate);
+			return 100+(coordinate-100)*4;
+		}
+		else{
+			return 400+coordinate;
+		}
+	}
+	
+	private void checkMouse(){
 		if(this.getKey(256)&&!(myMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE).isOccupied())){
 			PlayerViewItem active = BoardBuffer.getActivePlayer();
 			BoardListViewItem toPlace = BoardBuffer.retrieve();
-			toPlace.clickOnBoard(this, (double) xOffset, (double) yOffset, active);
+			toPlace.clickOnBoard(this, getActualXCoordinate(getMouseX()), getActualYCoordinate(getMouseY()), active);
+			System.out.println("Clicked at "+getMouseX()+", "+getMouseY()+".");
+			System.out.println("Object placed at "+getActualXCoordinate(getMouseX())+", "+getActualYCoordinate(getMouseY())+".");
 			this.revalidate();
 			this.clearKey(256);
 		}

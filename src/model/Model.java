@@ -39,6 +39,7 @@ public class Model {
 	}
 	
 	public void refresh(){
+		// CHECK FOR WINNER
 		for(Player p : myPlayers){
 			p.refresh();
 		}

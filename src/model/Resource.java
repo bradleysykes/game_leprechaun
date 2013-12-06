@@ -5,9 +5,6 @@ import model.stats.StatCollection;
 
 public class Resource extends StatCollection {
 
-	//private final String[] RESOURCE_STAT_NAMES = {"Name", "Amount", "Harvest Rate"};
-
-    //change name to id?
 	public Resource(String id, double amount, double harvestRate){
 		super("Resource",id);
 		this.addStat(new Stat("Amount",amount));
