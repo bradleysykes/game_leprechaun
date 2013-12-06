@@ -16,10 +16,10 @@ import model.unit.Unit;
 
 public class ActionPanel extends JPanel {
 	
-	private Dimension mySize = new Dimension(250, 230);
+	private Dimension mySize = new Dimension(300, 230);
 	private JButton myNextTurnButton;
 	private JPanel myUnitListArea;
-	private AbilityListArea myAbilityListArea;
+	private JohnTestAbilityArea myAbilityListArea;
 	private GameEngine myGameEngine;
 	
 	public ActionPanel(GameEngine ge) {
@@ -32,7 +32,7 @@ public class ActionPanel extends JPanel {
 		setBorder(titledBorder);
 		
 		myUnitListArea = new UnitListArea();
-		myAbilityListArea = new AbilityListArea(myGameEngine);
+		myAbilityListArea = new JohnTestAbilityArea(myGameEngine);
 		
 		add(new ButtonArea(myGameEngine));
 		add(myUnitListArea);
