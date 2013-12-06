@@ -60,4 +60,9 @@ public class PlayerPanel extends EditPanel {
 		// TODO Auto-generated method stub
 		return PLAYER_PANEL_TITLE;
 	}
+
+	@Override
+	public void loadData(GameElements elements) {
+		
+	}
 }
