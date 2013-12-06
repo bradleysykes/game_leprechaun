@@ -46,7 +46,7 @@ public class BudgetMove extends Move {
 	public double pathFinder(int currentX, int currentY, int destX, int destY, GameMap map, double budget){
 		if(currentX == destX && currentY == destY)
 			return budget;
-		if(budget <= 0)
+		if(budget < 0)
 			return -1;
 		for(int r = -1; r <= 1; r++){
 			for(int c = -1; c <= 1; c++){
