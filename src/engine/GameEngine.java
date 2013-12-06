@@ -36,7 +36,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private File mySourceFile;
 	
 	public GameEngine(GameViewer gv) {
-		initEngineComponent(600, 400);
+		initEngineComponent(myViewerWidth, myViewerHeight);
 		myGameViewer = gv;
 	}
 	
@@ -72,6 +72,8 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	public void initializeState(GameElements gameElements) {
 		myGameLoader = new GameLoader(gameElements, this);
 		myGameLoader.loadGame();
+		for(Player p : myPlayers)
+			myModel.addPlayer(p);
 	}
 	
 	public void initializeTiles(Collection<Tile> tiles) {
