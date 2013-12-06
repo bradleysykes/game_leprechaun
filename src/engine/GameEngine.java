@@ -109,12 +109,10 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	}
 	
 	public void highlightTiles(List<Tile> tileList) {
-		System.out.println("there are "+tileList.size()+" tiles in the list");
 		for (Tile tile : tileList) {
 			new TileHighlightObject(tile, this);
 			myTileObjectMap.get(tile).setHighlighted(true);
 		}
-		System.out.println("Tiles highlighted");
 	}
 	
 	public void removeTileHighlights() {
@@ -122,7 +120,6 @@ public class GameEngine extends JGEngine implements EngineConstants {
 			if (myTileObjectMap.get(tile).isHighlighted()) myTileObjectMap.get(tile).setHighlighted(false);
 		}
 		removeObjects(EngineConstants.TileHighlightName, EngineConstants.TileHighlight_COL_ID);
-		System.out.println("highlights removed");
 	}
 	
 	public void destroyUnit(Unit unit) {

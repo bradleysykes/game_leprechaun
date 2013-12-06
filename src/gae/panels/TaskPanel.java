@@ -57,4 +57,9 @@ public class TaskPanel extends EditPanel {
 		// TODO Auto-generated method stub
 		return TASK_PANEL_TITLE;
 	}
+
+	@Override
+	public void loadData(GameElements elements) {
+		
+	}
 }

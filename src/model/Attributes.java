@@ -22,6 +22,7 @@ public class Attributes extends StatCollection {
 		for(String name : ATTRIBUTE_NAMES){
 			this.addStat(new Stat(name));
 		}
+		this.setAttDef();
 	}
 	
 	public Attributes(Attributes stored){
@@ -29,12 +30,17 @@ public class Attributes extends StatCollection {
 		for(Stat s : stored.getStats()){
 			this.addStat(s.copy());
 		}
+		this.setAttDef();
 	}
 	
 	public void refresh(){
+		this.setAttDef();
+		this.setStat("Stamina",this.getValue("Base Stamina"));
+	}
+	
+	private void setAttDef(){
 		myAttack = this.getValue("Base Attack");
 		myDefense = this.getValue("Base Defense");
-		this.setStat("Stamina",this.getValue("Base Stamina"));
 	}
 	
 	public void setAttack(double attack){
@@ -52,5 +58,10 @@ public class Attributes extends StatCollection {
 	public Double getDefense(){
 		return myDefense;
 	}	
+	
+	@Override
+	public void actionOnSet(){
+		this.setAttDef();
+	}
 
 }

@@ -7,6 +7,8 @@ import gae.viewitems.ResourceViewItem;
 import java.io.File;
 import java.util.List;
 
+import data.GameElements;
+
 import model.Resource;
 import model.stats.Stat;
 
@@ -35,6 +37,11 @@ public class ResourceList extends BoardList {
 	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,
 			File f, int counter) {
 		return new ResourceViewItem(inputData,name,f);
+	}
+	
+	@Override 
+	public void loadData(GameElements elements){
+			
 	}
 
 }
