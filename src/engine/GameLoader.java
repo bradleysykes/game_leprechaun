@@ -38,8 +38,9 @@ public class GameLoader  {
 			myGameEngine.defineImage(id, "-", 0,  "/" + myTileImages.get(id),"-");
 		}
 		
-		for (Unit unit : myUnitImages.keySet()) {
-			System.out.println("Loading: "+ id + " "+myUnitImages.get(id));
+		for (Unit u : myUnitImages.keySet()) {
+		    String id  = u.getID();
+			System.out.println("Loading: "+id + " "+myUnitImages.get(id));
 			myGameEngine.defineImage(id, "-", 0, "/" + myUnitImages.get(id),"-");
 		}
 

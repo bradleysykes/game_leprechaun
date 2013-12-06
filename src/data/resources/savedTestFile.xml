@@ -1,6 +1,6 @@
 <GameElements>
     <Map x_dimension="3" y_dimension="3">
-        <Tile x="0" y="0">
+        <Tile id="idyaysdf" x="0" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -11,7 +11,7 @@
                 <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
             </Resources>
         </Tile>
-        <Tile x="0" y="1">
+        <Tile id="idyaysdf" x="0" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -22,7 +22,7 @@
                 <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
             </Resources>
         </Tile>
-        <Tile x="0" y="2">
+        <Tile id="idyaysdf" x="0" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -33,7 +33,7 @@
                 <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
             </Resources>
         </Tile>
-        <Tile x="1" y="0">
+        <Tile id="idyaysdf" x="1" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -44,7 +44,7 @@
                 <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
             </Resources>
         </Tile>
-        <Tile x="1" y="1">
+        <Tile id="idyaysdf" x="1" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -55,7 +55,7 @@
                 <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
             </Resources>
         </Tile>
-        <Tile x="1" y="2">
+        <Tile id="idyaysdf" x="1" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -66,7 +66,7 @@
                 <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
             </Resources>
         </Tile>
-        <Tile x="2" y="0">
+        <Tile id="idyaysdf" x="2" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -77,7 +77,7 @@
                 <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
             </Resources>
         </Tile>
-        <Tile x="2" y="1">
+        <Tile id="idyaysdf" x="2" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -88,7 +88,7 @@
                 <Resource amount="50.0" harvest_rate="2.0" name="gas"/>
             </Resources>
         </Tile>
-        <Tile x="2" y="2">
+        <Tile id="idyaysdf" x="2" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -115,7 +115,7 @@
         </Player>
     </Players>
     <Units>
-        <Unit id="soldier">
+        <Unit id="unit1">
             <UnitPlayer id="Default Player Name"/>
             <UnitTile x="2" y="1"/>
             <Abilities/>
@@ -129,7 +129,7 @@
                 <Stat name="Range" value="10.0"/>
             </Attributes>
         </Unit>
-        <Unit id="soldier">
+        <Unit id="unit2">
             <UnitPlayer id="Default Player Name"/>
             <UnitTile x="1" y="0"/>
             <Abilities/>
@@ -150,10 +150,10 @@
     </Conditions>
     <ImageMap>
         <tileImages>
-            <image id="Plains" src="test_icon_image.jpg"/>
+            <image id="" src="src/test2"/>
         </tileImages>
         <unitImages>
-            <image id="soldier" src="soldier.png"/>
+            <image id="unit1" src="src/test1"/>
         </unitImages>
     </ImageMap>
 </GameElements>

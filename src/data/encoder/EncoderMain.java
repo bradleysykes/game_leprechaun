@@ -31,6 +31,7 @@ public class EncoderMain implements Elements {
         for(Tile tile : map.getAllTiles()) {
             tile.getStatCollection(RESOURCES).addStat(minerals);
             tile.getStatCollection(RESOURCES).addStat(gas);
+            tile.setID("idyaysdf");
         }
         currentState.setGameMap(map);
         
@@ -40,6 +41,7 @@ public class EncoderMain implements Elements {
         p1.getStatCollection(RESOURCES).addStat(new Resource("minerals", 500, 0));
         p1.getStatCollection(RESOURCES).addStat(new Resource("gas", 350, 0));
         Tile t1 = new Tile(2,1,map);
+        
         Unit unit1 = new Unit("unit1",p1, t1);
         p1.addUnit(unit1);
         
@@ -62,10 +64,10 @@ public class EncoderMain implements Elements {
         currentState.setConditions(conditionList);
         
         //add imageMap to currentState
-        HashMap<String, String> unitImageMap = new HashMap<String, String>();
-        unitImageMap.put("test1", "src/test1");
-        HashMap<String, String> tileImageMap = new HashMap<String, String>();
-        tileImageMap.put("test1", "src/test2");
+        HashMap<Unit, String> unitImageMap = new HashMap<Unit, String>();
+        unitImageMap.put(new Unit("unit1", p1, t2), "src/test1");
+        HashMap<Tile, String> tileImageMap = new HashMap<Tile, String>();
+        tileImageMap.put(new Tile(0, 0, map), "src/test2");
         //populate the imageMaps... then
         currentState.setUnitImageMap(unitImageMap);
         currentState.setTileImageMap(tileImageMap);

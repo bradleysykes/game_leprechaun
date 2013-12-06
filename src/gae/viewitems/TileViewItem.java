@@ -64,7 +64,8 @@ public class TileViewItem extends BoardListViewItem {
 		//new JGObject(such and such);
 		myMapObject = new MapObject(myMapObjectPrefix,x*TILE_SIZE,y*TILE_SIZE,"tile", this);
 		Tile tile = new Tile((int) x,(int) y, map.getModelMap());
-		tile.getStatCollection("Terrain").setID(myTile.getStatCollection("Terrain").getID());
+		String uniqueTileID = myTile.getStatCollection("Terrain").getID() + "|" + tile.hashCode();
+		tile.setID(uniqueTileID);
 		map.getModelMap().setTile((int)x, (int)y, tile);
 	}
 	
