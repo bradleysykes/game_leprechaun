@@ -58,5 +58,10 @@ public class Attributes extends StatCollection {
 	public Double getDefense(){
 		return myDefense;
 	}	
+	
+	@Override
+	public void actionOnSet(){
+		this.setAttDef();
+	}
 
 }
