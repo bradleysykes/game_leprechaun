@@ -1,6 +1,7 @@
 package gae;
 
 import java.awt.Point;
+import java.io.File;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +23,7 @@ import util.reflection.Reflection;
 import model.GameMap;
 import model.Player;
 import model.tile.Tile;
+import model.unit.Unit;
 import jgame.JGColor;
 import jgame.JGFont;
 import jgame.JGObject;
@@ -53,8 +55,10 @@ public class GUIMap extends JGEngine implements Constants{
 		Map<Tile,String> tileImages = elements.getTileImageMap();
 		Map<Unit,String> unitImages = elements.getUnitImageMap();
 		TileViewItem view;
+		int i = 1;
 		for(Tile tile:loadTiles){
-			view = new TileViewItem();
+			File tileImageFile = new File(tileImages.get(tile));
+			view = new TileViewItem(tile.getStats(),tile.getName(),tileImageFile,i);
 		}
 	}
 	
