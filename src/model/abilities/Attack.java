@@ -57,5 +57,10 @@ public class Attack extends Ability{
 		myGameEngine.highlightTiles(myUnit.getMap().getTilesInRadius
 				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile()));
 	}
+	
+	@Override
+	public Ability copy(Unit u){
+		return new Attack(u);
+	}
 
 }

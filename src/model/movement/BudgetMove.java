@@ -55,14 +55,18 @@ public class BudgetMove extends Move {
 					int newY = currentY+c;
 					if(!map.contains(newX, newY)) continue;
 					double cost = map.getTile(newX, newY).getValue("Passability");
-					if(cost == 0)
+					if(cost <= 0)
 						continue;
 					double check = pathFinder(newX,newY,destX,destY,map,budget-cost);
-					if(check>0)
+					if(check>=0)
 						return check;
 				}
 			}
 		}
 		return -1;
+	}
+	
+	public BudgetMove copy(Unit u){
+		return new BudgetMove(u);
 	}
 }

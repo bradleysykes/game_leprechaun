@@ -22,6 +22,10 @@ public abstract class Ability extends StatCollection {
 		myUnit = abilityUser;
 	}
 	
+	public void setUnit(Unit u){
+		myUnit = u;
+	}
+	
 	public abstract void useAbility();
 	
 	public void setTargetTile(Tile t){
@@ -37,4 +41,6 @@ public abstract class Ability extends StatCollection {
 	}
 
 	public abstract void requestEngineInput(GameEngine myGameEngine);
+	
+	public abstract Ability copy(Unit user);
 }

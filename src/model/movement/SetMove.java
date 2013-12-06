@@ -34,5 +34,10 @@ public class SetMove extends Move {
 	public List<Tile> getValidTiles() {
 		return myValidTiles;
 	}
+	
+	@Override
+	public SetMove copy(Unit u){
+		return new SetMove(u);
+	}
 
 }

@@ -42,7 +42,6 @@ public class UnitViewItem extends BoardListViewItem {
 	@Override
 	public void onClick(Controller c) {
 		//create on map
-
 	}
 
 	@Override

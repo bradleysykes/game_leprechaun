@@ -45,7 +45,7 @@ public class UnitListSelectionListener implements ListSelectionListener {
 	private void setUnitStatusArea(StatCollection collection, UnitStatusArea unitStatusArea, Unit unit) {
 		Attributes attributes = (Attributes) collection;
 		List<Stat> attributeStatList = attributes.getStats();
-		String attributeReport = unit.getID() + "\n";
+		String attributeReport = unit.getID().split("\\|")[0] + "\n";
 		for (Stat stat : attributeStatList) {
 			attributeReport += stat.getName() + ":" + " " + stat.getValue() + "\n";
 		}

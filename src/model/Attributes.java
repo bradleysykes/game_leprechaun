@@ -24,6 +24,13 @@ public class Attributes extends StatCollection {
 		}
 	}
 	
+	public Attributes(Attributes stored){
+		super("Attributes");
+		for(Stat s : stored.getStats()){
+			this.addStat(s.copy());
+		}
+	}
+	
 	public void refresh(){
 		myAttack = this.getValue("Base Attack");
 		myDefense = this.getValue("Base Defense");

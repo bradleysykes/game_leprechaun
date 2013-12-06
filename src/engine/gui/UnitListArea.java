@@ -50,7 +50,7 @@ public class UnitListArea extends JPanel {
 		myListModel.clear();
 		myUnits = unitList;
 		for (Unit unit : unitList) {
-			myListModel.addElement(unit.getID());
+			myListModel.addElement(unit.getID().split("\\|")[0]);
 		}
 	}
 	

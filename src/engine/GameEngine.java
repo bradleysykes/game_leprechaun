@@ -29,6 +29,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private ArrayList<Unit> myUnits;
 	private GameMap myGameMap;
 	private Map<Tile, GameTileObject> myTileObjectMap;
+	private Map<Unit, GameUnitObject> myUnitObjectMap;
 	private MouseObject myMouseObject;
 	private GameViewer myGameViewer;
 	private ViewOffsetListener myViewListener;
@@ -53,8 +54,9 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		setFrameRate(35, 1);
 		myMouseObject = new MouseObject(this);
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
+		myUnitObjectMap = new HashMap<Unit, GameUnitObject>();
 		myModel = new Model(this);
-		myViewListener = new ViewOffsetListener(this);
+		//myViewListener = new ViewOffsetListener(this);
 	}
 	
 	public Model getModel() {
@@ -82,7 +84,8 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	public void initializeUnits(Collection<Unit> units) {
 		myUnits = new ArrayList<Unit>();
 		for (Unit unit : units) {
-			new GameUnitObject(unit,this);
+			GameUnitObject newUnit = new GameUnitObject(unit,this);
+			myUnitObjectMap.put(unit, newUnit);
 			myUnits.add(unit);
 		}
 	}
@@ -120,6 +123,12 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		}
 		removeObjects(EngineConstants.TileHighlightName, EngineConstants.TileHighlight_COL_ID);
 		System.out.println("highlights removed");
+	}
+	
+	public void destroyUnit(Unit unit) {
+		removeObject(myUnitObjectMap.get(unit));
+		myUnits.remove(unit);
+		myUnitObjectMap.remove(unit);
 	}
 	
 	public static int getViewerWidth() {

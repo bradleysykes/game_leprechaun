@@ -29,5 +29,10 @@ public class Harvest extends Ability{
 		useAbility();
 		// Doesn't require outside input.
 	}
+	
+	@Override
+	public Harvest copy(Unit u){
+		return new Harvest(u);
+	}
 
 }

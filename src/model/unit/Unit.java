@@ -22,15 +22,25 @@ public class Unit extends StatCollection implements ModelConstants {
 	private Player myPlayer;
 	private Tile myCurrentTile;
 
-	public Unit(String id, Player player, Tile t) {
+	public Unit(String id, Player player, Tile tile) {
 		super("Unit",id);
+		myPlayer = player;
+		myCurrentTile = tile;
+		myMap = tile.getMap();
 		this.addStat(new Attributes());
 		this.addStat(new Abilities(this));
 		// Resources object to track cost of the unit
 		this.addStat(new Resources());
-		myPlayer = player;
+	}
+	
+	public Unit(Unit stored, Player p, Tile t){
+		super("Unit",stored.getID());
+		myPlayer = p;
 		myCurrentTile = t;
 		myMap = t.getMap();
+		this.addStat(new Attributes((Attributes) stored.getStatCollection("Attributes")));
+		this.addStat(new Abilities(this,(Abilities) stored.getStatCollection("Abilities")));
+		this.addStat(new Resources((Resources) stored.getStatCollection("Resources")));
 	}
 	
 	public void setMap(GameMap map){

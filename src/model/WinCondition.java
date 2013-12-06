@@ -1,6 +1,5 @@
 package model;
 
-import model.condition.Defeat;
 import model.stats.Stat;
 
 public class WinCondition extends Condition {
