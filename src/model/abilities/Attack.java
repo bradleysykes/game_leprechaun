@@ -54,9 +54,6 @@ public class Attack extends Ability{
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		List<Tile> myList = myUnit.getMap().getTilesInRadius
-				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile());
-		System.out.println("myList has: "+myList.size()+" tiles in it.");
 		myGameEngine.highlightTiles(myUnit.getMap().getTilesInRadius
 				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile()));
 	}
