@@ -1,6 +1,7 @@
 package gae;
 
 import java.awt.Point;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +16,7 @@ import gae.viewitems.ViewItem;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import data.GameElements;
 import data.encoder.MapEncoder;
 import util.reflection.Reflection;
 import model.GameMap;
@@ -37,11 +39,23 @@ public class GUIMap extends JGEngine implements Constants{
 	private int unitX = 0, unitY=0;
 	private Map<Point,MapObject> myObjects = new HashMap<Point,MapObject>();
 	
-	public GUIMap(int width, int height, int componentWidth, int componentHeight){
+	public GUIMap(int width, int height){
 		myWidth = width;
 		myHeight = height;
 		initEngineComponent(TILE_SIZE*myWidth,TILE_SIZE*myHeight);
 		myMap = new GameMap(width,height);
+	}
+	
+	public GUIMap(GameElements elements){
+		this(elements.getGameMap().getSizeX(),elements.getGameMap().getSizeY());
+		myMap = elements.getGameMap();
+		Collection<Tile> loadTiles = myMap.getAllTiles();
+		Map<Tile,String> tileImages = elements.getTileImageMap();
+		Map<Unit,String> unitImages = elements.getUnitImageMap();
+		TileViewItem view;
+		for(Tile tile:loadTiles){
+			view = new TileViewItem();
+		}
 	}
 	
 	public void setPopup(GAEPopupMenu popup){
@@ -172,6 +186,14 @@ public class GUIMap extends JGEngine implements Constants{
 
 	public GameMap getModelMap() {
 		return myMap;
+	}
+
+	public void loadMapObjects(GameElements elements) {
+		GameMap loadMap = elements.getGameMap();
+		TileViewItem view;
+		for(Tile tile:loadMap.getAllTiles()){
+			view = new TileViewItem();
+		}
 	}
 
 }
