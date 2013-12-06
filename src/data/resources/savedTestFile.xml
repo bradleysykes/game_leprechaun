@@ -150,10 +150,10 @@
     </Conditions>
     <ImageMap>
         <tileImages>
-            <image id="" src=""/>
+            <image id="" src="src/test2"/>
         </tileImages>
         <unitImages>
-            <image id="unit1" src=""/>
+            <image id="unit1" src="src/test1"/>
         </unitImages>
     </ImageMap>
 </GameElements>

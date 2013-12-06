@@ -1,6 +1,7 @@
 package data.encoder;
 
 import java.util.Map;
+import model.Player;
 import model.tile.Tile;
 import model.unit.Unit;
 import org.w3c.dom.Document;
@@ -36,7 +37,7 @@ public class ImageEncoder extends Encoder {
     private void appendUnitImages(Element imageMapElement) {
         Element unitImages = myXmlDocument.createElement(UNIT_IMAGES);
         for(Unit unit : myUnitImagesMap.keySet()) {
-            appendSingleUnitImage(unit.getID(), myUnitImagesMap, unitImages);
+            appendSingleUnitImage(unit, myUnitImagesMap, unitImages);
         }
         imageMapElement.appendChild(unitImages);
     }
@@ -44,22 +45,22 @@ public class ImageEncoder extends Encoder {
     private void appendTileImages(Element imageMapElement) {
         Element tileImages = myXmlDocument.createElement(TILE_IMAGES);
         for(Tile tile : myTileImagesMap.keySet()) {
-            appendSingleTileImage(tile.getID(), myTileImagesMap, tileImages);
+            appendSingleTileImage(tile, myTileImagesMap, tileImages);
         }
         imageMapElement.appendChild(tileImages);
     }
     
-    private void appendSingleTileImage (String id, Map<Tile, String> map, Element parent) {
+    private void appendSingleTileImage (Tile tile, Map<Tile, String> map, Element parent) {
         Element imageElement = myXmlDocument.createElement(IMAGE);
-        imageElement.setAttribute(ID,id);
-        imageElement.setAttribute(SRC,map.get(id));
+        imageElement.setAttribute(ID,tile.getID());
+        imageElement.setAttribute(SRC,map.get(tile));
         parent.appendChild(imageElement);
     }
     
-    private void appendSingleUnitImage(String id, Map<Unit, String> map, Element parent) {
+    private void appendSingleUnitImage(Unit unit, Map<Unit, String> map, Element parent) {
         Element imageElement = myXmlDocument.createElement(IMAGE);
-        imageElement.setAttribute(ID,id);
-        imageElement.setAttribute(SRC,map.get(id));
+        imageElement.setAttribute(ID,unit.getID());
+        imageElement.setAttribute(SRC,map.get(unit));
         parent.appendChild(imageElement);
     }
     
