@@ -39,7 +39,7 @@ public class ResourceViewItem extends BoardListViewItem {
 
 	@Override
 	public String getListMessage() {
-		return myResource.getName();
+		return myName;
 	}
 
 	@Override

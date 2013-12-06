@@ -77,11 +77,37 @@ public class GUIMap extends JGEngine implements Constants{
 		myObjects.put(object.getPoint(), object);
 	}
 	
-	public void checkMouse(){
+
+	private int getActualYCoordinate(int coordinate){
+		if(0<coordinate&&coordinate<pfHeight()*0.25){
+			return coordinate/2;
+		}
+		if(pfHeight()*0.25<=coordinate&&coordinate<=pfHeight()*0.75){
+			return 100+(coordinate-200);
+		}
+		else{
+			return coordinate;
+	}
+}
+	
+	private int getActualXCoordinate(int coordinate){
+		if(0<coordinate&&coordinate<pfWidth()*0.125){
+			return coordinate;
+		}
+		if(pfWidth()*0.125<=coordinate&&coordinate<=pfWidth()*(3/8)){
+			return 100+(coordinate-200);
+		}
+		else{
+			return 400+coordinate;
+		}
+	}
+	
+	private void checkMouse(){
 		if(this.getKey(256)&&!(myMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE).isOccupied())){
 			PlayerViewItem active = BoardBuffer.getActivePlayer();
 			BoardListViewItem toPlace = BoardBuffer.retrieve();
-			toPlace.clickOnBoard(this, (double) xOffset, (double) yOffset, active);
+			toPlace.clickOnBoard(this, getActualXCoordinate(getMouseX()), getActualYCoordinate(getMouseY()), active);
+			System.out.println("Object placed at "+getActualXCoordinate(xOffset)+", "+getActualYCoordinate(yOffset)+".");
 			this.revalidate();
 			this.clearKey(256);
 		}

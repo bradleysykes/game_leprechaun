@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 
 public class EditMenuBar extends JMenuBar implements Constants {
 	protected Controller myController;
@@ -25,6 +26,14 @@ public class EditMenuBar extends JMenuBar implements Constants {
 		JMenu fileMenu = new JMenu("File");
 		this.add(fileMenu);
 		JMenuItem saveAsItem = new JMenuItem("Save As");
+		saveAsItem.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				saveAs();
+			}
+			
+		});
 		JMenuItem exitItem = new JMenuItem("Exit");
 		exitItem.addActionListener(new ActionListener(){
 
