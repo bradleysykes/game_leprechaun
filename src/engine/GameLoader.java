@@ -30,16 +30,16 @@ public class GameLoader  {
 		Collection<Tile> allTiles = gameMap.getAllTiles();
 
 		Map<Tile, String> myTileImages = myGameElements.getTileImageMap();
-		Map<String, String> myUnitImages = myGameElements.getUnitImageMap();
+		Map<Unit, String> myUnitImages = myGameElements.getUnitImageMap();
 
-		for (Tile t : myTileImages.keySet()) {
-		    String id = t.getID();
+		for (Tile tile : myTileImages.keySet()) {
+		    String id = tile.getID();
 			System.out.println("Loading: "+ id + " "+myTileImages.get(id));
 			myGameEngine.defineImage(id, "-", 0,  "/" + myTileImages.get(id),"-");
 		}
 		
-		for (String id : myUnitImages.keySet()) {
-			System.out.println("Loading: "+id + " "+myUnitImages.get(id));
+		for (Unit unit : myUnitImages.keySet()) {
+			System.out.println("Loading: "+ id + " "+myUnitImages.get(id));
 			myGameEngine.defineImage(id, "-", 0, "/" + myUnitImages.get(id),"-");
 		}
 
