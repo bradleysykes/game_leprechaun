@@ -18,7 +18,14 @@ public class Spawn extends Ability {
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		//myGameEngine.requestStringFromList(myReferences);
+		myGameEngine.requestStringFromList(myReferences);
+	}
+	
+	@Override
+	public Spawn copy(Unit u){
+		Spawn toReturn = (Spawn) this.copy();
+		toReturn.setUnit(u);
+		return toReturn;
 	}
 
 }

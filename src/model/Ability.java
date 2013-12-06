@@ -10,7 +10,7 @@ public abstract class Ability extends StatCollection {
 	protected Unit myUnit;
 	protected Tile myTargetTile;
 	protected Unit myTargetUnit;
-	protected boolean myValid;
+	protected boolean myValid = true;
 
 	public Ability(String name, Unit abilityUser) {
 		super(name);
@@ -20,6 +20,10 @@ public abstract class Ability extends StatCollection {
 	public Ability(String name, Unit abilityUser, String referenceType){
 		super(name,"",referenceType);
 		myUnit = abilityUser;
+	}
+	
+	public void setUnit(Unit u){
+		myUnit = u;
 	}
 	
 	public abstract void useAbility();
@@ -37,4 +41,6 @@ public abstract class Ability extends StatCollection {
 	}
 
 	public abstract void requestEngineInput(GameEngine myGameEngine);
+	
+	public abstract Ability copy(Unit user);
 }

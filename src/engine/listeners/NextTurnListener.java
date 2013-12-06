@@ -28,18 +28,16 @@ public class NextTurnListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		System.out.println("Next turn for model");
-		PlayerStatusArea playerStatusArea = (PlayerStatusArea) GameViewer.getFeedbackPanel().getPlayerStatusArea();
-		Player currentPlayer = myGameEngine.getGameManager().getCurrentPlayer();
-		setPlayerStatusArea(currentPlayer, playerStatusArea);
-		
-		
-		//myModel.nextTurn();
+		myGameEngine.getGameManager().nextPlayer();
+		myModel.refresh();
 	}
 	
-	private void setPlayerStatusArea(Player player, PlayerStatusArea playerStatusArea) {
+	private void setPlayerStatusArea(Player player) {
 		
+		PlayerStatusArea playerStatusArea = (PlayerStatusArea) GameViewer.getFeedbackPanel().getPlayerStatusArea();
 		List<Stat> myResources = player.getStatCollection("Resources").getStats();
 		String statusReport = "";
+		statusReport += player.getID() + "\n";
 		for (Stat stat : myResources) {
 			String resourceName = stat.getName();
 			String resourceValue = stat.getField();

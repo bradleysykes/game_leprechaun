@@ -26,7 +26,8 @@ public class Abilities extends StatCollection{
 	public Abilities(Unit u, Abilities stored){
 		super("Abilities");
 		for(Stat s : stored.getStats()){
-			this.addStat(s.copy());
+			Ability a = (Ability) s;
+			this.addStat(a.copy(u));
 		}
 	}
 	

@@ -6,8 +6,6 @@ import engine.GameEngine;
 
 import model.Ability;
 import model.Attributes;
-import model.stats.StatCollection;
-import model.tile.Tile;
 import model.unit.Unit;
 
 /**
@@ -25,16 +23,16 @@ public class Attack extends Ability{
 
 	@Override
 	public void useAbility(){
-		System.out.println("attack used");
 		if(!myValid) return;
-		List<Unit> units = myTargetTile.getUnits();
+		List<Unit> units = this.myTargetTile.getUnits();
 		Unit myTarget = units.get(0);
 		for(Unit u : units){
 			if(u.getStatCollection("Attributes").getValue("Health") < 
 					myTarget.getStatCollection("Attributes").getValue("Health")){
 				myTarget = u;
 			}
-		}		
+		}
+		System.out.println("My name is "+this.myUnit.getID()+". My target's name is "+myTarget.getID()+".");
 		Attributes targetAttributes = (Attributes) myTarget.getStatCollection("Attributes");
 		Attributes unitAttributes = (Attributes) myUnit.getStatCollection("Attributes");
 		double enemyDefense = targetAttributes.getDefense();
@@ -43,6 +41,8 @@ public class Attack extends Ability{
 		double myDefense = unitAttributes.getDefense();
 		double myAttack = unitAttributes.getAttack();
 		double myHealth = unitAttributes.getValue("Health");
+		System.out.println(myDefense+" "+myAttack+" "+myHealth);
+		System.out.println(enemyDefense+" "+enemyAttack+" "+enemyHealth);
 		if (myAttack > enemyDefense)
 			enemyHealth = enemyHealth + enemyDefense - myAttack;
 		if (myDefense < enemyAttack)
@@ -54,11 +54,13 @@ public class Attack extends Ability{
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		List<Tile> myList = myUnit.getMap().getTilesInRadius
-				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile());
-		System.out.println("myList has: "+myList.size()+" tiles in it.");
 		myGameEngine.highlightTiles(myUnit.getMap().getTilesInRadius
 				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile()));
+	}
+	
+	@Override
+	public Ability copy(Unit u){
+		return new Attack(u);
 	}
 
 }

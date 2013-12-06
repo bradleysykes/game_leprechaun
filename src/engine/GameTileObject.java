@@ -14,7 +14,7 @@ public class GameTileObject extends JGObject implements EngineConstants{
 
 	private Tile myTile;
 	private static final int myCollisionID = 8;
-	private static final int mySize = 79;
+	private static final int mySize = 20;
 	private boolean isHighlighted = false;
 	private GameEngine myEngine;
 
@@ -52,11 +52,8 @@ public class GameTileObject extends JGObject implements EngineConstants{
 
 	@Override
 	public void hit(JGObject other){
-		//System.out.println("Tile hit");
 		if (other.colid == MOUSE_COL_ID && myEngine.getMouseButton(1)) {
 			myEngine.clearMouseButton(1);
-			System.out.println("tile hit");
-			System.out.println(isHighlighted());
 			if (this.isHighlighted()) { 
 				myEngine.getModel().useAbility(myTile);
 				myEngine.removeTileHighlights();
