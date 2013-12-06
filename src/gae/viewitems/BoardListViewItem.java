@@ -45,9 +45,7 @@ public abstract class BoardListViewItem extends ViewItem {
 			ImageTool.scaleAndOverwriteImage(myImage.getPath(), resizeDimensions,resizeDimensions);
 		}
 	}
-	
-	public abstract List<Stat> getDefaults();
-	
+		
 	protected abstract String getMapPrefix();
 
 	protected BoardListViewItem(String name){

@@ -59,9 +59,10 @@ public class GameTileObject extends JGObject implements EngineConstants{
 			System.out.println(isHighlighted());
 			if (this.isHighlighted()) { 
 				myEngine.getModel().useAbility(myTile);
-				myEngine.removeHighlights();
+				myEngine.removeTileHighlights();
 				return;
 			}
+			myEngine.removeTileHighlights();
 			
 			List<Unit> unitList = myTile.getUnits();
 			List<Unit> selectableUnitList = new ArrayList<Unit>();

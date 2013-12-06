@@ -1,6 +1,13 @@
 package gae;
 
+import java.awt.Point;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import gae.popup_menus.GAEPopupMenu;
+import gae.viewitems.BoardListViewItem;
+import gae.viewitems.MapObject;
 import gae.viewitems.NullViewItem;
 import gae.viewitems.PlayerViewItem;
 import gae.viewitems.TileViewItem;
@@ -28,6 +35,7 @@ public class GUIMap extends JGEngine implements Constants{
 	private int xOffset = 0, yOffset=0;
 	private int tileX = 0, tileY = 0;
 	private int unitX = 0, unitY=0;
+	private Map<Point,MapObject> myObjects = new HashMap<Point,MapObject>();
 	
 	public GUIMap(int width, int height, int componentWidth, int componentHeight){
 		myWidth = width;
@@ -65,16 +73,30 @@ public class GUIMap extends JGEngine implements Constants{
 		setPFSize(2,2);
 	}
 	
+	public void addObject(MapObject object){
+		myObjects.put(object.getPoint(), object);
+	}
+	
 	public void checkMouse(){
 		if(this.getKey(256)&&!(myMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE).isOccupied())){
 			PlayerViewItem active = BoardBuffer.getActivePlayer();
-			BoardBuffer.retrieve().clickOnBoard(this, (double) xOffset, (double) yOffset, active);
+			BoardListViewItem toPlace = BoardBuffer.retrieve();
+			toPlace.clickOnBoard(this, (double) xOffset, (double) yOffset, active);
 			this.revalidate();
 			this.clearKey(256);
 		}
 		if(this.getKey(KeyMouse3)){
 			//there is a unit on this tile, right click to display popup menu
 			myPopup.show(this,this.getMouseX(),this.getMouseY());
+			Point mousePoint = new Point(xOffset,yOffset);
+			for(Point p:myObjects.keySet()){
+				if(p.equals(mousePoint)){
+					
+					MapObject selectedObject = myObjects.get(p);
+					drawString("Object "+selectedObject.getName()+" selected",viewWidth()*0.25, 10, 0);
+					selectedObject.select();
+				}
+			}
 			myPopup.revalidate();
 			
 		}
