@@ -16,6 +16,7 @@ import data.Elements;
 import data.GameElements;
 import model.Condition;
 import model.Player;
+import model.tile.Tile;
 
 /**
  * 
@@ -106,6 +107,13 @@ public class DataManager extends GameElements implements Attributes, Elements {
     public Player getPlayer(String id) {
         for (Player p : myPlayers) {
             if (p.getID().equals(id)) return p;
+        }
+        return null;
+    }
+    
+    public Tile getTile(String id) {
+        for (Tile t : myGameMap.getAllTiles()) {
+            if (t.getID().equals(id)) return t;
         }
         return null;
     }
