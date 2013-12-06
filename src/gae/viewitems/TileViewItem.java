@@ -67,6 +67,7 @@ public class TileViewItem extends BoardListViewItem {
 		tile.getStatCollection("Terrain").setID(myTile.getStatCollection("Terrain").getID());
 		map.getModelMap().setTile((int)x, (int)y, tile);
 	}
+	
 	@Override
 	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player){
 		int xTile = (int) ((x-x%TILE_SIZE)/TILE_SIZE);

@@ -141,5 +141,9 @@ public abstract class BoardList extends JList implements Constants{
 		return null;
 	}
 
+	public void loadData(GameElements elements){
+		// do nothing
+	}
+
 		
 }

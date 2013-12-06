@@ -53,11 +53,13 @@ public class MapDecoder extends Decoder {
      * @return
      */
     private Tile processTile(Element tile) {
+        String id = getAttribute(ID, tile);
         int x = Integer.parseInt(getAttribute(X_COORD, tile));
         int y = Integer.parseInt(getAttribute(Y_COORD, tile));
         
         //create a new Tile with x,y informaiton
         Tile resultTile = new Tile(x, y, myGameMap);
+        resultTile.setID(id);
         
         //set attributes of tile(max_pop, passability).
         setStats(tile,resultTile);

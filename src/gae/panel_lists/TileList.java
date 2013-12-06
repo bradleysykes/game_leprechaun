@@ -64,14 +64,25 @@ public class TileList extends BoardList {
 		Object[] list = new Object[myModel.size()];
 		myModel.copyInto(list);
 		List<Tile> tileList = new ArrayList<Tile>();
-		Map<String, String> tileImageMap = new HashMap<String, String>();
+		Map<Tile, String> tileImageMap = new HashMap<Tile, String>();
 		for (Object o:list) {
 			TileViewItem tvi = (TileViewItem) o;
 			Tile t = (Tile) tvi.getModelObject();
 			tileList.add(t);
-			tileImageMap.put(t.getStatCollection("Terrain").getID(), tvi.getImagePath());
+			tileImageMap.put(t, tvi.getImagePath());
 		}
 		currentState.setTileImageMap(tileImageMap);
 		return currentState;
+	}
+	
+	@Override
+	public void loadData(GameElements elements){
+		GameMap loadMap = elements.getGameMap();
+		Map<Tile,String> tileImages = elements.getTileImageMap();
+		for(Tile tile:tileImages.keySet()){
+			File tileImageFile = new File(tileImages.get(tile));
+			TileViewItem item = new TileViewItem(tile.getStats(), tile.getName(), tileImageFile,0);
+			this.addNewItem(item);
+		}
 	}
 }

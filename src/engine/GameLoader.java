@@ -29,11 +29,12 @@ public class GameLoader  {
 		myGameEngine.setPFSize(gameMap.getSizeX() , gameMap.getSizeY());
 		Collection<Tile> allTiles = gameMap.getAllTiles();
 
-		Map<String, String> myTileImages = myGameElements.getTileImageMap();
+		Map<Tile, String> myTileImages = myGameElements.getTileImageMap();
 		Map<String, String> myUnitImages = myGameElements.getUnitImageMap();
 
-		for (String id : myTileImages.keySet()) {
-			System.out.println("Loading: "+id + " "+myTileImages.get(id));
+		for (Tile t : myTileImages.keySet()) {
+		    String id = t.getID();
+			System.out.println("Loading: "+ id + " "+myTileImages.get(id));
 			myGameEngine.defineImage(id, "-", 0,  "/" + myTileImages.get(id),"-");
 		}
 		
