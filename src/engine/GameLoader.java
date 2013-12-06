@@ -33,6 +33,8 @@ public class GameLoader  {
 		Map<Unit, String> myUnitImages = myGameElements.getUnitImageMap();
 
 		for (Tile t : myTileImages.keySet()) {
+			if (t == null)
+				System.out.println("tile is null");
 		    String id = t.getID();
 			System.out.println("Loading: "+ id + " "+myTileImages.get(id));
 			myGameEngine.defineImage(id, "-", 0,  "/" + myTileImages.get(id),"-");
