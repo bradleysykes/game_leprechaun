@@ -24,7 +24,7 @@ public class ImageResourcesDecoder extends Decoder {
         for(int i = 0; i < imageList.getLength(); i++) {
             Element image = (Element)imageList.item(i);
             String src = image.getAttribute(SRC);
-            Tile tile = decoder.processTile((Element)image.getElementsByTagName(TILE).item(0));
+            Tile tile = decoder.processTile((Element)image.getElementsByTagName("TileType").item(0), true);
             imageMap.put(tile, src);
         }
         return imageMap;
@@ -38,7 +38,7 @@ public class ImageResourcesDecoder extends Decoder {
         for(int i = 0; i < imageList.getLength(); i++) {
             Element image = (Element)imageList.item(i);
             String src = image.getAttribute(SRC);
-            Unit unit = decoder.createSingleUnit((Element)image.getElementsByTagName(UNIT).item(0));
+            Unit unit = decoder.createUnitType((Element)image.getElementsByTagName("UnitType").item(0));
             imageMap.put(unit, src);
         }
         return imageMap;

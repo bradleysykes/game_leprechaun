@@ -2,6 +2,7 @@ package data.decoder;
 
 import java.util.ArrayList;
 import java.util.List;
+import model.GameMap;
 import model.Player;
 import model.stats.StatCollection;
 import model.tile.Tile;
@@ -47,6 +48,7 @@ public class UnitDecoder extends Decoder {
         int x = Integer.parseInt(tile.getAttribute(X_COORD));
         int y = Integer.parseInt(tile.getAttribute(Y_COORD));
         Tile targetTile = myDataManager.getGameMap().getTile(x, y);
+
         
         //create unit object
         Unit newUnit = new Unit(id, targetPlayer, targetTile);
@@ -54,9 +56,7 @@ public class UnitDecoder extends Decoder {
         //put unit into tile, set tile to unit, add unit to player
         targetTile.addUnit(newUnit);
         targetPlayer.addUnit(newUnit);
-        
-        //set abilities
-        
+               
         //set attributes
         Element attributes = (Element) unit.getElementsByTagName(ATTRIBUTES).item(0);
         StatCollection targetAttributes = (StatCollection) newUnit.getStatCollection(ATTRIBUTES);
@@ -64,7 +64,19 @@ public class UnitDecoder extends Decoder {
 
         return newUnit;
     }
-      
+    
+    public Unit createUnitType(Element unit) {
+        
+        String id = unit.getAttribute(ID);       
+        Unit newType = new Unit(id, new Player(), new Tile(3,3, new GameMap(2,2)));
+        Element attributes = (Element) unit.getElementsByTagName(ATTRIBUTES).item(0);
+        StatCollection targetAttributes = (StatCollection) newType.getStatCollection(ATTRIBUTES);
+        setStats(attributes, targetAttributes);
+        
+        return newType;
+    }
+    
+    
     @Override
     public void decodeData (Element root) {
         //myDataManager.setUnits(processUnits(root));

@@ -33,7 +33,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private File mySourceFile;
 	
 	public GameEngine(GameViewer gv) {
-		initEngineComponent(myViewerWidth, myViewerHeight);
+		initEngineComponent(640, 480);
 		myGameViewer = gv;
 	}
 	
