@@ -7,6 +7,7 @@ import engine.GameEngine;
 import model.Ability;
 import model.Attributes;
 import model.stats.StatCollection;
+import model.tile.Tile;
 import model.unit.Unit;
 
 /**
@@ -24,6 +25,7 @@ public class Attack extends Ability{
 
 	@Override
 	public void useAbility(){
+		System.out.println("attack used");
 		if(!myValid) return;
 		List<Unit> units = myTargetTile.getUnits();
 		Unit myTarget = units.get(0);
@@ -52,6 +54,9 @@ public class Attack extends Ability{
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
+		List<Tile> myList = myUnit.getMap().getTilesInRadius
+				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile());
+		System.out.println("myList has: "+myList.size()+" tiles in it.");
 		myGameEngine.highlightTiles(myUnit.getMap().getTilesInRadius
 				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile()));
 	}

@@ -110,7 +110,6 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		for (Tile tile : tileList) {
 			new TileHighlightObject(tile, this);
 			myTileObjectMap.get(tile).setHighlighted(true);
-			System.out.println(myTileObjectMap.get(tile).isHighlighted());
 		}
 		System.out.println("Tiles highlighted");
 	}
