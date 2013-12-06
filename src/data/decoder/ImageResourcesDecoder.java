@@ -18,7 +18,7 @@ public class ImageResourcesDecoder extends Decoder {
         Element images = (Element)root.getElementsByTagName(tag).item(0);
         NodeList imageList = images.getElementsByTagName(IMAGE);
         for(int i = 0; i < imageList.getLength(); i++) {
-            Element image = (Element)imageList.item(0);
+            Element image = (Element)imageList.item(i);
             String id = image.getAttribute(ID);
             String src = image.getAttribute(SRC);
             imageMap.put(id, src);
