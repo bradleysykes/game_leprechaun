@@ -19,7 +19,7 @@ public class GameManager {
 		myGameEngine = gameEngine;
 		myPlayers = myGameEngine.getPlayers();
 		myCurrentPlayer = myPlayers.get(0);
-		setPlayerStatusArea(myCurrentPlayer);
+		setPlayerStatusArea();
 	}
 			
 	public Player nextPlayer() {
@@ -30,13 +30,13 @@ public class GameManager {
 		return myCurrentPlayer;
 	}
 	
-	public void setPlayerStatusArea(Player player) { //this should be called when the game is started and then whenever an ability is used
+	public void setPlayerStatusArea() { //this should be called when the game is started and then whenever an ability is used
 		
 		PlayerStatusArea playerStatusArea = (PlayerStatusArea) GameViewer.getFeedbackPanel().getPlayerStatusArea();
-		List<Stat> myResources = player.getStatCollection("Resources").getStats();
+		List<Stat> myResources = myCurrentPlayer.getStatCollection("Resources").getStats();
 		String statusReport = "";
-		statusReport += player.getID() + "\n";
-		int numUnits = player.getAllUnits().size();
+		statusReport += myCurrentPlayer.getID() + "\n";
+		int numUnits = myCurrentPlayer.getAllUnits().size();
 		statusReport += "No. of units: " + numUnits;
 		for (Stat stat : myResources) {
 			String resourceName = stat.getName();

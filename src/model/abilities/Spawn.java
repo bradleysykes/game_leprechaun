@@ -12,8 +12,10 @@ public class Spawn extends Ability {
 
 	@Override
 	public void useAbility() {
+		//if player can afford
 		myTargetUnit.setPlayer(myUnit.getPlayer());
 		myTargetUnit.setCurrentTile(myUnit.getMap().getNearestValidTile(myUnit));
+		// else destroy
 	}
 
 	@Override
