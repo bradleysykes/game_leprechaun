@@ -6,8 +6,6 @@ import engine.GameEngine;
 
 import model.Ability;
 import model.Attributes;
-import model.stats.StatCollection;
-import model.tile.Tile;
 import model.unit.Unit;
 
 /**
