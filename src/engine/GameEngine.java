@@ -130,6 +130,12 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myUnitObjectMap.remove(unit);
 	}
 	
+	public void spawnUnit(Unit unit) {
+		GameUnitObject newUnit = new GameUnitObject(unit, this);
+		myUnitObjectMap.put(unit, newUnit);
+		myUnits.add(unit);
+	}
+	
 	public static int getViewerWidth() {
 		return myViewerWidth;
 	}

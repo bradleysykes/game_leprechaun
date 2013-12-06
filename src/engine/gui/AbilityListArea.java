@@ -30,22 +30,20 @@ public class AbilityListArea extends JPanel {
 		myComboBox = new JComboBox<String>();
 		this.add(new Label("Abilities:"));
 		this.add(myComboBox);
-//		myComboBox.addActionListener(new ActionListener(){
-//			
-//			
-//			
-//			//trying an itemListener instead
-//			public void actionPerformed(ActionEvent arg0) {
-//				if(myStatus){
-//					System.out.println(myComboBox.getSelectedItem().toString());
-//					Ability ability = (Ability) myAbilities.getStat(myComboBox.getSelectedItem().toString());
-//					myEngine.getModel().setAbility(ability);
-//				}
-//				else{		// Bug with first click. Should be a better solution.
-//					//myStatus = true;
-//				}
-//			}
-//		});
+/*		myComboBox.addActionListener(new ActionListener(){
+					
+			//trying an itemListener instead
+			public void actionPerformed(ActionEvent arg0) {
+				if(myStatus){
+					System.out.println(myComboBox.getSelectedItem().toString());
+					Ability ability = (Ability) myAbilities.getStat(myComboBox.getSelectedItem().toString());
+					myEngine.getModel().setAbility(ability);
+				}
+				else{		// Bug with first click. Should be a better solution.
+					//myStatus = true;
+				}
+			}
+		});*/
 		myListener = new AbilityListListener(this);
 		myComboBox.addItemListener(myListener);
 		
