@@ -88,7 +88,7 @@ public class GameMap {
 		int range = (int) r;
 		List<Tile> validTiles = new ArrayList<Tile>();
 		for (int i = t.getX() - range; i <= t.getX() + range; i++){
-			for (int j = t.getY() - range; i <= t.getY() + range; j++){
+			for (int j = t.getY() - range; j <= t.getY() + range; j++){
 				if(this.contains(i, j))
 					validTiles.add(this.getTile(i, j));
 			}
