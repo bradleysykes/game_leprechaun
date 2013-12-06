@@ -150,10 +150,34 @@
     </Conditions>
     <ImageMap>
         <tileImages>
-            <image id="" src="src/test2"/>
+            <image src="src/test2">
+                <Tile id="tileIdddd" x="-1" y="-1">
+                    <Stat name="Passability" value="10.0"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="Plains">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </Tile>
+            </image>
         </tileImages>
         <unitImages>
-            <image id="unit1" src="src/test1"/>
+            <image src="src/test1">
+                <Unit id="unit1">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities/>
+                    <Attributes>
+                        <Stat name="Health" value="10.0"/>
+                        <Stat name="Max Health" value="10.0"/>
+                        <Stat name="Base Attack" value="10.0"/>
+                        <Stat name="Base Defense" value="10.0"/>
+                        <Stat name="Stamina" value="10.0"/>
+                        <Stat name="Base Stamina" value="10.0"/>
+                        <Stat name="Range" value="10.0"/>
+                    </Attributes>
+                </Unit>
+            </image>
         </unitImages>
     </ImageMap>
 </GameElements>

@@ -38,7 +38,7 @@ public class UnitEncoder extends Encoder {
         myRoot.appendChild(unitsElement);
     }
 
-    private void appendSingleUnit (Unit unit, Element unitsElement) {
+    protected void appendSingleUnit (Unit unit, Element unitsElement) {
         Element unitElement = myXmlDocument.createElement(UNIT);
         unitElement.setAttribute(ID, unit.getID());
         unitsElement.appendChild(unitElement);

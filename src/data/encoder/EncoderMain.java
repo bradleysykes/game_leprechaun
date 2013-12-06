@@ -67,7 +67,9 @@ public class EncoderMain implements Elements {
         HashMap<Unit, String> unitImageMap = new HashMap<Unit, String>();
         unitImageMap.put(new Unit("unit1", p1, t2), "src/test1");
         HashMap<Tile, String> tileImageMap = new HashMap<Tile, String>();
-        tileImageMap.put(new Tile(0, 0, map), "src/test2");
+        Tile tile = new Tile(0,0,map);
+        tile.setID("tileIdddd");
+        tileImageMap.put(tile, "src/test2");
         //populate the imageMaps... then
         currentState.setUnitImageMap(unitImageMap);
         currentState.setTileImageMap(tileImageMap);

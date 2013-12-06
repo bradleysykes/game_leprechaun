@@ -2,6 +2,8 @@ package data.encoder;
 
 import java.util.Map;
 import model.Player;
+import model.Resources;
+import model.Terrain;
 import model.tile.Tile;
 import model.unit.Unit;
 import org.w3c.dom.Document;
@@ -34,14 +36,6 @@ public class ImageEncoder extends Encoder {
         myRoot.appendChild(imageMapElement);
     }
     
-    private void appendUnitImages(Element imageMapElement) {
-        Element unitImages = myXmlDocument.createElement(UNIT_IMAGES);
-        for(Unit unit : myUnitImagesMap.keySet()) {
-            appendSingleUnitImage(unit, myUnitImagesMap, unitImages);
-        }
-        imageMapElement.appendChild(unitImages);
-    }
-    
     private void appendTileImages(Element imageMapElement) {
         Element tileImages = myXmlDocument.createElement(TILE_IMAGES);
         for(Tile tile : myTileImagesMap.keySet()) {
@@ -52,15 +46,29 @@ public class ImageEncoder extends Encoder {
     
     private void appendSingleTileImage (Tile tile, Map<Tile, String> map, Element parent) {
         Element imageElement = myXmlDocument.createElement(IMAGE);
-        imageElement.setAttribute(ID,tile.getID());
         imageElement.setAttribute(SRC,map.get(tile));
+        tile.setStat(X_COORD, -1.0);
+        tile.setStat(Y_COORD, -1.0);
+        MapEncoder me = new MapEncoder(myXmlDocument, null, null);
+        me.appendTile(tile, imageElement);
         parent.appendChild(imageElement);
     }
     
+    private void appendUnitImages(Element imageMapElement) {
+        Element unitImages = myXmlDocument.createElement(UNIT_IMAGES);
+        for(Unit unit : myUnitImagesMap.keySet()) {
+            appendSingleUnitImage(unit, myUnitImagesMap, unitImages);
+        }
+        imageMapElement.appendChild(unitImages);
+    }
+
     private void appendSingleUnitImage(Unit unit, Map<Unit, String> map, Element parent) {
         Element imageElement = myXmlDocument.createElement(IMAGE);
-        imageElement.setAttribute(ID,unit.getID());
         imageElement.setAttribute(SRC,map.get(unit));
+        unit.getCurrentTile().setStat(X_COORD, -1.0);
+        unit.getCurrentTile().setStat(Y_COORD, -1.0);
+        UnitEncoder ue = new UnitEncoder(myXmlDocument, null, null);
+        ue.appendSingleUnit(unit, imageElement);
         parent.appendChild(imageElement);
     }
     
