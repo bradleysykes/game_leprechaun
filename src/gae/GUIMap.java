@@ -79,12 +79,12 @@ public class GUIMap extends JGEngine implements Constants{
 	
 
 	private int getActualYCoordinate(int coordinate){
-		if(0<coordinate&&coordinate<pfHeight()*0.125){
+		if(0<coordinate&&coordinate<pfHeight()*.125){
 			return coordinate;
 		}
-		if(pfHeight()*0.125<=coordinate&&coordinate<=pfHeight()*0.375){
+		if(pfHeight()*.125<=coordinate&&coordinate<=pfHeight()*.375){
 			System.out.println(coordinate);
-			return 100+(coordinate-100)*2;
+			return 100+(coordinate-100)*4;
 		}
 		else{
 			return 400+coordinate;
@@ -92,12 +92,12 @@ public class GUIMap extends JGEngine implements Constants{
 }
 	
 	private int getActualXCoordinate(int coordinate){
-		if(0<coordinate&&coordinate<pfWidth()*0.125){
+		if(0<coordinate&&coordinate<pfWidth()*.125){
 			return coordinate;
 		}
-		if(pfWidth()*0.125<=coordinate&&coordinate<=pfWidth()*(3/8)){
+		if(pfWidth()*.125<=coordinate&&coordinate<=pfWidth()*.375){
 			System.out.println(coordinate);
-			return 100+(coordinate-100)*2;
+			return 100+(coordinate-100)*4;
 		}
 		else{
 			return 400+coordinate;
