@@ -34,7 +34,7 @@ public class UnitDecoder extends Decoder {
         return myUnits;
     }
     
-    private Unit createSingleUnit(Element unit) {
+    public Unit createSingleUnit(Element unit) {
         String id = unit.getAttribute(ID);
         
         //get the player that this unit belongs to

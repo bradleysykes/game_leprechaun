@@ -52,7 +52,7 @@ public class MapDecoder extends Decoder {
      * @param tile
      * @return
      */
-    private Tile processTile(Element tile) {
+    public Tile processTile(Element tile) {
         String id = getAttribute(ID, tile);
         int x = Integer.parseInt(getAttribute(X_COORD, tile));
         int y = Integer.parseInt(getAttribute(Y_COORD, tile));
