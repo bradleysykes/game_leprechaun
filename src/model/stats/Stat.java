@@ -41,5 +41,9 @@ public class Stat implements ModelConstants {
 		myValue = val;
 	}
 	
+	public Stat copy(){
+		return new Stat(this.getName(), this.getValue());
+	}
+	
 
 }

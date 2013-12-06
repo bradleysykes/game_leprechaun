@@ -60,10 +60,6 @@ public class GameMap {
 		return allTiles;
 	}
 
-//	public void addResourceToTile(int x, int y, String resourceName, double amount, double harvestRate){
-//		this.getTile(x,y).addResource(new Resource(resourceName,amount,harvestRate));
-//	}
-
 	public Unit getTargetUnit(List<Tile> validTiles){
 		/* provide the player with a fixed number of tile choices
 		 * and returns a selected unit
@@ -92,7 +88,7 @@ public class GameMap {
 		int range = (int) r;
 		List<Tile> validTiles = new ArrayList<Tile>();
 		for (int i = t.getX() - range; i <= t.getX() + range; i++){
-			for (int j = t.getY() - range; i <= t.getY() + range; j++){
+			for (int j = t.getY() - range; j <= t.getY() + range; j++){
 				if(this.contains(i, j))
 					validTiles.add(this.getTile(i, j));
 			}
