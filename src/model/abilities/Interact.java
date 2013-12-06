@@ -21,5 +21,10 @@ public class Interact extends Ability{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public Interact copy(Unit u){
+		return new Interact(u);
+	}
 
 }

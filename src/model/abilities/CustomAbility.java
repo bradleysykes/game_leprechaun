@@ -44,5 +44,13 @@ public class CustomAbility extends Ability {
 	public void requestEngineInput(GameEngine myGameEngine) {
 		// Get tile from list of valid tiles.
 	}
+	
+	@Override 
+	public CustomAbility copy(Unit u){
+		CustomAbility toReturn = this.copy(u);
+		for(Effect e : myEffects)
+			toReturn.addEffect(e);
+		return toReturn;
+	}
 
 }

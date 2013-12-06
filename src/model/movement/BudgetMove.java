@@ -65,4 +65,8 @@ public class BudgetMove extends Move {
 		}
 		return -1;
 	}
+	
+	public BudgetMove copy(Unit u){
+		return new BudgetMove(u);
+	}
 }

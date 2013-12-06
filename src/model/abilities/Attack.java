@@ -34,7 +34,7 @@ public class Attack extends Ability{
 					myTarget.getStatCollection("Attributes").getValue("Health")){
 				myTarget = u;
 			}
-		}		
+		}
 		Attributes targetAttributes = (Attributes) myTarget.getStatCollection("Attributes");
 		Attributes unitAttributes = (Attributes) myUnit.getStatCollection("Attributes");
 		double enemyDefense = targetAttributes.getDefense();
@@ -59,6 +59,11 @@ public class Attack extends Ability{
 		System.out.println("myList has: "+myList.size()+" tiles in it.");
 		myGameEngine.highlightTiles(myUnit.getMap().getTilesInRadius
 				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile()));
+	}
+	
+	@Override
+	public Ability copy(Unit u){
+		return new Attack(u);
 	}
 
 }
