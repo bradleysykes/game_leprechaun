@@ -10,7 +10,7 @@ public abstract class Ability extends StatCollection {
 	protected Unit myUnit;
 	protected Tile myTargetTile;
 	protected Unit myTargetUnit;
-	protected boolean myValid;
+	protected boolean myValid = true;
 
 	public Ability(String name, Unit abilityUser) {
 		super(name);
