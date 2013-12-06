@@ -20,7 +20,15 @@ public class DataPrimer {
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("XML Files Only", "xml");
 		myFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		myFileChooser.setFileFilter(filter);
-		File xmlFile = selectAndParseXML();
+		File xmlFile;
+		if(gameEngine.getSourceFile()!=null){
+			//user is launching from GAE
+			xmlFile = gameEngine.getSourceFile();
+		}
+		else{
+			xmlFile = selectAndParseXML();
+		}
+		
 /*		if(gameEngine.getSourceFile()!=null){
 			xmlFile = gameEngine.getSourceFile();
 		}

@@ -68,8 +68,8 @@ public class GUIMap extends JGEngine implements Constants{
 	
 	private File getUnitImageFile(Unit unit, Map<Unit,String> imageMap){
 		for(Unit keyUnit:imageMap.keySet()){
-			String keyIdentifier = keyUnit.getID().split("|")[0];
-			String unitIdentifier = keyUnit.getID().split("|")[0];
+			String keyIdentifier = keyUnit.getID().split("\\|")[0];
+			String unitIdentifier = keyUnit.getID().split("\\|")[0];
 			if(keyIdentifier.equals(unitIdentifier)){
 				return new File(imageMap.get(keyUnit));
 			}

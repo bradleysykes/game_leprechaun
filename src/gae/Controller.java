@@ -35,6 +35,7 @@ public class Controller implements Constants{
 	private String myGameFilePath;
 	private GameElements myCurrentState;
 	private JFrame myGUI;
+	private EditMenuBar myMenuBar;
 	
 	public Controller(){
 		
@@ -234,12 +235,18 @@ public class Controller implements Constants{
 	
 	public void setGameFilePath(String filePath){
 		myGameFilePath = filePath;
+		myMenuBar.activateSaveItem();
 	}
 
 	public void loadData(GameElements openElements) {
+		myPlayers = openElements.getPlayers();
 		for(EditPanel p:myPanels){
 			p.loadData(openElements);
 		}
+	}
+
+	public void setMenuBar(EditMenuBar editMenuBar) {
+		myMenuBar = editMenuBar;
 	}
 
 }

@@ -81,7 +81,7 @@ public class TileList extends BoardList {
 		Map<Tile,String> tileImages = elements.getTileImageMap();
 		for(Tile tile:tileImages.keySet()){
 			File tileImageFile = new File(tileImages.get(tile));
-			TileViewItem item = new TileViewItem(tile.getStats(), tile.getName(), tileImageFile,0);
+			TileViewItem item = new TileViewItem(tile.getStats(), tile.getID().split("\\|")[0], tileImageFile,0);
 			this.addNewItem(item);
 		}
 	}
