@@ -99,6 +99,12 @@ public class StatCollection extends Stat {
 		// do nothing		
 	}
 	
+	/**
+	 * Creates a deep copy of the statcollection, meaning that both the new collection
+	 * and all stats it contains are new objects, independent of the original.
+	 * @return copied StatCollection
+	 */
+	@Override
 	public StatCollection copy(){
 		StatCollection toReturn = new StatCollection(myName,myID,myReferenceType);
 		for(Stat s : this.getStats()){
