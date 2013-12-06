@@ -29,6 +29,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private ArrayList<Unit> myUnits;
 	private GameMap myGameMap;
 	private Map<Tile, GameTileObject> myTileObjectMap;
+	private Map<Unit, GameUnitObject> myUnitObjectMap;
 	private MouseObject myMouseObject;
 	private GameViewer myGameViewer;
 	private ViewOffsetListener myViewListener;
@@ -53,9 +54,9 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		setFrameRate(35, 1);
 		myMouseObject = new MouseObject(this);
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
+		myUnitObjectMap = new HashMap<Unit, GameUnitObject>();
 		myModel = new Model(this);
-		myViewListener = new ViewOffsetListener(this);
-		myGameManager = new GameManager(this);
+		//myViewListener = new ViewOffsetListener(this);
 	}
 	
 	public Model getModel() {
@@ -81,9 +82,30 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	}
 	
 	public void initializeUnits(Collection<Unit> units) {
+		myUnits = new ArrayList<Unit>();
 		for (Unit unit : units) {
 			GameUnitObject newUnit = new GameUnitObject(unit,this);
+			myUnitObjectMap.put(unit, newUnit);
+			myUnits.add(unit);
 		}
+	}
+	
+	public void initializeGameManager() {
+		myGameManager = new GameManager(this);
+	}
+			
+	
+	public void highlightCurrentPlayer() {
+		for (Unit unit : myUnits) {
+			if (unit.getPlayer().equals(myGameManager.getCurrentPlayer())) {
+				Tile tile = unit.getCurrentTile();
+				new PlayerHighlightObject(tile, this);
+			}
+		}
+	}
+	
+	public void removeCurrentPlayerHighlights() {
+		removeObjects(EngineConstants.PlayerHighlightName, EngineConstants.PlayerHighlight_COL_ID);
 	}
 	
 	public void highlightTiles(List<Tile> tileList) {
@@ -91,17 +113,22 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		for (Tile tile : tileList) {
 			new TileHighlightObject(tile, this);
 			myTileObjectMap.get(tile).setHighlighted(true);
-			System.out.println(myTileObjectMap.get(tile).isHighlighted());
 		}
 		System.out.println("Tiles highlighted");
 	}
 	
-	public void removeHighlights() {
+	public void removeTileHighlights() {
 		for (Tile tile : myTileObjectMap.keySet()) {
 			if (myTileObjectMap.get(tile).isHighlighted()) myTileObjectMap.get(tile).setHighlighted(false);
 		}
-		removeObjects("zhighlight", TileHighlightObject.getCollisionID()); //not a typo it actually is "zhighlight"
+		removeObjects(EngineConstants.TileHighlightName, EngineConstants.TileHighlight_COL_ID);
 		System.out.println("highlights removed");
+	}
+	
+	public void destroyUnit(Unit unit) {
+		removeObject(myUnitObjectMap.get(unit));
+		myUnits.remove(unit);
+		myUnitObjectMap.remove(unit);
 	}
 	
 	public static int getViewerWidth() {

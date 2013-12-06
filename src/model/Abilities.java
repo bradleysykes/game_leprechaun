@@ -4,6 +4,7 @@ import model.abilities.Attack;
 import model.abilities.Harvest;
 import model.abilities.Spawn;
 import model.movement.BudgetMove;
+import model.stats.Stat;
 import model.stats.StatCollection;
 import model.unit.Unit;
 
@@ -20,6 +21,13 @@ public class Abilities extends StatCollection{
 		this.addStat(new BudgetMove(unit));
 		this.addStat(new Harvest(unit));
 		this.addStat(new Spawn(unit));
+	}
+	
+	public Abilities(Unit u, Abilities stored){
+		super("Abilities");
+		for(Stat s : stored.getStats()){
+			this.addStat(s.copy());
+		}
 	}
 	
 	public void addAbility(){

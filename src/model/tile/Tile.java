@@ -15,9 +15,6 @@ public class Tile extends StatCollection implements ModelConstants{
 
 	private List<Unit> myUnits = new ArrayList<Unit>();
 	private GameMap myMap;
-
-	// Change constructor to take in Tile, alone?
-	// Will help GAE with front-end library
 	
 	public Tile(double x, double y, GameMap map){
 		super("Tile");
@@ -28,6 +25,19 @@ public class Tile extends StatCollection implements ModelConstants{
 		this.addStat(new Stat("Max Population"));
 		this.addStat(new Resources());
 		this.addStat(new Terrain());
+	}
+	
+	public Tile(double x, double y, Tile stored){
+		super("Tile");
+		myMap = stored.getMap();
+		this.addStat(new Stat("x",x));
+		this.addStat(new Stat("y",y));
+		this.addStat(new Stat("Passability", stored.getValue("Passability")));
+		this.addStat(new Stat("Max Population", stored.getValue("Max Population")));
+		Resources r = (Resources) stored.getStatCollection("Resources");
+		this.addStat(new Resources(r));
+		Terrain t = (Terrain) stored.getStatCollection("Terrain");
+		this.addStat(new Terrain(t));
 	}
 
 	public boolean addUnit(Unit unit){

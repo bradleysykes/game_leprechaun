@@ -13,7 +13,7 @@ public class NextTurnButton extends JButton {
 	private static final Dimension mySize = new Dimension(40, 20);	
 	public NextTurnButton(GameEngine ge) {
 		super(myName);
-		setPreferredSize(mySize);
+		setMinimumSize(mySize);
 		addActionListener(new NextTurnListener(ge.getModel(),ge));
 		this.setAlignmentX(0.5f);
 	}

@@ -31,11 +31,10 @@ public class ActionPanel extends JPanel {
 		titledBorder.setTitleJustification(TitledBorder.LEFT);
 		setBorder(titledBorder);
 		
-		myNextTurnButton = new NextTurnButton(myGameEngine);
 		myUnitListArea = new UnitListArea();
 		myAbilityListArea = new AbilityListArea(myGameEngine);
 		
-		add(myNextTurnButton);
+		add(new ButtonArea(myGameEngine));
 		add(myUnitListArea);
 		add(myAbilityListArea);
 	}
