@@ -66,6 +66,7 @@ public class TileViewItem extends BoardListViewItem {
 		Tile tile = new Tile((int) x,(int) y, map.getModelMap());
 		String uniqueTileID = myTile.getStatCollection("Terrain").getID() + "|" + tile.hashCode();
 		tile.setID(uniqueTileID);
+		tile.getStatCollection("Terrain").setID(myTile.getStatCollection("Terrain").getID());
 		map.getModelMap().setTile((int)x, (int)y, tile);
 	}
 	
@@ -98,5 +99,4 @@ public class TileViewItem extends BoardListViewItem {
 	public Object getModelObject() {
 		return myTile;
 	}
-	
 }
