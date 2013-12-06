@@ -60,5 +60,13 @@ public class ConditionList extends BoardList {
 			File f, int counter) {
 		return new NullViewItem();
 	}
+	
+	@Override
+	public void loadData(GameElements elements){
+		List<Condition> loadConditions = elements.getConditions();
+		if(loadConditions!=null){
+			
+		}
+	}
 
 }

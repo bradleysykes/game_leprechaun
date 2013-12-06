@@ -66,6 +66,7 @@ public class StatCollection extends Stat {
 	}
 
 	public void setStat(String name, Double value){
+		actionOnSet();
 		this.getStat(name).setValue(value);
 	}
 
@@ -79,6 +80,10 @@ public class StatCollection extends Stat {
 				return s;
 		}
 		return null;
+	}
+	
+	public void actionOnSet(){
+		//do nothing
 	}
 
 	public StatCollection getStatCollection(String name){
@@ -118,5 +123,7 @@ public class StatCollection extends Stat {
 		}
 		return toReturn;
 	}
+	
+	
 
 }

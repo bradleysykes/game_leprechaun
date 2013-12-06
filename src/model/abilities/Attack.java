@@ -6,8 +6,6 @@ import engine.GameEngine;
 
 import model.Ability;
 import model.Attributes;
-import model.stats.StatCollection;
-import model.tile.Tile;
 import model.unit.Unit;
 
 /**
@@ -25,9 +23,8 @@ public class Attack extends Ability{
 
 	@Override
 	public void useAbility(){
-		System.out.println("attack used");
 		if(!myValid) return;
-		List<Unit> units = myTargetTile.getUnits();
+		List<Unit> units = this.myTargetTile.getUnits();
 		Unit myTarget = units.get(0);
 		for(Unit u : units){
 			if(u.getStatCollection("Attributes").getValue("Health") < 
@@ -35,6 +32,7 @@ public class Attack extends Ability{
 				myTarget = u;
 			}
 		}
+		System.out.println("My name is "+this.myUnit.getID()+". My target's name is "+myTarget.getID()+".");
 		Attributes targetAttributes = (Attributes) myTarget.getStatCollection("Attributes");
 		Attributes unitAttributes = (Attributes) myUnit.getStatCollection("Attributes");
 		double enemyDefense = targetAttributes.getDefense();
@@ -43,6 +41,8 @@ public class Attack extends Ability{
 		double myDefense = unitAttributes.getDefense();
 		double myAttack = unitAttributes.getAttack();
 		double myHealth = unitAttributes.getValue("Health");
+		System.out.println(myDefense+" "+myAttack+" "+myHealth);
+		System.out.println(enemyDefense+" "+enemyAttack+" "+enemyHealth);
 		if (myAttack > enemyDefense)
 			enemyHealth = enemyHealth + enemyDefense - myAttack;
 		if (myDefense < enemyAttack)

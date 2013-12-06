@@ -34,7 +34,7 @@ public class BudgetMove extends Move {
 	public List<Tile> getValidTiles(){
 		List<Tile> validTiles = new ArrayList<Tile>();
 		for(Tile t : myUnit.getMap().getAllTiles()){
-			if(canMoveToTile(t)>0){
+			if(canMoveToTile(t)>=0){
 				validTiles.add(t);
 			}
 		}

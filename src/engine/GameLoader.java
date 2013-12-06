@@ -35,7 +35,7 @@ public class GameLoader  {
 		for (String id : myTileImages.keySet()) {
 			System.out.println("Loading: "+id + " "+myTileImages.get(id));
 			myGameEngine.defineImage(id, "-", 0,  "/" + myTileImages.get(id),"-");
-		}		
+		}
 		
 		for (String id : myUnitImages.keySet()) {
 			System.out.println("Loading: "+id + " "+myUnitImages.get(id));
