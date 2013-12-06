@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.Timer;
 
+import data.GameElements;
+
 import model.stats.Stat;
 
 import gae.Controller;
@@ -58,6 +60,11 @@ public class TaskList extends BoardList {
 			timer.start();
 			alertDialog.setVisible(true);
 		}
+	}
+	
+	@Override
+	public void loadData(GameElements elements){
+		myModel.removeAllElements();
 	}
 
 }

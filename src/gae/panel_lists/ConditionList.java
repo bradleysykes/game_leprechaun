@@ -65,7 +65,10 @@ public class ConditionList extends BoardList {
 	public void loadData(GameElements elements){
 		List<Condition> loadConditions = elements.getConditions();
 		if(loadConditions!=null){
-			
+			for(Condition condition:loadConditions){
+				ConditionViewItem view = new ConditionViewItem(condition.getName(),condition);
+				this.addNewItem(view);
+			}
 		}
 	}
 

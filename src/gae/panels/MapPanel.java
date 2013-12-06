@@ -62,6 +62,11 @@ public class MapPanel extends EditPanel {
 		myMapView = new GUIMap(elements);
 	}
 	
+	@Override
+	public void close(){
+		this.closeMap();
+	}
+	
 	private void setUp(){
 		myMapView.setPopup(new MapPopupMenu(myController,myMapView));
 		myTabbedView = new JTabbedPane();
@@ -116,8 +121,10 @@ public class MapPanel extends EditPanel {
 	}
 	@Override
 	public void closeMap(){
-		myMapView.destroy();
-		this.revalidate();
+		if(myMapView!=null){
+			myMapView.destroy();
+			this.revalidate();
+		}
 	}
 	
 	@Override
