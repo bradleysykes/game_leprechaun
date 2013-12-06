@@ -14,6 +14,8 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import data.GameElements;
+
 import model.Player;
 import model.stats.Stat;
 import model.stats.StatCollection;
@@ -57,6 +59,13 @@ public class ObjectPanel extends EditPanel {
 	@Override
 	public String getTitle() {
 		return OBJECT_PANEL_TITLE;
+	}
+
+
+
+	@Override
+	public void loadData(GameElements elements) {
+		
 	}
 
 }

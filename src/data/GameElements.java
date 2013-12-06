@@ -7,6 +7,7 @@ import java.util.Map;
 import model.Condition;
 import model.GameMap;
 import model.Player;
+import model.tile.Tile;
 import model.unit.Unit;
 
 
@@ -15,11 +16,11 @@ public class GameElements {
     protected GameMap myGameMap;
     protected List<Player> myPlayers;
     protected List<Unit> myUnitTypes;
-    protected Map<String, String> myTileImages;
+    protected Map<Tile, String> myTileImages;
     protected Map<String, String> myUnitImages;
     protected List<Condition> myConditions;
 
-    public GameElements(GameMap map, List<Player> players, Map<String, String> tileImages, 
+    public GameElements(GameMap map, List<Player> players, Map<Tile, String> tileImages, 
                         Map<String, String> unitImages) {
         this(map, players);
         myTileImages = tileImages;
@@ -60,11 +61,11 @@ public class GameElements {
         myPlayers.add(player);
     }
     
-    public void setTileImageMap(Map<String, String> imageMap) {
+    public void setTileImageMap(Map<Tile, String> imageMap) {
     	myTileImages = imageMap;
     }
     
-    public Map<String, String> getTileImageMap() {
+    public Map<Tile, String> getTileImageMap() {
         return myTileImages;
     }
     

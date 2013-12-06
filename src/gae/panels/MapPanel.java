@@ -149,6 +149,7 @@ public class MapPanel extends EditPanel {
 		currentState.setGameMap(myMapView.getModelMap());
 		return currentState;
 	}
+	
 	public void clearMap() {
 		myMapView.removeObjects(null, 0);
 	}
@@ -164,5 +165,12 @@ public class MapPanel extends EditPanel {
 	@Override
 	public GameMap getMap() {
 		return myMapView.getModelMap();
+	}
+	@Override
+	public void loadData(GameElements elements) {
+		GameMap loadMap = elements.getGameMap();
+		if(loadMap!=null){
+			
+		}
 	}
 }

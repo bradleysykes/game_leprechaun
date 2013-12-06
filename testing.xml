@@ -808,17 +808,11 @@
         <Player id="Default Player Name">
             <Resources/>
         </Player>
-        <Player id="Default Player Name">
-            <Resources/>
-        </Player>
-        <Player id="Default Player Name">
-            <Resources/>
-        </Player>
     </Players>
     <Units>
-        <Unit id="Name me!|0">
+        <Unit id="Soldier|0">
             <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="9" y="5"/>
+            <UnitTile x="6" y="1"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -830,9 +824,9 @@
                 <Stat name="Range" value="10.0"/>
             </Attributes>
         </Unit>
-        <Unit id="Name me!|0">
+        <Unit id="Soldier|0">
             <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="6" y="6"/>
+            <UnitTile x="6" y="2"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -844,9 +838,9 @@
                 <Stat name="Range" value="10.0"/>
             </Attributes>
         </Unit>
-        <Unit id="Name me!|0">
+        <Unit id="Soldier|0">
             <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="0" y="0"/>
+            <UnitTile x="8" y="1"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -858,9 +852,9 @@
                 <Stat name="Range" value="10.0"/>
             </Attributes>
         </Unit>
-        <Unit id="Name me!|0">
+        <Unit id="Soldier|0">
             <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="4" y="0"/>
+            <UnitTile x="8" y="2"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -872,9 +866,9 @@
                 <Stat name="Range" value="10.0"/>
             </Attributes>
         </Unit>
-        <Unit id="Name me!|0">
+        <Unit id="Soldier|0">
             <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="4" y="2"/>
+            <UnitTile x="8" y="2"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -886,93 +880,9 @@
                 <Stat name="Range" value="10.0"/>
             </Attributes>
         </Unit>
-        <Unit id="Name me!|0">
+        <Unit id="Soldier|0">
             <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="3" y="2"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="2" y="2"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="3" y="1"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="3" y="1"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="2" y="0"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="1" y="0"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Name me!|0">
-            <UnitPlayer id="Default Player Name"/>
-            <UnitTile x="2" y="1"/>
+            <UnitTile x="8" y="4"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -988,10 +898,10 @@
     <Conditions/>
     <ImageMap>
         <tileImages>
-            <image id="Name me!|0" src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\default_unit.png"/>
+            <image id="Plains|0" src="C:\Users\User\CS308\oogasalad_MISSINGNO\src\gae\resources\rock.jpg"/>
         </tileImages>
         <unitImages>
-            <image id="Plains|0" src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\rock.jpg"/>
+            <image id="Soldier|0" src="C:\Users\User\CS308\oogasalad_MISSINGNO\src\gae\resources\default_unit.png"/>
         </unitImages>
     </ImageMap>
 </GameElements>

@@ -221,4 +221,18 @@ public class Controller implements Constants{
 		myGUI.dispose();
 	}
 
+	public void open() {
+		if(FILE_CHOOSER.showOpenDialog(myPanels.get(0))==JFileChooser.APPROVE_OPTION){
+	    	String openPath = FILE_CHOOSER.getSelectedFile().getAbsolutePath();
+	    	myGUI.dispose();
+	    	new EditGUI(openPath);
+		}
+	}
+
+	public void loadData(GameElements openElements) {
+		for(EditPanel p:myPanels){
+			p.loadData(openElements);
+		}
+	}
+
 }

@@ -104,6 +104,7 @@ public abstract class EditPanel extends JPanel implements Constants {
 		// TODO Auto-generated method stub
 		
 	}
+	public abstract void loadData(GameElements elements);
 }
 	
 

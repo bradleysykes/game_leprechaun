@@ -23,6 +23,7 @@ import model.unit.Unit;
 public class BoardPanel extends EditPanel {
 	
 	private EditTabbedView myTabbedPane;
+	
 	public BoardPanel(Controller controller){
 		super(controller);
 		BoardList[] tabs = {new ConditionList(controller), new ResourceList(controller), 
@@ -45,6 +46,11 @@ public class BoardPanel extends EditPanel {
 	@Override
 	public List<Unit> getUnitTypes() {
 		return myTabbedPane.getUnitTypes();
+	}
+	
+	@Override
+	public void loadData(GameElements elements) {
+		myTabbedPane.loadData(elements);
 	}
 
 }

@@ -66,6 +66,18 @@ public class EditMenuBar extends JMenuBar implements Constants {
 			}
 
 		});
+		JMenuItem openItem = new JMenuItem("Open");
+		JMenuItem newItem = new JMenuItem("New");
+		fileMenu.add(openItem);
+		fileMenu.add(newItem);
+		openItem.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				open();
+			}
+			
+		});
 		JMenu gameMenu = new JMenu("Game");
 		this.add(gameMenu);
 		myFileViewItem = new JMenuItem("View XML");
@@ -78,6 +90,7 @@ public class EditMenuBar extends JMenuBar implements Constants {
 			}
 			
 		});
+		
 		fileMenu.add(myFileViewItem);
 		JMenuItem mapSetup = new JMenuItem("Initial Map Setup");
 		myRunItem = new JMenuItem("Run");
@@ -125,5 +138,9 @@ public class EditMenuBar extends JMenuBar implements Constants {
 		mySaveItem.setEnabled(true);
 		myFileViewItem.setEnabled(true);
 		myRunItem.setEnabled(true);
+	}
+	
+	public void open(){
+		myController.open();
 	}
 }

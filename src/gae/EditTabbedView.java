@@ -88,4 +88,11 @@ public class EditTabbedView extends JTabbedPane {
 		}
 		return u;
 	}
+
+
+	public void loadData(GameElements elements) {
+		for(BoardList list:myTabContents.values()){
+			list.loadData(elements);
+		}
+	}
 }
