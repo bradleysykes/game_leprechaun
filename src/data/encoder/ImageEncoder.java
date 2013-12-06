@@ -50,7 +50,7 @@ public class ImageEncoder extends Encoder {
         tile.setStat(X_COORD, -1.0);
         tile.setStat(Y_COORD, -1.0);
         MapEncoder me = new MapEncoder(myXmlDocument, null, null);
-        me.appendTile(tile, imageElement);
+        me.appendTile(tile, imageElement, true);
         parent.appendChild(imageElement);
     }
     
@@ -68,7 +68,7 @@ public class ImageEncoder extends Encoder {
         unit.getCurrentTile().setStat(X_COORD, -1.0);
         unit.getCurrentTile().setStat(Y_COORD, -1.0);
         UnitEncoder ue = new UnitEncoder(myXmlDocument, null, null);
-        ue.appendSingleUnit(unit, imageElement);
+        ue.appendSingleUnit(unit, imageElement, true);
         parent.appendChild(imageElement);
     }
     

@@ -151,19 +151,19 @@
     <ImageMap>
         <tileImages>
             <image src="src/test2">
-                <Tile id="tileIdddd" x="-1" y="-1">
+                <TileType id="tileIdddd" x="-1" y="-1">
                     <Stat name="Passability" value="10.0"/>
                     <Stat name="Max Population" value="10.0"/>
                     <Terrain id="Plains">
                         <Stat name="Magnitude" value="10.0"/>
                     </Terrain>
                     <Resources/>
-                </Tile>
+                </TileType>
             </image>
         </tileImages>
         <unitImages>
             <image src="src/test1">
-                <Unit id="unit1">
+                <UnitType id="unit1">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
                     <Abilities/>
@@ -176,7 +176,7 @@
                         <Stat name="Base Stamina" value="10.0"/>
                         <Stat name="Range" value="10.0"/>
                     </Attributes>
-                </Unit>
+                </UnitType>
             </image>
         </unitImages>
     </ImageMap>

@@ -33,13 +33,18 @@ public class UnitEncoder extends Encoder {
     private void appendUnits (List<Unit> unitList) {
         Element unitsElement = myXmlDocument.createElement(UNITS);
         for(Unit unit : unitList) {
-            appendSingleUnit(unit, unitsElement);
+            appendSingleUnit(unit, unitsElement,false);
         }
         myRoot.appendChild(unitsElement);
     }
 
-    protected void appendSingleUnit (Unit unit, Element unitsElement) {
-        Element unitElement = myXmlDocument.createElement(UNIT);
+    protected void appendSingleUnit (Unit unit, Element unitsElement, boolean isType) {
+        Element unitElement = null;
+        if(isType) {
+            unitElement = myXmlDocument.createElement("UnitType");
+        } else {
+            unitElement = myXmlDocument.createElement(UNIT);
+        }
         unitElement.setAttribute(ID, unit.getID());
         unitsElement.appendChild(unitElement);
         
