@@ -57,6 +57,7 @@ public class MapEncoder extends Encoder {
         Element tileElement = myXmlDocument.createElement(TILE);
         tileElement.setAttribute(X_COORD, String.valueOf(tile.getX()));
         tileElement.setAttribute(Y_COORD, String.valueOf(tile.getY()));
+        tileElement.setAttribute(ID, String.valueOf(tile.getID()));
         
         appendStat(tile.getStat(PASSABILITY), tileElement);
         appendStat(tile.getStat(MAX_POP), tileElement);

@@ -48,7 +48,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	}
 	
 	public void initGame() {
-		setFrameRate(35, 1);
+		setFrameRate(5, 1);
 		myMouseObject = new MouseObject(this);
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myUnitObjectMap = new HashMap<Unit, GameUnitObject>();
@@ -64,6 +64,9 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		//myViewListener.setOffset();
 		this.moveObjects();
 		this.checkCollision(MOUSE_COL_ID, 2+8);
+		if (myGameManager != null) {
+			myGameManager.setPlayerStatusArea();
+		}
 	}
 	
 	public void initializeState(GameElements gameElements) {
@@ -96,7 +99,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	
 	public void highlightCurrentPlayer() {
 		for (Unit unit : myUnits) {
-			if (unit.getPlayer().equals(myGameManager.getCurrentPlayer())) {
+			if (unit.getPlayer() == myGameManager.getCurrentPlayer()) {
 				Tile tile = unit.getCurrentTile();
 				new PlayerHighlightObject(tile, this);
 			}

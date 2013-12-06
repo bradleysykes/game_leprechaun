@@ -62,12 +62,12 @@ public class UnitList extends BoardList {
 		Object[] list = new Object[myModel.size()];
 		myModel.copyInto(list);
 		List<Unit> unitList = new ArrayList<Unit>();
-		Map<String, String> unitImageMap = new HashMap<String, String>();
+		Map<Unit, String> unitImageMap = new HashMap<Unit, String>();
 		for (Object o:list) {
 			UnitViewItem uvi = (UnitViewItem) o;
 			Unit u = (Unit) uvi.getModelObject();
 			unitList.add(u);
-			unitImageMap.put(u.getID(), uvi.getImagePath());
+			unitImageMap.put(u, uvi.getImagePath());
 		}
 		currentState.setUnitTypes(unitList);
 		currentState.setUnitImageMap(unitImageMap);
@@ -85,6 +85,11 @@ public class UnitList extends BoardList {
 			unitList.add(u);
 		}
 		return unitList;
+	}
+	
+	@Override
+	public void loadData(GameElements elements){
+		Map<Unit,String> unitImageMap = elements.getUnitImageMap();
 	}
 	
 }

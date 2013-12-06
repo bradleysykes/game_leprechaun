@@ -16,5 +16,5 @@ public interface EngineConstants {
 	final String PlayerHighlightName = "zzhighlight";
 	final JGColor PlayerHighlightColor = JGColor.red;
 	
-
 }
+
