@@ -41,6 +41,8 @@ public class Attack extends Ability{
 		double myDefense = unitAttributes.getDefense();
 		double myAttack = unitAttributes.getAttack();
 		double myHealth = unitAttributes.getValue("Health");
+		System.out.println(myDefense+" "+myAttack+" "+myHealth);
+		System.out.println(enemyDefense+" "+enemyAttack+" "+enemyHealth);
 		if (myAttack > enemyDefense)
 			enemyHealth = enemyHealth + enemyDefense - myAttack;
 		if (myDefense < enemyAttack)
