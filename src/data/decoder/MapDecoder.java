@@ -41,7 +41,7 @@ public class MapDecoder extends Decoder {
         NodeList tiles = root.getElementsByTagName(TILE);
         
         for(int i = 0; i < tiles.getLength(); i++) {
-            processTile((Element)tiles.item(i));
+            processTile((Element)tiles.item(i), false);
         }
         return myGameMap;
     }
@@ -52,7 +52,7 @@ public class MapDecoder extends Decoder {
      * @param tile
      * @return
      */
-    private Tile processTile(Element tile) {
+    public Tile processTile(Element tile, boolean isTypeElement) {
         String id = getAttribute(ID, tile);
         int x = Integer.parseInt(getAttribute(X_COORD, tile));
         int y = Integer.parseInt(getAttribute(Y_COORD, tile));
@@ -75,9 +75,11 @@ public class MapDecoder extends Decoder {
         Resources targetResources = (Resources) resultTile.getStatCollection(RESOURCES);
         processResources(elementResources,targetResources);
         
-        //create tile 
-        myGameMap.setTile(x, y, resultTile);
-        
+        //create tile
+        if(!isTypeElement) {
+            myGameMap.setTile(x, y, resultTile);
+        }
+
         //test use
         return resultTile;
     }

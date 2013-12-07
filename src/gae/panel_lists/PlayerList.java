@@ -50,7 +50,7 @@ public class PlayerList extends BoardList {
 	public void loadData(GameElements elements){
 		List<Player> loadPlayers = elements.getPlayers();
 		if(loadPlayers!=null){
-			int i = 0;
+			int i = 1;
 			for(Player player:loadPlayers){
 				this.addNewItem(new PlayerViewItem(player,i));
 				i++;

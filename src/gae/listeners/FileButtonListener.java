@@ -21,7 +21,7 @@ public class FileButtonListener implements ActionListener, Constants{
 		//launch a new file chooser
 		
 		FileNameExtensionFilter filter = new FileNameExtensionFilter(
-		        "JPG & GIF Images", "jpg", "gif");
+		        "JPG, GIF, or PNG", "jpg", "gif", "png");
 		    FILE_CHOOSER.setFileFilter(filter);
 		    int returnVal = FILE_CHOOSER.showOpenDialog(myParent);
 		    if(returnVal == JFileChooser.APPROVE_OPTION) {

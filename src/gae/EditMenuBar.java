@@ -23,6 +23,7 @@ public class EditMenuBar extends JMenuBar implements Constants {
 	protected JMenuItem mySaveItem, myFileViewItem, myRunItem;
 	public EditMenuBar(Controller controller){
 		myController = controller;
+		myController.setMenuBar(this);
 		JMenu fileMenu = new JMenu("File");
 		this.add(fileMenu);
 		JMenuItem saveAsItem = new JMenuItem("Save As");

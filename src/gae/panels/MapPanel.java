@@ -19,6 +19,7 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -50,11 +51,23 @@ public class MapPanel extends EditPanel {
 		this.setMinimumSize(new Dimension(500,300));
 		
 	}
-	@Override
-	public void createMap(List<String> dimensions){
+	
+	private void makeNewMap(List<String> dimensions){
 		int mapWidth = Integer.parseInt(dimensions.get(0));
 		int mapHeight = Integer.parseInt(dimensions.get(1));
-		myMapView = new GUIMap(mapWidth, mapHeight, this.getWidth(), this.getHeight());
+		myMapView = new GUIMap(mapWidth, mapHeight);
+	}
+	
+	private void loadExistingMap(GameElements elements){
+		myMapView = new GUIMap(elements);
+	}
+	
+	@Override
+	public void close(){
+		this.closeMap();
+	}
+	
+	private void setUp(){
 		myMapView.setPopup(new MapPopupMenu(myController,myMapView));
 		myTabbedView = new JTabbedPane();
 		myTabbedView.addTab("Map",myMapView);
@@ -94,7 +107,13 @@ public class MapPanel extends EditPanel {
 		});
 		this.add(myTabbedView);
 		this.revalidate();
-		}
+	}
+	
+	@Override
+	public void createMap(List<String> dimensions){
+		makeNewMap(dimensions);
+		setUp();
+	}
 	
 	public void removeBoardObject(BoardListViewItem item){
 		myMapView.removeObjects(item.getPrefix(),item.getMapObject().colid);
@@ -102,8 +121,10 @@ public class MapPanel extends EditPanel {
 	}
 	@Override
 	public void closeMap(){
-		myMapView.destroy();
-		this.revalidate();
+		if(myMapView!=null){
+			myMapView.destroy();
+			this.revalidate();
+		}
 	}
 	
 	@Override
@@ -166,11 +187,10 @@ public class MapPanel extends EditPanel {
 	public GameMap getMap() {
 		return myMapView.getModelMap();
 	}
+	
 	@Override
 	public void loadData(GameElements elements) {
-		GameMap loadMap = elements.getGameMap();
-		if(loadMap!=null){
-			
-		}
+		this.loadExistingMap(elements);
+		setUp();
 	}
 }

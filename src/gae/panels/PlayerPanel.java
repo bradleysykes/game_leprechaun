@@ -16,16 +16,19 @@ import javax.swing.JTextArea;
 
 import data.GameElements;
 import model.Player;
+import model.Resource;
 
 public class PlayerPanel extends EditPanel {
 	private PlayerList myList;
 	private List<Player> myModelPlayerList;
 	private int myPlayerNumber = 1;
+	private List<Resource> myGameResources;
 
 	public PlayerPanel(Controller controller){
 		super(controller);
 		myList = new PlayerList(controller);
 		myModelPlayerList = new ArrayList<Player>();
+		myGameResources = new ArrayList<Resource>();
 		this.add(myList);
 	}
 
@@ -33,6 +36,9 @@ public class PlayerPanel extends EditPanel {
 	public void postPlayers(int numPlayers) {
 		while(myModelPlayerList.size()<numPlayers) {
 			Player nextPlayer = new Player();
+			for (Resource r:myGameResources) {
+				nextPlayer.addNewResourceType(r.getID(), r.getStat("Harvest Rate").getValue());
+			}
 			myList.addNewItem(new PlayerViewItem(nextPlayer, myPlayerNumber));
 			myModelPlayerList.add(nextPlayer);
 			myPlayerNumber++;
@@ -63,6 +69,14 @@ public class PlayerPanel extends EditPanel {
 
 	@Override
 	public void loadData(GameElements elements) {
-		
+		myList.loadData(elements);
+	}
+	
+	@Override
+	public void addResource(Resource resource) {
+		myGameResources.add(resource);
+		for (Player p:myModelPlayerList) {
+			p.addNewResourceType(resource.getID(), resource.getStat("Harvest Rate").getValue());
+		}
 	}
 }

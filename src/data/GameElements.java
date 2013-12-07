@@ -38,7 +38,7 @@ public class GameElements {
     }
     
     public GameElements() {
-    
+        
     }
     
     public void setGameMap(GameMap map) {

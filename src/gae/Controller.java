@@ -18,6 +18,7 @@ import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import sun.nio.cs.ext.JIS_X_0201.Encoder;
 import data.GameElements;
@@ -25,6 +26,7 @@ import data.encoder.SaveHandler;
 import engine.GameViewer;
 import model.GameMap;
 import model.Player;
+import model.Resource;
 import model.stats.Stat;
 import model.unit.Unit;
 
@@ -35,6 +37,7 @@ public class Controller implements Constants{
 	private String myGameFilePath;
 	private GameElements myCurrentState;
 	private JFrame myGUI;
+	private EditMenuBar myMenuBar;
 	
 	public Controller(){
 		
@@ -148,6 +151,9 @@ public class Controller implements Constants{
 			return;
 		}
 		if(filePath==""){
+			FileNameExtensionFilter filter = new FileNameExtensionFilter(
+			        "XML only", "xml");
+			FILE_CHOOSER.setFileFilter(filter);
 			int returnVal = FILE_CHOOSER.showOpenDialog(myPanels.get(0));
 		    myGameFilePath = FILE_CHOOSER.getSelectedFile().getAbsolutePath();
 		}
@@ -222,16 +228,38 @@ public class Controller implements Constants{
 	}
 
 	public void open() {
+		FileNameExtensionFilter filter = new FileNameExtensionFilter(
+		        "XML Files", "xml");
+		FILE_CHOOSER.setFileFilter(filter);
 		if(FILE_CHOOSER.showOpenDialog(myPanels.get(0))==JFileChooser.APPROVE_OPTION){
 	    	String openPath = FILE_CHOOSER.getSelectedFile().getAbsolutePath();
+	    	for(EditPanel p:myPanels){
+	    		p.close();
+	    	}
 	    	myGUI.dispose();
 	    	new EditGUI(openPath);
 		}
 	}
+	
+	public void setGameFilePath(String filePath){
+		myGameFilePath = filePath;
+		myMenuBar.activateSaveItem();
+	}
 
 	public void loadData(GameElements openElements) {
+		myPlayers = openElements.getPlayers();
 		for(EditPanel p:myPanels){
 			p.loadData(openElements);
+		}
+	}
+
+	public void setMenuBar(EditMenuBar editMenuBar) {
+		myMenuBar = editMenuBar;
+	}
+
+	public void addResourceToPlayers(Resource resource) {
+		for(EditPanel p:myPanels){
+			p.addResource(resource);
 		}
 	}
 

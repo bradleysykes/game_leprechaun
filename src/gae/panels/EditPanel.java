@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import data.GameElements;
 import model.GameMap;
 import model.Player;
+import model.Resource;
 import model.stats.Stat;
 import model.unit.Unit;
 
@@ -105,6 +106,17 @@ public abstract class EditPanel extends JPanel implements Constants {
 		
 	}
 	public abstract void loadData(GameElements elements);
+	
+	/**
+	 * Method to properly dispose an EditPanel when the program is terminated. 
+	 */
+	public void close() {
+		//do nothing
+	}
+
+	public void addResource(Resource resource) {
+		// do nothing		
+	}
 }
 	
 

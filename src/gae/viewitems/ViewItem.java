@@ -14,6 +14,13 @@ import jgame.JGObject;
 import jgame.platform.JGEngine;
 
 
+/**
+ * 
+ * Abstract class defining elements displayed in GUI View Panels. 
+ * @author Bradley Sykes
+ *
+ */
+
 public abstract class ViewItem implements Constants {
 
 	protected Controller myController;
@@ -36,9 +43,11 @@ public abstract class ViewItem implements Constants {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	/**
+	 * Performs action 
+	 */
 	public void launchEdit() {
-		// TODO Auto-generated method stub
-		
+		// 
 	}
 }

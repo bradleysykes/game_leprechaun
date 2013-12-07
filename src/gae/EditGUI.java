@@ -32,6 +32,7 @@ public class EditGUI extends JFrame implements Constants {
 		this();
 		DataManager manager = new DataManager();
 		GameElements openElements = manager.getGameElements(new File(openPath));
+		myController.setGameFilePath(openPath);
 		myController.loadData(openElements);
 	}
 	

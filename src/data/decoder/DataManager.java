@@ -112,26 +112,13 @@ public class DataManager extends GameElements implements Attributes, Elements {
         return null;
     }
     
-    public Tile getTile(String id) {
-        for (Tile t : myGameMap.getAllTiles()) {
-            if (t.getID().equals(id)) return t;
-        }
-        return null;
-    }
-    
-    public Unit getUnit(String id) {
-        for (Player p : myPlayers) {
-            for (Unit u : p.getAllUnits()) {
-                if (u.getID().equals(id)) return u;
-            }
-        }
-        return null;
-    }
+
     
     //test use
     public static void main(String[] args) {
         DataManager dm = new DataManager();
-        GameElements map = dm.getGameElements(new File("src/data/resources/savedState.xml"));
+        
+        GameElements map = dm.getGameElements(new File("src/data/resources/savedTestFile.xml"));
         map.toString();
         System.out.println(map.getTileImageMap().keySet());
         System.out.println(map.getClass());

@@ -1,6 +1,7 @@
 package gae.panel_lists;
 import gae.Constants;
 import gae.Controller;
+import gae.EditTabbedView;
 import gae.dialogues.EditDialogue;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
@@ -43,6 +44,7 @@ public abstract class BoardList extends JList implements Constants{
 	protected GAEPopupMenu myPopup;
 	protected List<Stat> myDefaultModel;
 	private int myCounter;
+	protected EditTabbedView myTabbedView;
 
 	
 	public BoardList(Controller controller){
@@ -141,8 +143,19 @@ public abstract class BoardList extends JList implements Constants{
 		return null;
 	}
 
+	/**
+	 * Method for list to display data loaded from previous saved project. 
+	 * Override in subclass if list must update with loaded data. 
+	 * @author Bradley
+	 * @param GameElements elements: Object encapsulating the data associated with an existing project. 
+	 */
 	public void loadData(GameElements elements){
-		// do nothing
+		// do nothing in superclass. Override if necessary. 
+	}
+
+
+	public void setTabbedView(EditTabbedView editTabbedView) {
+		myTabbedView = editTabbedView;
 	}
 
 		

@@ -4,6 +4,8 @@ import java.util.*;
 
 import javax.swing.JFrame;
 
+import engine.gui.AbilityListArea;
+import engine.gui.ActionPanel;
 import engine.gui.PlayerStatusArea;
 import model.Player;
 import model.stats.Stat;

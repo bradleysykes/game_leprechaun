@@ -90,6 +90,14 @@ public class UnitList extends BoardList {
 	@Override
 	public void loadData(GameElements elements){
 		Map<Unit,String> unitImageMap = elements.getUnitImageMap();
+		if(unitImageMap!=null){
+			int i = 0;
+			for(Unit unit:unitImageMap.keySet()){
+				File unitImageFile = new File(unitImageMap.get(unit));
+				this.addNewItem(new UnitViewItem(unit.getStats(),unit.getID().split("\\|")[0],unitImageFile,i));
+				i++;
+			}
+		}
 	}
 	
 }

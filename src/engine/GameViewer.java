@@ -71,7 +71,7 @@ public class GameViewer extends JFrame {
 		return myGameEngine;
 	}
 	
-	public static ActionPanel getActionPanel() {
+	public ActionPanel getActionPanel() {
 		return myActionPanel;
 	}
 	

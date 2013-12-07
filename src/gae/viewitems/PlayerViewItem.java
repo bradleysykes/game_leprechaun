@@ -1,6 +1,7 @@
 package gae.viewitems;
 
 import gae.Controller;
+import gae.dialogues.EditDialogue;
 import gae.dialogues.PlayerDialogue;
 
 import java.util.List;
@@ -45,5 +46,9 @@ public class PlayerViewItem extends ViewItem {
 	public Player getPlayer() {
 		return myPlayer;
 	}
-
+	
+	@Override
+	public void showProperties() {
+		EditDialogue d = new EditDialogue(myPlayer.getID(), myPlayer.getStats(), new NullViewItem());
+	}
 }
