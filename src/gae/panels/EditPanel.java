@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import data.GameElements;
 import model.GameMap;
 import model.Player;
+import model.Resource;
 import model.stats.Stat;
 import model.unit.Unit;
 
@@ -111,6 +112,10 @@ public abstract class EditPanel extends JPanel implements Constants {
 	 */
 	public void close() {
 		//do nothing
+	}
+
+	public void addResource(Resource resource) {
+		// do nothing		
 	}
 }
 	

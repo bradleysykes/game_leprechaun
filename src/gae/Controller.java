@@ -26,6 +26,7 @@ import data.encoder.SaveHandler;
 import engine.GameViewer;
 import model.GameMap;
 import model.Player;
+import model.Resource;
 import model.stats.Stat;
 import model.unit.Unit;
 
@@ -254,6 +255,12 @@ public class Controller implements Constants{
 
 	public void setMenuBar(EditMenuBar editMenuBar) {
 		myMenuBar = editMenuBar;
+	}
+
+	public void addResourceToPlayers(Resource resource) {
+		for(EditPanel p:myPanels){
+			p.addResource(resource);
+		}
 	}
 
 }
