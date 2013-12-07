@@ -32,7 +32,7 @@ public class ActionPanel extends JPanel {
 		titledBorder.setTitleJustification(TitledBorder.LEFT);
 		setBorder(titledBorder);
 		
-		myUnitListArea = new UnitListArea();
+		myUnitListArea = new UnitListArea(myGameEngine);
 		//myAbilityListArea = new JohnTestAbilityArea(myGameEngine);
 		myAbilityListArea = new AbilityListArea(myGameEngine);
 		

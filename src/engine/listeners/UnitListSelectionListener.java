@@ -13,6 +13,7 @@ import model.Attributes;
 import model.stats.Stat;
 import model.stats.StatCollection;
 import model.unit.Unit;
+import engine.GameEngine;
 import engine.GameViewer;
 import engine.gui.AbilityListArea;
 import engine.gui.StatusArea;
@@ -22,9 +23,11 @@ import engine.gui.UnitStatusArea;
 public class UnitListSelectionListener implements ListSelectionListener {
 	
 	private UnitListArea myUnitListArea;
+	private GameEngine myGameEngine;
 	
-	public UnitListSelectionListener(UnitListArea unitListArea) {
+	public UnitListSelectionListener(UnitListArea unitListArea, GameEngine gameEngine) {
 		myUnitListArea = unitListArea;
+		myGameEngine = gameEngine;
 	}
 
 	public void valueChanged(ListSelectionEvent e) {
@@ -33,7 +36,7 @@ public class UnitListSelectionListener implements ListSelectionListener {
 		if (index != -1) {
 			Unit selectedUnit = myUnitListArea.getUnits().get(index);
 			
-			AbilityListArea abilityListArea = (AbilityListArea) GameViewer.getActionPanel().getAbilityListArea();
+			AbilityListArea abilityListArea = (AbilityListArea) myGameEngine.getGameViewer().getActionPanel().getAbilityListArea();
 			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
 			
 			abilityListArea.setUnit(selectedUnit);

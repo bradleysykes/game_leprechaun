@@ -200,4 +200,8 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		return myGameLoader;
 	}
 	
+	public GameViewer getGameViewer() {
+		return myGameViewer;
+	}
+	
 }

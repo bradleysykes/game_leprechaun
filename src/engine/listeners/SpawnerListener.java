@@ -3,6 +3,7 @@ package engine.listeners;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -30,6 +31,7 @@ public class SpawnerListener implements ActionListener {
 		
 		//mySpawnerViewer.dispatchEvent(new WindowEvent(mySpawnerViewer, WindowEvent.WINDOW_CLOSING); // dispose() lets us reuse i think
 		mySpawnerViewer.getStatusArea().setStatusText("");
+		mySpawnerPanel.setListContent(new ArrayList<Unit>());
 		mySpawnerViewer.dispose();
 	}
 	

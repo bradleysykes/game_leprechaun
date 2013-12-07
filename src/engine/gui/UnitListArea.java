@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
+import engine.GameEngine;
 import engine.listeners.UnitListSelectionListener;
 import model.unit.Unit;
 
@@ -25,13 +26,13 @@ public class UnitListArea extends JPanel {
 	private final Dimension mySize = new Dimension(150, 70);
 	
 	
-	public UnitListArea() {
+	public UnitListArea(GameEngine gameEngine) {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		
 		myListModel = new DefaultListModel();
 		
 		myUnitList = new JList(myListModel);
-		myUnitList.addListSelectionListener(new UnitListSelectionListener(this));
+		myUnitList.addListSelectionListener(new UnitListSelectionListener(this, gameEngine));
 		myUnitList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		myUnitList.setLayoutOrientation(JList.VERTICAL);
 		myUnitList.setVisibleRowCount(-1);

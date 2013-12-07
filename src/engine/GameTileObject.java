@@ -71,11 +71,11 @@ public class GameTileObject extends JGObject implements EngineConstants{
 			for (Unit unit : unitList) {
 				System.out.println(unit.getID().split("\\|")[0]);
 			}
-			AbilityListArea abilityListArea = (AbilityListArea) GameViewer.getActionPanel().getAbilityListArea();
+			AbilityListArea abilityListArea = (AbilityListArea) myEngine.getGameViewer().getActionPanel().getAbilityListArea();
 			abilityListArea.clear();
 			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
 			unitStatusArea.setStatusText("");
-			UnitListArea unitListArea = (UnitListArea) GameViewer.getActionPanel().getUnitListArea();
+			UnitListArea unitListArea = (UnitListArea) myEngine.getGameViewer().getActionPanel().getUnitListArea();
 			unitListArea.loadUnitList(selectableUnitList);
 		}
 	}
