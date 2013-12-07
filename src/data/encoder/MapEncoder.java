@@ -29,7 +29,7 @@ public class MapEncoder extends Encoder {
         myXmlDocument = xmlDocument;
         myRoot = root;
     }
-    
+   
     @Override
     protected void encode () {
         appendMap(myGameMap);
@@ -44,7 +44,7 @@ public class MapEncoder extends Encoder {
         mapElement.setAttribute(X_DIM, String.valueOf(myGameMap.getSizeX()));
         mapElement.setAttribute(Y_DIM, String.valueOf(myGameMap.getSizeY()));
         for(Tile tile : gameMap.getAllTiles()) {
-            appendTile(tile, mapElement);
+            appendTile(tile, mapElement, false);
         }
         myRoot.appendChild(mapElement);
     }
@@ -53,8 +53,13 @@ public class MapEncoder extends Encoder {
      * Adds a tile element and its children elements to the map element.
      * @param tile tile to add
      */
-    private void appendTile(Tile tile, Element mapRoot) {
-        Element tileElement = myXmlDocument.createElement(TILE);
+    protected void appendTile(Tile tile, Element mapRoot, boolean isType) {
+        Element tileElement = null;
+        if(isType) {
+            tileElement = myXmlDocument.createElement("TileType");
+        } else {
+            tileElement = myXmlDocument.createElement(TILE);
+        }
         tileElement.setAttribute(X_COORD, String.valueOf(tile.getX()));
         tileElement.setAttribute(Y_COORD, String.valueOf(tile.getY()));
         tileElement.setAttribute(ID, String.valueOf(tile.getID()));

@@ -34,9 +34,9 @@ public class GameLoader  {
 		myUnitImageMap = myGameElements.getUnitImageMap();
 
 		for (Tile tile : myTileImages.keySet()) {
-		    String id = tile.getID();
-			System.out.println("Loading: "+ id + " "+myTileImages.get(id));
-			myGameEngine.defineImage(id, "-", 0,  "/" + myTileImages.get(id),"-");
+		    String id = tile.getStatCollection("Terrain").getID();
+			System.out.println("Loading: "+ id + " "+ myTileImages.get(tile));
+			myGameEngine.defineImage(id, "-", 0,  "/" + myTileImages.get(tile),"-");
 		}
 		
 		for (Unit u : myUnitImageMap.keySet()) {

@@ -13,6 +13,7 @@ import gae.viewitems.MapObject;
 import gae.viewitems.NullViewItem;
 import gae.viewitems.PlayerViewItem;
 import gae.viewitems.TileViewItem;
+import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -51,17 +52,72 @@ public class GUIMap extends JGEngine implements Constants{
 	public GUIMap(GameElements elements){
 		this(elements.getGameMap().getSizeX(),elements.getGameMap().getSizeY());
 		myMap = elements.getGameMap();
+		populateMap(elements);
+	}
+	
+	private File getTileImageFile(Tile tile, Map<Tile,String> imageMap){
+		for(Tile keyTile:imageMap.keySet()){
+			String keyIdentifier = keyTile.getID().split("|")[0];
+			String tileIdentifier = tile.getID().split("|")[0];
+			if(keyIdentifier.equals(tileIdentifier)){
+				return new File(imageMap.get(keyTile));
+			}
+		}
+		return null;
+	}
+	
+	private File getUnitImageFile(Unit unit, Map<Unit,String> imageMap){
+		for(Unit keyUnit:imageMap.keySet()){
+			String keyIdentifier = keyUnit.getID().split("\\|")[0];
+			String unitIdentifier = keyUnit.getID().split("\\|")[0];
+			if(keyIdentifier.equals(unitIdentifier)){
+				return new File(imageMap.get(keyUnit));
+			}
+		}
+		return null;
+	}
+	
+	
+	/**
+	 * Reads data from a loaded game state and renders in map view. 
+	 * @author Bradley Sykes
+	 * @param GameElements elements: Game data class encapsulating all information about the state of a project. 
+	 */
+	private void populateMap(GameElements elements) {
 		Collection<Tile> loadTiles = myMap.getAllTiles();
 		Map<Tile,String> tileImages = elements.getTileImageMap();
 		Map<Unit,String> unitImages = elements.getUnitImageMap();
-		TileViewItem view;
+		BoardListViewItem view;
 		int i = 1;
 		for(Tile tile:loadTiles){
-			File tileImageFile = new File(tileImages.get(tile));
-			view = new TileViewItem(tile.getStats(),tile.getName(),tileImageFile,i);
+			try{
+				File tileImageFile = getTileImageFile(tile, tileImages);
+				view = new TileViewItem(tile.getStats(),tile.getID(),tileImageFile,i);
+			}
+			catch(NullPointerException e){
+				view = new NullViewItem();
+			}
+			view.placeOnBoard(this,tile.getX(), tile.getY());
+			if(tile.isOccupied()){
+				List<Unit> units = tile.getUnits();
+				BoardListViewItem unitView;
+				for(Unit unit:units){
+					try{
+						File unitImageFile = getUnitImageFile(unit, unitImages);
+						unitView = new UnitViewItem(unit.getStats(),unit.getID(),unitImageFile,i);
+					}
+					catch(NullPointerException e){
+						unitView = new NullViewItem();
+					}
+					Player player = unit.getPlayer();
+					PlayerViewItem unitPlayer = new PlayerViewItem(player,i);
+					unitView.clickOnBoard(this, getActualXCoordinate(tile.getX()), getActualYCoordinate(tile.getY()),unitPlayer);
+				}
+			}
+			i++;
 		}
 	}
-	
+
 	public void setPopup(GAEPopupMenu popup){
 		myPopup = popup;
 	}

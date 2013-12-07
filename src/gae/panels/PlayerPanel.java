@@ -63,6 +63,6 @@ public class PlayerPanel extends EditPanel {
 
 	@Override
 	public void loadData(GameElements elements) {
-		
+		myList.loadData(elements);
 	}
 }

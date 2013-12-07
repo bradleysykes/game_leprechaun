@@ -105,6 +105,13 @@ public abstract class EditPanel extends JPanel implements Constants {
 		
 	}
 	public abstract void loadData(GameElements elements);
+	
+	/**
+	 * Method to properly dispose an EditPanel when the program is terminated. 
+	 */
+	public void close() {
+		//do nothing
+	}
 }
 	
 

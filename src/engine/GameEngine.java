@@ -35,7 +35,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private SpawnerViewer mySpawnerViewer;
 	
 	public GameEngine(GameViewer gv) {
-		initEngineComponent(myViewerWidth, myViewerHeight);
+		initEngineComponent(640, 480);
 		myGameViewer = gv;
 	}
 	

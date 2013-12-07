@@ -20,13 +20,21 @@ public class DataPrimer {
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("XML Files Only", "xml");
 		myFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		myFileChooser.setFileFilter(filter);
-		File xmlFile = selectAndParseXML();
+		File xmlFile;
 		if(gameEngine.getSourceFile()!=null){
+			//user is launching from GAE
+			xmlFile = gameEngine.getSourceFile();
+		}
+		else{
+			xmlFile = selectAndParseXML();
+		}
+		
+/*		if(gameEngine.getSourceFile()!=null){
 			xmlFile = gameEngine.getSourceFile();
 		}
 		else{
 			xmlFile = new File("src/test_saves/game3.xml");
-		}
+		}*/
 		//File xmlFile = new File("src/test_saves/hihi.xml");
 
 		System.out.println("Loading from file "+xmlFile.getAbsolutePath());

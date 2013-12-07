@@ -141,8 +141,14 @@ public abstract class BoardList extends JList implements Constants{
 		return null;
 	}
 
+	/**
+	 * Method for list to display data loaded from previous saved project. 
+	 * Override in subclass if list must update with loaded data. 
+	 * @author Bradley
+	 * @param GameElements elements: Object encapsulating the data associated with an existing project. 
+	 */
 	public void loadData(GameElements elements){
-		// do nothing
+		// do nothing in superclass. Override if necessary. 
 	}
 
 		
