@@ -3,13 +3,14 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.stats.Stat;
 import model.stats.StatCollection;
 import model.unit.Unit;
 
 public class Player extends StatCollection implements ModelConstants{
 	
 	protected List<Unit> myUnits;
-	protected Condition myWinCondition;
+	protected WinCondition myWinCondition;
 	protected Model myModel;
 	
 	public Player(){
@@ -43,6 +44,32 @@ public class Player extends StatCollection implements ModelConstants{
 			return true;
 		}
 		return false;
+	}
+	
+	public void chargePlayer(Resources charged){
+		for(Stat s : charged.getStats()){
+			Resource r = (Resource) s;
+			this.adjustResources(r.getID(),-r.getValue("Amount"));
+		}
+	}
+	
+	public boolean playerCanAfford(Resource charged){
+		Resource r = (Resource) this.getStatCollection(charged.getID());
+		double playerResourceAmount = r.getValue("Amount");
+		double finalResources = playerResourceAmount - charged.getValue("Amount");
+		if(finalResources>0){
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean canAfford(Resources resources){
+		for(Stat s : resources.getStats()){
+			Resource r = (Resource) s;
+			if(!playerCanAfford(r))
+				return false;
+		}
+		return true;
 	}
 	
 	public List<Unit> getAllUnits(){
