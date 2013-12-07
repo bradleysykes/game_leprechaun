@@ -20,17 +20,22 @@ public class PlayerPopupMenu extends GAEPopupMenu {
 	
 	private BoardList myListSource;
 	private JMenu myUnitsSubMenu;
+	private Player myPlayer;
 	
 	public PlayerPopupMenu(Controller controller, BoardList source) {
 		super(controller);
 		myListSource = source;
 		initialize();
+		PlayerViewItem item = (PlayerViewItem)mySource;
+		if (item!=null)
+			myPlayer = item.getPlayer();
+		else
+			myPlayer = null;
 	}
 	
 	public List<Unit> getUnits(){
-		PlayerViewItem item = (PlayerViewItem)mySource;
-		if(item!=null){
-			return item.getPlayer().getAllUnits();
+		if(myPlayer!=null){
+			return myPlayer.getAllUnits();
 		}
 		return new ArrayList<Unit>();
 	}
@@ -73,5 +78,4 @@ public class PlayerPopupMenu extends GAEPopupMenu {
 			EditDialogue d = new EditDialogue(myUnit.getID(),myUnit.getStats(), new NullViewItem());
 		}
 	}
-
 }
