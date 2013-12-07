@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import data.GameElements;
+import engine.gui.SpawnerViewer;
 import engine.listeners.ViewOffsetListener;
 import jgame.JGColor;
 import jgame.platform.JGEngine;
@@ -23,7 +24,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private Model myModel;
 	private GameLoader myGameLoader;
 	private List<Player> myPlayers;
-	private ArrayList<Unit> myUnits;
+	private List<Unit> myUnits;
 	private GameMap myGameMap;
 	private Map<Tile, GameTileObject> myTileObjectMap;
 	private Map<Unit, GameUnitObject> myUnitObjectMap;
@@ -31,6 +32,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private GameViewer myGameViewer;
 	private ViewOffsetListener myViewListener;
 	private File mySourceFile;
+	private SpawnerViewer mySpawnerViewer;
 	
 	public GameEngine(GameViewer gv) {
 		initEngineComponent(myViewerWidth, myViewerHeight);
@@ -136,6 +138,17 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myUnits.add(unit);
 	}
 	
+	public void initializeSpawner(List<Unit> unitList) {
+		if (mySpawnerViewer == null) {
+			mySpawnerViewer = new SpawnerViewer(unitList, this);
+		} else {
+			mySpawnerViewer.pack();
+			mySpawnerViewer.setVisible(true);
+			mySpawnerViewer.getSpawnerPanel().setListContent(unitList);
+		}
+		
+	}
+	
 	public static int getViewerWidth() {
 		return myViewerWidth;
 	}
@@ -181,6 +194,10 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	
 	public GameManager getGameManager() {
 		return myGameManager;
+	}
+	
+	public GameLoader getGameLoader() {
+		return myGameLoader;
 	}
 	
 }

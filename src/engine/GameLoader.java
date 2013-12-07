@@ -16,6 +16,7 @@ public class GameLoader  {
 
 	private GameEngine myGameEngine;
 	private GameElements myGameElements;
+	private Map<Unit, String> myUnitImageMap;
 
 	public GameLoader(GameElements gameElements, GameEngine gameEngine) {
 		myGameEngine = gameEngine;
@@ -30,7 +31,7 @@ public class GameLoader  {
 		Collection<Tile> allTiles = gameMap.getAllTiles();
 
 		Map<Tile, String> myTileImages = myGameElements.getTileImageMap();
-		Map<Unit, String> myUnitImages = myGameElements.getUnitImageMap();
+		myUnitImageMap = myGameElements.getUnitImageMap();
 
 		for (Tile tile : myTileImages.keySet()) {
 		    String id = tile.getID();
@@ -38,10 +39,10 @@ public class GameLoader  {
 			myGameEngine.defineImage(id, "-", 0,  "/" + myTileImages.get(id),"-");
 		}
 		
-		for (Unit u : myUnitImages.keySet()) {
+		for (Unit u : myUnitImageMap.keySet()) {
 		    String id  = u.getID();
-			System.out.println("Loading: "+id + " "+myUnitImages.get(id));
-			myGameEngine.defineImage(id, "-", 0, "/" + myUnitImages.get(id),"-");
+			System.out.println("Loading: "+id + " "+myUnitImageMap.get(id));
+			myGameEngine.defineImage(id, "-", 0, "/" + myUnitImageMap.get(id),"-");
 		}
 
 		Collection<Player> allPlayers = myGameElements.getPlayers();
@@ -54,6 +55,10 @@ public class GameLoader  {
 		myGameEngine.initializeTiles(allTiles);
 		myGameEngine.initializeUnits(allUnits);
 		myGameEngine.initializeGameManager();
+	}
+	
+	public Map<Unit, String> getUnitImageMap() {
+		return myUnitImageMap;
 	}
 	
 	/**
