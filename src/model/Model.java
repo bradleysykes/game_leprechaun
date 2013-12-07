@@ -39,14 +39,20 @@ public class Model {
 	}
 	
 	public void refresh(){
-		// CHECK FOR WINNER
 		for(Player p : myPlayers){
+			if(p.checkWinningCondition()){
+				myGameEngine.declareWinner(p);
+			}
 			p.refresh();
 		}
 	}
 	
 	public List<Player> getPlayers(){
 		return myPlayers;
+	}
+
+	public void destroyUnit(Unit unit) {
+		myGameEngine.destroyUnit(unit);
 	}
 
 }
