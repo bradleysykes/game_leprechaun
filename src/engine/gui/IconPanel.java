@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 public class IconPanel extends JPanel {
 	
-	private final Dimension mySize = new Dimension(40, 40);
+	private final Dimension mySize = new Dimension(80, 80);
 	private ImageIcon myImageIcon;
 	
 	public IconPanel() {

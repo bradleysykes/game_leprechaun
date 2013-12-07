@@ -23,7 +23,7 @@ public class SpawnerPanel extends JPanel {
 	private DefaultListModel<String> myListModel;
 	private List<Unit> myUnits;
 	private Map<Unit, String> myUnitImageMap;
-	private Dimension mySize = new Dimension(150, 120);
+	private Dimension mySize = new Dimension(250, 180);
 	
 	public SpawnerPanel(List<Unit> unitList, SpawnerViewer spawnerViewer, GameEngine gameEngine) {
 		myUnitImageMap = gameEngine.getGameLoader().getUnitImageMap();
@@ -31,7 +31,7 @@ public class SpawnerPanel extends JPanel {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		myListModel = new DefaultListModel<String>();
 		myList = new JList<String>(myListModel);
-		myList.addListSelectionListener(new SpawnerListSelectionListener(myList, spawnerViewer.getIconPanel()));
+		myList.addListSelectionListener(new SpawnerListSelectionListener(myList, spawnerViewer.getIconPanel(), spawnerViewer.getStatusArea()));
 		setPreferredSize(mySize);
 		myScrollPane = new JScrollPane(myList);
 		myScrollPane.setPreferredSize(new Dimension(130, 70));

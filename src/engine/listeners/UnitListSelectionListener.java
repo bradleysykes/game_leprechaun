@@ -15,6 +15,7 @@ import model.stats.StatCollection;
 import model.unit.Unit;
 import engine.GameViewer;
 import engine.gui.AbilityListArea;
+import engine.gui.StatusArea;
 import engine.gui.UnitListArea;
 import engine.gui.UnitStatusArea;
 
@@ -38,18 +39,18 @@ public class UnitListSelectionListener implements ListSelectionListener {
 			abilityListArea.setUnit(selectedUnit);
 			
 			StatCollection attributesStatCollection = selectedUnit.getStatCollection("Attributes");
-			setUnitStatusArea(attributesStatCollection, unitStatusArea, selectedUnit);
+			setStatusArea(attributesStatCollection, unitStatusArea, selectedUnit);
 		}
 	}
 	
-	private void setUnitStatusArea(StatCollection collection, UnitStatusArea unitStatusArea, Unit unit) {
+	public static void setStatusArea(StatCollection collection, StatusArea statusArea, Unit unit) {
 		Attributes attributes = (Attributes) collection;
 		List<Stat> attributeStatList = attributes.getStats();
 		String attributeReport = unit.getID().split("\\|")[0] + "\n";
 		for (Stat stat : attributeStatList) {
 			attributeReport += stat.getName() + ":" + " " + stat.getValue() + "\n";
 		}
-		unitStatusArea.setStatusText(attributeReport);
+		statusArea.setStatusText(attributeReport);
 	}
 
 }

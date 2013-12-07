@@ -10,11 +10,12 @@ import javax.swing.JPanel;
 
 import model.unit.Unit;
 import engine.gui.SpawnerPanel;
+import engine.gui.SpawnerViewer;
 
 public class SpawnerListener implements ActionListener {
 
 	private SpawnerPanel mySpawnerPanel;
-	private JFrame mySpawnerViewer;
+	private SpawnerViewer mySpawnerViewer;
 	
 	public SpawnerListener(SpawnerPanel spawnerPanel, JFrame spawnerViewer) {
 		mySpawnerPanel = spawnerPanel;
@@ -25,9 +26,10 @@ public class SpawnerListener implements ActionListener {
 		int index = unitList.getSelectedIndex();
 		Unit toSpawn = mySpawnerPanel.getUnits().get(index);
 		
-		//(call model method to deliver unit here)
+		//(call model method to deliver toSpawn unit)
 		
 		//mySpawnerViewer.dispatchEvent(new WindowEvent(mySpawnerViewer, WindowEvent.WINDOW_CLOSING); // dispose() lets us reuse i think
+		mySpawnerViewer.getStatusArea().setStatusText("");
 		mySpawnerViewer.dispose();
 	}
 	
