@@ -9,11 +9,15 @@ import model.unit.Unit;
 public class Player extends StatCollection implements ModelConstants{
 	
 	protected List<Unit> myUnits;
-	protected Condition myWinningCondition;
+	protected Condition myWinCondition;
 	protected Model myModel;
 	
 	public Player(){
-		super("Player","Default Player Name");
+		this("Defuault Player Name");
+	}
+	
+	public Player(String id){
+		super("Player",id);
 		this.addStat(new Resources());
 		myUnits = new ArrayList<Unit>();
 	}
@@ -46,7 +50,7 @@ public class Player extends StatCollection implements ModelConstants{
 	}
 	
 	public boolean checkWinningCondition() {
-		return myWinningCondition.check();
+		return myWinCondition.check();
 	}
 	
 	public boolean equals(Player other){

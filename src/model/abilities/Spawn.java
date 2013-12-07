@@ -14,6 +14,7 @@ public class Spawn extends Ability {
 	public void useAbility() {
 		//if player can afford
 		myTargetUnit.setPlayer(myUnit.getPlayer());
+		myUnit.getPlayer().addUnit(myTargetUnit);
 		myTargetUnit.setCurrentTile(myUnit.getMap().getNearestValidTile(myUnit));
 		// else destroy
 	}
