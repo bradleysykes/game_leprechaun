@@ -2,6 +2,7 @@ package model.abilities;
 
 import engine.GameEngine;
 import model.Ability;
+import model.Resources;
 import model.unit.Unit;
 
 public class Spawn extends Ability {
@@ -12,10 +13,16 @@ public class Spawn extends Ability {
 
 	@Override
 	public void useAbility() {
-		//if player can afford
-		myTargetUnit.setPlayer(myUnit.getPlayer());
-		myTargetUnit.setCurrentTile(myUnit.getMap().getNearestValidTile(myUnit));
-		// else destroy
+		Resources cost = (Resources) myTargetUnit.getStatCollection("Resources");
+		if(myUnit.getPlayer().canAfford(cost)){
+			myUnit.getPlayer().chargePlayer(cost);
+			myTargetUnit.setPlayer(myUnit.getPlayer());
+			myUnit.getPlayer().addUnit(myTargetUnit);
+			myTargetUnit.setCurrentTile(myUnit.getMap().getNearestValidTile(myUnit));
+		}
+		else{
+			myUnit.getPlayer().getModel().destroyUnit(myTargetUnit);
+		}
 	}
 
 	@Override

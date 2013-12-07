@@ -29,7 +29,6 @@ public class Unit extends StatCollection implements ModelConstants {
 		myMap = tile.getMap();
 		this.addStat(new Attributes());
 		this.addStat(new Abilities(this));
-		// Resources object to track cost of the unit
 		this.addStat(new Resources());
 	}
 	
