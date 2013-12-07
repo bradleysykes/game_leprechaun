@@ -1,5 +1,6 @@
 package gae.buttons;
 
+import gae.dialogues.ResourcesDialogue;
 import gae.dialogues.SubUnitDialogue;
 import gae.dialogues.UnitCreationDialogue;
 import gae.panel_lists.BoardList;
@@ -22,14 +23,29 @@ public class SaveInputButton extends JButton {
 		super("Create "+stat.getName());
 		myStat = (StatCollection)stat;
 		myList = list;
-		this.addActionListener(new ActionListener(){
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		this.addActionListener(new ResourceListener(this));
+		
+	}
+	
+	public class ResourceListener implements ActionListener {
+		
+		private JButton mySource;
+		
+		public ResourceListener(JButton buttonSource){
+			mySource = buttonSource;
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// find resources
+			if(myStat.getName().equals("Resources")){
+				ResourcesDialogue resourceDialogue = new ResourcesDialogue(myList, myStat);
+			}
+			else{
 				SubUnitDialogue d = new SubUnitDialogue(myStat,myStat.getName(),
 						myStat.getStats(),myList);
 			}
-			
-		});
+		}
+		
 	}
 }

@@ -8,6 +8,7 @@ import java.util.Map;
 
 import gae.Constants;
 import gae.Controller;
+import gae.EditTabbedView;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
 import gae.viewitems.BoardListViewItem;
@@ -19,6 +20,8 @@ import javax.swing.ImageIcon;
 
 import data.GameElements;
 import model.GameMap;
+import model.Resource;
+import model.Resources;
 import model.stats.Stat;
 import model.tile.Tile;
 import model.unit.Unit;
@@ -26,7 +29,7 @@ import model.unit.Unit;
 public class TileList extends BoardList {
 	
 	private int myIDCounter;
-
+	
 	public TileList(Controller controller){
 		super(controller);
 		myDefaultModel = DEFAULT_TILE_STATS;
@@ -35,6 +38,10 @@ public class TileList extends BoardList {
 	@Override
 	public String getListType() {
 		return "Tiles";
+	}
+	
+	public List<Resource> getUserResources(){
+		return myTabbedView.getUserResources();
 	}
 	
 	@Override

@@ -13,13 +13,12 @@ import model.stats.Stat;
 
 public class ResourceViewItem extends BoardListViewItem {
 
-	private Resources myResource;
+	private Resource myResource;
 
 	public ResourceViewItem(List<Stat> stats, String name, File imageFile) {
 		super(stats, name, imageFile);
-		myResource = new Resources();
-		myDefaults = myResource.getStats();
-		myResource.setStats(stats);
+		myResource = new Resource(name, stats.get(0).getValue(), stats.get(1).getValue());
+		myResource.setID(name+"|"+myResource.hashCode());
 	}
 
 	@Override
@@ -68,7 +67,7 @@ public class ResourceViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public Object getModelObject() {
+	public Resource getModelObject() {
 		return myResource;
 	}
 

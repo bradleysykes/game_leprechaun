@@ -7,6 +7,7 @@ import gae.panel_lists.ConditionList;
 import gae.panel_lists.ResourceList;
 import gae.panel_lists.TileList;
 import gae.panel_lists.UnitList;
+import gae.viewitems.ResourceViewItem;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -29,6 +30,8 @@ import javax.swing.JToolBar;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import model.Resource;
+import model.Resources;
 import model.unit.Unit;
 import data.GameElements;
 
@@ -42,6 +45,7 @@ public class EditTabbedView extends JTabbedPane {
 	public EditTabbedView(BoardList[] tabs, Controller controller){
 		for(BoardList tab:tabs){
 			myTabContents.put(tab.getListType(), tab);
+			tab.setTabbedView(this);
 		}
 		// create a panel for each list that contains a toolbar and list to
 		//display viewitems. 
@@ -94,5 +98,17 @@ public class EditTabbedView extends JTabbedPane {
 		for(BoardList list:myTabContents.values()){
 			list.loadData(elements);
 		}
+	}
+
+
+	public List<Resource> getUserResources() {
+		BoardList resourceContents = myTabContents.get("Resources");
+		List<Resource> userResources = new ArrayList<Resource>();
+		int resourceCount = resourceContents.getModel().getSize();
+		for(int i = 0; i<resourceCount;i++){
+			ResourceViewItem item = (ResourceViewItem)resourceContents.getModel().getElementAt(i);
+			userResources.add(item.getModelObject());
+		}
+		return userResources;
 	}
 }

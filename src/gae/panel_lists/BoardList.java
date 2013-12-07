@@ -1,6 +1,7 @@
 package gae.panel_lists;
 import gae.Constants;
 import gae.Controller;
+import gae.EditTabbedView;
 import gae.dialogues.EditDialogue;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
@@ -43,6 +44,7 @@ public abstract class BoardList extends JList implements Constants{
 	protected GAEPopupMenu myPopup;
 	protected List<Stat> myDefaultModel;
 	private int myCounter;
+	protected EditTabbedView myTabbedView;
 
 	
 	public BoardList(Controller controller){
@@ -149,6 +151,11 @@ public abstract class BoardList extends JList implements Constants{
 	 */
 	public void loadData(GameElements elements){
 		// do nothing in superclass. Override if necessary. 
+	}
+
+
+	public void setTabbedView(EditTabbedView editTabbedView) {
+		myTabbedView = editTabbedView;
 	}
 
 		
