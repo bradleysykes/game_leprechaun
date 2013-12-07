@@ -3,6 +3,7 @@ package engine;
 import java.util.*;
 
 import engine.gui.AbilityListArea;
+import engine.gui.JohnTestAbilityArea;
 import engine.gui.UnitListArea;
 import engine.gui.UnitStatusArea;
 import model.tile.Tile;
@@ -71,7 +72,8 @@ public class GameTileObject extends JGObject implements EngineConstants{
 			for (Unit unit : unitList) {
 				System.out.println(unit.getID().split("\\|")[0]);
 			}
-			AbilityListArea abilityListArea = (AbilityListArea) myEngine.getGameViewer().getActionPanel().getAbilityListArea();
+			JohnTestAbilityArea abilityListArea = (JohnTestAbilityArea) myEngine.getGameViewer().getActionPanel().getAbilityListArea();
+			//AbilityListArea abilityListArea = (AbilityListArea) myEngine.getGameViewer().getActionPanel().getAbilityListArea();
 			abilityListArea.clear();
 			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
 			unitStatusArea.setStatusText("");
