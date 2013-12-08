@@ -24,6 +24,7 @@ public class CustomAbility extends Ability {
 	}
 	
 	public void addEffect(Effect e){
+		this.addStat(e);
 		myEffects.add(e);
 	}
 

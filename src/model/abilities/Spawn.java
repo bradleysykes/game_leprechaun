@@ -9,6 +9,7 @@ public class Spawn extends Ability {
 
 	public Spawn(Unit abilityUser) {
 		super("Spawn", abilityUser,"List of Spawnable Units");
+		myReferences.add("Soldier");
 	}
 
 	@Override
@@ -17,11 +18,8 @@ public class Spawn extends Ability {
 		if(myUnit.getPlayer().canAfford(cost)){
 			myUnit.getPlayer().chargePlayer(cost);
 			myTargetUnit.setPlayer(myUnit.getPlayer());
-			myUnit.getPlayer().addUnit(myTargetUnit);
-			myTargetUnit.setCurrentTile(myUnit.getMap().getNearestValidTile(myUnit));
-		}
-		else{
-			myUnit.getPlayer().getModel().destroyUnit(myTargetUnit);
+			myUnit.getPlayer().getModel().spawnUnit(new Unit(myTargetUnit, myUnit.getPlayer(),
+					myUnit.getMap().getNearestValidTile(myUnit)));
 		}
 	}
 
