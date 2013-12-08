@@ -13,9 +13,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import util.ImageTool;
-
 import jgame.JGObject;
-
 import model.stats.Stat;
 
 public abstract class BoardListViewItem extends ViewItem {
@@ -94,5 +92,9 @@ public abstract class BoardListViewItem extends ViewItem {
 	}
 	
 	public abstract Object getModelObject();
+
+	public void setName(String name) {
+		myName = name;		
+	}
 
 }
