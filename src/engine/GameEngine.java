@@ -35,7 +35,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private SpawnerViewer mySpawnerViewer;
 	
 	public GameEngine(GameViewer gv) {
-		initEngineComponent(640, 480);
+		initEngineComponent(myViewerWidth, myViewerHeight);
 		myGameViewer = gv;
 	}
 	
@@ -50,7 +50,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	}
 	
 	public void initGame() {
-		setFrameRate(5, 1);
+		setFrameRate(20, 1);
 		myMouseObject = new MouseObject(this);
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myUnitObjectMap = new HashMap<Unit, GameUnitObject>();
