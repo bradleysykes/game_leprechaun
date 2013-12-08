@@ -22,12 +22,12 @@ public class MouseObject extends JGObject implements EngineConstants{
 		myViewListener = viewListener;
 		this.setBBox((int)x,(int)y,1,1);
 		myGameEngine = gameEngine;
+		
 	}
 	
 	public void move() {
 		x = myGameEngine.getMouseX() + myViewListener.getXOffset();
 		y = myGameEngine.getMouseY() + myViewListener.getYOffset();
-		
 		
 		// Helps prevent unintentional double-clicks
 //		if(myGameEngine.getMouseButton(1) && !myClickDelay){
