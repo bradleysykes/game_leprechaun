@@ -14,30 +14,34 @@ public class Model {
 	public Model(GameEngine ge) {
 		myGameEngine = ge;
 	}
-	
+
 	public void addPlayer(Player p){
 		myPlayers.add(p);
 	}
-	
+
 	public void setGameEngine(GameEngine ge){
 		myGameEngine = ge;
 	}
-	
+
 	public void setAbility(Ability a){
 		myQueuedAbility = a;
 		myQueuedAbility.requestEngineInput(myGameEngine);
 	}
-	
+
 	public void useAbility(Tile t){
-		myQueuedAbility.setTargetTile(t);
-		myQueuedAbility.useAbility();
+		if(!(myQueuedAbility == null)){
+			myQueuedAbility.setTargetTile(t);
+			myQueuedAbility.useAbility();
+		}
 	}
-	
+
 	public void useAbility(Unit u){
-		myQueuedAbility.setTargetUnit(u);
-		myQueuedAbility.useAbility();
+		if(!(myQueuedAbility == null)){
+			myQueuedAbility.setTargetUnit(u);
+			myQueuedAbility.useAbility();
+		}
 	}
-	
+
 	public void refresh(){
 		for(Player p : myPlayers){
 			if(p.checkWinningCondition()){
@@ -45,8 +49,9 @@ public class Model {
 			}
 			p.refresh();
 		}
+		myQueuedAbility = null;
 	}
-	
+
 	public List<Player> getPlayers(){
 		return myPlayers;
 	}
@@ -54,7 +59,7 @@ public class Model {
 	public void destroyUnit(Unit unit) {
 		myGameEngine.destroyUnit(unit);
 	}
-	
+
 	public void spawnUnit(Unit u){
 		myGameEngine.spawnUnit(u);
 	}

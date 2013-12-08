@@ -8,6 +8,15 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import util.reflection.Reflection;
 
+/**
+ * Condition Decoder class is in charge of instantiating all the condition 
+ * objects. It will load the objects back to the data manager
+ * after it finishes to create the objects. It uses the reflection in order
+ * to create the corresponding condition object.
+ * 
+ * @author Seunghyun Lee
+ *
+ */
 public class ConditionDecoder extends Decoder {
 
     private DataManager myDataManager;

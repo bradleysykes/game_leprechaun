@@ -15,7 +15,7 @@ public class Resources extends StatCollection {
 	public Resources(Resources r){
 		this();
 		for(Resource resource : r.getResources()){
-			this.addResource(resource);
+			this.addResource((Resource) resource.copy());
 		}
 	}
 	
