@@ -32,8 +32,9 @@ public class Spawn extends Ability {
 	
 	@Override
 	public Spawn copy(Unit u){
-		Spawn toReturn = (Spawn) this.copy();
-		toReturn.setUnit(u);
+		Spawn toReturn = new Spawn(u);
+		for(String s : myReferences)
+			toReturn.getReferences().add(s);
 		return toReturn;
 	}
 

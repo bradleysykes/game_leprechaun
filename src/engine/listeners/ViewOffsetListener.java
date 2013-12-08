@@ -12,8 +12,8 @@ public class ViewOffsetListener {
 	
 	public ViewOffsetListener(GameEngine gameEngine) {
 		myGameEngine = gameEngine;
-		xOffset = gameEngine.pfWidth()/2;
-		yOffset = gameEngine.pfHeight()/2;
+		xOffset =  myGameEngine.getMouseX()*gameEngine.pfWidth()/2;
+		yOffset = myGameEngine.getMouseY()*gameEngine.pfHeight()/2;
 	}
 	
 	public void setOffset(){
@@ -37,7 +37,7 @@ public class ViewOffsetListener {
 		if (myGameEngine.getKey(myGameEngine.KeyLeft)) {
 			myGameEngine.clearKey(myGameEngine.KeyLeft);
 			xOffset-=SCROLL_OFFSET;
-		}
+		}	
 	}
 	
 }
