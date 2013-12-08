@@ -35,12 +35,12 @@ public class TileViewItem extends BoardListViewItem {
 		return myProperties;
 	}
 
-	@Override
-	public BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile, int counter) {
-		//newGuy.setStats(inputData);
-		BoardListViewItem newGuy = new TileViewItem(inputData,name,imageFile, counter);
-		return newGuy;
-	}
+//	@Override
+//	public BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile, int counter) {
+//		//newGuy.setStats(inputData);
+//		BoardListViewItem newGuy = new TileViewItem(inputData,name,imageFile, counter);
+//		return newGuy;
+//	}
 
 	@Override
 	public String getListMessage() {
@@ -99,7 +99,7 @@ public class TileViewItem extends BoardListViewItem {
 		return "a"+myName+this.hashCode();
 	}
 	
-	public Object getModelObject() {
+	public Tile getModelObject() {
 		return myTile;
 	}
 }

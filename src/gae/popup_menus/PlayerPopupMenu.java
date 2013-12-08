@@ -79,7 +79,7 @@ public class PlayerPopupMenu extends GAEPopupMenu {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			EditDialogue d = new EditDialogue(myUnit.getID(),myUnit.getStats(), new NullViewItem());
+			EditDialogue d = new EditDialogue(myUnit.getID(),myUnit.getStats(), myListSource, new NullViewItem());
 		}
 	}
 	

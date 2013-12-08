@@ -66,21 +66,14 @@ public class Controller implements Constants{
 		}
 	}
 	
+	/**
+	 * update model to reflect removal of certain objects from game. 
+	 * @param item
+	 */
 	public void removeBoardObject(BoardListViewItem item){
+		// update the panels appropriately 
 		for(EditPanel p:myPanels){
 			p.removeBoardObject(item);
-//			for(Player p:myPlayers){
-//			List<Unit> units = p.getAllUnits();
-//			Object toRemove = item.getModelObject();
-//			List<Unit> copy = new ArrayList<Unit>();
-//			for(Unit u:units){
-//				if(u.getID()!=((Unit)toRemove).getgetID()){
-//					copy.add(u);
-//				}
-//			}
-//			units=copy;
-//		}}
-//	
 		}
 	}
 
@@ -145,8 +138,6 @@ public class Controller implements Constants{
 	
 	public void getAndSaveState(String filePath) {
 		if(!canSave()){
-			// Popup dialog->not saved
-		
 			alertSave();
 			return;
 		}

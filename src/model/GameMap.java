@@ -19,7 +19,7 @@ public class GameMap {
 		}
 	}
 	
-	public void setTile(int x, int y, Tile t){
+	public void setTile(int x, int y, Tile t){		
 		List<Tile> tileRow = myTiles.get(x);
 		tileRow.set(y, t);
 	}

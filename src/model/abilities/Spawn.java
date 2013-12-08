@@ -10,7 +10,6 @@ public class Spawn extends Ability {
 
 	public Spawn(Unit abilityUser) {
 		super("Spawn", abilityUser,"List of Spawnable Units");
-		myReferences.add("Soldier");
 	}
 
 	@Override

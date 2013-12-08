@@ -10,6 +10,7 @@ import gae.listeners.PopupListener;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
 import gae.viewitems.BoardListViewItem;
+import gae.viewitems.NullViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
@@ -65,6 +66,7 @@ public abstract class BoardList extends JList implements Constants{
 
 	public void addNewItem(ViewItem item){
 		myModel.insertElementAt(item, 0);
+		item.setListSource(this);
 	}
 	public Controller getController(){
 		return myController;
@@ -126,8 +128,21 @@ public abstract class BoardList extends JList implements Constants{
 		this.addNewItem(newItem);
 	}
 	
+	private int findOldItem(String name){
+		for(int i=0;i<myModel.size();i++){
+			BoardListViewItem item = (BoardListViewItem)myModel.getElementAt(i);
+			if(item.getName().equals(name)){
+				return i;
+			}
+		}
+		return -1;
+	}
+	
 	public void postEditInput(List<Stat> inputData, String name, File f){
 		BoardListViewItem newItem = getNewItem(inputData, name,f, myCounter);
+		int oldLocation = this.getSelectedIndex();
+		myModel.removeElementAt(oldLocation);
+		this.addNewItem(newItem);
 	}
 	
 	protected abstract BoardListViewItem getNewItem(List<Stat> inputData, String name,File f, int counter);
@@ -156,6 +171,14 @@ public abstract class BoardList extends JList implements Constants{
 
 	public void setTabbedView(EditTabbedView editTabbedView) {
 		myTabbedView = editTabbedView;
+	}
+
+	/**
+	 * Return a list of all custom units made by the user. Default is to do nothing by
+	 * returning an empty collection. 
+	 */
+	public List<String> getSpawnableTypes() {
+		return new ArrayList<String>();
 	}
 
 		
