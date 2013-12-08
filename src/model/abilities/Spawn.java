@@ -25,7 +25,7 @@ public class Spawn extends Ability {
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		myGameEngine.requestStringFromList(myReferences);
+		myGameEngine.initializeSpawner(myReferences);
 	}
 	
 	@Override
