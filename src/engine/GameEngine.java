@@ -136,6 +136,8 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		GameUnitObject newUnit = new GameUnitObject(unit, this);
 		myUnitObjectMap.put(unit, newUnit);
 		myUnits.add(unit);
+		myGameManager.getCurrentPlayer().addUnit(unit);
+		//add to player, tile
 	}
 	
 	public void initializeSpawner(List<String> unitIDList) {

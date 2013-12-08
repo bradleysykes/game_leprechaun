@@ -27,8 +27,6 @@ public class SpawnerListener implements ActionListener {
 		int index = unitList.getSelectedIndex();
 		Unit toSpawn = mySpawnerPanel.getUnits().get(index);
 		
-		//(call model method to deliver toSpawn unit)
-		
 		//mySpawnerViewer.dispatchEvent(new WindowEvent(mySpawnerViewer, WindowEvent.WINDOW_CLOSING); // dispose() lets us reuse i think
 		mySpawnerViewer.getStatusArea().setStatusText("");
 		mySpawnerPanel.setListContent(new ArrayList<Unit>());
