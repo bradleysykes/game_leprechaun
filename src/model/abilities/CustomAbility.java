@@ -16,10 +16,12 @@ public class CustomAbility extends Ability {
 	
 	protected List<Unit> myTargets = new ArrayList<Unit>();
 
-	public CustomAbility(String name, Unit abilityUser) {
+	public CustomAbility(String name, Unit abilityUser, double range, double radius) {
 		super(name, abilityUser);
-		this.addStat(new Stat("Range", Math.floor(abilityUser.getStatCollection("Attributes").getValue("Attack Range"))));
-		this.addStat(new Stat("Radius", 0.0));
+		//this.addStat(new Stat("Range", Math.floor(abilityUser.getStatCollection("Attributes").getValue("Attack Range"))));
+		//this.addStat(new Stat("Radius", 0.0));
+		this.addStat(new Stat("Range", range));
+		this.addStat(new Stat("Radius", radius));
 		this.addStat(new Effects());
 	}
 	

@@ -145,7 +145,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		List<Unit> unitList = new ArrayList<Unit>();
 		for (String id : unitIDList) {
 			for (Unit unit : myGameLoader.getUnitImageMap().keySet()) { //ugly...
-				if (id.equals(unit.getID())) {
+				if (id.equals(unit.getID().split("\\|")[0])) {
 					unitList.add(unit);
 				}
 			}
