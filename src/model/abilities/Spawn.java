@@ -10,7 +10,6 @@ public class Spawn extends Ability {
 
 	public Spawn(Unit abilityUser) {
 		super("Spawn", abilityUser,"List of Spawnable Units");
-		myReferences.add("Soldier");
 	}
 
 	@Override
@@ -28,6 +27,7 @@ public class Spawn extends Ability {
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
+		System.out.println("Spawner being called");
 		for(String s : myReferences)
 			System.out.println(s+" TIMO");
 		myGameEngine.initializeSpawner(myReferences);
@@ -39,6 +39,11 @@ public class Spawn extends Ability {
 		for(String s : myReferences)
 			toReturn.getReferences().add(s);
 		return toReturn;
+	}
+	
+	@Override
+	public void refresh(){
+		myValid = myReferences.size()>0;
 	}
 
 }

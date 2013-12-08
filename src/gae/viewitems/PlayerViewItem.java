@@ -4,6 +4,7 @@ import gae.Controller;
 import gae.dialogues.EditDialogue;
 import gae.dialogues.EditPlayerDialogue;
 import gae.dialogues.PlayerDialogue;
+import gae.panel_lists.PlayerList;
 
 import java.util.List;
 
@@ -21,11 +22,19 @@ public class PlayerViewItem extends ViewItem {
 	private int myNumber;
 	private String myName;
 	
-	public PlayerViewItem(Player playa, int playerNumber){
+	public PlayerViewItem(Player playa, int playerNumber, PlayerList list){
 		super();
 		myPlayer = playa;
 		myNumber = playerNumber;
 		myName = "Player "+myNumber;
+		myListSource = list;
+	}
+	public PlayerViewItem(Player playa, PlayerList list){
+		super();
+		myPlayer = playa;
+		myNumber = 0;
+		myName = playa.getID();
+		myListSource = list;
 	}
 	@Override
 	public Icon getListIcon() {

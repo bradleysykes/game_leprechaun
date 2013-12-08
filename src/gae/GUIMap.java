@@ -201,7 +201,7 @@ public class GUIMap extends JGEngine implements Constants{
 			toPlace.clickOnBoard(this, x,y, active);
 			//update map of every JGObject prefix and its corresponding view item. For delete functionality. 
 			myViewItems.put(toPlace.getPrefix(),toPlace);
-			this.revalidate();
+			this.validate();
 			this.clearKey(256);
 		}
 		if(this.getKey(KeyMouse3)){
