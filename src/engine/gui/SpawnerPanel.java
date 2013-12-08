@@ -31,13 +31,14 @@ public class SpawnerPanel extends JPanel {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		myListModel = new DefaultListModel<String>();
 		myList = new JList<String>(myListModel);
-		myList.addListSelectionListener(new SpawnerListSelectionListener(myList, spawnerViewer.getIconPanel(), spawnerViewer.getStatusArea()));
+		myList.addListSelectionListener(new SpawnerListSelectionListener(myList, spawnerViewer.getIconPanel(), spawnerViewer.getStatusArea(), this));
 		setPreferredSize(mySize);
 		myScrollPane = new JScrollPane(myList);
 		myScrollPane.setPreferredSize(new Dimension(130, 70));
 		add(myScrollPane);
 		add(new SpawnerButton(new SpawnerListener(this, spawnerViewer, gameEngine)));
 		setListContent(unitList);
+		System.out.println(unitList.get(0).getID());
 	}
 	
 	public JList<String> getList() { 

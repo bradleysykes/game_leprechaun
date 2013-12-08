@@ -9,8 +9,8 @@ public interface EngineConstants {
 	final int PlayerHighlight_COL_ID = 16;
 	final int myViewerWidth = 640;
 	final int myViewerHeight = 480;
-	final int myTileWidth = 80;
-	final int myTileHeight = 80;
+	final int myTileWidth = 79;
+	final int myTileHeight = 79;
 	final String TileHighlightName = "zhighlight";
 	final JGColor TileHighlightColor = JGColor.cyan;
 	final String PlayerHighlightName = "zzhighlight";

@@ -14,6 +14,7 @@ import model.unit.Unit;
 import engine.GameEngine;
 import engine.GameViewer;
 import engine.gui.AbilityListArea;
+import engine.gui.JohnTestAbilityArea;
 import engine.gui.PlayerStatusArea;
 import engine.gui.UnitListArea;
 import engine.gui.UnitStatusArea;
@@ -31,16 +32,16 @@ public class NextTurnListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		System.out.println("Next turn for model");
-		AbilityListArea abilityListArea = (AbilityListArea) myGameEngine.getGameViewer().getActionPanel().getAbilityListArea();
+		JohnTestAbilityArea abilityArea = (JohnTestAbilityArea) myGameEngine.getGameViewer().getActionPanel().getAbilityListArea();
 		UnitListArea unitListArea = (UnitListArea) myGameEngine.getGameViewer().getActionPanel().getUnitListArea();
-		abilityListArea.clear();
+		abilityArea.clear();
 		UnitStatusArea unitStatusArea = (UnitStatusArea) myGameEngine.getGameViewer().getFeedbackPanel().getUnitStatusArea();
 		unitStatusArea.setStatusText("");
 		unitListArea.loadUnitList(new ArrayList<Unit>());
 		myGameEngine.removeTileHighlights();
 		myGameEngine.removeCurrentPlayerHighlights();
 		myGameEngine.getGameManager().nextPlayer();
-		myModel.refresh();
+		myGameEngine.getModel().refresh();
 	}
 	
 	private void setPlayerStatusArea(Player player) {

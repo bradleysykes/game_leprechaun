@@ -51,11 +51,12 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	
 	public void initGame() {
 		setFrameRate(20, 1);
-		myMouseObject = new MouseObject(this);
+		myViewListener = new ViewOffsetListener(this);
+		myMouseObject = new MouseObject(this, myViewListener);
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myUnitObjectMap = new HashMap<Unit, GameUnitObject>();
 		myModel = new Model(this);
-		myViewListener = new ViewOffsetListener(this);
+		
 	}
 	
 	public Model getModel() {
@@ -210,6 +211,10 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	
 	public GameViewer getGameViewer() {
 		return myGameViewer;
+	}
+	
+	public MouseObject getMouseObject() {
+		return myMouseObject;
 	}
 
 	public void declareWinner(Player p) {

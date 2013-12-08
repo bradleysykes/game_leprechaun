@@ -105,8 +105,7 @@ public class DataManager extends GameElements implements Attributes, Elements {
         return null;
     }
     
-
-    
+   
     //test use
     public static void main(String[] args) {
         DataManager dm = new DataManager();

@@ -32,6 +32,7 @@ public class GameViewer extends JFrame {
 	
 	public GameViewer() {
 		// Initializing Steps
+		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle(myTitle);
 		myGameEngine = new GameEngine(this);
@@ -57,7 +58,6 @@ public class GameViewer extends JFrame {
 		
 		controlPane.add(myActionPanel);
 		controlPane.add(myFeedbackPanel);
-		
 
 		// Add Panels to Container
 		containerPane.add(myGameEngine);
