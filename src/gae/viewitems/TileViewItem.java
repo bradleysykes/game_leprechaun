@@ -24,8 +24,10 @@ public class TileViewItem extends BoardListViewItem {
 	public TileViewItem(List<Stat> stats,String name, File f, int counter){
 		super(stats, name, f);
 		myTile = new Tile(20,20,new GameMap(20,20));
+		myTile.setStats(stats);
 		myIDEnding = "|"+counter;
-		myTile.setID(myTile.getStatCollection("Terrain").getID()+myIDEnding);
+		myTile.setID(name+myIDEnding);
+		myTile.getStatCollection("Terrain").setID(name);
 	}
 	
 	@Override
@@ -67,6 +69,7 @@ public class TileViewItem extends BoardListViewItem {
 		Tile tile = new Tile((int) x,(int) y, myTile);
 		String uniqueTileID = myTile.getStatCollection("Terrain").getID() + "|" + tile.hashCode();
 		tile.setID(uniqueTileID);
+		map.getModelMap().setTile((int)x, (int)y, tile);
 		
 	}
 	
