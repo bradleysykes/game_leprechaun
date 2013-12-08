@@ -36,6 +36,7 @@ public class JohnTestAbilityArea extends JPanel {
 			this.remove(b);
 		}
 		myButtons.clear();
+		this.revalidate();
 	}
 
 	public void refreshAbilities(StatCollection a) {
