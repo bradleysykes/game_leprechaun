@@ -188,12 +188,6 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myModel.useAbility(u);		// For sending a newly created unit from the list of strings,
 									// with one string selected by player (Spawning).
 	}
-	
-	public void requestStringFromList(List<String> list){
-		// Display list of spawnable units to user, allow them to select one.
-		// Ideally, eventually have Portrait displayed for each spawnable unit.
-		// This will lead to 'sendModelUnit' being called.
-	}
 
 	public void setSourceFile(File file) {
 		mySourceFile = file;
