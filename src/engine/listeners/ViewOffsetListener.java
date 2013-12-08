@@ -8,6 +8,8 @@ public class ViewOffsetListener {
 	private int xOffset;
 	private int yOffset;
 	
+	private static final int SCROLL_OFFSET = 40;
+	
 	public ViewOffsetListener(GameEngine gameEngine) {
 		myGameEngine = gameEngine;
 		xOffset = gameEngine.pfWidth()/2;
@@ -22,19 +24,19 @@ public class ViewOffsetListener {
 	private void checkOffsetKeys() {
 		if (myGameEngine.getKey(myGameEngine.KeyUp)) {
 			myGameEngine.clearKey(myGameEngine.KeyUp);
-			yOffset--;
+			yOffset-=SCROLL_OFFSET;
 		}
 		if (myGameEngine.getKey(myGameEngine.KeyRight)) {
 			myGameEngine.clearKey(myGameEngine.KeyRight);
-			xOffset++;
+			xOffset+=SCROLL_OFFSET;
 		}
 		if (myGameEngine.getKey(myGameEngine.KeyDown)) {
 			myGameEngine.clearKey(myGameEngine.KeyDown);
-			yOffset++;
+			yOffset+=SCROLL_OFFSET;
 		}
 		if (myGameEngine.getKey(myGameEngine.KeyLeft)) {
 			myGameEngine.clearKey(myGameEngine.KeyLeft);
-			xOffset--;
+			xOffset-=SCROLL_OFFSET;
 		}
 	}
 	
