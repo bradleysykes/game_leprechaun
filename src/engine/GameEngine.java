@@ -35,7 +35,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private SpawnerViewer mySpawnerViewer;
 	
 	public GameEngine(GameViewer gv) {
-		initEngineComponent(640, 480);
+		initEngineComponent(myViewerWidth, myViewerHeight);
 		myGameViewer = gv;
 	}
 	
@@ -50,12 +50,12 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	}
 	
 	public void initGame() {
-		setFrameRate(5, 1);
+		setFrameRate(20, 1);
 		myMouseObject = new MouseObject(this);
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myUnitObjectMap = new HashMap<Unit, GameUnitObject>();
 		myModel = new Model(this);
-		//myViewListener = new ViewOffsetListener(this);
+		myViewListener = new ViewOffsetListener(this);
 	}
 	
 	public Model getModel() {
@@ -63,7 +63,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	}
 	
 	public void doFrame() {
-		//myViewListener.setOffset();
+		myViewListener.setOffset();
 		this.moveObjects();
 		this.checkCollision(MOUSE_COL_ID, 2+8);
 		if (myGameManager != null) {
@@ -139,7 +139,15 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myUnits.add(unit);
 	}
 	
-	public void initializeSpawner(List<Unit> unitList) {
+	public void initializeSpawner(List<String> unitIDList) {
+		List<Unit> unitList = new ArrayList<Unit>();
+		for (String id : unitIDList) {
+			for (Unit unit : myGameLoader.getUnitImageMap().keySet()) { //ugly...
+				if (id.equals(unit.getID())) {
+					unitList.add(unit);
+				}
+			}
+		}
 		if (mySpawnerViewer == null) {
 			mySpawnerViewer = new SpawnerViewer(unitList, this);
 		} else {

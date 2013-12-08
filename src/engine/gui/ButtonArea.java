@@ -9,7 +9,7 @@ import engine.GameEngine;
 
 public class ButtonArea extends JPanel {
 	
-	private final Dimension mySize = new Dimension(250, 25);
+	private final Dimension mySize = new Dimension(250, 50);
 	
 	public ButtonArea(GameEngine gameEngine) {
 		setPreferredSize(mySize);

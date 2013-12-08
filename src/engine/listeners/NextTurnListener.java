@@ -37,6 +37,8 @@ public class NextTurnListener implements ActionListener {
 		UnitStatusArea unitStatusArea = (UnitStatusArea) myGameEngine.getGameViewer().getFeedbackPanel().getUnitStatusArea();
 		unitStatusArea.setStatusText("");
 		unitListArea.loadUnitList(new ArrayList<Unit>());
+		myGameEngine.removeTileHighlights();
+		myGameEngine.removeCurrentPlayerHighlights();
 		myGameEngine.getGameManager().nextPlayer();
 		myModel.refresh();
 	}

@@ -1,8 +1,10 @@
 package engine.gui;
 
 import java.awt.Label;
+import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.swing.BoxLayout;
@@ -22,7 +24,7 @@ public class JohnTestAbilityArea extends JPanel {
 
 	private GameEngine myEngine;
 	private Abilities myAbilities;
-	private Collection<JButton> myButtons;
+	private Collection<JButton> myButtons = new ArrayList<JButton>();
 
 	public JohnTestAbilityArea(GameEngine ge) {
 		myEngine = ge;		
@@ -33,17 +35,20 @@ public class JohnTestAbilityArea extends JPanel {
 		for (JButton b : myButtons){
 			this.remove(b);
 		}
+		myButtons.clear();
 	}
 
 	public void refreshAbilities(StatCollection a) {
-		this.clear();
-		
 		for (Stat s : a.getStats()) {
-			this.add(new AbilityButton(myEngine,(Ability) myAbilities.getStat(s.getName())));
+			AbilityButton button = new AbilityButton(myEngine,(Ability) myAbilities.getStat(s.getName()));
+			this.add(button);
+			myButtons.add(button);
 		}
+		this.revalidate();
 	}
 
 	public void setUnit(Unit unit) {
+		this.clear();
 		myAbilities = (Abilities) unit.getStatCollection("Abilities");
 		this.refreshAbilities(myAbilities);
 	}

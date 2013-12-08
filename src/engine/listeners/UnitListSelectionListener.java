@@ -16,6 +16,7 @@ import model.unit.Unit;
 import engine.GameEngine;
 import engine.GameViewer;
 import engine.gui.AbilityListArea;
+import engine.gui.JohnTestAbilityArea;
 import engine.gui.StatusArea;
 import engine.gui.UnitListArea;
 import engine.gui.UnitStatusArea;
@@ -36,7 +37,8 @@ public class UnitListSelectionListener implements ListSelectionListener {
 		if (index != -1) {
 			Unit selectedUnit = myUnitListArea.getUnits().get(index);
 			
-			AbilityListArea abilityListArea = (AbilityListArea) myGameEngine.getGameViewer().getActionPanel().getAbilityListArea();
+			JohnTestAbilityArea abilityListArea = (JohnTestAbilityArea) myGameEngine.getGameViewer().getActionPanel().getAbilityListArea();
+			//AbilityListArea abilityListArea = (AbilityListArea) myGameEngine.getGameViewer().getActionPanel().getAbilityListArea();
 			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
 			
 			abilityListArea.setUnit(selectedUnit);
