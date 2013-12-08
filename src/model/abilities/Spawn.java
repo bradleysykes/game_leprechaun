@@ -3,6 +3,7 @@ package model.abilities;
 import engine.GameEngine;
 import model.Ability;
 import model.Resources;
+import model.tile.Tile;
 import model.unit.Unit;
 
 public class Spawn extends Ability {
@@ -18,8 +19,11 @@ public class Spawn extends Ability {
 		if(myUnit.getPlayer().canAfford(cost)){
 			myUnit.getPlayer().chargePlayer(cost);
 			myTargetUnit.setPlayer(myUnit.getPlayer());
-			myUnit.getPlayer().getModel().spawnUnit(new Unit(myTargetUnit, myUnit.getPlayer(),
-					myUnit.getMap().getNearestValidTile(myUnit)));
+			Tile toPlaceAt = myUnit.getMap().getNearestValidTile(myUnit);
+			System.out.println(toPlaceAt.getX() + " " + toPlaceAt.getY());
+			Unit test = new Unit(myTargetUnit, myUnit.getPlayer(),
+					myUnit.getMap().getNearestValidTile(myUnit));
+			myUnit.getPlayer().getModel().spawnUnit(test);
 		}
 	}
 
