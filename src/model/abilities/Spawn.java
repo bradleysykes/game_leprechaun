@@ -25,6 +25,8 @@ public class Spawn extends Ability {
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
+		for(String s : myReferences)
+			System.out.println(s+" TIMO");
 		myGameEngine.initializeSpawner(myReferences);
 	}
 	

@@ -73,7 +73,7 @@ public class MapDecoder extends Decoder {
         // set resources to the tile
         Element elementResources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
         Resources targetResources = (Resources) resultTile.getStatCollection(RESOURCES);
-        processResources(elementResources,targetResources);
+        getResources(elementResources,targetResources);
         
         //create tile
         if(!isTypeElement) {

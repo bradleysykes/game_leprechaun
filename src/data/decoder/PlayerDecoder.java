@@ -8,11 +8,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 /**
- * TODO: Winning Condition!
+ * Player Decoder class is in charge of instantiating all the plyaer 
+ * related objects.
  * 
  * @author Seunghyun Lee
  *
  */
+
 public class PlayerDecoder extends Decoder {
     
     private DataManager myDataManager;
@@ -23,6 +25,11 @@ public class PlayerDecoder extends Decoder {
         myPlayers = new ArrayList<Player>();
     }
     
+    /**
+     * 
+     * @param root
+     * @return
+     */
     public List<Player> processPlayers(Element root) {
         Element players = (Element)root.getElementsByTagName(PLAYERS).item(0);
         NodeList playerList = players.getElementsByTagName(PLAYER);
@@ -32,6 +39,11 @@ public class PlayerDecoder extends Decoder {
         return myPlayers;
     }
     
+    /**
+     * This method instantiates a single player from the dom element.
+     * @param player
+     * @return
+     */
     public Player getPlayer(Element player) {
         Player resultPlayer = new Player();
         //set ID of the player
@@ -40,7 +52,7 @@ public class PlayerDecoder extends Decoder {
         // set resources to the tile
         Element elementResources = (Element) player.getElementsByTagName(RESOURCES).item(0);
         Resources targetResources = (Resources) resultPlayer.getStatCollection(RESOURCES);
-        processResources(elementResources,targetResources);
+        getResources(elementResources,targetResources);
         
         return resultPlayer;
     }
