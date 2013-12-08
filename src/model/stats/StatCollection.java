@@ -44,6 +44,10 @@ public class StatCollection extends Stat {
 	public List<String> getReferences(){
 		return myReferences;
 	}
+	
+	public void setReferences(List<String> references){
+		myReferences = references;
+	}
 
 	public String getID(){
 		return myID;

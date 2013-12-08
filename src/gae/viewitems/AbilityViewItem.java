@@ -9,10 +9,13 @@ import gae.GUIMap;
 import javax.swing.Icon;
 
 import model.GameMap;
+import model.abilities.CustomAbility;
 import model.stats.Stat;
 import model.tile.Tile;
 
 public class AbilityViewItem extends BoardListViewItem {
+	
+	private CustomAbility myAbility;
 
 	public AbilityViewItem() {
 		super(DEFAULT_ABILITY_IMAGE_PATH);
@@ -20,19 +23,12 @@ public class AbilityViewItem extends BoardListViewItem {
 	
 	public AbilityViewItem(List<Stat> stats,String name, File f, int counter){
 		super(stats, name, f);
-		//create the ability?
-	}
-
-	@Override
-	public Icon getListIcon() {
-		// TODO Auto-generated method stub
-		return null;
+		myAbility = new CustomAbility(name, null, stats.get(0).getValue(), stats.get(1).getValue());
 	}
 
 	@Override
 	public String getListMessage() {
-		// TODO Auto-generated method stub
-		return null;
+		return myName;
 	}
 
 	@Override
@@ -59,8 +55,7 @@ public class AbilityViewItem extends BoardListViewItem {
 
 	@Override
 	public List<Stat> getModel() {
-		// TODO Auto-generated method stub
-		return null;
+		return myProperties;
 	}
 
 	@Override
@@ -79,13 +74,12 @@ public class AbilityViewItem extends BoardListViewItem {
 	public BoardListViewItem createModel(List<Stat> inputData, String name,
 			File imageFile, int myCounter) {
 		// TODO Auto-generated method stub
-		return null;
+		return new NullViewItem();
 	}
 
 	@Override
-	public Object getModelObject() {
-		// TODO Auto-generated method stub
-		return null;
+	public CustomAbility getModelObject() {
+		return myAbility;
 	}
 
 }

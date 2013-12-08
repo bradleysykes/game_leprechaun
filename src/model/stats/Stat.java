@@ -23,6 +23,8 @@ public class Stat implements ModelConstants {
 	}
 	
 	public String getField(){
+		if(myValue==null)
+			myValue = DEFAULT_DOUBLE;
 		return myValue.getClass().toString();
 	}
 	

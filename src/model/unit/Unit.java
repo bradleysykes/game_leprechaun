@@ -6,6 +6,7 @@ import model.Attributes;
 import model.GameMap;
 import model.ModelConstants;
 import model.Player;
+import model.Resource;
 import model.Resources;
 import model.stats.Stat;
 import model.stats.StatCollection;
@@ -70,7 +71,8 @@ public class Unit extends StatCollection implements ModelConstants {
 	}
 	
 	public boolean equals(Unit other){
-		return (this.getID().equals(other.getID().split("//|")[0]) && myPlayer.equals(other.getPlayer()));
+		return (this.getID().split("//|")[0].equals(other.getID().split("//|")[0])
+				&& myPlayer.equals(other.getPlayer()));
 	}
 	
 	public void refresh(){
@@ -80,6 +82,11 @@ public class Unit extends StatCollection implements ModelConstants {
 		}
 		Attributes a = (Attributes) this.getStatCollection("Attributes");
 		a.refresh();
+	}
+	
+	public void addUnitCost(Resource r){
+		Resources resources = (Resources) this.getStatCollection("Resources");
+		resources.addResource(r);
 	}
 	
 }

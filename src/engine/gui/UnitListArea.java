@@ -53,6 +53,9 @@ public class UnitListArea extends JPanel {
 		for (Unit unit : unitList) {
 			myListModel.addElement(unit.getID().split("\\|")[0]);
 		}
+		if (myUnits.size() == 1){
+			myUnitList.setSelectedIndex(0);
+		}
 	}
 	
 	public List<Unit> getUnits() {
