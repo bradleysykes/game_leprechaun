@@ -1,5 +1,6 @@
 package gae.buttons;
 
+import gae.dialogues.EffectsDialogue;
 import gae.dialogues.ResourcesDialogue;
 import gae.dialogues.SubUnitDialogue;
 import gae.dialogues.UnitCreationDialogue;
@@ -42,7 +43,7 @@ public class SaveInputButton extends JButton {
 				ResourcesDialogue resourceDialogue = new ResourcesDialogue(myList, myStat);
 			}
 			else if (myStat.getName().equals("Effects")){
-				System.out.println("JOHN'S NEW SUPER COOL DIALOGUE");
+				EffectsDialogue effectsDialogue = new EffectsDialogue(myList,myStat);
 			}
 			else{
 				SubUnitDialogue d = new SubUnitDialogue(myStat,myStat.getName(),
