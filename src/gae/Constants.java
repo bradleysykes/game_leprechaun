@@ -10,6 +10,7 @@ import javax.swing.JFileChooser;
 
 import model.GameMap;
 import model.Player;
+import model.abilities.CustomAbility;
 import model.stats.Stat;
 import model.tile.Tile;
 import model.unit.Unit;
@@ -20,9 +21,10 @@ public interface Constants {
 	final Dimension EDITGUI_INITIAL_SIZE = new Dimension(1500,700);
 	final String ICON_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\";
 	final String NEW_ICON_RELATIVEPATH = "plus.gif";
-	final String UNIT_PACKAGE_NAME = "tile";
+	final String UNIT_PACKAGE_NAME = "unit";
 	final String TILE_PACKAGE_NAME = "tile";
-	final String CONDITION_PACKAGE_NAME = "tile";
+	final String CONDITION_PACKAGE_NAME = "condition";
+	final String ABILITY_PACKAGE_NAME = "abilities";
 	
 	final int TILE_SIZE =80;
 	final int UNIT_SIZE = 80;
@@ -44,6 +46,8 @@ public interface Constants {
 	
 	final List<Stat> DEFAULT_UNIT_STATS = new Unit("Unit",new Player(), new Tile(3,3,new GameMap(50,50))).getStats();
 	final List<Stat> DEFAULT_TILE_STATS = new Tile(1.0,1.0, new GameMap(50,50)).getStats();
-	
+	final List<Stat> DEFAULT_ABILITY_STATS = new CustomAbility("Ability",new Unit("Unit", new Player(), 
+			new Tile(3,3,new GameMap(50,50))),5.0,5.0).getStats();
+
 	final JFileChooser FILE_CHOOSER = new JFileChooser(new File(System.getProperty("user.dir")));
 }

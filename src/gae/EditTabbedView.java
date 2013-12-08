@@ -100,7 +100,6 @@ public class EditTabbedView extends JTabbedPane {
 		}
 	}
 
-
 	public List<Resource> getUserResources() {
 		BoardList resourceContents = myTabContents.get("Resources");
 		List<Resource> userResources = new ArrayList<Resource>();
