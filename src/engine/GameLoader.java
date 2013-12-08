@@ -27,6 +27,7 @@ public class GameLoader  {
 		myGameEngine.removeObjects("tile", GameTileObject.getCollisionID());
 		myGameEngine.removeObjects("unit", GameUnitObject.getCollisionID());
 		GameMap gameMap = myGameElements.getGameMap();
+		if(gameMap==null) System.out.println("game map is null for some reason");
 		myGameEngine.setPFSize(gameMap.getSizeX() , gameMap.getSizeY());
 		Collection<Tile> allTiles = gameMap.getAllTiles();
 
@@ -49,6 +50,7 @@ public class GameLoader  {
 		Collection<Unit> allUnits = new ArrayList<Unit>();
 		for (Player player : allPlayers) {
 			allUnits.addAll(player.getAllUnits());
+			player.setModel(myGameEngine.getModel());
 		}
 
 		myGameEngine.setPlayers(allPlayers);
