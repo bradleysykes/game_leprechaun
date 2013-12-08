@@ -49,6 +49,7 @@ public class GameLoader  {
 		Collection<Unit> allUnits = new ArrayList<Unit>();
 		for (Player player : allPlayers) {
 			allUnits.addAll(player.getAllUnits());
+			player.setModel(myGameEngine.getModel());
 		}
 
 		myGameEngine.setPlayers(allPlayers);

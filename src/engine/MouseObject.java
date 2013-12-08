@@ -3,6 +3,7 @@ package engine;
 import java.util.List;
 
 import engine.gui.UnitListArea;
+import engine.listeners.ViewOffsetListener;
 import model.Ability;
 import model.Model;
 import model.tile.Tile;
@@ -13,17 +14,19 @@ import jgame.JGTimer;
 public class MouseObject extends JGObject implements EngineConstants{
 	
 	private GameEngine myGameEngine;
+	private ViewOffsetListener myViewListener;
 	//private boolean myClickDelay = false;
 	
-	public MouseObject(GameEngine gameEngine) {
+	public MouseObject(GameEngine gameEngine, ViewOffsetListener viewListener) {
 		super("mouse", false, gameEngine.getMouseX(), gameEngine.getMouseY(), MOUSE_COL_ID, null);
+		myViewListener = viewListener;
 		this.setBBox((int)x,(int)y,1,1);
 		myGameEngine = gameEngine;
 	}
 	
 	public void move() {
-		x = myGameEngine.getMouseX();
-		y = myGameEngine.getMouseY();
+		x = myGameEngine.getMouseX() + myViewListener.getXOffset();
+		y = myGameEngine.getMouseY() + myViewListener.getYOffset();
 		
 		
 		// Helps prevent unintentional double-clicks
