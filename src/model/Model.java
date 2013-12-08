@@ -54,5 +54,9 @@ public class Model {
 	public void destroyUnit(Unit unit) {
 		myGameEngine.destroyUnit(unit);
 	}
+	
+	public void spawnUnit(Unit u){
+		myGameEngine.spawnUnit(u);
+	}
 
 }
