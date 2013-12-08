@@ -9,8 +9,10 @@ import java.util.Map;
 import gae.Constants;
 import gae.Controller;
 import gae.EditTabbedView;
+import gae.popup_menus.AbilityPopupMenu;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
+import gae.viewitems.AbilityViewItem;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.TileViewItem;
 import gae.viewitems.UnitViewItem;
@@ -22,6 +24,7 @@ import data.GameElements;
 import model.GameMap;
 import model.Resource;
 import model.Resources;
+import model.abilities.CustomAbility;
 import model.stats.Stat;
 import model.tile.Tile;
 import model.unit.Unit;
@@ -55,40 +58,13 @@ public class AbilityList extends BoardList {
 
 	@Override
 	public GAEPopupMenu getPopupMenu() {
-		// TODO Auto-generated method stub
-		return new TilePopupMenu(myController, this);
+		return new AbilityPopupMenu(myController, this);
 	}
 
 	@Override
 	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,File f,int counter) {
 		myIDCounter = counter;
-		return new TileViewItem(inputData,name,f,counter);
-	}
-
-	@Override
-	public GameElements giveStateObjects(GameElements currentState) {
-		Object[] list = new Object[myModel.size()];
-		myModel.copyInto(list);
-		List<Tile> AbilityList = new ArrayList<Tile>();
-		Map<Tile, String> tileImageMap = new HashMap<Tile, String>();
-		for (Object o:list) {
-			TileViewItem tvi = (TileViewItem) o;
-			Tile t = (Tile) tvi.getModelObject();
-			AbilityList.add(t);
-			tileImageMap.put(t, tvi.getImagePath());
-		}
-		currentState.setTileImageMap(tileImageMap);
-		return currentState;
+		return new AbilityViewItem(inputData,name,f,counter);
 	}
 	
-	@Override
-	public void loadData(GameElements elements){
-		GameMap loadMap = elements.getGameMap();
-		Map<Tile,String> tileImages = elements.getTileImageMap();
-		for(Tile tile:tileImages.keySet()){
-			File tileImageFile = new File(tileImages.get(tile));
-			TileViewItem item = new TileViewItem(tile.getStats(), tile.getID().split("\\|")[0], tileImageFile,0);
-			this.addNewItem(item);
-		}
-	}
 }

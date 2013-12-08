@@ -2,6 +2,7 @@ package gae.panels;
 
 import gae.Controller;
 import gae.EditTabbedView;
+import gae.panel_lists.AbilityList;
 import gae.panel_lists.BoardList;
 import gae.panel_lists.ConditionList;
 import gae.panel_lists.ResourceList;
@@ -27,7 +28,7 @@ public class BoardPanel extends EditPanel {
 	public BoardPanel(Controller controller){
 		super(controller);
 		BoardList[] tabs = {new ConditionList(controller), new ResourceList(controller), 
-				new TileList(controller), new UnitList(controller)};
+				new TileList(controller), new UnitList(controller), new AbilityList(controller)};
 		myTabbedPane = new EditTabbedView(tabs,controller);
 		this.add(myTabbedPane);
 		initialize(myTabbedPane);

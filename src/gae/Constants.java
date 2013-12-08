@@ -43,6 +43,7 @@ public interface Constants {
 	final String DEFAULT_UNIT_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\default_unit.png";
 	final String DEFAULT_CONDITION_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\plus.gif";
 	final String DEFAULT_RESOURCE_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\resource.png";
+	final String DEFAULT_ABILITY_IMAGE_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\boom2.png";
 	
 	final List<Stat> DEFAULT_UNIT_STATS = new Unit("Unit",new Player(), new Tile(3,3,new GameMap(50,50))).getStats();
 	final List<Stat> DEFAULT_TILE_STATS = new Tile(1.0,1.0, new GameMap(50,50)).getStats();
