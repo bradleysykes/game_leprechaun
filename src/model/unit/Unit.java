@@ -71,7 +71,7 @@ public class Unit extends StatCollection implements ModelConstants {
 	}
 	
 	public boolean equals(Unit other){
-		return (this.getID().equals(other.getID()) && myPlayer.equals(other.getPlayer()));
+		return (this.getID().equals(other.getID().split("//|")[0]) && myPlayer.equals(other.getPlayer()));
 	}
 	
 	public void refresh(){

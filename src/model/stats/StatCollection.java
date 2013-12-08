@@ -40,6 +40,10 @@ public class StatCollection extends Stat {
 	public String getReferenceType(){
 		return myReferenceType;
 	}
+	
+	public List<String> getReferences(){
+		return myReferences;
+	}
 
 	public String getID(){
 		return myID;
@@ -112,6 +116,7 @@ public class StatCollection extends Stat {
 	@Override
 	public StatCollection copy(){
 		StatCollection toReturn = new StatCollection(myName,myID,myReferenceType);
+		toReturn.getReferences().addAll(myReferences);
 		for(Stat s : this.getStats()){
 			if(s.getValue()==null){
 				StatCollection sc = (StatCollection) s;

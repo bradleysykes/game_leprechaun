@@ -48,7 +48,7 @@ public class CustomAbility extends Ability {
 	
 	@Override 
 	public CustomAbility copy(Unit u){
-		CustomAbility toReturn = this.copy(u);
+		CustomAbility toReturn = new CustomAbility(this.getName(),u);
 		for(Effect e : myEffects)
 			toReturn.addEffect(e);
 		return toReturn;
