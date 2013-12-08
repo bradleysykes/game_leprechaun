@@ -10,7 +10,7 @@ import model.unit.Unit;
 public class Player extends StatCollection implements ModelConstants{
 	
 	protected List<Unit> myUnits;
-	protected WinCondition myWinCondition;
+	protected WinCondition myWinCondition = new WinCondition(this);
 	protected Model myModel;
 	
 	public Player(){
@@ -86,6 +86,7 @@ public class Player extends StatCollection implements ModelConstants{
 	
 	public void refresh(){
 		for (Unit unit : myUnits){
+			System.out.println("Player is refreshing unit: "+unit.getID());
 			unit.refresh();
 		}
 	}

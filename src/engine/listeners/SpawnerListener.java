@@ -20,9 +20,10 @@ public class SpawnerListener implements ActionListener {
 	private SpawnerViewer mySpawnerViewer;
 	private GameEngine myGameEngine;
 	
-	public SpawnerListener(SpawnerPanel spawnerPanel, JFrame spawnerViewer, GameEngine gameEngine) {
+	public SpawnerListener(SpawnerPanel spawnerPanel, SpawnerViewer spawnerViewer, GameEngine gameEngine) {
 		mySpawnerPanel = spawnerPanel;
 		myGameEngine = gameEngine;
+		mySpawnerViewer = spawnerViewer;
 	}
 	
 	public void actionPerformed(ActionEvent arg0) {
