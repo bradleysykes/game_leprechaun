@@ -19,10 +19,9 @@ public class Spawn extends Ability {
 		if(myUnit.getPlayer().canAfford(cost)){
 			myUnit.getPlayer().chargePlayer(cost);
 			myTargetUnit.setPlayer(myUnit.getPlayer());
-			Tile toPlaceAt = myUnit.getMap().getNearestValidTile(myUnit);
-			System.out.println(toPlaceAt.getX() + " " + toPlaceAt.getY());
-			Unit test = new Unit(myTargetUnit, myUnit.getPlayer(),
-					myUnit.getMap().getNearestValidTile(myUnit));
+			Tile t = myUnit.getMap().getNearestValidTile(myUnit);
+			Unit test = new Unit(myTargetUnit, myUnit.getPlayer(), t);
+			test.setCurrentTile(t);			
 			myUnit.getPlayer().getModel().spawnUnit(test);
 		}
 	}

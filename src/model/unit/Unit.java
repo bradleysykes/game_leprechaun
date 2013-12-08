@@ -63,7 +63,6 @@ public class Unit extends StatCollection implements ModelConstants {
 			myCurrentTile.removeUnit(this);
 		myCurrentTile = t;
 		myCurrentTile.addUnit(this);
-		this.setMap(t.getMap());
 	}
 	
 	public Tile getCurrentTile(){
