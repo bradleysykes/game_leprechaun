@@ -16,7 +16,8 @@ public class SpawnerListSelectionListener implements ListSelectionListener {
 	private IconPanel myIconPanel;
 	private StatusArea myStatusArea;
 	
-	public SpawnerListSelectionListener(JList<String> unitList, IconPanel iconPanel, StatusArea statusArea) {
+	public SpawnerListSelectionListener(JList<String> unitList, IconPanel iconPanel, StatusArea statusArea, SpawnerPanel spawnerPanel) {
+		mySpawnerPanel = spawnerPanel;
 		myUnitList = unitList;
 		myIconPanel = iconPanel;
 		myStatusArea = statusArea;
