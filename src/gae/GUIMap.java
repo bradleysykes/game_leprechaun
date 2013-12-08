@@ -185,7 +185,7 @@ public class GUIMap extends JGEngine implements Constants{
 			toPlace.clickOnBoard(this, getActualXCoordinate(getMouseX()), getActualYCoordinate(getMouseY()), active);
 			System.out.println("Clicked at "+getMouseX()+", "+getMouseY()+".");
 			System.out.println("Object placed at "+getActualXCoordinate(getMouseX())+", "+getActualYCoordinate(getMouseY())+".");
-			this.revalidate();
+			this.validate();
 			this.clearKey(256);
 		}
 		if(this.getKey(KeyMouse3)){
