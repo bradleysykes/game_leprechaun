@@ -15,15 +15,21 @@ public abstract class Ability extends StatCollection {
 	public Ability(String name, Unit abilityUser) {
 		super(name);
 		myUnit = abilityUser;
+		this.refresh();
 	}
 	
 	public Ability(String name, Unit abilityUser, String referenceType){
 		super(name,"",referenceType);
 		myUnit = abilityUser;
+		this.refresh();
 	}
 	
 	public void setUnit(Unit u){
 		myUnit = u;
+	}
+	
+	public Unit getUnit(){
+		return myUnit;
 	}
 	
 	public abstract void useAbility();
@@ -38,6 +44,10 @@ public abstract class Ability extends StatCollection {
 	
 	public void refresh(){
 		myValid = true;
+	}
+	
+	public boolean isValid(){
+		return myValid;
 	}
 
 	public abstract void requestEngineInput(GameEngine myGameEngine);

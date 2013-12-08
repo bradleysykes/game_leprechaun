@@ -38,7 +38,6 @@ public class SpawnerPanel extends JPanel {
 		add(myScrollPane);
 		add(new SpawnerButton(new SpawnerListener(this, spawnerViewer, gameEngine)));
 		setListContent(unitList);
-		System.out.println(unitList.get(0).getID());
 	}
 	
 	public JList<String> getList() { 
