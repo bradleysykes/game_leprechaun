@@ -20,6 +20,8 @@ public class AbilityListener implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		myEngine.getModel().setAbility(myAbility);
+		myEngine.getGameViewer().getActionPanel().getAbilityListArea().setUnit(myAbility.getUnit());
+		// ^^ attempt to have buttons removed if no longer available for that turn.
 	}
 
 }
