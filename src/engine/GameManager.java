@@ -8,6 +8,7 @@ import engine.gui.AbilityListArea;
 import engine.gui.ActionPanel;
 import engine.gui.PlayerStatusArea;
 import model.Player;
+import model.Resource;
 import model.stats.Stat;
 import jgame.platform.JGEngine;
 
@@ -39,10 +40,11 @@ public class GameManager {
 		String statusReport = "";
 		statusReport += myCurrentPlayer.getID() + "\n";
 		int numUnits = myCurrentPlayer.getAllUnits().size();
-		statusReport += "No. of units: " + numUnits;
+		statusReport += "Number of units: " + numUnits + "\n";
 		for (Stat stat : myResources) {
-			String resourceName = stat.getName();
-			String resourceValue = stat.getField();
+			Resource r = (Resource) stat;
+			String resourceName = r.getID().split("\\|")[0];
+			double resourceValue = r.getValue("Amount");
 			statusReport += resourceName + ":" + " " + resourceValue + "\n";
 		}
 		playerStatusArea.setStatusText(statusReport);

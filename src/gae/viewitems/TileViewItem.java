@@ -64,11 +64,10 @@ public class TileViewItem extends BoardListViewItem {
 		//new JGObject(such and such);
 		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		myMapObject = new MapObject(myMapObjectPrefix,x*TILE_SIZE,y*TILE_SIZE,myMapObjectPrefix, this);
-		Tile tile = new Tile((int) x,(int) y, map.getModelMap());
+		Tile tile = new Tile((int) x,(int) y, myTile);
 		String uniqueTileID = myTile.getStatCollection("Terrain").getID() + "|" + tile.hashCode();
 		tile.setID(uniqueTileID);
-		tile.getStatCollection("Terrain").setID(myTile.getStatCollection("Terrain").getID());
-		map.getModelMap().setTile((int)x, (int)y, tile);
+		
 	}
 	
 	@Override
@@ -77,7 +76,7 @@ public class TileViewItem extends BoardListViewItem {
 		int yTile = (int) ((y-y%TILE_SIZE)/TILE_SIZE);
 		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		myMapObject = new TileMapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,myMapObjectPrefix,this);
-		Tile tile = new Tile((int) x,(int) y, map.getModelMap());
+		Tile tile = new Tile((int) x,(int) y, myTile);
 		tile.getStatCollection("Terrain").setID(myTile.getStatCollection("Terrain").getID());
 		map.getModelMap().setTile(xTile, yTile, tile);
 	}

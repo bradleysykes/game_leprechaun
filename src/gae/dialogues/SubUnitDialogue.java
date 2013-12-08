@@ -43,6 +43,7 @@ public class SubUnitDialogue extends UnitCreationDialogue {
 			referenceChoices.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 			myMainPanel.add(referenceChoices);
 		}
+
 	}
 	
 	@Override
