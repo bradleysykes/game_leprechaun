@@ -62,5 +62,11 @@ public class Attack extends Ability{
 	public Ability copy(Unit u){
 		return new Attack(u);
 	}
+	
+	@Override
+	public void refresh(){
+		if(((Attributes) myUnit.getStatCollection("Attributes")).getAttack() == 0)
+			myValid = false;
+	}
 
 }

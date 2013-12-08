@@ -45,7 +45,7 @@ public class ActionPanel extends JPanel {
 		return myUnitListArea;
 	}
 	
-	public JPanel getAbilityListArea() {
+	public JohnTestAbilityArea getAbilityListArea() {
 		return myAbilityListArea;
 	}
 	

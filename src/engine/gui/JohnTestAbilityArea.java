@@ -41,7 +41,9 @@ public class JohnTestAbilityArea extends JPanel {
 
 	public void refreshAbilities(StatCollection a) {
 		for (Stat s : a.getStats()) {
-			AbilityButton button = new AbilityButton(myEngine,(Ability) myAbilities.getStat(s.getName()));
+			Ability ability = (Ability) myAbilities.getStat(s.getName());
+			if(!ability.isValid()) continue;
+			AbilityButton button = new AbilityButton(myEngine, ability);
 			this.add(button);
 			myButtons.add(button);
 		}
