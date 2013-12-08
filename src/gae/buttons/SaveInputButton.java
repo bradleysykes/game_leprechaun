@@ -41,6 +41,9 @@ public class SaveInputButton extends JButton {
 			if(myStat.getName().equals("Resources")){
 				ResourcesDialogue resourceDialogue = new ResourcesDialogue(myList, myStat);
 			}
+			else if (myStat.getName().equals("Effects")){
+				System.out.println("JOHN'S NEW SUPER COOL DIALOGUE");
+			}
 			else{
 				SubUnitDialogue d = new SubUnitDialogue(myStat,myStat.getName(),
 						myStat.getStats(),myList);
