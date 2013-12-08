@@ -113,6 +113,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	}
 	
 	public void highlightTiles(List<Tile> tileList) {
+		// remove spawn units prompt, as queued ability is no longer requesting unit return.
 		for (Tile tile : tileList) {
 			new TileHighlightObject(tile, this);
 			myTileObjectMap.get(tile).setHighlighted(true);
