@@ -1,6 +1,7 @@
 package data.decoder;
 
 import data.Attributes;
+import data.DecoderTags;
 import data.Elements;
 import model.Resource;
 import model.Resources;
@@ -22,7 +23,7 @@ import util.reflection.Reflection;
  * @author Seunghyun Lee
  *
  */
-public abstract class Decoder implements Attributes, Elements {
+public abstract class Decoder implements Attributes, Elements, DecoderTags {
     
   
     /**
@@ -84,7 +85,7 @@ public abstract class Decoder implements Attributes, Elements {
      * @param target
      * @return
      */
-    public Resources processResources(Element resources, Resources target) {
+    public Resources getResources(Element resources, Resources target) {
         NodeList resourceList = resources.getElementsByTagName(RESOURCE);
         for(int i = 0; i < resourceList.getLength(); i++) {
             Element resource = (Element) resourceList.item(i);

@@ -810,16 +810,16 @@
         </Player>
     </Players>
     <Units>
-        <Unit id="Bob|0">
+        <Unit id="Soldier|0">
             <UnitPlayer id="Defuault Player Name"/>
             <UnitTile x="4" y="1"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
                 <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Attack" value="100.0"/>
                 <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
+                <Stat name="Stamina" value="100.0"/>
                 <Stat name="Base Stamina" value="10.0"/>
                 <Stat name="Range" value="10.0"/>
             </Attributes>
@@ -831,7 +831,7 @@
             <Attributes>
                 <Stat name="Health" value="10.0"/>
                 <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Attack" value="100.0"/>
                 <Stat name="Base Defense" value="10.0"/>
                 <Stat name="Stamina" value="10.0"/>
                 <Stat name="Base Stamina" value="10.0"/>
@@ -842,7 +842,7 @@
     <Conditions/>
     <ImageMap>
         <tileImages>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\src\gae\resources\rock.jpg">
+            <image src="C:\Users\Seunghyun\Dropbox\fall13\cs308\oogasalad_MISSINGNO\src\gae\resources\rock.jpg">
                 <TileType id="Plains|0" x="-1" y="-1">
                     <Stat name="Passability" value="10.0"/>
                     <Stat name="Max Population" value="10.0"/>
@@ -854,7 +854,7 @@
             </image>
         </tileImages>
         <unitImages>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\src\gae\resources\default_unit.png">
+            <image src="C:\Users\Seunghyun\Dropbox\fall13\cs308\oogasalad_MISSINGNO\src\gae\resources\default_unit.png">
                 <UnitType id="Soldier|1">
                     <UnitPlayer id="Defuault Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -870,7 +870,7 @@
                     </Attributes>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\src\gae\resources\pokemon_dude.png">
+            <image src="C:\Users\Seunghyun\Dropbox\fall13\cs308\oogasalad_MISSINGNO\src\gae\resources\pokemon_dude.png">
                 <UnitType id="Bob|0">
                     <UnitPlayer id="Defuault Player Name"/>
                     <UnitTile x="-1" y="-1"/>

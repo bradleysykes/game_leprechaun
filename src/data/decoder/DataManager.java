@@ -30,13 +30,6 @@ import model.unit.Unit;
  * @author Seunghyun Lee
  *
  */
-
-/*
- * TODO:
- * 1. condition(separate?) - player
- * 2. abilities - unit
- */
-
 public class DataManager extends GameElements implements Attributes, Elements {
     private Element myRoot;
     private List<Decoder> myDecoders;
