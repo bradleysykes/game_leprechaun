@@ -8,9 +8,11 @@ import java.util.List;
 import model.stats.Stat;
 
 public class EditDialogue extends UnitCreationDialogue {
+	private BoardListViewItem mySource;
 
 	public EditDialogue(String name, List<Stat> model,BoardListViewItem itemSource) {
 		super(name, model, itemSource);
+		mySource = itemSource;
 		
 	}
 	
@@ -24,6 +26,7 @@ public class EditDialogue extends UnitCreationDialogue {
 			inputData.add(stat);
 		}
 		String name = myName.getData();
+		mySource.setName(name);
 		myList.postEditInput(inputData, name, myImage);
 		disposeDialogue();
 	}

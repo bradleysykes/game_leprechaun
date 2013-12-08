@@ -54,4 +54,8 @@ public class PlayerViewItem extends ViewItem {
 	public Player getPlayer() {
 		return myPlayer;
 	}
+	public void setName(String name) {
+		myName = name;
+		
+	}
 }

@@ -22,10 +22,11 @@ import model.stats.StatCollection;
 public class EditPlayerDialogue extends InputDialogue {
 	private ViewItemField myName;
 	private JButton myEnterButton;
+	private PlayerViewItem myViewItem;
 
 	public EditPlayerDialogue(Player p, PlayerViewItem pvi) {
 		super(p.getStats(), new NullBoardList());
-		
+		myViewItem = pvi;
 		
 	}
 
@@ -63,6 +64,7 @@ public class EditPlayerDialogue extends InputDialogue {
 			inputData.add(stat);
 		}
 		String name = myName.getData();
+		myViewItem.setName(name);
 		myList.postEditInput(inputData, name, null);
 		disposeDialogue();
 	}
