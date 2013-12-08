@@ -21,7 +21,6 @@ public class SubUnitDialogue extends UnitCreationDialogue {
 	public SubUnitDialogue(Stat stat,String frameTitle, List<Stat> modelProperties,
 			BoardList list) {
 		super(frameTitle, modelProperties, list, true);
-		
 	}
 	
 	@Override
