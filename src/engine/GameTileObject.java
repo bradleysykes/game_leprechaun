@@ -65,6 +65,8 @@ public class GameTileObject extends JGObject implements EngineConstants{
 			List<Unit> unitList = myTile.getUnits();
 			List<Unit> selectableUnitList = new ArrayList<Unit>();
 			for (Unit unit : unitList) {
+				if(myEngine.getGameManager()==null)
+					System.out.println("1");
 				if (myEngine.getGameManager().getCurrentPlayer() == unit.getPlayer()) {
 					selectableUnitList.add(unit);
 				}
