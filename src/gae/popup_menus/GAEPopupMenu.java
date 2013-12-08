@@ -79,4 +79,16 @@ public abstract class GAEPopupMenu extends JPopupMenu {
 		// do nothing
 		
 	}
+	
+public class EditListener implements ActionListener{
+		
+		/**
+		 * open view that allows user to edit existing subtype
+		 */
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			mySource.launchEdit();
+		}
+		
+	}
 }

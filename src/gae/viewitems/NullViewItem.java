@@ -47,11 +47,11 @@ public class NullViewItem extends BoardListViewItem {
 
 	}
 
-	@Override
-	public BoardListViewItem createModel(List<Stat> inputData, String name,
-			File imageFile, int counter) {
-		return new NullViewItem();
-	}
+//	@Override
+//	public BoardListViewItem createModel(List<Stat> inputData, String name,
+//			File imageFile, int counter) {
+//		return new NullViewItem();
+//	}
 
 	@Override
 	protected int getResizeDimensions() {
@@ -69,8 +69,7 @@ public class NullViewItem extends BoardListViewItem {
 	}
 
 	public Object getModelObject() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Object();
 	}
 
 }

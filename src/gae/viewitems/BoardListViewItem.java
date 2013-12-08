@@ -2,6 +2,7 @@ package gae.viewitems;
 
 import gae.Controller;
 import gae.GUIMap;
+import gae.dialogues.EditDialogue;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
 
@@ -16,7 +17,7 @@ import util.ImageTool;
 import jgame.JGObject;
 import model.stats.Stat;
 
-public abstract class BoardListViewItem extends ViewItem {
+public abstract class BoardListViewItem<T> extends ViewItem {
 	protected List<Stat> myProperties = new ArrayList<Stat>();
 	protected List<Stat> myDefaults;
 	protected String myName;
@@ -24,6 +25,7 @@ public abstract class BoardListViewItem extends ViewItem {
 	protected String myMapObjectPrefix;
 	protected File myImage;
 	protected String myImagePath;
+	protected InputDialogue myDialogue;
 	
 	public BoardListViewItem(List<Stat> stats, String name, File imageFile){
 		myName = name;
@@ -42,6 +44,10 @@ public abstract class BoardListViewItem extends ViewItem {
 			myImage = new File(myImagePath);
 			ImageTool.scaleAndOverwriteImage(myImage.getPath(), resizeDimensions,resizeDimensions);
 		}
+	}
+	
+	public String getName(){
+		return myName;
 	}
 		
 	protected abstract String getMapPrefix();
@@ -85,13 +91,23 @@ public abstract class BoardListViewItem extends ViewItem {
 		
 	}
 
-	public abstract BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile, int myCounter);
+	//public abstract BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile, int myCounter);
 	
 	public JGObject getMapObject() {
 		return myMapObject;
 	}
 	
-	public abstract Object getModelObject();
+	public abstract T getModelObject();
+
+	public boolean onMap() {
+		return myMapObject != null;
+	}
+	
+	@Override
+	public void launchEdit(){
+		myDialogue = new EditDialogue(myName,this.getModel(),myListSource, new NullViewItem());
+	}
+
 
 	public void setName(String name) {
 		myName = name;		

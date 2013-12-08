@@ -4,6 +4,7 @@ package gae.panels;
 import gae.Controller;
 import gae.panel_lists.BoardList;
 import gae.panel_lists.PlayerList;
+import gae.viewitems.BoardListViewItem;
 import gae.viewitems.PlayerViewItem;
 import gae.viewitems.ViewItem;
 
@@ -17,6 +18,7 @@ import javax.swing.JTextArea;
 import data.GameElements;
 import model.Player;
 import model.Resource;
+import model.unit.Unit;
 
 public class PlayerPanel extends EditPanel {
 	private PlayerList myList;
@@ -30,6 +32,7 @@ public class PlayerPanel extends EditPanel {
 		myModelPlayerList = new ArrayList<Player>();
 		myGameResources = new ArrayList<Resource>();
 		this.add(myList);
+		Player p = new Player();
 	}
 
 	@Override
@@ -77,6 +80,21 @@ public class PlayerPanel extends EditPanel {
 		myGameResources.add(resource);
 		for (Player p:myModelPlayerList) {
 			p.addNewResourceType(resource.getID(), resource.getStat("Harvest Rate").getValue());
+		}
+	}
+	
+	@Override
+	public void removeBoardObject(BoardListViewItem item){
+		for(Player player:myModelPlayerList){
+			List<Unit> oldUnits = player.getAllUnits();
+			List<Unit> updatedUnits = new ArrayList<Unit>();
+			Unit removedUnit = (Unit)item.getModelObject();
+			for(Unit unit:oldUnits){
+				if(unit.getID()!=removedUnit.getID()){
+					updatedUnits.add(unit);
+				}
+			}
+			//assign new list of players to unit
 		}
 	}
 }

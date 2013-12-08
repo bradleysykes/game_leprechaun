@@ -44,7 +44,7 @@ public class PlayerViewItem extends ViewItem {
 	
 	@Override
 	public void launchEdit(){
-		EditPlayerDialogue myDialogue = new EditPlayerDialogue(myPlayer, this);
+		EditPlayerDialogue myDialogue = new EditPlayerDialogue(myPlayer, this, myListSource);
 	}
 	
 	public void assignUnit(Unit myItem) {

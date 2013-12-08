@@ -8,6 +8,7 @@ import gae.dialogues.UnitCreationDialogue;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.GameMap;
@@ -19,7 +20,6 @@ import model.unit.Unit;
 public class UnitViewItem extends BoardListViewItem {
 
 	private Unit myUnit;
-	private InputDialogue myDialogue;
 	private String myIDEnding;
 	
 	public UnitViewItem(List<Stat> stats, String name, File imageFile, int IDcounter){
@@ -44,12 +44,12 @@ public class UnitViewItem extends BoardListViewItem {
 		//create on map
 	}
 
-	@Override
-	public BoardListViewItem createModel(List<Stat> stats, String name, File imageFile, int counter) {
-		UnitViewItem item = new UnitViewItem(stats, name, imageFile, counter);
-		myProperties = stats;
-		return item;
-	}
+//	@Override
+//	public BoardListViewItem createModel(List<Stat> stats, String name, File imageFile, int counter) {
+//		UnitViewItem item = new UnitViewItem(stats, name, imageFile, counter);
+//		myProperties = stats;
+//		return item;
+//	}
 	
 	public String getImagePath(){
 		try {
@@ -83,18 +83,13 @@ public class UnitViewItem extends BoardListViewItem {
 		int tileX = (int)(x-x%TILE_SIZE);
 		int tileY = (int)(y-y%TILE_SIZE);
 		myMapObject = new MapObject(myMapObjectPrefix,tileX,tileY,myMapObjectPrefix,this);
-		map.addObject(myMapObject);
+		map.addObject(myMapObject, this);
 		GameMap modelMap = map.getModelMap();
 		Tile selectedTile = modelMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE);
 		Unit newGuy = new Unit(myName+myIDEnding, player.getPlayer(), selectedTile);
 		selectedTile.addUnit(newGuy);
 		newGuy.setCurrentTile(selectedTile);
 		player.assignUnit(newGuy);
-	}
-	
-	@Override
-	public void launchEdit(){
-		myDialogue = new EditDialogue(myName,this.getModel(),this);
 	}
 
 	@Override
@@ -113,8 +108,8 @@ public class UnitViewItem extends BoardListViewItem {
 	}
 
 	@Override
-	public Object getModelObject() {
+	public Unit getModelObject() {
 		return myUnit;
 	}
-
+	
 }

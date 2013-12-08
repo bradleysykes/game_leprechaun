@@ -33,6 +33,9 @@ public class TilePopupMenu extends GAEPopupMenu {
 		JMenuItem removeFromMap = new JMenuItem("Remove All From Map");
 		removeFromMap.addActionListener(new RemoveListener(myListSource));
 		this.add(removeFromMap);
+		JMenuItem editItem = new JMenuItem("Edit");
+		editItem.addActionListener(new EditListener());
+		this.add(editItem);
 	}
 	
 	public class FillListener implements ActionListener{
