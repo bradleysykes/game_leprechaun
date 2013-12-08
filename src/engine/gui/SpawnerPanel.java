@@ -37,6 +37,7 @@ public class SpawnerPanel extends JPanel {
 		myScrollPane.setPreferredSize(new Dimension(130, 70));
 		add(myScrollPane);
 		add(new SpawnerButton(new SpawnerListener(this, spawnerViewer, gameEngine)));
+		setListContent(unitList);
 	}
 	
 	public JList<String> getList() { 

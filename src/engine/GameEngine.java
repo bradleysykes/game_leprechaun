@@ -150,6 +150,9 @@ public class GameEngine extends JGEngine implements EngineConstants {
 				}
 			}
 		}
+		for (Unit unit : unitList) {
+			System.out.println(unit.getID());
+		}
 		if (mySpawnerViewer == null) {
 			mySpawnerViewer = new SpawnerViewer(unitList, this);
 		} else {
