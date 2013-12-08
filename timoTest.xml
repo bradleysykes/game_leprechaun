@@ -1,6 +1,6 @@
 <GameElements>
     <Map x_dimension="10" y_dimension="10">
-        <Tile id="Plains|1021248086" x="0" y="0">
+        <Tile id="Plains|1068922666" x="0" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -8,7 +8,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1427274578" x="0" y="1">
+        <Tile id="Plains|1682540307" x="0" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -16,7 +16,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|811495456" x="0" y="2">
+        <Tile id="Plains|390276053" x="0" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -24,7 +24,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|135486895" x="0" y="3">
+        <Tile id="Plains|954564833" x="0" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -32,7 +32,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|795578445" x="0" y="4">
+        <Tile id="Plains|1668305141" x="0" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -40,7 +40,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1053738893" x="0" y="5">
+        <Tile id="Plains|1658009555" x="0" y="5">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -48,7 +48,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|2039421489" x="0" y="6">
+        <Tile id="Plains|418787413" x="0" y="6">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -56,7 +56,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|570475856" x="0" y="7">
+        <Tile id="Plains|1256139072" x="0" y="7">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -64,7 +64,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1620711584" x="0" y="8">
+        <Tile id="Plains|17649447" x="0" y="8">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -72,7 +72,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|617013740" x="0" y="9">
+        <Tile id="Plains|281512443" x="0" y="9">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -80,7 +80,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|2098880464" x="1" y="0">
+        <Tile id="Plains|473155160" x="1" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -88,7 +88,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1317572826" x="1" y="1">
+        <Tile id="Plains|186829279" x="1" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -96,7 +96,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1742602365" x="1" y="2">
+        <Tile id="Plains|418600239" x="1" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -104,7 +104,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|535970769" x="1" y="3">
+        <Tile id="Plains|257789301" x="1" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -112,7 +112,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1514299065" x="1" y="4">
+        <Tile id="Plains|1190265908" x="1" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -120,7 +120,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|995684858" x="1" y="5">
+        <Tile id="Plains|988943951" x="1" y="5">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -128,7 +128,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1951982241" x="1" y="6">
+        <Tile id="Plains|1958727946" x="1" y="6">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -136,7 +136,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|2005332915" x="1" y="7">
+        <Tile id="Plains|1563763559" x="1" y="7">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -144,7 +144,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1021946387" x="1" y="8">
+        <Tile id="Plains|1269264127" x="1" y="8">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -152,7 +152,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|278717603" x="1" y="9">
+        <Tile id="Plains|1567116838" x="1" y="9">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -160,7 +160,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|744919514" x="2" y="0">
+        <Tile id="Plains|1793249458" x="2" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -168,7 +168,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|32609788" x="2" y="1">
+        <Tile id="Plains|1358138608" x="2" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -176,7 +176,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|464376931" x="2" y="2">
+        <Tile id="Plains|631900693" x="2" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -184,7 +184,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|827506119" x="2" y="3">
+        <Tile id="Plains|1048312836" x="2" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -192,7 +192,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|791244061" x="2" y="4">
+        <Tile id="Plains|1037994664" x="2" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -200,7 +200,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1220191003" x="2" y="5">
+        <Tile id="Plains|1566653267" x="2" y="5">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -208,7 +208,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1428842218" x="2" y="6">
+        <Tile id="Plains|444462602" x="2" y="6">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -216,7 +216,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1389017172" x="2" y="7">
+        <Tile id="Plains|1134827548" x="2" y="7">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -224,7 +224,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|2064366914" x="2" y="8">
+        <Tile id="Plains|1244330229" x="2" y="8">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -232,7 +232,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1068922666" x="2" y="9">
+        <Tile id="Plains|1262404317" x="2" y="9">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -240,7 +240,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1682540307" x="3" y="0">
+        <Tile id="Plains|90923459" x="3" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -248,7 +248,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|390276053" x="3" y="1">
+        <Tile id="Plains|1289702396" x="3" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -256,7 +256,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|954564833" x="3" y="2">
+        <Tile id="Plains|1475720401" x="3" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -264,7 +264,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1668305141" x="3" y="3">
+        <Tile id="Plains|1144140404" x="3" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -272,7 +272,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1658009555" x="3" y="4">
+        <Tile id="Plains|999194790" x="3" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -280,7 +280,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|418787413" x="3" y="5">
+        <Tile id="Plains|144715990" x="3" y="5">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -288,7 +288,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|17649447" x="3" y="6">
+        <Tile id="Plains|501541723" x="3" y="6">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -296,7 +296,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|281512443" x="3" y="7">
+        <Tile id="Plains|538423986" x="3" y="7">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -304,7 +304,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|473155160" x="3" y="8">
+        <Tile id="Plains|1943327891" x="3" y="8">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -312,7 +312,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|186829279" x="3" y="9">
+        <Tile id="Plains|433076814" x="3" y="9">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -320,7 +320,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|418600239" x="4" y="0">
+        <Tile id="Plains|899933215" x="4" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -328,7 +328,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|257789301" x="4" y="1">
+        <Tile id="Plains|450218684" x="4" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -336,7 +336,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1190265908" x="4" y="2">
+        <Tile id="Plains|1240533607" x="4" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -344,7 +344,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|988943951" x="4" y="3">
+        <Tile id="Plains|1877087773" x="4" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -352,7 +352,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1805040324" x="4" y="4">
+        <Tile id="Plains|1679426381" x="4" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -360,7 +360,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1958727946" x="4" y="5">
+        <Tile id="Plains|1741612946" x="4" y="5">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -368,7 +368,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1563763559" x="4" y="6">
+        <Tile id="Plains|1086674812" x="4" y="6">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -376,7 +376,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1269264127" x="4" y="7">
+        <Tile id="Plains|1542631196" x="4" y="7">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -384,7 +384,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1567116838" x="4" y="8">
+        <Tile id="Plains|432440941" x="4" y="8">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -392,7 +392,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1793249458" x="4" y="9">
+        <Tile id="Plains|950233939" x="4" y="9">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -400,7 +400,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|631900693" x="5" y="0">
+        <Tile id="Plains|1191055321" x="5" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -408,7 +408,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1048312836" x="5" y="1">
+        <Tile id="Plains|1371706360" x="5" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -416,7 +416,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1037994664" x="5" y="2">
+        <Tile id="Plains|1031841975" x="5" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -424,7 +424,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1244330229" x="5" y="3">
+        <Tile id="Plains|2057079871" x="5" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -432,7 +432,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1262404317" x="5" y="4">
+        <Tile id="Plains|1002158844" x="5" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -440,7 +440,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1289702396" x="5" y="5">
+        <Tile id="Plains|569447687" x="5" y="5">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -448,7 +448,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1475720401" x="5" y="6">
+        <Tile id="Plains|1520144377" x="5" y="6">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -456,7 +456,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|999194790" x="5" y="7">
+        <Tile id="Plains|115404973" x="5" y="7">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -464,7 +464,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|144715990" x="5" y="8">
+        <Tile id="Plains|433647970" x="5" y="8">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -472,7 +472,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1290155526" x="5" y="9">
+        <Tile id="Plains|1909417519" x="5" y="9">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -480,7 +480,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|501541723" x="6" y="0">
+        <Tile id="Plains|1732104712" x="6" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -488,7 +488,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|538423986" x="6" y="1">
+        <Tile id="Plains|195575852" x="6" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -496,7 +496,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1943327891" x="6" y="2">
+        <Tile id="Plains|1393364654" x="6" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -504,7 +504,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|433076814" x="6" y="3">
+        <Tile id="Plains|2118052890" x="6" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -512,7 +512,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|899933215" x="6" y="4">
+        <Tile id="Plains|1425989558" x="6" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -520,7 +520,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|450218684" x="6" y="5">
+        <Tile id="Plains|689000786" x="6" y="5">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -528,7 +528,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1240533607" x="6" y="6">
+        <Tile id="Plains|804385678" x="6" y="6">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -536,7 +536,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1877087773" x="6" y="7">
+        <Tile id="Plains|900532281" x="6" y="7">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -544,7 +544,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1679426381" x="6" y="8">
+        <Tile id="Plains|1928786358" x="6" y="8">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -552,7 +552,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1741612946" x="6" y="9">
+        <Tile id="Plains|846667441" x="6" y="9">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -560,7 +560,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1086674812" x="7" y="0">
+        <Tile id="Plains|713035865" x="7" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -568,7 +568,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1542631196" x="7" y="1">
+        <Tile id="Plains|1178644865" x="7" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -576,7 +576,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|432440941" x="7" y="2">
+        <Tile id="Plains|1323041354" x="7" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -584,7 +584,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|950233939" x="7" y="3">
+        <Tile id="Plains|1310355640" x="7" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -592,7 +592,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1893413681" x="7" y="4">
+        <Tile id="Plains|702441495" x="7" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -600,7 +600,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1191055321" x="7" y="5">
+        <Tile id="Plains|1216598906" x="7" y="5">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -608,7 +608,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1371706360" x="7" y="6">
+        <Tile id="Plains|1186010055" x="7" y="6">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -616,7 +616,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1031841975" x="7" y="7">
+        <Tile id="Plains|327782931" x="7" y="7">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -624,7 +624,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1237624300" x="7" y="8">
+        <Tile id="Plains|752166762" x="7" y="8">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -632,7 +632,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|225005258" x="7" y="9">
+        <Tile id="Plains|1578022692" x="7" y="9">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -640,7 +640,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|2092152486" x="8" y="0">
+        <Tile id="Plains|404343994" x="8" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -648,7 +648,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|2057079871" x="8" y="1">
+        <Tile id="Plains|1171248050" x="8" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -656,7 +656,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1002158844" x="8" y="2">
+        <Tile id="Plains|1330867948" x="8" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -664,7 +664,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|569447687" x="8" y="3">
+        <Tile id="Plains|1855418531" x="8" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -672,7 +672,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1520144377" x="8" y="4">
+        <Tile id="Plains|409212430" x="8" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -680,7 +680,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|453595880" x="8" y="5">
+        <Tile id="Plains|1390673316" x="8" y="5">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -688,7 +688,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|19008310" x="8" y="6">
+        <Tile id="Plains|1981891711" x="8" y="6">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -696,7 +696,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1645086414" x="8" y="7">
+        <Tile id="Plains|35138160" x="8" y="7">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -704,7 +704,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|115404973" x="8" y="8">
+        <Tile id="Plains|9052195" x="8" y="8">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -712,7 +712,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|433647970" x="8" y="9">
+        <Tile id="Plains|1816386075" x="8" y="9">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -720,7 +720,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1909417519" x="9" y="0">
+        <Tile id="Plains|1520720420" x="9" y="0">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -728,7 +728,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1732104712" x="9" y="1">
+        <Tile id="Plains|1545215993" x="9" y="1">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -736,7 +736,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|195575852" x="9" y="2">
+        <Tile id="Plains|925451180" x="9" y="2">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -744,7 +744,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1393364654" x="9" y="3">
+        <Tile id="Plains|1981410686" x="9" y="3">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -752,7 +752,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|2118052890" x="9" y="4">
+        <Tile id="Plains|540485573" x="9" y="4">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -760,7 +760,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1425989558" x="9" y="5">
+        <Tile id="Plains|85198601" x="9" y="5">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -768,7 +768,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|689000786" x="9" y="6">
+        <Tile id="Plains|1708778105" x="9" y="6">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -776,7 +776,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|804385678" x="9" y="7">
+        <Tile id="Plains|1134799404" x="9" y="7">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -784,7 +784,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|900532281" x="9" y="8">
+        <Tile id="Plains|771314021" x="9" y="8">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -792,7 +792,7 @@
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Plains|1928786358" x="9" y="9">
+        <Tile id="Plains|1263457655" x="9" y="9">
             <Stat name="Passability" value="10.0"/>
             <Stat name="Max Population" value="10.0"/>
             <Terrain id="Plains">
@@ -802,30 +802,16 @@
         </Tile>
     </Map>
     <Players>
-        <Player id="Defuault Player Name">
+        <Player id="Player 1">
             <Resources/>
         </Player>
-        <Player id="Defuault Player Name">
+        <Player id="Player 2">
             <Resources/>
         </Player>
     </Players>
     <Units>
-        <Unit id="Timo|0">
-            <UnitPlayer id="Defuault Player Name"/>
-            <UnitTile x="1" y="0"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Timo|0">
-            <UnitPlayer id="Defuault Player Name"/>
+        <Unit id="Name me!|0">
+            <UnitPlayer id="Player 1"/>
             <UnitTile x="1" y="1"/>
             <Abilities/>
             <Attributes>
@@ -838,9 +824,9 @@
                 <Stat name="Range" value="10.0"/>
             </Attributes>
         </Unit>
-        <Unit id="Enemy|1">
-            <UnitPlayer id="Defuault Player Name"/>
-            <UnitTile x="3" y="0"/>
+        <Unit id="Name me!|0">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="1" y="2"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -852,23 +838,9 @@
                 <Stat name="Range" value="10.0"/>
             </Attributes>
         </Unit>
-        <Unit id="Enemy|1">
-            <UnitPlayer id="Defuault Player Name"/>
-            <UnitTile x="4" y="1"/>
-            <Abilities/>
-            <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
-                <Stat name="Stamina" value="10.0"/>
-                <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
-            </Attributes>
-        </Unit>
-        <Unit id="Enemy|1">
-            <UnitPlayer id="Defuault Player Name"/>
-            <UnitTile x="4" y="0"/>
+        <Unit id="Name me!|0">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="1" y="3"/>
             <Abilities/>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -896,40 +868,8 @@
             </image>
         </tileImages>
         <unitImages>
-            <image src="C:\Users\Timo\Pictures\Calligraphy.jpg">
-                <UnitType id="Soldier|2">
-                    <UnitPlayer id="Defuault Player Name"/>
-                    <UnitTile x="-1" y="-1"/>
-                    <Abilities/>
-                    <Attributes>
-                        <Stat name="Health" value="10.0"/>
-                        <Stat name="Max Health" value="10.0"/>
-                        <Stat name="Base Attack" value="10.0"/>
-                        <Stat name="Base Defense" value="10.0"/>
-                        <Stat name="Stamina" value="10.0"/>
-                        <Stat name="Base Stamina" value="10.0"/>
-                        <Stat name="Range" value="10.0"/>
-                    </Attributes>
-                </UnitType>
-            </image>
             <image src="C:\Users\Timo\workspace\oogasalad_MISSINGNO\src\gae\resources\default_unit.png">
-                <UnitType id="Timo|0">
-                    <UnitPlayer id="Defuault Player Name"/>
-                    <UnitTile x="-1" y="-1"/>
-                    <Abilities/>
-                    <Attributes>
-                        <Stat name="Health" value="10.0"/>
-                        <Stat name="Max Health" value="10.0"/>
-                        <Stat name="Base Attack" value="10.0"/>
-                        <Stat name="Base Defense" value="10.0"/>
-                        <Stat name="Stamina" value="10.0"/>
-                        <Stat name="Base Stamina" value="10.0"/>
-                        <Stat name="Range" value="10.0"/>
-                    </Attributes>
-                </UnitType>
-            </image>
-            <image src="C:\Users\Timo\workspace\oogasalad_MISSINGNO\testimages\FFV_Barrier_Tower_SNES_BG2.PNG">
-                <UnitType id="Enemy|1">
+                <UnitType id="Name me!|0">
                     <UnitPlayer id="Defuault Player Name"/>
                     <UnitTile x="-1" y="-1"/>
                     <Abilities/>
