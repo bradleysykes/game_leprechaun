@@ -138,7 +138,15 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myUnits.add(unit);
 	}
 	
-	public void initializeSpawner(List<Unit> unitList) {
+	public void initializeSpawner(List<String> unitIDList) {
+		List<Unit> unitList = new ArrayList<Unit>();
+		for (String id : unitIDList) {
+			for (Unit unit : myGameLoader.getUnitImageMap().keySet()) { //ugly...
+				if (id.equals(unit.getID())) {
+					unitList.add(unit);
+				}
+			}
+		}
 		if (mySpawnerViewer == null) {
 			mySpawnerViewer = new SpawnerViewer(unitList, this);
 		} else {
