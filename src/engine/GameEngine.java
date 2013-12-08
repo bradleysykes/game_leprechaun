@@ -211,5 +211,9 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	public GameViewer getGameViewer() {
 		return myGameViewer;
 	}
+
+	public void declareWinner(Player p) {
+		// Engine - this is how we will tell you that somebody has won the game.
+	}
 	
 }

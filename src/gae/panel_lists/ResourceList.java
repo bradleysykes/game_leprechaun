@@ -36,7 +36,9 @@ public class ResourceList extends BoardList {
 	@Override
 	protected BoardListViewItem getNewItem(List<Stat> inputData, String name,
 			File f, int counter) {
-		return new ResourceViewItem(inputData,name,f);
+		ResourceViewItem rvi = new ResourceViewItem(inputData,name,f);
+		myController.addResourceToPlayers(rvi.getModelObject());
+		return rvi;
 	}
 	
 	@Override 

@@ -19,13 +19,13 @@ public class ActionPanel extends JPanel {
 	private Dimension mySize = new Dimension(300, 230);
 	private JButton myNextTurnButton;
 	private JPanel myUnitListArea;
-	//private JohnTestAbilityArea myAbilityListArea;
-	private AbilityListArea myAbilityListArea;
+	private JohnTestAbilityArea myAbilityListArea;
+	//private AbilityListArea myAbilityListArea;
 	private GameEngine myGameEngine;
 	
 	public ActionPanel(GameEngine ge) {
 		myGameEngine = ge;
-		setPreferredSize(mySize);
+		//setPreferredSize(mySize);
 		
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		TitledBorder titledBorder = BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), "Actions");
@@ -33,8 +33,8 @@ public class ActionPanel extends JPanel {
 		setBorder(titledBorder);
 		
 		myUnitListArea = new UnitListArea(myGameEngine);
-		//myAbilityListArea = new JohnTestAbilityArea(myGameEngine);
-		myAbilityListArea = new AbilityListArea(myGameEngine);
+		myAbilityListArea = new JohnTestAbilityArea(myGameEngine);
+		//myAbilityListArea = new AbilityListArea(myGameEngine);
 		
 		add(new ButtonArea(myGameEngine));
 		add(myUnitListArea);
