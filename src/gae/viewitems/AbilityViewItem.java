@@ -69,14 +69,7 @@ public class AbilityViewItem extends BoardListViewItem {
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public BoardListViewItem createModel(List<Stat> inputData, String name,
-			File imageFile, int myCounter) {
-		// TODO Auto-generated method stub
-		return new NullViewItem();
-	}
-
+	
 	@Override
 	public CustomAbility getModelObject() {
 		return myAbility;

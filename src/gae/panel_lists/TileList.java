@@ -40,10 +40,6 @@ public class TileList extends BoardList {
 		return "Tiles";
 	}
 	
-	public List<Resource> getUserResources(){
-		return myTabbedView.getUserResources();
-	}
-	
 	@Override
 	public List<Stat> getDefaultStats(){
 		Tile tile = new Tile(2,2,new GameMap(2,2));

@@ -815,11 +815,40 @@
             <Resources/>
         </Player>
     </Players>
-    <Units/>
+    <Units>
+        <Unit id="Jeff|1">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="5" y="3"/>
+            <Abilities/>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="10.0"/>
+                <Stat name="Base Stamina" value="10.0"/>
+                <Stat name="Range" value="10.0"/>
+            </Attributes>
+        </Unit>
+        <Unit id="Name me!|0">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="5" y="4"/>
+            <Abilities/>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="10.0"/>
+                <Stat name="Base Stamina" value="10.0"/>
+                <Stat name="Range" value="10.0"/>
+            </Attributes>
+        </Unit>
+    </Units>
     <Conditions/>
     <ImageMap>
         <tileImages>
-            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\rock.jpg">
+            <image src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\rock.jpg">
                 <TileType id="Plains|0" x="-1" y="-1">
                     <Stat name="Passability" value="10.0"/>
                     <Stat name="Max Population" value="10.0"/>
@@ -830,6 +859,39 @@
                 </TileType>
             </image>
         </tileImages>
-        <unitImages/>
+        <unitImages>
+            <image src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\default_unit.png">
+                <UnitType id="Name me!|0">
+                    <UnitPlayer id="Defuault Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities/>
+                    <Attributes>
+                        <Stat name="Health" value="10.0"/>
+                        <Stat name="Max Health" value="10.0"/>
+                        <Stat name="Base Attack" value="10.0"/>
+                        <Stat name="Base Defense" value="10.0"/>
+                        <Stat name="Stamina" value="10.0"/>
+                        <Stat name="Base Stamina" value="10.0"/>
+                        <Stat name="Range" value="10.0"/>
+                    </Attributes>
+                </UnitType>
+            </image>
+            <image src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\default_unit.png">
+                <UnitType id="Jeff|1">
+                    <UnitPlayer id="Defuault Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities/>
+                    <Attributes>
+                        <Stat name="Health" value="10.0"/>
+                        <Stat name="Max Health" value="10.0"/>
+                        <Stat name="Base Attack" value="10.0"/>
+                        <Stat name="Base Defense" value="10.0"/>
+                        <Stat name="Stamina" value="10.0"/>
+                        <Stat name="Base Stamina" value="10.0"/>
+                        <Stat name="Range" value="10.0"/>
+                    </Attributes>
+                </UnitType>
+            </image>
+        </unitImages>
     </ImageMap>
 </GameElements>

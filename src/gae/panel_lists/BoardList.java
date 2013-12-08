@@ -32,6 +32,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import data.GameElements;
+import model.Resource;
 import model.stats.Stat;
 import model.unit.Unit;
 
@@ -179,6 +180,11 @@ public abstract class BoardList extends JList implements Constants{
 	 */
 	public List<String> getSpawnableTypes() {
 		return new ArrayList<String>();
+	}
+
+
+	public List<Resource> getUserResources() {
+		return myTabbedView.getUserResources();
 	}
 
 		
