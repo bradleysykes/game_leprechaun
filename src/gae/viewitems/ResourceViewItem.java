@@ -59,12 +59,12 @@ public class ResourceViewItem extends BoardListViewItem {
 		
 	}
 
-	@Override
-	public BoardListViewItem createModel(List<Stat> inputData, String name,
-			File imageFile, int myCounter) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public BoardListViewItem createModel(List<Stat> inputData, String name,
+//			File imageFile, int myCounter) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public Resource getModelObject() {

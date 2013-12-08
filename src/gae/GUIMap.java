@@ -41,6 +41,7 @@ public class GUIMap extends JGEngine implements Constants{
 	private int tileX = 0, tileY = 0;
 	private int unitX = 0, unitY=0;
 	private Map<Point,MapObject> myObjects = new HashMap<Point,MapObject>();
+	private Map<String,BoardListViewItem> myViewItems = new HashMap<String, BoardListViewItem>();
 	
 	public GUIMap(int width, int height){
 		myWidth = width;
@@ -131,6 +132,16 @@ public class GUIMap extends JGEngine implements Constants{
 		}
 		else{
 			// clear only the objects being removed
+			BoardListViewItem toRemove = myViewItems.get(prefix);
+			Collection<Tile> allTiles = myMap.getAllTiles();
+			Tile removeTile = (Tile)toRemove.getModelObject();
+			for(Tile tile:allTiles){
+				if(tile.getID().equals(removeTile.getID())){
+					// this tile should be removed from model
+					// need model boys to implement method
+				}
+			}
+			// remove a specific tile. 
 		}
 		super.removeObjects(prefix, cidmask);
 	}
@@ -147,7 +158,7 @@ public class GUIMap extends JGEngine implements Constants{
 		setPFSize(2,2);
 	}
 	
-	public void addObject(MapObject object){
+	public void addObject(MapObject object, BoardListViewItem item){
 		myObjects.put(object.getPoint(), object);
 	}
 	
@@ -180,12 +191,17 @@ public class GUIMap extends JGEngine implements Constants{
 	
 	private void checkMouse(){
 		if(this.getKey(256)&&!(myMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE).isOccupied())){
+			//figure out which object is being placed and the player to which it is assigned. 
 			PlayerViewItem active = BoardBuffer.getActivePlayer();
 			BoardListViewItem toPlace = BoardBuffer.retrieve();
-			toPlace.clickOnBoard(this, getActualXCoordinate(getMouseX()), getActualYCoordinate(getMouseY()), active);
-			System.out.println("Clicked at "+getMouseX()+", "+getMouseY()+".");
-			System.out.println("Object placed at "+getActualXCoordinate(getMouseX())+", "+getActualYCoordinate(getMouseY())+".");
-			this.validate();
+			//adjust coordinates to place object beneath mouse cursor. 
+			int x = getActualXCoordinate(getMouseX());
+			int y = getActualYCoordinate(getMouseY());
+			//map asks each view item to place the appropriate JGObject. 
+			toPlace.clickOnBoard(this, x,y, active);
+			//update map of every JGObject prefix and its corresponding view item. For delete functionality. 
+			myViewItems.put(toPlace.getPrefix(),toPlace);
+			this.revalidate();
 			this.clearKey(256);
 		}
 		if(this.getKey(KeyMouse3)){

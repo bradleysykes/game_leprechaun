@@ -88,6 +88,16 @@ public class UnitList extends BoardList {
 	}
 	
 	@Override
+	public List<String> getSpawnableTypes(){
+		List<String> spawnableTypes = new ArrayList<String>();
+		for(int i = 0; i<myModel.getSize();i++){
+			UnitViewItem item = (UnitViewItem)myModel.getElementAt(i);
+			spawnableTypes.add(item.getModelObject().getID().split("\\|")[0]);
+		}
+		return spawnableTypes;
+	}
+	
+	@Override
 	public void loadData(GameElements elements){
 		Map<Unit,String> unitImageMap = elements.getUnitImageMap();
 		if(unitImageMap!=null){
