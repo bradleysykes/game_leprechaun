@@ -5,6 +5,7 @@ import java.util.List;
 import gae.Constants;
 import gae.Controller;
 import gae.dialogues.UnitCreationDialogue;
+import gae.panel_lists.BoardList;
 
 import javax.swing.Icon;
 
@@ -24,6 +25,7 @@ import jgame.platform.JGEngine;
 public abstract class ViewItem implements Constants {
 
 	protected Controller myController;
+	protected BoardList myListSource;
 
 	public abstract Icon getListIcon();
 	
@@ -49,5 +51,9 @@ public abstract class ViewItem implements Constants {
 	 */
 	public void launchEdit() {
 		// 
+	}
+
+	public void setListSource(BoardList boardList) {
+		myListSource = boardList;
 	}
 }

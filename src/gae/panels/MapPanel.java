@@ -116,9 +116,11 @@ public class MapPanel extends EditPanel {
 	}
 	
 	public void removeBoardObject(BoardListViewItem item){
-		myMapView.removeObjects(item.getPrefix(),item.getMapObject().colid);
-		System.out.println("hah");
+		if(item.onMap()){
+			myMapView.removeObjects(item.getPrefix(),item.getMapObject().colid);
+		}
 	}
+	
 	@Override
 	public void closeMap(){
 		if(myMapView!=null){

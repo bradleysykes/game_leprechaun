@@ -34,14 +34,14 @@ public class ConditionViewItem extends BoardListViewItem {
 		return myProperties;
 	}
 
-	@Override
-	public BoardListViewItem createModel(List<Stat> inputData, String name, 
-			File imageFile, int counter) {
-		myController.getPlayers();
-		myCondition = new Create(null, null);
-		myCondition.setStats(inputData);
-		return new ConditionViewItem("Test Name", null);
-	}
+//	@Override
+//	public BoardListViewItem createModel(List<Stat> inputData, String name, 
+//			File imageFile, int counter) {
+//		myController.getPlayers();
+//		myCondition = new Create(null, null);
+//		myCondition.setStats(inputData);
+//		return new ConditionViewItem("Test Name", null);
+//	}
 
 	@Override
 	public String getListMessage() {
@@ -77,8 +77,11 @@ public class ConditionViewItem extends BoardListViewItem {
 		return "";
 	}
 
-	public Object getModelObject() {
+	@Override
+	public Condition getModelObject() {
 		return myCondition;
 	}
+
+	
 
 }

@@ -1,5 +1,6 @@
 package gae.dialogues;
 
+import gae.panel_lists.BoardList;
 import gae.viewitems.BoardListViewItem;
 
 import java.util.ArrayList;
@@ -10,8 +11,8 @@ import model.stats.Stat;
 public class EditDialogue extends UnitCreationDialogue {
 	private BoardListViewItem mySource;
 
-	public EditDialogue(String name, List<Stat> model,BoardListViewItem itemSource) {
-		super(name, model, itemSource);
+	public EditDialogue(String name, List<Stat> model,BoardList source, BoardListViewItem itemSource) {
+		super(name, model, source);
 		mySource = itemSource;
 		
 	}

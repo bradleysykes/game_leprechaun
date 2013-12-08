@@ -7,6 +7,7 @@ import java.util.List;
 import gae.ViewItemField;
 import gae.buttons.SaveInputButton;
 import gae.dialogues.InputDialogue.GetDataAction;
+import gae.panel_lists.BoardList;
 import gae.panel_lists.NullBoardList;
 import gae.viewitems.PlayerViewItem;
 
@@ -24,8 +25,8 @@ public class EditPlayerDialogue extends InputDialogue {
 	private JButton myEnterButton;
 	private PlayerViewItem myViewItem;
 
-	public EditPlayerDialogue(Player p, PlayerViewItem pvi) {
-		super(p.getStats(), new NullBoardList());
+	public EditPlayerDialogue(Player p, PlayerViewItem pvi, BoardList list) {
+		super(p.getStats(), list);
 		myViewItem = pvi;
 		
 	}

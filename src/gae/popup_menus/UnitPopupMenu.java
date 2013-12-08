@@ -38,18 +38,6 @@ public class UnitPopupMenu extends GAEPopupMenu {
 		removeFromMap.addActionListener(new RemoveListener(myListSource));
 		this.add(removeFromMap);
 	}
-	
-	public class EditListener implements ActionListener{
-		
-		/**
-		 * open view that allows user to edit existing subtype
-		 */
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Edit begins");
-			mySource.launchEdit();
-		}
-		
-	}
+
 
 }
