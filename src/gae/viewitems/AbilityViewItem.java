@@ -21,9 +21,19 @@ public class AbilityViewItem extends BoardListViewItem {
 		super(DEFAULT_ABILITY_IMAGE_PATH);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public AbilityViewItem(List<Stat> stats,String name, File f, int counter){
 		super(stats, name, f);
-		myAbility = new CustomAbility(name, null, stats.get(0).getValue(), stats.get(1).getValue());
+		double range = 0, radius = 0;
+		for(Stat s : stats){
+			if (s.getName().equals("Range")){
+				range = s.getValue();
+			}
+			if (s.getName().equals("Radius")){
+				radius = s.getValue();
+			}
+		}
+		myAbility = new CustomAbility(name, null, range, radius);
 	}
 
 	@Override
@@ -68,13 +78,6 @@ public class AbilityViewItem extends BoardListViewItem {
 			PlayerViewItem activePlayer) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public BoardListViewItem createModel(List<Stat> inputData, String name,
-			File imageFile, int myCounter) {
-		// TODO Auto-generated method stub
-		return new NullViewItem();
 	}
 
 	@Override
