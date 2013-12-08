@@ -21,6 +21,7 @@ public class PlayerPopupMenu extends GAEPopupMenu {
 	private BoardList myListSource;
 	private JMenu myUnitsSubMenu;
 	private Player myPlayer;
+	private JMenuItem myEditButton;
 	
 	public PlayerPopupMenu(Controller controller, BoardList source) {
 		super(controller);
@@ -62,6 +63,9 @@ public class PlayerPopupMenu extends GAEPopupMenu {
 	
 	@Override
 	public void subInitialize() {
+		myEditButton = new JMenuItem("Edit");
+		myEditButton.addActionListener(new EditListener());
+		this.add(myEditButton);
 		myUnitsSubMenu = new JMenu("View Units");
 		this.add(myUnitsSubMenu);
 	}
@@ -77,5 +81,17 @@ public class PlayerPopupMenu extends GAEPopupMenu {
 		public void actionPerformed(ActionEvent e) {
 			EditDialogue d = new EditDialogue(myUnit.getID(),myUnit.getStats(), new NullViewItem());
 		}
+	}
+	
+public class EditListener implements ActionListener{
+		
+		/**
+		 * open view that allows user to edit existing subtype
+		 */
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			mySource.launchEdit();
+		}
+		
 	}
 }

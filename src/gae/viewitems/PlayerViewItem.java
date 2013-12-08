@@ -2,6 +2,7 @@ package gae.viewitems;
 
 import gae.Controller;
 import gae.dialogues.EditDialogue;
+import gae.dialogues.EditPlayerDialogue;
 import gae.dialogues.PlayerDialogue;
 
 import java.util.List;
@@ -18,11 +19,13 @@ public class PlayerViewItem extends ViewItem {
 	private Player myPlayer;
 	private String myImagePath = ICON_PATH+"player_icon.gif";
 	private int myNumber;
+	private String myName;
 	
 	public PlayerViewItem(Player playa, int playerNumber){
 		super();
 		myPlayer = playa;
 		myNumber = playerNumber;
+		myName = "Player "+myNumber;
 	}
 	@Override
 	public Icon getListIcon() {
@@ -31,12 +34,17 @@ public class PlayerViewItem extends ViewItem {
 
 	@Override
 	public String getListMessage() {
-		return "Player "+myNumber;
+		return myName;
 	}
 
 	@Override
 	public void onClick(Controller c) {
 	
+	}
+	
+	@Override
+	public void launchEdit(){
+		EditPlayerDialogue myDialogue = new EditPlayerDialogue(myPlayer, this);
 	}
 	
 	public void assignUnit(Unit myItem) {
@@ -45,10 +53,5 @@ public class PlayerViewItem extends ViewItem {
 	
 	public Player getPlayer() {
 		return myPlayer;
-	}
-	
-	@Override
-	public void showProperties() {
-		EditDialogue d = new EditDialogue(myPlayer.getID(), myPlayer.getStats(), new NullViewItem());
 	}
 }

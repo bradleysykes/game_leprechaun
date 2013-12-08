@@ -35,7 +35,7 @@ public class PlayerPanel extends EditPanel {
 	@Override
 	public void postPlayers(int numPlayers) {
 		while(myModelPlayerList.size()<numPlayers) {
-			Player nextPlayer = new Player();
+			Player nextPlayer = new Player("Player "+myPlayerNumber);
 			for (Resource r:myGameResources) {
 				nextPlayer.addNewResourceType(r.getID(), r.getStat("Harvest Rate").getValue());
 			}
