@@ -42,7 +42,7 @@ public class PlayerPanel extends EditPanel {
 			for (Resource r:myGameResources) {
 				nextPlayer.addNewResourceType(r.getID(), r.getStat("Harvest Rate").getValue());
 			}
-			myList.addNewItem(new PlayerViewItem(nextPlayer, myPlayerNumber));
+			myList.addNewItem(new PlayerViewItem(nextPlayer, myPlayerNumber, myList));
 			myModelPlayerList.add(nextPlayer);
 			myPlayerNumber++;
 		}
