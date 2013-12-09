@@ -50,6 +50,7 @@ public class Player extends StatCollection implements ModelConstants{
 	public void chargePlayer(Resources charged){
 		for(Stat s : charged.getStats()){
 			Resource r = (Resource) s;
+			System.out.println("resource charge: "+r.getID()+" "+r.getValue("Amount"));
 			this.adjustResources(r.getID(),-r.getValue("Amount"));
 		}
 	}

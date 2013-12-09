@@ -15,6 +15,7 @@ public class Spawn extends Ability {
 	@Override
 	public void useAbility() {
 		Resources cost = (Resources) myTargetUnit.getStatCollection("Resources");
+		System.out.println(myTargetUnit.getID()+" "+cost.getStats().size());
 		if(myUnit.getPlayer().canAfford(cost)){
 			myUnit.getPlayer().chargePlayer(cost);
 			myTargetUnit.setPlayer(myUnit.getPlayer());
@@ -27,17 +28,15 @@ public class Spawn extends Ability {
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		System.out.println("Spawner being called");
-		for(String s : myReferences)
-			System.out.println(s+" TIMO");
 		myGameEngine.initializeSpawner(myReferences);
 	}
 	
 	@Override
 	public Spawn copy(Unit u){
 		Spawn toReturn = new Spawn(u);
-		for(String s : myReferences)
+		for(String s : myReferences){
 			toReturn.getReferences().add(s);
+		}
 		return toReturn;
 	}
 	
