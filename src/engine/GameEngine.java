@@ -133,7 +133,15 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		for (Tile tile : myTileObjectMap.keySet()) {
 			if (myTileObjectMap.get(tile).isHighlighted()) myTileObjectMap.get(tile).setHighlighted(false);
 		}
-		removeObjects(EngineConstants.TileHighlightName, EngineConstants.TileHighlight_COL_ID);
+		removeObjects(TileHighlightName, TileHighlight_COL_ID);
+	}
+	
+	public void highlightSelection(GameTileObject gameTileObject) {
+		new SelectionHighlightObject(gameTileObject.getTile(), this);
+	}
+	
+	public void removeSelectionHighlight() {
+		removeObjects(SelectionHighlightName, SelectionHighlight_COL_ID);
 	}
 	
 	public void destroyUnit(Unit unit) {

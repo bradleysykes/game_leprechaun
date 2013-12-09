@@ -17,6 +17,7 @@ public class WinCondition extends Condition {
 			if(condition.check() == false)
 				return false;
 		}
+		System.out.println("WINNER!!");
 		return true;
 	}
 

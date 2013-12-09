@@ -14,6 +14,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -30,6 +32,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 
 import data.GameElements;
 import model.GameMap;
@@ -50,6 +53,7 @@ public class MapPanel extends EditPanel {
 		myFinder = new PackageClassFinder();
 		this.setLayout(new BorderLayout());
 		this.setMinimumSize(new Dimension(500,300));
+		
 		
 	}
 	
