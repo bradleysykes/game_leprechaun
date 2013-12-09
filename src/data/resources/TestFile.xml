@@ -812,8 +812,10 @@
     <Units>
         <Unit id="Create me!">
             <UnitPlayer id="Player 1"/>
-            <UnitTile x="1" y="2"/>
-            <Abilities/>
+            <UnitTile x="5" y="1"/>
+            <Abilities>
+                <CustomAbility/>
+            </Abilities>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
                 <Stat name="Max Health" value="10.0"/>
@@ -826,8 +828,10 @@
         </Unit>
         <Unit id="Create me!">
             <UnitPlayer id="Player 1"/>
-            <UnitTile x="3" y="1"/>
-            <Abilities/>
+            <UnitTile x="2" y="3"/>
+            <Abilities>
+                <CustomAbility/>
+            </Abilities>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
                 <Stat name="Max Health" value="10.0"/>
@@ -841,7 +845,9 @@
         <Unit id="Create me!">
             <UnitPlayer id="Player 2"/>
             <UnitTile x="7" y="6"/>
-            <Abilities/>
+            <Abilities>
+                <CustomAbility/>
+            </Abilities>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
                 <Stat name="Max Health" value="10.0"/>
@@ -854,8 +860,10 @@
         </Unit>
         <Unit id="Create me!">
             <UnitPlayer id="Player 2"/>
-            <UnitTile x="2" y="4"/>
-            <Abilities/>
+            <UnitTile x="8" y="3"/>
+            <Abilities>
+                <CustomAbility/>
+            </Abilities>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
                 <Stat name="Max Health" value="10.0"/>
@@ -867,9 +875,7 @@
             </Attributes>
         </Unit>
     </Units>
-    <Conditions>
-        <Condition name="model.condition.Defeat" player_id="Player 1" unit_id="Create me!"/>
-    </Conditions>
+    <Conditions/>
     <ImageMap>
         <tileImages>
             <image src="C:\Users\Seunghyun\Dropbox\fall13\cs308\oogasalad_MISSINGNO\src\gae\resources\rock.jpg">
@@ -888,7 +894,11 @@
                 <UnitType id="Create me!">
                     <UnitPlayer id="Defuault Player Name"/>
                     <UnitTile x="-1" y="-1"/>
-                    <Abilities/>
+                    <Abilities>
+                        <CustomAbility name="Create me!" radius="3.12" range="2.0">
+                            <Effect Attribute="Health" Power="12.0" name="Effect"/>
+                        </CustomAbility>
+                    </Abilities>
                     <Attributes>
                         <Stat name="Health" value="10.0"/>
                         <Stat name="Max Health" value="10.0"/>
