@@ -231,6 +231,7 @@ public class Controller implements Constants{
 			System.out.println("Game saved to " + myGameFilePath +".");
 		}
 		myGUI.dispose();
+		new LaunchGUI();
 	}
 
 	public void open() {

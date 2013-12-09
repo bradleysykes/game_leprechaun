@@ -1,21 +1,49 @@
 package engine;
 
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
 
+import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import engine.listeners.LoadGameListener;
+import gae.EditGUI;
+import gae.LaunchGUI;
 
 public class ViewerMenu extends JMenu {
 	
 	private JMenuItem myLoadGameItem;
 	private JMenuItem myExitGameItem;
+	private GameViewer myParent;
 	
-	public ViewerMenu(String title, GameEngine gameEngine) {
+	public ViewerMenu(String title, GameEngine gameEngine, GameViewer parent) {
 		super(title);
+		myParent = parent;
 		myLoadGameItem = new JMenuItem("Load Game");
 		myExitGameItem = new JMenuItem("Exit Game");
+		JMenuItem editItem = new JMenuItem("Continue editing");
+		editItem.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				myParent.dispose();
+				File gameFile = myParent.getGameEngine().getSourceFile();
+				new EditGUI(gameFile.getPath());
+			}
+			
+		});
+		myExitGameItem.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				myParent.dispose();
+				new LaunchGUI();
+			}
+			
+		});
 		myLoadGameItem.addActionListener(new LoadGameListener(gameEngine));
 		//myExitGameItem.addActionListener(new ExitGameListener());
 		add(myLoadGameItem);

@@ -40,7 +40,7 @@ public class GameViewer extends JFrame {
 		
 		// Add Menu Bar
 		myMenuBar = new JMenuBar();
-		myMenuBar.add(new ViewerMenu("Menu", myGameEngine));
+		myMenuBar.add(new ViewerMenu("Menu", myGameEngine, this));
 		setJMenuBar(myMenuBar);
 		
 		// Create Container. Set layout.
