@@ -47,9 +47,19 @@ public class Attack extends Ability{
 			enemyHealth = enemyHealth + enemyDefense - myAttack;
 		if (myDefense < enemyAttack)
 			myHealth = myHealth + myDefense - enemyAttack;
-		unitAttributes.setStat("Health",myHealth);
-		targetAttributes.setStat("Health",enemyHealth);
-		myValid = false;
+		if(myHealth<=0){
+			myUnit.getPlayer().getModel().destroyUnit(myUnit);
+		}
+		else{
+			unitAttributes.setStat("Health",myHealth);
+			myValid = false;
+		}
+		if(enemyHealth<=0){
+			myTarget.getPlayer().getModel().destroyUnit(myTarget);
+		}
+		else{
+			targetAttributes.setStat("Health",enemyHealth);
+		}
 	}
 
 	@Override
@@ -57,12 +67,12 @@ public class Attack extends Ability{
 		myGameEngine.highlightTiles(myUnit.getMap().getTilesInRadius
 				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile()));
 	}
-	
+
 	@Override
 	public Ability copy(Unit u){
 		return new Attack(u);
 	}
-	
+
 	@Override
 	public void refresh(){
 		if(((Attributes) myUnit.getStatCollection("Attributes")).getAttack() == 0)
