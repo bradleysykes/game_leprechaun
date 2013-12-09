@@ -10,10 +10,9 @@ import org.w3c.dom.NodeList;
 
 public class ImageResourcesDecoder extends Decoder {
     
-    private DataManager myDataManager;
     
     public ImageResourcesDecoder(DataManager manager) {
-        myDataManager = manager;
+        super(manager);
     }
     
     private Map<Tile, String> createTileImageMap(Element root, String tag) {
