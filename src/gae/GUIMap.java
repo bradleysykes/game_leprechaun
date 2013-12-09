@@ -171,10 +171,10 @@ public class GUIMap extends JGEngine implements Constants{
 		}
 		if(pfHeight()*.125<=coordinate&&coordinate<=pfHeight()*.375){
 			System.out.println(coordinate);
-			return 100+(coordinate-100)*3;
+			return (int) (pfWidth()*.125+(coordinate-pfWidth()*.125)*3);
 		}
 		else{
-			return 400+coordinate;
+			return (int) (pfHeight()*.5+coordinate);
 	}
 }
 	
@@ -184,10 +184,10 @@ public class GUIMap extends JGEngine implements Constants{
 		}
 		if(pfWidth()*.125<=coordinate&&coordinate<=pfWidth()*.375){
 			System.out.println(coordinate);
-			return 100+(coordinate-100)*3;
+			return (int) (pfWidth()*.125+(coordinate-pfWidth()*.125)*3);
 		}
 		else{
-			return 400+coordinate;
+			return (int) (pfWidth()*.5+coordinate);
 		}
 	}
 	
