@@ -102,7 +102,6 @@ public class UnitDecoder extends Decoder {
      * @param unit
      * @param customAbility
      */
-
     public void createCustomAbilities(Unit unit, Element customAbility) {
         String name = customAbility.getAttribute(NAME);
         double range = Double.parseDouble(customAbility.getAttribute(RANGE));

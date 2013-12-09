@@ -13,7 +13,7 @@ public class FeedbackPanel extends JPanel {
 	
 	private JPanel myUnitStatusArea;
 	private JPanel myPlayerStatusArea;
-	private JPanel myTileStatusArea;
+	//private JPanel myTileStatusArea;
 	private final Dimension mySize = new Dimension(500, 230);
 	
 	public FeedbackPanel() {
@@ -27,7 +27,7 @@ public class FeedbackPanel extends JPanel {
 		//myTileStatusArea = new StatusArea("TILE STATS");
 		
 		add(myUnitStatusArea);
-		add(myTileStatusArea);
+		//add(myTileStatusArea);
 		add(myPlayerStatusArea);
 	}
 	
@@ -39,8 +39,8 @@ public class FeedbackPanel extends JPanel {
 		return (StatusArea) myPlayerStatusArea;
 	}
 	
-	public StatusArea getTileStatusArea() {
-		return (StatusArea) myTileStatusArea;
-	}
+//	public StatusArea getTileStatusArea() {
+//		return (StatusArea) myTileStatusArea;
+//	}
 	
 }
