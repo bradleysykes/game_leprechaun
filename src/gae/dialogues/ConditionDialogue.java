@@ -73,7 +73,7 @@ public class ConditionDialogue extends InputDialogue {
 			myConditions.addItem(s);
 		}
 		for (Player p : myController.getPlayers()){
-			myPlayersCombo.addItem(new NameObject(p.getName()));
+			myPlayersCombo.addItem(new NameObject(p.getID()));
 			myPlayers.add(p);
 		}		
 		
@@ -197,11 +197,11 @@ public class ConditionDialogue extends InputDialogue {
 			myParamsetter = myConditionsParameters.get(conditionNum);
 			int playerNum = myPlayersCombo.getSelectedIndex();
 			myVariable1 = myParamsetter.getFirstVariableOptions(playerNum);
+			myVariable1Combo.removeAllItems();
 			if (myVariable1!=null) {
 //				myVariable1Combo.setEnabled(true);
-				myVariable1Combo.removeAllItems();
 				for (StatCollection sc:myVariable1) {
-					myVariable1Combo.addItem(new NameObject(sc.getName()));
+					myVariable1Combo.addItem(new NameObject(sc.getID()));
 				}
 			}
 			else {
@@ -217,11 +217,11 @@ public class ConditionDialogue extends InputDialogue {
 			if (myVariable1Combo.getItemCount()!=0) {
 			int var1Num =myVariable1Combo.getSelectedIndex();
 			myVariable2 = myParamsetter.getSecondVariableOptions(var1Num);
+			myVariable2Combo.removeAllItems();
 			if (myVariable2!=null) {
 //				myVariable2Combo.setEnabled(true);
-				myVariable2Combo.removeAllItems();
 				for (StatCollection sc:myVariable2) {
-					myVariable2Combo.addItem(new NameObject(sc.getName()));
+					myVariable2Combo.addItem(new NameObject(sc.getID()));
 				}
 			}
 			else {
