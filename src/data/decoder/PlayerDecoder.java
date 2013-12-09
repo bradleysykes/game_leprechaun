@@ -17,11 +17,10 @@ import org.w3c.dom.NodeList;
 
 public class PlayerDecoder extends Decoder {
     
-    private DataManager myDataManager;
     private List<Player> myPlayers;
     
     public PlayerDecoder(DataManager manager) {
-        myDataManager = manager;
+        super(manager);
         myPlayers = new ArrayList<Player>();
     }
     
