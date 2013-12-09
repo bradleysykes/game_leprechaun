@@ -46,7 +46,7 @@ public class PlayerList extends BoardList {
 		Player newPlayer = new Player(name);
 		newPlayer.setID(name);
 		newPlayer.setStats(inputData);
-		PlayerViewItem pvi = new PlayerViewItem(newPlayer, this);
+		PlayerViewItem pvi = new PlayerViewItem(newPlayer);
 		this.addNewItem(pvi);
 		return new NullViewItem();
 	}
@@ -57,7 +57,7 @@ public class PlayerList extends BoardList {
 		if(loadPlayers!=null){
 			int i = 1;
 			for(Player player:loadPlayers){
-				this.addNewItem(new PlayerViewItem(player,i, this));
+				this.addNewItem(new PlayerViewItem(player,i));
 				i++;
 			}
 		}
