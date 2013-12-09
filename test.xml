@@ -1,801 +1,801 @@
 <GameElements>
     <Map x_dimension="10" y_dimension="10">
-        <Tile id="Create me!" x="0" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|2117892816" x="0" y="0">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="0" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|883109487" x="0" y="1">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="0" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1161663592" x="0" y="2">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="0" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1306155867" x="0" y="3">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="0" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|983817035" x="0" y="4">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="0" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1536308992" x="0" y="5">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="0" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1549340663" x="0" y="6">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="0" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1529303166" x="0" y="7">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="0" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1914023666" x="0" y="8">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="0" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1838206049" x="0" y="9">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="1" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1029319801" x="1" y="0">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="1" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1797118822" x="1" y="1">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="1" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1966029946" x="1" y="2">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="1" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1881909680" x="1" y="3">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="1" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1116838744" x="1" y="4">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="1" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1701695628" x="1" y="5">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="1" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|592183396" x="1" y="6">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="1" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1387116374" x="1" y="7">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="1" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|182425986" x="1" y="8">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="1" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1574382433" x="1" y="9">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="2" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1499536744" x="2" y="0">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="2" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1993458863" x="2" y="1">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="2" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1170733594" x="2" y="2">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="2" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1274340544" x="2" y="3">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="2" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|987111477" x="2" y="4">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="2" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1071420864" x="2" y="5">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="2" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|720081153" x="2" y="6">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="2" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1333587626" x="2" y="7">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="2" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|320406443" x="2" y="8">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="2" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1329584472" x="2" y="9">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="3" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1758873869" x="3" y="0">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="3" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1280715328" x="3" y="1">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="3" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|753923815" x="3" y="2">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="3" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1044041405" x="3" y="3">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="3" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|115014198" x="3" y="4">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="3" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|308343486" x="3" y="5">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="3" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1141680128" x="3" y="6">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="3" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|451525351" x="3" y="7">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="3" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1726849406" x="3" y="8">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="3" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|2063961084" x="3" y="9">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="4" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|690588797" x="4" y="0">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="4" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1724282791" x="4" y="1">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="4" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1876535719" x="4" y="2">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="4" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|990989391" x="4" y="3">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="4" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1823012052" x="4" y="4">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="4" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1214366215" x="4" y="5">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="4" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|168394417" x="4" y="6">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="4" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1969003420" x="4" y="7">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="4" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|317479670" x="4" y="8">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="4" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1531434542" x="4" y="9">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="5" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1228838099" x="5" y="0">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="5" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|731696694" x="5" y="1">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="5" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1134973336" x="5" y="2">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="5" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1547105498" x="5" y="3">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="5" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|470107010" x="5" y="4">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="5" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|496179757" x="5" y="5">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="5" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|614174598" x="5" y="6">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="5" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1626061104" x="5" y="7">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="5" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|332083206" x="5" y="8">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="5" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|12444689" x="5" y="9">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="6" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|851974264" x="6" y="0">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="6" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1857980499" x="6" y="1">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="6" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|518535666" x="6" y="2">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="6" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|540298936" x="6" y="3">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="6" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1243357836" x="6" y="4">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="6" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|2099264342" x="6" y="5">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="6" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1326959431" x="6" y="6">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="6" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|589482722" x="6" y="7">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="6" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1094045043" x="6" y="8">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="6" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|860052087" x="6" y="9">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="7" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|182998252" x="7" y="0">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="7" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|455038860" x="7" y="1">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="7" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|648853053" x="7" y="2">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="7" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|351302305" x="7" y="3">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="7" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|905294532" x="7" y="4">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="7" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|363560329" x="7" y="5">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="7" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|767473788" x="7" y="6">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="7" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1145171034" x="7" y="7">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="7" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1141124024" x="7" y="8">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="7" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1842503658" x="7" y="9">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="8" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|244790266" x="8" y="0">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="8" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1758816657" x="8" y="1">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="8" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|319153244" x="8" y="2">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="8" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1741905349" x="8" y="3">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="8" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1706124739" x="8" y="4">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="8" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1636833629" x="8" y="5">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="8" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|997284533" x="8" y="6">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="8" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|251281296" x="8" y="7">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="8" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1331891870" x="8" y="8">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="8" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1884606409" x="8" y="9">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="9" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1343606460" x="9" y="0">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="9" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1203225015" x="9" y="1">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="9" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1896806953" x="9" y="2">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="9" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|239719356" x="9" y="3">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="9" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|283894520" x="9" y="4">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="9" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|1854017653" x="9" y="5">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="9" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|486976001" x="9" y="6">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="9" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|545470090" x="9" y="7">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="9" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|108113587" x="9" y="8">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile id="Create me!" x="9" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Rock|293891347" x="9" y="9">
+            <Stat name="Passability" value="2.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Create me!">
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
@@ -810,40 +810,112 @@
         </Player>
     </Players>
     <Units>
-        <Unit id="Create me!">
+        <Unit id="Bob|0">
             <UnitPlayer id="Player 1"/>
-            <UnitTile x="3" y="2"/>
+            <UnitTile x="3" y="1"/>
             <Abilities>
-                <CustomAbility name="Create me!" radius="5.0" range="5.0">
-                    <Effect attribute="Health" name="Effect" power="-10.0"/>
+                <CustomAbility name="Fireball" radius="3.0" range="5.0">
+                    <Effect attribute="Health" name="Effect" power="-30.0"/>
                 </CustomAbility>
             </Abilities>
             <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Health" value="100.0"/>
+                <Stat name="Max Health" value="100.0"/>
                 <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Base Defense" value="0.0"/>
                 <Stat name="Stamina" value="10.0"/>
                 <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
+                <Stat name="Range" value="1.0"/>
             </Attributes>
         </Unit>
-        <Unit id="Create me!">
+        <Unit id="Bob|0">
             <UnitPlayer id="Player 1"/>
-            <UnitTile x="4" y="3"/>
+            <UnitTile x="4" y="1"/>
             <Abilities>
-                <CustomAbility name="Create me!" radius="5.0" range="5.0">
-                    <Effect attribute="Health" name="Effect" power="-10.0"/>
+                <CustomAbility name="Fireball" radius="3.0" range="5.0">
+                    <Effect attribute="Health" name="Effect" power="-30.0"/>
                 </CustomAbility>
             </Abilities>
             <Attributes>
-                <Stat name="Health" value="10.0"/>
-                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Health" value="100.0"/>
+                <Stat name="Max Health" value="100.0"/>
                 <Stat name="Base Attack" value="10.0"/>
-                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Base Defense" value="0.0"/>
                 <Stat name="Stamina" value="10.0"/>
                 <Stat name="Base Stamina" value="10.0"/>
-                <Stat name="Range" value="10.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+        </Unit>
+        <Unit id="Bob|0">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="5" y="1"/>
+            <Abilities>
+                <CustomAbility name="Fireball" radius="3.0" range="5.0">
+                    <Effect attribute="Health" name="Effect" power="-30.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="100.0"/>
+                <Stat name="Max Health" value="100.0"/>
+                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Defense" value="0.0"/>
+                <Stat name="Stamina" value="10.0"/>
+                <Stat name="Base Stamina" value="10.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+        </Unit>
+        <Unit id="Bob|0">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="3" y="4"/>
+            <Abilities>
+                <CustomAbility name="Fireball" radius="3.0" range="5.0">
+                    <Effect attribute="Health" name="Effect" power="-30.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="100.0"/>
+                <Stat name="Max Health" value="100.0"/>
+                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Defense" value="0.0"/>
+                <Stat name="Stamina" value="10.0"/>
+                <Stat name="Base Stamina" value="10.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+        </Unit>
+        <Unit id="Bob|0">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="4" y="4"/>
+            <Abilities>
+                <CustomAbility name="Fireball" radius="3.0" range="5.0">
+                    <Effect attribute="Health" name="Effect" power="-30.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="100.0"/>
+                <Stat name="Max Health" value="100.0"/>
+                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Defense" value="0.0"/>
+                <Stat name="Stamina" value="10.0"/>
+                <Stat name="Base Stamina" value="10.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+        </Unit>
+        <Unit id="Bob|0">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="5" y="4"/>
+            <Abilities>
+                <CustomAbility name="Fireball" radius="3.0" range="5.0">
+                    <Effect attribute="Health" name="Effect" power="-30.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="100.0"/>
+                <Stat name="Max Health" value="100.0"/>
+                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Defense" value="0.0"/>
+                <Stat name="Stamina" value="10.0"/>
+                <Stat name="Base Stamina" value="10.0"/>
+                <Stat name="Range" value="1.0"/>
             </Attributes>
         </Unit>
     </Units>
@@ -851,10 +923,10 @@
     <ImageMap>
         <tileImages>
             <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\src\gae\resources\rock.jpg">
-                <TileType id="Create me!" x="-1" y="-1">
-                    <Stat name="Passability" value="10.0"/>
+                <TileType id="Rock|0" x="-1" y="-1">
+                    <Stat name="Passability" value="2.0"/>
                     <Stat name="Max Population" value="10.0"/>
-                    <Terrain id="Create me!">
+                    <Terrain id="Rock">
                         <Stat name="Magnitude" value="10.0"/>
                     </Terrain>
                     <Resources/>
@@ -863,22 +935,22 @@
         </tileImages>
         <unitImages>
             <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\src\gae\resources\default_unit.png">
-                <UnitType id="Create me!">
+                <UnitType id="Bob|0">
                     <UnitPlayer id="Defuault Player Name"/>
                     <UnitTile x="-1" y="-1"/>
                     <Abilities>
-                        <CustomAbility name="Create me!" radius="5.0" range="5.0">
-                            <Effect attribute="Health" name="Effect" power="-10.0"/>
+                        <CustomAbility name="Fireball" radius="3.0" range="5.0">
+                            <Effect attribute="Health" name="Effect" power="-30.0"/>
                         </CustomAbility>
                     </Abilities>
                     <Attributes>
-                        <Stat name="Health" value="10.0"/>
-                        <Stat name="Max Health" value="10.0"/>
+                        <Stat name="Health" value="100.0"/>
+                        <Stat name="Max Health" value="100.0"/>
                         <Stat name="Base Attack" value="10.0"/>
-                        <Stat name="Base Defense" value="10.0"/>
+                        <Stat name="Base Defense" value="0.0"/>
                         <Stat name="Stamina" value="10.0"/>
                         <Stat name="Base Stamina" value="10.0"/>
-                        <Stat name="Range" value="10.0"/>
+                        <Stat name="Range" value="1.0"/>
                     </Attributes>
                 </UnitType>
             </image>

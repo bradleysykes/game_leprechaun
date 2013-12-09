@@ -207,7 +207,6 @@ public class Controller implements Constants{
 		for(EditPanel p:myPanels){
 			p.closeMap();
 		}
-		new GameViewer().launch(myGameFilePath);
 		myGUI.dispose();
 	}
 
@@ -231,6 +230,10 @@ public class Controller implements Constants{
 	    	myGUI.dispose();
 	    	new EditGUI(openPath);
 		}
+	}
+	
+	public void launchGame(){
+		new GameViewer().launch(myGameFilePath);
 	}
 	
 	public void setGameFilePath(String filePath){

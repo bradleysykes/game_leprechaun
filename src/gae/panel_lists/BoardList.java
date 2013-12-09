@@ -14,6 +14,7 @@ import gae.viewitems.NullViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,6 +54,8 @@ public abstract class BoardList extends JList implements Constants{
 		myController = controller;
 		myModel = new DefaultListModel();
 		this.setModel(myModel);
+		this.setBackground(Color.black);
+		this.setForeground(Color.red);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.addListSelectionListener(new BoardListSelectionListener());
 		this.setCellRenderer(new EditListRenderer());
@@ -110,11 +113,16 @@ public abstract class BoardList extends JList implements Constants{
 	 */
 	public void createCustomType() {
 		// create new dialogue, populate with model for this viewitem type
-		UnitCreationDialogue d = new UnitCreationDialogue("Create me!",getDefaultStats(),this);
+		UnitCreationDialogue d = new UnitCreationDialogue(this.getDefaultName(),getDefaultStats(),this);
 	}
 	
 	public List<Stat> getDefaultStats(){
 		return new ArrayList<Stat>();
+	}
+	
+	public String getDefaultName(){
+		return "";
+		
 	}
 	
 	/**
@@ -128,17 +136,7 @@ public abstract class BoardList extends JList implements Constants{
 		myCounter++;
 		this.addNewItem(newItem);
 	}
-	
-	private int findOldItem(String name){
-		for(int i=0;i<myModel.size();i++){
-			BoardListViewItem item = (BoardListViewItem)myModel.getElementAt(i);
-			if(item.getName().equals(name)){
-				return i;
-			}
-		}
-		return -1;
-	}
-	
+
 	public void postEditInput(List<Stat> inputData, String name, File f){
 		BoardListViewItem newItem = getNewItem(inputData, name,f, myCounter);
 		int oldLocation = this.getSelectedIndex();

@@ -41,6 +41,11 @@ public class TileList extends BoardList {
 	}
 	
 	@Override
+	public String getDefaultName(){
+		return "Default Tile Name";
+	}
+	
+	@Override
 	public List<Stat> getDefaultStats(){
 		Tile tile = new Tile(2,2,new GameMap(2,2));
 		return tile.getStats();

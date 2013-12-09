@@ -74,8 +74,8 @@ public class UnitDecoder extends Decoder {
         setStats(attributes, targetAttributes);
         
         //set custom abilities if exists
-        Element custom = (Element)unit.getElementsByTagName(CUSTOM_ABILITY).item(0);
         try {
+            Element custom = (Element)unit.getElementsByTagName(CUSTOM_ABILITY).item(0);
             createCustomAbilities(newUnit, custom);             
         }
         catch (NumberFormatException e) {

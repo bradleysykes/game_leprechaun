@@ -1,10 +1,12 @@
 package gae.viewitems;
 
+import gae.Constants;
+
 import java.awt.Point;
 
 import jgame.JGObject;
 
-public class MapObject extends JGObject {
+public class MapObject extends JGObject implements Constants {
 	
 	private BoardListViewItem myViewItem;
 	private Point myPoint;
@@ -15,7 +17,9 @@ public class MapObject extends JGObject {
 	
 	protected MapObject(String name,double x, double y,String gfxname, BoardListViewItem viewItem, int Colid) {
 		super(name, true, x, y, Colid, gfxname);
-		myPoint = new Point((int)x,(int)y);
+		int modelX = (int)x/TILE_SIZE;
+		int modelY = (int)y/TILE_SIZE;
+		myPoint = new Point(modelX,modelY);
 		myViewItem = viewItem;
 	}
 
