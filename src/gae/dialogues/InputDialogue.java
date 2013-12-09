@@ -23,11 +23,13 @@ public abstract class InputDialogue extends JFrame {
 	protected List<Stat> myProperties;
 	protected BoardList myList;
 	protected Map<Stat,ViewItemField> myFieldViews; 
+	protected String myCurrentName;
 	
-	public InputDialogue(List<Stat> props, BoardList list){
+	public InputDialogue(String name, List<Stat> props, BoardList list){
 		myProperties = props;
 		myFieldViews = new HashMap<Stat,ViewItemField>();
 		myList = list;
+		myCurrentName = name;
 		JPanel panel = createGutsPanel();
 		this.add(panel);
 		this.addWindowListener(new GAEWindowListener(this));
