@@ -24,7 +24,7 @@ public class ViewerMenu extends JMenu {
 		myParent = parent;
 		myLoadGameItem = new JMenuItem("Load Game");
 		myExitGameItem = new JMenuItem("Exit Game");
-		JMenuItem editItem = new JMenuItem("Continue editing");
+		JMenuItem editItem = new JMenuItem("Edit Game");
 		editItem.addActionListener(new ActionListener(){
 
 			@Override
