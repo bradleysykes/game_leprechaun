@@ -43,21 +43,6 @@ public class UnitCreationDialogue extends InputDialogue {
 			BoardList list, boolean isSubUnit){
 		super(name,modelProperties,list);
 		this.getContentPane().setLayout(new BoxLayout(this.getContentPane(),BoxLayout.PAGE_AXIS));
-		myEnterButton = new JButton("Create Subunit");
-		myEnterButton.addActionListener(new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				for(Stat t: myFieldViews.keySet()){
-					ViewItemField field = myFieldViews.get(t);
-					Double data = Double.valueOf(field.getData());
-					t.setValue(data);
-					disposeDialogue();
-				}
-			}
-			
-		});
-		this.add(myEnterButton);	
 	}
 	
 	public UnitCreationDialogue(String name, List<Stat> model,BoardListViewItem itemSource) {

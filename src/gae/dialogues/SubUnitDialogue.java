@@ -43,6 +43,7 @@ public class SubUnitDialogue extends UnitCreationDialogue {
 			referenceChoices.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 			myMainPanel.add(referenceChoices);
 		}
+		this.pack();
 
 	}
 	
@@ -62,7 +63,7 @@ public class SubUnitDialogue extends UnitCreationDialogue {
 	@Override
 	public JPanel createGutsPanel() {
 		myMainPanel = new JPanel();
-		myMainPanel.setLayout(new BoxLayout(myMainPanel,BoxLayout.PAGE_AXIS));
+		myMainPanel.setLayout(new BoxLayout(myMainPanel,BoxLayout.Y_AXIS));
 		for(Stat t:myProperties){
 			if(t.getValue()!=null){
 				ViewItemField fieldView = new ViewItemField(t);
@@ -79,7 +80,6 @@ public class SubUnitDialogue extends UnitCreationDialogue {
 			}
 		}
 		myEnterButton = new JButton("Save");
-		// add a different listener
 		myEnterButton.addActionListener(new GetDataAction());
 		myMainPanel.add(myEnterButton);
 		return myMainPanel;

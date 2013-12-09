@@ -14,6 +14,7 @@ import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -50,15 +51,17 @@ public class ResourcesDialogue extends JFrame {
 		panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
 		// find all of the user-created resources in ResourceList
 		List<Resource> userResources = myListSource.getUserResources();
+		JLabel resourceFieldLabel = new JLabel("Add a resource to this item");
+		panel.add(resourceFieldLabel);
 		myResourceValueField = new JTextField("0.0");
 		panel.add(myResourceValueField);
 		myResourceValueField.getDocument().addDocumentListener(new DocumentListener(){
 
 			@Override
 			public void changedUpdate(DocumentEvent arg0) {
-				Resource selectedResource = (Resource)myResourceChoices.getSelectedValue();
-				Double updateAmount = Double.parseDouble(myResourceValueField.getText());
-				selectedResource.setStat("Amount", updateAmount);
+//				Resource selectedResource = (Resource)myResourceChoices.getSelectedValue();
+//				Double updateAmount = Double.parseDouble(myResourceValueField.getText());
+//				selectedResource.setStat("Amount", updateAmount);
 			}
 
 			@Override
@@ -102,6 +105,8 @@ public class ResourcesDialogue extends JFrame {
 		}
 		myResourceChoices.setModel(resourceModel);
 		myResourceChoices.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		JLabel listLabel = new JLabel("Available Resources");
+		panel.add(listLabel);
 		panel.add(myResourceChoices);
 		JButton confirm = new JButton("Ok");
 		confirm.addActionListener(new ActionListener(){
@@ -118,6 +123,7 @@ public class ResourcesDialogue extends JFrame {
 	
 	public void postInput() {
 		Resource selection = (Resource)myResourceChoices.getSelectedValue();
+		selection.setStat("Amount",Double.parseDouble(myResourceValueField.getText()));
 		Resources resources = (Resources)myStat;
 		resources.addResource(selection);
 		this.dispose();
