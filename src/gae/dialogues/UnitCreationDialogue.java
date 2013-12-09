@@ -33,15 +33,15 @@ public class UnitCreationDialogue extends InputDialogue {
 	protected JButton myEnterButton;
 	protected File myImage;
 	protected ViewItemField myName;
-	protected String myCurrentName;
+	protected JPanel myMainPanel;
 	
-	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, BoardList list) {
-		super(modelProperties, list);		
+	public UnitCreationDialogue(String name, List<Stat> modelProperties, BoardList list) {
+		super(name, modelProperties, list);
 	}
 	
-	protected UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, 
+	protected UnitCreationDialogue(String name, List<Stat> modelProperties, 
 			BoardList list, boolean isSubUnit){
-		super(modelProperties,list);
+		super(name,modelProperties,list);
 		this.getContentPane().setLayout(new BoxLayout(this.getContentPane(),BoxLayout.PAGE_AXIS));
 		myEnterButton = new JButton("Create Subunit");
 		myEnterButton.addActionListener(new ActionListener(){
@@ -62,8 +62,9 @@ public class UnitCreationDialogue extends InputDialogue {
 	
 	public UnitCreationDialogue(String name, List<Stat> model,BoardListViewItem itemSource) {
 		// launch edit properties view
-		super(model,new NullBoardList());
+		super(name,model,new NullBoardList());
 	}
+	
 	
 	@Override
 	public void postInput() {
@@ -88,6 +89,8 @@ public class UnitCreationDialogue extends InputDialogue {
 	public JPanel createGutsPanel() {
 		JPanel mainPanel = new JPanel();
 		mainPanel.setLayout(new BoxLayout(mainPanel,BoxLayout.PAGE_AXIS));
+		myName = new ViewItemField(myCurrentName);
+		mainPanel.add(myName);
 		for(Stat t:myProperties){
 			if(t.getValue()!=null){
 				ViewItemField fieldView = new ViewItemField(t);
@@ -96,11 +99,6 @@ public class UnitCreationDialogue extends InputDialogue {
 			}
 			else{
 				StatCollection test = (StatCollection) t;
-				if(myCurrentName==null){
-					myCurrentName = test.getID().split("\\|")[0];
-					myName = new ViewItemField(myCurrentName);
-					mainPanel.add(myName);
-				}
 				myFieldViews.put(test,new ViewItemField(t));
 				SaveInputButton button = new SaveInputButton(test,myList);
 				mainPanel.add(button);
@@ -115,6 +113,7 @@ public class UnitCreationDialogue extends InputDialogue {
 		myEnterButton = new JButton("Create");
 		myEnterButton.addActionListener(new GetDataAction());
 		mainPanel.add(myEnterButton);
+		myMainPanel = mainPanel;
 		return mainPanel;
 	}
 }
