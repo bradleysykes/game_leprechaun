@@ -182,6 +182,7 @@ public class ConditionDialogue extends InputDialogue {
 				goal2 = myVariable2.get(myVariable2Combo.getSelectedIndex());
 			}
 			Condition condition = myParamsetter.getCondition(player, goal1, goal2);
+			player.addVictoryCondition(condition);
 			String name = myNameField.getText();
 			ConditionViewItem cvi = new ConditionViewItem(name, condition);
 			myList.addNewItem(cvi);

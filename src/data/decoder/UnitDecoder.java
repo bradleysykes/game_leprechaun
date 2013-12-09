@@ -81,6 +81,14 @@ public class UnitDecoder extends Decoder {
         catch (NumberFormatException e) {
             //e.printStackTrace();
         }
+        
+        try {
+            Element custom = (Element)unit.getElementsByTagName(REFERENCE).item(0);
+            createReference(newUnit, custom);             
+        }
+        catch (NumberFormatException e) {
+            //e.printStackTrace();
+        }
         return newUnit;
     }
     
@@ -97,6 +105,10 @@ public class UnitDecoder extends Decoder {
         setStats(attributes, targetAttributes);
         
         return newType;
+    }
+    
+    public void createReference(Unit unit, Element customAbility) {
+        
     }
     
     /**

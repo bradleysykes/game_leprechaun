@@ -35,7 +35,9 @@ public class ConditionDecoder extends Decoder {
             Player player = myDataManager.getPlayer(playerID);
             
             //user reflection to create the coressponding condition
-            myConditions.add((Condition)Reflection.createInstance(className, unitID, player));
+            Condition condition = (Condition)Reflection.createInstance(className, unitID, player);
+            myConditions.add(condition);
+            player.addVictoryCondition(condition);
         }    
     }
     
