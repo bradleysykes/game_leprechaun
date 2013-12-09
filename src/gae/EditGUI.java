@@ -2,6 +2,7 @@ package gae;
 import gae.menu_bar.EditMenuBar;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.io.File;
 
@@ -22,6 +23,7 @@ public class EditGUI extends JFrame implements Constants {
 		myController = new Controller();
 		myController.setGUI(this);
 		this.setLayout(new BorderLayout());
+		this.setBackground(Color.red);
 		this.add(new Workspace(myController),BorderLayout.CENTER);
 		this.setPreferredSize(EDITGUI_INITIAL_SIZE);
 		this.setJMenuBar(new EditMenuBar(myController));
