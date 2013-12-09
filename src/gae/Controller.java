@@ -12,6 +12,8 @@ import gae.viewitems.TaskViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,7 @@ import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import sun.nio.cs.ext.JIS_X_0201.Encoder;
@@ -40,9 +43,21 @@ public class Controller implements Constants{
 	private GameElements myCurrentState;
 	private JFrame myGUI;
 	private EditMenuBar myMenuBar;
+	private Controller myController;
 	
 	public Controller(){
-		
+		myController = this;
+		Timer timer = new Timer(200000, new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if(myController.canSave()){
+					myController.save();
+					System.out.println("Game saved at"+System.currentTimeMillis());
+				}
+			}
+		});
+		timer.start();
 	}
 	
 	public void setGUI(JFrame gui){

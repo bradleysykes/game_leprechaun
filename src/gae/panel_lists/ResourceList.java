@@ -24,6 +24,10 @@ public class ResourceList extends BoardList {
 	}
 	
 	@Override
+	public String getDefaultName(){
+		return "Default Resource Name";
+	}
+	@Override
 	public List<Stat> getDefaultStats(){
 		return new Resource(DEFAULT_RESOURCE_PATH, 0, 0).getStats();
 	}
