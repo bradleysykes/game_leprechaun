@@ -16,7 +16,7 @@ public interface EngineConstants {
 	final String PlayerHighlightName = "zzhighlight";
 	final JGColor PlayerHighlightColor = JGColor.red;
 	final String endScreenName = "endscreen";
-	final String endScreenPath = "/C:\\Users\\Dylan\\cs308\\oogasalad_MISSINGNO\\testimages\\swordandshield.jpg";
+	final String endScreenPath = "\\testimages\\swordandshield.jpg";
 	
 }
 
