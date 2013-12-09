@@ -59,6 +59,7 @@ public class GameLoader  {
 		myGameEngine.initializeTiles(allTiles);
 		myGameEngine.initializeUnits(allUnits);
 		myGameEngine.initializeGameManager();
+
 	}
 	
 	public Map<Unit, String> getUnitImageMap() {
