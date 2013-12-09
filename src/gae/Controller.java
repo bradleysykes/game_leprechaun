@@ -222,7 +222,6 @@ public class Controller implements Constants{
 		for(EditPanel p:myPanels){
 			p.closeMap();
 		}
-		myGUI.dispose();
 	}
 
 	public void exit() {
