@@ -74,8 +74,6 @@ public class UnitEncoder extends Encoder {
     
     private void appendSpawnAbility (StatCollection spawnStat, Element abilitiesElement) {
         Element abilityElement = myXmlDocument.createElement(ABILITY);
-        abilityElement.setAttribute(NAME, SPAWN);
-        abilityElement.setAttribute(REFERENCE_TYPE, spawnStat.getReferenceType());
         for(String reference : spawnStat.getReferences()) {
             Element referenceElement = myXmlDocument.createElement(REFERENCE);
             referenceElement.setAttribute(NAME, reference);

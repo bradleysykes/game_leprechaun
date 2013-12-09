@@ -17,7 +17,7 @@ public class SpawnerViewer extends JFrame {
 	
 	public SpawnerViewer(List<Unit> unitList, GameEngine gameEngine) {
 		setLayout(new FlowLayout());
-		myStatusArea = new StatusArea("Where is this?");
+		myStatusArea = new StatusArea("");
 		myIconPanel = new IconPanel();
 		myListPanel = new SpawnerPanel(unitList, this, gameEngine);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);

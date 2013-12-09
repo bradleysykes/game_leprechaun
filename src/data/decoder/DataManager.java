@@ -16,6 +16,7 @@ import data.Elements;
 import data.GameElements;
 import model.Condition;
 import model.Player;
+import model.unit.Unit;
 
 /**
  * 
@@ -109,6 +110,9 @@ public class DataManager extends GameElements implements Attributes, Elements {
         DataManager dm = new DataManager();
         GameElements map = dm.getGameElements(new File("src/data/resources/TestFile.xml"));
         map.toString();
+        Unit u = dm.getPlayer("Player 1").getAllUnits().get(0);
+        System.out.println(u.getReferences().get(0));
+        
         System.out.println(map.getTileImageMap().keySet());
         System.out.println(map.getClass());
         Condition hi = (Condition) Reflection.createInstance("model.condition.Create");
