@@ -128,11 +128,6 @@ public class UnitDecoder extends Decoder {
         }
         
         ability.setReferences(references);
-//        <Ability name="spawn" reference_type="ref">
-//            <reference name="ref1"/>
-//            <reference name="ref2"/>
-//            <reference name="ref3"/>
-//        </Ability>
     }
     
     /**

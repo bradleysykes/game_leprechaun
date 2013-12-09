@@ -25,7 +25,11 @@ public class ConditionDecoder extends Decoder {
         myConditions = new ArrayList<Condition>();
     }
     
-    private void buildConditions(Element root) {
+    /**
+     * This method will instantiating contidion objects specified in the xml file.
+     * @param root
+     */
+    private void createConditions(Element root) {
         Element conditions = (Element)root.getElementsByTagName(CONDITIONS).item(0);
         NodeList conditionList = conditions.getElementsByTagName(CONDITION);
         for (int i = 0; i < conditionList.getLength(); i ++) {
@@ -43,7 +47,7 @@ public class ConditionDecoder extends Decoder {
     
     @Override
     public void buildObject (Element root) {
-        buildConditions(root);
+        createConditions(root);
         myDataManager.setConditions(myConditions);
     }
 
