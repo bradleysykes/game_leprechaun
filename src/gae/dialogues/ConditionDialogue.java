@@ -17,7 +17,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -62,6 +64,7 @@ public class ConditionDialogue extends InputDialogue {
 		conditionNames.add("Waypoint");
 		fillConditionParameters();
 		JPanel guts = new JPanel();
+		guts.setLayout(new BoxLayout(guts,BoxLayout.Y_AXIS));
 		myConditions = new JComboBox<String>();
 		myPlayersCombo = new JComboBox<NameObject>();
 		myVariable1Combo = new JComboBox<NameObject>();
@@ -112,8 +115,14 @@ public class ConditionDialogue extends InputDialogue {
 //				}*/
 //			}
 //		});
+		JLabel conditionsLabel = new JLabel("Select a condition.");
+		guts.add(conditionsLabel);
 		guts.add(myConditions);
+		JLabel playerLabel = new JLabel("Apply to a player");
+		guts.add(playerLabel);
 		guts.add(myPlayersCombo);
+		JLabel unitLabel = new JLabel("Choose a player's units");
+		guts.add(unitLabel);
 		guts.add(myVariable1Combo);
 		guts.add(myVariable2Combo);
 		JButton create = new JButton("Create");
