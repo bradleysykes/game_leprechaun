@@ -7,6 +7,13 @@ import model.unit.Unit;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+/**
+ * Image Resource Decoder class is in charge of instantiating "Type" objects
+ * and get the image resouece information used by the game authoring evironment
+ * and the game player. 
+ * 
+ * @author Seunghyun Lee
+ */
 
 public class ImageResourcesDecoder extends Decoder {
     
