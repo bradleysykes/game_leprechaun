@@ -44,7 +44,8 @@ public class CustomAbility extends Ability {
 
 	@Override
 	public void requestEngineInput(GameEngine myGameEngine) {
-		// Get tile from list of valid tiles.
+		myGameEngine.highlightTiles(myUnit.getMap().getTilesInRadius
+				(this.getValue("Range"),myUnit.getCurrentTile()));
 	}
 	
 	@Override 

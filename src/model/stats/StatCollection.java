@@ -50,7 +50,7 @@ public class StatCollection extends Stat {
 	}
 
 	public String getID(){
-		return myID.split("\\|")[0];	// split in case data added time-stamp
+		return myID;
 	}
 
 	public void setID(String id){

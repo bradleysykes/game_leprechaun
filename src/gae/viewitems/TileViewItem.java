@@ -67,7 +67,7 @@ public class TileViewItem extends BoardListViewItem {
 		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		myMapObject = new MapObject(myMapObjectPrefix,x*TILE_SIZE,y*TILE_SIZE,myMapObjectPrefix, this);
 		Tile tile = new Tile((int) x,(int) y, myTile);
-		String uniqueTileID = myTile.getStatCollection("Terrain").getID() + "|" + tile.hashCode();
+		String uniqueTileID = myTile.getID();
 		tile.setID(uniqueTileID);
 		map.getModelMap().setTile((int)x, (int)y, tile);
 		
@@ -81,7 +81,7 @@ public class TileViewItem extends BoardListViewItem {
 		myMapObject = new TileMapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,myMapObjectPrefix,this);
 		Tile tile = new Tile(xTile,yTile, myTile);
 		tile.getStatCollection("Terrain").setID(myTile.getStatCollection("Terrain").getID());
-		tile.setID(myTile.getStatCollection("Terrain").getID());
+		tile.setID(myTile.getID());
 		map.getModelMap().setTile(xTile, yTile, tile);
 	}
 	

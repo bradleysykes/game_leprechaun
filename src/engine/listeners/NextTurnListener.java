@@ -15,9 +15,8 @@ import engine.GameEngine;
 import engine.GameViewer;
 import engine.gui.AbilityListArea;
 import engine.gui.JohnTestAbilityArea;
-import engine.gui.PlayerStatusArea;
+import engine.gui.StatusArea;
 import engine.gui.UnitListArea;
-import engine.gui.UnitStatusArea;
 
 public class NextTurnListener implements ActionListener {
 	
@@ -35,7 +34,7 @@ public class NextTurnListener implements ActionListener {
 		JohnTestAbilityArea abilityArea = (JohnTestAbilityArea) myGameEngine.getGameViewer().getActionPanel().getAbilityListArea();
 		UnitListArea unitListArea = (UnitListArea) myGameEngine.getGameViewer().getActionPanel().getUnitListArea();
 		abilityArea.clear();
-		UnitStatusArea unitStatusArea = (UnitStatusArea) myGameEngine.getGameViewer().getFeedbackPanel().getUnitStatusArea();
+		StatusArea unitStatusArea = myGameEngine.getGameViewer().getFeedbackPanel().getUnitStatusArea();
 		unitStatusArea.setStatusText("");
 		unitListArea.loadUnitList(new ArrayList<Unit>());
 		myGameEngine.removeTileHighlights();
@@ -46,7 +45,7 @@ public class NextTurnListener implements ActionListener {
 	
 	private void setPlayerStatusArea(Player player) {
 		
-		PlayerStatusArea playerStatusArea = (PlayerStatusArea) GameViewer.getFeedbackPanel().getPlayerStatusArea();
+		StatusArea playerStatusArea = GameViewer.getFeedbackPanel().getPlayerStatusArea();
 		List<Stat> myResources = player.getStatCollection("Resources").getStats();
 		String statusReport = "";
 		statusReport += player.getID() + "\n";
