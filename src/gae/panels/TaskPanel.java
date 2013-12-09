@@ -54,12 +54,16 @@ public class TaskPanel extends EditPanel {
 
 	@Override
 	public String getTitle() {
-		// TODO Auto-generated method stub
 		return TASK_PANEL_TITLE;
 	}
 
 	@Override
 	public void loadData(GameElements elements) {
 		myList.loadData(elements);
+	}
+	
+	@Override
+	public void fillBoard(ViewItem mySource){
+		myList.removeFillTask();
 	}
 }

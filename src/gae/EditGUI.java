@@ -1,4 +1,6 @@
 package gae;
+import gae.menu_bar.EditMenuBar;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.io.File;
@@ -33,7 +35,14 @@ public class EditGUI extends JFrame implements Constants {
 		DataManager manager = new DataManager();
 		GameElements openElements = manager.getGameElements(new File(openPath));
 		myController.setGameFilePath(openPath);
-		myController.loadData(openElements);
+		try{
+			myController.loadData(openElements);
+		}
+		catch(Exception e){
+			myController.closeMap();
+			this.dispose();
+			new EditGUI();
+		}
 	}
 	
 

@@ -802,16 +802,16 @@
         </Tile>
     </Map>
     <Players>
-        <Player id="Default Player Name">
+        <Player id="Player 1">
             <Resources/>
         </Player>
-        <Player id="Default Player Name">
+        <Player id="Player 2">
             <Resources/>
         </Player>
-        <Player id="Default Player Name">
+        <Player id="Player 3">
             <Resources/>
         </Player>
-        <Player id="Default Player Name">
+        <Player id="Player 4">
             <Resources/>
         </Player>
     </Players>
