@@ -1,0 +1,2677 @@
+<GameElements>
+    <Map x_dimension="15" y_dimension="15">
+        <Tile id="Plains|0" x="0" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="0" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="0" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="0" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="0" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Gold|6" x="0" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="0" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="0" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Plains|0" x="0" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="0" y="9">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="0" y="10">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="0" y="11">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wood|7" x="0" y="12">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="0" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="0" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Plains|0" x="1" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="1" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="1" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="1" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="1" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Gold|6" x="1" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="1" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="1" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Plains|0" x="1" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="1" y="9">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="1" y="10">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="1" y="11">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wood|7" x="1" y="12">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="1" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="1" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Plains|0" x="2" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="2" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="2" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="2" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="2" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="2" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="2" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="2" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="2" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="2" y="9">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="2" y="10">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="2" y="11">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wood|7" x="2" y="12">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="2" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="2" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Plains|0" x="3" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="3" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="3" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="3" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="3" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="3" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="3" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="3" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="3" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="3" y="9">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="3" y="10">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="3" y="11">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wood|7" x="3" y="12">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="3" y="13">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="3" y="14">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Plains|0" x="4" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="4" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="4" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="4" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="4" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="4" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="4" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="4" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="4" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="4" y="9">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="4" y="10">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="4" y="11">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="4" y="12">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="4" y="13">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="4" y="14">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wood|7" x="5" y="0">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="5" y="1">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="5" y="2">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="5" y="3">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Plains|0" x="5" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="5" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="5" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="5" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="5" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="5" y="9">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="5" y="10">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="5" y="11">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="5" y="12">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="5" y="13">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="5" y="14">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="water|1" x="6" y="0">
+            <Stat name="Passability" value="1000.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="water">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="water|1" x="6" y="1">
+            <Stat name="Passability" value="1000.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="water">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="water|1" x="6" y="2">
+            <Stat name="Passability" value="1000.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="water">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="water|1" x="6" y="3">
+            <Stat name="Passability" value="1000.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="water">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="6" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wood|7" x="7" y="6">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="7" y="7">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="7" y="8">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="7" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="8" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="water|1" x="8" y="11">
+            <Stat name="Passability" value="1000.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="water">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="water|1" x="8" y="12">
+            <Stat name="Passability" value="1000.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="water">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="water|1" x="8" y="13">
+            <Stat name="Passability" value="1000.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="water">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="water|1" x="8" y="14">
+            <Stat name="Passability" value="1000.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="water">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="9" y="0">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="9" y="1">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="9" y="2">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="9" y="3">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="9" y="4">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="9" y="5">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="9" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="9" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="9" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="9" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="9" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wood|7" x="9" y="11">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="9" y="12">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="9" y="13">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="9" y="14">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Flowers|3" x="10" y="0">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="10" y="1">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="10" y="2">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Flowers|3" x="10" y="3">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="10" y="4">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="10" y="5">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="10" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="10" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="10" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="10" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="10" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="10" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="10" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="10" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="10" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wood|7" x="11" y="0">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="11" y="1">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="11" y="2">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Flowers|3" x="11" y="3">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="11" y="4">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="11" y="5">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="11" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="11" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="11" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="11" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="11" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="11" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="11" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="11" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="11" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Gold|6" x="12" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="12" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="12" y="2">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Flowers|3" x="12" y="3">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="12" y="4">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="12" y="5">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="12" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="12" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="12" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="12" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="12" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="12" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="12" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="12" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="12" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Gold|6" x="13" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="13" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="13" y="2">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Flowers|3" x="13" y="3">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="13" y="4">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="13" y="5">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="13" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Gold|6" x="13" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="13" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="13" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Plains|0" x="13" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="13" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="13" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="13" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="13" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Gold|6" x="14" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="14" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Wood|7" x="14" y="2">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wood">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="2000.0" harvest_rate="50.0" name="Wood|210011572"/>
+            </Resources>
+        </Tile>
+        <Tile id="Flowers|3" x="14" y="3">
+            <Stat name="Passability" value="1.5"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Flowers">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mountain|2" x="14" y="4">
+            <Stat name="Passability" value="5.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mountain">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Desert|4" x="14" y="5">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Desert">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="14" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Gold|6" x="14" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="14" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Gold|6" x="14" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Gold">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources>
+                <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+            </Resources>
+        </Tile>
+        <Tile id="Plains|0" x="14" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="14" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="14" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="14" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Plains|0" x="14" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Plains">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+    </Map>
+    <Players>
+        <Player id="Player 1">
+            <Resources>
+                <Resource amount="200.0" harvest_rate="-1.0" name="Wood|210011572"/>
+                <Resource amount="200.0" harvest_rate="-1.0" name="Gold|19416569"/>
+            </Resources>
+        </Player>
+        <Player id="Player 2">
+            <Resources>
+                <Resource amount="200.0" harvest_rate="-1.0" name="Wood|210011572"/>
+                <Resource amount="200.0" harvest_rate="-1.0" name="Gold|19416569"/>
+            </Resources>
+        </Player>
+    </Players>
+    <Units>
+        <Unit id="Settlement|15">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="2" y="2"/>
+            <Abilities>
+                <Ability>
+                    <Reference name="Scout"/>
+                    <Reference name="Peon"/>
+                </Ability>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="100.0"/>
+                <Stat name="Max Health" value="100.0"/>
+                <Stat name="Base Attack" value="0.0"/>
+                <Stat name="Base Defense" value="5.0"/>
+                <Stat name="Stamina" value="0.0"/>
+                <Stat name="Base Stamina" value="0.0"/>
+                <Stat name="Range" value="0.0"/>
+            </Attributes>
+            <Resources>
+                <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+            </Resources>
+        </Unit>
+        <Unit id="Scout|14">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="1" y="3"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="4.0"/>
+                <Stat name="Max Health" value="4.0"/>
+                <Stat name="Base Attack" value="1.0"/>
+                <Stat name="Base Defense" value="0.0"/>
+                <Stat name="Stamina" value="9.0"/>
+                <Stat name="Base Stamina" value="9.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources>
+                <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+            </Resources>
+        </Unit>
+        <Unit id="Peon|13">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="3" y="3"/>
+            <Abilities>
+                <Ability>
+                    <Reference name="Barracks"/>
+                    <Reference name="Woodshop"/>
+                </Ability>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="5.0"/>
+                <Stat name="Max Health" value="5.0"/>
+                <Stat name="Base Attack" value="5.0"/>
+                <Stat name="Base Defense" value="1.0"/>
+                <Stat name="Stamina" value="8.0"/>
+                <Stat name="Base Stamina" value="8.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources>
+                <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+            </Resources>
+        </Unit>
+        <Unit id="Settlement|15">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="12" y="12"/>
+            <Abilities>
+                <Ability>
+                    <Reference name="Scout"/>
+                    <Reference name="Peon"/>
+                </Ability>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="100.0"/>
+                <Stat name="Max Health" value="100.0"/>
+                <Stat name="Base Attack" value="0.0"/>
+                <Stat name="Base Defense" value="5.0"/>
+                <Stat name="Stamina" value="0.0"/>
+                <Stat name="Base Stamina" value="0.0"/>
+                <Stat name="Range" value="0.0"/>
+            </Attributes>
+            <Resources>
+                <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+            </Resources>
+        </Unit>
+        <Unit id="Scout|14">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="13" y="11"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="4.0"/>
+                <Stat name="Max Health" value="4.0"/>
+                <Stat name="Base Attack" value="1.0"/>
+                <Stat name="Base Defense" value="0.0"/>
+                <Stat name="Stamina" value="9.0"/>
+                <Stat name="Base Stamina" value="9.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources>
+                <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+            </Resources>
+        </Unit>
+        <Unit id="Peon|13">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="11" y="11"/>
+            <Abilities>
+                <Ability>
+                    <Reference name="Barracks"/>
+                    <Reference name="Woodshop"/>
+                </Ability>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="5.0"/>
+                <Stat name="Max Health" value="5.0"/>
+                <Stat name="Base Attack" value="5.0"/>
+                <Stat name="Base Defense" value="1.0"/>
+                <Stat name="Stamina" value="8.0"/>
+                <Stat name="Base Stamina" value="8.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources>
+                <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+            </Resources>
+        </Unit>
+    </Units>
+    <Conditions/>
+    <ImageMap>
+        <tileImages>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\water.jpg">
+                <TileType id="water|0" x="-1" y="-1">
+                    <Stat name="Passability" value="1000.0"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="water">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </TileType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\house.jpg">
+                <TileType id="Wood|0" x="-1" y="-1">
+                    <Stat name="Passability" value="2.0"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="Wood">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources>
+                        <Resource amount="200.0" harvest_rate="50.0" name="Wood|210011572"/>
+                    </Resources>
+                </TileType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\flowers.jpg">
+                <TileType id="Flowers|0" x="-1" y="-1">
+                    <Stat name="Passability" value="1.5"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="Flowers">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </TileType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\ivy.jpg">
+                <TileType id="Plains|0" x="-1" y="-1">
+                    <Stat name="Passability" value="1.0"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="Plains">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </TileType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\mountain.jpg">
+                <TileType id="Mountain|0" x="-1" y="-1">
+                    <Stat name="Passability" value="5.0"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="Mountain">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </TileType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\desert.jpg">
+                <TileType id="Desert|0" x="-1" y="-1">
+                    <Stat name="Passability" value="3.0"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="Desert">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </TileType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\mine.jpg">
+                <TileType id="Gold|0" x="-1" y="-1">
+                    <Stat name="Passability" value="1.0"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="Gold">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources>
+                        <Resource amount="1000.0" harvest_rate="40.0" name="Gold|19416569"/>
+                    </Resources>
+                </TileType>
+            </image>
+        </tileImages>
+        <unitImages>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\axeman.jpg">
+                <UnitType id="Axeman|11">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="8.0"/>
+                        <Stat name="Max Health" value="8.0"/>
+                        <Stat name="Base Attack" value="8.0"/>
+                        <Stat name="Base Defense" value="2.0"/>
+                        <Stat name="Stamina" value="4.0"/>
+                        <Stat name="Base Stamina" value="4.0"/>
+                        <Stat name="Range" value="2.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\University.jpg">
+                <UnitType id="University|1">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability>
+                            <Reference name="Mage"/>
+                            <Reference name="Architect"/>
+                        </Ability>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="100.0"/>
+                        <Stat name="Max Health" value="100.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="4.0"/>
+                        <Stat name="Stamina" value="0.0"/>
+                        <Stat name="Base Stamina" value="0.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\armory.jpg">
+                <UnitType id="Armory|3">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="150.0"/>
+                        <Stat name="Max Health" value="150.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="5.0"/>
+                        <Stat name="Stamina" value="0.0"/>
+                        <Stat name="Base Stamina" value="0.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="250.0" harvest_rate="30.0" name="Wood|584939487"/>
+                        <Resource amount="100.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\mage.jpg">
+                <UnitType id="Mage|0">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility name="Fireball" radius="1.0" range="6.0">
+                            <Effect attribute="Health" name="Effect" power="-25.0"/>
+                        </CustomAbility>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="10.0"/>
+                        <Stat name="Max Health" value="10.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="0.0"/>
+                        <Stat name="Stamina" value="10.0"/>
+                        <Stat name="Base Stamina" value="10.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\stable.jpg">
+                <UnitType id="Stable|7">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability>
+                            <Reference name="Raider"/>
+                            <Reference name="Camel"/>
+                        </Ability>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="60.0"/>
+                        <Stat name="Max Health" value="60.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="2.0"/>
+                        <Stat name="Stamina" value="0.0"/>
+                        <Stat name="Base Stamina" value="0.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\barracks.jpg">
+                <UnitType id="Barracks|12">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability>
+                            <Reference name="Axeman"/>
+                            <Reference name="ShortbowMan"/>
+                        </Ability>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="50.0"/>
+                        <Stat name="Max Health" value="50.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="7.0"/>
+                        <Stat name="Stamina" value="0.0"/>
+                        <Stat name="Base Stamina" value="0.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\skirmisher.jpg">
+                <UnitType id="Skirmisher|3">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="15.0"/>
+                        <Stat name="Max Health" value="15.0"/>
+                        <Stat name="Base Attack" value="10.0"/>
+                        <Stat name="Base Defense" value="3.0"/>
+                        <Stat name="Stamina" value="6.0"/>
+                        <Stat name="Base Stamina" value="6.0"/>
+                        <Stat name="Range" value="2.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\scout.jpg">
+                <UnitType id="Scout|14">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="4.0"/>
+                        <Stat name="Max Health" value="4.0"/>
+                        <Stat name="Base Attack" value="1.0"/>
+                        <Stat name="Base Defense" value="0.0"/>
+                        <Stat name="Stamina" value="9.0"/>
+                        <Stat name="Base Stamina" value="9.0"/>
+                        <Stat name="Range" value="1.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\camelrider.jpg">
+                <UnitType id="Camel|5">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="20.0"/>
+                        <Stat name="Max Health" value="20.0"/>
+                        <Stat name="Base Attack" value="12.0"/>
+                        <Stat name="Base Defense" value="3.0"/>
+                        <Stat name="Stamina" value="5.0"/>
+                        <Stat name="Base Stamina" value="5.0"/>
+                        <Stat name="Range" value="1.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\settlement.jpg">
+                <UnitType id="Settlement|15">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability>
+                            <Reference name="Scout"/>
+                            <Reference name="Peon"/>
+                        </Ability>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="100.0"/>
+                        <Stat name="Max Health" value="100.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="5.0"/>
+                        <Stat name="Stamina" value="0.0"/>
+                        <Stat name="Base Stamina" value="0.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\shortbow.jpg">
+                <UnitType id="ShortbowMan|10">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="6.0"/>
+                        <Stat name="Max Health" value="6.0"/>
+                        <Stat name="Base Attack" value="4.0"/>
+                        <Stat name="Base Defense" value="1.0"/>
+                        <Stat name="Stamina" value="3.0"/>
+                        <Stat name="Base Stamina" value="3.0"/>
+                        <Stat name="Range" value="4.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\carpenter.jpg">
+                <UnitType id="Carpenter|8">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability>
+                            <Reference name="Stable"/>
+                            <Reference name="Archery"/>
+                            <Reference name="University"/>
+                        </Ability>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="10.0"/>
+                        <Stat name="Max Health" value="10.0"/>
+                        <Stat name="Base Attack" value="2.0"/>
+                        <Stat name="Base Defense" value="3.0"/>
+                        <Stat name="Stamina" value="4.0"/>
+                        <Stat name="Base Stamina" value="4.0"/>
+                        <Stat name="Range" value="1.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\archery.jpg">
+                <UnitType id="Archery|4">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability>
+                            <Reference name="Skirmisher"/>
+                            <Reference name="LongbowMan"/>
+                        </Ability>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="150.0"/>
+                        <Stat name="Max Health" value="150.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="0.0"/>
+                        <Stat name="Stamina" value="0.0"/>
+                        <Stat name="Base Stamina" value="0.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\architect.jpg">
+                <UnitType id="Architect|1">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="10.0"/>
+                        <Stat name="Max Health" value="10.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="0.0"/>
+                        <Stat name="Stamina" value="10.0"/>
+                        <Stat name="Base Stamina" value="10.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="100.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\pyramid.jpg">
+                <UnitType id="Wonder|2">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="1000.0"/>
+                        <Stat name="Max Health" value="1000.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="1000.0"/>
+                        <Stat name="Stamina" value="0.0"/>
+                        <Stat name="Base Stamina" value="0.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="1000.0" harvest_rate="30.0" name="Wood|584939487"/>
+                        <Resource amount="1000.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\raider.jpg">
+                <UnitType id="Raider|6">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="18.0"/>
+                        <Stat name="Max Health" value="18.0"/>
+                        <Stat name="Base Attack" value="10.0"/>
+                        <Stat name="Base Defense" value="1.0"/>
+                        <Stat name="Stamina" value="4.0"/>
+                        <Stat name="Base Stamina" value="4.0"/>
+                        <Stat name="Range" value="2.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\catapult.jpg">
+                <UnitType id="Catapult|4">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="20.0"/>
+                        <Stat name="Max Health" value="20.0"/>
+                        <Stat name="Base Attack" value="25.0"/>
+                        <Stat name="Base Defense" value="2.0"/>
+                        <Stat name="Stamina" value="3.0"/>
+                        <Stat name="Base Stamina" value="3.0"/>
+                        <Stat name="Range" value="8.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                        <Resource amount="100.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\fortress.jpg">
+                <UnitType id="Fortress|6">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="100.0"/>
+                        <Stat name="Max Health" value="100.0"/>
+                        <Stat name="Base Attack" value="20.0"/>
+                        <Stat name="Base Defense" value="3.0"/>
+                        <Stat name="Stamina" value="0.0"/>
+                        <Stat name="Base Stamina" value="0.0"/>
+                        <Stat name="Range" value="4.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="300.0" harvest_rate="30.0" name="Wood|584939487"/>
+                        <Resource amount="300.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\longbowman.jpg">
+                <UnitType id="LongbowMan|2">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="10.0"/>
+                        <Stat name="Max Health" value="10.0"/>
+                        <Stat name="Base Attack" value="6.0"/>
+                        <Stat name="Base Defense" value="2.0"/>
+                        <Stat name="Stamina" value="4.0"/>
+                        <Stat name="Base Stamina" value="4.0"/>
+                        <Stat name="Range" value="8.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\woodshop.jpg">
+                <UnitType id="Woodshop|9">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability>
+                            <Reference name="Carpenter"/>
+                        </Ability>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="80.0"/>
+                        <Stat name="Max Health" value="80.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="4.0"/>
+                        <Stat name="Stamina" value="0.0"/>
+                        <Stat name="Base Stamina" value="0.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                        <Resource amount="100.0" harvest_rate="30.0" name="Wood|584939487"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\MasterArchitect.jpg">
+                <UnitType id="Master Architect|5">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="50.0"/>
+                        <Stat name="Max Health" value="50.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="5.0"/>
+                        <Stat name="Stamina" value="5.0"/>
+                        <Stat name="Base Stamina" value="5.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="200.0" harvest_rate="30.0" name="Wood|584939487"/>
+                        <Resource amount="200.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\elephant.jpg">
+                <UnitType id="Elephant|0">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="40.0"/>
+                        <Stat name="Max Health" value="40.0"/>
+                        <Stat name="Base Attack" value="15.0"/>
+                        <Stat name="Base Defense" value="4.0"/>
+                        <Stat name="Stamina" value="4.0"/>
+                        <Stat name="Base Stamina" value="4.0"/>
+                        <Stat name="Range" value="2.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="200.0" harvest_rate="30.0" name="Wood|584939487"/>
+                        <Resource amount="100.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\peon.jpg">
+                <UnitType id="Peon|13">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability>
+                            <Reference name="Barracks"/>
+                            <Reference name="Woodshop"/>
+                        </Ability>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="5.0"/>
+                        <Stat name="Max Health" value="5.0"/>
+                        <Stat name="Base Attack" value="5.0"/>
+                        <Stat name="Base Defense" value="1.0"/>
+                        <Stat name="Stamina" value="8.0"/>
+                        <Stat name="Base Stamina" value="8.0"/>
+                        <Stat name="Range" value="1.0"/>
+                    </Attributes>
+                    <Resources>
+                        <Resource amount="10.0" harvest_rate="20.0" name="Gold|1244584542"/>
+                    </Resources>
+                </UnitType>
+            </image>
+        </unitImages>
+    </ImageMap>
+</GameElements>
