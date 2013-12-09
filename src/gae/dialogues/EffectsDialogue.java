@@ -63,6 +63,17 @@ public class EffectsDialogue extends JFrame {
 			
 		});
 		panel.add(confirm);
+		
+		JButton done = new JButton("Done");
+		confirm.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				postInput();
+			}
+			
+		});
+		panel.add(confirm);
 		return panel;
 	}
 	
