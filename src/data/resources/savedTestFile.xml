@@ -119,9 +119,9 @@
             <UnitPlayer id="Defuault Player Name"/>
             <UnitTile x="2" y="1"/>
             <Abilities>
-                <CustomAbility name="testCustom" radius="3.12" range="2.0">
-                    <Effect Attribute="testAttr" Power="1000.2" name="testEffect"/>
-                    <Effect Attribute="anotherAttr?" Power="23.1" name="test2"/>
+                <CustomAbility name="testCustom" radius="12.4" range="30.0">
+                    <Effect attribute="testAttr" name="testEffect" power="1000.2"/>
+                    <Effect attribute="anotherAttr?" name="test2" power="23.1"/>
                 </CustomAbility>
             </Abilities>
             <Attributes>

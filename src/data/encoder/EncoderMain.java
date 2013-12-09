@@ -3,7 +3,6 @@ package data.encoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import model.Abilities;
 import model.Attributes;
 import model.Condition;
 import model.GameMap;
