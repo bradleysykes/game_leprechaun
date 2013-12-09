@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 import engine.gui.AbilityListArea;
 import engine.gui.ActionPanel;
-import engine.gui.PlayerStatusArea;
+import engine.gui.StatusArea;
 import model.Player;
 import model.Resource;
 import model.stats.Stat;
@@ -33,9 +33,9 @@ public class GameManager {
 		return myCurrentPlayer;
 	}
 	
-	public void setPlayerStatusArea() { //this should be called when the game is started and then whenever an ability is used
+	public void setPlayerStatusArea() {
 		
-		PlayerStatusArea playerStatusArea = (PlayerStatusArea) GameViewer.getFeedbackPanel().getPlayerStatusArea();
+		StatusArea playerStatusArea = GameViewer.getFeedbackPanel().getPlayerStatusArea();
 		List<Stat> myResources = myCurrentPlayer.getStatCollection("Resources").getStats();
 		String statusReport = "";
 		statusReport += myCurrentPlayer.getID() + "\n";

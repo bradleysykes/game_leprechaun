@@ -15,6 +15,8 @@ public interface EngineConstants {
 	final JGColor TileHighlightColor = JGColor.cyan;
 	final String PlayerHighlightName = "zzhighlight";
 	final JGColor PlayerHighlightColor = JGColor.red;
+	final String endScreenName = "endscreen";
+	final String endScreenPath = "\\testimages\\swordandshield.jpg";
 	
 }
 

@@ -1,9 +1,6 @@
 package data.encoder;
 
 import java.util.Map;
-import model.Player;
-import model.Resources;
-import model.Terrain;
 import model.tile.Tile;
 import model.unit.Unit;
 import org.w3c.dom.Document;

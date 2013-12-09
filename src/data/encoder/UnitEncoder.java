@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import model.Abilities;
 import model.Attributes;
+import model.Effect;
+import model.Effects;
 import model.Player;
+import model.abilities.CustomAbility;
 import model.stats.Stat;
 import model.unit.Unit;
 
@@ -41,7 +45,7 @@ public class UnitEncoder extends Encoder {
     protected void appendSingleUnit (Unit unit, Element unitsElement, boolean isType) {
         Element unitElement = null;
         if(isType) {
-            unitElement = myXmlDocument.createElement("UnitType");
+            unitElement = myXmlDocument.createElement(UNIT_TYPE);
         } else {
             unitElement = myXmlDocument.createElement(UNIT);
         }
@@ -58,11 +62,33 @@ public class UnitEncoder extends Encoder {
         unitElement.appendChild(tileElement);
         
         Element abilitiesElement = myXmlDocument.createElement(ABILITIES);
-        //abilitiesElement.setAttribute(...)
+        Abilities abilities = (Abilities) unit.getStatCollection(ABILITIES);
+        appendCustomAbilities(abilities, abilitiesElement);
         unitElement.appendChild(abilitiesElement);
         
         Attributes attributes = (Attributes) unit.getStatCollection(ATTRIBUTES);
         appendAttributes(attributes, unitElement);
+    }
+    
+    private void appendCustomAbilities (Abilities abilities, Element abilitiesElement) {
+        Element customAbElement = myXmlDocument.createElement(CUSTOM_ABILITY);
+        for (Stat s : abilities.getStats()) {
+            if(s instanceof CustomAbility) {
+                String name = s.getName();
+                CustomAbility c = (CustomAbility) s;
+                customAbElement.setAttribute(NAME, name);
+                customAbElement.setAttribute(RANGE, String.valueOf(c.getStat("Range").getValue()));
+                customAbElement.setAttribute(RADIUS, String.valueOf(c.getStat("Radius").getValue()));
+                for(Effect effect : ((Effects) c.getStat("Effects")).getEffects()){
+                    Element effectElement = myXmlDocument.createElement("Effect");
+                    effectElement.setAttribute(NAME, effect.getName());
+                    effectElement.setAttribute(ATTRIBUTE, effect.getID());
+                    effectElement.setAttribute(POWER, String.valueOf(effect.getStat("Power").getValue()));
+                    customAbElement.appendChild(effectElement);
+                }
+            }
+        }
+        abilitiesElement.appendChild(customAbElement);
     }
 
     private void appendAttributes (Attributes attributes, Element unitElement) {

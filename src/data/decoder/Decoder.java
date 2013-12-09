@@ -25,7 +25,12 @@ import util.reflection.Reflection;
  */
 public abstract class Decoder implements Attributes, Elements, DecoderTags {
     
-  
+    protected DataManager myDataManager;
+    
+    public Decoder (DataManager manager) {
+        myDataManager = manager;
+    }
+
     /**
      * return the attribute of element to the corresponding tag.  
      */
