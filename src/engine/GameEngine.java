@@ -85,6 +85,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myGameLoader.loadGame();
 		for(Player p : myPlayers)
 			myModel.addPlayer(p);
+		myModel.refresh();
 	}
 	
 	public void initializeTiles(Collection<Tile> tiles) {

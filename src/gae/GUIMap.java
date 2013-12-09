@@ -95,7 +95,7 @@ public class GUIMap extends JGEngine implements Constants{
 		for(Tile tile:loadTiles){
 			try{
 				File tileImageFile = getTileImageFile(tile, tileImages);
-				view = new TileViewItem(tile.getStats(),tile.getID(),tileImageFile,i);
+				view = new TileViewItem(tile,tileImageFile);
 			}
 			catch(NullPointerException e){
 				view = new NullViewItem();

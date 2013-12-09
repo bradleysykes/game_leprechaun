@@ -51,7 +51,6 @@ public class ActionPanel extends JPanel {
 	
 	public void setSelectedUnit(Unit u){
 		myAbilityListArea.setUnit(u);
-		//myUnitListArea.setUnit(u); ?? what does this panel do?
 	}
 	
 }

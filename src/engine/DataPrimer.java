@@ -27,6 +27,7 @@ public class DataPrimer {
 		}
 		else{
 			xmlFile = selectAndParseXML();
+			myGameEngine.setSourceFile(xmlFile);
 		}
 		
 /*		if(gameEngine.getSourceFile()!=null){

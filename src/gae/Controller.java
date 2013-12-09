@@ -231,6 +231,7 @@ public class Controller implements Constants{
 			System.out.println("Game saved to " + myGameFilePath +".");
 		}
 		myGUI.dispose();
+		new LaunchGUI();
 	}
 
 	public void open() {
@@ -239,11 +240,10 @@ public class Controller implements Constants{
 		FILE_CHOOSER.setFileFilter(filter);
 		if(FILE_CHOOSER.showOpenDialog(myPanels.get(0))==JFileChooser.APPROVE_OPTION){
 	    	String openPath = FILE_CHOOSER.getSelectedFile().getAbsolutePath();
-	    	for(EditPanel p:myPanels){
-	    		p.close();
-	    	}
+	    	closeMap();
 	    	myGUI.dispose();
 	    	new EditGUI(openPath);
+	    	
 		}
 	}
 	

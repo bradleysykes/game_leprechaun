@@ -12,6 +12,7 @@ public class BudgetMove extends Move {
 	
 	public BudgetMove(Unit abilityUser){
 		super("Budget Move", abilityUser);
+		this.refresh();
 	}
 	
 	@Override
@@ -69,5 +70,12 @@ public class BudgetMove extends Move {
 	
 	public BudgetMove copy(Unit u){
 		return new BudgetMove(u);
+	}
+	
+	@Override
+	public void refresh(){
+		myValid = true;
+		if(myUnit.getStatCollection("Attributes").getValue("Stamina") == 0)
+			myValid = false;
 	}
 }

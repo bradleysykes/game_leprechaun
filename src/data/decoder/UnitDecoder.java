@@ -83,8 +83,8 @@ public class UnitDecoder extends Decoder {
         }
         
         try {
-            Element custom = (Element)unit.getElementsByTagName(REFERENCE).item(0);
-            createReference(newUnit, custom);             
+            Element ability = (Element)unit.getElementsByTagName(ABILITIES).item(0);
+            createReference(newUnit, ability);             
         }
         catch (NumberFormatException e) {
             //e.printStackTrace();
@@ -107,8 +107,24 @@ public class UnitDecoder extends Decoder {
         return newType;
     }
     
-    public void createReference(Unit unit, Element customAbility) {
+    public void createReference(Unit unit, Element reference) {
+        StatCollection ability = unit.getStatCollection("Abilities").getStatCollection("Spawn");
         
+        List<String> references = new ArrayList<String>();
+        
+        NodeList ref = reference.getElementsByTagName(REFERENCE);
+        for(int i = 0; i < ref.getLength(); i++) {
+            Element refNameElement = (Element) ref.item(i);
+            String refName = refNameElement.getAttribute(NAME);
+            references.add(refName);
+        }
+        
+        ability.setReferences(references);
+//        <Ability name="spawn" reference_type="ref">
+//            <reference name="ref1"/>
+//            <reference name="ref2"/>
+//            <reference name="ref3"/>
+//        </Ability>
     }
     
     /**

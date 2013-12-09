@@ -101,13 +101,13 @@
         </Tile>
     </Map>
     <Players>
-        <Player id="Defuault Player Name">
+        <Player id="Default Player Name">
             <Resources>
                 <Resource amount="500.0" harvest_rate="-1.0" name="minerals"/>
                 <Resource amount="350.0" harvest_rate="-1.0" name="gas"/>
             </Resources>
         </Player>
-        <Player id="Defuault Player Name">
+        <Player id="Default Player Name">
             <Resources>
                 <Resource amount="820.0" harvest_rate="-1.0" name="minerals"/>
                 <Resource amount="620.0" harvest_rate="-1.0" name="gas"/>
@@ -116,11 +116,13 @@
     </Players>
     <Units>
         <Unit id="unit1">
-            <UnitPlayer id="Defuault Player Name"/>
+            <UnitPlayer id="Default Player Name"/>
             <UnitTile x="2" y="1"/>
             <Abilities>
-                <Ability name="spawn" reference_type="List of Spawnable Units">
-                    <Reference name="Soldier"/>
+                <Ability>
+                    <Reference name="ref1"/>
+                    <Reference name="ref2"/>
+                    <Reference name="ref3"/>
                 </Ability>
                 <CustomAbility name="testCustom" radius="12.4" range="30.0">
                     <Effect attribute="testAttr" name="testEffect" power="1000.2"/>
@@ -138,12 +140,10 @@
             </Attributes>
         </Unit>
         <Unit id="unit2">
-            <UnitPlayer id="Defuault Player Name"/>
+            <UnitPlayer id="Default Player Name"/>
             <UnitTile x="1" y="0"/>
             <Abilities>
-                <Ability name="spawn" reference_type="List of Spawnable Units">
-                    <Reference name="Soldier"/>
-                </Ability>
+                <Ability/>
                 <CustomAbility/>
             </Abilities>
             <Attributes>
@@ -158,8 +158,8 @@
         </Unit>
     </Units>
     <Conditions>
-        <Condition name="model.condition.Defeat" player_id="Defuault Player Name" unit_id="soldier10"/>
-        <Condition name="model.condition.Create" player_id="Defuault Player Name" unit_id="soldier5"/>
+        <Condition name="model.condition.Defeat" player_id="Default Player Name" unit_id="soldier10"/>
+        <Condition name="model.condition.Create" player_id="Default Player Name" unit_id="soldier5"/>
     </Conditions>
     <ImageMap>
         <tileImages>
@@ -177,12 +177,10 @@
         <unitImages>
             <image src="src/test1">
                 <UnitType id="unit1">
-                    <UnitPlayer id="Defuault Player Name"/>
+                    <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
                     <Abilities>
-                        <Ability name="spawn" reference_type="List of Spawnable Units">
-                            <Reference name="Soldier"/>
-                        </Ability>
+                        <Ability/>
                         <CustomAbility/>
                     </Abilities>
                     <Attributes>

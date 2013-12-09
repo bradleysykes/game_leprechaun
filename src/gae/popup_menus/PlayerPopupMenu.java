@@ -27,14 +27,14 @@ public class PlayerPopupMenu extends GAEPopupMenu {
 		super(controller);
 		myListSource = source;
 		initialize();
+	}
+	
+	public List<Unit> getUnits(){
 		PlayerViewItem item = (PlayerViewItem)mySource;
 		if (item!=null)
 			myPlayer = item.getPlayer();
 		else
 			myPlayer = null;
-	}
-	
-	public List<Unit> getUnits(){
 		if(myPlayer!=null){
 			return myPlayer.getAllUnits();
 		}
