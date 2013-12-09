@@ -15,6 +15,11 @@ public class ModifyAttribute extends Effect {
 	public void enact(Unit target) {
 		target.getStatCollection("Attributes").setStat(this.getID(),
 				target.getStatCollection("Attributes").getValue(this.getID())+this.getValue("Power"));
+		if(target.getStatCollection("Attributes").getValue("Health")<=0){
+			target.getPlayer().removeUnit(target);
+			target.getCurrentTile().removeUnit(target);
+			target.getPlayer().getModel().destroyUnit(target);
+		}
 	}
 
 	@Override
