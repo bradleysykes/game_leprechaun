@@ -13,6 +13,7 @@ public class FeedbackPanel extends JPanel {
 	
 	private JPanel myUnitStatusArea;
 	private JPanel myPlayerStatusArea;
+	private JPanel myTileStatusArea;
 	private final Dimension mySize = new Dimension(500, 230);
 	
 	public FeedbackPanel() {
@@ -21,19 +22,25 @@ public class FeedbackPanel extends JPanel {
 		TitledBorder titledBorder = BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black), "Game Info");
 		setBorder(titledBorder);
 		
-		myUnitStatusArea = new UnitStatusArea();
-		myPlayerStatusArea = new PlayerStatusArea();
+		myUnitStatusArea = new StatusArea("UNIT STATS");
+		myPlayerStatusArea = new StatusArea("PLAYER STATS");
+		//myTileStatusArea = new StatusArea("TILE STATS");
 		
 		add(myUnitStatusArea);
+		add(myTileStatusArea);
 		add(myPlayerStatusArea);
 	}
 	
-	public JPanel getUnitStatusArea() {
-		return myUnitStatusArea;
+	public StatusArea getUnitStatusArea() {
+		return (StatusArea) myUnitStatusArea;
 	}
 	
-	public JPanel getPlayerStatusArea() {
-		return myPlayerStatusArea;
+	public StatusArea getPlayerStatusArea() {
+		return (StatusArea) myPlayerStatusArea;
+	}
+	
+	public StatusArea getTileStatusArea() {
+		return (StatusArea) myTileStatusArea;
 	}
 	
 }

@@ -4,8 +4,8 @@ import java.util.*;
 
 import engine.gui.AbilityListArea;
 import engine.gui.JohnTestAbilityArea;
+import engine.gui.StatusArea;
 import engine.gui.UnitListArea;
-import engine.gui.UnitStatusArea;
 import model.tile.Tile;
 import model.unit.Unit;
 import jgame.JGObject;
@@ -77,7 +77,7 @@ public class GameTileObject extends JGObject implements EngineConstants{
 			JohnTestAbilityArea abilityListArea = (JohnTestAbilityArea) myEngine.getGameViewer().getActionPanel().getAbilityListArea();
 			//AbilityListArea abilityListArea = (AbilityListArea) myEngine.getGameViewer().getActionPanel().getAbilityListArea();
 			abilityListArea.clear();
-			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
+			StatusArea unitStatusArea = GameViewer.getFeedbackPanel().getUnitStatusArea();
 			unitStatusArea.setStatusText("");
 			UnitListArea unitListArea = (UnitListArea) myEngine.getGameViewer().getActionPanel().getUnitListArea();
 			unitListArea.loadUnitList(selectableUnitList);

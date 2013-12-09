@@ -19,7 +19,6 @@ import engine.gui.AbilityListArea;
 import engine.gui.JohnTestAbilityArea;
 import engine.gui.StatusArea;
 import engine.gui.UnitListArea;
-import engine.gui.UnitStatusArea;
 
 public class UnitListSelectionListener implements ListSelectionListener {
 	
@@ -39,7 +38,7 @@ public class UnitListSelectionListener implements ListSelectionListener {
 			
 			JohnTestAbilityArea abilityListArea = (JohnTestAbilityArea) myGameEngine.getGameViewer().getActionPanel().getAbilityListArea();
 			//AbilityListArea abilityListArea = (AbilityListArea) myGameEngine.getGameViewer().getActionPanel().getAbilityListArea();
-			UnitStatusArea unitStatusArea = (UnitStatusArea) GameViewer.getFeedbackPanel().getUnitStatusArea();
+			StatusArea unitStatusArea = GameViewer.getFeedbackPanel().getUnitStatusArea();
 			
 			abilityListArea.setUnit(selectedUnit);
 			
