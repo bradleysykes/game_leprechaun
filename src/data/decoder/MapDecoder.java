@@ -31,7 +31,7 @@ public class MapDecoder extends Decoder {
      * @param root
      * @return
      */
-    private GameMap processGameMap(Element root) {
+    private GameMap createGameMap(Element root) {
         Element map = (Element)root.getElementsByTagName(MAP).item(0);
       
         int x_dim = Integer.parseInt(getAttribute(X_DIM, map));
@@ -41,7 +41,7 @@ public class MapDecoder extends Decoder {
         NodeList tiles = root.getElementsByTagName(TILE);
         
         for(int i = 0; i < tiles.getLength(); i++) {
-            processTile((Element)tiles.item(i), false);
+            createTile((Element)tiles.item(i), false);
         }
         return myGameMap;
     }
@@ -52,7 +52,7 @@ public class MapDecoder extends Decoder {
      * @param tile
      * @return
      */
-    public Tile processTile(Element tile, boolean isTypeElement) {
+    public Tile createTile(Element tile, boolean isTypeElement) {
         String id = getAttribute(ID, tile);
         int x = Integer.parseInt(getAttribute(X_COORD, tile));
         int y = Integer.parseInt(getAttribute(Y_COORD, tile));
@@ -73,7 +73,7 @@ public class MapDecoder extends Decoder {
         // set resources to the tile
         Element elementResources = (Element) tile.getElementsByTagName(RESOURCES).item(0);
         Resources targetResources = (Resources) resultTile.getStatCollection(RESOURCES);
-        getResources(elementResources,targetResources);
+        createResources(elementResources,targetResources);
         
         //create tile
         if(!isTypeElement) {
@@ -85,8 +85,8 @@ public class MapDecoder extends Decoder {
     }
           
     @Override
-    public void decodeData(Element root) {
-        myDataManager.setGameMap(processGameMap(root));
+    public void buildObject(Element root) {
+        myDataManager.setGameMap(createGameMap(root));
     }
 
 }

@@ -16,7 +16,7 @@ public class ImageResourcesDecoder extends Decoder {
         myDataManager = manager;
     }
     
-    private Map<Tile, String> getTileImageMap(Element root, String tag) {
+    private Map<Tile, String> createTileImageMap(Element root, String tag) {
         MapDecoder decoder = new MapDecoder(myDataManager);
         Map<Tile, String> imageMap = new HashMap<Tile, String>();
         Element images = (Element)root.getElementsByTagName(tag).item(0);
@@ -24,13 +24,13 @@ public class ImageResourcesDecoder extends Decoder {
         for(int i = 0; i < imageList.getLength(); i++) {
             Element image = (Element)imageList.item(i);
             String src = image.getAttribute(SRC);
-            Tile tile = decoder.processTile((Element)image.getElementsByTagName("TileType").item(0), true);
+            Tile tile = decoder.createTile((Element)image.getElementsByTagName("TileType").item(0), true);
             imageMap.put(tile, src);
         }
         return imageMap;
     }
 
-    private Map<Unit, String> getUnitImageMap(Element root, String tag) {
+    private Map<Unit, String> createUnitImageMap(Element root, String tag) {
         UnitDecoder decoder = new UnitDecoder(myDataManager);
         Map<Unit, String> imageMap = new HashMap<Unit, String>();
         Element images = (Element) root.getElementsByTagName(tag).item(0);
@@ -45,10 +45,10 @@ public class ImageResourcesDecoder extends Decoder {
     }
     
     @Override
-    public void decodeData (Element root) {
+    public void buildObject (Element root) {
         Element imageRoot = (Element)root.getElementsByTagName(IMAGE_MAP).item(0);
-        myDataManager.setTileImageMap(getTileImageMap(imageRoot, TILE_IMAGES));
-        myDataManager.setUnitImageMap(getUnitImageMap(imageRoot, UNIT_IMAGES));
+        myDataManager.setTileImageMap(createTileImageMap(imageRoot, TILE_IMAGES));
+        myDataManager.setUnitImageMap(createUnitImageMap(imageRoot, UNIT_IMAGES));
     }
 }
 

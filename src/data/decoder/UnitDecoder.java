@@ -26,16 +26,16 @@ public class UnitDecoder extends Decoder {
         myUnits = new ArrayList<Unit>();
     }
     
-    private List<Unit> processUnits(Element root) {
+    private List<Unit> createUnits(Element root) {
         Element units = (Element)root.getElementsByTagName(UNITS).item(0);
         NodeList unitList = units.getElementsByTagName(UNIT);
         for(int i = 0; i < unitList.getLength(); i++) {
-            createSingleUnit((Element)unitList.item(i));
+            createUnit((Element)unitList.item(i));
         }
         return myUnits;
     }
     
-    public Unit createSingleUnit(Element unit) {
+    public Unit createUnit(Element unit) {
         String id = unit.getAttribute(ID);
         
         //get the player that this unit belongs to
@@ -78,8 +78,8 @@ public class UnitDecoder extends Decoder {
     
     
     @Override
-    public void decodeData (Element root) {
+    public void buildObject (Element root) {
         //myDataManager.setUnits(processUnits(root));
-        processUnits(root);
+        createUnits(root);
     }
 }
