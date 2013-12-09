@@ -26,12 +26,12 @@ public interface Constants {
 	final String CONDITION_PACKAGE_NAME = "condition";
 	final String ABILITY_PACKAGE_NAME = "abilities";
 	
-	final int TILE_SIZE =80;
-	final int UNIT_SIZE = 80;
-	final int TILE_IMAGE_RESIZE = 79;
-	final int UNIT_IMAGE_RESIZE = 59;
-	final int CONDITION_IMAGE_RESIZE = 69;
-	final int RESOURCE_IMAGE_RESIZE = 29;
+	final int TILE_SIZE = 40;
+	final int UNIT_SIZE = 40;
+	final int TILE_IMAGE_RESIZE = 39;
+	final int UNIT_IMAGE_RESIZE = 29;
+	final int CONDITION_IMAGE_RESIZE = 39;
+	final int RESOURCE_IMAGE_RESIZE = 19;
 	
 	final String BOARD_PANEL_TITLE = "Board Objects";
 	final String MAP_PANEL_TITLE = "Game Map";

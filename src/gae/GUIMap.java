@@ -42,12 +42,14 @@ public class GUIMap extends JGEngine implements Constants{
 	private int unitX = 0, unitY=0;
 	private Map<Point,MapObject> myObjects = new HashMap<Point,MapObject>();
 	private Map<String,BoardListViewItem> myViewItems = new HashMap<String, BoardListViewItem>();
+	private static int myPFSize = 800;
 	
 	public GUIMap(int width, int height){
 		myWidth = width;
 		myHeight = height;
-		initEngineComponent(TILE_SIZE*myWidth,TILE_SIZE*myHeight);
+		initEngineComponent(myPFSize,myPFSize);
 		myMap = new GameMap(width,height);
+		//Constants.TILE_SIZE =(int) myPFSize/myWidth;
 	}
 	
 	public GUIMap(GameElements elements){
