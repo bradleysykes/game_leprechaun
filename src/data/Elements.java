@@ -42,5 +42,4 @@ public interface Elements {
     String UNIT_TYPE = "UnitType";
     String TILE_TYPE = "TileType";
     
-    String CUSTOM_ABILITY = "CustomAbility";
 }

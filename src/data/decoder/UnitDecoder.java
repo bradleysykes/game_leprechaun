@@ -74,9 +74,12 @@ public class UnitDecoder extends Decoder {
         setStats(attributes, targetAttributes);
         
         //set custom abilities if exists
-        Element custom = (Element)unit.getElementsByTagName(CUSTOM_ABILITY);
-        if(custom != null) {
-            createCustomAbilities(newUnit, (Element)unit.getElementsByTagName(CUSTOM_ABILITY));
+        Element custom = (Element)unit.getElementsByTagName(CUSTOM_ABILITY).item(0);
+        try {
+            createCustomAbilities(newUnit, custom);             
+        }
+        catch (NumberFormatException e) {
+            //e.printStackTrace();
         }
         return newUnit;
     }
