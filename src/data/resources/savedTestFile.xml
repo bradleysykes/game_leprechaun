@@ -101,13 +101,13 @@
         </Tile>
     </Map>
     <Players>
-        <Player id="Default Player Name">
+        <Player id="Defuault Player Name">
             <Resources>
                 <Resource amount="500.0" harvest_rate="-1.0" name="minerals"/>
                 <Resource amount="350.0" harvest_rate="-1.0" name="gas"/>
             </Resources>
         </Player>
-        <Player id="Default Player Name">
+        <Player id="Defuault Player Name">
             <Resources>
                 <Resource amount="820.0" harvest_rate="-1.0" name="minerals"/>
                 <Resource amount="620.0" harvest_rate="-1.0" name="gas"/>
@@ -116,13 +116,18 @@
     </Players>
     <Units>
         <Unit id="unit1">
-            <UnitPlayer id="Default Player Name"/>
+            <UnitPlayer id="Defuault Player Name"/>
             <UnitTile x="2" y="1"/>
-            <Abilities/>
+            <Abilities>
+                <CustomAbility name="testCustom" radius="3.12" range="2.0">
+                    <Effect Attribute="testAttr" Power="1000.2" name="testEffect"/>
+                    <Effect Attribute="anotherAttr?" Power="23.1" name="test2"/>
+                </CustomAbility>
+            </Abilities>
             <Attributes>
-                <Stat name="Health" value="10.0"/>
+                <Stat name="Health" value="20.0"/>
                 <Stat name="Max Health" value="10.0"/>
-                <Stat name="Base Attack" value="10.0"/>
+                <Stat name="Base Attack" value="36.2"/>
                 <Stat name="Base Defense" value="10.0"/>
                 <Stat name="Stamina" value="10.0"/>
                 <Stat name="Base Stamina" value="10.0"/>
@@ -130,9 +135,11 @@
             </Attributes>
         </Unit>
         <Unit id="unit2">
-            <UnitPlayer id="Default Player Name"/>
+            <UnitPlayer id="Defuault Player Name"/>
             <UnitTile x="1" y="0"/>
-            <Abilities/>
+            <Abilities>
+                <CustomAbility/>
+            </Abilities>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
                 <Stat name="Max Health" value="10.0"/>
@@ -145,8 +152,8 @@
         </Unit>
     </Units>
     <Conditions>
-        <Condition name="model.condition.Defeat" player_id="Default Player Name" unit_id="soldier10"/>
-        <Condition name="model.condition.Create" player_id="Default Player Name" unit_id="soldier5"/>
+        <Condition name="model.condition.Defeat" player_id="Defuault Player Name" unit_id="soldier10"/>
+        <Condition name="model.condition.Create" player_id="Defuault Player Name" unit_id="soldier5"/>
     </Conditions>
     <ImageMap>
         <tileImages>
@@ -164,9 +171,11 @@
         <unitImages>
             <image src="src/test1">
                 <UnitType id="unit1">
-                    <UnitPlayer id="Default Player Name"/>
+                    <UnitPlayer id="Defuault Player Name"/>
                     <UnitTile x="-1" y="-1"/>
-                    <Abilities/>
+                    <Abilities>
+                        <CustomAbility/>
+                    </Abilities>
                     <Attributes>
                         <Stat name="Health" value="10.0"/>
                         <Stat name="Max Health" value="10.0"/>

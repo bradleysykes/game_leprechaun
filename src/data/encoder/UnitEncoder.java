@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import model.Abilities;
 import model.Attributes;
+import model.Effect;
+import model.Effects;
 import model.Player;
+import model.abilities.CustomAbility;
 import model.stats.Stat;
 import model.unit.Unit;
 
@@ -59,10 +63,34 @@ public class UnitEncoder extends Encoder {
         
         Element abilitiesElement = myXmlDocument.createElement(ABILITIES);
         //abilitiesElement.setAttribute(...)
+        Abilities abilities = (Abilities) unit.getStatCollection(ABILITIES);
+        appendCustomAbilities(abilities, abilitiesElement);
         unitElement.appendChild(abilitiesElement);
         
         Attributes attributes = (Attributes) unit.getStatCollection(ATTRIBUTES);
         appendAttributes(attributes, unitElement);
+    }
+    
+    private void appendCustomAbilities (Abilities abilities, Element abilitiesElement) {
+        Element customAbElement = myXmlDocument.createElement(CUSTOM_ABILITY);
+        List<String> nameList = new ArrayList<String>();
+        for (Stat s : abilities.getStats()) {
+            if(s instanceof CustomAbility) {
+                String name = s.getName();
+                customAbElement.setAttribute(NAME, name);
+                customAbElement.setAttribute("range", "2.0");
+                customAbElement.setAttribute("radius", "3.12");
+                CustomAbility c = (CustomAbility) s;
+                for(Effect effect : ((Effects) c.getStat("Effects")).getEffects()){
+                    Element effectElement = myXmlDocument.createElement("Effect");
+                    effectElement.setAttribute(NAME, effect.getName());
+                    effectElement.setAttribute("Attribute", effect.getID());
+                    effectElement.setAttribute("Power", String.valueOf(effect.getStat("Power").getValue()));
+                    customAbElement.appendChild(effectElement);
+                }
+            }
+        }
+        abilitiesElement.appendChild(customAbElement);
     }
 
     private void appendAttributes (Attributes attributes, Element unitElement) {
