@@ -25,6 +25,8 @@ public interface Constants {
 	final String TILE_PACKAGE_NAME = "tile";
 	final String CONDITION_PACKAGE_NAME = "condition";
 	final String ABILITY_PACKAGE_NAME = "abilities";
+	final String PLAYER_AUDIO_FILE_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\Action_Music.wav";
+	final String GAE_AUDIO_FILE_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\edit.wav";
 	final File LAUNCH_BACKGROUND_IMAGE = new File(System.getProperty("user.dir")+"\\src\\gae\\resources\\Leprechaun.gif");
 	final String LEPRECHAUN_IMAGE_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\Leprechaun.gif";
 	final int TILE_SIZE = 40;

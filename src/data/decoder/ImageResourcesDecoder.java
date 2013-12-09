@@ -29,7 +29,7 @@ public class ImageResourcesDecoder extends Decoder {
         for(int i = 0; i < imageList.getLength(); i++) {
             Element image = (Element)imageList.item(i);
             String src = image.getAttribute(SRC);
-            Tile tile = decoder.createTile((Element)image.getElementsByTagName("TileType").item(0), true);
+            Tile tile = decoder.createTile((Element)image.getElementsByTagName(TILE_TYPE).item(0), true);
             imageMap.put(tile, src);
         }
         return imageMap;
@@ -43,7 +43,7 @@ public class ImageResourcesDecoder extends Decoder {
         for(int i = 0; i < imageList.getLength(); i++) {
             Element image = (Element)imageList.item(i);
             String src = image.getAttribute(SRC);
-            Unit unit = decoder.createUnitType((Element)image.getElementsByTagName("UnitType").item(0));
+            Unit unit = decoder.createUnitType((Element)image.getElementsByTagName(UNIT_TYPE).item(0));
             imageMap.put(unit, src);
         }
         return imageMap;

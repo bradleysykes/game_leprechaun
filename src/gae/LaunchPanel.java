@@ -7,7 +7,9 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
@@ -15,6 +17,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import sun.audio.AudioPlayer;
 
 import engine.GameViewer;
 
@@ -42,6 +46,7 @@ public class LaunchPanel extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				new EditGUI();
 				myLaunch.dispose();
+				stopAudio();
 			}
 			
 		});
@@ -54,6 +59,7 @@ public class LaunchPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				new GameViewer();
 				myLaunch.dispose();
+				stopAudio();
 			}
 			
 		});
@@ -62,6 +68,16 @@ public class LaunchPanel extends JPanel {
 			myBackgroundImage = ImageIO.read(Constants.LAUNCH_BACKGROUND_IMAGE);
 		} catch (IOException e1) {
 			this.setBackground(Color.black);
+		}
+	}
+	
+	public void stopAudio(){
+		try{
+			InputStream test = myLaunch.getInputStream();
+			AudioPlayer.player.stop(test);
+		}
+		catch(Exception exception){
+			// audio will not play. no big deal. 
 		}
 	}
 	

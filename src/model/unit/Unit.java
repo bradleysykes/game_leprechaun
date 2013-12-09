@@ -35,6 +35,7 @@ public class Unit extends StatCollection implements ModelConstants {
 	
 	public Unit(Unit stored, Player p, Tile t){
 		super("Unit",stored.getID());
+		System.out.println("IS THIS EVEN CALLED");
 		myPlayer = p;
 		myCurrentTile = t;
 		myMap = t.getMap();

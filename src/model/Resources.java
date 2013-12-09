@@ -20,8 +20,9 @@ public class Resources extends StatCollection {
 	}
 	
 	public Resource getResource(String resourceType){
+	    String type = resourceType.split("|")[0];
 		for(Resource r : this.getResources()){
-			if(r.getID().equals(resourceType))
+			if(r.getID().split("|")[0].equals(type))
 				return r;
 		}
 		return null;
