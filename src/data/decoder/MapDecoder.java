@@ -18,10 +18,9 @@ import org.w3c.dom.NodeList;
 public class MapDecoder extends Decoder {
     
     private GameMap myGameMap;
-    private DataManager myDataManager;
     
     public MapDecoder (DataManager manager) {
-        myDataManager = manager;
+        super(manager);
     }
     
     /**

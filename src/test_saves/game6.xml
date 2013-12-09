@@ -1806,6 +1806,16 @@
     <Conditions/>
     <ImageMap>
         <tileImages>
+            <image src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\grass.jpg">
+                <TileType id="grass" x="-1" y="-1">
+                    <Stat name="Passability" value="10.0"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="grass">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </TileType>
+            </image>
             <image src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\honey.png">
                 <TileType id="alpha" x="-1" y="-1">
                     <Stat name="Passability" value="10.0"/>
@@ -1826,23 +1836,15 @@
                     <Resources/>
                 </TileType>
             </image>
-            <image src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\grass.jpg">
-                <TileType id="grass" x="-1" y="-1">
-                    <Stat name="Passability" value="10.0"/>
-                    <Stat name="Max Population" value="10.0"/>
-                    <Terrain id="grass">
-                        <Stat name="Magnitude" value="10.0"/>
-                    </Terrain>
-                    <Resources/>
-                </TileType>
-            </image>
         </tileImages>
         <unitImages>
             <image src="C:\Users\Bradley\Desktop\workspace_java\oogasalad_MISSINGNO\src\gae\resources\default_unit.png">
                 <UnitType id="Create me!">
                     <UnitPlayer id="Defuault Player Name"/>
                     <UnitTile x="-1" y="-1"/>
-                    <Abilities/>
+                    <Abilities>
+                        <CustomAbility/>
+                    </Abilities>
                     <Attributes>
                         <Stat name="Health" value="10.0"/>
                         <Stat name="Max Health" value="10.0"/>

@@ -2,18 +2,16 @@ package data.decoder;
 
 import java.util.HashMap;
 import java.util.Map;
-import model.Player;
 import model.tile.Tile;
 import model.unit.Unit;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+
 public class ImageResourcesDecoder extends Decoder {
     
-    private DataManager myDataManager;
-    
     public ImageResourcesDecoder(DataManager manager) {
-        myDataManager = manager;
+        super(manager);
     }
     
     private Map<Tile, String> createTileImageMap(Element root, String tag) {

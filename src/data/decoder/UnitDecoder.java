@@ -23,12 +23,11 @@ import org.w3c.dom.NodeList;
  */
 public class UnitDecoder extends Decoder {
     
-    private DataManager myDataManager;
     private List<Unit> myUnits;
     private static final int DEFAULT = 3;
     
     public UnitDecoder(DataManager manager) {
-        myDataManager = manager;
+        super(manager);
         myUnits = new ArrayList<Unit>();
     }
     
@@ -75,8 +74,10 @@ public class UnitDecoder extends Decoder {
         setStats(attributes, targetAttributes);
         
         //set custom abilities if exists
-        //createCustomAbilities(newUnit, unit.getElementsByTagName(CUSTOM_ABILITY));
-        
+        Element custom = (Element)unit.getElementsByTagName(CUSTOM_ABILITY);
+        if(custom != null) {
+            createCustomAbilities(newUnit, (Element)unit.getElementsByTagName(CUSTOM_ABILITY));
+        }
         return newUnit;
     }
     
@@ -101,23 +102,23 @@ public class UnitDecoder extends Decoder {
      * @param unit
      * @param customAbility
      */
-//    public void createCustomAbilities(Unit unit, Element customAbility) {
-//        String name = customAbility.getAttribute(NAME);
-//        double range = Double.parseDouble(customAbility.getAttribute(RANGE));
-//        double radius = Double.parseDouble(customAbility.getAttribute(RADIUS));
-//        CustomAbility custom = new CustomAbility(name, unit, range, radius);
-//        
-//        NodeList effects = customAbility.getElementsByTagName(EFFECT);
-//        for(int i = 0; i < effects.getLength(); i++) {
-//            Element effect = (Element) effects.item(i);
-//            String effectName = effect.getAttribute(NAME);
-//            String attribute = effect.getAttribute(ATTRIBUTE);
-//            double power = Double.parseDouble(effects.getAttribute(POWER));
-//            ModifyAttribute customEffect = new ModifyAttribute(name, attribute, power);
-//            custom.addEffect(customEffect);
-//        }    
-//        unit.getStatCollection("Abilities").addStat(custom);
-//    }
+
+    public void createCustomAbilities(Unit unit, Element customAbility) {
+        String name = customAbility.getAttribute(NAME);
+        double range = Double.parseDouble(customAbility.getAttribute(RANGE));
+        double radius = Double.parseDouble(customAbility.getAttribute(RADIUS));
+        CustomAbility custom = new CustomAbility(name, unit, range, radius);
+        NodeList effects = customAbility.getElementsByTagName(EFFECT);
+        for(int i = 0; i < effects.getLength(); i++) {
+            Element effect = (Element) effects.item(i);
+            String effectName = effect.getAttribute(NAME);
+            String attribute = effect.getAttribute(ATTRIBUTE);
+            double power = Double.parseDouble(effect.getAttribute(POWER));
+            ModifyAttribute customEffect = new ModifyAttribute(effectName, attribute, power);
+            custom.addEffect(customEffect);
+        }    
+        unit.getStatCollection("Abilities").addStat(custom);
+    }
         
     @Override
     public void buildObject (Element root) {

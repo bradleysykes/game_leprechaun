@@ -1,5 +1,6 @@
 package data;
 
+
 /**
  * Interface of constants used for attribute names in the XML file
  * @author Alex Song, Seunghyun Lee
@@ -23,5 +24,9 @@ public interface Attributes {
     String SRC = "src";
     String UNIT_ID = "unit_id";
     String PLAYER_ID = "player_id";
-    
+    String RANGE = "range";
+    String RADIUS = "radius";
+    String EFFECT = "effect";
+    String ATTRIBUTE = "attribute";
+    String POWER = "power";
 }
