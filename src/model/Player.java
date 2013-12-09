@@ -55,7 +55,8 @@ public class Player extends StatCollection implements ModelConstants{
 	}
 	
 	public boolean playerCanAfford(Resource charged){
-		Resource r = (Resource) this.getStatCollection(charged.getID());
+        Resources resources = (Resources) this.getStatCollection("Resources");
+		Resource r = resources.getResource(charged.getID());
 		double playerResourceAmount = r.getValue("Amount");
 		double finalResources = playerResourceAmount - charged.getValue("Amount");
 		if(finalResources>0){

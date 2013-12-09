@@ -107,27 +107,48 @@ public class UnitDecoder extends Decoder {
      */
     public Unit createUnitType(Element unit) {
         String id = unit.getAttribute(ID);       
+        
         Unit newType = new Unit(id, new Player(), new Tile(DEFAULT,DEFAULT, new GameMap(DEFAULT, DEFAULT)));
+
+        //set attributes
         Element attributes = (Element) unit.getElementsByTagName(ATTRIBUTES).item(0);
         StatCollection targetAttributes = (StatCollection) newType.getStatCollection(ATTRIBUTES);
         setStats(attributes, targetAttributes);
         
+        // set resources to the unit
+        Element elementResources = (Element) unit.getElementsByTagName(RESOURCES).item(0);
+        Resources targetResources = (Resources) newType.getStatCollection(RESOURCES);
+        createResources(elementResources,targetResources);
+
+        
+        //set custom abilities if exists
+        try {
+            Element custom = (Element)unit.getElementsByTagName(CUSTOM_ABILITY).item(0);
+            createCustomAbilities(newType, custom);             
+        }
+        catch (NumberFormatException e) {
+            //e.printStackTrace();
+        }
+        
+        try {
+            Element ability = (Element)unit.getElementsByTagName(ABILITIES).item(0);
+            createReference(newType, ability);             
+        }
+        catch (NumberFormatException e) {
+            //e.printStackTrace();
+        }
+
         return newType;
     }
     
     public void createReference(Unit unit, Element reference) {
         StatCollection ability = unit.getStatCollection("Abilities").getStatCollection("Spawn");
-        
-        List<String> references = new ArrayList<String>();
-        
         NodeList ref = reference.getElementsByTagName(REFERENCE);
         for(int i = 0; i < ref.getLength(); i++) {
             Element refNameElement = (Element) ref.item(i);
             String refName = refNameElement.getAttribute(NAME);
-            references.add(refName);
+            ability.addReference(refName);
         }
-        
-        ability.setReferences(references);
     }
     
     /**

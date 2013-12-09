@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -16,6 +17,7 @@ import data.Elements;
 import data.GameElements;
 import model.Condition;
 import model.Player;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
 /**
@@ -110,7 +112,12 @@ public class DataManager extends GameElements implements Attributes, Elements {
         DataManager dm = new DataManager();
         GameElements map = dm.getGameElements(new File("src/data/resources/TestFile.xml"));
         map.toString();
-        
+        Map<Unit, String> map2 = dm.getUnitImageMap();
+        for (Unit hi : map2.keySet()) {
+            if(hi.getID().split("|").equals("Peon")){
+                StatCollection hi22 = hi.getStatCollection("Abilities").getStatCollection("Spawn");
+            }
+        }
         System.out.println(map.getTileImageMap().keySet());
         System.out.println(map.getClass());
         Condition hi = (Condition) Reflection.createInstance("model.condition.Create");
