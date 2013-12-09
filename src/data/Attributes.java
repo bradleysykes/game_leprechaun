@@ -29,4 +29,6 @@ public interface Attributes {
     String EFFECT = "effect";
     String ATTRIBUTE = "attribute";
     String POWER = "power";
+    String SPAWN = "spawn";
+    String REFERENCE_TYPE = "reference_type";
 }
