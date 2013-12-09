@@ -6,10 +6,6 @@ import model.unit.Unit;
 
 public class ModifyAttribute extends Effect {
 	
-	public ModifyAttribute(String name, String attribute) {
-		this(name,attribute,0);
-	}
-	
 	public ModifyAttribute(String name, String attribute, double power) {
 		super(name,attribute);
 		this.addStat(new Stat("Power",power));
