@@ -4,8 +4,8 @@ import model.stats.Stat;
 
 public class WinCondition extends Condition {
 	
-	public WinCondition(Player p){
-		super("Win Condition","", p);
+	public WinCondition(String id, Player p){
+		super("Win Condition",id, p);
 	}
 
 	@Override
@@ -17,6 +17,7 @@ public class WinCondition extends Condition {
 			if(condition.check() == false)
 				return false;
 		}
+		System.out.println("WINNER!!");
 		return true;
 	}
 

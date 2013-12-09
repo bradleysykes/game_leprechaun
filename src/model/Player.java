@@ -14,7 +14,7 @@ public class Player extends StatCollection implements ModelConstants{
 	protected Model myModel;
 	
 	public Player(){
-		this("Defuault Player Name");
+		this("Default Player Name");
 	}
 	
 	public Player(String id){

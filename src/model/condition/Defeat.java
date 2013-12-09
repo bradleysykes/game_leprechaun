@@ -19,12 +19,12 @@ public class Defeat extends Condition {
 		for(Player p : myPlayer.getModel().getPlayers()){
 			if (!p.equals(myPlayer)){
 				for(Unit u : p.getAllUnits()){
+					System.out.println("Unit id: "+u.getID()+" win ID: "+this.getID());
 					if(u.getID().equals(this.getID()))
 						return false;
 				}
 			}
 		}
-		
 		return true;
 	}
 
