@@ -1,10 +1,12 @@
 package gae;
 
 import gae.dialogues.PlayerDialogue;
+import gae.menu_bar.EditMenuBar;
 import gae.panel_lists.BoardList;
 import gae.panels.EditPanel;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.BoardSizeTaskViewItem;
+import gae.viewitems.FillTaskViewItem;
 import gae.viewitems.PlayerTaskViewItem;
 import gae.viewitems.TaskViewItem;
 import gae.viewitems.UnitViewItem;
@@ -48,10 +50,9 @@ public class Controller implements Constants{
 	}
 	
 	public void init(){
-		if(myPlayers.size()==0){
-			this.addViewItem(new PlayerTaskViewItem(this));
-			this.addViewItem(new BoardSizeTaskViewItem(this));
-		}
+		this.addViewItem(new PlayerTaskViewItem(this));
+		this.addViewItem(new BoardSizeTaskViewItem(this));
+		this.addViewItem(new FillTaskViewItem(this));
 	}
 	
 	private void addViewItem(ViewItem item) {

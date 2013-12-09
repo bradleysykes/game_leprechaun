@@ -67,4 +67,13 @@ public class TaskList extends BoardList {
 		myModel.removeAllElements();
 	}
 
+	public void removeFillTask() {
+		for(int i = 0;i<myModel.getSize();i++){
+			TaskViewItem item = (TaskViewItem) myModel.getElementAt(i);
+			if(item.getListMessage().equals("Populate the map with tiles")){
+				myModel.removeElementAt(i);
+			}
+		}
+	}
+
 }
