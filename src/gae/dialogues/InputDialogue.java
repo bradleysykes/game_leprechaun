@@ -12,6 +12,7 @@ import gae.ViewItemField;
 import gae.listeners.GAEWindowListener;
 import gae.panel_lists.BoardList;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -26,6 +27,7 @@ public abstract class InputDialogue extends JFrame {
 	protected String myCurrentName;
 	
 	public InputDialogue(String name, List<Stat> props, BoardList list){
+		super();
 		myProperties = props;
 		myFieldViews = new HashMap<Stat,ViewItemField>();
 		myList = list;
@@ -33,18 +35,18 @@ public abstract class InputDialogue extends JFrame {
 		JPanel panel = createGutsPanel();
 		this.add(panel);
 		this.addWindowListener(new GAEWindowListener(this));
-		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.pack();
+		this.setVisible(true);
 	}
 	
 	public InputDialogue(){
 		//myController = controller;
 		JPanel panel = createGutsPanel();
 		this.add(panel);
-		this.setVisible(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.pack();
+		this.setVisible(true);
 	}
 	
 	public InputDialogue(Controller controller) {
