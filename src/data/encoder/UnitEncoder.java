@@ -9,6 +9,7 @@ import model.Attributes;
 import model.Effect;
 import model.Effects;
 import model.Player;
+import model.Resources;
 import model.abilities.CustomAbility;
 import model.stats.Stat;
 import model.stats.StatCollection;
@@ -70,6 +71,9 @@ public class UnitEncoder extends Encoder {
         
         Attributes attributes = (Attributes) unit.getStatCollection(ATTRIBUTES);
         appendAttributes(attributes, unitElement);
+        
+        PlayerEncoder pe = new PlayerEncoder(myXmlDocument, null, null);
+        pe.appendResources((Resources) unit.getStatCollection(RESOURCES), unitElement);
     }
     
     private void appendSpawnAbility (StatCollection spawnStat, Element abilitiesElement) {
