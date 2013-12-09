@@ -26,15 +26,15 @@ public class PlayerDecoder extends Decoder {
     }
     
     /**
-     * 
+     * This method instantiates multiple players specified in the xml file.
      * @param root
      * @return
      */
-    public List<Player> processPlayers(Element root) {
+    public List<Player> createPlayers(Element root) {
         Element players = (Element)root.getElementsByTagName(PLAYERS).item(0);
         NodeList playerList = players.getElementsByTagName(PLAYER);
         for(int i = 0; i < playerList.getLength(); i++) {
-            myPlayers.add(getPlayer((Element) playerList.item(i)));
+            myPlayers.add(createPlayer((Element) playerList.item(i)));
         }
         return myPlayers;
     }
@@ -44,7 +44,7 @@ public class PlayerDecoder extends Decoder {
      * @param player
      * @return
      */
-    public Player getPlayer(Element player) {
+    public Player createPlayer(Element player) {
         Player resultPlayer = new Player();
         //set ID of the player
         resultPlayer.setID(player.getAttribute(ID));
@@ -52,14 +52,14 @@ public class PlayerDecoder extends Decoder {
         // set resources to the tile
         Element elementResources = (Element) player.getElementsByTagName(RESOURCES).item(0);
         Resources targetResources = (Resources) resultPlayer.getStatCollection(RESOURCES);
-        getResources(elementResources,targetResources);
+        createResources(elementResources,targetResources);
         
         return resultPlayer;
     }
     
     @Override
-    public void decodeData (Element root) {
-        myDataManager.setPlayerList(processPlayers(root));
+    public void buildObject (Element root) {
+        myDataManager.setPlayerList(createPlayers(root));
     }
 
 }

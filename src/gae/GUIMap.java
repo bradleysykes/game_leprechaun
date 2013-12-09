@@ -42,12 +42,14 @@ public class GUIMap extends JGEngine implements Constants{
 	private int unitX = 0, unitY=0;
 	private Map<Point,MapObject> myObjects = new HashMap<Point,MapObject>();
 	private Map<String,BoardListViewItem> myViewItems = new HashMap<String, BoardListViewItem>();
+	private static int myPFSize = 800;
 	
 	public GUIMap(int width, int height){
 		myWidth = width;
 		myHeight = height;
-		initEngineComponent(TILE_SIZE*myWidth,TILE_SIZE*myHeight);
+		initEngineComponent(myPFSize,myPFSize);
 		myMap = new GameMap(width,height);
+		//Constants.TILE_SIZE =(int) myPFSize/myWidth;
 	}
 	
 	public GUIMap(GameElements elements){
@@ -169,10 +171,10 @@ public class GUIMap extends JGEngine implements Constants{
 		}
 		if(pfHeight()*.125<=coordinate&&coordinate<=pfHeight()*.375){
 			System.out.println(coordinate);
-			return 100+(coordinate-100)*3;
+			return (int) (pfWidth()*.125+(coordinate-pfWidth()*.125)*3);
 		}
 		else{
-			return 400+coordinate;
+			return (int) (pfHeight()*.5+coordinate);
 	}
 }
 	
@@ -182,10 +184,10 @@ public class GUIMap extends JGEngine implements Constants{
 		}
 		if(pfWidth()*.125<=coordinate&&coordinate<=pfWidth()*.375){
 			System.out.println(coordinate);
-			return 100+(coordinate-100)*3;
+			return (int) (pfWidth()*.125+(coordinate-pfWidth()*.125)*3);
 		}
 		else{
-			return 400+coordinate;
+			return (int) (pfWidth()*.5+coordinate);
 		}
 	}
 	

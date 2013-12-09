@@ -8,9 +8,10 @@ import gae.GUIMap;
 
 import javax.swing.Icon;
 
+import model.Effect;
 import model.GameMap;
 import model.abilities.CustomAbility;
-import model.stats.Stat;
+import model.stats.*;
 import model.tile.Tile;
 
 public class AbilityViewItem extends BoardListViewItem {
@@ -34,6 +35,13 @@ public class AbilityViewItem extends BoardListViewItem {
 			}
 		}
 		myAbility = new CustomAbility(name, null, range, radius);
+		for (Stat s: stats){
+			if(s.getName().equals("Effects")){
+				for (Stat stat : ((StatCollection) s).getStats()){
+					myAbility.addEffect((Effect) stat);
+				}
+			}
+		}
 	}
 
 	@Override

@@ -31,13 +31,14 @@ public class Player extends StatCollection implements ModelConstants{
 		return myModel;
 	}
 	
-	public void addNewResourceType(String resourceType, double harvestRate){
-		this.getStatCollection("Resources").addStat(new Resource(resourceType,harvestRate,0.0));
+	public void addNewResourceType(String resourceType, double amount){
+		this.getStatCollection("Resources").addStat(new Resource(resourceType,amount,0.0));
 	}
 	
 	// Use negative value for amount to 'charge' the player.
 	public boolean adjustResources(String resourceType, double amount){
-		Resource r = (Resource) this.getStatCollection(resourceType);
+		Resources resources = (Resources) this.getStatCollection("Resources");
+		Resource r = resources.getResource(resourceType);
 		double finalResources = r.getValue("Amount")+amount;
 		if(finalResources>0){
 			r.setStat("Amount", finalResources);

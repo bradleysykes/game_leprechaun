@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+import gae.Controller;
 import gae.ResourceComboBox;
 import gae.panel_lists.AbilityList;
 import gae.panel_lists.BoardList;
@@ -21,21 +22,26 @@ import model.Effect;
 import model.Effects;
 import model.Resource;
 import model.Resources;
+import model.abilities.CustomAbility;
 import model.effects.ModifyAttribute;
 import model.stats.Stat;
 import model.stats.StatCollection;
 import model.unit.Unit;
 
-public class EffectsDialogue extends JFrame {
+public class AbilityAssignDialogue extends JFrame {
 	
-	private AbilityList myListSource;
-	private JComboBox<String> myAttributeChoices = new JComboBox<String>();
-	private TextField myTextField = new TextField();
-	private Effects myStat;
+	private CustomAbility myAbility;
+	private Controller myController;
+	private JComboBox<String> myUnitChoices = new JComboBox<String>();
 	
-	public EffectsDialogue(BoardList myList, StatCollection stat){
-		myListSource = (AbilityList) myList;
-		myStat = (Effects) stat;
+	
+	public AbilityAssignDialogue(Controller controller, CustomAbility ability){
+		myAbility = ability;
+		myController = controller;
+		if (myController.getUnitTypes().size() == 0){
+			System.out.println("Display Error Message: No units have been created!");
+			return;
+		}
 		JPanel main = createGutsPanel();
 		this.add(main);
 		this.pack();
@@ -47,18 +53,17 @@ public class EffectsDialogue extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
 		Attributes myAttributes = new Attributes();
-		for (Stat s : myAttributes.getStats()){
-			myAttributeChoices.addItem(s.getName());
+		for (Unit u : myController.getUnitTypes()){
+			myUnitChoices.addItem(u.getID());
 		}
-		panel.add(myAttributeChoices);
-		panel.add(myTextField);
+		panel.add(myUnitChoices);
 		
-		JButton confirm = new JButton("Add Effect");
+		JButton confirm = new JButton("Give Ability");
 		confirm.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				createEffect();
+				createEffect(myUnitChoices.getSelectedIndex());
 			}
 			
 		});
@@ -77,8 +82,9 @@ public class EffectsDialogue extends JFrame {
 		return panel;
 	}
 	
-	public void createEffect(){
-		myStat.addEffect(new ModifyAttribute("Effect",(String) myAttributeChoices.getSelectedItem(),Double.parseDouble(myTextField.getText())));
+	public void createEffect(int index){
+		myController.getUnitTypes().get(index).getStatCollection("Abilities").addStat(myAbility);
+		System.out.println("Added ability to unit");
 	}
 	
 	public void postInput() {

@@ -26,11 +26,16 @@ public class ViewItemField<T> extends JPanel {
 	
 	public ViewItemField(String title){
 		this.setLayout(new BorderLayout());
-		this.create(title, "String", "Name me!");
+		if(title==""){
+			this.create(title,"String","Enter name");
+		}
+		else{
+			this.create(title, "String", title);
+		}
 	}
 
-	private void create(String name, String type, String value) {
-		JLabel fieldTitle = new JLabel(name);
+	private void create(String title, String type, String value) {
+		JLabel fieldTitle = new JLabel(title);
 		JLabel fieldDescription = new JLabel(type);
 		if(value!=null){
 			JTextField field = new JTextField(String.valueOf(value));
