@@ -50,9 +50,10 @@ public class CustomAbility extends Ability {
 	
 	@Override 
 	public CustomAbility copy(Unit u){
-		CustomAbility toReturn = this.copy(u);
+		CustomAbility toReturn = new CustomAbility(this.getName(),myUnit,
+				this.getValue("Range"),this.getValue("Radius"));
 		for(Effect e : ((Effects) this.getStat("Effects")).getEffects())
-			toReturn.addEffect(e);
+			toReturn.addEffect(e.copy());
 		return toReturn;
 	}
 
