@@ -138,6 +138,7 @@
                 <Stat name="Base Stamina" value="10.0"/>
                 <Stat name="Range" value="10.0"/>
             </Attributes>
+            <Resources/>
         </Unit>
         <Unit id="unit2">
             <UnitPlayer id="Default Player Name"/>
@@ -155,6 +156,7 @@
                 <Stat name="Base Stamina" value="10.0"/>
                 <Stat name="Range" value="10.0"/>
             </Attributes>
+            <Resources/>
         </Unit>
     </Units>
     <Conditions>
@@ -192,6 +194,7 @@
                         <Stat name="Base Stamina" value="10.0"/>
                         <Stat name="Range" value="10.0"/>
                     </Attributes>
+                    <Resources/>
                 </UnitType>
             </image>
         </unitImages>
