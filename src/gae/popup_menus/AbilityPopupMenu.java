@@ -8,6 +8,7 @@ import javax.swing.JMenuItem;
 import model.abilities.CustomAbility;
 
 import gae.Controller;
+import gae.dialogues.AbilityAssignDialogue;
 import gae.panel_lists.AbilityList;
 import gae.panel_lists.BoardList;
 import gae.popup_menus.GAEPopupMenu.DeleteListener;
@@ -38,8 +39,7 @@ public class AbilityPopupMenu extends GAEPopupMenu {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			CustomAbility ability = ((AbilityViewItem) mySource).getModelObject();
-			
+			new AbilityAssignDialogue(myController, ((AbilityViewItem) mySource).getModelObject());
 		}
 		
 	}
