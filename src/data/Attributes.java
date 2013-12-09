@@ -28,4 +28,6 @@ public interface Attributes {
     String RADIUS = "radius";
     String ATTRIBUTE = "attribute";
     String POWER = "power";
+    String SPAWN = "spawn";
+    String REFERENCE_TYPE = "reference_type";
 }
