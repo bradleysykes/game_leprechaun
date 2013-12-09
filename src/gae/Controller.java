@@ -15,6 +15,7 @@ import gae.viewitems.ViewItem;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,7 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import sun.audio.AudioPlayer;
 import sun.nio.cs.ext.JIS_X_0201.Encoder;
 import data.GameElements;
 import data.encoder.SaveHandler;
@@ -41,7 +43,7 @@ public class Controller implements Constants{
 	private List<Player> myPlayers = new ArrayList<Player>();
 	private String myGameFilePath;
 	private GameElements myCurrentState;
-	private JFrame myGUI;
+	private EditGUI myGUI;
 	private EditMenuBar myMenuBar;
 	private Controller myController;
 	
@@ -60,7 +62,7 @@ public class Controller implements Constants{
 		timer.start();
 	}
 	
-	public void setGUI(JFrame gui){
+	public void setGUI(EditGUI gui){
 		myGUI = gui;
 	}
 	
@@ -227,8 +229,9 @@ public class Controller implements Constants{
 	public void exit() {
 		if(canSave()){
 			this.save();
-			System.out.println("Game saved to " + myGameFilePath +".");
 		}
+		InputStream stream = myGUI.getInputStream();
+		AudioPlayer.player.stop(stream);
 		myGUI.dispose();
 		new LaunchGUI();
 	}
@@ -240,6 +243,8 @@ public class Controller implements Constants{
 		if(FILE_CHOOSER.showOpenDialog(myPanels.get(0))==JFileChooser.APPROVE_OPTION){
 	    	String openPath = FILE_CHOOSER.getSelectedFile().getAbsolutePath();
 	    	closeMap();
+	    	InputStream stream = myGUI.getInputStream();
+			AudioPlayer.player.stop(stream);
 	    	myGUI.dispose();
 	    	new EditGUI(openPath);
 	    	
