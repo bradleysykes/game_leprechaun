@@ -80,6 +80,10 @@ public class Player extends StatCollection implements ModelConstants{
 	public boolean checkWinningCondition() {
 		return myWinCondition.check();
 	}
+
+	public void addVictoryCondition(Condition c){
+		myWinCondition.addStat(c);
+	}
 	
 	public boolean equals(Player other){
 		return this.getID().equals(other.getID());
