@@ -20,8 +20,10 @@ public interface Elements {
     String UNIT = "Unit";
     String ATTRIBUTES = "Attributes";
     String ABILITIES = "Abilities";
+    String CUSTOM_ABILITY = "CustomAbility";
     String UNIT_TILE = "UnitTile";
     String UNIT_PLAYER = "UnitPlayer";
+    
     
     //for PlayerDecoder
     String PLAYERS = "Players";
@@ -39,6 +41,4 @@ public interface Elements {
     String UNIT_IMAGES = "unitImages";
     String UNIT_TYPE = "UnitType";
     String TILE_TYPE = "TileType";
-    
-    String CUSTOM_ABILITY = "CustomAbility";
 }

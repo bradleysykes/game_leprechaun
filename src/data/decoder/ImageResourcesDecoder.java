@@ -2,14 +2,13 @@ package data.decoder;
 
 import java.util.HashMap;
 import java.util.Map;
-import model.Player;
 import model.tile.Tile;
 import model.unit.Unit;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+
 public class ImageResourcesDecoder extends Decoder {
-    
     
     public ImageResourcesDecoder(DataManager manager) {
         super(manager);

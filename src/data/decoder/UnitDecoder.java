@@ -23,7 +23,6 @@ import org.w3c.dom.NodeList;
  */
 public class UnitDecoder extends Decoder {
     
-    private DataManager myDataManager;
     private List<Unit> myUnits;
     private static final int DEFAULT = 3;
     
@@ -75,8 +74,10 @@ public class UnitDecoder extends Decoder {
         setStats(attributes, targetAttributes);
         
         //set custom abilities if exists
-        createCustomAbilities(newUnit, (Element)unit.getElementsByTagName(CUSTOM_ABILITY));
-        
+        Element custom = (Element)unit.getElementsByTagName(CUSTOM_ABILITY);
+        if(custom != null) {
+            createCustomAbilities(newUnit, (Element)unit.getElementsByTagName(CUSTOM_ABILITY));
+        }
         return newUnit;
     }
     
