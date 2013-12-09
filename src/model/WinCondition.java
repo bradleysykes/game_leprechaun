@@ -4,8 +4,8 @@ import model.stats.Stat;
 
 public class WinCondition extends Condition {
 	
-	public WinCondition(String id, Player p){
-		super("Win Condition",id, p);
+	public WinCondition(Player p){
+		super("Win Condition","", p);
 	}
 
 	@Override
