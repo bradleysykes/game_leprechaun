@@ -5,7 +5,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,6 +30,11 @@ public class EditGUI extends JFrame implements Constants {
 		this.add(new Workspace(myController),BorderLayout.CENTER);
 		this.setPreferredSize(EDITGUI_INITIAL_SIZE);
 		this.setJMenuBar(new EditMenuBar(myController));
+		try {
+			this.setIconImage(ImageIO.read(Constants.LAUNCH_BACKGROUND_IMAGE));
+		} catch (IOException e) {
+			//
+		}
 		this.pack();
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);

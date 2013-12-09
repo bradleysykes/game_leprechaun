@@ -6,6 +6,7 @@ import gae.dialogues.PlayerDialogue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JToolBar;
@@ -21,7 +22,6 @@ public class EditToolbar extends JPanel {
 		JButton resizeButton = new JButton("Resize Map");
 		resizeButton.addActionListener(new ResizeListener());
 		editToolbar.add(resizeButton);
-		editToolbar.add(new JButton("Task 3"));
 		this.add(editToolbar);
 	}
 	
@@ -29,6 +29,7 @@ public class EditToolbar extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			myController.closeMap();
 			new BoardSizeDialogue(myController);
 		}
 		
