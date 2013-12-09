@@ -10,9 +10,8 @@ import util.reflection.Reflection;
 
 /**
  * Condition Decoder class is in charge of instantiating all the condition 
- * objects. It will load the objects back to the data manager
- * after it finishes to create the objects. It uses the reflection in order
- * to create the corresponding condition object.
+ * objects. It uses the reflection in order to create the corresponding 
+ * condition object.
  * 
  * @author Seunghyun Lee
  *
@@ -27,7 +26,7 @@ public class ConditionDecoder extends Decoder {
         myConditions = new ArrayList<Condition>();
     }
     
-    private void processConditions(Element root) {
+    private void buildConditions(Element root) {
         Element conditions = (Element)root.getElementsByTagName(CONDITIONS).item(0);
         NodeList conditionList = conditions.getElementsByTagName(CONDITION);
         for (int i = 0; i < conditionList.getLength(); i ++) {
@@ -42,8 +41,8 @@ public class ConditionDecoder extends Decoder {
     }
     
     @Override
-    public void decodeData (Element root) {
-        processConditions(root);
+    public void buildObject (Element root) {
+        buildConditions(root);
         myDataManager.setConditions(myConditions);
     }
 
