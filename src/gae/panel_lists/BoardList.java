@@ -14,6 +14,7 @@ import gae.viewitems.NullViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,6 +54,8 @@ public abstract class BoardList extends JList implements Constants{
 		myController = controller;
 		myModel = new DefaultListModel();
 		this.setModel(myModel);
+		this.setBackground(Color.black);
+		this.setForeground(Color.red);
 		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		this.addListSelectionListener(new BoardListSelectionListener());
 		this.setCellRenderer(new EditListRenderer());
