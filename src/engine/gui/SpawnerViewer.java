@@ -20,7 +20,7 @@ public class SpawnerViewer extends JFrame {
 		myStatusArea = new StatusArea("");
 		myIconPanel = new IconPanel();
 		myListPanel = new SpawnerPanel(unitList, this, gameEngine);
-		setDefaultCloseOperation(DISPOSE_ON_CLOSEub);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		add(myListPanel);
 		add(myStatusArea);
 		add(myIconPanel);

@@ -1,824 +1,2884 @@
 <GameElements>
-    <Map x_dimension="10" y_dimension="10">
-        <Tile x="0" y="0">
-            <Stat name="Passability" value="10.0"/>
+    <Map x_dimension="15" y_dimension="15">
+        <Tile id="Rock|0" x="0" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="0" y="6">
+            <Stat name="Passability" value="20.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mary Jane|3" x="0" y="7">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mary Jane">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="0" y="11">
+            <Stat name="Passability" value="20.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="0" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mary Jane|3" x="1" y="6">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mary Jane">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Mary Jane|3" x="1" y="7">
+            <Stat name="Passability" value="3.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Mary Jane">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="1" y="11">
+            <Stat name="Passability" value="20.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="1" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="2" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="2" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="2" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="2" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="2" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="2" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="2" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="2" y="7">
+            <Stat name="Passability" value="20.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="2" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="2" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="2" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="2" y="11">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="2" y="12">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="2" y="13">
+            <Stat name="Passability" value="20.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="2" y="14">
+            <Stat name="Passability" value="20.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="3" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="3" y="1">
+            <Stat name="Passability" value="20.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="3" y="2">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="3" y="3">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="3" y="4">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="3" y="5">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="3" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="3" y="7">
+            <Stat name="Passability" value="20.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="3" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="3" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="3" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="3" y="11">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="3" y="12">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="3" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="3" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="4" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="4" y="1">
+            <Stat name="Passability" value="20.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="4" y="2">
+            <Stat name="Passability" value="20.0"/>
+            <Stat name="Max Population" value="10.0"/>
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="4" y="3">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="4" y="4">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="4" y="5">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="4" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Wall|1" x="4" y="7">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="4" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="4" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="4" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="4" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="4" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="4" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="4" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="5" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="0" y="1">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="5" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="0" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="5" y="2">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="0" y="3">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Sand|2" x="5" y="3">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="0" y="4">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Sand|2" x="5" y="4">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="0" y="5">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Sand|2" x="5" y="5">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="0" y="6">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="5" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="0" y="7">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="5" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="0" y="8">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="5" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="0" y="9">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="5" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="1" y="0">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="5" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="1" y="1">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="5" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="1" y="2">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="5" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="1" y="3">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="5" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="1" y="4">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="5" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="1" y="5">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="6" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="1" y="6">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="6" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="1" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="6" y="2">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="1" y="8">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Sand|2" x="6" y="3">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="1" y="9">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Sand|2" x="6" y="4">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="2" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="6" y="5">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="2" y="1">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="6" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="2" y="2">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="6" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="2" y="3">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="6" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="2" y="4">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="6" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="2" y="5">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="6" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="2" y="6">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="6" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="2" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="6" y="12">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="2" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="6" y="13">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="2" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="6" y="14">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="3" y="0">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="7" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="3" y="1">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="7" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="3" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="7" y="2">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="3" y="3">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Sand|2" x="7" y="3">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="3" y="4">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Sand|2" x="7" y="4">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="3" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="7" y="5">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="3" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="7" y="6">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="3" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="7" y="7">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="3" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="7" y="8">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="3" y="9">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="7" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="4" y="0">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="7" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="4" y="1">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="7" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="4" y="2">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="7" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="4" y="3">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="7" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="4" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="7" y="14">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="4" y="5">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="8" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="4" y="6">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="8" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="4" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="8" y="2">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="4" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="8" y="3">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="4" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="8" y="4">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="5" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="8" y="5">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="5" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="8" y="6">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="5" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="8" y="7">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="5" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="8" y="8">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="5" y="4">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="8" y="9">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="5" y="5">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="8" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="5" y="6">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="8" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="5" y="7">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="8" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="5" y="8">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="8" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="5" y="9">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="8" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="6" y="0">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="9" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="6" y="1">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="9" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="6" y="2">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="9" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="6" y="3">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="9" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="6" y="4">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="9" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="6" y="5">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="9" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="6" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="9" y="6">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="6" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="9" y="7">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="6" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="9" y="8">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="6" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="9" y="9">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="7" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="9" y="10">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="7" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="9" y="11">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="7" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="9" y="12">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="7" y="3">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="9" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="7" y="4">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="9" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="7" y="5">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="10" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="7" y="6">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="10" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="7" y="7">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="10" y="2">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="7" y="8">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="10" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="7" y="9">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="10" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="8" y="0">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="10" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="8" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="10" y="6">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="8" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="10" y="7">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="8" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="10" y="8">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="8" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="10" y="9">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="8" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="10" y="10">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="8" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="10" y="11">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="8" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Mary Jane|3" x="10" y="12">
+            <Stat name="Passability" value="3.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Mary Jane">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="8" y="8">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="10" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="8" y="9">
-            <Stat name="Passability" value="10.0"/>
-            <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+        <Tile id="Rock|0" x="10" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="9" y="0">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="11" y="0">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="9" y="1">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="11" y="1">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="11" y="2">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="11" y="3">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="11" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="11" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="11" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="11" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="11" y="8">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="9" y="2">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="11" y="9">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="11" y="10">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="11" y="11">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="9" y="3">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="11" y="12">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="11" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="11" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="12" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="12" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="12" y="2">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="12" y="3">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="12" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="12" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="12" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="12" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="12" y="8">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="9" y="4">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="12" y="9">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="12" y="10">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="12" y="11">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="9" y="5">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="12" y="12">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="12" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="12" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="13" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="13" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="9" y="6">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="13" y="2">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="13" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="13" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="13" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="13" y="6">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="13" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="13" y="8">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="13" y="9">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="13" y="10">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="13" y="11">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="9" y="7">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="13" y="12">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="13" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="13" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="0">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="1">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="9" y="8">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="14" y="2">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="3">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="4">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="5">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
-        <Tile x="9" y="9">
-            <Stat name="Passability" value="10.0"/>
+        <Tile id="Wall|1" x="14" y="6">
+            <Stat name="Passability" value="20.0"/>
             <Stat name="Max Population" value="10.0"/>
-            <Terrain id="Plains">
+            <Terrain id="Wall">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="7">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="14" y="8">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Sand|2" x="14" y="9">
+            <Stat name="Passability" value="2.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Sand">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="10">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="11">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="12">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="13">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
+                <Stat name="Magnitude" value="10.0"/>
+            </Terrain>
+            <Resources/>
+        </Tile>
+        <Tile id="Rock|0" x="14" y="14">
+            <Stat name="Passability" value="1.0"/>
+            <Stat name="Max Population" value="1.0"/>
+            <Terrain id="Rock">
                 <Stat name="Magnitude" value="10.0"/>
             </Terrain>
             <Resources/>
         </Tile>
     </Map>
     <Players>
-        <Player id="Default Player Name">
+        <Player id="Player 1">
             <Resources/>
         </Player>
-        <Player id="Default Player Name">
-            <Resources/>
-        </Player>
-        <Player id="Default Player Name">
-            <Resources/>
-        </Player>
-        <Player id="Default Player Name">
+        <Player id="Player 2">
             <Resources/>
         </Player>
     </Players>
-    <Units/>
-    <Conditions/>
+    <Units>
+        <Unit id="Spearman|3">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="13" y="0"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-5.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Spearman|3">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="14" y="1"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-5.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Archer|4">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="14" y="3"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="5.0"/>
+                <Stat name="Max Health" value="5.0"/>
+                <Stat name="Base Attack" value="2.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Archer|4">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="10" y="0"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="5.0"/>
+                <Stat name="Max Health" value="5.0"/>
+                <Stat name="Base Attack" value="2.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Horseman|5">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="11" y="4"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="4.0"/>
+                <Stat name="Max Health" value="4.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="1.0"/>
+                <Stat name="Stamina" value="3.0"/>
+                <Stat name="Base Stamina" value="3.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Horseman|5">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="10" y="3"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="4.0"/>
+                <Stat name="Max Health" value="4.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="1.0"/>
+                <Stat name="Stamina" value="3.0"/>
+                <Stat name="Base Stamina" value="3.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Fort|0">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="14" y="0"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Heal" radius="1.0" range="2.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="25.0"/>
+                <Stat name="Max Health" value="25.0"/>
+                <Stat name="Base Attack" value="0.0"/>
+                <Stat name="Base Defense" value="0.0"/>
+                <Stat name="Stamina" value="0.0"/>
+                <Stat name="Base Stamina" value="0.0"/>
+                <Stat name="Range" value="0.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="DoomBringer|6">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="13" y="1"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="15.0"/>
+                <Stat name="Max Health" value="15.0"/>
+                <Stat name="Base Attack" value="7.0"/>
+                <Stat name="Base Defense" value="3.0"/>
+                <Stat name="Stamina" value="1.0"/>
+                <Stat name="Base Stamina" value="1.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Swordsman|7">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="12" y="1"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="8.0"/>
+                <Stat name="Max Health" value="8.0"/>
+                <Stat name="Base Attack" value="5.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Archer|4|151">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="10" y="0"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="5.0"/>
+                <Stat name="Max Health" value="5.0"/>
+                <Stat name="Base Attack" value="2.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Horseman|5|154">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="10" y="3"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="4.0"/>
+                <Stat name="Max Health" value="4.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="1.0"/>
+                <Stat name="Stamina" value="3.0"/>
+                <Stat name="Base Stamina" value="3.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Horseman|5|170">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="11" y="4"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="4.0"/>
+                <Stat name="Max Health" value="4.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="1.0"/>
+                <Stat name="Stamina" value="3.0"/>
+                <Stat name="Base Stamina" value="3.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Swordsman|7|182">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="12" y="1"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="8.0"/>
+                <Stat name="Max Health" value="8.0"/>
+                <Stat name="Base Attack" value="5.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Spearman|3|196">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="13" y="0"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-5.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="DoomBringer|6|197">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="13" y="1"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="15.0"/>
+                <Stat name="Max Health" value="15.0"/>
+                <Stat name="Base Attack" value="7.0"/>
+                <Stat name="Base Defense" value="3.0"/>
+                <Stat name="Stamina" value="1.0"/>
+                <Stat name="Base Stamina" value="1.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Fort|0|211">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="14" y="0"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Heal" radius="1.0" range="2.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="25.0"/>
+                <Stat name="Max Health" value="25.0"/>
+                <Stat name="Base Attack" value="0.0"/>
+                <Stat name="Base Defense" value="0.0"/>
+                <Stat name="Stamina" value="0.0"/>
+                <Stat name="Base Stamina" value="0.0"/>
+                <Stat name="Range" value="0.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Spearman|3|212">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="14" y="1"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-5.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Archer|4|214">
+            <UnitPlayer id="Player 1"/>
+            <UnitTile x="14" y="3"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="5.0"/>
+                <Stat name="Max Health" value="5.0"/>
+                <Stat name="Base Attack" value="2.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Spearman|3">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="0" y="12"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-5.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Spearman|3">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="1" y="13"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-5.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Archer|4">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="3" y="14"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="5.0"/>
+                <Stat name="Max Health" value="5.0"/>
+                <Stat name="Base Attack" value="2.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Archer|4">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="0" y="10"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="5.0"/>
+                <Stat name="Max Health" value="5.0"/>
+                <Stat name="Base Attack" value="2.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Horseman|5">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="4" y="11"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="4.0"/>
+                <Stat name="Max Health" value="4.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="1.0"/>
+                <Stat name="Stamina" value="3.0"/>
+                <Stat name="Base Stamina" value="3.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Horseman|5">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="3" y="10"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="4.0"/>
+                <Stat name="Max Health" value="4.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="1.0"/>
+                <Stat name="Stamina" value="3.0"/>
+                <Stat name="Base Stamina" value="3.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Fort|0">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="0" y="14"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Heal" radius="1.0" range="2.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="25.0"/>
+                <Stat name="Max Health" value="25.0"/>
+                <Stat name="Base Attack" value="0.0"/>
+                <Stat name="Base Defense" value="0.0"/>
+                <Stat name="Stamina" value="0.0"/>
+                <Stat name="Base Stamina" value="0.0"/>
+                <Stat name="Range" value="0.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="DoomBringer|6">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="1" y="14"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="15.0"/>
+                <Stat name="Max Health" value="15.0"/>
+                <Stat name="Base Attack" value="7.0"/>
+                <Stat name="Base Defense" value="3.0"/>
+                <Stat name="Stamina" value="1.0"/>
+                <Stat name="Base Stamina" value="1.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Swordsman|7">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="2" y="12"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="8.0"/>
+                <Stat name="Max Health" value="8.0"/>
+                <Stat name="Base Attack" value="5.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Archer|4|11">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="0" y="10"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="5.0"/>
+                <Stat name="Max Health" value="5.0"/>
+                <Stat name="Base Attack" value="2.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Spearman|3|13">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="0" y="12"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-5.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Fort|0|15">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="0" y="14"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Heal" radius="1.0" range="2.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="25.0"/>
+                <Stat name="Max Health" value="25.0"/>
+                <Stat name="Base Attack" value="0.0"/>
+                <Stat name="Base Defense" value="0.0"/>
+                <Stat name="Stamina" value="0.0"/>
+                <Stat name="Base Stamina" value="0.0"/>
+                <Stat name="Range" value="0.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Spearman|3|29">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="1" y="13"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-5.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="10.0"/>
+                <Stat name="Max Health" value="10.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="DoomBringer|6|30">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="1" y="14"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="15.0"/>
+                <Stat name="Max Health" value="15.0"/>
+                <Stat name="Base Attack" value="7.0"/>
+                <Stat name="Base Defense" value="3.0"/>
+                <Stat name="Stamina" value="1.0"/>
+                <Stat name="Base Stamina" value="1.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Swordsman|7|43">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="2" y="12"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                    <Effect attribute="Base Attack" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="-1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="8.0"/>
+                <Stat name="Max Health" value="8.0"/>
+                <Stat name="Base Attack" value="5.0"/>
+                <Stat name="Base Defense" value="2.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Horseman|5|56">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="3" y="10"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="4.0"/>
+                <Stat name="Max Health" value="4.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="1.0"/>
+                <Stat name="Stamina" value="3.0"/>
+                <Stat name="Base Stamina" value="3.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Archer|4|60">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="3" y="14"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility name="Fortify" radius="0.0" range="0.0">
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="1.0"/>
+                    <Effect attribute="Health" name="Effect" power="-3.0"/>
+                    <Effect attribute="Health" name="Effect" power="2.0"/>
+                    <Effect attribute="Base Defense" name="Effect" power="1.0"/>
+                    <Effect attribute="Stamina" name="Effect" power="-10.0"/>
+                </CustomAbility>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="5.0"/>
+                <Stat name="Max Health" value="5.0"/>
+                <Stat name="Base Attack" value="2.0"/>
+                <Stat name="Base Defense" value="10.0"/>
+                <Stat name="Stamina" value="2.0"/>
+                <Stat name="Base Stamina" value="2.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+        <Unit id="Horseman|5|72">
+            <UnitPlayer id="Player 2"/>
+            <UnitTile x="4" y="11"/>
+            <Abilities>
+                <Ability/>
+                <CustomAbility/>
+            </Abilities>
+            <Attributes>
+                <Stat name="Health" value="4.0"/>
+                <Stat name="Max Health" value="4.0"/>
+                <Stat name="Base Attack" value="3.0"/>
+                <Stat name="Base Defense" value="1.0"/>
+                <Stat name="Stamina" value="3.0"/>
+                <Stat name="Base Stamina" value="3.0"/>
+                <Stat name="Range" value="1.0"/>
+            </Attributes>
+            <Resources/>
+        </Unit>
+    </Units>
+    <Conditions>
+        <Condition name="model.condition.Defeat" player_id="Player 2" unit_id="Fort|0"/>
+        <Condition name="model.condition.Defeat" player_id="Player 1" unit_id="Fort|0"/>
+    </Conditions>
     <ImageMap>
-        <tileImages/>
-        <unitImages/>
+        <tileImages>
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\Wall.png">
+                <TileType id="Wall|0" x="-1" y="-1">
+                    <Stat name="Passability" value="20.0"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="Wall">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </TileType>
+            </image>
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\sand.jpg">
+                <TileType id="Sand|0" x="-1" y="-1">
+                    <Stat name="Passability" value="2.0"/>
+                    <Stat name="Max Population" value="1.0"/>
+                    <Terrain id="Sand">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </TileType>
+            </image>
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\rock.jpg">
+                <TileType id="Rock|0" x="-1" y="-1">
+                    <Stat name="Passability" value="1.0"/>
+                    <Stat name="Max Population" value="1.0"/>
+                    <Terrain id="Rock">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </TileType>
+            </image>
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\Marijuana.png">
+                <TileType id="Mary Jane|0" x="-1" y="-1">
+                    <Stat name="Passability" value="3.0"/>
+                    <Stat name="Max Population" value="10.0"/>
+                    <Terrain id="Mary Jane">
+                        <Stat name="Magnitude" value="10.0"/>
+                    </Terrain>
+                    <Resources/>
+                </TileType>
+            </image>
+        </tileImages>
+        <unitImages>
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\horseman.jpg">
+                <UnitType id="Horseman|5">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="4.0"/>
+                        <Stat name="Max Health" value="4.0"/>
+                        <Stat name="Base Attack" value="3.0"/>
+                        <Stat name="Base Defense" value="1.0"/>
+                        <Stat name="Stamina" value="3.0"/>
+                        <Stat name="Base Stamina" value="3.0"/>
+                        <Stat name="Range" value="1.0"/>
+                    </Attributes>
+                    <Resources/>
+                </UnitType>
+            </image>
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\soldier.gif">
+                <UnitType id="Swordsman|3">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="8.0"/>
+                        <Stat name="Max Health" value="8.0"/>
+                        <Stat name="Base Attack" value="5.0"/>
+                        <Stat name="Base Defense" value="2.0"/>
+                        <Stat name="Stamina" value="2.0"/>
+                        <Stat name="Base Stamina" value="2.0"/>
+                        <Stat name="Range" value="1.0"/>
+                    </Attributes>
+                    <Resources/>
+                </UnitType>
+            </image>
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\spearman.gif">
+                <UnitType id="Spearman|1">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="10.0"/>
+                        <Stat name="Max Health" value="10.0"/>
+                        <Stat name="Base Attack" value="3.0"/>
+                        <Stat name="Base Defense" value="2.0"/>
+                        <Stat name="Stamina" value="2.0"/>
+                        <Stat name="Base Stamina" value="2.0"/>
+                        <Stat name="Range" value="1.0"/>
+                    </Attributes>
+                    <Resources/>
+                </UnitType>
+            </image>
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\archer.jpg">
+                <UnitType id="Archer|2">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="5.0"/>
+                        <Stat name="Max Health" value="5.0"/>
+                        <Stat name="Base Attack" value="2.0"/>
+                        <Stat name="Base Defense" value="10.0"/>
+                        <Stat name="Stamina" value="2.0"/>
+                        <Stat name="Base Stamina" value="2.0"/>
+                        <Stat name="Range" value="1.0"/>
+                    </Attributes>
+                    <Resources/>
+                </UnitType>
+            </image>
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\default_unit.png">
+                <UnitType id="DoomBringer|0">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="15.0"/>
+                        <Stat name="Max Health" value="15.0"/>
+                        <Stat name="Base Attack" value="7.0"/>
+                        <Stat name="Base Defense" value="3.0"/>
+                        <Stat name="Stamina" value="1.0"/>
+                        <Stat name="Base Stamina" value="1.0"/>
+                        <Stat name="Range" value="1.0"/>
+                    </Attributes>
+                    <Resources/>
+                </UnitType>
+            </image>
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\fort.jpg">
+                <UnitType id="Fort|4">
+                    <UnitPlayer id="Default Player Name"/>
+                    <UnitTile x="-1" y="-1"/>
+                    <Abilities>
+                        <Ability/>
+                        <CustomAbility/>
+                    </Abilities>
+                    <Attributes>
+                        <Stat name="Health" value="25.0"/>
+                        <Stat name="Max Health" value="25.0"/>
+                        <Stat name="Base Attack" value="0.0"/>
+                        <Stat name="Base Defense" value="0.0"/>
+                        <Stat name="Stamina" value="0.0"/>
+                        <Stat name="Base Stamina" value="0.0"/>
+                        <Stat name="Range" value="0.0"/>
+                    </Attributes>
+                    <Resources/>
+                </UnitType>
+            </image>
+        </unitImages>
     </ImageMap>
 </GameElements>

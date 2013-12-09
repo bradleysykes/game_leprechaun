@@ -922,7 +922,7 @@
     <Conditions/>
     <ImageMap>
         <tileImages>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\src\gae\resources\rock.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\rock.jpg">
                 <TileType id="Rock|0" x="-1" y="-1">
                     <Stat name="Passability" value="2.0"/>
                     <Stat name="Max Population" value="10.0"/>
@@ -934,7 +934,7 @@
             </image>
         </tileImages>
         <unitImages>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\src\gae\resources\default_unit.png">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\src\gae\resources\default_unit.png">
                 <UnitType id="Bob|0">
                     <UnitPlayer id="Defuault Player Name"/>
                     <UnitTile x="-1" y="-1"/>
