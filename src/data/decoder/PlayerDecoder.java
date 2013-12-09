@@ -26,7 +26,7 @@ public class PlayerDecoder extends Decoder {
     }
     
     /**
-     * 
+     * This method instantiates multiple players specified in the xml file.
      * @param root
      * @return
      */

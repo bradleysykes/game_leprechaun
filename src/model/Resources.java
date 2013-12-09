@@ -19,6 +19,14 @@ public class Resources extends StatCollection {
 		}
 	}
 	
+	public Resource getResource(String resourceType){
+		for(Resource r : this.getResources()){
+			if(r.getID().equals(resourceType))
+				return r;
+		}
+		return null;
+	}
+	
 	public void addResource(Resource resource){
 		this.addStat(resource);
 	}
