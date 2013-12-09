@@ -26,7 +26,7 @@ public class EditPlayerDialogue extends InputDialogue {
 	private PlayerViewItem myViewItem;
 
 	public EditPlayerDialogue(Player p, PlayerViewItem pvi, BoardList list) {
-		super(p.getStats(), list);
+		super("",p.getStats(), list);
 		myViewItem = pvi;
 		
 	}
