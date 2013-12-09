@@ -43,6 +43,11 @@ public class AbilityList extends BoardList {
 		return "Abilities";
 	}
 	
+	@Override
+	public String getDefaultName(){
+		return "Default Ability Name";
+	}
+	
 	public List<Resource> getUserResources(){
 		return myTabbedView.getUserResources();
 	}

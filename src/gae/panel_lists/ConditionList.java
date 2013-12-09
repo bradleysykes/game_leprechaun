@@ -30,6 +30,11 @@ public class ConditionList extends BoardList {
 		// TODO Auto-generated method stub
 		return "Conditions";
 	}
+	
+	@Override
+	public String getDefaultName(){
+		return "Default Condition Name";
+	}
 
 	@Override
 	public String getPackageName() {

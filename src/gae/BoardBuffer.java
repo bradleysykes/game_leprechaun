@@ -29,10 +29,10 @@ public class BoardBuffer {
 		}
 		if(myPlayer==null&&myItem instanceof UnitViewItem){
 			//requires units to be assigned player before placement
-			JOptionPane alertPane = new JOptionPane("Please select a unit and a player before placing on map.");
-			JDialog dialog = alertPane.createDialog(null,"Player alert");
-			dialog.setLocation(10, 10);
-			dialog.setVisible(true);
+//			JOptionPane alertPane = new JOptionPane("Please select a unit and a player before placing on map.");
+//			JDialog dialog = alertPane.createDialog(null,"Player alert");
+//			dialog.setLocation(10, 10);
+//			//dialog.setVisible(true);
 			return new NullViewItem();
 		}
 		if(myPlayer==null&&myItem instanceof TileViewItem){
