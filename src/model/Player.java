@@ -96,4 +96,8 @@ public class Player extends StatCollection implements ModelConstants{
 		myUnits.add(addMe);
 	}
 
+	public void removeUnit(Unit unit) {
+		myUnits.remove(unit);
+	}
+
 }

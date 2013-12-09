@@ -46,7 +46,7 @@ public class GameLoader  {
 			myGameEngine.defineImage(id, "-", 0, "/" + myUnitImageMap.get(unit),"-");
 		}
 		
-		myGameEngine.defineImage(EngineConstants.endScreenName, "-", 0, EngineConstants.endScreenPath, "-");
+		//myGameEngine.defineImage(EngineConstants.endScreenName, "-", 0, EngineConstants.endScreenPath, "-");
 
 		Collection<Player> allPlayers = myGameElements.getPlayers();
 		Collection<Unit> allUnits = new ArrayList<Unit>();
@@ -60,7 +60,7 @@ public class GameLoader  {
 		myGameEngine.initializeUnits(allUnits);
 		myGameEngine.initializeGameManager();
 		
-		myGameEngine.declareWinner(myGameEngine.getPlayers().get(0));
+		//myGameEngine.declareWinner(myGameEngine.getPlayers().get(0));
 	}
 	
 	public Map<Unit, String> getUnitImageMap() {

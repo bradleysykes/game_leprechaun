@@ -58,7 +58,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myUnitObjectMap = new HashMap<Unit, GameUnitObject>();
 		myModel = new Model(this);
-		defineImage(EngineConstants.endScreenName, "-", 0, EngineConstants.endScreenPath, "-");
+		//defineImage(EngineConstants.endScreenName, "-", 0, EngineConstants.endScreenPath, "-");
 	}
 	
 	public Model getModel() {
