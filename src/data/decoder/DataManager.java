@@ -16,8 +16,6 @@ import data.Elements;
 import data.GameElements;
 import model.Condition;
 import model.Player;
-import model.tile.Tile;
-import model.unit.Unit;
 
 /**
  * 
