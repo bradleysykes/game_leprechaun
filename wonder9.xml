@@ -2046,7 +2046,7 @@
     <Conditions/>
     <ImageMap>
         <tileImages>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\water.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\water.jpg">
                 <TileType id="water|0" x="-1" y="-1">
                     <Stat name="Passability" value="1000.0"/>
                     <Stat name="Max Population" value="10.0"/>
@@ -2056,7 +2056,7 @@
                     <Resources/>
                 </TileType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\house.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\house.jpg">
                 <TileType id="Wood|0" x="-1" y="-1">
                     <Stat name="Passability" value="2.0"/>
                     <Stat name="Max Population" value="10.0"/>
@@ -2068,7 +2068,7 @@
                     </Resources>
                 </TileType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\flowers.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\flowers.jpg">
                 <TileType id="Flowers|0" x="-1" y="-1">
                     <Stat name="Passability" value="1.5"/>
                     <Stat name="Max Population" value="10.0"/>
@@ -2078,7 +2078,7 @@
                     <Resources/>
                 </TileType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\ivy.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\ivy.jpg">
                 <TileType id="Plains|0" x="-1" y="-1">
                     <Stat name="Passability" value="1.0"/>
                     <Stat name="Max Population" value="10.0"/>
@@ -2088,7 +2088,7 @@
                     <Resources/>
                 </TileType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\mountain.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\mountain.jpg">
                 <TileType id="Mountain|0" x="-1" y="-1">
                     <Stat name="Passability" value="5.0"/>
                     <Stat name="Max Population" value="10.0"/>
@@ -2098,7 +2098,7 @@
                     <Resources/>
                 </TileType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\desert.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\desert.jpg">
                 <TileType id="Desert|0" x="-1" y="-1">
                     <Stat name="Passability" value="3.0"/>
                     <Stat name="Max Population" value="10.0"/>
@@ -2108,7 +2108,7 @@
                     <Resources/>
                 </TileType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\mine.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\mine.jpg">
                 <TileType id="Gold|0" x="-1" y="-1">
                     <Stat name="Passability" value="1.0"/>
                     <Stat name="Max Population" value="10.0"/>
@@ -2122,7 +2122,7 @@
             </image>
         </tileImages>
         <unitImages>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\axeman.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\axeman.jpg">
                 <UnitType id="Axeman|11">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2145,7 +2145,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\University.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\University.jpg">
                 <UnitType id="University|1">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2171,7 +2171,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\armory.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\armory.jpg">
                 <UnitType id="Armory|3">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2194,7 +2194,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\mage.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\mage.jpg">
                 <UnitType id="Mage|0">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2219,7 +2219,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\stable.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\stable.jpg">
                 <UnitType id="Stable|7">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2245,7 +2245,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\barracks.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\barracks.jpg">
                 <UnitType id="Barracks|12">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2270,7 +2270,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\skirmisher.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\skirmisher.jpg">
                 <UnitType id="Skirmisher|3">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2293,7 +2293,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\scout.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\scout.jpg">
                 <UnitType id="Scout|14">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2315,7 +2315,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\camelrider.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\camelrider.jpg">
                 <UnitType id="Camel|5">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2338,7 +2338,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\settlement.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\settlement.jpg">
                 <UnitType id="Settlement|15">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2363,7 +2363,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\shortbow.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\shortbow.jpg">
                 <UnitType id="ShortbowMan|10">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2386,7 +2386,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\carpenter.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\carpenter.jpg">
                 <UnitType id="Carpenter|8">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2413,7 +2413,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\archery.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\archery.jpg">
                 <UnitType id="Archery|4">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2439,7 +2439,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\architect.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\architect.jpg">
                 <UnitType id="Architect|1">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2461,7 +2461,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\pyramid.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\pyramid.jpg">
                 <UnitType id="Wonder|2">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2484,7 +2484,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\raider.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\raider.jpg">
                 <UnitType id="Raider|6">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2507,7 +2507,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\catapult.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\catapult.jpg">
                 <UnitType id="Catapult|4">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2530,7 +2530,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\fortress.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\fortress.jpg">
                 <UnitType id="Fortress|6">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2553,7 +2553,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\longbowman.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\longbowman.jpg">
                 <UnitType id="LongbowMan|2">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2576,7 +2576,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\woodshop.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\woodshop.jpg">
                 <UnitType id="Woodshop|9">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2601,7 +2601,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\MasterArchitect.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\MasterArchitect.jpg">
                 <UnitType id="Master Architect|5">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2624,7 +2624,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\elephant.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\elephant.jpg">
                 <UnitType id="Elephant|0">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
@@ -2647,7 +2647,7 @@
                     </Resources>
                 </UnitType>
             </image>
-            <image src="C:\Users\John\workspace\oogasalad_MISSINGNO\testimages\peon.jpg">
+            <image src="C:\Users\Will\Documents\Git\oogasalad_MISSINGNO\testimages\peon.jpg">
                 <UnitType id="Peon|13">
                     <UnitPlayer id="Default Player Name"/>
                     <UnitTile x="-1" y="-1"/>
