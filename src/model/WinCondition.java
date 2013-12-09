@@ -6,7 +6,6 @@ public class WinCondition extends Condition {
 	
 	public WinCondition(Player p){
 		super("Win Condition","", p);
-		//this.addStat(new Defeat());
 	}
 
 	@Override
@@ -18,6 +17,7 @@ public class WinCondition extends Condition {
 			if(condition.check() == false)
 				return false;
 		}
+		System.out.println("WINNER!!");
 		return true;
 	}
 

@@ -11,6 +11,7 @@ import model.Effects;
 import model.Player;
 import model.abilities.CustomAbility;
 import model.stats.Stat;
+import model.stats.StatCollection;
 import model.unit.Unit;
 
 public class UnitEncoder extends Encoder {
@@ -63,6 +64,7 @@ public class UnitEncoder extends Encoder {
         
         Element abilitiesElement = myXmlDocument.createElement(ABILITIES);
         Abilities abilities = (Abilities) unit.getStatCollection(ABILITIES);
+        appendSpawnAbility(abilities.getStatCollection("Spawn"), abilitiesElement);
         appendCustomAbilities(abilities, abilitiesElement);
         unitElement.appendChild(abilitiesElement);
         
@@ -70,6 +72,18 @@ public class UnitEncoder extends Encoder {
         appendAttributes(attributes, unitElement);
     }
     
+    private void appendSpawnAbility (StatCollection spawnStat, Element abilitiesElement) {
+        Element abilityElement = myXmlDocument.createElement(ABILITY);
+        abilityElement.setAttribute(NAME, SPAWN);
+        abilityElement.setAttribute(REFERENCE_TYPE, spawnStat.getReferenceType());
+        for(String reference : spawnStat.getReferences()) {
+            Element referenceElement = myXmlDocument.createElement(REFERENCE);
+            referenceElement.setAttribute(NAME, reference);
+            abilityElement.appendChild(referenceElement);
+        }
+        abilitiesElement.appendChild(abilityElement);
+    }
+
     private void appendCustomAbilities (Abilities abilities, Element abilitiesElement) {
         Element customAbElement = myXmlDocument.createElement(CUSTOM_ABILITY);
         for (Stat s : abilities.getStats()) {

@@ -26,7 +26,8 @@ public interface Attributes {
     String PLAYER_ID = "player_id";
     String RANGE = "range";
     String RADIUS = "radius";
-    String EFFECT = "effect";
     String ATTRIBUTE = "attribute";
     String POWER = "power";
+    String SPAWN = "spawn";
+    String REFERENCE_TYPE = "reference_type";
 }
