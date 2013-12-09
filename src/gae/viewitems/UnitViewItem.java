@@ -30,6 +30,13 @@ public class UnitViewItem extends BoardListViewItem {
 		myIDEnding = "|"+IDcounter;
 	}
 	
+	public UnitViewItem(Unit unit, File imageFile){
+		super(unit.getStats(), unit.getID(), imageFile);
+		myUnit = unit;
+		myDefaults = myUnit.getStats();
+		myIDEnding = unit.getID().split("\\|")[1];
+	}
+	
 	/**
 	 * use to figure out what properties this type needs
 	 */

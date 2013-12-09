@@ -30,6 +30,12 @@ public class TileViewItem extends BoardListViewItem {
 		myTile.getStatCollection("Terrain").setID(name);
 	}
 	
+	public TileViewItem(Tile tile, File imageFile){
+		super(tile.getStats(), tile.getID(),imageFile);
+		myTile = tile;
+		myIDEnding = tile.getID().split("\\|")[1];
+	}
+	
 	@Override
 	public List<Stat> getModel() {
 		return myProperties;

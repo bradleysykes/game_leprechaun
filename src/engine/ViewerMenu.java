@@ -29,8 +29,10 @@ public class ViewerMenu extends JMenu {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				GameEngine engine = myParent.getGameEngine();
+				File gameFile = engine.getSourceFile();
+				engine.destroy();
 				myParent.dispose();
-				File gameFile = myParent.getGameEngine().getSourceFile();
 				new EditGUI(gameFile.getPath());
 			}
 			
@@ -48,6 +50,7 @@ public class ViewerMenu extends JMenu {
 		//myExitGameItem.addActionListener(new ExitGameListener());
 		add(myLoadGameItem);
 		add(myExitGameItem);
+		add(editItem);
 	}
 	
 }
