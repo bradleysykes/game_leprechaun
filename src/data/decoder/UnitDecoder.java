@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import model.GameMap;
 import model.Player;
+import model.abilities.CustomAbility;
+import model.effects.ModifyAttribute;
 import model.stats.StatCollection;
 import model.tile.Tile;
 import model.unit.Unit;
@@ -12,7 +14,10 @@ import org.w3c.dom.NodeList;
 
 
 /**
- * Decoder for unit objects
+ * Unit Decoder class is in charge of instantiating all the units 
+ * specified in the xml file. Instantiated units will be loaded to
+ * Data Manager.
+ * 
  * @author Seunghyun Lee
  *
  */
@@ -20,6 +25,7 @@ public class UnitDecoder extends Decoder {
     
     private DataManager myDataManager;
     private List<Unit> myUnits;
+    private static final int DEFAULT = 3;
     
     public UnitDecoder(DataManager manager) {
         myDataManager = manager;
@@ -35,6 +41,13 @@ public class UnitDecoder extends Decoder {
         return myUnits;
     }
     
+    /**
+     * This method creates a single unit. Besides instantiating a unit,
+     * it also deals with the dependency issues. After a unit is created,
+     * it will be placed into the corresponding tile and player.
+     * @param unit
+     * @return
+     */
     public Unit createUnit(Element unit) {
         String id = unit.getAttribute(ID);
         
@@ -49,7 +62,6 @@ public class UnitDecoder extends Decoder {
         int y = Integer.parseInt(tile.getAttribute(Y_COORD));
         Tile targetTile = myDataManager.getGameMap().getTile(x, y);
 
-        
         //create unit object
         Unit newUnit = new Unit(id, targetPlayer, targetTile);
         
@@ -61,14 +73,21 @@ public class UnitDecoder extends Decoder {
         Element attributes = (Element) unit.getElementsByTagName(ATTRIBUTES).item(0);
         StatCollection targetAttributes = (StatCollection) newUnit.getStatCollection(ATTRIBUTES);
         setStats(attributes, targetAttributes);
-
+        
+        //set custom abilities if exists
+        createCustomAbilities(newUnit, unit.getElementsByTagName(CUSTOM_ABILITY));
+        
         return newUnit;
     }
     
+    /**
+     * This method creates "UnitType" object used by game authoring environment. 
+     * @param unit
+     * @return
+     */
     public Unit createUnitType(Element unit) {
-        
         String id = unit.getAttribute(ID);       
-        Unit newType = new Unit(id, new Player(), new Tile(3,3, new GameMap(2,2)));
+        Unit newType = new Unit(id, new Player(), new Tile(DEFAULT,DEFAULT, new GameMap(DEFAULT, DEFAULT)));
         Element attributes = (Element) unit.getElementsByTagName(ATTRIBUTES).item(0);
         StatCollection targetAttributes = (StatCollection) newType.getStatCollection(ATTRIBUTES);
         setStats(attributes, targetAttributes);
@@ -76,10 +95,32 @@ public class UnitDecoder extends Decoder {
         return newType;
     }
     
-    
+    /**
+     * This method create the Custom Abilities created by the game designer.
+     * 
+     * @param unit
+     * @param customAbility
+     */
+    public void createCustomAbilities(Unit unit, Element customAbility) {
+        String name = customAbility.getAttribute(NAME);
+        double range = Double.parseDouble(customAbility.getAttribute(RANGE));
+        double radius = Double.parseDouble(customAbility.getAttribute(RADIUS));
+        CustomAbility custom = new CustomAbility(name, unit, range, radius);
+        
+        NodeList effects = customAbility.getElementsByTagName(EFFECT);
+        for(int i = 0; i < effects.getLength(); i++) {
+            Element effect = (Element) effects.item(i);
+            String effectName = effect.getAttribute(NAME);
+            String attribute = effect.getAttribute(ATTRIBUTE);
+            double power = Double.parseDouble(effects.getAttribute(POWER));
+            ModifyAttribute customEffect = new ModifyAttribute(name, attribute, power);
+            custom.addEffect(customEffect);
+        }    
+        unit.getStatCollection("Abilities").addStat(custom);
+    }
+        
     @Override
     public void buildObject (Element root) {
-        //myDataManager.setUnits(processUnits(root));
         createUnits(root);
     }
 }
