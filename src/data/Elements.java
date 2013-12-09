@@ -41,5 +41,4 @@ public interface Elements {
     String UNIT_IMAGES = "unitImages";
     String UNIT_TYPE = "UnitType";
     String TILE_TYPE = "TileType";
-    
 }

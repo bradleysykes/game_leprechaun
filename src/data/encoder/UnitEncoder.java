@@ -45,7 +45,7 @@ public class UnitEncoder extends Encoder {
     protected void appendSingleUnit (Unit unit, Element unitsElement, boolean isType) {
         Element unitElement = null;
         if(isType) {
-            unitElement = myXmlDocument.createElement("UnitType");
+            unitElement = myXmlDocument.createElement(UNIT_TYPE);
         } else {
             unitElement = myXmlDocument.createElement(UNIT);
         }
@@ -62,7 +62,6 @@ public class UnitEncoder extends Encoder {
         unitElement.appendChild(tileElement);
         
         Element abilitiesElement = myXmlDocument.createElement(ABILITIES);
-        //abilitiesElement.setAttribute(...)
         Abilities abilities = (Abilities) unit.getStatCollection(ABILITIES);
         appendCustomAbilities(abilities, abilitiesElement);
         unitElement.appendChild(abilitiesElement);
@@ -73,19 +72,18 @@ public class UnitEncoder extends Encoder {
     
     private void appendCustomAbilities (Abilities abilities, Element abilitiesElement) {
         Element customAbElement = myXmlDocument.createElement(CUSTOM_ABILITY);
-        List<String> nameList = new ArrayList<String>();
         for (Stat s : abilities.getStats()) {
             if(s instanceof CustomAbility) {
                 String name = s.getName();
-                customAbElement.setAttribute(NAME, name);
-                customAbElement.setAttribute("range", "2.0");
-                customAbElement.setAttribute("radius", "3.12");
                 CustomAbility c = (CustomAbility) s;
+                customAbElement.setAttribute(NAME, name);
+                customAbElement.setAttribute(RANGE, String.valueOf(c.getStat("Range").getValue()));
+                customAbElement.setAttribute(RADIUS, String.valueOf(c.getStat("Radius").getValue()));
                 for(Effect effect : ((Effects) c.getStat("Effects")).getEffects()){
                     Element effectElement = myXmlDocument.createElement("Effect");
                     effectElement.setAttribute(NAME, effect.getName());
-                    effectElement.setAttribute("Attribute", effect.getID());
-                    effectElement.setAttribute("Power", String.valueOf(effect.getStat("Power").getValue()));
+                    effectElement.setAttribute(ATTRIBUTE, effect.getID());
+                    effectElement.setAttribute(POWER, String.valueOf(effect.getStat("Power").getValue()));
                     customAbElement.appendChild(effectElement);
                 }
             }
