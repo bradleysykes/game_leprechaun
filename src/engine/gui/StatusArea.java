@@ -2,6 +2,7 @@ package engine.gui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Label;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
@@ -14,7 +15,7 @@ public class StatusArea extends JPanel {
 	protected JTextArea myStatusArea;
 	private final Dimension mySize = new Dimension(230, 180);
 	
-	public StatusArea() {
+	public StatusArea(String label) {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		myStatusArea = new JTextArea();
 		myStatusArea.setPreferredSize(null);
@@ -27,6 +28,7 @@ public class StatusArea extends JPanel {
 		myScrollPane.setPreferredSize(mySize);
 		
 		add(myScrollPane);
+		add(new Label(label));
 	}
 	
 	public void setStatusText(String report) {

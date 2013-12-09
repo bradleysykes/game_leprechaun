@@ -29,6 +29,8 @@ public class ObjectPanel extends EditPanel {
 		super(controller);
 		myModel = new DefaultListModel<String>();
 		myList = new JList<String>(myModel);
+		myList.setBackground(Color.black);
+		myList.setForeground(Color.red);
 		this.add(myList);
 		initialize(myList);
 	}

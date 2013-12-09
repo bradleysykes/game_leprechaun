@@ -18,5 +18,7 @@ public abstract class Effect extends StatCollection{
 	}
 	
 	public abstract void enact(Unit target);
+	
+	public abstract Effect copy();
 		
 }

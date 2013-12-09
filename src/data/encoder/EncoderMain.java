@@ -3,12 +3,15 @@ package data.encoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import model.Attributes;
 import model.Condition;
 import model.GameMap;
 import model.Player;
 import model.Resource;
+import model.abilities.CustomAbility;
 import model.condition.Create;
 import model.condition.Defeat;
+import model.effects.ModifyAttribute;
 import model.tile.Tile;
 import model.unit.Unit;
 import data.Elements;
@@ -43,6 +46,14 @@ public class EncoderMain implements Elements {
         Tile t1 = new Tile(2,1,map);
         
         Unit unit1 = new Unit("unit1",p1, t1);
+        CustomAbility customAb = new CustomAbility("testCustom", new Unit("testUser",p1,t1), 30.0, 12.4);
+        customAb.addEffect(new ModifyAttribute("testEffect","testAttr",1000.20));
+        customAb.addEffect(new ModifyAttribute("test2","anotherAttr?",23.10));
+        
+        Attributes a = (Attributes) unit1.getStatCollection("Attributes");
+        a.setStat("Health", 20.0);
+        a.setStat("Base Attack", 36.2);
+        unit1.getStatCollection("Abilities").addStat(customAb);
         p1.addUnit(unit1);
         
         Player p2 = new Player();

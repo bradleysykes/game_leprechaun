@@ -1,5 +1,6 @@
 package gae.menu_bar;
 
+import engine.GameViewer;
 import gae.Controller;
 
 import java.awt.event.ActionEvent;
@@ -19,6 +20,7 @@ public class RunMenuItem extends GUIMenuItem {
 			public void actionPerformed(ActionEvent e) {
 				myController.save();
 				myController.closeMap();
+				myController.launchGame();
 			}
 			
 		};

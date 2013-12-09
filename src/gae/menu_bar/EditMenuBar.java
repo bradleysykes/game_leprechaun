@@ -1,5 +1,7 @@
 package gae.menu_bar;
 
+import java.awt.Color;
+
 import gae.Constants;
 import gae.Controller;
 

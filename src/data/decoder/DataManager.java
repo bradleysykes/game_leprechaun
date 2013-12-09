@@ -16,8 +16,6 @@ import data.Elements;
 import data.GameElements;
 import model.Condition;
 import model.Player;
-import model.tile.Tile;
-import model.unit.Unit;
 
 /**
  * 
@@ -107,10 +105,9 @@ public class DataManager extends GameElements implements Attributes, Elements {
     
    
     //test use
-    public static void main(String[] args) {
+    public static void main(String[] args) {        
         DataManager dm = new DataManager();
-        
-        GameElements map = dm.getGameElements(new File("src/test_saves/test_fix.xml"));
+        GameElements map = dm.getGameElements(new File("src/data/resources/TestFile.xml"));
         map.toString();
         System.out.println(map.getTileImageMap().keySet());
         System.out.println(map.getClass());

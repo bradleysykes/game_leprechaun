@@ -18,11 +18,10 @@ import util.reflection.Reflection;
  */
 public class ConditionDecoder extends Decoder {
 
-    private DataManager myDataManager;
     private List<Condition> myConditions;
     
     public ConditionDecoder(DataManager manager) {
-        myDataManager = manager;
+        super(manager);
         myConditions = new ArrayList<Condition>();
     }
     

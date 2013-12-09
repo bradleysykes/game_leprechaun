@@ -45,16 +45,24 @@ public class Attack extends Ability{
 		System.out.println(enemyDefense+" "+enemyAttack+" "+enemyHealth);
 		if (myAttack > enemyDefense)
 			enemyHealth = enemyHealth + enemyDefense - myAttack;
-		if (myDefense < enemyAttack)
-			myHealth = myHealth + myDefense - enemyAttack;
-		if(myHealth<=0){
-			myUnit.getPlayer().getModel().destroyUnit(myUnit);
-		}
-		else{
-			unitAttributes.setStat("Health",myHealth);
-			myValid = false;
-		}
+		else
+			enemyHealth--;
+//		if (myDefense < enemyAttack)			// Do we want units to counter-attack on that same move?
+//			myHealth = myHealth + myDefense - enemyAttack;
+//		else if(enemyAttack!=0)
+//			myHealth--;
+//		if(myHealth<=0){
+//			myUnit.getPlayer().removeUnit(myUnit);
+//			myUnit.getCurrentTile().removeUnit(myUnit);
+//			myUnit.getPlayer().getModel().destroyUnit(myUnit);
+//		}
+//		else{
+//			unitAttributes.setStat("Health",myHealth);
+//			myValid = false;
+//		}
 		if(enemyHealth<=0){
+			myTarget.getPlayer().removeUnit(myTarget);
+			myTarget.getCurrentTile().removeUnit(myTarget);
 			myTarget.getPlayer().getModel().destroyUnit(myTarget);
 		}
 		else{
@@ -75,6 +83,7 @@ public class Attack extends Ability{
 
 	@Override
 	public void refresh(){
+		myValid = true;
 		if(((Attributes) myUnit.getStatCollection("Attributes")).getAttack() == 0)
 			myValid = false;
 	}
