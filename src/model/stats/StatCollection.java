@@ -50,7 +50,7 @@ public class StatCollection extends Stat {
 	}
 
 	public String getID(){
-		return myID;
+		return myID.split("\\|")[0];	// split in case data added time-stamp
 	}
 
 	public void setID(String id){
@@ -95,6 +95,7 @@ public class StatCollection extends Stat {
 	}
 
 	public StatCollection getStatCollection(String name){
+		name = name.split("\\|")[0];	// in case data appended time-stamp
 		StatCollection toReturn = (StatCollection) this.getStat(name);
 		if(toReturn.getValue()==null)
 			return toReturn;
