@@ -84,7 +84,6 @@ public class AbilityAssignDialogue extends JFrame {
 	
 	public void createEffect(int index){
 		myController.getUnitTypes().get(index).getStatCollection("Abilities").addStat(myAbility);
-		System.out.println("Added ability to unit");
 	}
 	
 	public void postInput() {
