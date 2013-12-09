@@ -25,7 +25,12 @@ import util.reflection.Reflection;
  */
 public abstract class Decoder implements Attributes, Elements, DecoderTags {
     
-  
+    protected DataManager myDataManager;
+    
+    public Decoder (DataManager manager) {
+        myDataManager = manager;
+    }
+
     /**
      * return the attribute of element to the corresponding tag.  
      */
@@ -39,7 +44,7 @@ public abstract class Decoder implements Attributes, Elements, DecoderTags {
      * @param element the node of 
      * @return Stat stat object
      */
-    public Stat getStat(Element element) {
+    public Stat createStat(Element element) {
         String name = element.getAttribute(NAME).toString();
         Double value = Double.parseDouble(element.getAttribute(VALUE));
         Stat stat = (Stat) Reflection.createInstance(name);
@@ -85,7 +90,7 @@ public abstract class Decoder implements Attributes, Elements, DecoderTags {
      * @param target
      * @return
      */
-    public Resources getResources(Element resources, Resources target) {
+    public Resources createResources(Element resources, Resources target) {
         NodeList resourceList = resources.getElementsByTagName(RESOURCE);
         for(int i = 0; i < resourceList.getLength(); i++) {
             Element resource = (Element) resourceList.item(i);
@@ -101,5 +106,5 @@ public abstract class Decoder implements Attributes, Elements, DecoderTags {
      * this method will parse the data and set corresponding 
      * @param root
      */
-    public abstract void decodeData(Element root);
+    public abstract void buildObject(Element root);
 }

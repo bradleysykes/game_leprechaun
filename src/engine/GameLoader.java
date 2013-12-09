@@ -45,6 +45,8 @@ public class GameLoader  {
 			System.out.println("Loading: "+id + " "+ myUnitImageMap.get(unit));
 			myGameEngine.defineImage(id, "-", 0, "/" + myUnitImageMap.get(unit),"-");
 		}
+		
+		myGameEngine.defineImage(EngineConstants.endScreenName, "-", 0, "/" + System.getProperty("user.dir") + EngineConstants.endScreenPath, "-");
 
 		Collection<Player> allPlayers = myGameElements.getPlayers();
 		Collection<Unit> allUnits = new ArrayList<Unit>();
@@ -57,6 +59,7 @@ public class GameLoader  {
 		myGameEngine.initializeTiles(allTiles);
 		myGameEngine.initializeUnits(allUnits);
 		myGameEngine.initializeGameManager();
+
 	}
 	
 	public Map<Unit, String> getUnitImageMap() {

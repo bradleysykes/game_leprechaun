@@ -19,5 +19,11 @@ public class Resource extends StatCollection {
 			this.setStat("Amount", 0.0);
 		return initAmount - this.getValue("Amount");
 	}
+	
+	
+	@Override
+	public Resource copy(){
+		return new Resource(this.getID(),this.getValue("Amount"),this.getValue("Harvest Rate"));
+	}
 
 }

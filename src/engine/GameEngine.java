@@ -33,6 +33,8 @@ public class GameEngine extends JGEngine implements EngineConstants {
 	private ViewOffsetListener myViewListener;
 	private File mySourceFile;
 	private SpawnerViewer mySpawnerViewer;
+	private boolean gameOver = false;
+	private Player myWinner = null;
 	
 	public GameEngine(GameViewer gv) {
 		initEngineComponent(myViewerWidth, myViewerHeight);
@@ -56,7 +58,6 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		myTileObjectMap = new HashMap<Tile, GameTileObject>();
 		myUnitObjectMap = new HashMap<Unit, GameUnitObject>();
 		myModel = new Model(this);
-		
 	}
 	
 	public Model getModel() {
@@ -69,6 +70,13 @@ public class GameEngine extends JGEngine implements EngineConstants {
 		this.checkCollision(MOUSE_COL_ID, 2+8);
 		if (myGameManager != null) {
 			myGameManager.setPlayerStatusArea();
+		}
+	}
+	
+	public void paintFrame() {
+		if (gameOver) {
+			drawImage(0, 0, endScreenName);
+			drawString(myWinner.getID() + " wins!", (double) myViewerWidth/2, (double) myViewerHeight/2, 0, false);
 		}
 	}
 	
@@ -219,6 +227,16 @@ public class GameEngine extends JGEngine implements EngineConstants {
 
 	public void declareWinner(Player p) {
 		// Engine - this is how we will tell you that somebody has won the game.
+		removeAllObjects();
+		myWinner = p;
+		gameOver = true;
+	}
+	
+	private void removeAllObjects() {
+		removeObjects("tile", 8);
+		removeObjects("unit", 2);
+		removeObjects(TileHighlightName, TileHighlight_COL_ID);
+		removeObjects(PlayerHighlightName, PlayerHighlight_COL_ID);
 	}
 	
 }

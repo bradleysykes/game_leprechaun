@@ -45,11 +45,29 @@ public class Attack extends Ability{
 		System.out.println(enemyDefense+" "+enemyAttack+" "+enemyHealth);
 		if (myAttack > enemyDefense)
 			enemyHealth = enemyHealth + enemyDefense - myAttack;
+		else
+			enemyHealth--;
 		if (myDefense < enemyAttack)
 			myHealth = myHealth + myDefense - enemyAttack;
-		unitAttributes.setStat("Health",myHealth);
-		targetAttributes.setStat("Health",enemyHealth);
-		myValid = false;
+		else if(enemyAttack!=0)
+			myHealth--;
+		if(myHealth<=0){
+			myUnit.getPlayer().removeUnit(myUnit);
+			myUnit.getCurrentTile().removeUnit(myUnit);
+			myUnit.getPlayer().getModel().destroyUnit(myUnit);
+		}
+		else{
+			unitAttributes.setStat("Health",myHealth);
+			myValid = false;
+		}
+		if(enemyHealth<=0){
+			myTarget.getPlayer().removeUnit(myTarget);
+			myTarget.getCurrentTile().removeUnit(myTarget);
+			myTarget.getPlayer().getModel().destroyUnit(myTarget);
+		}
+		else{
+			targetAttributes.setStat("Health",enemyHealth);
+		}
 	}
 
 	@Override
@@ -57,14 +75,15 @@ public class Attack extends Ability{
 		myGameEngine.highlightTiles(myUnit.getMap().getTilesInRadius
 				(myUnit.getStatCollection("Attributes").getValue("Range"),myUnit.getCurrentTile()));
 	}
-	
+
 	@Override
 	public Ability copy(Unit u){
 		return new Attack(u);
 	}
-	
+
 	@Override
 	public void refresh(){
+		myValid = true;
 		if(((Attributes) myUnit.getStatCollection("Attributes")).getAttack() == 0)
 			myValid = false;
 	}

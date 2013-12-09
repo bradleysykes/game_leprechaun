@@ -71,9 +71,9 @@ public class DataManager extends GameElements implements Attributes, Elements {
      * pass the root element to all decoders so that they can parse and instantiates
      * corresponding objects.
      */
-    private void processDecoders() {
+    private void buildObjects() {
         for (Decoder decoder: myDecoders) {
-            decoder.decodeData(myRoot);
+            decoder.buildObject(myRoot);
         }
     }
     
@@ -86,7 +86,7 @@ public class DataManager extends GameElements implements Attributes, Elements {
     public GameElements getGameElements(File xmlFile) {
         try {
             initXmlFile(xmlFile);
-            processDecoders();
+            buildObjects();
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -109,8 +109,7 @@ public class DataManager extends GameElements implements Attributes, Elements {
     //test use
     public static void main(String[] args) {
         DataManager dm = new DataManager();
-        
-        GameElements map = dm.getGameElements(new File("src/test_saves/test_fix.xml"));
+        GameElements map = dm.getGameElements(new File("src/data/resources/TestFile.xml"));
         map.toString();
         System.out.println(map.getTileImageMap().keySet());
         System.out.println(map.getClass());
