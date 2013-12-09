@@ -71,9 +71,9 @@ public class DataManager extends GameElements implements Attributes, Elements {
      * pass the root element to all decoders so that they can parse and instantiates
      * corresponding objects.
      */
-    private void processDecoders() {
+    private void buildObjects() {
         for (Decoder decoder: myDecoders) {
-            decoder.decodeData(myRoot);
+            decoder.buildObject(myRoot);
         }
     }
     
@@ -86,7 +86,7 @@ public class DataManager extends GameElements implements Attributes, Elements {
     public GameElements getGameElements(File xmlFile) {
         try {
             initXmlFile(xmlFile);
-            processDecoders();
+            buildObjects();
         } catch(Exception e) {
             e.printStackTrace();
         }
