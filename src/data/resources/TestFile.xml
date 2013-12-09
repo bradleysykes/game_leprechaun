@@ -812,7 +812,7 @@
     <Units>
         <Unit id="Create me!">
             <UnitPlayer id="Player 1"/>
-            <UnitTile x="5" y="1"/>
+            <UnitTile x="5" y="2"/>
             <Abilities>
                 <CustomAbility/>
             </Abilities>
@@ -828,7 +828,7 @@
         </Unit>
         <Unit id="Create me!">
             <UnitPlayer id="Player 1"/>
-            <UnitTile x="2" y="3"/>
+            <UnitTile x="2" y="4"/>
             <Abilities>
                 <CustomAbility/>
             </Abilities>
@@ -844,7 +844,7 @@
         </Unit>
         <Unit id="Create me!">
             <UnitPlayer id="Player 2"/>
-            <UnitTile x="7" y="6"/>
+            <UnitTile x="9" y="7"/>
             <Abilities>
                 <CustomAbility/>
             </Abilities>
@@ -860,9 +860,11 @@
         </Unit>
         <Unit id="Create me!">
             <UnitPlayer id="Player 2"/>
-            <UnitTile x="8" y="3"/>
+            <UnitTile x="6" y="8"/>
             <Abilities>
-                <CustomAbility/>
+               <CustomAbility name="Create me!" radius="5.0" range="5.0">
+                   <Effect attribute="Health" name="Effect" power="12.0"/>
+               </CustomAbility> 
             </Abilities>
             <Attributes>
                 <Stat name="Health" value="10.0"/>
@@ -895,8 +897,8 @@
                     <UnitPlayer id="Defuault Player Name"/>
                     <UnitTile x="-1" y="-1"/>
                     <Abilities>
-                        <CustomAbility name="Create me!" radius="3.12" range="2.0">
-                            <Effect Attribute="Health" Power="12.0" name="Effect"/>
+                        <CustomAbility name="Create me!" radius="5.0" range="5.0">
+                            <Effect attribute="Health" name="Effect" power="12.0"/>
                         </CustomAbility>
                     </Abilities>
                     <Attributes>
