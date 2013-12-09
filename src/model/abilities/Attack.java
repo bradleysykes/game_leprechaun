@@ -19,6 +19,7 @@ public class Attack extends Ability{
 
 	public Attack(Unit abilityUser) {
 		super("Attack", abilityUser);
+		this.refresh();
 	}
 
 	@Override
@@ -67,7 +68,7 @@ public class Attack extends Ability{
 	@Override
 	public void refresh(){
 		myValid = true;
-		if(((Attributes) myUnit.getStatCollection("Attributes")).getAttack() == 0)
+		if(((Attributes) myUnit.getStatCollection("Attributes")).getValue("Base Attack") == 0)
 			myValid = false;
 	}
 
