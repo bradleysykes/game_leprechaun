@@ -41,7 +41,7 @@ public class PlayerEncoder extends Encoder {
         appendResources((Resources) player.getStat(RESOURCES), playerElement);
     }
     
-    private void appendResources (Resources resources, Element playerElement) {
+    protected void appendResources (Resources resources, Element playerElement) {
         Element resourcesElement = myXmlDocument.createElement(RESOURCES);
         for(Stat resource : resources.getStats()) {
             Resource res = (Resource) resource;
