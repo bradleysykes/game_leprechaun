@@ -120,7 +120,9 @@
             <UnitTile x="2" y="1"/>
             <Abilities>
                 <Ability name="spawn" reference_type="List of Spawnable Units">
-                    <Reference name="Soldier"/>
+                    <Reference name="ref1"/>
+                    <Reference name="ref2"/>
+                    <Reference name="ref3"/>
                 </Ability>
                 <CustomAbility name="testCustom" radius="12.4" range="30.0">
                     <Effect attribute="testAttr" name="testEffect" power="1000.2"/>
