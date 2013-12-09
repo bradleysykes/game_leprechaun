@@ -56,7 +56,7 @@ public class DefeatParameterSetter implements IConditionParameterSetter {
 
 	@Override
 	public Condition getCondition(Player player, StatCollection...objects) {
-		Unit goal = (Unit) objects[0];
+		Unit goal = (Unit) objects[1];
 		return new Defeat(goal.getID(), player);
 	}
 
