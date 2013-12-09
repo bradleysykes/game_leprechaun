@@ -83,7 +83,7 @@ public class UnitViewItem extends BoardListViewItem {
 		int tileX = (int)(x-x%TILE_SIZE);
 		int tileY = (int)(y-y%TILE_SIZE);
 		myMapObject = new MapObject(myMapObjectPrefix,tileX,tileY,myMapObjectPrefix,this);
-		map.addObject(myMapObject, this);
+		map.addObject(myMapObject);
 		GameMap modelMap = map.getModelMap();
 		Tile selectedTile = modelMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE);
 		Unit newGuy = new Unit(myUnit, player.getPlayer(), selectedTile);

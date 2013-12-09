@@ -60,8 +60,8 @@ public class GUIMap extends JGEngine implements Constants{
 	
 	private File getTileImageFile(Tile tile, Map<Tile,String> imageMap){
 		for(Tile keyTile:imageMap.keySet()){
-			String keyIdentifier = keyTile.getID().split("|")[0];
-			String tileIdentifier = tile.getID().split("|")[0];
+			String keyIdentifier = keyTile.getID();
+			String tileIdentifier = tile.getID();
 			if(keyIdentifier.equals(tileIdentifier)){
 				return new File(imageMap.get(keyTile));
 			}
@@ -101,6 +101,7 @@ public class GUIMap extends JGEngine implements Constants{
 				view = new NullViewItem();
 			}
 			view.placeOnBoard(this,tile.getX(), tile.getY());
+			this.addObject(view.getMapObject());
 			if(tile.isOccupied()){
 				List<Unit> units = tile.getUnits();
 				BoardListViewItem unitView;
@@ -114,7 +115,8 @@ public class GUIMap extends JGEngine implements Constants{
 					}
 					Player player = unit.getPlayer();
 					PlayerViewItem unitPlayer = new PlayerViewItem(player,i);
-					unitView.clickOnBoard(this, getActualXCoordinate(tile.getX()), getActualYCoordinate(tile.getY()),unitPlayer);
+					unitView.clickOnBoard(this, tile.getX()*TILE_SIZE, tile.getY()*TILE_SIZE,unitPlayer);
+					this.addObject(unitView.getMapObject());
 				}
 			}
 			i++;
@@ -160,7 +162,7 @@ public class GUIMap extends JGEngine implements Constants{
 		setPFSize(2,2);
 	}
 	
-	public void addObject(MapObject object, BoardListViewItem item){
+	public void addObject(MapObject object){
 		myObjects.put(object.getPoint(), object);
 	}
 	
@@ -192,15 +194,24 @@ public class GUIMap extends JGEngine implements Constants{
 	}
 	
 	private void checkMouse(){
-		if(this.getKey(256)&&!(myMap.getTile(tileX/TILE_SIZE, tileY/TILE_SIZE).isOccupied())){
+		if(this.getKey(256)){
 			//figure out which object is being placed and the player to which it is assigned. 
 			PlayerViewItem active = BoardBuffer.getActivePlayer();
 			BoardListViewItem toPlace = BoardBuffer.retrieve();
 			//adjust coordinates to place object beneath mouse cursor. 
 			int x = getActualXCoordinate(getMouseX());
 			int y = getActualYCoordinate(getMouseY());
+			int modelX = x/TILE_SIZE;
+			int modelY = y/TILE_SIZE;
+			Point mousePoint = new Point(modelX,modelY);
+			MapObject occupantObject = myObjects.get(mousePoint);
+			if(occupantObject!=null&&toPlace instanceof TileViewItem){
+				occupantObject.remove();
+				myObjects.remove(occupantObject);
+			}
 			//map asks each view item to place the appropriate JGObject. 
 			toPlace.clickOnBoard(this, x,y, active);
+			this.addObject(toPlace.getMapObject());
 			//update map of every JGObject prefix and its corresponding view item. For delete functionality. 
 			myViewItems.put(toPlace.getPrefix(),toPlace);
 			this.validate();
@@ -258,6 +269,7 @@ public class GUIMap extends JGEngine implements Constants{
 		for(int q=0;q<myWidth;q+=1){
 			for(int m = 0;m<myHeight;m+=1){
 				t.placeOnBoard(this, q, m);
+				this.addObject(t.getMapObject());
 			}
 		}
 	}

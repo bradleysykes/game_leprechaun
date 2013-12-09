@@ -39,6 +39,11 @@ public class UnitList extends BoardList {
 	}
 	
 	@Override
+	public String getDefaultName(){
+		return "Default Unit Name";
+	}
+	
+	@Override
 	public List<Stat> getDefaultStats(){
 		Unit unit = new Unit("Jeff",new Player(),new Tile(2,2,new GameMap(2,2)));
 		return unit.getStats();

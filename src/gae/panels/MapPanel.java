@@ -13,6 +13,7 @@ import gae.viewitems.ViewItem;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -133,6 +134,8 @@ public class MapPanel extends EditPanel {
 	public void displayFile(File file){
 		if(myTabbedView.getTabCount()<2){
 			JTextArea fileView = new JTextArea();
+			fileView.setBackground(Color.black);
+			fileView.setForeground(Color.red);
 			fileView.setEditable(false);
 			try {
 				Scanner in = new Scanner(new FileReader(file.getAbsolutePath()));

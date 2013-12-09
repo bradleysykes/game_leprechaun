@@ -16,5 +16,10 @@ public class ModifyAttribute extends Effect {
 		target.getStatCollection("Attributes").setStat(this.getID(),
 				target.getStatCollection("Attributes").getValue(this.getID())+this.getValue("Power"));
 	}
+
+	@Override
+	public Effect copy() {
+		return new ModifyAttribute(this.getName(),this.getID(),this.getValue("Power"));
+	}
 	
 }
