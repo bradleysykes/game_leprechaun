@@ -16,8 +16,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.ListCellRenderer;
 import javax.swing.ListSelectionModel;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -30,6 +33,7 @@ public class ResourcesDialogue extends JFrame {
 	private BoardList myListSource;
 	private JList myResourceChoices;
 	private StatCollection myStat;
+	private JTextField myResourceValueField;
 	
 	public ResourcesDialogue(BoardList listSource, StatCollection stat){
 		myListSource = listSource;
@@ -46,7 +50,40 @@ public class ResourcesDialogue extends JFrame {
 		panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
 		// find all of the user-created resources in ResourceList
 		List<Resource> userResources = myListSource.getUserResources();
+		myResourceValueField = new JTextField("0.0");
+		panel.add(myResourceValueField);
+		myResourceValueField.getDocument().addDocumentListener(new DocumentListener(){
+
+			@Override
+			public void changedUpdate(DocumentEvent arg0) {
+				Resource selectedResource = (Resource)myResourceChoices.getSelectedValue();
+				Double updateAmount = Double.parseDouble(myResourceValueField.getText());
+				selectedResource.setStat("Amount", updateAmount);
+			}
+
+			@Override
+			public void insertUpdate(DocumentEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void removeUpdate(DocumentEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		myResourceChoices = new JList();
+		myResourceChoices.addListSelectionListener(new ListSelectionListener(){
+
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				Resource selectedResource = (Resource)myResourceChoices.getSelectedValue();
+				myResourceValueField.setText(selectedResource.getValue("Amount").toString());
+			}
+			
+		});
 		myResourceChoices.setCellRenderer(new DefaultListCellRenderer(){
 
 			@Override

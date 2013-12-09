@@ -33,6 +33,7 @@ public class UnitCreationDialogue extends InputDialogue {
 	protected JButton myEnterButton;
 	protected File myImage;
 	protected ViewItemField myName;
+	protected String myCurrentName;
 	
 	public UnitCreationDialogue(String frameTitle, List<Stat> modelProperties, BoardList list) {
 		super(modelProperties, list);		
@@ -95,13 +96,16 @@ public class UnitCreationDialogue extends InputDialogue {
 			}
 			else{
 				StatCollection test = (StatCollection) t;
+				if(myCurrentName==null){
+					myCurrentName = test.getID().split("\\|")[0];
+					myName = new ViewItemField(myCurrentName);
+					mainPanel.add(myName);
+				}
 				myFieldViews.put(test,new ViewItemField(t));
 				SaveInputButton button = new SaveInputButton(test,myList);
 				mainPanel.add(button);
 			}
 		}
-		myName = new ViewItemField("Custom name");
-		mainPanel.add(myName);
 		JPanel imageButtonPanel = new JPanel(new BorderLayout());
 		FileButton imageButton = new FileButton("Upload image", this);
 		imageButtonPanel.add(imageButton, BorderLayout.PAGE_START);
