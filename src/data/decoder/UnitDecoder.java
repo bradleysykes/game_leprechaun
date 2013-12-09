@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.GameMap;
 import model.Player;
+import model.Resources;
 import model.abilities.CustomAbility;
 import model.effects.ModifyAttribute;
 import model.stats.StatCollection;
@@ -73,6 +74,12 @@ public class UnitDecoder extends Decoder {
         StatCollection targetAttributes = (StatCollection) newUnit.getStatCollection(ATTRIBUTES);
         setStats(attributes, targetAttributes);
         
+        // set resources to the unit
+        Element elementResources = (Element) unit.getElementsByTagName(RESOURCES).item(0);
+        Resources targetResources = (Resources) newUnit.getStatCollection(RESOURCES);
+        createResources(elementResources,targetResources);
+
+        
         //set custom abilities if exists
         try {
             Element custom = (Element)unit.getElementsByTagName(CUSTOM_ABILITY).item(0);
@@ -89,6 +96,7 @@ public class UnitDecoder extends Decoder {
         catch (NumberFormatException e) {
             //e.printStackTrace();
         }
+
         return newUnit;
     }
     
