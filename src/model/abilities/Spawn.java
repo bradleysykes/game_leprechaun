@@ -3,6 +3,7 @@ package model.abilities;
 import engine.GameEngine;
 import model.Ability;
 import model.Resources;
+import model.stats.StatCollection;
 import model.tile.Tile;
 import model.unit.Unit;
 
@@ -23,6 +24,7 @@ public class Spawn extends Ability {
 			Unit test = new Unit(myTargetUnit, myUnit.getPlayer(), t);
 			test.setCurrentTile(t);			
 			myUnit.getPlayer().getModel().spawnUnit(test);
+			myUnit.getPlayer().refresh();
 		}
 	}
 
