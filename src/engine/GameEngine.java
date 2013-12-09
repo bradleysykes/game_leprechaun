@@ -47,7 +47,7 @@ public class GameEngine extends JGEngine implements EngineConstants {
                 myTileWidth,  // width of one tile
                 myTileHeight,  // height of one tile
                 null,// foreground colour -> use default colour white
-                JGColor.blue,// background colour -> use default colour black
+                JGColor.black,// background colour -> use default colour black
                 null); // standard font -> use default font);
 	}
 	
