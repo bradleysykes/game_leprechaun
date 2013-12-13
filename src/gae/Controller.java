@@ -46,6 +46,7 @@ public class Controller implements Constants{
 	private EditGUI myGUI;
 	private EditMenuBar myMenuBar;
 	private Controller myController;
+	private EditToolbar myToolbar;
 	
 	public Controller(){
 		myController = this;
@@ -111,6 +112,7 @@ public class Controller implements Constants{
 		for(EditPanel p:myPanels){
 			p.postPlayers(numPlayers);
 		}
+		myToolbar.enablePlayerEdit();
 			
 	}
 	
@@ -130,6 +132,7 @@ public class Controller implements Constants{
 		for(EditPanel p:myPanels){
 			p.createMap(data);
 		}
+		myToolbar.enableResize();
 	}
 	
 	public void save(){
@@ -275,6 +278,10 @@ public class Controller implements Constants{
 		for(EditPanel p:myPanels){
 			p.addResource(resource);
 		}
+	}
+
+	public void setToolbar(EditToolbar editToolbar) {
+		myToolbar = editToolbar;
 	}
 
 }
