@@ -51,6 +51,7 @@ public class TileList extends BoardList {
 		return tile.getStats();
 	}
 	@Override
+	@Deprecated
 	public String getPackageName() {
 		return Constants.TILE_PACKAGE_NAME;
 	}

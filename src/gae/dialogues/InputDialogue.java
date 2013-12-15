@@ -18,6 +18,12 @@ import javax.swing.JPanel;
 
 import model.stats.Stat;
 
+/**
+ * Generic abstract Dialogue box to take information out of fields and send it 
+ * to the controller to be generated into the appropriate items.
+ * @author Will
+ * @author Brad
+ */
 public abstract class InputDialogue extends JFrame {
 	
 	protected Controller myController;
@@ -26,6 +32,12 @@ public abstract class InputDialogue extends JFrame {
 	protected Map<Stat,ViewItemField> myFieldViews; 
 	protected String myCurrentName;
 	
+	/**
+	 * Used to create Model StatCollections (i.e. Units, Tiles, Abilities)
+	 * @param name
+	 * @param props
+	 * @param list
+	 */
 	public InputDialogue(String name, List<Stat> props, BoardList list){
 		super();
 		myProperties = props;
@@ -40,6 +52,9 @@ public abstract class InputDialogue extends JFrame {
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Used to set game parameters (i.e. Number of Players, board size)
+	 */
 	public InputDialogue(){
 		//myController = controller;
 		JPanel panel = createGutsPanel();
@@ -49,6 +64,10 @@ public abstract class InputDialogue extends JFrame {
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Used to create Victory Conditions
+	 * @param controller
+	 */
 	public InputDialogue(Controller controller) {
 		myController = controller;
 		JPanel panel = createGutsPanel();
@@ -58,6 +77,11 @@ public abstract class InputDialogue extends JFrame {
 		this.pack();
 	}
 
+	/**
+	 * Implemented in subclass to create and fill the JPanel with the appropriate
+	 * information.
+	 * @return
+	 */
 	public abstract JPanel createGutsPanel();
 	
 	/**
@@ -65,10 +89,18 @@ public abstract class InputDialogue extends JFrame {
 	 */
 	public abstract void postInput();
 	
+	/**
+	 * Disposes this dialogue
+	 */
 	public void disposeDialogue() {
 		this.dispose();	
 	}
 	
+	/**
+	 * Retrieves and returns the information in the fields of the dialogue
+	 * @author Will
+	 * @author Brad
+	 */
 	protected class GetDataAction implements ActionListener {
 		protected GetDataAction() {}
 
@@ -78,6 +110,9 @@ public abstract class InputDialogue extends JFrame {
 		}
 	}
 
+	/**
+	 * Unused method.
+	 */
 	public void onClose() {
 		// do nothing...yet
 		

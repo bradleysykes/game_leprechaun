@@ -16,6 +16,7 @@ public class NullBoardList extends BoardList {
 	}
 
 	@Override
+	@Deprecated
 	public String getPackageName() {
 		// TODO Auto-generated method stub
 		return "";

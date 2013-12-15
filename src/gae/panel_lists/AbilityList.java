@@ -57,6 +57,7 @@ public class AbilityList extends BoardList {
 		return myDefaultModel;
 	}
 	@Override
+	@Deprecated
 	public String getPackageName() {
 		return Constants.ABILITY_PACKAGE_NAME;
 	}

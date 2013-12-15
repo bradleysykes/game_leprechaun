@@ -37,6 +37,12 @@ import model.Resource;
 import model.stats.Stat;
 import model.unit.Unit;
 
+/**
+ * Controls communication between Swing components
+ *
+ * @author Will
+ * @author Brad
+ */
 public class Controller implements Constants{
 	
 	private List<EditPanel> myPanels = new ArrayList<EditPanel>();
@@ -48,6 +54,9 @@ public class Controller implements Constants{
 	private Controller myController;
 	private EditToolbar myToolbar;
 	
+	/**
+	 * Initializes controller and save timer
+	 */
 	public Controller(){
 		myController = this;
 		Timer timer = new Timer(200000, new ActionListener(){
@@ -63,16 +72,30 @@ public class Controller implements Constants{
 		timer.start();
 	}
 	
+	/**
+	 * sets the GUI to the given EditGUI
+	 * 
+	 * @param gui
+	 */
 	public void setGUI(EditGUI gui){
 		myGUI = gui;
 	}
 	
+	/**
+	 * Used to add TaskViewItems to TaskPanel on startup
+	 */
 	public void init(){
 		this.addViewItem(new PlayerTaskViewItem(this));
 		this.addViewItem(new BoardSizeTaskViewItem(this));
 		this.addViewItem(new FillTaskViewItem(this));
 	}
 	
+	/**
+	 * Calls the addViewItem method on each EditPanel.  EditPanels will process
+	 * the correct type
+	 * 
+	 * @param item
+	 */
 	private void addViewItem(ViewItem item) {
 		for(EditPanel p:myPanels){
 			p.addViewItem(item);
@@ -96,18 +119,34 @@ public class Controller implements Constants{
 		}
 	}
 
+	/**
+	 * Adds an EditPanel to the Controller collection
+	 * @param panel
+	 */
 	public void addPanel(EditPanel panel){
 		myPanels.add(panel);
 	}
 	
+	/**
+	 * Sets the players in the Controller to the given List<Player>
+	 * @param players
+	 */
 	public void setPlayer(List<Player> players){
 		myPlayers = players;
 	}
 	
+	/**
+	 * Empty method...
+	 */
 	public void postBoardData(){
 		
 	}
 	
+	/**
+	 * Posts the number of players to the EditPanels, allows altering of number
+	 * while keeping remaining players
+	 * @param numPlayers
+	 */
 	public void postPlayers(int numPlayers){
 		for(EditPanel p:myPanels){
 			p.postPlayers(numPlayers);
@@ -116,18 +155,31 @@ public class Controller implements Constants{
 			
 	}
 	
+	/**
+	 * Posts the list of stats to the correct panel (Object Panel)
+	 * @param props
+	 */
 	public void postProperties(List<Stat> props){
 		for(EditPanel p:myPanels){
 			p.postProperties(props);
 		}
 	}
 	
+	/**
+	 * Removes the TaskViewItem of the same type as tvi from the TaskPanel
+	 * @param tvi
+	 */
 	public void removeTask(TaskViewItem tvi) {
 		for(EditPanel p:myPanels){
 			p.removeTask(tvi);
 		}
 	}
 	
+	/**
+	 * Creates a map based on a list of Strings that holds the length and width
+	 * dimensions
+	 * @param data
+	 */
 	public void createMap(List<String> data){
 		for(EditPanel p:myPanels){
 			p.createMap(data);
@@ -135,10 +187,18 @@ public class Controller implements Constants{
 		myToolbar.enableResize();
 	}
 	
+	/**
+	 * Saves the game to the file at the last selected path
+	 */
 	public void save(){
 		getAndSaveState(myGameFilePath);
 	}
 	
+	/**
+	 * returns true if TaskPanel has no more items, false if there are items
+	 * left
+	 * @return
+	 */
 	public boolean canSave(){
 		myCurrentState = new GameElements();
 		for(EditPanel p:myPanels){
@@ -150,6 +210,10 @@ public class Controller implements Constants{
 		return true;
 	}
 	
+	/**
+	 * Alerts the user that they are not able to save at when all tasks are not
+	 * complete
+	 */
 	public void alertSave(){
 		JOptionPane alertPane = new JOptionPane("Please complete all tasks before saving.");
 		JDialog dialog = alertPane.createDialog(null,"Save alert");
@@ -157,6 +221,10 @@ public class Controller implements Constants{
 		dialog.setVisible(true);
 	}
 	
+	/**
+	 * performs a save to the given file path
+	 * @param filePath
+	 */
 	public void getAndSaveState(String filePath) {
 		if(!canSave()){
 			alertSave();
@@ -178,12 +246,21 @@ public class Controller implements Constants{
 		// create data object to send GameElements object to that.
 	}
 
+	/**
+	 * fills the GameMap and the GUIMap with the Model and JGame versions of the
+	 * given ViewItem, respectively
+	 * @param mySource
+	 */
 	public void fillBoard(ViewItem mySource) {
 		for(EditPanel p:myPanels){
 			p.fillBoard(mySource);
 		}
 	}
 	
+	/**
+	 * Gets and returns the Model versions of the players current to the GAE
+	 * @return
+	 */
 	public List<Player> getPlayers(){
 		List<Player> players = null;
 		for(EditPanel p:myPanels){
@@ -195,6 +272,10 @@ public class Controller implements Constants{
 		return players;
 	}
 
+	/**
+	 * Gets and returns a Model version of each unit type defined in the game
+	 * @return
+	 */
 	public List<Unit> getUnitTypes() {
 		List<Unit> units = null;
 		for(EditPanel p:myPanels){
@@ -206,6 +287,11 @@ public class Controller implements Constants{
 		return units;
 	}
 	
+	/**
+	 * Returns the GameMap in its current state.  Returns null if the GameMap
+	 * does not exist yet
+	 * @return
+	 */
 	public GameMap getMap() {
 		GameMap map = null;
 		for(EditPanel p:myPanels) {
@@ -217,18 +303,27 @@ public class Controller implements Constants{
 		return null;
 	}
 
+	/**
+	 * Displays the .xml file at the current save state path
+	 */
 	public void displayFile() {
 		for(EditPanel p:myPanels){
 			p.displayFile(new File(myGameFilePath));
 		}
 	}
 
+	/**
+	 * Closes the GUIMap to allow the user to switch from the GAE to the Engine
+	 */
 	public void closeMap() {
 		for(EditPanel p:myPanels){
 			p.closeMap();
 		}
 	}
 
+	/**
+	 * Autosaves if possible, then opens the LaunchGUI and closes GAE
+	 */
 	public void exit() {
 		if(canSave()){
 			this.save();
@@ -239,6 +334,9 @@ public class Controller implements Constants{
 		new LaunchGUI();
 	}
 
+	/**
+	 * Opens an .xml file to a new EditGUI
+	 */
 	public void open() {
 		FileNameExtensionFilter filter = new FileNameExtensionFilter(
 		        "XML Files", "xml");
@@ -254,15 +352,26 @@ public class Controller implements Constants{
 		}
 	}
 	
+	/**
+	 * Launches a new Engine to run the current file path
+	 */
 	public void launchGame(){
 		new GameViewer().launch(myGameFilePath);
 	}
 	
+	/**
+	 * Sets the current file path to the given filePath
+	 * @param filePath
+	 */
 	public void setGameFilePath(String filePath){
 		myGameFilePath = filePath;
 		myMenuBar.activateSaveItem();
 	}
 
+	/**
+	 * Sets everything in the GAE to the GameElements positions
+	 * @param openElements
+	 */
 	public void loadData(GameElements openElements) {
 		myPlayers = openElements.getPlayers();
 		for(EditPanel p:myPanels){
@@ -270,16 +379,28 @@ public class Controller implements Constants{
 		}
 	}
 
+	/**
+	 * Sets the stored MenuBar to the given one
+	 * @param editMenuBar
+	 */
 	public void setMenuBar(EditMenuBar editMenuBar) {
 		myMenuBar = editMenuBar;
 	}
 
+	/**
+	 * Adds the given resource to every player with a default amount of 0.
+	 * @param resource
+	 */
 	public void addResourceToPlayers(Resource resource) {
 		for(EditPanel p:myPanels){
 			p.addResource(resource);
 		}
 	}
 
+	/**
+	 * Sets the stored Toolbar to the given one
+	 * @param editToolbar
+	 */
 	public void setToolbar(EditToolbar editToolbar) {
 		myToolbar = editToolbar;
 	}

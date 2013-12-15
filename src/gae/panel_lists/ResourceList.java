@@ -19,6 +19,7 @@ public class ResourceList extends BoardList {
 	}
 
 	@Override
+	@Deprecated
 	public String getPackageName() {
 		return null;
 	}

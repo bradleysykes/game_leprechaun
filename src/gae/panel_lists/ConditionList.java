@@ -37,6 +37,7 @@ public class ConditionList extends BoardList {
 	}
 
 	@Override
+	@Deprecated
 	public String getPackageName() {
 		// TODO Auto-generated method stub
 		return Constants.CONDITION_PACKAGE_NAME;

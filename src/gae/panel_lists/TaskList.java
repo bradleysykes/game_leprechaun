@@ -32,6 +32,7 @@ public class TaskList extends BoardList {
 	}
 
 	@Override
+	@Deprecated
 	public String getPackageName() {
 		// TODO Auto-generated method stub
 		return null;

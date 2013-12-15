@@ -50,6 +50,7 @@ public class UnitList extends BoardList {
 	}
 	
 	@Override
+	@Deprecated
 	public String getPackageName() {
 		return Constants.UNIT_PACKAGE_NAME;
 	}

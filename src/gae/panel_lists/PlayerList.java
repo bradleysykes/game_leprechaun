@@ -22,6 +22,7 @@ public class PlayerList extends BoardList {
 	}
 
 	@Override
+	@Deprecated
 	public String getPackageName() {
 		return "";
 	}

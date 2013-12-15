@@ -39,6 +39,12 @@ import model.unit.Unit;
 
 import java.util.List;
 
+/**
+ * Manages a list of BoardListViewItems via a DefaultListModel, is extended to
+ * implement specific management techniques
+ * @author Will
+ * @author Brad
+ */
 public abstract class BoardList extends JList implements Constants{
 		
 	protected DefaultListModel myModel;
@@ -49,7 +55,10 @@ public abstract class BoardList extends JList implements Constants{
 	private int myCounter;
 	protected EditTabbedView myTabbedView;
 
-	
+	/**
+	 * Initializes the BoardList with the given controller
+	 * @param controller
+	 */
 	public BoardList(Controller controller){
 		myController = controller;
 		myModel = new DefaultListModel();
@@ -67,31 +76,66 @@ public abstract class BoardList extends JList implements Constants{
 //		this.addNewItem(tu);
 	}
 	
-
+	/**
+	 * Adds the given ViewItem to the BoardList
+	 * @param item
+	 */
 	public void addNewItem(ViewItem item){
 		myModel.insertElementAt(item, 0);
 		item.setListSource(this);
 	}
+	
+	/**
+	 * Returns the controller stored
+	 * @return
+	 */
 	public Controller getController(){
 		return myController;
 	}
 	
+	/**
+	 * Returns a new GAEPopupMenu.  Override to return the correct kind of popup
+	 * filled with appropriate information
+	 * @return
+	 */
 	public GAEPopupMenu getPopupMenu(){
 		return new TilePopupMenu(myController, this);
 	}
 	
+	/**
+	 * Removes the item in the BoardList at the given index
+	 * @param index
+	 */
 	public void removeItem(int index) {
 		myModel.removeElementAt(index);
 	}
 	
+	/**
+	 * Sends the list of stats to the controller to be sent to the ObjectsPanel
+	 * @param properties
+	 */
 	public void sendData(List<Stat> properties){
 		myController.postProperties(properties);
 	}
 	
+	/**
+	 * Returns the package name of the Model object, deprecated
+	 * @return
+	 */
+	@Deprecated
 	public abstract String getPackageName();
 	
+	/**
+	 * Returns a string with the type of the BoardList given
+	 * @return
+	 */
 	public abstract String getListType();
 	
+	/**
+	 * Renders the List with the correct label and icon
+	 * @author Brad
+	 *
+	 */
 	public class EditListRenderer extends DefaultListCellRenderer{
 		
 		@Override
@@ -116,10 +160,20 @@ public abstract class BoardList extends JList implements Constants{
 		UnitCreationDialogue d = new UnitCreationDialogue(this.getDefaultName(),getDefaultStats(),this);
 	}
 	
+	/**
+	 * Returns the stats for the model object.  If not overridden returns an empty
+	 * list. Override to give the correct stats for the type of Model object
+	 * @return
+	 */
 	public List<Stat> getDefaultStats(){
 		return new ArrayList<Stat>();
 	}
 	
+	/**
+	 * Returns the default name of the given type.  Override to change specific 
+	 * type
+	 * @return
+	 */
 	public String getDefaultName(){
 		return "";
 		
@@ -127,9 +181,10 @@ public abstract class BoardList extends JList implements Constants{
 	
 	/**
 	 * called by inputdialogue's create button action listener. 
-	 * Ships data for creation of a new custom type. 
+	 * Ships data for creation of a new custom type. File is the image path
 	 * @param inputData
-	 * @param name 
+	 * @param name
+	 * @param f
 	 */
 	public void postNewInput(List<Stat> inputData, String name, File f){
 		BoardListViewItem newItem = getNewItem(inputData, name,f, myCounter);
@@ -137,6 +192,14 @@ public abstract class BoardList extends JList implements Constants{
 		this.addNewItem(newItem);
 	}
 
+	/**
+	 * called by editdialogue's create button
+	 * Creates a new custom type and removes the old one that was edited
+	 * File is the image path
+	 * @param inputData
+	 * @param name
+	 * @param f
+	 */
 	public void postEditInput(List<Stat> inputData, String name, File f){
 		BoardListViewItem newItem = getNewItem(inputData, name,f, myCounter);
 		int oldLocation = this.getSelectedIndex();
@@ -144,14 +207,31 @@ public abstract class BoardList extends JList implements Constants{
 		this.addNewItem(newItem);
 	}
 	
+	/**
+	 * Returns a new BoardListViewItem created from the given inputs.
+	 * @param inputData
+	 * @param name
+	 * @param f
+	 * @param counter
+	 * @return
+	 */
 	protected abstract BoardListViewItem getNewItem(List<Stat> inputData, String name,File f, int counter);
 
-
+	/**
+	 * Edits the given GameElements object and returns it.
+	 * Overridden by subclasses to give image paths.
+	 * @param currentState
+	 * @return
+	 */
 	public GameElements giveStateObjects(GameElements currentState) {
 		return currentState;
 	}
 
-
+	/**
+	 * Gets all of the types of Units in the current game.  Returns null except
+	 * in the UnitList
+	 * @return
+	 */
 	public List<Unit> getUnitTypes() {
 		// Default is return null
 		return null;
@@ -167,7 +247,10 @@ public abstract class BoardList extends JList implements Constants{
 		// do nothing in superclass. Override if necessary. 
 	}
 
-
+	/**
+	 * Sets the EditTabbedView to:
+	 * @param editTabbedView
+	 */
 	public void setTabbedView(EditTabbedView editTabbedView) {
 		myTabbedView = editTabbedView;
 	}
@@ -180,7 +263,10 @@ public abstract class BoardList extends JList implements Constants{
 		return new ArrayList<String>();
 	}
 
-
+	/**
+	 * Returns a list of all possible resources.
+	 * @return
+	 */
 	public List<Resource> getUserResources() {
 		return myTabbedView.getUserResources();
 	}
