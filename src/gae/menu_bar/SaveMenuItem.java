@@ -1,6 +1,6 @@
 package gae.menu_bar;
 
-import gae.Controller;
+import gae.control.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,9 +18,12 @@ public class SaveMenuItem extends GUIMenuItem {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				myController.save();
+				myExecuted = true;
 			}
 			
 		};
 	}
+
+
 
 }

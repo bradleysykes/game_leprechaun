@@ -1,7 +1,7 @@
 package gae.listeners;
 
-import gae.Controller;
-import gae.GUIMap;
+import gae.control.Controller;
+import gae.map.GUIMap;
 import gae.panels.MapPanel;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.MapPopupMenu;

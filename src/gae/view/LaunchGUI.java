@@ -1,4 +1,6 @@
-package gae;
+package gae.view;
+
+import gae.Constants;
 
 import java.io.FileInputStream;
 import java.io.IOException;

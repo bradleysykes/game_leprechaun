@@ -1,52 +1,37 @@
 package gae.viewitems;
 
-import gae.Controller;
-import gae.dialogues.EditDialogue;
+
 import gae.dialogues.EditPlayerDialogue;
-import gae.dialogues.PlayerDialogue;
-import gae.panel_lists.PlayerList;
-
-import java.util.List;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-
 import model.Player;
-import model.stats.Stat;
 import model.unit.Unit;
 
 public class PlayerViewItem extends ViewItem {
 	
 	private Player myPlayer;
-	private String myImagePath = ICON_PATH+"player_icon.gif";
 	private int myNumber;
 	private String myName;
 	
-	public PlayerViewItem(Player playa, int playerNumber){
-		super();
-		myPlayer = playa;
+	public PlayerViewItem(Player player, int playerNumber){
+
+		myPlayer = player;
 		myNumber = playerNumber;
-		myName = "Player "+myNumber;
+		myName = PLAYER_NAME_PREFIX+myNumber;
 	}
 	public PlayerViewItem(Player playa){
-		super();
 		myPlayer = playa;
 		myNumber = 0;
 		myName = playa.getID();
 	}
 	@Override
 	public Icon getListIcon() {
-		return new ImageIcon(myImagePath);
+		return new ImageIcon(PLAYER_ICON_PATH);
 	}
 
 	@Override
 	public String getListMessage() {
 		return myName;
-	}
-
-	@Override
-	public void onClick(Controller c) {
-	
 	}
 	
 	@Override
@@ -63,5 +48,9 @@ public class PlayerViewItem extends ViewItem {
 	}
 	public void setName(String name) {
 		myName = name;
+	}
+	@Override
+	public boolean dialogueActive() {
+		return false;
 	}
 }

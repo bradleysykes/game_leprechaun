@@ -3,7 +3,7 @@ package gae.menu_bar;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import gae.Controller;
+import gae.control.Controller;
 
 public class SaveAsMenuItem extends GUIMenuItem {
 
@@ -19,6 +19,7 @@ public class SaveAsMenuItem extends GUIMenuItem {
 			public void actionPerformed(ActionEvent e) {
 				myController.getAndSaveState("");
 				myMenuSource.activateSaveItem();
+				myExecuted = true;
 			}
 			
 		};

@@ -4,11 +4,11 @@ import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import gae.ViewItemField;
 import gae.buttons.SaveInputButton;
 import gae.dialogues.InputDialogue.GetDataAction;
 import gae.panel_lists.BoardList;
 import gae.panel_lists.NullBoardList;
+import gae.view.ViewItemField;
 import gae.viewitems.PlayerViewItem;
 
 import javax.swing.BoxLayout;

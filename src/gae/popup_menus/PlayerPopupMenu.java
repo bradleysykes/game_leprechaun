@@ -10,7 +10,7 @@ import javax.swing.JMenuItem;
 
 import model.Player;
 import model.unit.Unit;
-import gae.Controller;
+import gae.control.Controller;
 import gae.dialogues.EditDialogue;
 import gae.panel_lists.BoardList;
 import gae.viewitems.NullViewItem;

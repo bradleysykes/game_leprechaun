@@ -3,8 +3,8 @@ package gae.popup_menus;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import gae.BoardBuffer;
-import gae.Controller;
+import gae.control.Controller;
+import gae.map.BoardBuffer;
 import gae.panel_lists.BoardList;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.ViewItem;

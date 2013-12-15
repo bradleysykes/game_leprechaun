@@ -1,7 +1,7 @@
 package gae.panels;
 
 import gae.Constants;
-import gae.Controller;
+import gae.control.Controller;
 import gae.panel_lists.BoardList;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.TaskViewItem;

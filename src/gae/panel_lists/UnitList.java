@@ -14,7 +14,7 @@ import model.stats.Stat;
 import model.tile.Tile;
 import model.unit.Unit;
 import gae.Constants;
-import gae.Controller;
+import gae.control.Controller;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
 import gae.popup_menus.UnitPopupMenu;

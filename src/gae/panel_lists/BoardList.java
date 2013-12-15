@@ -1,7 +1,6 @@
 package gae.panel_lists;
 import gae.Constants;
-import gae.Controller;
-import gae.EditTabbedView;
+import gae.control.Controller;
 import gae.dialogues.EditDialogue;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
@@ -9,6 +8,7 @@ import gae.listeners.BoardListSelectionListener;
 import gae.listeners.PopupListener;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
+import gae.view.EditTabbedView;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.NullViewItem;
 import gae.viewitems.UnitViewItem;

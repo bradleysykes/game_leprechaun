@@ -1,11 +1,11 @@
 package gae.dialogues;
 
-import gae.ViewItemField;
 import gae.buttons.FileButton;
 import gae.buttons.SaveInputButton;
 import gae.dialogues.InputDialogue.GetDataAction;
 import gae.listeners.SpawnableListSelectionListener;
 import gae.panel_lists.BoardList;
+import gae.view.ViewItemField;
 
 import java.util.ArrayList;
 import java.util.List;

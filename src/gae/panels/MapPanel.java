@@ -1,13 +1,14 @@
 package gae.panels;
 
 import gae.Constants;
-import gae.Controller;
-import gae.EditTabbedView;
-import gae.GUIMap;
 import gae.PackageClassFinder;
+import gae.control.Controller;
 import gae.listeners.MapPopupListener;
+import gae.map.GUIMap;
 import gae.popup_menus.MapPopupMenu;
+import gae.view.EditTabbedView;
 import gae.viewitems.BoardListViewItem;
+import gae.viewitems.TileViewItem;
 import gae.viewitems.ViewItem;
 
 import java.awt.BorderLayout;
@@ -170,7 +171,7 @@ public class MapPanel extends EditPanel {
 	@Override
 	public void fillBoard(ViewItem tile){
 		if(myMapView!=null){
-			myMapView.fillBoard(tile);
+			myMapView.fillBoard((TileViewItem)tile);
 		}
 	}
 		

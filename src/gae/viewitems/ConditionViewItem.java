@@ -1,10 +1,10 @@
 package gae.viewitems;
 
 
-import gae.GUIMap;
 import gae.dialogues.ConditionDialogue;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.UnitCreationDialogue;
+import gae.map.GUIMap;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -50,16 +50,6 @@ public class ConditionViewItem extends BoardListViewItem {
 	@Override
 	public Icon getListIcon() {
 		return new ImageIcon(myImagePath);
-	}
-
-	@Override
-	public void placeOnBoard(GUIMap map, double x, double y) {
-		
-	}
-
-	@Override
-	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player) {
-		// to do 
 	}
 
 	@Override

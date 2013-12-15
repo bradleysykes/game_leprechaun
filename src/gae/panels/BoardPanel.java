@@ -1,13 +1,13 @@
 package gae.panels;
 
-import gae.Controller;
-import gae.EditTabbedView;
+import gae.control.Controller;
 import gae.panel_lists.AbilityList;
 import gae.panel_lists.BoardList;
 import gae.panel_lists.ConditionList;
 import gae.panel_lists.ResourceList;
 import gae.panel_lists.TileList;
 import gae.panel_lists.UnitList;
+import gae.view.EditTabbedView;
 import gae.viewitems.ViewItem;
 
 import java.awt.BorderLayout;

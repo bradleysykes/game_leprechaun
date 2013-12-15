@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JMenuItem;
 
-import gae.Controller;
-import gae.GUIMap;
+import gae.control.Controller;
+import gae.map.GUIMap;
 import gae.panels.EditPanel;
 import gae.panels.MapPanel;
 

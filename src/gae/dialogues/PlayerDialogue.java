@@ -1,7 +1,7 @@
 
 package gae.dialogues;
 
-import gae.Controller;
+import gae.control.Controller;
 import gae.viewitems.PlayerTaskViewItem;
 import gae.viewitems.PlayerViewItem;
 import gae.viewitems.TaskViewItem;

@@ -1,6 +1,6 @@
 package gae.popup_menus;
 
-import gae.Controller;
+import gae.control.Controller;
 import gae.panel_lists.BoardList;
 
 public class ConditionPopupMenu extends GAEPopupMenu {

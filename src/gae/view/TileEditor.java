@@ -1,4 +1,6 @@
-package gae;
+package gae.view;
+
+import gae.PackageClassFinder;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

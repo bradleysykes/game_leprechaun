@@ -1,23 +1,28 @@
 package gae.viewitems;
 
-import gae.Controller;
-import gae.GUIMap;
 import gae.dialogues.EditDialogue;
 import gae.dialogues.InputDialogue;
-import gae.dialogues.UnitCreationDialogue;
-
+import gae.map.GUIMap;
+import gae.map.XCoordinate;
+import gae.map.YCoordinate;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-
 import util.ImageTool;
-import jgame.JGObject;
 import model.stats.Stat;
 
+/**
+ * Abstract superclass serving as a frontend representation of model objects that can be added to the Game.
+ * Subclass to create new object that the user can add to the Map.
+ * Extends ViewItem.
+ * @author Bradley
+ * @param <T> Generic type to represent the model object stored in the subclass.
+ */
+
 public abstract class BoardListViewItem<T> extends ViewItem {
+	
 	protected List<Stat> myProperties = new ArrayList<Stat>();
 	protected List<Stat> myDefaults;
 	protected String myName;
@@ -26,12 +31,76 @@ public abstract class BoardListViewItem<T> extends ViewItem {
 	protected File myImage;
 	protected String myImagePath;
 	protected InputDialogue myDialogue;
+	protected String myIDEnding;
 	
+	/**
+	 * Constructor for creating a new BoardListViewItem from a model's stats, a custom name, and an image.
+	 * @param List<Stat> stats: All of the stats defined by this view item's model object.
+	 * @param String name: The custom name assigned to this type.
+	 * @param File imageFile: The image file assigned to this type. Used for displaying on map.
+	 */
 	public BoardListViewItem(List<Stat> stats, String name, File imageFile){
 		myName = name;
 		myProperties = stats;
 		myMapObjectPrefix = getMapPrefix();
-		int resizeDimensions = getResizeDimensions();
+		this.processImage(imageFile);
+	}
+	
+	/**
+	 * Special constructor used for a condition. 
+	 * For use if type will never be visually displayed on the map.
+	 * @param String name: Custom name for this type.
+	 */
+	protected BoardListViewItem(String name){
+		myName = name;
+	}
+	
+	/**
+	 * Method for placing an instance of this specific type in a procedural way. 
+	 * @param GUIMap map: Map object onto which an instance of this type will be placed.
+	 * @param double x: Location of instance.
+	 * @param double y: Location of instance.
+	 */
+	public void placeOnBoard(GUIMap map, int x, int y){
+		// default is to do nothing.
+	}
+	
+	/**
+	 * Method for placing an instance of this type in response to a user click.
+	 * @param GUIMap map: Map object onto which an instance of this type will be placed.
+	 * @param double x: Location of instance.
+	 * @param double y: Location of instance.
+	 * @param PlayerViewItem activePlayer: Player assignment for this item.
+	 */
+	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem activePlayer){
+		// default is to do nothing.
+	}
+	
+	/**
+	 * Method to get this type's model object.
+	 * @return T The specific model object belonging to the subclass. 
+	 */
+	public abstract T getModelObject();
+	
+	/**
+	 * @return String unique map prefix used for creating MapObjects.
+	 */
+	protected abstract String getMapPrefix();
+	
+	protected abstract int getResizeDimensions();
+
+	protected abstract String getDefaultImagePath();
+
+	public abstract List<Stat> getModel();
+	
+	/**
+	 * Method used to check if user uploaded an image for this type.
+	 * Assigned a default image if no image uploaded.
+	 * Resizes image appropriately.
+	 * @param File imageFile: This game type's image.
+	 */
+	private void processImage(File imageFile){
+		int resizeDimensions = this.getResizeDimensions();
 		if(!(imageFile==null)){
 			//image file has been uploaded by user
 			myImagePath = imageFile.getPath();
@@ -45,22 +114,19 @@ public abstract class BoardListViewItem<T> extends ViewItem {
 			ImageTool.scaleAndOverwriteImage(myImage.getPath(), resizeDimensions,resizeDimensions);
 		}
 	}
-	
-	public String getName(){
-		return myName;
-	}
-		
-	protected abstract String getMapPrefix();
 
-	protected BoardListViewItem(String name){
-		//special constructor for a Condition
-		myName = name;
+	/**
+	 * Method used to edit an existing game type.
+	 */
+	@Override
+	public void launchEdit(){
+		myDialogue = new EditDialogue(myName,this.getModel(),myListSource, new NullViewItem());
 	}
 	
-	protected abstract int getResizeDimensions();
-
-	protected abstract String getDefaultImagePath();
-
+	/**
+	 * Getters/Setters
+	 */
+	
 	@Override
 	public int hashCode(){
 		return (int)System.currentTimeMillis();
@@ -75,42 +141,26 @@ public abstract class BoardListViewItem<T> extends ViewItem {
 		return new ImageIcon(myImagePath);
 	}
 
-	@Override
-	public abstract String getListMessage();
 
-	public abstract List<Stat> getModel();
-	
-	public abstract void placeOnBoard(GUIMap map, double x, double y);
-	
-	public abstract void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem activePlayer);
-	 
-
-	@Override
-	public void onClick(Controller c) {
-		// TODO Auto-generated method stub
-		
+	public void setName(String name) {
+		myName = name;		
 	}
-
-	//public abstract BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile, int myCounter);
+	
+	public String getName(){
+		return myName;
+	}
 	
 	public MapObject getMapObject() {
 		return myMapObject;
 	}
-	
-	public abstract T getModelObject();
 
 	public boolean onMap() {
 		return myMapObject != null;
 	}
 	
 	@Override
-	public void launchEdit(){
-		myDialogue = new EditDialogue(myName,this.getModel(),myListSource, new NullViewItem());
-	}
-
-
-	public void setName(String name) {
-		myName = name;		
+	public boolean dialogueActive(){
+		return false;
 	}
 
 }

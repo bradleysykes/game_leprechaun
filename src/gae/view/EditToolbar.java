@@ -1,5 +1,6 @@
-package gae;
+package gae.view;
 
+import gae.control.Controller;
 import gae.dialogues.BoardSizeDialogue;
 import gae.dialogues.PlayerDialogue;
 

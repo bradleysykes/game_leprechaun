@@ -1,7 +1,7 @@
 package gae.menu_bar;
 
-import gae.Controller;
-import gae.EditGUI;
+import gae.control.Controller;
+import gae.view.EditGUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,9 +20,11 @@ public class NewMenuItem extends GUIMenuItem {
 			public void actionPerformed(ActionEvent e) {
 				myController.exit();
 				new EditGUI();
+				myExecuted = true;
 			}
 			
 		};
 	}
+
 
 }

@@ -5,8 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-import gae.Controller;
 import gae.ResourceComboBox;
+import gae.control.Controller;
 import gae.panel_lists.AbilityList;
 import gae.panel_lists.BoardList;
 import gae.panel_lists.TileList;

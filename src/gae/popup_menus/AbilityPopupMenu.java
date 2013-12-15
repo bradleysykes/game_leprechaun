@@ -7,7 +7,7 @@ import javax.swing.JMenuItem;
 
 import model.abilities.CustomAbility;
 
-import gae.Controller;
+import gae.control.Controller;
 import gae.dialogues.AbilityAssignDialogue;
 import gae.panel_lists.AbilityList;
 import gae.panel_lists.BoardList;

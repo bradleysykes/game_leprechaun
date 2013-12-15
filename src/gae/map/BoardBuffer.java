@@ -1,6 +1,5 @@
-package gae;
+package gae.map;
 
-import gae.dialogues.UnitAlert;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.NullViewItem;
 import gae.viewitems.PlayerViewItem;
@@ -8,14 +7,11 @@ import gae.viewitems.TileViewItem;
 import gae.viewitems.UnitViewItem;
 import gae.viewitems.ViewItem;
 
-import java.awt.Component;
-
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import model.Player;
+/**
+ * Class used for convenient communication across the Authoring Environment GUI.
+ * Used primarily to pass BoardListViewItems and their corresponding PlayerViewItem to the GUIMap for placement.
+ * @author Bradley Sykes and William Shelburne
+ */
 
 public class BoardBuffer {
 	
@@ -23,29 +19,28 @@ public class BoardBuffer {
 	private static PlayerViewItem myPlayer;
 	
 	
+	/**
+	 * Method used to retrieve the item currently stored in the buffer. 
+	 * Returns a UnitViewItem only if also knows its PlayerViewItem assignment.
+	 * @return BoardListViewItem currently stored in the buffer.
+	 */
 	public static BoardListViewItem retrieve(){
 		if(myPlayer!=null&&myItem!=null){
 			return myItem;
 		}
 		if(myPlayer==null&&myItem instanceof UnitViewItem){
-			//requires units to be assigned player before placement
-//			JOptionPane alertPane = new JOptionPane("Please select a unit and a player before placing on map.");
-//			JDialog dialog = alertPane.createDialog(null,"Player alert");
-//			dialog.setLocation(10, 10);
-//			//dialog.setVisible(true);
 			return new NullViewItem();
 		}
 		if(myPlayer==null&&myItem instanceof TileViewItem){
-			//allows user to place tile without assigning player
 			return myItem;
 		}
 		return new NullViewItem();
 	}
 	
-	public static void clear(){
-		myItem = null;
-	}
-	
+	/**
+	 * Method for placing a ViewItem in the buffer for later use.
+	 * @param ViewItem item to be stored in the Buffer.
+	 */
 	public static void push(ViewItem item){
 		if(item instanceof BoardListViewItem){
 			myItem = (BoardListViewItem)item;
@@ -57,5 +52,17 @@ public class BoardBuffer {
 
 	public static PlayerViewItem getActivePlayer() {
 		return myPlayer;
+	}
+	
+	public static boolean hasPlayer(){
+		return myPlayer != null;
+	}
+	
+	public static boolean hasPlaceable(){
+		return myItem != null;
+	}
+	
+	public static void clear(){
+		myItem = null;
 	}
 }

@@ -1,12 +1,12 @@
 package gae.dialogues;
 
-import gae.Controller;
-import gae.TileEditor;
-import gae.ViewItemField;
 import gae.buttons.FileButton;
 import gae.buttons.SaveInputButton;
+import gae.control.Controller;
 import gae.panel_lists.BoardList;
 import gae.panel_lists.NullBoardList;
+import gae.view.TileEditor;
+import gae.view.ViewItemField;
 import gae.viewitems.BoardListViewItem;
 
 import java.awt.BorderLayout;

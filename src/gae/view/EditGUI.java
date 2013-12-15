@@ -1,4 +1,6 @@
-package gae;
+package gae.view;
+import gae.Constants;
+import gae.control.Controller;
 import gae.menu_bar.EditMenuBar;
 
 import java.awt.BorderLayout;
@@ -49,7 +51,7 @@ public class EditGUI extends JFrame implements Constants {
 		try {
 			this.setIconImage(ImageIO.read(Constants.LAUNCH_BACKGROUND_IMAGE));
 		} catch (IOException e) {
-			//
+			// do nothing
 		}
 		this.pack();
 		this.setVisible(true);

@@ -1,4 +1,4 @@
-package gae;
+package gae.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import sun.audio.AudioPlayer;
 
 import engine.GameViewer;
+import gae.Constants;
 
 public class LaunchPanel extends JPanel {
 	

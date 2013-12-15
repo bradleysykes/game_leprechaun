@@ -1,6 +1,6 @@
 package gae.viewitems;
 
-import gae.GUIMap;
+import gae.map.GUIMap;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -33,25 +33,6 @@ public class NullViewItem extends BoardListViewItem {
 		// TODO Auto-generated method stub
 		return new ArrayList<Stat>();
 	}
-
-	@Override
-	public void placeOnBoard(GUIMap map, double x, double y) {
-		// do nothing
-
-	}
-
-	@Override
-	public void clickOnBoard(GUIMap map, double x, double y,
-			PlayerViewItem activePlayer) {
-		// do nothing
-
-	}
-
-//	@Override
-//	public BoardListViewItem createModel(List<Stat> inputData, String name,
-//			File imageFile, int counter) {
-//		return new NullViewItem();
-//	}
 
 	@Override
 	protected int getResizeDimensions() {

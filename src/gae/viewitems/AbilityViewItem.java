@@ -3,8 +3,8 @@ package gae.viewitems;
 import java.io.File;
 import java.util.List;
 
-import gae.Controller;
-import gae.GUIMap;
+import gae.control.Controller;
+import gae.map.GUIMap;
 
 import javax.swing.Icon;
 
@@ -74,18 +74,6 @@ public class AbilityViewItem extends BoardListViewItem {
 	@Override
 	public List<Stat> getModel() {
 		return myProperties;
-	}
-
-	@Override
-	public void placeOnBoard(GUIMap map, double x, double y) {
-		// TODO Auto-generated method stub	
-	}
-
-	@Override
-	public void clickOnBoard(GUIMap map, double x, double y,
-			PlayerViewItem activePlayer) {
-		// TODO Auto-generated method stub
-		
 	}
 	
 	@Override

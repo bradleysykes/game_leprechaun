@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import model.stats.Stat;
-import gae.Controller;
+import gae.control.Controller;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.NullViewItem;
 

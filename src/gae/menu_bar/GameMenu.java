@@ -1,6 +1,6 @@
 package gae.menu_bar;
 
-import gae.Controller;
+import gae.control.Controller;
 
 public class GameMenu extends GUIMenu {
 	
@@ -11,11 +11,17 @@ public class GameMenu extends GUIMenu {
 		myRunItem = new RunMenuItem(myController,myMenuSource);
 		myRunItem.setEnabled(false);
 		this.add(myRunItem);
+		myItems.add(myRunItem);
 	}
 
 	@Override
 	public void enableAll() {
 		myRunItem.setEnabled(true);
+	}
+	
+	@Override
+	public boolean saveActivated(){
+		return myRunItem.isEnabled();
 	}
 
 }

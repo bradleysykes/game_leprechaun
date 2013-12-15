@@ -1,58 +1,48 @@
 package gae.viewitems;
 
-import java.util.List;
-
 import gae.Constants;
-import gae.Controller;
-import gae.dialogues.UnitCreationDialogue;
+import gae.control.Controller;
 import gae.panel_lists.BoardList;
-
 import javax.swing.Icon;
-
-import model.stats.Stat;
-
-import jgame.JGObject;
-import jgame.platform.JGEngine;
-
+import javax.swing.JFrame;
 
 /**
- * 
- * Abstract class defining elements displayed in GUI View Panels. 
- * @author Bradley Sykes
- *
+ * Abstract class defining elements displayed in BoardList types. Subclass in order to create
+ * new types of data to display in the authoring environment.
+ * @author Bradley Sykes and William Shelburne
  */
 
 public abstract class ViewItem implements Constants {
 
 	protected Controller myController;
 	protected BoardList myListSource;
+	protected JFrame myDialogue;
 
 	public abstract Icon getListIcon();
 	
 	public abstract String getListMessage();
+	
+	/**
+	 * Launch view to allow editing of existing type.
+	 */
+	public abstract void launchEdit();
 
-	public abstract void onClick(Controller c);
+	public void onClick(Controller c){
+		//default is to do nothing.
+	}
+
+	/**Getters and Setters**/
+	
+	public abstract boolean dialogueActive();
 	
 	public void setController(Controller controller) {
 		myController = controller;
 	}
-	
-	public boolean dialogueActive(){
-		return false;
-	}
 
 	public void showProperties() {
-		// TODO Auto-generated method stub
-		
+		//default is to do nothing.
 	}
 	
-	/**
-	 * Performs action 
-	 */
-	public void launchEdit() {
-		// 
-	}
-
 	public void setListSource(BoardList boardList) {
 		myListSource = boardList;
 	}

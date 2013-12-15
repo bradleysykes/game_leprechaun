@@ -2,17 +2,14 @@ package gae.listeners;
 
 import java.util.List;
 
-import gae.BoardBuffer;
+import gae.map.BoardBuffer;
 import gae.panel_lists.BoardList;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.ViewItem;
-
-import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import model.stats.Stat;
-import model.tile.Tile;
 
 public class BoardListSelectionListener implements ListSelectionListener {
 	
@@ -37,7 +34,6 @@ public class BoardListSelectionListener implements ListSelectionListener {
 					listSource.sendData(castedselectedItem.getModel());
 				}
 				
-				//listSource.clearSelection();
 			}
 			}
 			catch(Exception exception){

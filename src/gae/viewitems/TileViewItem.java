@@ -2,7 +2,11 @@ package gae.viewitems;
 
 import java.io.File;
 import java.util.List;
-import gae.GUIMap;
+
+import gae.map.GUIMap;
+import gae.map.XCoordinate;
+import gae.map.YCoordinate;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -10,15 +14,15 @@ import util.ImageTool;
 
 import model.GameMap;
 import model.stats.Stat;
+import model.stats.StatCollection;
 import model.tile.Tile;
 
 public class TileViewItem extends BoardListViewItem {
 
 	private Tile myTile;
-	private String myIDEnding;
 	
 	public TileViewItem(){
-		this(new Tile(20,20,new GameMap(20,20)).getStats(),"Default",new File(DEFAULT_TILE_PATH), 0);
+		this(new Tile(20,20,new GameMap(20,20)).getStats(),DEFAULT_TILE_NAME,new File(DEFAULT_TILE_PATH), 0);
 	}
 	
 	public TileViewItem(List<Stat> stats,String name, File f, int counter){
@@ -36,39 +40,12 @@ public class TileViewItem extends BoardListViewItem {
 		myIDEnding = tile.getID().split("\\|")[1];
 	}
 	
-	@Override
-	public List<Stat> getModel() {
-		return myProperties;
-	}
-
-//	@Override
-//	public BoardListViewItem createModel(List<Stat> inputData, String name, File imageFile, int counter) {
-//		//newGuy.setStats(inputData);
-//		BoardListViewItem newGuy = new TileViewItem(inputData,name,imageFile, counter);
-//		return newGuy;
-//	}
-
-	@Override
-	public String getListMessage() {
-		return myName;
-	}
-	
-	public String getImagePath(){
-		if(myImage!=null){
-			return myImagePath;
-		}
-		return "resources/test_tile.jpg";
-	}
-
-	public int getImageHeight(){
-		return 0;
-	}
-	public int getImageWidth(){
-		return 0;
+	public TileViewItem(StatCollection modelObject, File imageFile){
+			this((Tile)modelObject,imageFile);
 	}
 
 	@Override
-	public void placeOnBoard(GUIMap map, double x, double y) {
+	public void placeOnBoard(GUIMap map, int x, int y) {
 		//new JGObject(such and such);
 		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
 		myMapObject = new MapObject(myMapObjectPrefix,x*TILE_SIZE,y*TILE_SIZE,myMapObjectPrefix, this);
@@ -76,20 +53,34 @@ public class TileViewItem extends BoardListViewItem {
 		String uniqueTileID = myTile.getID();
 		tile.setID(uniqueTileID);
 		map.getModelMap().setTile((int)x, (int)y, tile);
+		map.addObject(this.getMapObject());
 		
 	}
 	
 	@Override
-	public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player){
-		int xTile = (int) ((x-x%TILE_SIZE)/TILE_SIZE);
-		int yTile = (int) ((y-y%TILE_SIZE)/TILE_SIZE);
-		map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
-		myMapObject = new TileMapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,myMapObjectPrefix,this);
-		Tile tile = new Tile(xTile,yTile, myTile);
+    public void clickOnBoard(GUIMap map, double x, double y, PlayerViewItem player){
+            int xTile = (int) ((x-x%TILE_SIZE)/TILE_SIZE);
+            int yTile = (int) ((y-y%TILE_SIZE)/TILE_SIZE);
+            map.defineImage(myMapObjectPrefix, "-", 0, "/"+this.getImagePath().replace("\\","/"),"-");
+            myMapObject = new TileMapObject(myMapObjectPrefix,x-x%TILE_SIZE,y-y%TILE_SIZE,myMapObjectPrefix,this);
+            this.updateModel(xTile,yTile,map);
+    }
+    
+	/**
+	 * Method to update model to reflect changes in view.
+	 * @param int x: Tile location
+	 * @param int y: Tile location
+	 * @param GUIMap map: Current game map.
+	 */
+	private void updateModel(int x, int y, GUIMap map){
+		Tile tile = new Tile(x,y, myTile);
 		tile.getStatCollection("Terrain").setID(myTile.getStatCollection("Terrain").getID());
 		tile.setID(myTile.getID());
-		map.getModelMap().setTile(xTile, yTile, tile);
+		map.getModelMap().setTile(x, y, tile);
+		map.addObject(this.getMapObject());
 	}
+	
+	/**Getters and setters**/
 	
 	@Override
 	protected String getDefaultImagePath() {
@@ -108,5 +99,22 @@ public class TileViewItem extends BoardListViewItem {
 	
 	public Tile getModelObject() {
 		return myTile;
+	}
+	
+	@Override
+	public List<Stat> getModel() {
+		return myProperties;
+	}
+
+	@Override
+	public String getListMessage() {
+		return myName;
+	}
+	
+	public String getImagePath(){
+		if(myImage!=null){
+			return myImagePath;
+		}
+		return DEFAULT_TILE_PATH;
 	}
 }

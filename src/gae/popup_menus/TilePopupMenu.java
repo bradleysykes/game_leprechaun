@@ -1,7 +1,7 @@
 package gae.popup_menus;
 
-import gae.BoardBuffer;
-import gae.Controller;
+import gae.control.Controller;
+import gae.map.BoardBuffer;
 import gae.panel_lists.BoardList;
 import gae.popup_menus.GAEPopupMenu.DeleteListener;
 import gae.viewitems.BoardListViewItem;

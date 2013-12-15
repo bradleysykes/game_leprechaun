@@ -1,6 +1,8 @@
-package gae;
+package gae.view;
 
+import gae.PackageClassFinder;
 import gae.buttons.CreateCustomButton;
+import gae.control.Controller;
 import gae.listeners.DeselectListener;
 import gae.panel_lists.BoardList;
 import gae.panel_lists.ConditionList;

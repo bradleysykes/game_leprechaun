@@ -6,6 +6,12 @@ import java.awt.Point;
 
 import jgame.JGObject;
 
+
+/**
+ * Class used to visually display a BoardListViewItem on the map. Extends JGObject.
+ * @author Bradley Sykes and William Shelburne
+ *
+ */
 public class MapObject extends JGObject implements Constants {
 	
 	private BoardListViewItem myViewItem;
@@ -28,6 +34,6 @@ public class MapObject extends JGObject implements Constants {
 	}
 
 	public void select() {
-		System.out.println("I AM SELECTED");
+		// do nothing for now.
 	}
 }

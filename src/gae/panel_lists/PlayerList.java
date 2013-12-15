@@ -7,7 +7,7 @@ import data.GameElements;
 
 import model.Player;
 import model.stats.Stat;
-import gae.Controller;
+import gae.control.Controller;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.PlayerPopupMenu;
 import gae.viewitems.BoardListViewItem;

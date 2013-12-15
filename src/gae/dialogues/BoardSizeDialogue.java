@@ -1,6 +1,6 @@
 package gae.dialogues;
 
-import gae.Controller;
+import gae.control.Controller;
 import gae.viewitems.BoardSizeTaskViewItem;
 import gae.viewitems.TaskViewItem;
 

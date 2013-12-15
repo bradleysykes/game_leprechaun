@@ -15,7 +15,7 @@ import data.GameElements;
 
 import model.stats.Stat;
 
-import gae.Controller;
+import gae.control.Controller;
 import gae.listeners.BoardListSelectionListener;
 import gae.listeners.TimerListener;
 import gae.popup_menus.GAEPopupMenu;

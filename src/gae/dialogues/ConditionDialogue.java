@@ -1,6 +1,6 @@
 package gae.dialogues;
 
-import gae.Controller;
+import gae.control.Controller;
 import gae.panel_lists.BoardList;
 import gae.viewitems.ConditionViewItem;
 import gae.viewitems.ViewItem;

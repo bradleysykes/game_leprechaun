@@ -1,6 +1,6 @@
 package gae.menu_bar;
 
-import gae.Controller;
+import gae.control.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,9 +18,11 @@ public class ExitMenuItem extends GUIMenuItem {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				myController.exit();
+				myExecuted = true;
 			}
 			
 		};
 	}
+
 
 }

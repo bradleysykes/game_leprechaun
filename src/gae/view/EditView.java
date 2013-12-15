@@ -1,4 +1,4 @@
-package gae;
+package gae.view;
 
 import java.awt.Component;
 import java.awt.Dimension;

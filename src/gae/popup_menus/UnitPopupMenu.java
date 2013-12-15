@@ -9,7 +9,7 @@ import javax.swing.JMenuItem;
 
 import model.Player;
 
-import gae.Controller;
+import gae.control.Controller;
 import gae.panel_lists.BoardList;
 import gae.popup_menus.GAEPopupMenu.DeleteListener;
 import gae.popup_menus.TilePopupMenu.FillListener;

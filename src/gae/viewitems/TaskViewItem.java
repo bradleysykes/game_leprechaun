@@ -1,43 +1,44 @@
 package gae.viewitems;
 
-import gae.Controller;
+import gae.control.Controller;
 import gae.dialogues.InputDialogue;
-import gae.dialogues.PlayerDialogue;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import model.stats.Stat;
+/**
+ * Abstract class used as an authoring environment representation of a discrete task that must be accomplished
+ * before the game can be saved. Displayed in TaskPanel and TaskList. Extends ViewItem.
+ * @author Bradley Sykes and William Shelburne
+ */
 
 public class TaskViewItem extends ViewItem {
 	
 	private String myMessage;
-	private Controller myController; // makeshift.  Eclipse won't recognize controller from superclass.
 	protected InputDialogue myDialogue;
+	
 	public TaskViewItem(String message, Controller controller){
-		super();
 		myMessage = message;
 		myController = controller;
 	}
 	
 	@Override
 	public Icon getListIcon() {
-		// TODO Auto-generated method stub
-		return new ImageIcon(ICON_PATH+"task.png");
+		return new ImageIcon(ICON_PATH+TASK_ICON_PATH);
 	}
 
 	@Override
 	public String getListMessage() {
-		// TODO Auto-generated method stub
 		return myMessage;
 	}
 
 	@Override
-	public void onClick(Controller c) {
-		// TODO Auto-generated method stub
+	public void launchEdit() {
+		//do nothing.
+	}
+	
+	@Override
+	public boolean dialogueActive(){
+		return myDialogue!=null;
 	}
 
 }

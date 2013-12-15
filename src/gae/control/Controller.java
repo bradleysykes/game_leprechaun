@@ -57,6 +57,7 @@ public class Controller implements Constants{
 	private EditMenuBar myMenuBar;
 	private Controller myController;
 	private EditToolbar myToolbar;
+	private boolean saved = false;
 	
 	/**
 	 * Initializes controller and save timer
@@ -246,8 +247,16 @@ public class Controller implements Constants{
 		}
 	    SaveHandler saveHandler = new SaveHandler(myCurrentState, myGameFilePath);
 		saveHandler.doSave();
-		
+		this.saved = true;
 		// create data object to send GameElements object to that.
+	}
+	
+	public boolean hasSaved(){
+		return saved;
+	}
+	
+	public boolean hasSavePath(){
+		return myGameFilePath!=null;
 	}
 
 	/**
@@ -336,6 +345,10 @@ public class Controller implements Constants{
 		AudioPlayer.player.stop(stream);
 		myGUI.dispose();
 		new LaunchGUI();
+	}
+	
+	public boolean hasExited(){
+		return myGUI.isShowing();
 	}
 
 	/**

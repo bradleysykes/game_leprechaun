@@ -11,7 +11,7 @@ import java.util.List;
 import model.Condition;
 import data.GameElements;
 import gae.Constants;
-import gae.Controller;
+import gae.control.Controller;
 import gae.dialogues.ConditionDialogue;
 import gae.popup_menus.GAEPopupMenu;
 import gae.viewitems.BoardListViewItem;

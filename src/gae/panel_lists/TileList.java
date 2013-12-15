@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 import gae.Constants;
-import gae.Controller;
-import gae.EditTabbedView;
+import gae.control.Controller;
 import gae.popup_menus.GAEPopupMenu;
 import gae.popup_menus.TilePopupMenu;
+import gae.view.EditTabbedView;
 import gae.viewitems.BoardListViewItem;
 import gae.viewitems.TileViewItem;
 import gae.viewitems.UnitViewItem;

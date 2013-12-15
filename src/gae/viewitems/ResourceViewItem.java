@@ -1,6 +1,6 @@
 package gae.viewitems;
 
-import gae.GUIMap;
+import gae.map.GUIMap;
 
 import java.io.File;
 import java.util.List;
@@ -45,26 +45,6 @@ public class ResourceViewItem extends BoardListViewItem {
 	public List<Stat> getModel() {
 		return myProperties;
 	}
-
-	@Override
-	public void placeOnBoard(GUIMap map, double x, double y) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void clickOnBoard(GUIMap map, double x, double y,
-			PlayerViewItem activePlayer) {
-		// TODO Auto-generated method stub
-		
-	}
-
-//	@Override
-//	public BoardListViewItem createModel(List<Stat> inputData, String name,
-//			File imageFile, int myCounter) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 
 	@Override
 	public Resource getModelObject() {

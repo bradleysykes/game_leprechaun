@@ -1,6 +1,6 @@
 package gae.viewitems;
 
-import gae.Controller;
+import gae.control.Controller;
 import gae.dialogues.InputDialogue;
 import gae.dialogues.PlayerDialogue;
 

@@ -10,8 +10,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import engine.listeners.LoadGameListener;
-import gae.EditGUI;
-import gae.LaunchGUI;
+import gae.view.EditGUI;
+import gae.view.LaunchGUI;
 
 public class ViewerMenu extends JMenu {
 	

@@ -1,13 +1,10 @@
 package gae;
 
-import gae.buttons.FileButton;
 
 import java.awt.Dimension;
 import java.io.File;
 import java.util.List;
-
 import javax.swing.JFileChooser;
-
 import model.GameMap;
 import model.Player;
 import model.abilities.CustomAbility;
@@ -20,9 +17,12 @@ public interface Constants {
 	final Dimension preferred = new Dimension(300,300);
 	final Dimension EDITGUI_INITIAL_SIZE = new Dimension(1500,700);
 	final String ICON_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\";
+	final String TASK_ICON_PATH = "task.png";
 	final String NEW_ICON_RELATIVEPATH = "plus.gif";
+	final String PLAYER_ICON_PATH = ICON_PATH+"player_icon.gif";
 	final String UNIT_PACKAGE_NAME = "unit";
 	final String TILE_PACKAGE_NAME = "tile";
+	final String PLAYER_NAME_PREFIX = "Player ";
 	final String CONDITION_PACKAGE_NAME = "condition";
 	final String ABILITY_PACKAGE_NAME = "abilities";
 	final String PLAYER_AUDIO_FILE_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\Action_Music.wav";
@@ -35,12 +35,13 @@ public interface Constants {
 	final int UNIT_IMAGE_RESIZE = 29;
 	final int CONDITION_IMAGE_RESIZE = 39;
 	final int RESOURCE_IMAGE_RESIZE = 19;
-	
+	final String UNIT_MAP_PREFIX = "z";
 	final String BOARD_PANEL_TITLE = "Board Objects";
 	final String MAP_PANEL_TITLE = "Game Map";
 	final String OBJECT_PANEL_TITLE = "Object Properties";
 	final String PLAYER_PANEL_TITLE = "Available Players";
 	final String TASK_PANEL_TITLE = "Game To-Dos";
+	final String DEFAULT_TILE_NAME = "Default";
 	
 	final String DEFAULT_TILE_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\rock.jpg";
 	final String DEFAULT_UNIT_PATH = System.getProperty("user.dir")+"\\src\\gae\\resources\\default_unit.png";

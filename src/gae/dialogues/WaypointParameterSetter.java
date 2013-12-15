@@ -1,6 +1,6 @@
 package gae.dialogues;
 
-import gae.Controller;
+import gae.control.Controller;
 import gae.viewitems.ViewItem;
 
 import java.awt.Dimension;

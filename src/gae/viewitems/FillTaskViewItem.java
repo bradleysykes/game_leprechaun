@@ -3,7 +3,7 @@ package gae.viewitems;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
-import gae.Controller;
+import gae.control.Controller;
 
 public class FillTaskViewItem extends TaskViewItem {
 

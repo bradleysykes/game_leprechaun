@@ -1,6 +1,9 @@
 package gae.menu_bar;
 
-import gae.Controller;
+import java.util.ArrayList;
+import java.util.List;
+
+import gae.control.Controller;
 
 public class FileMenu extends GUIMenu {
 	
@@ -23,12 +26,24 @@ public class FileMenu extends GUIMenu {
 		this.add(mySaveItem);
 		this.add(openItem);
 		this.add(exitItem);
+		myItems.add(myFileViewItem);
+		myItems.add(newItem);
+		myItems.add(saveAsItem);
+		myItems.add(mySaveItem);
+		myItems.add(openItem);
+		myItems.add(exitItem);
+
 	}
 
 	@Override
 	public void enableAll() {
 		mySaveItem.setEnabled(true);
 		myFileViewItem.setEnabled(true);
+	}
+	
+	@Override
+	public boolean saveActivated(){
+		return mySaveItem.isEnabled() && myFileViewItem.isEnabled();
 	}
 
 }

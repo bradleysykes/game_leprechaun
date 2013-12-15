@@ -1,9 +1,9 @@
 package gae.panels;
 
 
-import gae.Controller;
-import gae.ViewItemField;
 import gae.buttons.SaveInputButton;
+import gae.control.Controller;
+import gae.view.ViewItemField;
 import gae.viewitems.ViewItem;
 
 import java.awt.Color;

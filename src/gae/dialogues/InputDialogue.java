@@ -7,10 +7,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import gae.Controller;
-import gae.ViewItemField;
+import gae.control.Controller;
 import gae.listeners.GAEWindowListener;
 import gae.panel_lists.BoardList;
+import gae.view.ViewItemField;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;

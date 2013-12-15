@@ -1,5 +1,6 @@
-package gae;
+package gae.view;
 
+import gae.control.Controller;
 import gae.listeners.MapPopupListener;
 import gae.panels.BoardPanel;
 import gae.panels.EditPanel;
